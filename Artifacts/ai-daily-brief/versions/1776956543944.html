@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Ai Daily Brief",
+  "schemaVersion": 1,
+  "description": "Daily AI industry brief for Chris (IT consultant, BCP/DR focus). Updated each morning at 6am local by a scheduled task that WebSearches the major AI providers and Reddit community signal, then synthesizes a structured brief with habit-shift recommendations tailored to BCP/DR consulting work. No live connectors called from the artifact itself — the scheduled task rewrites the HTML in place."
+}
+</script>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Daily Brief — April 23, 2026</title>
+<style>
+  :root { color-scheme: light; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #fafafa;
+    color: #1a1a1a;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 24px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* HEADER */
+  .brief-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 2px solid #1a1a1a;
+    padding-bottom: 14px;
+    margin-bottom: 22px;
+    gap: 16px;
+    flex-wrap: wrap;
+  }
+  .brief-header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    color: #1a1a1a;
+  }
+  .brief-header .subtitle {
+    font-size: 12px;
+    color: #555;
+    margin-top: 3px;
+    font-weight: 400;
+  }
+  .date-stamp {
+    text-align: right;
+    font-size: 12px;
+    color: #555;
+    line-height: 1.6;
+  }
+  .date-stamp strong {
+    font-size: 14px;
+    color: #1a1a1a;
+    display: block;
+  }
+
+  /* CLIENT ALERT BANNER */
+  .client-alert-banner {
+    background: #fffbea;
+    border-left: 4px solid #c99400;
+    padding: 14px 18px;
+    margin-bottom: 22px;
+    border-radius: 0 6px 6px 0;
+  }
+  .client-alert-banner .alert-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #c99400;
+    margin-bottom: 6px;
+  }
+  .client-alert-banner ul {
+    list-style: none;
+    padding: 0;
+  }
+  .client-alert-banner ul li {
+    padding: 3px 0;
+    font-size: 13px;
+    color: #4a3800;
+    padding-left: 16px;
+    position: relative;
+  }
+  .client-alert-banner ul li::before {
+    content: "⚠";
+    position: absolute;
+    left: 0;
+    color: #c99400;
+  }
+
+  /* SECTION HEADING */
+  .section-heading {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.8px;
+    text-transform: uppercase;
+    color: #1a1a1a;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+    margin-top: 28px;
+  }
+
+  /* TOP 3 CARDS */
+  .top3-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin-bottom: 4px;
+  }
+  .move-card {
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    padding: 16px;
+    position: relative;
+  }
+  .move-card .move-rank {
+    font-size: 32px;
+    font-weight: 800;
+    color: #e8e8e8;
+    line-height: 1;
+    margin-bottom: 6px;
+  }
+  .move-card .move-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 6px;
+  }
+  .move-card .move-body {
+    font-size: 12.5px;
+    color: #333;
+    line-height: 1.5;
+  }
+  .move-card .move-date {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 11px;
+    color: #888;
+    font-weight: 600;
+  }
+  .move-card.alert-card {
+    border-color: #f5c842;
+    background: #fffef5;
+  }
+
+  /* TABLES */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 6px;
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  thead tr {
+    background: #f0f0f0;
+  }
+  thead th {
+    text-align: left;
+    padding: 9px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    color: #444;
+    border-bottom: 1px solid #ddd;
+  }
+  tbody tr {
+    border-bottom: 1px solid #f0f0f0;
+  }
+  tbody tr:last-child {
+    border-bottom: none;
+  }
+  tbody td {
+    padding: 9px 12px;
+    vertical-align: top;
+    line-height: 1.45;
+    color: #222;
+  }
+  .provider-name {
+    font-weight: 700;
+    white-space: nowrap;
+  }
+  .no-update {
+    color: #888;
+    font-style: italic;
+  }
+
+  /* TAGS */
+  .tag {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+    white-space: nowrap;
+  }
+  .tag.tactical {
+    background: #dbeafe;
+    color: #1d4ed8;
+  }
+  .tag.strategic {
+    background: #ede9fe;
+    color: #6d28d9;
+  }
+  .tag.alert {
+    background: #fee2e2;
+    color: #b91c1c;
+  }
+  .tag.monitor {
+    background: #fef3c7;
+    color: #92400e;
+  }
+
+  /* WATCH LIST */
+  .watchlist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+  }
+  .watch-card {
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    padding: 13px 15px;
+  }
+  .watch-card .watch-title {
+    font-size: 12.5px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+  }
+  .watch-card .watch-detail {
+    font-size: 12px;
+    color: #444;
+    line-height: 1.45;
+  }
+  .watch-card .watch-timeline {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 10.5px;
+    font-weight: 700;
+    color: #888;
+  }
+  .watch-card.hot {
+    border-color: #f5a542;
+    background: #fffcf5;
+  }
+
+  /* FOOTER */
+  .brief-footer {
+    margin-top: 36px;
+    padding-top: 12px;
+    border-top: 1px solid #ddd;
+    font-size: 11px;
+    color: #888;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="brief-header">
+  <div>
+    <h1>AI Daily Brief</h1>
+    <div class="subtitle">Prepared for Chris G. — IT Consultant, BCP/DR &amp; Resilience</div>
+  </div>
+  <div class="date-stamp">
+    <strong>April 23, 2026</strong>
+    Thursday Edition<br>
+    Refreshes daily at 6:00 AM local
+  </div>
+</div>
+
+<!-- BCP/DR CLIENT ALERT BANNER -->
+<div class="client-alert-banner">
+  <div class="alert-label">⚠ BCP/DR Client Alert — April 23, 2026</div>
+  <ul>
+    <li><strong>GitHub Copilot mid-cycle plan change (Apr 20):</strong> Microsoft retroactively removed Claude Opus models from Copilot Pro mid-billing cycle and is shifting to token-based billing. Clients using Copilot for productivity or DR documentation workflows face unexpected access disruption and rising costs — review enterprise agreements now.</li>
+    <li><strong>Microsoft 365 Copilot supply-chain disclosure:</strong> Claude Sonnet (Anthropic) now powers Copilot Chat Frontier alongside OpenAI models. Clients with data-residency or AI vendor restrictions in their BCP/DR policies must update their acceptable-use inventories.</li>
+    <li><strong>Meta Muse Spark — closed/proprietary model:</strong> Meta's first non-open-weight model (released Apr 8) changes the data handling posture of Meta AI for enterprise use. Clients that relied on open-weight Llama for auditability must reassess if they adopt Muse Spark.</li>
+    <li><strong>Keepit DR Readiness Survey:</strong> Only 41% of orgs have significantly updated DR plans for agentic AI; identity system restoration is tested 4× less often than productivity systems — critical gap for agentic AI workflows.</li>
+  </ul>
+</div>
+
+<!-- SECTION 1: TOP 3 MOVES -->
+<div class="section-heading">Top 3 Moves of the Day</div>
+<div class="top3-grid">
+
+  <div class="move-card">
+    <div class="move-rank">01</div>
+    <div class="move-title">OpenAI: ChatGPT Images 2.0 + Codex Workspace Agents</div>
+    <div class="move-body">OpenAI launched ChatGPT Images 2.0 with native reasoning ("thinking mode"), 2K resolution, and multi-image consistency on April 21–22. Simultaneously, Codex-powered workspace agents were introduced for teams, enabling long-running, cross-tool workflows — a direct enterprise productivity play.</div>
+    <span class="move-date">Apr 21–22, 2026</span>
+  </div>
+
+  <div class="move-card">
+    <div class="move-rank">02</div>
+    <div class="move-title">Anthropic: Claude Opus 4.7 GA + Claude Design + Cowork GA</div>
+    <div class="move-body">Claude Opus 4.7 launched April 16 with improved agentic coding, higher-res vision, and stronger benchmark scores. Anthropic simultaneously launched Claude Design (prototype/slide creation), Cowork GA for macOS/Windows with enterprise RBAC, and Managed Agents public beta — the broadest platform expansion this month.</div>
+    <span class="move-date">Apr 16–22, 2026</span>
+  </div>
+
+  <div class="move-card alert-card">
+    <div class="move-rank">03</div>
+    <div class="move-title">⚠ GitHub Copilot: Mid-Cycle Plan Change &amp; Token Billing Shift</div>
+    <div class="move-body">GitHub retroactively removed Opus 4.5/4.6 from Copilot Pro mid-billing cycle on April 20 and restricted Opus 4.7 to Pro+ only ($X vs $10/mo Pro). Token-based billing is being phased in as weekly costs nearly doubled since January. Clients using Copilot in DR documentation pipelines need immediate vendor risk review.</div>
+    <span class="move-date">Apr 20, 2026</span>
+  </div>
+
+</div>
+
+<!-- SECTION 2: PROVIDER TABLE -->
+<div class="section-heading">Provider-by-Provider Updates</div>
+<table>
+  <thead>
+    <tr>
+      <th style="width:13%">Provider</th>
+      <th style="width:57%">What Changed</th>
+      <th style="width:30%">Classification</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="provider-name">OpenAI</td>
+      <td>ChatGPT Images 2.0 launched Apr 21–22: native reasoning, 2K res, multi-image consistency. Codex workspace agents enable shared, long-running team workflows. GPT-Rosalind life sciences model in research preview. Interactive learning (70+ STEM topics) live.</td>
+      <td><span class="tag strategic">Strategic</span></td>
+    </tr>
+    <tr>
+      <td class="provider-name">Anthropic</td>
+      <td>Claude Opus 4.7 GA (Apr 16): improved agentic coding, better vision, stronger benchmarks. Claude Design (visual output/prototypes) launched. Cowork now GA with RBAC for Enterprise. Managed Agents in public beta. Ant CLI released for API interaction.</td>
+      <td><span class="tag strategic">Strategic</span></td>
+    </tr>
+    <tr>
+      <td class="provider-name">Google Gemini</td>
+      <td>Gemini 3.1 Pro for complex reasoning + Gemini 3.1 Flash TTS (70+ language TTS with audio style tags) launched. Gemini Enterprise now supports Bring Your Own MCP, enabling internal tool connections. Cross-platform chat import from ChatGPT/Claude. Robotics model updated (er-1.6-preview).</td>
+      <td><span class="tag strategic">Strategic</span></td>
+    </tr>
+    <tr>
+      <td class="provider-name">xAI / Grok</td>
+      <td>Grok 4.3 Beta quietly launched Apr 17: native video understanding, AI slide/PDF/spreadsheet generation, STT and TTS APIs now GA (25 languages, multi-speaker diarization). SuperGrok Heavy tier ($300/mo). Grok 5 targeting Q2 2026 from Colossus 2 (1.5 GW compute). $20B Series E closed.</td>
+      <td><span class="tag strategic">Strategic</span> <span class="tag monitor">Monitor</span></td>
+    </tr>
+    <tr>
+      <td class="provider-name">Meta AI</td>
+      <td>Muse Spark (Apr 8): Meta's first closed/proprietary frontier model — not open-weight, hosted-only on meta.ai. Llama 4 Scout &amp; Maverick open weights released Apr 5 (MoE, 10M/1M context). LlamaCon scheduled Apr 29 for further announcements.</td>
+      <td><span class="tag alert">Client Alert</span> <span class="tag strategic">Strategic</span></td>
+    </tr>
+    <tr>
+      <td class="provider-name">Mistral AI</td>
+      <td>Voxtral TTS (voxtral-tts-2603): state-of-the-art TTS with zero-shot voice cloning, 9 languages, $0.016/1k chars. Voxtral Mini Transcribe V2 at $0.003/min. No new model announced in April as of today; Mistral's recent cadence (6 products in 15 days in March) suggests more may come before month end.</td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+    <tr>
+      <td class="provider-name">Perplexity</td>
+      <td>Perplexity Computer for Mac launched mid-April (all Max subscribers + waitlist): reads/writes local files, integrates with iMessage, Mail, Calendar. Deep Research upgraded to Claude Opus 4.6. GPT-5.2 and Seedream 4.5 added for Pro/Max. New Enterprise audit log controls live.</td>
+      <td><span class="tag tactical">Tactical</span> <span class="tag strategic">Strategic</span></td>
+    </tr>
+    <tr>
+      <td class="provider-name">Microsoft 365 Copilot</td>
+      <td>Claude Sonnet added to Copilot Chat (Frontier) alongside OpenAI models — supply-chain disclosure. Teams: meeting summaries now include narrated highlight reels. SharePoint: Knowledge Agent → "AI in SharePoint" with plain-English site building. Excel: Work IQ pulls email/meeting context. PowerPoint: global style standardization.</td>
+      <td><span class="tag alert">Client Alert</span> <span class="tag strategic">Strategic</span></td>
+    </tr>
+    <tr>
+      <td class="provider-name">GitHub Copilot</td>
+      <td>Retroactive mid-cycle plan change (Apr 20): Opus 4.5/4.6 removed from Pro; Opus 4.7 locked to Pro+ only. Token-based billing rollout underway. <code>gh skill</code> command in public preview (Apr 16): install/publish agent skills across Claude Code, Copilot, Cursor, Gemini CLI from one CLI.</td>
+      <td><span class="tag alert">Client Alert</span> <span class="tag tactical">Tactical</span></td>
+    </tr>
+    <tr>
+      <td class="provider-name">Cursor</td>
+      <td class="no-update">No headline release today. Cursor remains an AI-native IDE at $20/mo; watch for response to GitHub's gh skill standardization initiative which could affect Cursor's plugin ecosystem.</td>
+      <td><span class="tag monitor">Monitor</span></td>
+    </tr>
+    <tr>
+      <td class="provider-name">Gamma</td>
+      <td>Gamma Imagine (launched Mar 17) now stable: AI image generation for marketing assets, charts, social graphics. Pricing revised with new Ultra tier (early access features, 100 custom domains). No new April-specific Gamma release today.</td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+    <tr>
+      <td class="provider-name">Notion AI</td>
+      <td>Notion 3.4 Part 2 (Apr 14): Workers for Agents (code execution in AI), voice input for AI prompts on desktop, AI meeting notes via Cmd+K, custom instructions for meeting notes. Mail &amp; Calendar settings tab (Apr 17): AI can now schedule meetings and draft emails. Views API with 8 endpoints live.</td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- SECTION 3: WORKFLOW SHIFT TABLE -->
+<div class="section-heading">Shift Your Habits — BCP/DR Consulting Workflow</div>
+<table>
+  <thead>
+    <tr>
+      <th style="width:22%">Task</th>
+      <th style="width:18%">Current Tool (Assumed)</th>
+      <th style="width:40%">Recommended Shift</th>
+      <th style="width:20%">Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Drafting BCP/DR plan narratives &amp; runbooks</strong></td>
+      <td>Claude Opus 4.6 / ChatGPT</td>
+      <td>Upgrade to <strong>Claude Opus 4.7</strong> — improved long-context coherence and agentic multi-step workflows. Use Cowork (now GA) for persistent agent threads on multi-day plan builds. Notion AI's Agents + code execution useful for structured plan templates.</td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+    <tr>
+      <td><strong>Summarizing standards (ISO 22301, NIST SP 800-34, SOC 2)</strong></td>
+      <td>ChatGPT / Perplexity</td>
+      <td><strong>Perplexity Deep Research (now on Opus 4.6)</strong> for cited, sourced standard summaries with audit trail. Note NIST's new AI RMF Profile for Critical Infrastructure (Apr 7) — run a fresh summary now. Claude Opus 4.7 for deep synthesis with cross-standard mapping.</td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+    <tr>
+      <td><strong>Vendor / architecture research</strong></td>
+      <td>Perplexity / Google Gemini</td>
+      <td><strong>Gemini 3.1 Pro</strong> for architecture diagrams and technical synthesis (strong multimodal). <strong>Perplexity Computer for Mac</strong> now reads local vendor docs. For AI vendor risk specifically: check Copilot's new Anthropic supply-chain disclosure against client data policies.</td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+    <tr>
+      <td><strong>Client proposals &amp; SOWs</strong></td>
+      <td>Claude / ChatGPT</td>
+      <td><strong>Claude Opus 4.7</strong> remains the top choice for long-form, structured professional documents. Consider <strong>Claude Design</strong> (new) for one-pager proposals with visual polish. Notion AI for iterative SOW templates with client-specific variable fill.</td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+    <tr>
+      <td><strong>Executive decks</strong></td>
+      <td>Gamma / PowerPoint Copilot</td>
+      <td><strong>Gamma Imagine</strong> now generates branded charts/infographics inline. <strong>Grok 4.3 Beta</strong> can generate downloadable PowerPoint decks from conversation — promising for rapid-draft exec briefs. Microsoft Copilot's global slide style standardization (new in April) useful for enterprise template enforcement.</td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+    <tr>
+      <td><strong>Stakeholder audio walkthroughs</strong></td>
+      <td>Manual / Loom</td>
+      <td><strong>Mistral Voxtral TTS</strong> for high-quality narrated walkthroughs from text scripts (9 languages, zero-shot voice cloning). <strong>Gemini 3.1 Flash TTS</strong> for 70+ language support with controllable style/pacing. Both are API-accessible — evaluate for automated DR plan audio summaries.</td>
+      <td><span class="tag strategic">Strategic</span></td>
+    </tr>
+    <tr>
+      <td><strong>Client advisory on AI data risk</strong></td>
+      <td>Manual research / ChatGPT</td>
+      <td>Today's brief surfaces three active alerts: (1) GitHub Copilot mid-cycle plan change, (2) M365 Copilot adding Anthropic as a sub-processor, (3) Meta Muse Spark closed-model posture change. Use this brief as a standing client advisory template. Reference Keepit survey data: 94% confident but only 41% tested — direct client engagement hook.</td>
+      <td><span class="tag strategic">Strategic</span> <span class="tag alert">Client Alert</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- SECTION 4: COMMUNITY SIGNAL -->
+<div class="section-heading">Community Signal — Reddit</div>
+<table>
+  <thead>
+    <tr>
+      <th style="width:20%">Source</th>
+      <th style="width:45%">Signal</th>
+      <th style="width:35%">So What</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>r/ClaudeAI</strong></td>
+      <td>Claude Opus 4.7 hallucination thread ("Gaslightus 4.7") — 1.7K upvotes. Users report model inventing files, defending hallucinated test results across 10 turns in agentic coding sessions.</td>
+      <td>Flag to clients: Opus 4.7 is stronger on benchmarks but may exhibit agentic overconfidence. Recommend human-in-the-loop checkpoints for DR plan generation workflows. Don't adopt blindly.</td>
+    </tr>
+    <tr>
+      <td><strong>r/ClaudeAI</strong></td>
+      <td>Claude Design backlash: community calls generated apps visually identical ("container soup" of pills, cards, serif fonts). Moderate engagement but consistent criticism across multiple threads.</td>
+      <td>Claude Design is in early stages. Acceptable for internal draft outputs; not ready for client-facing deliverables without significant customization.</td>
+    </tr>
+    <tr>
+      <td><strong>r/LocalLLaMA</strong></td>
+      <td>Intel Arc Pro B70 (32GB GDDR6, $949, GA Mar 25) is the new community benchmark target for sub-$1K local inference. RTX 5090 vs DGX Spark vs AMD AI395 comparison thread active.</td>
+      <td>Relevant for clients exploring air-gapped or sovereign AI for sensitive BCP/DR data. 32GB VRAM opens door to larger quantized models without datacenter pricing.</td>
+    </tr>
+    <tr>
+      <td><strong>r/OpenAI / General</strong></td>
+      <td>Reddit AI tool rankings (47K+ upvotes): Anthropic API-only tier ranked #1 — beats every OpenAI product despite 40% higher token cost. Cited reason: "Claude follows instructions without negotiation."</td>
+      <td>Validates continued use of Claude for structured BCP/DR deliverables requiring precise formatting and compliance with document templates.</td>
+    </tr>
+    <tr>
+      <td><strong>r/ClaudeAI</strong></td>
+      <td>Token burn is the #1 complaint volume — session caps depleting in minutes vs. hours on Opus 4.7. Effective per-task cost reported 1.5–3× higher than Opus 4.6.</td>
+      <td>Budget impact for clients on per-seat AI subscriptions. Review actual usage patterns before recommending Opus 4.7 upgrades; may require Pro+ or API-tier migration to be cost-effective.</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- SECTION 5: WATCH LIST -->
+<div class="section-heading">Watch List — Next 7–14 Days</div>
+<div class="watchlist-grid">
+
+  <div class="watch-card hot">
+    <div class="watch-title">⚠ GitHub Copilot Token Billing Rollout</div>
+    <div class="watch-detail">Token-based billing is being phased in after weekly costs nearly doubled since January. Watch for enterprise plan impacts and forced tier upgrades that could hit clients mid-contract.</div>
+    <span class="watch-timeline">Expected: Rolling — May 2026</span>
+  </div>
+
+  <div class="watch-card hot">
+    <div class="watch-title">Meta LlamaCon — Apr 29</div>
+    <div class="watch-detail">Meta will share full Muse Spark details (closed model, data handling posture) and Llama roadmap at LlamaCon. Critical for clients using Meta AI or open-weight Llama in regulated environments.</div>
+    <span class="watch-timeline">Apr 29, 2026</span>
+  </div>
+
+  <div class="watch-card">
+    <div class="watch-title">Grok 5 — Q2 2026 Target</div>
+    <div class="watch-detail">xAI training Grok 5 on Colossus 2 (1.5 GW). Expected major capability jump. Monitor for pricing and data policy changes that could affect enterprise suitability assessments.</div>
+    <span class="watch-timeline">Q2 2026 (May–Jun)</span>
+  </div>
+
+  <div class="watch-card">
+    <div class="watch-title">NIST AI RMF — Critical Infrastructure Profile</div>
+    <div class="watch-detail">NIST released concept note Apr 7 for a new AI RMF Profile targeting critical infrastructure operators. Final guidance will directly affect client AI governance and BCP/DR program requirements.</div>
+    <span class="watch-timeline">Finalization: TBD 2026</span>
+  </div>
+
+  <div class="watch-card">
+    <div class="watch-title">GitHub gh skill — Public Preview Maturity</div>
+    <div class="watch-detail">GitHub's new standardized skill command (Apr 16 preview) unifies Claude Code, Copilot, Cursor, and Gemini CLI. Watch for GA announcement and impact on enterprise AI tooling standardization policies.</div>
+    <span class="watch-timeline">Preview → GA: TBD</span>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="brief-footer">
+  Generated: April 23, 2026 &nbsp;|&nbsp;
+  Sources consulted: OpenAI, Anthropic, Google DeepMind, xAI, Meta AI, Mistral AI, Perplexity, Microsoft Learn, GitHub Changelog, Notion Releases, releasebot.io, TechCrunch, MacRumors, 9to5Mac, 9to5Google, SiliconAngle, The New Stack, Axios, NIST, DRJ, BCI, Keepit Survey, r/ClaudeAI, r/LocalLLaMA, r/OpenAI community signals.
+</div>
+
+</body>
+</html>

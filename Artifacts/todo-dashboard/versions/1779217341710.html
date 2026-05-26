@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Todo Dashboard",
+  "schemaVersion": 1,
+  "description": "Todo dashboard pulling tasks from Chris's Master To-Do List Google Sheet (parsed live), Google Calendar (7-day events), and Gmail (starred unread). Tasks are grouped by priority bucket with category filters.",
+  "mcpTools": [
+    "mcp__1058689b-c986-40e0-9153-1645cb0b96d2__read_file_content",
+    "mcp__5634fb22-f4d5-4d0c-b782-c978a14977e1__list_events",
+    "mcp__9a815f15-06b6-4c12-b516-de5f058e68d1__search_threads"
+  ],
+  "mcpServerNames": [
+    "Google Drive",
+    "Google Calendar",
+    "Gmail"
+  ]
+}
+</script>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todo Dashboard</title>
+<style>
+:root { color-scheme: light; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f8f9fa; color: #1a1a2e; padding: 16px; font-size: 14px;
+}
+h1 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+.subtitle { font-size: 12px; color: #6b7280; margin-bottom: 14px; }
+.kpi-row { display: flex; gap: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+.kpi {
+  flex: 1; min-width: 70px; background: #fff; border-radius: 8px;
+  padding: 10px 8px; border: 1px solid #e5e7eb; text-align: center;
+}
+.kpi-value { font-size: 22px; font-weight: 700; color: #4338ca; }
+.kpi-label { font-size: 9px; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 2px; }
+
+.filters { display: flex; gap: 6px; margin-bottom: 14px; flex-wrap: wrap; }
+.filter-btn {
+  font-size: 11px; padding: 4px 10px; border-radius: 14px;
+  border: 1px solid #d1d5db; background: #fff; color: #374151;
+  cursor: pointer; font-weight: 500; transition: all 0.15s;
+}
+.filter-btn:hover { border-color: #6366f1; color: #4338ca; }
+.filter-btn.active { background: #4338ca; color: #fff; border-color: #4338ca; }
+
+/* Submit bar */
+.submit-bar {
+  position: sticky; top: 0; z-index: 10;
+  background: #4338ca; color: #fff; padding: 10px 16px;
+  border-radius: 10px; margin-bottom: 14px;
+  display: none; align-items: center; justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(67,56,202,0.3);
+  animation: slideDown 0.2s ease-out;
+}
+@keyframes slideDown { from { opacity: 0; transform: translateY(-8px); } to { opacity: 1; transform: translateY(0); } }
+.submit-bar .count { font-weight: 700; font-size: 14px; }
+.submit-bar .hint { font-size: 12px; opacity: 0.85; }
+.submit-btn {
+  background: #fff; color: #4338ca; border: none; padding: 6px 16px;
+  border-radius: 8px; font-weight: 600; font-size: 13px; cursor: pointer;
+  transition: all 0.15s;
+}
+.submit-btn:hover { background: #e0e7ff; }
+.clear-btn {
+  background: transparent; color: rgba(255,255,255,0.8); border: 1px solid rgba(255,255,255,0.3);
+  padding: 6px 12px; border-radius: 8px; font-size: 12px; cursor: pointer; margin-right: 8px;
+}
+.clear-btn:hover { background: rgba(255,255,255,0.1); }
+
+.task-section { margin-bottom: 16px; }
+.section-header {
+  font-size: 12px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.5px; color: #6b7280; margin-bottom: 6px;
+  padding-bottom: 4px; border-bottom: 1px solid #e5e7eb;
+}
+.task-row {
+  display: flex; align-items: flex-start; gap: 8px;
+  padding: 7px 4px; border-bottom: 1px solid #f3f4f6;
+  border-radius: 6px; transition: background 0.15s;
+}
+.task-row:hover { background: #f9fafb; }
+.task-row:last-child { border-bottom: none; }
+.task-row.checked-off { opacity: 0.5; }
+.task-row.checked-off .task-title { text-decoration: line-through; }
+
+/* Checkbox */
+.task-check {
+  flex-shrink: 0; width: 20px; height: 20px; margin-top: 1px;
+  appearance: none; -webkit-appearance: none;
+  border: 2px solid #d1d5db; border-radius: 5px; cursor: pointer;
+  transition: all 0.15s; position: relative; background: #fff;
+}
+.task-check:hover { border-color: #6366f1; }
+.task-check:checked {
+  background: #4338ca; border-color: #4338ca;
+}
+.task-check:checked::after {
+  content: ''; position: absolute; top: 2px; left: 5px;
+  width: 5px; height: 9px; border: solid #fff; border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.task-body { flex: 1; min-width: 0; }
+.task-title { font-size: 13px; font-weight: 500; color: #1a1a2e; line-height: 1.4; }
+.task-detail { font-size: 11px; color: #9ca3af; margin-top: 1px; }
+.task-tags { display: flex; gap: 4px; margin-top: 3px; }
+.tag {
+  font-size: 9px; padding: 1px 6px; border-radius: 8px;
+  font-weight: 600; text-transform: uppercase; letter-spacing: 0.3px;
+}
+.tag-priority { background: #fee2e2; color: #dc2626; }
+.tag-category { background: #e0e7ff; color: #4338ca; }
+
+/* Grid layout */
+.grid { display: grid; grid-template-columns: 1fr 280px; gap: 12px; }
+@media (max-width: 700px) { .grid { grid-template-columns: 1fr; } }
+.card {
+  background: #fff; border-radius: 10px; padding: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06); border: 1px solid #e5e7eb;
+}
+.card-header {
+  display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px;
+}
+.card-title {
+  font-size: 12px; font-weight: 600; text-transform: uppercase;
+  letter-spacing: 0.5px; color: #6b7280;
+}
+.badge {
+  font-size: 11px; font-weight: 600; padding: 2px 8px;
+  border-radius: 10px; background: #e0e7ff; color: #4338ca;
+}
+.cal-item { padding: 6px 0; border-bottom: 1px solid #f3f4f6; }
+.cal-item:last-child { border-bottom: none; }
+.cal-item a {
+  font-size: 13px; font-weight: 500; color: #2563eb; text-decoration: none; line-height: 1.4;
+}
+.cal-item a:hover { text-decoration: underline; }
+.cal-meta { font-size: 11px; color: #9ca3af; margin-top: 1px; }
+
+.sheet-link {
+  display: inline-block; margin-bottom: 12px;
+  font-size: 12px; color: #4338ca; text-decoration: none; font-weight: 500;
+}
+.sheet-link:hover { text-decoration: underline; }
+
+.empty { text-align: center; padding: 20px; color: #9ca3af; font-size: 12px; font-style: italic; }
+.loading { text-align: center; padding: 20px; color: #9ca3af; font-size: 12px; }
+.loading::after {
+  content: ''; display: inline-block; width: 12px; height: 12px;
+  border: 2px solid #d1d5db; border-top-color: #6366f1;
+  border-radius: 50%; animation: spin 0.8s linear infinite;
+  margin-left: 6px; vertical-align: middle;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.error-msg {
+  color: #ef4444; font-size: 11px; padding: 8px;
+  background: #fef2f2; border-radius: 6px; word-break: break-all;
+}
+</style>
+</head>
+<body>
+
+<h1>Todo Dashboard</h1>
+<div class="subtitle" id="timestamp">Loading...</div>
+
+<div class="submit-bar" id="submit-bar">
+  <div>
+    <span class="count" id="checked-count">0</span>
+    <span class="hint"> tasks to mark Done</span>
+  </div>
+  <div>
+    <button class="clear-btn" id="clear-btn">Clear</button>
+    <button class="submit-btn" id="submit-btn">Submit Updates</button>
+  </div>
+</div>
+
+<div class="kpi-row">
+  <div class="kpi"><div class="kpi-value" id="kpi-open">-</div><div class="kpi-label">Open</div></div>
+  <div class="kpi"><div class="kpi-value" id="kpi-progress">-</div><div class="kpi-label">In Progress</div></div>
+  <div class="kpi"><div class="kpi-value" id="kpi-today">-</div><div class="kpi-label">Today</div></div>
+  <div class="kpi"><div class="kpi-value" id="kpi-events">-</div><div class="kpi-label">Events (7d)</div></div>
+</div>
+
+<div id="filters" class="filters"></div>
+
+<div class="grid">
+  <div>
+    <a class="sheet-link" href="https://docs.google.com/spreadsheets/d/1ZTEmDPDAY6Ta7zIZOSaPNmtD-WQ_7KR8rJEZFLFRhEA/edit" target="_blank" rel="noopener">Open in Sheets &rarr;</a>
+    <div id="task-list"><div class="loading">Loading tasks</div></div>
+  </div>
+  <div>
+    <div class="card" style="margin-bottom:12px;">
+      <div class="card-header">
+        <span class="card-title">Calendar (7 days)</span>
+        <span class="badge" id="cal-badge">...</span>
+      </div>
+      <div id="cal-list"><div class="loading">Loading</div></div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+        <span class="card-title">Starred Email</span>
+        <span class="badge" id="mail-badge">...</span>
+      </div>
+      <div id="mail-list"><div class="loading">Loading</div></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const SHEET_ID = '1ZTEmDPDAY6Ta7zIZOSaPNmtD-WQ_7KR8rJEZFLFRhEA';
+const checkedTasks = new Set();
+
+function unwrap(res) {
+  if (!res) return res;
+  if (res.content && Array.isArray(res.content)) {
+    for (const block of res.content) {
+      if (block.type === 'text' && typeof block.text === 'string') {
+        try { return JSON.parse(block.text); } catch(e) { return block.text; }
+      }
+    }
+  }
+  if (typeof res === 'string') { try { return JSON.parse(res); } catch(e) { return res; } }
+  return res;
+}
+
+function escHtml(s) {
+  if (!s) return '';
+  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function formatDate(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  const now = new Date();
+  const timeOpts = { hour: 'numeric', minute: '2-digit' };
+  if (d.toDateString() === now.toDateString()) return 'Today ' + d.toLocaleTimeString('en-US', timeOpts);
+  const tom = new Date(now); tom.setDate(tom.getDate() + 1);
+  if (d.toDateString() === tom.toDateString()) return 'Tomorrow ' + d.toLocaleTimeString('en-US', timeOpts);
+  return d.toLocaleDateString('en-US', { weekday: 'short', month: 'short', day: 'numeric' }) + ' ' + d.toLocaleTimeString('en-US', timeOpts);
+}
+
+// --- Submit bar logic ---
+function updateSubmitBar() {
+  const bar = document.getElementById('submit-bar');
+  const countEl = document.getElementById('checked-count');
+  if (checkedTasks.size > 0) {
+    bar.style.display = 'flex';
+    countEl.textContent = checkedTasks.size;
+  } else {
+    bar.style.display = 'none';
+  }
+}
+
+document.getElementById('clear-btn').addEventListener('click', () => {
+  checkedTasks.clear();
+  document.querySelectorAll('.task-check').forEach(cb => {
+    cb.checked = false;
+    cb.closest('.task-row').classList.remove('checked-off');
+  });
+  updateSubmitBar();
+});
+
+document.getElementById('submit-btn').addEventListener('click', () => {
+  if (checkedTasks.size === 0) return;
+  const items = [...checkedTasks];
+  const msg = 'Please mark these tasks as Done in my Master To-Do List spreadsheet:\n' +
+    items.map((t, i) => (i + 1) + '. ' + t).join('\n');
+  try {
+    if (typeof sendPrompt === 'function') {
+      sendPrompt(msg);
+    } else if (window.cowork && typeof window.cowork.sendPrompt === 'function') {
+      window.cowork.sendPrompt(msg);
+    } else if (typeof window.sendPrompt === 'function') {
+      window.sendPrompt(msg);
+    } else {
+      // Fallback: copy to clipboard and alert
+      navigator.clipboard.writeText(msg).then(() => {
+        alert('Copied update list to clipboard — paste it into the chat.');
+      }).catch(() => {
+        alert('sendPrompt not available. Here are your updates:\n\n' + msg);
+      });
+    }
+  } catch (err) {
+    alert('Error sending updates: ' + err.message + '\n\nYour updates:\n' + msg);
+  }
+});
+
+// --- Task parsing & rendering ---
+function parseTaskTable(text) {
+  if (!text) return [];
+  const lines = text.split('\n').filter(l => l.trim().startsWith('|'));
+  if (lines.length < 3) return [];
+  const tasks = [];
+  for (let i = 2; i < lines.length; i++) {
+    const cols = lines[i].split('|').map(c => c.trim()).filter(c => c !== '');
+    if (cols.length >= 4) {
+      tasks.push({
+        status: cols[0] || '', priority: cols[1] || '',
+        category: cols[2] || '', item: cols[3] || '',
+        detail: cols[4] || '', notes: cols[5] || ''
+      });
+    }
+  }
+  return tasks;
+}
+
+let allTasks = [];
+let activeFilter = 'open';
+
+function renderTasks() {
+  const container = document.getElementById('task-list');
+  let filtered = allTasks;
+  if (activeFilter === 'open') filtered = allTasks.filter(t => t.status !== 'Done');
+  else if (activeFilter !== 'all') filtered = allTasks.filter(t => t.category === activeFilter && t.status !== 'Done');
+
+  const buckets = {};
+  const order = ['Today', 'HIGH', 'Active', 'Daily', 'This Week', 'Weekly', 'Pending', 'Schedule', 'Backlog'];
+  for (const t of filtered) {
+    const bucket = t.priority || 'Other';
+    if (!buckets[bucket]) buckets[bucket] = [];
+    buckets[bucket].push(t);
+  }
+
+  let html = '';
+  const renderBucket = (key, items) => {
+    if (!items || items.length === 0) return '';
+    let h = `<div class="task-section"><div class="section-header">${escHtml(key)}</div>`;
+    for (const t of items) {
+      const isChecked = checkedTasks.has(t.item);
+      const statusClass = t.status === 'In Progress' ? 'status-progress' : 'status-open';
+      const isHigh = t.priority === 'HIGH' || t.priority === 'Today';
+      h += `<div class="task-row${isChecked ? ' checked-off' : ''}">
+        <input type="checkbox" class="task-check" data-item="${escHtml(t.item)}" ${isChecked ? 'checked' : ''}>
+        <div class="task-body">
+          <div class="task-title">${escHtml(t.item)}</div>
+          ${t.detail ? `<div class="task-detail">${escHtml(t.detail)}</div>` : ''}
+          <div class="task-tags">
+            <span class="tag tag-category">${escHtml(t.category)}</span>
+            ${isHigh ? `<span class="tag tag-priority">${escHtml(t.priority)}</span>` : ''}
+          </div>
+        </div>
+      </div>`;
+    }
+    h += '</div>';
+    return h;
+  };
+
+  for (const key of order) {
+    html += renderBucket(key, buckets[key]);
+    delete buckets[key];
+  }
+  for (const [key, items] of Object.entries(buckets)) {
+    html += renderBucket(key, items);
+  }
+
+  container.innerHTML = html || '<div class="empty">No tasks match filter</div>';
+
+  // Bind checkbox events
+  container.querySelectorAll('.task-check').forEach(cb => {
+    cb.addEventListener('change', (e) => {
+      const item = e.target.dataset.item;
+      if (e.target.checked) {
+        checkedTasks.add(item);
+        e.target.closest('.task-row').classList.add('checked-off');
+      } else {
+        checkedTasks.delete(item);
+        e.target.closest('.task-row').classList.remove('checked-off');
+      }
+      updateSubmitBar();
+    });
+  });
+}
+
+function buildFilters() {
+  const openTasks = allTasks.filter(t => t.status !== 'Done');
+  const categories = [...new Set(openTasks.map(t => t.category))].sort();
+  const container = document.getElementById('filters');
+  let html = `<button class="filter-btn" data-filter="all">All</button>`;
+  html += `<button class="filter-btn active" data-filter="open">Open Only</button>`;
+  for (const cat of categories) {
+    if (cat) html += `<button class="filter-btn" data-filter="${escHtml(cat)}">${escHtml(cat)}</button>`;
+  }
+  container.innerHTML = html;
+  container.addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    container.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    activeFilter = btn.dataset.filter;
+    try { localStorage.setItem('todo-filter', activeFilter); } catch(e) {}
+    renderTasks();
+  });
+  try {
+    const saved = localStorage.getItem('todo-filter');
+    if (saved) {
+      activeFilter = saved;
+      container.querySelectorAll('.filter-btn').forEach(b => {
+        b.classList.toggle('active', b.dataset.filter === saved);
+      });
+    }
+  } catch(e) {}
+}
+
+async function loadTasks() {
+  try {
+    const raw = await window.cowork.callMcpTool(
+      'mcp__1058689b-c986-40e0-9153-1645cb0b96d2__read_file_content',
+      { fileId: SHEET_ID }
+    );
+    const res = unwrap(raw);
+    const text = typeof res === 'string' ? res : (res?.fileContent || res?.content || res?.text || '');
+    if (!text) {
+      document.getElementById('task-list').innerHTML = '<div class="error-msg">Could not read spreadsheet. Raw: ' + escHtml(JSON.stringify(raw).substring(0, 300)) + '</div>';
+      return;
+    }
+    allTasks = parseTaskTable(text);
+    const open = allTasks.filter(t => t.status === 'Open' || t.status === 'In Progress');
+    const progress = allTasks.filter(t => t.status === 'In Progress');
+    const today = allTasks.filter(t => (t.priority === 'Today' || t.priority === 'Daily') && t.status !== 'Done');
+    document.getElementById('kpi-open').textContent = open.length;
+    document.getElementById('kpi-progress').textContent = progress.length;
+    document.getElementById('kpi-today').textContent = today.length;
+    buildFilters();
+    renderTasks();
+  } catch (err) {
+    document.getElementById('task-list').innerHTML = `<div class="error-msg">Tasks: ${escHtml(err.message || String(err))}</div>`;
+  }
+}
+
+async function loadCalendar() {
+  try {
+    const now = new Date();
+    const end = new Date(now); end.setDate(end.getDate() + 7);
+    const raw = await window.cowork.callMcpTool(
+      'mcp__5634fb22-f4d5-4d0c-b782-c978a14977e1__list_events',
+      { startTime: now.toISOString(), endTime: end.toISOString(), pageSize: 20, orderBy: 'startTime' }
+    );
+    const res = unwrap(raw);
+    const events = res?.events || [];
+    document.getElementById('kpi-events').textContent = events.length;
+    document.getElementById('cal-badge').textContent = events.length;
+    if (events.length === 0) {
+      document.getElementById('cal-list').innerHTML = '<div class="empty">No events in the next 7 days</div>';
+      return;
+    }
+    document.getElementById('cal-list').innerHTML = events.map(e => {
+      const start = e.start?.dateTime || e.start?.date || '';
+      return `<div class="cal-item"><a href="${escHtml(e.htmlLink || '#')}" target="_blank" rel="noopener">${escHtml(e.summary || '(No title)')}</a><div class="cal-meta">${escHtml(formatDate(start))}</div></div>`;
+    }).join('');
+  } catch (err) {
+    document.getElementById('cal-list').innerHTML = `<div class="error-msg">${escHtml(err.message || String(err))}</div>`;
+  }
+}
+
+async function loadMail() {
+  try {
+    const raw = await window.cowork.callMcpTool(
+      'mcp__9a815f15-06b6-4c12-b516-de5f058e68d1__search_threads',
+      { query: 'is:starred is:unread', pageSize: 10 }
+    );
+    const res = unwrap(raw);
+    const threads = res?.threads || [];
+    document.getElementById('mail-badge').textContent = threads.length;
+    if (threads.length === 0) {
+      document.getElementById('mail-list').innerHTML = '<div class="empty">No starred unread threads</div>';
+      return;
+    }
+    document.getElementById('mail-list').innerHTML = threads.map(t => {
+      const msg = t.messages?.[0] || {};
+      const url = 'https://mail.google.com/mail/u/0/#inbox/' + t.id;
+      const sender = (msg.sender || '').replace(/<.*>/, '').trim();
+      return `<div class="cal-item"><a href="${escHtml(url)}" target="_blank" rel="noopener">${escHtml(msg.subject || '(No subject)')}</a><div class="cal-meta">${escHtml(sender)}</div></div>`;
+    }).join('');
+  } catch (err) {
+    document.getElementById('mail-list').innerHTML = `<div class="error-msg">${escHtml(err.message || String(err))}</div>`;
+  }
+}
+
+async function init() {
+  const now = new Date();
+  document.getElementById('timestamp').textContent =
+    'Last refreshed: ' + now.toLocaleString('en-US', { weekday: 'long', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+  await Promise.allSettled([loadTasks(), loadCalendar(), loadMail()]);
+}
+
+init();
+</script>
+</body>
+</html>

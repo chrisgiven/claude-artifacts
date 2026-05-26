@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Ai Daily Brief",
+  "schemaVersion": 1,
+  "description": "Daily AI industry brief for Chris (IT consultant, BCP/DR focus). Updated each morning at 6am local by a scheduled task that WebSearches the major AI providers and Reddit community signal, then synthesizes a structured brief with habit-shift recommendations tailored to BCP/DR consulting work. No live connectors called from the artifact itself — the scheduled task rewrites the HTML in place."
+}
+</script>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Daily Brief — May 3, 2026</title>
+<style>
+  :root { color-scheme: light; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: #fafafa;
+    color: #1a1a1a;
+    font-size: 14px;
+    line-height: 1.5;
+    padding: 24px 20px 48px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* HEADER */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 2px solid #1a1a1a;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .header h1 {
+    font-size: 26px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
+  }
+  .header .subtitle {
+    font-size: 12px;
+    color: #555;
+    margin-top: 4px;
+  }
+  .header .stamp {
+    text-align: right;
+    font-size: 11px;
+    color: #777;
+    white-space: nowrap;
+  }
+  .header .stamp strong {
+    display: block;
+    font-size: 13px;
+    color: #1a1a1a;
+    font-weight: 600;
+  }
+
+  /* CLIENT ALERT BANNER */
+  .client-alert {
+    background: #fffbea;
+    border-left: 4px solid #c99400;
+    padding: 12px 16px;
+    margin-bottom: 24px;
+    border-radius: 0 4px 4px 0;
+  }
+  .client-alert .alert-label {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #8a6500;
+    margin-bottom: 4px;
+  }
+  .client-alert ul {
+    margin: 6px 0 0 16px;
+    font-size: 13px;
+    color: #4a3800;
+  }
+  .client-alert ul li { margin-bottom: 4px; }
+
+  /* SECTION HEADINGS */
+  .section-title {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: #444;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 6px;
+    margin: 28px 0 14px;
+  }
+
+  /* TOP 3 CARDS */
+  .top3-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 14px;
+    margin-bottom: 4px;
+  }
+  .move-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 14px 16px;
+    position: relative;
+  }
+  .move-card .rank {
+    font-size: 28px;
+    font-weight: 800;
+    color: #e8e8e8;
+    position: absolute;
+    top: 10px;
+    right: 14px;
+    line-height: 1;
+  }
+  .move-card .provider-badge {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #888;
+    margin-bottom: 6px;
+  }
+  .move-card h3 {
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    padding-right: 30px;
+    line-height: 1.3;
+  }
+  .move-card p {
+    font-size: 12.5px;
+    color: #444;
+    line-height: 1.5;
+  }
+  .move-card .datestamp {
+    font-size: 11px;
+    color: #888;
+    margin-top: 8px;
+    font-style: italic;
+  }
+
+  /* TAGS */
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    padding: 2px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .tag.tactical  { background: #dbeafe; color: #1d4ed8; }
+  .tag.strategic { background: #ede9fe; color: #6d28d9; }
+  .tag.alert     { background: #fee2e2; color: #b91c1c; }
+  .tag.watch     { background: #fef3c7; color: #92400e; }
+
+  /* TABLES */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  thead tr {
+    background: #f4f4f4;
+  }
+  th {
+    text-align: left;
+    padding: 9px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+    color: #555;
+    border-bottom: 1px solid #e0e0e0;
+  }
+  td {
+    padding: 9px 12px;
+    border-bottom: 1px solid #f0f0f0;
+    vertical-align: top;
+    line-height: 1.45;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #fafafa; }
+  td strong { font-weight: 600; }
+  td .subdued { color: #888; font-size: 12px; font-style: italic; }
+
+  /* COMMUNITY CARDS */
+  .community-table td:nth-child(3) { color: #444; }
+
+  /* WATCH LIST */
+  .watchlist {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 12px;
+  }
+  .watch-card {
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    padding: 12px 14px;
+  }
+  .watch-card .wc-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 6px;
+    gap: 6px;
+  }
+  .watch-card h4 {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 1.3;
+    flex: 1;
+  }
+  .watch-card p {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.45;
+  }
+  .watch-card .timing {
+    font-size: 11px;
+    color: #888;
+    margin-top: 6px;
+    font-style: italic;
+  }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 40px;
+    padding-top: 16px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 11px;
+    color: #999;
+  }
+
+  /* NO-UPDATE ROW */
+  .no-update { color: #999; font-style: italic; }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <h1>AI Daily Brief</h1>
+    <div class="subtitle">Prepared for Chris G. — IT Consultant, BCP/DR &amp; Resilience</div>
+  </div>
+  <div class="stamp">
+    <strong>May 3, 2026</strong>
+    Refreshes daily at 6:00 AM local
+  </div>
+</div>
+
+<!-- BCP/DR CLIENT ALERT BANNER -->
+<div class="client-alert">
+  <div class="alert-label">⚠ BCP/DR Client Alert — 2 items</div>
+  <ul>
+    <li><strong>Grok Supply-Chain Disclosure:</strong> Elon Musk testified in April/May 2026 that xAI trained Grok partly on OpenAI models. Clients using Grok as an OpenAI alternative should treat this as a data-provenance/IP risk flag pending further disclosure.</li>
+    <li><strong>DR Readiness Gap Survey:</strong> New research (BusinessWire, Apr 21) shows 94% of orgs claim confidence in AI-era DR plans — but only 41% have materially updated those plans. Direct advisory opportunity for your BCP/DR engagements.</li>
+  </ul>
+</div>
+
+
+<!-- SECTION 1: TOP 3 MOVES -->
+<div class="section-title">Top 3 Moves of the Day</div>
+<div class="top3-grid">
+
+  <div class="move-card">
+    <div class="rank">1</div>
+    <div class="provider-badge">OpenAI</div>
+    <h3>GPT-5.5 Launches Across ChatGPT &amp; Codex</h3>
+    <p>OpenAI's most capable model to date — stronger agentic coding, computer use, and knowledge work. Replaces GPT-5 as the primary model on paid plans with expanded safeguards. GPT-5.3 Instant Mini becomes the new rate-limit fallback.</p>
+    <div class="datestamp">Released: May 2026 · <span class="tag strategic">Strategic</span></div>
+  </div>
+
+  <div class="move-card">
+    <div class="rank">2</div>
+    <div class="provider-badge">Microsoft</div>
+    <h3>M365 E7 Frontier Suite GA — Copilot + Agent 365 Bundled</h3>
+    <p>Microsoft 365 E7 became generally available May 1, bundling M365 E5, Copilot, and Agent 365 into a single enterprise SKU. Excel now supports GPT-5.5 and Claude Opus 4.7 as model backends. Agentic Outlook (auto-accept meetings, inbox management) entering Frontier for Business.</p>
+    <div class="datestamp">Released: May 1, 2026 · <span class="tag strategic">Strategic</span></div>
+  </div>
+
+  <div class="move-card">
+    <div class="rank">3</div>
+    <div class="provider-badge">xAI</div>
+    <h3>Grok 4.3 Full Rollout — 40% Price Cut, 1M Context, Video</h3>
+    <p>Grok 4.3 API completed full rollout April 30: ~40% input price reduction, 1M token context window, native video input, and always-on continuous reasoning. Custom Voices (voice cloning) also launched. Grok 5 targeting Q2 2026.</p>
+    <div class="datestamp">Released: April 30–May 2026 · <span class="tag strategic">Strategic</span></div>
+  </div>
+
+</div>
+
+
+<!-- SECTION 2: PROVIDER UPDATES -->
+<div class="section-title">Provider-by-Provider Updates</div>
+<table>
+  <thead>
+    <tr>
+      <th style="width:13%">Provider</th>
+      <th>What Changed</th>
+      <th style="width:14%">Classification</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>OpenAI</strong></td>
+      <td>GPT-5.5 launched (flagship, agentic coding + computer use). GPT-5.3 Instant Mini becomes new fallback after rate limits. Model picker added to ChatGPT composer. OpenAI–Microsoft exclusivity ended; models now available on AWS and Google Cloud. Advanced Account Security (phishing-resistant login) released.</td>
+      <td><span class="tag strategic">Strategic</span></td>
+    </tr>
+    <tr>
+      <td><strong>Anthropic</strong></td>
+      <td>Claude Opus 4.7 launched — same pricing as 4.6 ($5/$25 per MTok), improvements in software engineering, long-running agentic tasks, and higher-resolution vision. Claude Haiku 3 retired (all requests return error; migrate to Haiku 4.5). 1M-token context beta retired for Sonnet 4.5 and Sonnet 4 — migrate to Sonnet 4.6/Opus 4.6+. New <code>ant</code> CLI released for Claude API. <span class="tag alert">Alert</span> r/ClaudeAI "Gaslightus 4.7" backlash: 1.7K-upvote thread documenting hallucinated files and fabricated test results in agentic flows.</td>
+      <td><span class="tag strategic">Strategic</span></td>
+    </tr>
+    <tr>
+      <td><strong>Google Gemini</strong></td>
+      <td>Gemini 2.5 established as state-of-the-art chat model. New robotics model (gemini-robotics-er-1.6-preview) with spatial reasoning. Gemini now creates downloadable Docs/PDFs/Excel/CSV from chat. UK rollout of Memories + chat import. Gemini rolling into GM vehicles. Google testing Omni video-gen model ahead of I/O (May 19–20).</td>
+      <td><span class="tag strategic">Strategic</span></td>
+    </tr>
+    <tr>
+      <td><strong>xAI / Grok</strong></td>
+      <td>Grok 4.3 API fully rolled out (April 30): 40% price cut, 1M context, video input, always-on reasoning, Custom Voices. SuperGrok Heavy launched with much higher rate limits. Grok 5 in training targeting Q2 2026. <span class="tag alert">Alert</span> Musk testimony: Grok partially trained on OpenAI models — supply-chain data provenance flag.</td>
+      <td><span class="tag alert">Alert</span></td>
+    </tr>
+    <tr>
+      <td><strong>Meta / Llama</strong></td>
+      <td>Llama 4 Scout and Maverick available on HuggingFace and across WhatsApp/Messenger/Instagram — open-weight, natively multimodal (text/image/video/audio), MoE architecture. Llama 4 Behemoth still training (STEM benchmark leader, not yet released). No new headline release this week.</td>
+      <td><span class="tag strategic">Strategic</span></td>
+    </tr>
+    <tr>
+      <td><strong>Mistral</strong></td>
+      <td>Mistral Medium 3.5 released: 128B dense model, open weights under modified MIT license, merges instruction-following + reasoning + coding. Runs self-hosted on 4 GPUs. Vibe remote coding agents (async, cloud-based, CLI-launchable). Work mode in Le Chat for multi-step agentic tasks. Watch: Le Chat enterprise pricing.</td>
+      <td><span class="tag strategic">Strategic</span></td>
+    </tr>
+    <tr>
+      <td><strong>Perplexity</strong></td>
+      <td>Perplexity Computer for Enterprise launched at Ask 2026 conference: multi-model agent (20 models), Slack integration, Snowflake connectors, async workflows. Consumer "Computer" available on $200/month Perplexity Max. Model Council (compare multiple models simultaneously) stable. 1.2–1.5B queries/month.</td>
+      <td><span class="tag strategic">Strategic</span></td>
+    </tr>
+    <tr>
+      <td><strong>Microsoft 365 Copilot</strong></td>
+      <td>M365 E7 Frontier Suite GA May 1 (E5 + Copilot + Agent 365 bundle). Agentic Outlook entering Frontier for Business (auto-accept meetings, inbox priority, calendar reorganization). Excel Copilot adds GPT-5.5 and Claude Opus 4.7 model options + Python-powered analysis. Shared mailbox Copilot Chat access now live. Dragon Copilot price reduction effective May 1.</td>
+      <td><span class="tag strategic">Strategic</span></td>
+    </tr>
+    <tr>
+      <td><strong>GitHub Copilot</strong></td>
+      <td>CLI v1.0.40 released (May 1) — minor fix for PR branch footer display + /clear and /new reset custom agent selection. Claude Opus 4.7 and Codex now available as coding agents for Business and Pro customers. Agent Mode in VS Code stable.</td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+    <tr>
+      <td><strong>Cursor</strong></td>
+      <td class="no-update">No headline release today. Watch: adoption of Opus 4.7 as default model, potential pricing adjustments following GPT-5.5 rollout.</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td><strong>Gamma</strong></td>
+      <td>Gamma 2.0 editor (Feb 2026) stable: faster collaborative editing, version history. Chart blocks (Mar 2026) allow real editable charts from data (line/bar/pie/scatter). No new May release yet. Watch for Google I/O-era integrations.</td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+    <tr>
+      <td><strong>Notion AI</strong></td>
+      <td><span class="tag alert">Alert</span> <strong>Pricing change May 4:</strong> Custom Agents shift from free trial to paid Notion Credits model. New: Skills for Agents (save repeatable workflows), AI Autofill in databases, Calendar + email integration tab, Slack private-channel read/reply for agents. Watch client tooling costs.</td>
+      <td><span class="tag alert">Alert</span></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- SECTION 3: SHIFT YOUR HABITS -->
+<div class="section-title">Shift Your Habits — BCP/DR Consulting Workflow</div>
+<table>
+  <thead>
+    <tr>
+      <th style="width:24%">Task</th>
+      <th style="width:18%">Current Tool (assumed)</th>
+      <th>Recommended Shift</th>
+      <th style="width:12%">Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Drafting BCP/DR plan narratives &amp; runbooks</td>
+      <td>Claude Opus 4.6</td>
+      <td><strong>Upgrade to Claude Opus 4.7</strong> — same price, improved long-running agentic task handling and higher-resolution vision (useful for reviewing architecture diagrams in docs). Watch for Gaslightus hallucination reports in multi-turn agentic sessions; validate outputs.</td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+    <tr>
+      <td>Summarizing standards (ISO 22301, NIST SP 800-34, SOC 2)</td>
+      <td>Claude / ChatGPT</td>
+      <td><strong>GPT-5.5</strong> now leads on research depth and web-connected synthesis. Strong for pulling current NIST SP 800-34 rev language and cross-mapping to ISO 22301. Claude Opus 4.7 still preferred for structured long-form output if offline doc is provided.</td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+    <tr>
+      <td>Vendor / architecture research</td>
+      <td>Perplexity Pro</td>
+      <td><strong>Perplexity Computer for Enterprise</strong> now most capable for multi-step vendor research with Snowflake/Slack connectors. If on standard plan, GPT-5.5's integrated search + computer use is a strong alternative without a tier upgrade.</td>
+      <td><span class="tag strategic">Strategic</span></td>
+    </tr>
+    <tr>
+      <td>Client proposals &amp; SOWs</td>
+      <td>Claude Opus 4.6</td>
+      <td><strong>Claude Opus 4.7</strong> — no change needed on model, just upgrade version. For proposal decks using M365, note that Excel/Word Copilot now offers Opus 4.7 as a backend option within the M365 E7 suite.</td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+    <tr>
+      <td>Executive decks / slide presentations</td>
+      <td>Gamma 2.0</td>
+      <td><strong>Gamma 2.0 + Chart Blocks</strong> — mature and stable for BCP/DR decks. No new release this week. As a backup, Microsoft Copilot for PowerPoint now available in M365 E7 with GPT-5.5 model option.</td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+    <tr>
+      <td>Stakeholder audio walkthroughs</td>
+      <td>Manual / ElevenLabs</td>
+      <td>Grok 4.3 introduces <strong>Custom Voices</strong> (voice cloning suite). Evaluate for client-facing BCP walkthrough audio. Still early — validate quality and confirm data handling policy before use with client content. <span class="tag watch">Watch</span></td>
+      <td><span class="tag strategic">Strategic</span></td>
+    </tr>
+    <tr>
+      <td>Client advisory on AI data risk</td>
+      <td>Ad-hoc / manual</td>
+      <td>Leverage the <strong>DR readiness gap finding</strong> (94% confident, only 41% updated plans) as a direct advisory opener. Flag: Grok supply-chain disclosure, Notion Credits pricing shift, and M365 E7 data-residency implications as concrete conversation starters for at-risk clients.</td>
+      <td><span class="tag strategic">Strategic</span></td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- SECTION 4: COMMUNITY SIGNAL -->
+<div class="section-title">Community Signal (Reddit)</div>
+<table class="community-table">
+  <thead>
+    <tr>
+      <th style="width:16%">Source</th>
+      <th style="width:38%">Signal</th>
+      <th>So What</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>r/ClaudeAI</td>
+      <td>Opus 4.7 thread "Gaslightus 4.7" — 1.7K upvotes. Reports: model invents files, defends hallucinated test results across 10+ turns, fixates on benign files.</td>
+      <td>Don't use Opus 4.7 unattended for agentic BCP/DR doc generation yet. Validate all multi-step outputs. May want to hold on upgrading for client-facing workflows until hallucination pattern is better characterized.</td>
+    </tr>
+    <tr>
+      <td>r/OpenAI</td>
+      <td>OpenAI–Microsoft exclusivity ended. Models now available on AWS and Google Cloud. Major architecture shift in enterprise distribution.</td>
+      <td>Multi-cloud AI sourcing is now mainstream. Clients locked to Azure for OpenAI should explore whether switching cloud providers changes their DR/BCP posture or data-residency obligations.</td>
+    </tr>
+    <tr>
+      <td>r/OpenAI</td>
+      <td>GPT-5.5 launch buzz — community positions it as step-change for agentic task execution vs. prior GPT-5 family.</td>
+      <td>Worth testing for BCP narrative drafting and standard summarization tasks where agentic multi-step research is needed. Compare against Opus 4.7 before committing to a workflow shift.</td>
+    </tr>
+    <tr>
+      <td>r/LocalLLaMA</td>
+      <td>Mistral Medium 3.5 open weights (MIT license, 128B, 4-GPU self-hosted) getting significant attention as a credible enterprise-grade self-hosted option.</td>
+      <td>Relevant for clients with strict data-residency requirements who can't use cloud-hosted models. Flag Mistral Medium 3.5 as the current top self-hosted option for BCP/DR plan generation and standard summarization.</td>
+    </tr>
+  </tbody>
+</table>
+
+
+<!-- SECTION 5: WATCH LIST -->
+<div class="section-title">Watch List — Next 7–14 Days</div>
+<div class="watchlist">
+
+  <div class="watch-card">
+    <div class="wc-header">
+      <h4>Google I/O 2026</h4>
+      <span class="tag watch">Watch</span>
+    </div>
+    <p>Major model and product announcements expected. Gemini Omni video gen being tested pre-show. Likely: Gemini 3 preview, new Workspace AI integrations, and updated data-handling disclosures.</p>
+    <div class="timing">May 19–20, 2026</div>
+  </div>
+
+  <div class="watch-card">
+    <div class="wc-header">
+      <h4>Grok 5 Launch</h4>
+      <span class="tag watch">Watch</span>
+    </div>
+    <p>xAI targeting Q2 2026 release of Grok 5 (reportedly ~6T parameters). Claimed AGI-level performance. Given the Grok 4.3 training-data disclosure, any Grok 5 data provenance statement is a client advisory item.</p>
+    <div class="timing">Q2 2026 (imminent)</div>
+  </div>
+
+  <div class="watch-card">
+    <div class="wc-header">
+      <h4>Notion Credits Billing Starts</h4>
+      <span class="tag alert">Alert</span>
+    </div>
+    <p>Notion Custom Agents move from free trial to paid Notion Credits on May 4. Any client using Notion for BCP/DR workflow automation should audit agent usage and project cost impact before the cutover.</p>
+    <div class="timing">May 4, 2026 — immediate</div>
+  </div>
+
+  <div class="watch-card">
+    <div class="wc-header">
+      <h4>Anthropic Opus 4.7 Hallucination Watch</h4>
+      <span class="tag alert">Alert</span>
+    </div>
+    <p>Monitor r/ClaudeAI and Anthropic release notes for an Opus 4.7 patch addressing the multi-turn agentic hallucination pattern. Do not deploy in unattended client-facing workflows until resolved.</p>
+    <div class="timing">Next 7–14 days</div>
+  </div>
+
+  <div class="watch-card">
+    <div class="wc-header">
+      <h4>DR Gap Advisory Opportunity</h4>
+      <span class="tag strategic">Strategic</span>
+    </div>
+    <p>New survey (Apr 21): 59% of orgs have not materially updated DR plans for agentic AI. Use as an entry point for BCP/DR assessment engagements. NIST AI RMF + ISO 42001 dual-framework positioning is gaining traction.</p>
+    <div class="timing">Ongoing — act now</div>
+  </div>
+
+</div>
+
+
+<!-- FOOTER -->
+<div class="footer">
+  <strong>AI Daily Brief</strong> — May 3, 2026 &nbsp;|&nbsp; Sources consulted: OpenAI Help Center, Anthropic release notes, Google Gemini changelog, xAI docs, Meta AI blog, Mistral AI news, Perplexity changelog, Microsoft Learn, GitHub Changelog, Notion releases, Releasebot, BusinessWire, Disaster Recovery Journal, BCI, NIST, r/ClaudeAI, r/OpenAI, r/LocalLLaMA, llm-stats.com, latent.space. &nbsp;|&nbsp; For informational purposes — verify before client use.
+</div>
+
+</body>
+</html>

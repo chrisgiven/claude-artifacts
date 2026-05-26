@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Todo Dashboard",
+  "schemaVersion": 1,
+  "description": "Aggregated todo dashboard pulling from Google Calendar (7-day events), Gmail (starred threads), Obsidian (open checkbox tasks from active folders), and Google Drive (recent files). Each item links back to its source.",
+  "mcpTools": [
+    "mcp__5634fb22-f4d5-4d0c-b782-c978a14977e1__list_events",
+    "mcp__9a815f15-06b6-4c12-b516-de5f058e68d1__search_threads",
+    "mcp__obsidian__obsidian_simple_search",
+    "mcp__1058689b-c986-40e0-9153-1645cb0b96d2__list_recent_files"
+  ],
+  "mcpServerNames": [
+    "Google Calendar",
+    "Gmail",
+    "obsidian",
+    "Google Drive"
+  ]
+}
+</script>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Todo Dashboard</title>
+<style>
+:root { color-scheme: light; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: #f8f9fa;
+  color: #1a1a2e;
+  padding: 16px;
+  font-size: 14px;
+}
+h1 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 4px;
+  color: #1a1a2e;
+}
+.subtitle {
+  font-size: 12px;
+  color: #6b7280;
+  margin-bottom: 16px;
+}
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+@media (max-width: 600px) {
+  .grid { grid-template-columns: 1fr; }
+}
+.card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 14px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  border: 1px solid #e5e7eb;
+}
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+.card-title {
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #6b7280;
+}
+.badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: 10px;
+  background: #e0e7ff;
+  color: #4338ca;
+}
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+.item:last-child { border-bottom: none; }
+.item a {
+  color: #2563eb;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 1.4;
+}
+.item a:hover { text-decoration: underline; }
+.item-meta {
+  font-size: 11px;
+  color: #9ca3af;
+  margin-top: 2px;
+}
+.item-icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  margin-top: 1px;
+}
+.icon-cal { background: #dbeafe; color: #2563eb; }
+.icon-mail { background: #fce7f3; color: #db2777; }
+.icon-note { background: #d1fae5; color: #059669; }
+.icon-drive { background: #fef3c7; color: #d97706; }
+.empty {
+  text-align: center;
+  padding: 20px 10px;
+  color: #9ca3af;
+  font-size: 12px;
+  font-style: italic;
+}
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #9ca3af;
+  font-size: 12px;
+}
+.loading::after {
+  content: '';
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid #d1d5db;
+  border-top-color: #6366f1;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin-left: 6px;
+  vertical-align: middle;
+}
+@keyframes spin { to { transform: rotate(360deg); } }
+.kpi-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+.kpi {
+  flex: 1;
+  background: #fff;
+  border-radius: 8px;
+  padding: 10px 12px;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+}
+.kpi-value {
+  font-size: 22px;
+  font-weight: 700;
+  color: #4338ca;
+}
+.kpi-label {
+  font-size: 10px;
+  color: #9ca3af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+.error-msg {
+  color: #ef4444;
+  font-size: 11px;
+  padding: 8px;
+  background: #fef2f2;
+  border-radius: 6px;
+}
+</style>
+</head>
+<body>
+
+<h1>Todo Dashboard</h1>
+<div class="subtitle" id="timestamp">Loading...</div>
+
+<div class="kpi-row">
+  <div class="kpi"><div class="kpi-value" id="kpi-events">-</div><div class="kpi-label">Events (7d)</div></div>
+  <div class="kpi"><div class="kpi-value" id="kpi-starred">-</div><div class="kpi-label">Starred</div></div>
+  <div class="kpi"><div class="kpi-value" id="kpi-notes">-</div><div class="kpi-label">Vault Tasks</div></div>
+  <div class="kpi"><div class="kpi-value" id="kpi-files">-</div><div class="kpi-label">Recent Files</div></div>
+</div>
+
+<div class="grid">
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Calendar (7 days)</span>
+      <span class="badge" id="cal-badge">...</span>
+    </div>
+    <div id="cal-list"><div class="loading">Loading</div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Starred Email</span>
+      <span class="badge" id="mail-badge">...</span>
+    </div>
+    <div id="mail-list"><div class="loading">Loading</div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Obsidian Tasks</span>
+      <span class="badge" id="note-badge">...</span>
+    </div>
+    <div id="note-list"><div class="loading">Loading</div></div>
+  </div>
+
+  <div class="card">
+    <div class="card-header">
+      <span class="card-title">Recent Drive Files</span>
+      <span class="badge" id="drive-badge">...</span>
+    </div>
+    <div id="drive-list"><div class="loading">Loading</div></div>
+  </div>
+</div>
+
+<script>
+const cowork = window.cowork;
+
+function formatDate(iso) {
+  if (!iso) return '';
+  const d = new Date(iso);
+  const now = new Date();
+  const opts = { weekday: 'short', month: 'short', day: 'numeric' };
+  const timeOpts = { hour: 'numeric', minute: '2-digit' };
+  const dateStr = d.toLocaleDateString('en-US', opts);
+  const timeStr = d.toLocaleTimeString('en-US', timeOpts);
+  // If today
+  if (d.toDateString() === now.toDateString()) return 'Today ' + timeStr;
+  // If tomorrow
+  const tomorrow = new Date(now);
+  tomorrow.setDate(tomorrow.getDate() + 1);
+  if (d.toDateString() === tomorrow.toDateString()) return 'Tomorrow ' + timeStr;
+  return dateStr + ' ' + timeStr;
+}
+
+function makeItem(iconClass, iconText, linkUrl, title, meta) {
+  return `<div class="item">
+    <div class="item-icon ${iconClass}">${iconText}</div>
+    <div>
+      <a href="${linkUrl || '#'}" target="_blank" rel="noopener">${escHtml(title)}</a>
+      <div class="item-meta">${escHtml(meta)}</div>
+    </div>
+  </div>`;
+}
+
+function escHtml(s) {
+  if (!s) return '';
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+async function loadCalendar() {
+  try {
+    const now = new Date();
+    const end = new Date(now);
+    end.setDate(end.getDate() + 7);
+    const res = await cowork.callMcpTool(
+      'mcp__5634fb22-f4d5-4d0c-b782-c978a14977e1__list_events',
+      {
+        startTime: now.toISOString(),
+        endTime: end.toISOString(),
+        pageSize: 20,
+        orderBy: 'startTime'
+      }
+    );
+    const events = res?.events || [];
+    document.getElementById('kpi-events').textContent = events.length;
+    document.getElementById('cal-badge').textContent = events.length + ' events';
+    if (events.length === 0) {
+      document.getElementById('cal-list').innerHTML = '<div class="empty">No events in the next 7 days</div>';
+      return;
+    }
+    document.getElementById('cal-list').innerHTML = events.map(e => {
+      const start = e.start?.dateTime || e.start?.date || '';
+      return makeItem('icon-cal', '&#128197;', e.htmlLink, e.summary || '(No title)', formatDate(start));
+    }).join('');
+  } catch (err) {
+    document.getElementById('cal-list').innerHTML = `<div class="error-msg">Calendar: ${escHtml(err.message || String(err))}</div>`;
+    document.getElementById('kpi-events').textContent = '!';
+  }
+}
+
+async function loadMail() {
+  try {
+    const res = await cowork.callMcpTool(
+      'mcp__9a815f15-06b6-4c12-b516-de5f058e68d1__search_threads',
+      { query: 'is:starred', pageSize: 15 }
+    );
+    const threads = res?.threads || [];
+    document.getElementById('kpi-starred').textContent = threads.length;
+    document.getElementById('mail-badge').textContent = threads.length + ' threads';
+    if (threads.length === 0) {
+      document.getElementById('mail-list').innerHTML = '<div class="empty">No starred threads</div>';
+      return;
+    }
+    document.getElementById('mail-list').innerHTML = threads.map(t => {
+      const msg = t.messages?.[0] || {};
+      const url = `https://mail.google.com/mail/u/0/#inbox/${t.id}`;
+      const sender = (msg.sender || '').replace(/<.*>/, '').trim();
+      return makeItem('icon-mail', '&#9733;', url, msg.subject || '(No subject)', sender + ' · ' + formatDate(msg.date));
+    }).join('');
+  } catch (err) {
+    document.getElementById('mail-list').innerHTML = `<div class="error-msg">Gmail: ${escHtml(err.message || String(err))}</div>`;
+    document.getElementById('kpi-starred').textContent = '!';
+  }
+}
+
+async function loadObsidian() {
+  try {
+    const res = await cowork.callMcpTool(
+      'mcp__obsidian__obsidian_simple_search',
+      { query: '- [ ]', context_length: 120 }
+    );
+    const results = Array.isArray(res) ? res : [];
+    // Filter to active folders only (not Evernote legacy)
+    const active = results.filter(r =>
+      !r.filename.startsWith('Evernote/') &&
+      !r.filename.startsWith('Apple Notes/') &&
+      !r.filename.startsWith('06-Archive/')
+    );
+    // Extract task text from context
+    const tasks = [];
+    for (const file of active.slice(0, 10)) {
+      const fname = file.filename;
+      for (const m of (file.matches || []).slice(0, 3)) {
+        const ctx = m.context || '';
+        const taskMatch = ctx.match(/- \[ \]\s*(.+?)(?:\n|$)/);
+        if (taskMatch) {
+          tasks.push({ file: fname, text: taskMatch[1].trim().substring(0, 80) });
+        }
+      }
+    }
+    document.getElementById('kpi-notes').textContent = tasks.length;
+    document.getElementById('note-badge').textContent = tasks.length + ' tasks';
+    if (tasks.length === 0) {
+      document.getElementById('note-list').innerHTML = '<div class="empty">No open tasks in active vault folders</div>';
+      return;
+    }
+    document.getElementById('note-list').innerHTML = tasks.slice(0, 10).map(t => {
+      const vaultUrl = `obsidian://open?file=${encodeURIComponent(t.file)}`;
+      return makeItem('icon-note', '&#9744;', vaultUrl, t.text, t.file.replace(/\.md$/, ''));
+    }).join('');
+  } catch (err) {
+    document.getElementById('note-list').innerHTML = `<div class="error-msg">Obsidian: ${escHtml(err.message || String(err))}</div>`;
+    document.getElementById('kpi-notes').textContent = '!';
+  }
+}
+
+async function loadDrive() {
+  try {
+    const res = await cowork.callMcpTool(
+      'mcp__1058689b-c986-40e0-9153-1645cb0b96d2__list_recent_files',
+      { pageSize: 10 }
+    );
+    const files = res?.files || [];
+    document.getElementById('kpi-files').textContent = files.length;
+    document.getElementById('drive-badge').textContent = files.length + ' files';
+    if (files.length === 0) {
+      document.getElementById('drive-list').innerHTML = '<div class="empty">No recent files</div>';
+      return;
+    }
+    document.getElementById('drive-list').innerHTML = files.map(f => {
+      const mime = f.mimeType || '';
+      let icon = '&#128196;';
+      if (mime.includes('spreadsheet') || mime.includes('excel')) icon = '&#128202;';
+      else if (mime.includes('presentation') || mime.includes('powerpoint')) icon = '&#128218;';
+      else if (mime.includes('document') || mime.includes('word')) icon = '&#128196;';
+      else if (mime.includes('pdf')) icon = '&#128213;';
+      else if (mime.includes('image')) icon = '&#128247;';
+      else if (mime.includes('folder')) icon = '&#128193;';
+      return makeItem('icon-drive', icon, f.viewUrl || f.webViewLink, f.title || f.name || '(Untitled)', formatDate(f.modifiedTime || f.viewedByMeTime));
+    }).join('');
+  } catch (err) {
+    document.getElementById('drive-list').innerHTML = `<div class="error-msg">Drive: ${escHtml(err.message || String(err))}</div>`;
+    document.getElementById('kpi-files').textContent = '!';
+  }
+}
+
+async function init() {
+  const now = new Date();
+  document.getElementById('timestamp').textContent =
+    'Last refreshed: ' + now.toLocaleString('en-US', { weekday: 'long', month: 'short', day: 'numeric', hour: 'numeric', minute: '2-digit' });
+
+  // Load all four panels in parallel
+  await Promise.allSettled([
+    loadCalendar(),
+    loadMail(),
+    loadObsidian(),
+    loadDrive()
+  ]);
+}
+
+init();
+</script>
+
+</body>
+</html>

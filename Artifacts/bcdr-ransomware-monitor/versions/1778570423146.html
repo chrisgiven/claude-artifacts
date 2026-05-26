@@ -1,0 +1,284 @@
+<!doctype html><script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Bcdr Ransomware Monitor",
+  "schemaVersion": 1,
+  "description": "Global BCDR and ransomware event monitor for a BCP/DR consultant. Four-category dashboard (Ransomware, IT Outages & Cloud, Cyber Incidents, Physical/Natural BC Events) with real data fetched April 22, 2026 from WebSearch and USGS significant-earthquakes feed. Refresh by asking Claude to regenerate, or pair with a daily scheduled task."
+}
+</script>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Global BCDR &amp; Ransomware Monitor</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #f7f8fa; color: #1a1d23; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; font-size: 14px; line-height: 1.45; }
+  header { padding: 20px 24px 14px; border-bottom: 1px solid #e3e6eb; background: #fff; position: sticky; top: 0; z-index: 10; }
+  header h1 { margin: 0 0 4px; font-size: 18px; font-weight: 600; letter-spacing: -0.01em; }
+  header .sub { color: #5b6270; font-size: 12px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+  header .pulse { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: #23a559; box-shadow: 0 0 0 0 rgba(35,165,89,.6); animation: pulse 2s infinite; }
+  @keyframes pulse { 0% { box-shadow: 0 0 0 0 rgba(35,165,89,.5);} 70% { box-shadow: 0 0 0 10px rgba(35,165,89,0);} 100% { box-shadow: 0 0 0 0 rgba(35,165,89,0);} }
+  .topbar { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; padding: 16px 16px 0; }
+  .metric { background: #fff; border: 1px solid #e3e6eb; border-radius: 10px; padding: 12px 14px; }
+  .metric .k { font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #7a808b; margin-bottom: 4px; }
+  .metric .v { font-size: 22px; font-weight: 600; letter-spacing: -0.01em; }
+  .metric .d { font-size: 11.5px; color: #5b6270; margin-top: 2px; }
+  .metric.ransomware .v { color: #b91c1c; }
+  .metric.outage .v { color: #b45309; }
+  .metric.cyber .v { color: #6d28d9; }
+  .metric.physical .v { color: #1d4ed8; }
+  main { display: grid; grid-template-columns: repeat(auto-fit, minmax(380px, 1fr)); gap: 16px; padding: 16px; }
+  .card { background: #fff; border: 1px solid #e3e6eb; border-radius: 10px; overflow: hidden; display: flex; flex-direction: column; }
+  .card h2 { margin: 0; padding: 14px 16px; font-size: 13px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.04em; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid #eef0f3; }
+  .card h2 .badge { font-size: 11px; font-weight: 500; padding: 2px 8px; border-radius: 10px; background: #eef0f3; color: #5b6270; text-transform: none; letter-spacing: 0; margin-left: auto; }
+  .card .body { padding: 4px 16px 12px; flex: 1; }
+  .card.ransomware h2 { color: #b91c1c; }
+  .card.ransomware h2::before { content: ""; width: 4px; height: 18px; background: #b91c1c; border-radius: 2px; }
+  .card.outage h2 { color: #b45309; }
+  .card.outage h2::before { content: ""; width: 4px; height: 18px; background: #b45309; border-radius: 2px; }
+  .card.cyber h2 { color: #6d28d9; }
+  .card.cyber h2::before { content: ""; width: 4px; height: 18px; background: #6d28d9; border-radius: 2px; }
+  .card.physical h2 { color: #1d4ed8; }
+  .card.physical h2::before { content: ""; width: 4px; height: 18px; background: #1d4ed8; border-radius: 2px; }
+  .item { padding: 10px 0; border-top: 1px solid #eef0f3; }
+  .item:first-child { border-top: none; padding-top: 6px; }
+  .item .title { font-weight: 500; color: #1a1d23; margin-bottom: 3px; line-height: 1.35; }
+  .item .title a { color: inherit; text-decoration: none; }
+  .item .title a:hover { text-decoration: underline; color: #1d4ed8; }
+  .item .meta { font-size: 11.5px; color: #7a808b; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 2px; }
+  .item .meta .tag { font-weight: 500; padding: 1px 7px; border-radius: 4px; font-size: 11px; }
+  .item .meta .tag.sig { background: #fee2e2; color: #991b1b; }
+  .item .meta .tag.high { background: #fef3c7; color: #92400e; }
+  .item .meta .tag.mod { background: #e0e7ff; color: #3730a3; }
+  .item .meta .tag.low { background: #e5e7eb; color: #374151; }
+  .item .summary { font-size: 12.5px; color: #4b5260; margin-top: 5px; line-height: 1.5; }
+  .note { background: #fff8e7; border-left: 3px solid #b45309; color: #92400e; padding: 10px 14px; margin: 0 16px 16px; border-radius: 6px; font-size: 12.5px; }
+  .note strong { color: #78350f; }
+  .error { background: #fff1f2; border-left: 3px solid #e11d48; color: #9f1239; padding: 10px 14px; margin: 8px 0; border-radius: 6px; font-size: 12.5px; }
+  footer { padding: 12px 24px 24px; color: #7a808b; font-size: 11.5px; border-top: 1px solid #e3e6eb; background: #fff; display: flex; gap: 18px; flex-wrap: wrap; justify-content: space-between; }
+  footer a { color: #1d4ed8; text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Global BCDR &amp; Ransomware Monitor</h1>
+  <div class="sub">
+    <span><span class="pulse"></span> Snapshot</span>
+    <span>Last refreshed: <strong id="refreshed">May 11, 2026 &middot; 6:30 AM</strong></span>
+    <span>Scope: Global &middot; All four event categories</span>
+    <span>For: Chris G &middot; BCP/DR Consulting</span>
+  </div>
+</header>
+<div class="topbar">
+  <div class="metric ransomware"><div class="k">Ransomware</div><div class="v">8</div><div class="d">named victims surfaced this week</div></div>
+  <div class="metric outage"><div class="k">IT / Cloud Outages</div><div class="v">4</div><div class="d">material events, past 2 weeks</div></div>
+  <div class="metric cyber"><div class="k">Cyber Advisories</div><div class="v">7</div><div class="d">active CISA/zero-day items</div></div>
+  <div class="metric physical"><div class="k">Physical / Natural</div><div class="v">5</div><div class="d">significant events this period</div></div>
+</div>
+<div class="note">
+  <strong>Auto-refresh:</strong> This artifact is refreshed daily at 6:30 AM via scheduled task. Data sourced from WebSearch and USGS live feeds. To force an immediate refresh, ask Claude <em>&quot;refresh the BCDR monitor&quot;</em>.
+</div>
+<main>
+
+  <!-- RANSOMWARE -->
+  <section class="card ransomware">
+    <h2>Ransomware <span class="badge">May 7&ndash;11, 2026 &middot; 8 victims</span></h2>
+    <div class="body">
+
+      <div class="item">
+        <div class="title"><a href="https://www.ransomware.live/" target="_blank" rel="noopener">Excel Healthcare &mdash; Akira (claimed May 8, 2026)</a></div>
+        <div class="meta"><span class="tag sig">Healthcare</span><span>Group: Akira</span><span>Sector: Healthcare</span></div>
+        <div class="summary">Excel Healthcare (excelhrmc.com) listed as an Akira victim, discovered May 8, 2026. Healthcare remains the primary ransomware target sector; Akira hit 84 victims in March 2026 alone and continues aggressive expansion after absorbing RansomHub affiliate activity.</div>
+      </div>
+
+      <div class="item">
+        <div class="title"><a href="https://www.ransomware.live/" target="_blank" rel="noopener">Rhactus Hotel, Egypt &mdash; LockBit 5.0 (claimed May 7, 2026)</a></div>
+        <div class="meta"><span class="tag mod">Newly claimed</span><span>Group: LockBit 5.0</span><span>Sector: Hospitality</span></div>
+        <div class="summary">Egyptian hotel listed by LockBit 5.0, which relaunched in September 2025 after the law enforcement takedown. Hospitality sector BCP alert: payment systems and guest PII exposure risk. LockBit 5.0 resurging across EMEA targets.</div>
+      </div>
+
+      <div class="item">
+        <div class="title"><a href="https://www.ransomware.live/" target="_blank" rel="noopener">Elia Law Firm, San Diego &mdash; Akira (claimed May 7, 2026)</a></div>
+        <div class="meta"><span class="tag mod">Newly claimed</span><span>Group: Akira</span><span>Sector: Legal</span></div>
+        <div class="summary">San Diego law firm targeted by Akira. Legal sector attacks carry significant privilege-and-confidentiality implications for clients. Akira claimed three named victims on May 7 alone, signaling an active campaign sweep.</div>
+      </div>
+
+      <div class="item">
+        <div class="title"><a href="https://www.ransomware.live/" target="_blank" rel="noopener">Jacobs Doland Beer, New York &mdash; Akira (claimed May 7, 2026)</a></div>
+        <div class="meta"><span class="tag mod">Newly claimed</span><span>Group: Akira</span><span>Sector: Foodservice Design</span></div>
+        <div class="summary">New York-based foodservice design firm listed by Akira on May 7. Mid-market professional services firms with limited IT security resources continue to be high-value, low-resistance targets for Akira's affiliate network.</div>
+      </div>
+
+      <div class="item">
+        <div class="title"><a href="https://www.ransomware.live/" target="_blank" rel="noopener">Grau GmbH, Hamburg &mdash; Akira (claimed May 7, 2026)</a></div>
+        <div class="meta"><span class="tag mod">Newly claimed</span><span>Group: Akira</span><span>Sector: Retail/Furniture</span></div>
+        <div class="summary">German retail and furniture company targeted by Akira. European mid-market manufacturing and retail firms remain active Akira targets. Fourth Akira-attributed victim in this refresh cycle &mdash; pattern alert for clients in these sectors.</div>
+      </div>
+
+      <div class="item">
+        <div class="title"><a href="https://www.bleepingcomputer.com/news/security/iron-mountain-data-breach-mostly-limited-to-marketing-materials/" target="_blank" rel="noopener">Iron Mountain &mdash; Everest ransomware &mdash; 1.4 TB compromised</a></div>
+        <div class="meta"><span class="tag high">High-profile</span><span>Group: Everest</span><span>Sector: Enterprise Information Management</span></div>
+        <div class="summary">Iron Mountain (95% of Fortune 1000 clients) hit by Everest gang with 1.4 TB of internal documents and client PII exfiltrated. Iron Mountain manages physical and digital records for thousands of enterprises &mdash; third-party data custodian risk flag.</div>
+      </div>
+
+      <div class="item">
+        <div class="title"><a href="https://www.bleepingcomputer.com/news/security/instructure-confirms-data-breach-shinyhunters-claims-attack/" target="_blank" rel="noopener">Instructure / Canvas &mdash; ShinyHunters &mdash; 275M records, 3.65 TB</a></div>
+        <div class="meta"><span class="tag sig">Critical</span><span>Group: ShinyHunters</span><span>Sector: EdTech</span></div>
+        <div class="summary">ShinyHunters claimed Instructure (Canvas LMS), affecting ~9,000 schools and 275 million student, teacher, and staff records (3.65 TB compressed). One of the largest education-sector breaches on record. Vendor risk review for institutions using Canvas.</div>
+      </div>
+
+      <div class="item">
+        <div class="title"><a href="https://www.breachsense.com/ransomware-reports/february-2026/" target="_blank" rel="noopener">2026 Pace: ~8,100 victims projected &mdash; Akira, Qilin, Cl0p lead volume</a></div>
+        <div class="meta"><span class="tag high">Trend</span><span>Source: Breachsense</span><span>Scope: Global</span></div>
+        <div class="summary">After two months of 2026, ransomware is tracking ~11% above 2025's 7,308-victim pace (~8,100 projected). Top groups by 2026 volume: Qilin (~1,000 victims), Akira (~765), Cl0p (~550). Leak Bazaar and Lynx most active in recent weeks. RaaS ecosystem continues to expand.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- IT OUTAGES -->
+  <section class="card outage">
+    <h2>IT Outages &amp; Cloud <span class="badge">May 2026 &middot; 4 events</span></h2>
+    <div class="body">
+
+      <div class="item">
+        <div class="title"><a href="https://health.aws.amazon.com/health/status?eventID=arn%3Aaws%3Ahealth%3Aus-east-1%3A%3Aevent%2FMULTIPLE_SERVICES%2FAWS_MULTIPLE_SERVICES_OPERATIONAL_ISSUE%2FAWS_MULTIPLE_SERVICES_OPERATIONAL_ISSUE_BA540_514A652BE1A" target="_blank" rel="noopener">AWS Multiple Services &mdash; Operational Issue (May 9, 2026)</a></div>
+        <div class="meta"><span class="tag sig">Cloud</span><span>Provider: AWS</span><span>Date: May 9, 2026</span></div>
+        <div class="summary">AWS logged a multi-service operational issue on May 9 (event ID BA540). Details limited via public health dashboard. Clients with AWS-dependent production workloads: verify status, check CloudWatch for impact windows, and document any SLA deviations for DR record.</div>
+      </div>
+
+      <div class="item">
+        <div class="title"><a href="https://health.aws.amazon.com/health/status?eventID=arn%3Aaws%3Ahealth%3Aus-east-1%3A%3Aevent%2FMULTIPLE_SERVICES%2FAWS_MULTIPLE_SERVICES_OPERATIONAL_ISSUE%2FAWS_MULTIPLE_SERVICES_OPERATIONAL_ISSUE_30422_580368C1278" target="_blank" rel="noopener">AWS Multiple Services &mdash; Operational Issue (May 7, 2026)</a></div>
+        <div class="meta"><span class="tag high">Cloud</span><span>Provider: AWS</span><span>Date: May 7, 2026</span></div>
+        <div class="summary">Second AWS multi-service incident in one week (event ID 30422), two days before the May 9 event. Back-to-back AWS incidents in the same week reinforce the need for multi-region and multi-provider resilience posture reviews. Forrester predicted 2+ major hyperscaler outages in 2026.</div>
+      </div>
+
+      <div class="item">
+        <div class="title"><a href="https://azure.status.microsoft/en-us/status/history/" target="_blank" rel="noopener">Azure East US &mdash; Provisioning &amp; scale failures mitigated (April 24, 2026)</a></div>
+        <div class="meta"><span class="tag high">Cloud</span><span>Provider: Microsoft Azure</span><span>Date: April 24, 2026</span></div>
+        <div class="summary">Azure East US customers experienced failures provisioning, scaling, or updating resources following a faulty platform update. All impact confirmed mitigated at 23:22 UTC April 24. Review client dependencies on Azure East US as primary or failover region.</div>
+      </div>
+
+      <div class="item">
+        <div class="title"><a href="https://status.cloud.google.com/incidents/ow5i3PPK96RduMcb1SsW" target="_blank" rel="noopener">Google Cloud &mdash; Service Health Incident (ow5i3PPK96RduMcb1SsW)</a></div>
+        <div class="meta"><span class="tag mod">Cloud</span><span>Provider: Google Cloud</span><span>Status: Recent</span></div>
+        <div class="summary">Google Cloud posted a service health incident (ID ow5i3PPK96RduMcb1SsW) on the public status page. Check GCP status history for scope and affected services. Relevant for clients with GCP workloads or multi-cloud dependencies routing through GCP services.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CYBER INCIDENTS -->
+  <section class="card cyber">
+    <h2>Cyber Incidents &amp; Advisories <span class="badge">May 2026 &middot; 7 items</span></h2>
+    <div class="body">
+
+      <div class="item">
+        <div class="title"><a href="https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-microsoft-defender-flaw-exploited-in-zero-day-attacks/" target="_blank" rel="noopener">CVE-2026-33825 &ldquo;BlueHammer&rdquo; &mdash; Microsoft Defender zero-day, CISA KEV</a></div>
+        <div class="meta"><span class="tag sig">Zero-day</span><span>Vendor: Microsoft</span><span>FCEB deadline: May 7</span></div>
+        <div class="summary">Active exploitation: low-privileged local attacker gains SYSTEM permissions via Defender privilege escalation. CISA added to KEV, federal agencies had until May 7 to patch. Immediate Windows patch assessment required for all clients running Defender. Patch or compensating control status should be documented.</div>
+      </div>
+
+      <div class="item">
+        <div class="title"><a href="https://www.bleepingcomputer.com/news/security/cisa-orders-feds-to-patch-windows-flaw-exploited-in-zero-day-attacks/" target="_blank" rel="noopener">CVE-2026-32202 &mdash; Windows NTLM zero-click hash leak, CISA KEV</a></div>
+        <div class="meta"><span class="tag sig">Zero-day</span><span>Vendor: Microsoft</span><span>FCEB deadline: May 12</span></div>
+        <div class="summary">Zero-click NTLM hash leak resulting from Microsoft's incomplete February patch. No user interaction required for exploitation. CISA deadline for FCEB agencies: May 12 (tomorrow from refresh date). Review Windows endpoint and server patch status across all client environments immediately.</div>
+      </div>
+
+      <div class="item">
+        <div class="title"><a href="https://thehackernews.com/2026/04/cisa-adds-8-exploited-flaws-to-kev-sets.html" target="_blank" rel="noopener">CISA adds 8 exploited flaws to KEV &mdash; April&ndash;May 2026 deadlines</a></div>
+        <div class="meta"><span class="tag high">KEV add</span><span>Date: April 20, 2026</span><span>Scope: FCEB + all orgs</span></div>
+        <div class="summary">CISA bulk-added 8 actively exploited CVEs to the Known Exploited Vulnerabilities catalog with April&ndash;May 2026 FCEB remediation deadlines. Review the KEV catalog for client-applicable vulnerabilities; any KEV item with a deadline in the next 30 days should be on the priority patch list.</div>
+      </div>
+
+      <div class="item">
+        <div class="title"><a href="https://www.brightdefense.com/resources/recent-data-breaches/" target="_blank" rel="noopener">France Titres (ANTS) &mdash; 19 million records exposed by &ldquo;breach3d&rdquo;</a></div>
+        <div class="meta"><span class="tag sig">Data exposure</span><span>Scope: France, ~19M records</span><span>Fields: PII + auth data</span></div>
+        <div class="summary">French government vehicle registration authority (ANTS) breached with 19 million individual and professional account records advertised by threat actor &ldquo;breach3d.&rdquo; Exposed: names, emails, DOB, postal addresses, phone numbers, login IDs, unique identifiers. Credential stuffing risk for French-market clients.</div>
+      </div>
+
+      <div class="item">
+        <div class="title"><a href="https://www.pkware.com/blog/2026-data-breaches" target="_blank" rel="noopener">Udemy &mdash; ShinyHunters extortion: 1.4M records released</a></div>
+        <div class="meta"><span class="tag high">Data exposure</span><span>Group: ShinyHunters</span><span>Records: 1.4M</span></div>
+        <div class="summary">ShinyHunters threatened Udemy with extortion, then released 1.4 million records including names, physical addresses, phone numbers, employer details, and instructor payout methods. Online learning platforms hold rich PII and financial data. ShinyHunters continues high-volume extortion campaigns across multiple sectors.</div>
+      </div>
+
+      <div class="item">
+        <div class="title"><a href="https://www.cisa.gov/news-events/news/cisa-issues-emergency-directive-requiring-federal-agencies-identify-and-mitigate-cisco-zero-day" target="_blank" rel="noopener">CISA Emergency Directive &mdash; Cisco SD-WAN zero-days (Five Eyes)</a></div>
+        <div class="meta"><span class="tag sig">Emergency Directive</span><span>Scope: Federal + Five Eyes</span><span>Dwell: since 2023</span></div>
+        <div class="summary">Five Eyes governments issued coordinated advisory on Cisco SD-WAN zero-day attacks with nation-state attribution, exploited since 2023 (long-dwell-time scenario). Federal agencies must identify and mitigate. Audit all client Cisco SD-WAN deployments for indicators and apply available patches.</div>
+      </div>
+
+      <div class="item">
+        <div class="title"><a href="https://www.securityweek.com/recent-microsoft-defender-vulnerability-exploited-as-zero-day/" target="_blank" rel="noopener">Iran-affiliated ICS/OT targeting &mdash; Rockwell, Allen-Bradley, Unitronics</a></div>
+        <div class="meta"><span class="tag sig">Critical</span><span>Threat: Nation-state (Iran)</span><span>Sector: Industrial/OT</span></div>
+        <div class="summary">Iran-affiliated threat actors actively targeting ICS/OT environments: Rockwell Automation FactoryTalk, Allen-Bradley PLCs, Unitronics PLCs, and Palo Alto Networks infrastructure. Critical for clients with operational technology environments in energy, utilities, manufacturing, and water treatment. Review OT network segmentation controls.</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PHYSICAL / NATURAL -->
+  <section class="card physical">
+    <h2>Physical / Natural BC Events <span class="badge">USGS feed &middot; 5 events</span></h2>
+    <div class="body">
+
+      <div class="item">
+        <div class="title"><a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000shlp" target="_blank" rel="noopener">M 6.6 earthquake &mdash; South Shetland Islands (Antarctica region)</a></div>
+        <div class="meta"><span class="tag sig">M 6.6</span><span>Source: USGS</span><span>Depth: 4.9 km &middot; Tsunami flag set</span></div>
+        <div class="summary">Shallow 6.6 event near the South Shetland Islands with tsunami potential flagged. USGS alert: green. Minimal direct population impact given remote location, but monitors Antarctic research station exposure and Southern Ocean shipping lanes. Part of the USGS significant earthquakes past-week feed.</div>
+      </div>
+
+      <div class="item">
+        <div class="title"><a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000si5l" target="_blank" rel="noopener">M 6.6 earthquake &mdash; Northern Mid-Atlantic Ridge</a></div>
+        <div class="meta"><span class="tag sig">M 6.6</span><span>Source: USGS</span><span>Depth: 10 km &middot; Tsunami flag set</span></div>
+        <div class="summary">Mid-ocean 6.6 event on the northern Mid-Atlantic Ridge with tsunami advisory issued. USGS alert: green. Remote location limits direct infrastructure impact; however, signals elevated tectonic activity in the North Atlantic. Monitor for follow-on seismic activity closer to European or Caribbean coastlines.</div>
+      </div>
+
+      <div class="item">
+        <div class="title"><a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000sii1" target="_blank" rel="noopener">M 6.3 earthquake &mdash; 144 km NE of Hihifo, Tonga</a></div>
+        <div class="meta"><span class="tag high">M 6.3</span><span>Source: USGS</span><span>Depth: 10 km &middot; Pacific basin</span></div>
+        <div class="summary">Offshore Tonga event at 10 km depth. USGS alert: green. Relevant for clients with Pacific Basin operations or supply chain dependencies through Tonga/Samoa corridor. Watch for aftershock sequences common in the Tonga subduction zone. USGS significant earthquakes past-week feed.</div>
+      </div>
+
+      <div class="item">
+        <div class="title"><a href="https://appliedsciences.nasa.gov/what-we-do/disasters/disasters-activations/typhoon-sinlaku-april-2026" target="_blank" rel="noopener">Super Typhoon Sinlaku &mdash; FEMA individual &amp; public assistance now available</a></div>
+        <div class="meta"><span class="tag sig">Cat 4</span><span>Landfall: April 14</span><span>Guam &middot; CNMI &middot; FEMA EM-3644/3645</span></div>
+        <div class="summary">FEMA individual and public assistance now available for Guam and Northern Mariana Islands following Sinlaku's 150 mph winds and 20&plus; inches of rainfall. Widespread power blackouts and flooding with ongoing infrastructure recovery. Clients with Pacific Island operations should confirm utility restoration status and supply chain impact.</div>
+      </div>
+
+      <div class="item">
+        <div class="title"><a href="https://www.insurancejournal.com/news/national/2026/05/07/868926.htm" target="_blank" rel="noopener">2026 Hurricane Season &mdash; Power grid vulnerability warning despite quieter outlook</a></div>
+        <div class="meta"><span class="tag high">Trend</span><span>Date: May 7, 2026</span><span>Scope: US Gulf &amp; Atlantic coasts</span></div>
+        <div class="summary">Despite a projected quieter 2026 Atlantic hurricane season, Insurance Journal reports ongoing grid vulnerability risk from tropical storms, with utility undergrounding spend having jumped 80% since 2010 (surpassing $9.3B in 2024). Pre-season DR readiness: verify generator fuel contracts, utility failover SLAs, and storm-region client BCPs are current.</div>
+      </div>
+
+    </div>
+  </section>
+
+</main>
+<footer>
+  <div>
+    <strong>Sources:</strong>
+    <a href="https://www.ransomware.live/" target="_blank" rel="noopener">ransomware.live</a> &middot;
+    <a href="https://www.breachsense.com/ransomware-reports/february-2026/" target="_blank" rel="noopener">Breachsense</a> &middot;
+    <a href="https://thehackernews.com/" target="_blank" rel="noopener">The Hacker News</a> &middot;
+    <a href="https://www.cisa.gov/news-events/cybersecurity-advisories" target="_blank" rel="noopener">CISA advisories</a> &middot;
+    <a href="https://www.bleepingcomputer.com/" target="_blank" rel="noopener">BleepingComputer</a> &middot;
+    <a href="https://health.aws.amazon.com/" target="_blank" rel="noopener">AWS Health Dashboard</a> &middot;
+    <a href="https://azure.status.microsoft/en-us/status/history/" target="_blank" rel="noopener">Azure status history</a> &middot;
+    <a href="https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson" target="_blank" rel="noopener">USGS significant earthquakes</a> &middot;
+    <a href="https://www.fema.gov/disaster/current" target="_blank" rel="noopener">FEMA current</a>
+  </div>
+  <div>Auto-refreshed May 11, 2026 &middot; Daily scheduled task at 6:30 AM</div>
+</footer>
+<script>
+  try {
+    var d = new Date();
+    document.getElementById('refreshed').textContent = d.toLocaleDateString(undefined, { year: 'numeric', month: 'long', day: 'numeric' }) + ' · 6:30 AM';
+  } catch(e) {}
+</script>
+</body>
+</html>

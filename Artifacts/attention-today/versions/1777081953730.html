@@ -1,0 +1,553 @@
+<!doctype html><script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Attention Today",
+  "schemaVersion": 1,
+  "description": "Live status page showing DC weather, today + tomorrow's Google Calendar events, and recent unread Gmail threads + drafts. Calendar/email refresh every 15 min from inside the artifact; weather refreshes hourly via scheduled task.",
+  "mcpTools": [
+    "mcp__9a815f15-06b6-4c12-b516-de5f058e68d1__search_threads",
+    "mcp__9a815f15-06b6-4c12-b516-de5f058e68d1__list_drafts",
+    "mcp__5634fb22-f4d5-4d0c-b782-c978a14977e1__list_events"
+  ],
+  "mcpServerNames": [
+    "Gmail",
+    "Gmail",
+    "Google Calendar"
+  ]
+}
+</script>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>What Needs My Attention</title>
+<style>
+  :root { color-scheme: light; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: transparent; color: #1a1a1a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 14px; line-height: 1.45; }
+  .wrap { padding: 16px 18px 32px; max-width: 980px; margin: 0 auto; }
+
+  header.top { display: flex; align-items: baseline; justify-content: space-between;
+    flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  header.top h1 { font-size: 20px; margin: 0; font-weight: 700; letter-spacing: -0.01em; }
+  .meta { font-size: 12px; color: #6b6b72; }
+  .meta .dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+    background: #2ea043; margin-right: 6px; vertical-align: middle; }
+  .meta.refreshing .dot { background: #d4a017; animation: pulse 1s infinite; }
+  .meta.error .dot { background: #d1242f; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
+
+  /* Claude limits tile */
+  .limits { background: linear-gradient(135deg, #f5f0ff 0%, #fbf8ff 100%);
+    border: 1px solid #e2d9f7; border-radius: 12px; padding: 12px 16px;
+    margin-bottom: 14px; display: grid; grid-template-columns: 150px 1fr 160px;
+    gap: 16px; align-items: center; }
+  .limits .lim-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;
+    color: #6b6b72; font-weight: 600; white-space: nowrap; }
+  .limits .lim-label .plan { display: block; color: #553c9a; font-size: 14px; margin-top: 2px;
+    text-transform: none; letter-spacing: 0; font-weight: 700; }
+  .limits .bar-wrap { min-width: 0; }
+  .limits .bar { height: 10px; background: #ece4fb; border-radius: 999px; overflow: hidden; }
+  .limits .bar-fill { height: 100%; background: linear-gradient(90deg, #7c4dff 0%, #b388ff 100%);
+    border-radius: 999px; transition: width 0.6s ease; }
+  .limits.warn .bar-fill { background: linear-gradient(90deg, #d4a017 0%, #f4c257 100%); }
+  .limits.critical .bar-fill { background: linear-gradient(90deg, #b54708 0%, #e0704c 100%); }
+  .limits .bar-caption { font-size: 11px; color: #6b6b72; margin-top: 6px; display: flex;
+    justify-content: space-between; font-variant-numeric: tabular-nums; gap: 8px; }
+  .limits .countdown { font-size: 18px; font-weight: 700; color: #1a1a1a;
+    font-variant-numeric: tabular-nums; text-align: right; }
+  .limits .countdown .sub { display: block; font-weight: 400; color: #8a8a92;
+    font-size: 11px; margin-top: 2px; }
+  .limits .disclaimer { grid-column: 1 / -1; font-size: 11px; color: #8a8a92;
+    margin-top: 8px; padding-top: 8px; border-top: 1px dashed #e2d9f7; font-style: italic; }
+
+  /* Weather */
+  .weather { display: grid; grid-template-columns: minmax(220px, 1fr) repeat(3, minmax(140px, 1fr));
+    gap: 10px; margin-bottom: 18px; }
+  .wx { background: linear-gradient(135deg, #eef5ff 0%, #f6f9ff 100%);
+    border: 1px solid #d8e4f5; border-radius: 12px; padding: 14px 16px; }
+  .wx.now { background: linear-gradient(135deg, #fff7e6 0%, #fffaf0 100%); border-color: #f4d8a3; }
+  .wx .wx-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em;
+    color: #6b6b72; font-weight: 600; }
+  .wx .wx-temp { font-size: 28px; font-weight: 700; margin-top: 6px; line-height: 1; color: #1a1a1a; }
+  .wx .wx-temp .unit { font-size: 14px; color: #8a8a92; font-weight: 500; margin-left: 2px; }
+  .wx .wx-cond { font-size: 13px; color: #4a4a52; margin-top: 6px; min-height: 18px; }
+  .wx .wx-meta { font-size: 11px; color: #6b6b72; margin-top: 8px; display: flex; gap: 10px; flex-wrap: wrap; }
+  .wx .wx-meta span:before { content: "· "; color: #cfd2d6; }
+  .wx .wx-meta span:first-child:before { content: ""; }
+  .wx .wx-loc { font-size: 12px; color: #6b6b72; margin-top: 4px; }
+
+  .summary { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; margin-bottom: 18px; }
+  .stat { background: #f6f7f9; border: 1px solid #e6e8ec; border-radius: 10px; padding: 12px 14px; }
+  .stat .label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #6b6b72; }
+  .stat .value { font-size: 22px; font-weight: 700; margin-top: 4px; }
+  .stat.urgent .value { color: #b54708; }
+
+  section { margin-bottom: 22px; }
+  section h2 { font-size: 13px; text-transform: uppercase; letter-spacing: 0.06em;
+    color: #5c5c63; margin: 0 0 10px; font-weight: 600; }
+
+  .card { background: #ffffff; border: 1px solid #e6e8ec; border-radius: 10px; overflow: hidden; }
+  .row { display: grid; grid-template-columns: 90px 1fr auto; gap: 12px;
+    padding: 11px 14px; border-top: 1px solid #eef0f3; align-items: start; }
+  .row:first-child { border-top: none; }
+  .row .when { color: #4a4a52; font-variant-numeric: tabular-nums; font-weight: 600; }
+  .row .when .sub { display: block; font-weight: 400; color: #8a8a92; font-size: 12px; }
+  .row .what { min-width: 0; }
+  .row .what .title { font-weight: 600; color: #1a1a1a; }
+  .row .what .desc { color: #6b6b72; font-size: 13px; margin-top: 2px;
+    white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .row .right { text-align: right; }
+  .row a { color: #0969da; text-decoration: none; font-size: 12px; }
+  .row a:hover { text-decoration: underline; }
+
+  .pill { display: inline-block; font-size: 11px; padding: 2px 7px; border-radius: 999px;
+    font-weight: 600; vertical-align: middle; margin-left: 6px; }
+  .pill.now { background: #fff4e5; color: #b54708; border: 1px solid #fce4cc; }
+  .pill.next { background: #e6f4ff; color: #0550ae; border: 1px solid #cfe5ff; }
+  .pill.tomorrow { background: #f3f0ff; color: #553c9a; border: 1px solid #e2dafe; }
+  .pill.priority { background: #ffebe9; color: #b54708; border: 1px solid #ffd1cc; }
+  .pill.followup { background: #fff8c5; color: #735c0f; border: 1px solid #f1d97a; }
+  .pill.fyi { background: #f0f3f6; color: #5c5c63; border: 1px solid #dcdfe4; }
+
+  .empty { padding: 18px 14px; text-align: center; color: #8a8a92; font-style: italic; font-size: 13px; }
+  .skeleton { padding: 14px; }
+  .skeleton .line { height: 12px; background: linear-gradient(90deg, #eef0f3 0%, #f6f7f9 50%, #eef0f3 100%);
+    background-size: 200% 100%; animation: shimmer 1.4s infinite; border-radius: 4px; margin-bottom: 8px; }
+  .skeleton .line.short { width: 40%; }
+  @keyframes shimmer { 0%{background-position:200% 0} 100%{background-position:-200% 0} }
+
+  .err { background: #fff5f5; border: 1px solid #ffd1cc; color: #b42318; padding: 10px 12px;
+    border-radius: 8px; font-size: 12px; }
+
+  @media (max-width: 720px) {
+    .summary { grid-template-columns: repeat(2, 1fr); }
+    .weather { grid-template-columns: 1fr 1fr; }
+    .limits { grid-template-columns: 1fr; }
+    .limits .countdown { text-align: left; }
+    .row { grid-template-columns: 70px 1fr; }
+    .row .right { grid-column: 1 / -1; text-align: left; padding-left: 82px; }
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <h1>What needs your attention</h1>
+    <div class="meta" id="meta"><span class="dot"></span><span id="metaText">Loading…</span></div>
+  </header>
+
+  <!-- CLAUDE_LIMITS_START -->
+  <script type="application/json" id="claude-limits-data">
+{
+  "plan": "Claude Pro",
+  "windowStart": "2026-04-20T09:00:00-04:00",
+  "windowDays": 7,
+  "note": "Best-estimate anchor (Mon Apr 20, 9am ET). Tell Claude when you actually hit a limit and I'll re-anchor."
+}
+  </script>
+  <!-- CLAUDE_LIMITS_END -->
+
+  <div class="limits" id="limits"></div>
+
+  <!-- WEATHER_DATA_START -->
+  <script type="application/json" id="weather-data">
+{
+  "location": "Washington, DC",
+  "fetchedAt": "2026-04-24T10:08:13Z",
+  "now": {
+    "temperature": 62,
+    "temperatureUnit": "F",
+    "shortForecast": "Mostly Sunny",
+    "windSpeed": "3 mph",
+    "windDirection": "N",
+    "probabilityOfPrecipitation": 4,
+    "relativeHumidity": 65
+  },
+  "today": {
+    "name": "Today",
+    "temperature": 82,
+    "temperatureUnit": "F",
+    "shortForecast": "Mostly Sunny then Scattered Showers And Thunderstorms",
+    "windSpeed": "6 mph",
+    "windDirection": "N",
+    "probabilityOfPrecipitation": 48
+  },
+  "tonight": {
+    "name": "Tonight",
+    "temperature": 54,
+    "temperatureUnit": "F",
+    "shortForecast": "Scattered Showers And Thunderstorms",
+    "windSpeed": "6 mph",
+    "windDirection": "SE",
+    "probabilityOfPrecipitation": 35
+  },
+  "tomorrow": {
+    "name": "Saturday",
+    "temperature": 64,
+    "temperatureUnit": "F",
+    "shortForecast": "Rain Showers Likely",
+    "windSpeed": "6 to 12 mph",
+    "windDirection": "E",
+    "probabilityOfPrecipitation": 73
+  }
+}
+  </script>
+  <!-- WEATHER_DATA_END -->
+
+  <div class="weather" id="weather"></div>
+
+  <div class="summary" id="summary">
+    <div class="stat"><div class="label">Today's meetings</div><div class="value" id="stat-today">—</div></div>
+    <div class="stat"><div class="label">Tomorrow's meetings</div><div class="value" id="stat-tomorrow">—</div></div>
+    <div class="stat urgent"><div class="label">Priority emails</div><div class="value" id="stat-priority">—</div></div>
+    <div class="stat"><div class="label">Open drafts</div><div class="value" id="stat-drafts">—</div></div>
+  </div>
+
+  <section>
+    <h2>Calendar — Today</h2>
+    <div class="card" id="cal-today"><div class="skeleton"><div class="line short"></div><div class="line"></div><div class="line"></div></div></div>
+  </section>
+
+  <section>
+    <h2>Calendar — Tomorrow</h2>
+    <div class="card" id="cal-tomorrow"><div class="skeleton"><div class="line short"></div><div class="line"></div></div></div>
+  </section>
+
+  <section>
+    <h2>Inbox — Needs review (last 48h, unread)</h2>
+    <div class="card" id="inbox"><div class="skeleton"><div class="line short"></div><div class="line"></div><div class="line"></div></div></div>
+  </section>
+
+  <section>
+    <h2>Drafts — Pending send</h2>
+    <div class="card" id="drafts"><div class="skeleton"><div class="line short"></div><div class="line"></div></div></div>
+  </section>
+</div>
+
+<script>
+(async () => {
+  const REFRESH_MS = 15 * 60 * 1000;
+  const TZ = "America/New_York";
+
+  const $ = (id) => document.getElementById(id);
+  const fmtTime = (iso) => {
+    try { return new Date(iso).toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZone: TZ }); }
+    catch { return ""; }
+  };
+  const fmtDate = (iso) => {
+    try { return new Date(iso).toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", timeZone: TZ }); }
+    catch { return ""; }
+  };
+  const startOfDay = (d) => { const x = new Date(d); x.setHours(0,0,0,0); return x; };
+  const escape = (s) => String(s ?? "").replace(/[&<>"']/g, c => ({ "&":"&amp;","<":"&lt;",">":"&gt;","\"":"&quot;","'":"&#39;" }[c]));
+
+  function setStatus(state, text) {
+    const m = $("meta");
+    m.classList.remove("refreshing", "error");
+    if (state === "refreshing") m.classList.add("refreshing");
+    if (state === "error") m.classList.add("error");
+    $("metaText").textContent = text;
+  }
+
+  function renderLimits() {
+    try {
+      const raw = document.getElementById("claude-limits-data")?.textContent || "{}";
+      const cfg = JSON.parse(raw);
+      const start = cfg.windowStart ? new Date(cfg.windowStart) : null;
+      if (!start || isNaN(start)) { $("limits").style.display = "none"; return; }
+      const days = Number(cfg.windowDays || 7);
+      const end = new Date(start.getTime() + days * 86400000);
+      const now = new Date();
+      const total = end - start;
+      const elapsed = Math.max(0, Math.min(total, now - start));
+      const remaining = Math.max(0, end - now);
+      const pct = Math.round((elapsed / total) * 100);
+
+      const el = $("limits");
+      el.classList.remove("warn", "critical");
+      if (pct >= 85) el.classList.add("critical");
+      else if (pct >= 70) el.classList.add("warn");
+
+      const days_left = Math.floor(remaining / 86400000);
+      const hours_left = Math.floor((remaining % 86400000) / 3600000);
+      const mins_left = Math.floor((remaining % 3600000) / 60000);
+      const countdown = remaining <= 0 ? "Window reset"
+        : days_left > 0 ? `${days_left}d ${hours_left}h`
+        : hours_left > 0 ? `${hours_left}h ${mins_left}m`
+        : `${mins_left}m`;
+
+      const resetStr = end.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", timeZone: TZ })
+        + " · " + end.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZone: TZ });
+      const startStr = start.toLocaleDateString("en-US", { weekday: "short", month: "short", day: "numeric", timeZone: TZ });
+
+      el.innerHTML = `
+        <div class="lim-label">Claude weekly window<span class="plan">${escape(cfg.plan || "Claude Pro")}</span></div>
+        <div class="bar-wrap">
+          <div class="bar"><div class="bar-fill" style="width: ${pct}%"></div></div>
+          <div class="bar-caption"><span>Started ${escape(startStr)}</span><span>${pct}% of window elapsed</span></div>
+        </div>
+        <div class="countdown">${escape(countdown)}<span class="sub">until ${escape(resetStr)}</span></div>
+        <div class="disclaimer">⚠ Tracks TIME elapsed in the 7-day window, not actual message usage — Anthropic doesn't expose a user-level usage API. Check Settings → Usage in Claude for your real %.</div>
+      `;
+    } catch (err) {
+      console.error("limits render error", err);
+      $("limits").style.display = "none";
+    }
+  }
+
+  function wxIcon(text) {
+    const t = String(text || "").toLowerCase();
+    if (t.includes("thunder")) return "⛈️";
+    if (t.includes("snow")) return "❄️";
+    if (t.includes("rain") || t.includes("shower")) return "🌧️";
+    if (t.includes("fog") || t.includes("haze") || t.includes("mist")) return "🌫️";
+    if (t.includes("partly")) return "⛅";
+    if (t.includes("mostly cloud") || t.includes("overcast")) return "☁️";
+    if (t.includes("cloud")) return "🌤️";
+    if (t.includes("clear") && t.includes("night")) return "🌙";
+    if (t.includes("sunny") || t.includes("clear")) return "☀️";
+    return "🌡️";
+  }
+
+  function renderWeather() {
+    try {
+      const raw = document.getElementById("weather-data")?.textContent || "{}";
+      const wx = JSON.parse(raw);
+      if (!wx.now && !wx.today) { $("weather").style.display = "none"; return; }
+      const fetched = wx.fetchedAt ? new Date(wx.fetchedAt) : null;
+      const fetchedTxt = fetched ? fetched.toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZone: TZ }) : "";
+
+      const card = (cls, label, period, opts = {}) => {
+        if (!period) return "";
+        const icon = wxIcon(period.shortForecast);
+        const temp = period.temperature != null ? `${period.temperature}<span class="unit">°${escape(period.temperatureUnit || "F")}</span>` : "—";
+        const cond = escape(period.shortForecast || "");
+        const meta = [];
+        if (period.probabilityOfPrecipitation != null && period.probabilityOfPrecipitation > 0) meta.push(`💧 ${period.probabilityOfPrecipitation}%`);
+        if (period.windSpeed) meta.push(`🌬 ${escape(period.windSpeed)} ${escape(period.windDirection || "")}`.trim());
+        if (opts.humidity != null) meta.push(`💦 ${opts.humidity}%`);
+        const loc = opts.loc ? `<div class="wx-loc">${escape(opts.loc)}${fetchedTxt ? ` · as of ${escape(fetchedTxt)}` : ""}</div>` : "";
+        return `<div class="wx ${cls}">
+          <div class="wx-label">${icon} ${escape(label)}</div>
+          <div class="wx-temp">${temp}</div>
+          <div class="wx-cond">${cond}</div>
+          <div class="wx-meta">${meta.map(m => `<span>${m}</span>`).join("")}</div>
+          ${loc}
+        </div>`;
+      };
+
+      let html = "";
+      html += card("now", "Now", wx.now, { loc: wx.location, humidity: wx.now?.relativeHumidity });
+      html += card("today", "Today (high)", wx.today);
+      html += card("tonight", "Tonight (low)", wx.tonight);
+      html += card("tomorrow", wx.tomorrow?.name || "Tomorrow", wx.tomorrow);
+      $("weather").innerHTML = html;
+    } catch (err) {
+      console.error("weather render error", err);
+      $("weather").style.display = "none";
+    }
+  }
+
+  function parseEventStart(ev) {
+    return ev?.start?.dateTime || ev?.start?.date || null;
+  }
+  function isAllDay(ev) { return !ev?.start?.dateTime && !!ev?.start?.date; }
+  function isOnDate(ev, target) {
+    const s = parseEventStart(ev);
+    if (!s) return false;
+    const sd = startOfDay(s);
+    return sd.getTime() === startOfDay(target).getTime();
+  }
+
+  function senderName(raw) {
+    if (!raw) return "(unknown)";
+    const m = String(raw).match(/^\s*"?([^"<]+?)"?\s*<.*>\s*$/);
+    return (m ? m[1] : raw).trim();
+  }
+  function senderDomain(raw) {
+    const m = String(raw || "").match(/<([^>]+)>/) || String(raw || "").match(/([^\s<>]+@[^\s<>]+)/);
+    const addr = m ? m[1] : "";
+    const at = addr.split("@")[1];
+    return at ? at.toLowerCase() : "";
+  }
+
+  function renderEvents(targetEl, events, label) {
+    if (!events.length) {
+      targetEl.innerHTML = `<div class="empty">No meetings ${label}. Time to focus.</div>`;
+      return;
+    }
+    const now = new Date();
+    let html = "";
+    let nextMarked = false;
+    for (const ev of events) {
+      const s = parseEventStart(ev);
+      const startDt = s ? new Date(s) : null;
+      const isAD = isAllDay(ev);
+      const when = isAD ? "All-day" : (startDt ? fmtTime(s) : "—");
+      const sub  = isAD ? "" : (startDt ? fmtDate(s) : "");
+      const endIso = ev?.end?.dateTime || ev?.end?.date;
+      const endTxt = (!isAD && endIso) ? `–${fmtTime(endIso)}` : "";
+      let pill = "";
+      if (label === "today" && startDt) {
+        const endDt = endIso ? new Date(endIso) : null;
+        if (endDt && now >= startDt && now <= endDt) { pill = `<span class="pill now">Now</span>`; }
+        else if (!nextMarked && startDt > now) { pill = `<span class="pill next">Next up</span>`; nextMarked = true; }
+      } else if (label === "tomorrow" && !nextMarked) {
+        pill = `<span class="pill tomorrow">Tomorrow</span>`; nextMarked = true;
+      }
+      const desc = ev.description ? String(ev.description).replace(/\s+/g, " ").trim() : "";
+      const link = ev.htmlLink ? `<a href="${escape(ev.htmlLink)}" target="_blank" rel="noopener">Open</a>` : "";
+      html += `<div class="row">
+        <div class="when">${escape(when)}${endTxt ? `<span class="sub">${escape(endTxt.replace(/^–/, "ends "))}</span>` : (sub ? `<span class="sub">${escape(sub)}</span>` : "")}</div>
+        <div class="what"><div class="title">${escape(ev.summary || "(no title)")}${pill}</div>${desc ? `<div class="desc">${escape(desc)}</div>` : ""}</div>
+        <div class="right">${link}</div>
+      </div>`;
+    }
+    targetEl.innerHTML = html;
+  }
+
+  function classifyEmailHeuristic(t) {
+    const subj = (t.messages?.[0]?.subject || "").toLowerCase();
+    const sender = t.messages?.[0]?.sender || "";
+    const dom = senderDomain(sender);
+    const noiseDomains = ["mail.beehiiv.com", "rs.email.nextdoor.com", "doximity.com", "amazon.com",
+      "celebritydeliva.com", "no-reply", "noreply", "newsletter", "mailchimp", "substack.com",
+      "linkedin.com", "facebook.com", "indeed.com", "groupon.com", "uber.com", "lyft.com"];
+    const noiseSubj = ["unsubscribe", "newsletter", "weekly digest", "trending", "deal", "% off", "sale"];
+    const isNoise = noiseDomains.some(d => dom.includes(d) || sender.toLowerCase().includes(d))
+                 || noiseSubj.some(k => subj.includes(k));
+    const priorityKeywords = ["urgent", "asap", "today", "deadline", "action required",
+      "approval", "approve", "sign", "invoice", "outage", "incident", "blocker", "p1",
+      "escalation", "contract", "rfp", "sow", "statement of work"];
+    const isPriority = priorityKeywords.some(k => subj.includes(k));
+    if (isPriority) return "priority";
+    if (isNoise) return "fyi";
+    if (dom && !dom.match(/(noreply|no-reply|notifications?|mailer|bounce|email|mail\.)/)) return "followup";
+    return "fyi";
+  }
+
+  function renderInbox(targetEl, threads) {
+    if (!threads.length) { targetEl.innerHTML = `<div class="empty">Inbox is clear. Nice.</div>`; return 0; }
+    const ranked = threads.map(t => ({ t, p: classifyEmailHeuristic(t) }));
+    const order = { priority: 0, followup: 1, fyi: 2 };
+    ranked.sort((a, b) => order[a.p] - order[b.p] || (new Date(b.t.messages?.[0]?.date || 0) - new Date(a.t.messages?.[0]?.date || 0)));
+    let html = "";
+    for (const { t, p } of ranked) {
+      const m = t.messages?.[0] || {};
+      const when = m.date ? fmtTime(m.date) : "";
+      const sub  = m.date ? fmtDate(m.date) : "";
+      const from = senderName(m.sender);
+      const pill = p === "priority" ? `<span class="pill priority">Priority</span>`
+                 : p === "followup" ? `<span class="pill followup">Follow-up</span>`
+                 : `<span class="pill fyi">FYI</span>`;
+      const link = `<a href="https://mail.google.com/mail/u/0/#inbox/${escape(t.id)}" target="_blank" rel="noopener">Open</a>`;
+      html += `<div class="row">
+        <div class="when">${escape(when)}<span class="sub">${escape(sub)}</span></div>
+        <div class="what"><div class="title">${escape(m.subject || "(no subject)")}${pill}</div>
+          <div class="desc">${escape(from)} — ${escape((m.snippet || "").slice(0, 140))}</div></div>
+        <div class="right">${link}</div>
+      </div>`;
+    }
+    targetEl.innerHTML = html;
+    return ranked.filter(r => r.p === "priority").length;
+  }
+
+  function renderDrafts(targetEl, drafts) {
+    if (!drafts.length) { targetEl.innerHTML = `<div class="empty">No pending drafts.</div>`; return; }
+    drafts.sort((a, b) => new Date(b.date || 0) - new Date(a.date || 0));
+    let html = "";
+    for (const d of drafts) {
+      const when = d.date ? fmtTime(d.date) : "";
+      const sub  = d.date ? fmtDate(d.date) : "";
+      const to = (d.toRecipients || []).join(", ");
+      const link = `<a href="https://mail.google.com/mail/u/0/#drafts/${escape(d.id)}" target="_blank" rel="noopener">Open</a>`;
+      const preview = (d.plaintextBody || "").replace(/\s+/g, " ").trim().slice(0, 140);
+      html += `<div class="row">
+        <div class="when">${escape(when)}<span class="sub">${escape(sub)}</span></div>
+        <div class="what"><div class="title">${escape(d.subject || "(no subject)")}</div>
+          <div class="desc">To: ${escape(to || "—")}${preview ? ` — ${escape(preview)}` : ""}</div></div>
+        <div class="right">${link}</div>
+      </div>`;
+    }
+    targetEl.innerHTML = html;
+  }
+
+  function unwrap(res) {
+    if (!res) return null;
+    if (res.isError) throw new Error(res.content?.[0]?.text || "Tool error");
+    if (res.structuredContent) return res.structuredContent;
+    const txt = res.content?.[0]?.text;
+    if (typeof txt === "string") {
+      try { return JSON.parse(txt); } catch { return txt; }
+    }
+    return res;
+  }
+
+  async function refresh() {
+    setStatus("refreshing", "Refreshing…");
+    try {
+      const now = new Date();
+      const today = startOfDay(now);
+      const dayAfterTomorrow = new Date(today); dayAfterTomorrow.setDate(today.getDate() + 2);
+      const tomorrow = new Date(today); tomorrow.setDate(today.getDate() + 1);
+      const isoLocal = (d) => {
+        const pad = (n) => String(n).padStart(2, "0");
+        return `${d.getFullYear()}-${pad(d.getMonth()+1)}-${pad(d.getDate())}T${pad(d.getHours())}:${pad(d.getMinutes())}:${pad(d.getSeconds())}`;
+      };
+
+      const [evRes, mailRes, draftRes] = await Promise.all([
+        window.cowork.callMcpTool("mcp__5634fb22-f4d5-4d0c-b782-c978a14977e1__list_events", {
+          startTime: isoLocal(today), endTime: isoLocal(dayAfterTomorrow),
+          orderBy: "startTime", pageSize: 50, timeZone: TZ
+        }),
+        window.cowork.callMcpTool("mcp__9a815f15-06b6-4c12-b516-de5f058e68d1__search_threads", {
+          query: "is:unread newer_than:2d -category:promotions -category:social", pageSize: 25
+        }),
+        window.cowork.callMcpTool("mcp__9a815f15-06b6-4c12-b516-de5f058e68d1__list_drafts", { pageSize: 25 })
+      ]);
+
+      const evData = unwrap(evRes) || {};
+      const events = (evData.events || []).filter(e => e.status !== "cancelled");
+      const todayEvents = events.filter(e => isOnDate(e, today));
+      const tomorrowEvents = events.filter(e => isOnDate(e, tomorrow));
+
+      renderEvents($("cal-today"), todayEvents, "today");
+      renderEvents($("cal-tomorrow"), tomorrowEvents, "tomorrow");
+
+      const mailData = unwrap(mailRes) || {};
+      const threads = mailData.threads || [];
+      const priorityCount = renderInbox($("inbox"), threads) || 0;
+
+      const draftsData = unwrap(draftRes) || {};
+      const drafts = draftsData.drafts || [];
+      renderDrafts($("drafts"), drafts);
+
+      $("stat-today").textContent = todayEvents.length;
+      $("stat-tomorrow").textContent = tomorrowEvents.length;
+      $("stat-priority").textContent = priorityCount;
+      $("stat-drafts").textContent = drafts.length;
+
+      const stamp = new Date().toLocaleTimeString("en-US", { hour: "numeric", minute: "2-digit", timeZone: TZ });
+      setStatus("ok", `Updated ${stamp} · auto-refresh every 15 min`);
+    } catch (err) {
+      console.error(err);
+      setStatus("error", `Refresh failed: ${err.message || err}`);
+      const banner = `<div class="err">${escape(err.message || String(err))}</div>`;
+      ["cal-today","cal-tomorrow","inbox","drafts"].forEach(id => {
+        const el = $(id);
+        if (el && el.querySelector(".skeleton")) el.innerHTML = banner;
+      });
+    }
+  }
+
+  renderLimits();
+  setInterval(renderLimits, 60 * 1000);
+  renderWeather();
+  await refresh();
+  setInterval(refresh, REFRESH_MS);
+})();
+</script>
+</body>
+</html>

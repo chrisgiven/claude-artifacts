@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Ai Daily Brief",
+  "schemaVersion": 1,
+  "description": "Daily AI provider briefing for Chris G. — BCP/DR consultant. Covers OpenAI, Anthropic, Google, xAI, Meta, Mistral, Perplexity, Microsoft, GitHub Copilot, Cursor, Gamma, and Notion. Includes workflow recommendations and client alerts."
+}
+</script>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Daily Brief — May 8, 2026</title>
+<style>
+  :root { color-scheme: light; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background: #fafafa;
+    color: #1a1a1a;
+    font-size: 14px;
+    line-height: 1.55;
+    padding: 0 0 40px 0;
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    background: #1a1a1a;
+    color: #fff;
+    padding: 22px 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .header h1 {
+    font-size: 22px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    margin-bottom: 3px;
+  }
+  .header .subtitle {
+    font-size: 12px;
+    color: #aaa;
+    font-weight: 400;
+  }
+  .header .stamp {
+    text-align: right;
+    font-size: 11px;
+    color: #ccc;
+    line-height: 1.6;
+    white-space: nowrap;
+  }
+  .header .stamp strong {
+    display: block;
+    font-size: 14px;
+    color: #fff;
+    font-weight: 600;
+  }
+
+  /* ─── CLIENT ALERT BANNER ─── */
+  .alert-banner {
+    background: #fffbea;
+    border-left: 5px solid #c99400;
+    padding: 14px 24px;
+    margin: 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .alert-banner .alert-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+  }
+  .alert-banner .alert-title {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #8a6400;
+    margin-bottom: 4px;
+  }
+  .alert-banner .alert-body {
+    font-size: 13px;
+    color: #5a4200;
+    line-height: 1.5;
+  }
+
+  /* ─── CONTENT WRAPPER ─── */
+  .content { padding: 28px 32px; }
+
+  /* ─── SECTION HEADINGS ─── */
+  .section-heading {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: #555;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #d8d8d8;
+    margin-bottom: 18px;
+    margin-top: 36px;
+  }
+  .section-heading:first-child { margin-top: 0; }
+
+  /* ─── TOP 3 CARDS ─── */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    margin-bottom: 4px;
+  }
+  .card {
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 8px;
+    padding: 18px 20px;
+    position: relative;
+  }
+  .card .card-num {
+    font-size: 11px;
+    font-weight: 700;
+    color: #bbb;
+    letter-spacing: 0.08em;
+    margin-bottom: 6px;
+  }
+  .card .card-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 7px;
+    line-height: 1.35;
+  }
+  .card .card-body {
+    font-size: 12.5px;
+    color: #444;
+    line-height: 1.5;
+  }
+  .card .card-date {
+    display: inline-block;
+    margin-top: 10px;
+    font-size: 11px;
+    color: #888;
+    font-weight: 500;
+  }
+  .card.top1 { border-top: 3px solid #c99400; }
+  .card.top2 { border-top: 3px solid #5b6af5; }
+  .card.top3 { border-top: 3px solid #2d9e6b; }
+
+  /* ─── TABLES ─── */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12.5px;
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  thead {
+    background: #f2f2f2;
+  }
+  th {
+    text-align: left;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #555;
+    padding: 10px 14px;
+    border-bottom: 1px solid #e0e0e0;
+    white-space: nowrap;
+  }
+  td {
+    padding: 10px 14px;
+    vertical-align: top;
+    border-bottom: 1px solid #f0f0f0;
+    color: #222;
+    line-height: 1.45;
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: #f9f9f9; }
+
+  /* ─── TAGS ─── */
+  .tag {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+    white-space: nowrap;
+  }
+  .tag.tactical { background: #dbeafe; color: #1d4ed8; }
+  .tag.strategic { background: #ede9fe; color: #6d28d9; }
+  .tag.alert { background: #fee2e2; color: #b91c1c; }
+  .tag.watch { background: #fef9c3; color: #854d0e; }
+
+  /* ─── WATCH LIST CARDS ─── */
+  .watch-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+  }
+  .watch-card {
+    background: #fff;
+    border: 1px solid #e2e2e2;
+    border-left: 4px solid #5b6af5;
+    border-radius: 6px;
+    padding: 14px 16px;
+  }
+  .watch-card.urgent { border-left-color: #c99400; }
+  .watch-card .wc-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #888;
+    margin-bottom: 5px;
+  }
+  .watch-card .wc-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 5px;
+    line-height: 1.3;
+  }
+  .watch-card .wc-body {
+    font-size: 12px;
+    color: #555;
+    line-height: 1.45;
+  }
+
+  /* ─── NO CHANGE ─── */
+  .no-change { color: #999; font-style: italic; }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    margin: 40px 32px 0;
+    padding-top: 16px;
+    border-top: 1px solid #e0e0e0;
+    font-size: 11px;
+    color: #999;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+
+  @media (max-width: 600px) {
+    .content { padding: 18px 16px; }
+    .header { padding: 16px; }
+    .footer { margin: 24px 16px 0; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="header">
+  <div>
+    <h1>AI Daily Brief</h1>
+    <div class="subtitle">Prepared for Chris G. — IT Consultant, BCP/DR &amp; Resilience</div>
+  </div>
+  <div class="stamp">
+    <strong>May 8, 2026</strong>
+    Refreshes daily at 6:00 AM local
+  </div>
+</div>
+
+<!-- ⚠️ CLIENT ALERT BANNER -->
+<div class="alert-banner">
+  <div class="alert-icon">⚠️</div>
+  <div>
+    <div class="alert-title">BCP/DR Client Alert — 2 items</div>
+    <div class="alert-body">
+      <strong>1. OpenAI Ads in ChatGPT (Free/Go tiers, May 5):</strong> Free-tier users in AU/NZ/CA now see ads — clients using free ChatGPT should review acceptable-use policies; training data exclusion is NOT automatic on free tier. Recommend org-level migration to Team/Enterprise.<br>
+      <strong>2. SpaceXAI–Anthropic Compute Agreement:</strong> Anthropic's new SpaceX compute capacity introduces a supply-chain disclosure — client contracts requiring data residency or sovereignty attestations should confirm whether this changes Anthropic's subprocessor list before renewing Claude enterprise agreements.
+    </div>
+  </div>
+</div>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <!-- SECTION 1: TOP 3 MOVES -->
+  <div class="section-heading">Top 3 Moves of the Day</div>
+  <div class="cards-grid">
+    <div class="card top1">
+      <div class="card-num">#1 · OpenAI</div>
+      <div class="card-title">GPT-5.5 Instant Is Now ChatGPT's Default</div>
+      <div class="card-body">GPT-5.5 Instant replaces GPT-5.3 Instant as the global ChatGPT default, delivering 52.5% fewer hallucinations on high-stakes prompts (medicine, law, finance) and 37.3% fewer inaccurate claims in complex conversations. Affects every free and paid user immediately.</div>
+      <span class="card-date">📅 May 5, 2026 · <span class="tag strategic">Strategic</span></span>
+    </div>
+    <div class="card top2">
+      <div class="card-num">#2 · Anthropic</div>
+      <div class="card-title">Claude Opus 4.7 + Doubled Rate Limits</div>
+      <div class="card-body">Opus 4.7 launches at same $5/$25 per MTok pricing as 4.6, with improved vision (higher resolution), stronger software engineering, and built-in cyber safeguards that auto-block prohibited cybersecurity requests. Rate limits doubled for Pro, Max, Team, and Enterprise. Powered in part by new SpaceX Colossus capacity (see client alert).</div>
+      <span class="card-date">📅 May 2026 · <span class="tag strategic">Strategic</span></span>
+    </div>
+    <div class="card top3">
+      <div class="card-num">#3 · Microsoft</div>
+      <div class="card-title">Agent 365 + M365 E7 Go GA — Agent-First Era Begins</div>
+      <div class="card-body">Microsoft 365 E7 and Agent 365 are now generally available, positioning AI agents as the core operating layer for work. Excel gains GPT-5.5 Thinking and Claude Opus 4.7 side-by-side. Copilot Cowork goes mobile. Represents a fundamental licensing and governance change for enterprise M365 clients.</div>
+      <span class="card-date">📅 May 5, 2026 · <span class="tag alert">Client Alert</span></span>
+    </div>
+  </div>
+
+  <!-- SECTION 2: PROVIDER TABLE -->
+  <div class="section-heading">Provider-by-Provider Updates</div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:14%">Provider</th>
+        <th style="width:56%">What Changed</th>
+        <th style="width:30%">Classification</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>OpenAI</strong></td>
+        <td>GPT-5.5 Instant is now the ChatGPT default (May 5) — 52.5% fewer hallucinations. Ads rolling out for Free/Go users in AU/NZ/CA. Memory now pulls from Gmail, past chats, saved files. ChatGPT for Excel/Google Sheets globally available. Advanced Account Security (phishing-resistant) in opt-in beta.</td>
+        <td><span class="tag strategic">Strategic</span> <span class="tag alert">Alert: Ads on Free Tier</span></td>
+      </tr>
+      <tr>
+        <td><strong>Anthropic</strong></td>
+        <td>Claude Opus 4.7 launched — improved vision, better long-context coding, new cyber safeguards with Cyber Verification Program for legitimate security research. Rate limits doubled for all paid tiers. Claude Code: smarter model picking, project purge tools, stronger OAuth and permission handling. Connectors expanded to lifestyle apps (AllTrails, Uber, Spotify, Instacart).</td>
+        <td><span class="tag strategic">Strategic</span> <span class="tag alert">Alert: SpaceX compute subprocessor</span></td>
+      </tr>
+      <tr>
+        <td><strong>Google Gemini</strong></td>
+        <td>Gemini 3.1 early access — complex multi-step voice commands. File creation now GA: Docs, PDFs, Word, Excel, CSVs, Markdown directly from chat. Workspace Intelligence adds real-time Gmail/Calendar/Drive context. Multimodal file search with gemini-embedding-2.</td>
+        <td><span class="tag tactical">Tactical</span> <span class="tag strategic">Strategic</span></td>
+      </tr>
+      <tr>
+        <td><strong>xAI / Grok</strong></td>
+        <td>Grok 4.3 fully GA via API (May 6): 1M-token context, built-in reasoning, native video input, $1.25/$2.50 per MTok. SuperGrok Heavy launched May 6 with higher rate limits. Standalone Speech-to-Text and Text-to-Speech APIs with multilingual support, speaker diarization, timestamps. Grok Imagine API: unified video + audio generation.</td>
+        <td><span class="tag tactical">Tactical</span> <span class="tag strategic">Strategic</span></td>
+      </tr>
+      <tr>
+        <td><strong>Meta / Llama</strong></td>
+        <td>Llama 4 Scout &amp; Maverick (MoE architecture, natively multimodal) remain the current open-weight flagship releases — no new model dropped this week. Scout targets document summarization &amp; reasoning; Maverick is the general assistant. Available on Hugging Face and in WhatsApp/Messenger/Instagram. <span class="no-change">No headline release in last 48h.</span> Watch for Llama 4 Behemoth.</td>
+        <td><span class="tag strategic">Strategic</span></td>
+      </tr>
+      <tr>
+        <td><strong>Mistral</strong></td>
+        <td>Mistral Medium 3.5 (128B dense) now default in Le Chat and Vibe CLI — replaces Medium 3.1, Magistral, and Devstral 2. Scores 77.6% on SWE-Bench Verified. Configurable reasoning effort per request. Remote cloud-based coding agents in Vibe — run async and in parallel without local hardware.</td>
+        <td><span class="tag tactical">Tactical</span></td>
+      </tr>
+      <tr>
+        <td><strong>Perplexity</strong></td>
+        <td>Deep Research now powered by Opus 4.6 (Max users first, rolling to Pro). Kimi K2.5 (Moonshot AI open-source reasoning model) added to inference stack. Finance: new ETF holdings heatmap. iOS: quiz and flashcard generation from prompts.</td>
+        <td><span class="tag tactical">Tactical</span></td>
+      </tr>
+      <tr>
+        <td><strong>Microsoft 365 Copilot</strong></td>
+        <td>Agent 365 + M365 E7 now GA (May 5). Copilot Cowork available on iOS and Android. Excel gains GPT-5.5 Thinking + Claude Opus 4.7 support with plan mode and Python-powered analysis. Copilot Studio 2026 release wave 1 underway. Skills/plugins framework for org-level customization.</td>
+        <td><span class="tag strategic">Strategic</span> <span class="tag alert">Alert: Licensing change</span></td>
+      </tr>
+      <tr>
+        <td><strong>GitHub Copilot</strong></td>
+        <td>Copilot CLI v1.0.42 released May 6 (minor: MCP server warning improvement). Claude + OpenAI Codex available as coding agents for Business/Pro subscribers. No major model-level release in last 48h. <span class="no-change">Watch: GitHub Next agent features.</span></td>
+        <td><span class="tag tactical">Tactical</span></td>
+      </tr>
+      <tr>
+        <td><strong>Cursor</strong></td>
+        <td>Leads on IDE developer experience with Supermaven autocomplete (72% acceptance rate). Background agents now handle async tasks. <span class="no-change">No headline release in last 48h.</span> Most power users run Cursor + Claude Code in combination.</td>
+        <td><span class="tag tactical">Tactical</span></td>
+      </tr>
+      <tr>
+        <td><strong>Gamma</strong></td>
+        <td>Gamma 2.0 editor stable (faster collab, version history). Generate API GA for programmatic deck creation. Chart blocks support line/bar/pie/scatter from data. <span class="no-change">No headline release in last 48h.</span></td>
+        <td><span class="tag tactical">Tactical</span></td>
+      </tr>
+      <tr>
+        <td><strong>Notion AI</strong></td>
+        <td>Custom Agents moved to paid (Notion Credits) as of May 4. Autofill for continuous database enrichment via Custom Agents now available. If clients relied on free Custom Agent access for BCP documentation automation, they will see cost impact immediately.</td>
+        <td><span class="tag alert">Alert: Pricing Change</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 3: SHIFT YOUR HABITS -->
+  <div class="section-heading">Shift Your Habits — BCP/DR Consulting Workflow</div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:22%">Task</th>
+        <th style="width:18%">Current Tool</th>
+        <th style="width:42%">Recommended Shift</th>
+        <th style="width:18%">Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Drafting BCP/DR plan narratives &amp; runbooks</strong></td>
+        <td>Claude Opus 4.6</td>
+        <td><strong>Upgrade to Claude Opus 4.7</strong> — same price, better long-context reasoning and vision. Use Projects for persistent plan structure across sessions.</td>
+        <td><span class="tag tactical">Tactical</span></td>
+      </tr>
+      <tr>
+        <td><strong>Summarizing standards (ISO 22301, NIST SP 800-34, SOC 2)</strong></td>
+        <td>Perplexity / Claude</td>
+        <td><strong>Perplexity Deep Research (now on Opus 4.6)</strong> for standards cross-referencing. Gemini's new file creation means you can pipe summaries directly to formatted Word/PDF without copy-paste.</td>
+        <td><span class="tag tactical">Tactical</span></td>
+      </tr>
+      <tr>
+        <td><strong>Vendor / architecture research</strong></td>
+        <td>Perplexity / manual</td>
+        <td><strong>Perplexity + Gemini Workspace Intelligence</strong> — Gemini now has real-time Drive/Gmail context, good for cross-referencing past vendor evaluations you've already stored in Drive.</td>
+        <td><span class="tag tactical">Tactical</span></td>
+      </tr>
+      <tr>
+        <td><strong>Client proposals &amp; SOWs</strong></td>
+        <td>Claude / Word</td>
+        <td><strong>Claude Opus 4.7 + Gemini file export</strong> — draft in Claude for quality, push to Gemini for direct .docx output. Cuts final formatting cycle. GPT-5.5's 37% accuracy lift also makes it a solid second drafter for checking hallucinations in scope/cost sections.</td>
+        <td><span class="tag tactical">Tactical</span></td>
+      </tr>
+      <tr>
+        <td><strong>Executive decks</strong></td>
+        <td>Gamma / PowerPoint</td>
+        <td><strong>Gamma (stable on 2.0 editor)</strong> remains best for AI-generated decks. No major shift needed. Pair with Winston Presentation skill for structure before generating.</td>
+        <td><span class="tag tactical">Tactical</span></td>
+      </tr>
+      <tr>
+        <td><strong>Stakeholder audio walkthroughs</strong></td>
+        <td>Manual recording / Loom</td>
+        <td><strong>Consider xAI Grok TTS API</strong> — new expressive multilingual TTS now available via API with speaker diarization. Still early, but worth piloting for automated BCP plan audio summaries for non-technical stakeholders.</td>
+        <td><span class="tag strategic">Strategic</span></td>
+      </tr>
+      <tr>
+        <td><strong>Client advisory on AI data risk</strong></td>
+        <td>Manual research / Claude</td>
+        <td><strong>Flag immediately:</strong> (1) ChatGPT Free/Go ads = training risk if clients use free tier. (2) Notion Custom Agents now billable — clients using Notion for BCP workflow automation need budget adjustment. (3) Anthropic's SpaceX compute = new subprocessor disclosure to review in enterprise contracts.</td>
+        <td><span class="tag alert">Client Alert</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 4: COMMUNITY SIGNAL -->
+  <div class="section-heading">Community Signal (Reddit)</div>
+  <table>
+    <thead>
+      <tr>
+        <th style="width:16%">Source</th>
+        <th style="width:44%">Signal</th>
+        <th style="width:40%">So What</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>r/ClaudeAI</strong></td>
+        <td>Community reaction to Claude Design is mixed — concern that every generated app looks identical ("container soup" of pills, cards, serif fonts). Builders frustrated with visual homogeneity.</td>
+        <td>Claude Design not yet the right tool for differentiated client-facing deliverables. Stick with Gamma for decks, manual design for branded materials.</td>
+      </tr>
+      <tr>
+        <td><strong>r/LocalLLaMA</strong></td>
+        <td>High-engagement thread: "Open Models April 2026 — one of the best months ever for local LLMs." Dual-Blackwell GPU rigs and 128GB Macs being deployed specifically to run local coding agents as Claude Code replacements.</td>
+        <td>On-prem AI for BCP/DR clients is becoming feasible at a fraction of prior cost. Worth including local model options in DR tool assessments for data-sensitive clients.</td>
+      </tr>
+      <tr>
+        <td><strong>r/LocalLLaMA</strong></td>
+        <td>Top thread: "Conversation about local LLMs with a senior government AI leader" — 88 posts, significant engagement around sovereign AI for government clients.</td>
+        <td>Government/public sector BCP clients are actively evaluating local deployment. Position yourself ahead of this by scoping on-prem LLM DR architecture services.</td>
+      </tr>
+      <tr>
+        <td><strong>r/ClaudeAI</strong></td>
+        <td>High-upvote post: "I built a Mac dictation app that injects voice + screenshots + clipboard straight into Claude Code mid-sentence." DIY agentic tooling gaining traction.</td>
+        <td>Power users are building workflow integrations that commercial tools haven't shipped yet. Monitor for BCP workflow automation ideas (e.g., voice-driven DR runbook updates).</td>
+      </tr>
+      <tr>
+        <td><strong>BCP/DR Survey</strong></td>
+        <td>New BusinessWire-reported survey: only 41% of organizations have significantly changed their DR planning approach due to accelerated AI adoption.</td>
+        <td>Strong sales signal — 59% of organizations are behind. Direct lead-gen angle: offer an "AI-Ready DR Assessment" as a new service line.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- SECTION 5: WATCH LIST -->
+  <div class="section-heading">Watch List — Next 7–14 Days</div>
+  <div class="watch-grid">
+    <div class="watch-card urgent">
+      <div class="wc-label">⚠️ Pricing · Immediate</div>
+      <div class="wc-title">Notion Custom Agents Now Billable</div>
+      <div class="wc-body">Moved to paid Notion Credits as of May 4. Any client using Notion Custom Agents for BCP documentation automation now has unexpected costs. Audit and advise immediately.</div>
+    </div>
+    <div class="watch-card urgent">
+      <div class="wc-label">⚠️ Contracts · This Week</div>
+      <div class="wc-title">Anthropic Subprocessor Disclosure — SpaceX</div>
+      <div class="wc-body">SpaceXAI signed compute agreement with Anthropic (Colossus 1). Check client contracts citing Anthropic for data residency, sovereignty, or subprocessor clauses. May require disclosure or contract amendment before renewal.</div>
+    </div>
+    <div class="watch-card">
+      <div class="wc-label">📅 Launch · ~May 15</div>
+      <div class="wc-title">xAI Grok Legacy Model Retirement</div>
+      <div class="wc-body">8 legacy Grok models retire May 15 per API notice. Any client integrations on older Grok model strings will break. Migrate to Grok 4.3 endpoint before deadline.</div>
+    </div>
+    <div class="watch-card">
+      <div class="wc-label">📅 Release · This Month</div>
+      <div class="wc-title">Google I/O 2026 — Gemini 3.x Upgrades Expected</div>
+      <div class="wc-body">Google I/O 2026 imminent. Expect Gemini 3.x announcements including Aluminium OS and deeper Workspace agent integration. Watch for data handling policy changes in Workspace AI.</div>
+    </div>
+    <div class="watch-card">
+      <div class="wc-label">📅 Policy · In Progress</div>
+      <div class="wc-title">Meta Llama 4 Behemoth &amp; AI Data Training Policies</div>
+      <div class="wc-body">Llama 4 Behemoth (frontier-class) expected. Separately, monitor Meta's training data policies as Llama 4 models are used in WhatsApp/Instagram — client advisory on consumer-tier AI data handling may be needed.</div>
+    </div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <span>Generated May 8, 2026 · Automated AI Daily Brief for Chris G.</span>
+  <span>Sources: OpenAI Help Center, Anthropic release notes, Google AI Docs, xAI Docs, Meta AI Blog, Mistral AI News, Perplexity Changelog, Microsoft 365 Blog, GitHub Changelog, Notion Releases, BusinessWire, BCI, DRJ, releasebot.io</span>
+</div>
+
+</body>
+</html>
