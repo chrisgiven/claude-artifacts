@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chris Given · Project Hub</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --blue: #0066ff;
+    --cyan: #00ffff;
+    --bg: #0a0a0f;
+    --surface: #111118;
+    --surface2: #16161f;
+    --border: #1e1e2e;
+    --text: #e2e2f0;
+    --muted: #6b6b8a;
+    --white: #ffffff;
+  }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* Animated grid background */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: linear-gradient(rgba(0,102,255,0.03) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(0,102,255,0.03) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* Glow orbs */
+  body::after {
+    content: '';
+    position: fixed;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(0,102,255,0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .wrapper { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 32px; }
+
+  /* Header */
+  header {
+    position: relative;
+    padding: 48px 0 40px;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 48px;
+  }
+
+  .header-content { display: flex; align-items: center; gap: 20px; }
+
+  .avatar {
+    width: 52px; height: 52px;
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+    border-radius: 14px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4em;
+    flex-shrink: 0;
+    box-shadow: 0 0 24px rgba(0,102,255,0.4);
+  }
+
+  .header-text h1 {
+    font-size: 1.5em;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+
+  .header-text p {
+    font-size: 0.85em;
+    color: var(--muted);
+    margin-top: 2px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .status-bar {
+    position: absolute;
+    right: 0; top: 50%;
+    transform: translateY(-50%);
+    display: flex; align-items: center; gap: 8px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 14px;
+    font-size: 0.78em;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .status-dot {
+    width: 7px; height: 7px;
+    border-radius: 50%;
+    background: #00c853;
+    box-shadow: 0 0 8px #00c853;
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  /* Section */
+  section { margin-bottom: 48px; }
+
+  .section-header {
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  .section-header h2 {
+    font-size: 0.72em;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--muted);
+  }
+
+  .section-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+
+  /* Cards */
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 16px; }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--blue), var(--cyan));
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .card:hover {
+    border-color: rgba(0,102,255,0.4);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(0,102,255,0.12);
+  }
+
+  .card:hover::before { opacity: 1; }
+
+  .card-icon {
+    font-size: 1.6em;
+    line-height: 1;
+  }
+
+  .card h3 {
+    font-size: 0.95em;
+    font-weight: 600;
+    color: var(--white);
+    letter-spacing: -0.01em;
+  }
+
+  .card p {
+    font-size: 0.8em;
+    color: var(--muted);
+    line-height: 1.55;
+    flex: 1;
+  }
+
+  .card-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 4px;
+  }
+
+  .badge {
+    font-size: 0.68em;
+    font-weight: 600;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: 0.05em;
+  }
+
+  .badge-live {
+    background: rgba(0,200,83,0.12);
+    color: #00c853;
+    border: 1px solid rgba(0,200,83,0.2);
+  }
+
+  .badge-archive {
+    background: rgba(107,107,138,0.15);
+    color: var(--muted);
+    border: 1px solid var(--border);
+  }
+
+  .card-arrow {
+    color: var(--muted);
+    font-size: 0.85em;
+    transition: color 0.2s, transform 0.2s;
+  }
+
+  .card:hover .card-arrow {
+    color: var(--cyan);
+    transform: translateX(3px);
+  }
+
+  /* Footer */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 0.75em;
+    color: var(--muted);
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  footer a { color: var(--blue); text-decoration: none; }
+  footer a:hover { color: var(--cyan); }
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <header>
+    <div class="header-content">
+      <div class="avatar">🚀</div>
+      <div class="header-text">
+        <h1>Chris Given · Project Hub</h1>
+        <p>192.168.1.94 · BCP/DR &amp; IT Consulting</p>
+      </div>
+    </div>
+    <div class="status-bar">
+      <span class="status-dot"></span>
+      All systems online
+    </div>
+  </header>
+
+  <section>
+    <div class="section-header">
+      <h2>📊 Dashboards &amp; Live Monitors</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="grid">
+
+      <a class="card" href="/claude-artifacts/Artifacts/ai-daily-brief/index.html">
+        <div class="card-icon">🤖</div>
+        <h3>AI Daily Brief</h3>
+        <p>Daily briefing covering OpenAI, Anthropic, Google Gemini, xAI, Meta, Mistral &amp; Perplexity — built for IT consultants.</p>
+        <div class="card-footer">
+          <span class="badge badge-live">● LIVE</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="card" href="/claude-artifacts/Artifacts/bcdr-ransomware-monitor/index.html">
+        <div class="card-icon">🛡️</div>
+        <h3>BCDR Ransomware Monitor</h3>
+        <p>Real-time global threat monitoring — Ransomware, IT Outages, Cyber Incidents &amp; Physical Threats dashboard.</p>
+        <div class="card-footer">
+          <span class="badge badge-live">● LIVE</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="card" href="/claude-artifacts/Artifacts/attention-today/index.html">
+        <div class="card-icon">📅</div>
+        <h3>Attention Today</h3>
+        <p>Live status page with DC weather, today's calendar events, and unread Gmail threads &amp; drafts — refreshes every 15 min.</p>
+        <div class="card-footer">
+          <span class="badge badge-live">● LIVE</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="card" href="/claude-artifacts/Artifacts/todo-dashboard/index.html">
+        <div class="card-icon">✅</div>
+        <h3>Todo Dashboard</h3>
+        <p>Tasks from Master To-Do Google Sheet, 7-day calendar view, and starred Gmail — unified task command center.</p>
+        <div class="card-footer">
+          <span class="badge badge-live">● LIVE</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section>
+    <div class="section-header">
+      <h2>🔄 Scheduled Outputs &amp; Archives</h2>
+      <div class="section-line"></div>
+    </div>
+    <div class="grid">
+
+      <a class="card" href="/claude-artifacts/Scheduled/ai-daily-brief-refresh/">
+        <div class="card-icon">📰</div>
+        <h3>AI Brief Archive</h3>
+        <p>Historical daily AI briefings from the automated scheduled refresh task.</p>
+        <div class="card-footer">
+          <span class="badge badge-archive">ARCHIVE</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="card" href="/claude-artifacts/Scheduled/bcdr-ransomware-monitor-daily-refresh/">
+        <div class="card-icon">🔒</div>
+        <h3>BCDR Daily Refresh</h3>
+        <p>Daily BCDR threat refresh outputs and historical incident logs.</p>
+        <div class="card-footer">
+          <span class="badge badge-archive">ARCHIVE</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="card" href="/claude-artifacts/Scheduled/daily-comms-review/">
+        <div class="card-icon">💬</div>
+        <h3>Daily Comms Review</h3>
+        <p>Daily communications review outputs and correspondence summaries.</p>
+        <div class="card-footer">
+          <span class="badge badge-archive">ARCHIVE</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+      <a class="card" href="/claude-artifacts/Scheduled/refresh-dashboard-weather/">
+        <div class="card-icon">🌤️</div>
+        <h3>Weather Dashboard</h3>
+        <p>Refreshed weather dashboard outputs and forecast archives.</p>
+        <div class="card-footer">
+          <span class="badge badge-archive">ARCHIVE</span>
+          <span class="card-arrow">→</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <footer>
+    <span>Asustor AS5404T · nginx/1.31 · Docker</span>
+    <span>
+      <a href="https://192.168.1.94:19943">Portainer</a> ·
+      <a href="https://192.168.1.94:8001">ADM</a>
+    </span>
+  </footer>
+
+</div>
+</body>
+</html>
