@@ -1,0 +1,989 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Family Recipe Collection</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #faf7f2;
+    --warm-white: #ffffff;
+    --ink: #1a1410;
+    --brown: #5c3d2e;
+    --terracotta: #c4602a;
+    --gold: #c9963a;
+    --sage: #7a9e7e;
+    --light-sage: #eef3ef;
+    --border: #e8e0d4;
+    --muted: #8c7b6e;
+    --card-shadow: 0 2px 20px rgba(26,20,16,0.08);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Lato', sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    min-height: 100vh;
+  }
+
+  /* HEADER */
+  .site-header {
+    background: var(--brown);
+    color: var(--cream);
+    text-align: center;
+    padding: 3rem 1.5rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(
+      45deg,
+      transparent,
+      transparent 40px,
+      rgba(255,255,255,0.02) 40px,
+      rgba(255,255,255,0.02) 80px
+    );
+  }
+  .header-subtitle {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 0.75rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+  }
+  .header-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    font-weight: 600;
+    color: var(--cream);
+    line-height: 1.15;
+    margin-bottom: 0.5rem;
+  }
+  .header-desc {
+    font-size: 0.9rem;
+    color: rgba(250,247,242,0.6);
+    font-weight: 300;
+    letter-spacing: 0.05em;
+  }
+
+  /* CONTROLS */
+  .controls {
+    background: var(--warm-white);
+    border-bottom: 1px solid var(--border);
+    padding: 1.25rem 1.5rem;
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    align-items: center;
+  }
+  .search-wrap {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+  }
+  .search-wrap svg {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--muted);
+    width: 16px; height: 16px;
+  }
+  .search-input {
+    width: 100%;
+    padding: 0.6rem 0.75rem 0.6rem 2.25rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    background: var(--cream);
+    color: var(--ink);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-input:focus { border-color: var(--terracotta); }
+  .filter-tags {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .tag {
+    padding: 0.35rem 0.85rem;
+    border-radius: 20px;
+    border: 1px solid var(--border);
+    background: transparent;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: var(--muted);
+    transition: all 0.2s;
+    letter-spacing: 0.03em;
+  }
+  .tag:hover { border-color: var(--terracotta); color: var(--terracotta); }
+  .tag.active { background: var(--terracotta); border-color: var(--terracotta); color: white; }
+
+  /* GRID */
+  .main { padding: 2rem 1.5rem; max-width: 1200px; margin: 0 auto; }
+  .recipe-count {
+    font-size: 0.8rem;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 1.25rem;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* CARD */
+  .card {
+    background: var(--warm-white);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--card-shadow);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 32px rgba(26,20,16,0.13);
+  }
+  .card-img-wrap {
+    height: 200px;
+    overflow: hidden;
+    background: var(--cream);
+    position: relative;
+  }
+  .card-img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s;
+    display: block;
+  }
+  .card:hover .card-img { transform: scale(1.04); }
+  .card-emoji-fallback {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 64px;
+    background: var(--light-sage);
+  }
+  .card-category {
+    position: absolute;
+    top: 10px; left: 10px;
+    background: var(--brown);
+    color: var(--cream);
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 3px;
+  }
+  .card-body {
+    padding: 1.1rem 1.25rem 1.25rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+  .card-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--ink);
+    line-height: 1.3;
+  }
+  .card-desc {
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.55;
+    flex: 1;
+  }
+  .card-footer {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+    padding-top: 8px;
+    border-top: 1px solid var(--border);
+    font-size: 0.75rem;
+    color: var(--muted);
+  }
+  .card-footer span { display: flex; align-items: center; gap: 4px; }
+
+  /* NO RESULTS */
+  .no-results {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 4rem 1rem;
+    color: var(--muted);
+  }
+  .no-results .big { font-size: 3rem; margin-bottom: 0.75rem; }
+  .no-results p { font-family: 'Playfair Display', serif; font-size: 1.1rem; }
+
+  /* DETAIL VIEW */
+  .detail-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(26,20,16,0.55);
+    z-index: 100;
+    overflow-y: auto;
+    padding: 1.5rem;
+  }
+  .detail-overlay.open { display: flex; align-items: flex-start; justify-content: center; }
+  .detail-panel {
+    background: var(--warm-white);
+    border-radius: 12px;
+    width: 100%;
+    max-width: 720px;
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+  }
+  .detail-hero-wrap {
+    height: 320px;
+    overflow: hidden;
+    position: relative;
+    background: var(--cream);
+  }
+  .detail-hero {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  .detail-hero-emoji {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 96px;
+    background: var(--light-sage);
+  }
+  .detail-hero-overlay {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(26,20,16,0.75));
+    padding: 2rem 1.75rem 1.25rem;
+  }
+  .detail-category-badge {
+    display: inline-block;
+    background: var(--terracotta);
+    color: white;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 3px 10px;
+    border-radius: 3px;
+    margin-bottom: 0.5rem;
+  }
+  .detail-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.4rem, 4vw, 2rem);
+    color: white;
+    font-weight: 600;
+    line-height: 1.2;
+  }
+  .close-btn {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    width: 36px; height: 36px;
+    border-radius: 50%;
+    background: rgba(26,20,16,0.5);
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    z-index: 10;
+    transition: background 0.2s;
+  }
+  .close-btn:hover { background: rgba(26,20,16,0.8); }
+  .detail-content {
+    padding: 1.5rem 1.75rem 2rem;
+  }
+  .detail-desc {
+    font-size: 0.9rem;
+    color: var(--muted);
+    line-height: 1.65;
+    margin-bottom: 1.25rem;
+    font-style: italic;
+  }
+
+  /* Servings scaler */
+  .servings-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 0.65rem 1rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+  }
+  .servings-label {
+    font-size: 0.8rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    flex: 1;
+  }
+  .svc-btn {
+    width: 30px; height: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--border);
+    background: white;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--brown);
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.15s;
+  }
+  .svc-btn:hover { background: var(--terracotta); color: white; border-color: var(--terracotta); }
+  .svc-val {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--brown);
+    min-width: 36px;
+    text-align: center;
+  }
+  .svc-unit { font-size: 0.82rem; color: var(--muted); }
+
+  /* Two-column layout */
+  .detail-cols {
+    display: grid;
+    grid-template-columns: 1fr 1.6fr;
+    gap: 2rem;
+  }
+  @media (max-width: 580px) {
+    .detail-cols { grid-template-columns: 1fr; }
+  }
+
+  .section-heading {
+    font-family: 'Lato', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terracotta);
+    margin-bottom: 0.75rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Ingredients */
+  .ing-list { list-style: none; }
+  .ing-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 8px;
+    padding: 6px 0;
+    border-bottom: 1px dotted var(--border);
+    font-size: 0.85rem;
+  }
+  .ing-item:last-child { border-bottom: none; }
+  .ing-name { color: var(--ink); flex: 1; }
+  .ing-amt {
+    color: var(--brown);
+    font-weight: 700;
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  /* Steps */
+  .steps-list { list-style: none; counter-reset: steps; }
+  .step {
+    counter-increment: steps;
+    display: flex;
+    gap: 12px;
+    padding: 10px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .step:last-child { border-bottom: none; }
+  .step-num {
+    min-width: 28px; height: 28px;
+    border-radius: 50%;
+    background: var(--brown);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+  .step-content { flex: 1; }
+  .step-title {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: var(--brown);
+    margin-bottom: 3px;
+  }
+  .step-desc {
+    font-size: 0.84rem;
+    color: var(--ink);
+    line-height: 1.6;
+  }
+
+  /* Notes */
+  .notes-box {
+    margin-top: 1.5rem;
+    background: #fef9f1;
+    border-left: 3px solid var(--gold);
+    border-radius: 0 6px 6px 0;
+    padding: 0.85rem 1rem;
+    font-size: 0.82rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+  .notes-box strong { color: var(--brown); display: block; margin-bottom: 3px; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.1em; }
+
+  /* Footer */
+  .site-footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.78rem;
+    color: var(--muted);
+    border-top: 1px solid var(--border);
+    margin-top: 3rem;
+  }
+  .site-footer span { font-family: 'Playfair Display', serif; font-style: italic; }
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="header-subtitle">A family treasure</div>
+  <h1 class="header-title">The Family Cookbook</h1>
+  <p class="header-desc">15 cherished recipes, passed down with love</p>
+</header>
+
+<div class="controls">
+  <div class="search-wrap">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input class="search-input" id="search" placeholder="Search recipes…" oninput="filterRecipes()">
+  </div>
+  <div class="filter-tags" id="tags"></div>
+</div>
+
+<main class="main">
+  <div class="recipe-count" id="count"></div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<footer class="site-footer">
+  Made with love &nbsp;·&nbsp; <span>The Family Cookbook</span>
+</footer>
+
+<!-- DETAIL OVERLAY -->
+<div class="detail-overlay" id="detail-overlay" onclick="handleOverlayClick(event)">
+  <div class="detail-panel" id="detail-panel">
+    <button class="close-btn" onclick="closeDetail()">✕</button>
+    <div id="detail-body"></div>
+  </div>
+</div>
+
+<script>
+const recipes = [
+  {
+    id:1, title:"Oatmeal Raisin Cookies", emoji:"🍪", category:"Dessert",
+    img:"recipe-img-1.png",
+    desc:"Soft, chewy center with crispy edges. A whole-family classic.",
+    servings:48, servingLabel:"cookies",
+    ingredients:[
+      {name:"Butter, softened",amt:"¾ cup"},{name:"White sugar",amt:"¾ cup"},
+      {name:"Packed light brown sugar",amt:"¾ cup"},{name:"Large eggs",amt:"2"},
+      {name:"Vanilla extract",amt:"1 tsp"},{name:"All-purpose flour",amt:"1¼ cups"},
+      {name:"Baking soda",amt:"1 tsp"},{name:"Ground cinnamon",amt:"¾ tsp"},
+      {name:"Salt",amt:"½ tsp"},{name:"Rolled oats",amt:"2¾ cups"},{name:"Raisins",amt:"1 cup"}
+    ],
+    steps:[
+      {title:"Preheat & prep",desc:"Preheat oven to 375°F. Line two cookie sheets with parchment paper."},
+      {title:"Cream butter & sugars",desc:"Beat butter and both sugars until smooth and creamy. Beat in eggs and vanilla until fluffy."},
+      {title:"Mix dry ingredients",desc:"Stir together flour, baking soda, cinnamon, and salt. Gradually beat into the butter mixture. Stir in oats and raisins."},
+      {title:"Portion",desc:"Drop teaspoonfuls 2 inches apart onto prepared cookie sheets."},
+      {title:"Bake",desc:"Bake 8–10 minutes until golden brown, switching racks halfway through."},
+      {title:"Cool",desc:"Let sit on sheets for 1–2 minutes before transferring to a wire rack."}
+    ],
+    notes:"Per cookie: ~92 cal | 3g fat | 15g carbs. Yield: 4 dozen."
+  },
+  {
+    id:2, title:"Sue's Sticky Buns", emoji:"🌀", category:"Baking",
+    img:"https://images.unsplash.com/photo-1509365465985-25d11c17e812?w=800&q=80",
+    desc:"Cinnamon rolls baked over a buttery pecan butterscotch glaze, flipped upside down.",
+    servings:12, servingLabel:"buns",
+    ingredients:[
+      {name:"Prepared cinnamon roll dough",amt:"1 batch"},{name:"Butter",amt:"⅓ cup"},
+      {name:"Brown sugar",amt:"½ cup"},{name:"Corn syrup (light or dark)",amt:"1 tbsp"},
+      {name:"Pecans",amt:"½ cup"}
+    ],
+    steps:[
+      {title:"Make the glaze",desc:"Melt butter in a saucepan. Stir in brown sugar and corn syrup until smooth. Pour evenly into the bottom of a baking pan."},
+      {title:"Add pecans",desc:"Scatter pecans over the glaze."},
+      {title:"Prepare the rolls",desc:"Cut cinnamon roll dough into slices and place on top of the glaze and pecans."},
+      {title:"Bake",desc:"Bake at 350–375°F for approximately 25 minutes until golden."},
+      {title:"Flip immediately",desc:"Turn pan upside down onto wax paper RIGHT after baking. Let glaze run down over rolls for 1 minute, then lift the pan away."}
+    ],
+    notes:"Don't delay the flip! The glaze hardens fast. Light syrup = milder flavor; dark syrup = deeper caramel richness."
+  },
+  {
+    id:3, title:"Yeast Waffles", emoji:"🧇", category:"Breakfast",
+    img:"recipe-img-2.png",
+    desc:"A classic yeast-raised waffle recipe from a handwritten family card.",
+    servings:4, servingLabel:"servings",
+    ingredients:[
+      {name:"Milk, heated (not boiling)",amt:"2 cups"},{name:"Stick of margarine",amt:"½"},
+      {name:"Sugar (heaping)",amt:"2 tbsp"},{name:"Salt",amt:"¼ tsp"},
+      {name:"Egg",amt:"1"},{name:"Active dry yeast",amt:"3 tsp"},
+      {name:"Warm water",amt:"1 cup"},{name:"Flour",amt:"4½ cups"}
+    ],
+    steps:[
+      {title:"Heat the milk mixture",desc:"Heat milk until warm but not boiling. Add margarine and stir until melted. Mix in sugar and salt."},
+      {title:"Cool the mixture",desc:"Let cool until lukewarm (~10 min) so it doesn't kill the yeast."},
+      {title:"Activate the yeast",desc:"Dissolve yeast in warm water. Let sit until foamy (~10 min)."},
+      {title:"Add egg",desc:"Beat egg and add to the yeast mixture. Stir to combine."},
+      {title:"Combine & add flour",desc:"Pour cooled milk mixture into yeast bowl. Gradually stir in flour until a smooth batter forms."},
+      {title:"Rise",desc:"Cover and let batter rise in a warm spot until bubbly and doubled (~1 hour)."},
+      {title:"Cook",desc:"Preheat and grease your waffle iron. Pour in batter and cook until golden and crisp."}
+    ],
+    notes:"The bottom of the original card was torn — any finishing tips may be missing."
+  },
+  {
+    id:4, title:"Texas Sheet Cake", emoji:"🍫", category:"Dessert",
+    img:"https://images.unsplash.com/photo-1606313564200-e75d5e30476c?w=800&q=80",
+    desc:"Classic Southern chocolate sheet cake with rich fudge frosting spread on while hot.",
+    servings:12, servingLabel:"servings",
+    ingredients:[
+      {name:"Cocoa powder (cake)",amt:"4 tbsp"},{name:"Butter — 2 sticks (cake)",amt:"1 cup"},
+      {name:"Water",amt:"1 cup"},{name:"All-purpose flour",amt:"2 cups"},
+      {name:"Sugar",amt:"2 cups"},{name:"Salt",amt:"½ tsp"},
+      {name:"Eggs",amt:"2"},{name:"Sour cream",amt:"½ cup"},
+      {name:"Baking soda",amt:"1 tsp"},{name:"Vanilla extract",amt:"1 tsp"},
+      {name:"Cocoa powder (frosting)",amt:"4 tbsp"},{name:"Butter — 1 stick (frosting)",amt:"½ cup"},
+      {name:"Milk",amt:"6 tbsp"},{name:"Confectioner's sugar",amt:"3½ cups"}
+    ],
+    steps:[
+      {title:"Make chocolate base",desc:"Combine cocoa, butter, and water in a saucepan. Stir over heat until it boils, then cool completely."},
+      {title:"Mix dry ingredients",desc:"Add flour, sugar, and salt to a mixer bowl and stir."},
+      {title:"Combine batter",desc:"Pour cooled chocolate mixture in. Add eggs, sour cream, baking soda, vanilla. Mix until smooth."},
+      {title:"Bake",desc:"Pour onto a greased cookie sheet. Bake at 375°F for 20 minutes."},
+      {title:"Make frosting",desc:"Boil frosting cocoa, butter, and milk. Pour over confectioner's sugar in mixer and mix until smooth."},
+      {title:"Frost hot",desc:"Spread frosting immediately over the HOT cake. Let set, then slice and serve."}
+    ],
+    notes:"Key tip: chocolate base must cool before going into the batter, but frosting goes on the HOT cake for best results."
+  },
+  {
+    id:5, title:"Natalie's Pie Crust", emoji:"🥧", category:"Baking",
+    img:"https://images.unsplash.com/photo-1602147573375-3e2ae350faa1?w=800&q=80",
+    desc:"A classic homemade pie crust — flaky, buttery, and worth the wait.",
+    servings:2, servingLabel:"crusts",
+    ingredients:[
+      {name:"All-purpose flour",amt:"2½ cups"},{name:"Butter (2 sticks), cold & cubed",amt:"1 cup"},
+      {name:"Salt",amt:"1 tsp"},{name:"Sugar",amt:"1 tsp"},
+      {name:"Ice water (or more as needed)",amt:"7 tbsp"}
+    ],
+    steps:[
+      {title:"Mix dry ingredients",desc:"Combine flour, salt, and sugar in a large bowl. Whisk together."},
+      {title:"Cut in butter",desc:"Add cold cubed butter and work in with a pastry cutter until the mixture resembles coarse crumbs with pea-sized pieces."},
+      {title:"Add ice water",desc:"Drizzle in ice water one tablespoon at a time, mixing gently, until dough just comes together."},
+      {title:"Chill",desc:"Shape into a disk, wrap in plastic, and refrigerate at least 1–2 hours. Overnight is better."},
+      {title:"Roll and fit",desc:"On a lightly floured surface, roll out dough to fit your pie dish. Trim and crimp edges."},
+      {title:"Bake",desc:"Bake at 375°F for about 40 minutes, until golden and good."}
+    ],
+    notes:"Natalie's tip: use more ice water than the recipe says — add gradually until it feels right. Keep everything cold!"
+  },
+  {
+    id:6, title:"Golden Rum Cake", emoji:"🍰", category:"Dessert",
+    img:"https://images.unsplash.com/photo-1627834377411-8da5f4f09de8?w=800&q=80",
+    desc:"A family favorite with a buttery rum glaze that makes it extra special.",
+    servings:12, servingLabel:"servings",
+    ingredients:[
+      {name:"Chopped walnuts",amt:"1 cup"},{name:"Yellow cake mix (15.25 oz)",amt:"1 pkg"},
+      {name:"Instant vanilla pudding mix (3.4 oz)",amt:"1 pkg"},{name:"Large eggs",amt:"4"},
+      {name:"Dark rum (batter)",amt:"½ cup"},{name:"Dark rum (glaze)",amt:"½ cup"},
+      {name:"Water (batter)",amt:"½ cup"},{name:"Water (glaze)",amt:"¼ cup"},
+      {name:"Vegetable oil",amt:"½ cup"},{name:"White sugar",amt:"1 cup"},{name:"Butter",amt:"½ cup"}
+    ],
+    steps:[
+      {title:"Preheat",desc:"Preheat oven to 325°F (165°C)."},
+      {title:"Prep pan",desc:"Grease and flour a 10-inch Bundt pan. Sprinkle walnuts over the bottom."},
+      {title:"Make batter",desc:"Combine cake mix and pudding mix. Whisk in eggs, ½ cup rum, ½ cup water, and oil. Pour over nuts."},
+      {title:"Bake",desc:"Bake about 1 hour until a toothpick comes out clean."},
+      {title:"Make glaze",desc:"Boil sugar, butter, and ¼ cup water for ~5 minutes. Remove from heat; stir in ½ cup rum."},
+      {title:"Glaze",desc:"Cool cake in pan 10 minutes, invert onto a plate. Brush glaze over top and sides, letting it soak in. Repeat until all glaze is used."}
+    ],
+    notes:"~500 cal per serving. The longer the glaze soaks, the better. Makes a wonderful gift."
+  },
+  {
+    id:7, title:"Aunt Rose's Meatball Recipe", emoji:"🍝", category:"Dinner",
+    img:"https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=800&q=80",
+    desc:"Family-style recipe with a light, tender texture. Simmered in tomato sauce for rich flavor.",
+    servings:6, servingLabel:"servings",
+    ingredients:[
+      {name:"Ground beef",amt:"1½ lb"},{name:"Ground pork",amt:"1 lb"},
+      {name:"Eggs",amt:"3"},{name:"Soft bread crumbs",amt:"2½ cups"},
+      {name:"Grated Parmigiano / Romano / Asiago",amt:"1½ cups"},{name:"Garlic cloves, crushed",amt:"3"},
+      {name:"Fresh flat-leaf parsley, chopped",amt:"¼ cup"},{name:"Dried herbs (oregano, basil, thyme)",amt:"1 tbsp"},
+      {name:"Salt and pepper",amt:"1 tsp"},{name:"Nutmeg (optional)",amt:"¼ tsp"},
+      {name:"Tomato sauce",amt:"4 cups"}
+    ],
+    steps:[
+      {title:"Mix the meats",desc:"Combine beef and pork in a large bowl. Mix lightly by hand — do not mash or the meatballs will be dense."},
+      {title:"Add bread crumbs",desc:"Toss bread crumbs in and combine gently."},
+      {title:"Add eggs and cheese",desc:"Break in eggs and add cheese. Combine until soft and slightly sloppy. Add one more egg if too dry."},
+      {title:"Season",desc:"Add garlic, parsley, herbs, salt & pepper, and nutmeg if using. Mix gently."},
+      {title:"Form",desc:"Shape into meatballs. Slightly flat on both sides makes them easier to handle."},
+      {title:"Brown",desc:"Brown lightly on all sides in a skillet over low-medium heat (~10 min). They don't need to be fully cooked."},
+      {title:"Simmer",desc:"Transfer to tomato sauce and simmer on low heat for 45 minutes until fully cooked."}
+    ],
+    notes:"Light hands = tender meatballs. Total meat: 2.5 lbs — any combo of beef, pork, and veal works."
+  },
+  {
+    id:8, title:"Banana Bread", emoji:"🍌", category:"Baking",
+    img:"https://images.unsplash.com/photo-1481390300286-f53b90f3b08e?w=800&q=80",
+    desc:"A light, moist banana bread made with yogurt and egg whites.",
+    servings:8, servingLabel:"slices",
+    ingredients:[
+      {name:"Ripe banana, mashed",amt:"1 cup"},{name:"Sugar",amt:"½ cup"},
+      {name:"Plain nonfat yogurt",amt:"½ cup"},{name:"Melted margarine",amt:"¼ cup"},
+      {name:"Vanilla",amt:"1 tsp"},{name:"Egg",amt:"1"},{name:"Egg white",amt:"1"},
+      {name:"Flour",amt:"2 cups"},{name:"Baking powder",amt:"1 tsp"},
+      {name:"Baking soda",amt:"½ tsp"},{name:"Salt",amt:"¼ tsp"}
+    ],
+    steps:[
+      {title:"Preheat & prep",desc:"Preheat oven to 350°F. Spray an 8¼×4½\" loaf pan with flour-based baking spray."},
+      {title:"Mix wet ingredients",desc:"Combine banana, sugar, yogurt, margarine, vanilla, egg, and egg white. Beat at medium speed until well mixed."},
+      {title:"Mix dry ingredients",desc:"Whisk together flour, baking powder, baking soda, and salt."},
+      {title:"Combine",desc:"Add dry to banana mixture and stir just until moistened. Do not overmix."},
+      {title:"Bake",desc:"Spoon into pan and bake at 350°F for 1 hour 5 minutes, until a toothpick comes out clean."},
+      {title:"Cool",desc:"Let cool in pan for 10 minutes before turning out onto a wire rack."}
+    ],
+    notes:"Use very ripe (spotted) bananas for the best flavor. Don't overmix after adding flour."
+  },
+  {
+    id:9, title:"Toffee with Chocolate & Almonds", emoji:"🍬", category:"Dessert",
+    img:"recipe-img-3.png",
+    desc:"Classic homemade butter toffee topped with melted chocolate chips and almonds.",
+    servings:12, servingLabel:"servings",
+    ingredients:[
+      {name:"Butter",amt:"1 lb"},{name:"Sugar",amt:"2 cups"},
+      {name:"Almonds",amt:"2 cups"},{name:"Chocolate chips (1 bag)",amt:"12 oz"}
+    ],
+    steps:[
+      {title:"Melt butter",desc:"Melt butter in a heavy-bottomed saucepan over medium heat."},
+      {title:"Add sugar",desc:"Add sugar and stir to combine."},
+      {title:"Bring to boil",desc:"Bring to a boil, stirring constantly."},
+      {title:"Cook 15 minutes",desc:"Cook for 15 minutes, stirring constantly, until hard crack stage (300°F / 149°C)."},
+      {title:"Add almonds",desc:"Stir in almonds."},
+      {title:"Cool",desc:"Pour onto a greased baking sheet and cool 5–10 minutes."},
+      {title:"Chocolate & set",desc:"Pour chocolate chips over warm toffee. Let melt, spread evenly, and cool completely before breaking into pieces."}
+    ],
+    notes:"Use a candy thermometer — hard crack stage is 300°F. Stir constantly to prevent burning. Refrigerate to speed up setting."
+  },
+  {
+    id:10, title:"Cowgirl Cookies", emoji:"🤠", category:"Dessert",
+    img:"https://images.unsplash.com/photo-1558961363-fa8fdf82db35?w=800&q=80",
+    desc:"Hearty oatmeal chocolate chip cookies. Makes 8 dozen — perfect for a crowd!",
+    servings:96, servingLabel:"cookies",
+    ingredients:[
+      {name:"All-purpose flour",amt:"4 cups"},{name:"Baking soda",amt:"2 tsp"},
+      {name:"Baking powder",amt:"1 tsp"},{name:"Salt",amt:"1 tsp"},
+      {name:"Shortening",amt:"2 cups"},{name:"Granulated sugar",amt:"2 cups"},
+      {name:"Brown sugar, firmly packed",amt:"2 cups"},{name:"Eggs",amt:"4"},
+      {name:"Quick-cooking rolled oats",amt:"3 cups"},{name:"Vanilla extract",amt:"2 tsp"},
+      {name:"Semisweet chocolate chips",amt:"12 oz"}
+    ],
+    steps:[
+      {title:"Preheat",desc:"Preheat oven to 350°F. Grease baking sheets."},
+      {title:"Sift dry ingredients",desc:"Sift together flour, baking soda, baking powder, and salt."},
+      {title:"Cream",desc:"Combine shortening and both sugars. Cream until thoroughly blended."},
+      {title:"Beat in eggs",desc:"Beat in eggs one at a time until fully incorporated."},
+      {title:"Add dry ingredients",desc:"Stir in sifted dry ingredients and mix well."},
+      {title:"Add oats & chips",desc:"Add oats, vanilla, and chocolate chips. Stir until evenly combined."},
+      {title:"Bake",desc:"Drop by teaspoonfuls onto greased sheets. Bake at 350°F for about 12 minutes, until golden brown."}
+    ],
+    notes:"Yield: 8 dozen. Great for bake sales, holidays, or freezing dough. From Bev Almaguer & Nancy Fry of Fargo, ND."
+  },
+  {
+    id:11, title:"Sharon's Apple Crisp", emoji:"🍎", category:"Dessert",
+    img:"https://images.unsplash.com/photo-1568571780765-9276ac8b75a2?w=800&q=80",
+    desc:"A classic, homey apple crisp from Sharon Givens' kitchen. Simple ingredients, big flavor.",
+    servings:7, servingLabel:"servings",
+    ingredients:[
+      {name:"Large tart apples, peeled, cored & sliced",amt:"3"},
+      {name:"Flour",amt:"1 cup"},{name:"Firmly packed brown sugar",amt:"¾ cup"},
+      {name:"Ground cinnamon",amt:"1 tbsp"},{name:"Stick margarine",amt:"1"}
+    ],
+    steps:[
+      {title:"Prep apples",desc:"Place sliced apples in a greased 2-quart shallow baking dish."},
+      {title:"Make topping",desc:"Combine flour, brown sugar, and cinnamon. Cut in margarine with a pastry blender until crumbly."},
+      {title:"Assemble & bake",desc:"Mix topping into apples. Bake at 375°F for 30–35 minutes, until apples are tender."},
+      {title:"Serve",desc:"Serve warm with ice cream, sour cream, or whipped cream."}
+    ],
+    notes:"Sharon's tip: Use as much cinnamon as you believe will be tasty — she uses about 1 tablespoon or more!"
+  },
+  {
+    id:12, title:"Apple Pie Moonshine", emoji:"🍏", category:"Drinks",
+    img:"https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=800&q=80",
+    desc:"A smooth, sweet homemade apple pie moonshine — dangerously drinkable, perfect for gifting.",
+    servings:6, servingLabel:"quart jars",
+    ingredients:[
+      {name:"190-proof Everclear (or high-proof vodka)",amt:"1 bottle (750ml)"},
+      {name:"Captain Morgan Spiced Rum",amt:"1 cup"},
+      {name:"Apple Cider",amt:"1 gallon"},{name:"Apple Juice",amt:"1 gallon"},
+      {name:"Brown Sugar",amt:"3 cups"},{name:"White Sugar",amt:"1 cup"},
+      {name:"Cinnamon Sticks",amt:"10"}
+    ],
+    steps:[
+      {title:"Combine base",desc:"In a large stock pot, combine cinnamon sticks, apple cider, and apple juice. Bring to a mild simmer."},
+      {title:"Dissolve sugars",desc:"Add both sugars. Stir slowly until fully dissolved, about 5–10 minutes."},
+      {title:"Cool completely",desc:"Turn off heat and cool completely to room temperature. Do not rush — adding alcohol while hot evaporates it."},
+      {title:"Add alcohol",desc:"Once cooled, stir in Everclear and rum."},
+      {title:"Jar and finish",desc:"Ladle into 6 quart-sized mason jars. Add a cinnamon stick to each jar. Seal and refrigerate."}
+    ],
+    notes:"Two cups of rum makes it even better. Keeps refrigerated for several months — smoother over time."
+  }
+  {
+    id:13, title:"Lemon Pizzelle", emoji:"🍋", category:"Dessert",
+    img:"recipe-img-4.png",
+    desc:"An addictive Italian wafer cookie with a hint of lemon. From Marcellina In Cucina.",
+    servings:12, servingLabel:"cookies",
+    ingredients:[
+      {name:"Eggs",amt:"3"},
+      {name:"Superfine (castor) sugar",amt:"⅔ cup"},
+      {name:"Light tasting olive oil",amt:"½ cup"},
+      {name:"Lemon zest, finely grated",amt:"1 lemon"},
+      {name:"All-purpose flour",amt:"7.1 oz"},
+      {name:"Salt",amt:"1 pinch"},
+      {name:"Powdered sugar, for dusting",amt:"1 tbsp"}
+    ],
+    steps:[
+      {title:"Preheat pizzelle iron",desc:"Preheat your pizzelle iron according to the manufacturer's instructions."},
+      {title:"Mix wet ingredients",desc:"In a medium bowl, lightly whisk together eggs, sugar, olive oil, and lemon zest until combined. Stir in flour and salt."},
+      {title:"Check batter consistency",desc:"The batter should be a thick cake batter consistency that falls easily from a spoon — not thin enough to pour. If too thin, incorporate a little more flour."},
+      {title:"Cook pizzelle",desc:"Cook pizzelle according to the instructions supplied with your pizzelle iron."},
+      {title:"Cool & dust",desc:"Allow to cool completely, then dust with powdered sugar if desired. Store in an airtight container."}
+    ],
+    notes:"Variation: Orange Pizzelle — substitute orange zest for lemon zest. Per cookie: 164 kcal | 18g carbs | 3g protein | 8g fat. Prep: 10 min | Cook: 20 min | Rating: 4.98/5"
+  },
+  {
+    id:14, title:"Papa's Popovers", emoji:"🫙", category:"Breakfast",
+    img:"https://images.unsplash.com/photo-1586190848861-99aa4a171e90?w=800&q=80",
+    desc:"A classic family recipe — crispy outside, airy inside. Simple ingredients, magic results.",
+    servings:6, servingLabel:"popovers",
+    ingredients:[
+      {name:"All-purpose flour",amt:"1½ cups"},
+      {name:"Milk",amt:"1½ cups"},
+      {name:"Eggs",amt:"2"},
+      {name:"Salt",amt:"1 tsp"}
+    ],
+    steps:[
+      {title:"Preheat oven",desc:"Preheat oven to 450°F. Place a greased popover pan or muffin tin in the oven while it heats — a hot pan is key to a good rise."},
+      {title:"Mix batter",desc:"Whisk together eggs and milk until combined. Add flour and salt and whisk until smooth. Don't overmix — a few small lumps are fine."},
+      {title:"Rest batter",desc:"Let batter rest at room temperature for 10–15 minutes."},
+      {title:"Fill pan",desc:"Carefully remove the hot pan from the oven. Fill each cup about halfway with batter."},
+      {title:"Bake at 450°F",desc:"Bake at 450°F for 15 minutes — do not open the oven door."},
+      {title:"Reduce heat & finish",desc:"Without opening the oven, reduce temperature to 375°F and bake for another 15 minutes until deep golden brown."},
+      {title:"Serve",desc:"Remove immediately from the pan and serve hot. Pierce the side of each popover with a knife to let steam escape and keep them crisp."}
+    ],
+    notes:"Double batch: 3 cups flour, 3 cups milk, 4 eggs, 2 tsp salt — adjust servings above to scale. Room-temperature milk and eggs give the best rise. The two-stage baking method (450°F → 375°F) creates the rise then sets the structure."
+  },
+  {
+    id:15, title:"Mom's Cinnamon Rolls", emoji:"🍥", category:"Baking",
+    img:"https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=800&q=80",
+    desc:"A cherished family recipe — soft, pillowy cinnamon rolls with a buttery sugar filling and warm vanilla frosting.",
+    servings:12, servingLabel:"rolls",
+    ingredients:[
+      {name:"Active dry yeast (2 pkgs)",amt:"4½ tsp"},
+      {name:"Warm water (105–115°F)",amt:"½ cup"},
+      {name:"Buttermilk",amt:"1¼ cups"},
+      {name:"Eggs",amt:"2"},
+      {name:"All-purpose flour (plus more as needed)",amt:"5¾ cups"},
+      {name:"Butter or margarine, softened",amt:"½ cup"},
+      {name:"Sugar",amt:"½ cup"},
+      {name:"Baking powder",amt:"2 tsp"},
+      {name:"Salt",amt:"2 tsp"},
+      {name:"Butter, melted (for pan & rolling)",amt:"1 stick"},
+      {name:"Sugar (for filling)",amt:"½ cup"},
+      {name:"Cinnamon (for filling)",amt:"2 tbsp"},
+      {name:"Powdered sugar (for frosting)",amt:"¾ cup"},
+      {name:"Vanilla (for frosting)",amt:"1 tsp"},
+      {name:"Melted butter (for frosting)",amt:"2 tbsp"},
+      {name:"Milk (for frosting)",amt:"2 tbsp"}
+    ],
+    steps:[
+      {title:"Dissolve yeast",desc:"In a large mixer bowl, dissolve yeast in warm water. Let sit until foamy, about 5 minutes."},
+      {title:"Mix dough",desc:"Add buttermilk, eggs, softened butter, sugar, baking powder, salt, and 2½ cups of the flour. Blend for ½ minute on low speed, scraping bowl constantly."},
+      {title:"Beat dough",desc:"Beat for 2 minutes on medium speed, scraping bowl occasionally. Stir in enough remaining flour to make dough easy to handle. Dough should be soft and sticky."},
+      {title:"Knead dough",desc:"Turn dough out onto a well-floured board. Knead for 5 minutes or about 200 turns until smooth and elastic."},
+      {title:"First rise",desc:"Shape dough, cover, and let rise in a warm place until doubled — about 1 hour."},
+      {title:"Preheat & make filling",desc:"Heat oven to 375°F. Mix sugar and cinnamon together for the filling. Melt 1 stick of butter."},
+      {title:"Roll & fill",desc:"Roll dough into a long horizontal shape. Spoon melted butter over the dough (save some for the pan and frosting). Sprinkle cinnamon sugar evenly over the butter."},
+      {title:"Roll up & cut",desc:"Roll dough horizontally, pulling slightly as you go to make it as long as possible. Slice rolls with a knife. Add melted butter to the pan, then roll each cut roll in the butter. Continue until pan is full."},
+      {title:"Second rise",desc:"Place a towel over the rolls and let rise about 1 hour in a warm place."},
+      {title:"Bake",desc:"Bake at 375°F for approximately 25 minutes. Watch closely and turn pan around during baking as they tend to burn on the edges."},
+      {title:"Frost while hot",desc:"Mix powdered sugar, vanilla, remaining melted butter, and enough milk to reach a spreadable consistency. Frost rolls while still hot so the frosting melts in."}
+    ],
+    notes:"Mom's tip: Cut butter into small pieces before softening for easier mixing. Watch the rolls carefully in the last few minutes — the edges brown fast. Frost while hot so the frosting melts into the rolls. This is considered a family treasure!"
+  },
+];
+
+const categories = ["All", ...new Set(recipes.map(r => r.category))];
+let activeCategory = "All";
+let currentServings = {};
+recipes.forEach(r => currentServings[r.id] = r.servings);
+
+function renderTags() {
+  document.getElementById("tags").innerHTML = categories.map(c =>
+    `<button class="tag ${c === activeCategory ? 'active' : ''}" onclick="setCategory('${c}')">${c}</button>`
+  ).join("");
+}
+
+function setCategory(cat) {
+  activeCategory = cat;
+  renderTags();
+  filterRecipes();
+}
+
+function filterRecipes() {
+  const q = document.getElementById("search").value.toLowerCase();
+  const filtered = recipes.filter(r => {
+    const mc = activeCategory === "All" || r.category === activeCategory;
+    const mq = !q || r.title.toLowerCase().includes(q) || r.category.toLowerCase().includes(q) || r.desc.toLowerCase().includes(q);
+    return mc && mq;
+  });
+  renderGrid(filtered);
+}
+
+function renderGrid(list) {
+  const grid = document.getElementById("grid");
+  const count = document.getElementById("count");
+  count.textContent = `${list.length} recipe${list.length !== 1 ? 's' : ''}`;
+  if (!list.length) {
+    grid.innerHTML = `<div class="no-results"><div class="big">🍽️</div><p>No recipes found — try a different search.</p></div>`;
+    return;
+  }
+  grid.innerHTML = list.map(r => `
+    <article class="card" onclick="openDetail(${r.id})">
+      <div class="card-img-wrap">
+        <img class="card-img" src="${r.img}" alt="${r.title}"
+          onerror="this.parentElement.innerHTML='<div class=\\'card-emoji-fallback\\'>${r.emoji}</div>'"
+          loading="lazy">
+        <div class="card-category">${r.category}</div>
+      </div>
+      <div class="card-body">
+        <h2 class="card-title">${r.title}</h2>
+        <p class="card-desc">${r.desc}</p>
+        <div class="card-footer">
+          <span>🥄 ${r.ingredients.length} ingredients</span>
+          <span>📋 ${r.steps.length} steps</span>
+          <span>🍽 ${r.servings} ${r.servingLabel}</span>
+        </div>
+      </div>
+    </article>
+  `).join("");
+}
+
+function scaleAmt(amt, mult) {
+  if (mult === 1) return amt;
+  const frac = {"¼":0.25,"½":0.5,"¾":0.75,"⅓":0.333,"⅔":0.667};
+  const match = amt.match(/^([¼½¾⅓⅔]|\d+\.?\d*)/);
+  if (!match) return amt;
+  let num = parseFloat(frac[match[1]] !== undefined ? frac[match[1]] : match[1]);
+  num = Math.round(num * mult * 100) / 100;
+  return num + amt.slice(match[1].length);
+}
+
+function renderIngredients(r, mult) {
+  return r.ingredients.map(ing =>
+    `<li class="ing-item"><span class="ing-name">${ing.name}</span><span class="ing-amt">${scaleAmt(ing.amt, mult)}</span></li>`
+  ).join("");
+}
+
+function changeServings(id, delta) {
+  const r = recipes.find(x => x.id === id);
+  const step = Math.max(1, Math.floor(r.servings / 12));
+  currentServings[id] = Math.max(1, currentServings[id] + delta * step);
+  document.getElementById("sv-" + id).textContent = currentServings[id];
+  document.getElementById("ing-" + id).innerHTML = renderIngredients(r, currentServings[id] / r.servings);
+}
+
+function openDetail(id) {
+  const r = recipes.find(x => x.id === id);
+  const mult = currentServings[id] / r.servings;
+  document.getElementById("detail-body").innerHTML = `
+    <div class="detail-hero-wrap">
+      <img class="detail-hero" src="${r.img}" alt="${r.title}"
+        onerror="this.parentElement.innerHTML='<div class=\\'detail-hero-emoji\\'>${r.emoji}</div>'">
+      <div class="detail-hero-overlay">
+        <div class="detail-category-badge">${r.category}</div>
+        <h2 class="detail-title">${r.title}</h2>
+      </div>
+    </div>
+    <div class="detail-content">
+      <p class="detail-desc">${r.desc}</p>
+      <div class="servings-bar">
+        <span class="servings-label">Servings</span>
+        <button class="svc-btn" onclick="changeServings(${id},-1)">−</button>
+        <span class="svc-val" id="sv-${id}">${currentServings[id]}</span>
+        <button class="svc-btn" onclick="changeServings(${id},1)">+</button>
+        <span class="svc-unit">${r.servingLabel}</span>
+      </div>
+      <div class="detail-cols">
+        <div>
+          <div class="section-heading">Ingredients</div>
+          <ul class="ing-list" id="ing-${id}">${renderIngredients(r, mult)}</ul>
+        </div>
+        <div>
+          <div class="section-heading">Method</div>
+          <ol class="steps-list">
+            ${r.steps.map(s => `
+              <li class="step">
+                <div class="step-num"></div>
+                <div class="step-content">
+                  <div class="step-title">${s.title}</div>
+                  <div class="step-desc">${s.desc}</div>
+                </div>
+              </li>`).join("")}
+          </ol>
+        </div>
+      </div>
+      ${r.notes ? `<div class="notes-box"><strong>Notes</strong>${r.notes}</div>` : ""}
+    </div>
+  `;
+  document.getElementById("detail-overlay").classList.add("open");
+  document.getElementById("detail-overlay").scrollTop = 0;
+}
+
+function closeDetail() {
+  document.getElementById("detail-overlay").classList.remove("open");
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById("detail-overlay")) closeDetail();
+}
+
+document.addEventListener("keydown", e => { if (e.key === "Escape") closeDetail(); });
+
+renderTags();
+filterRecipes();
+</script>
+</body>
+</html>
