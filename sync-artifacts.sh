@@ -1,15 +1,13 @@
 #!/bin/bash
-# Syncs Claude scheduled-task outputs from ~/Documents/Claude into this repo,
-# pushes to GitHub, and pulls on the NAS so the portfolio stays current.
+# Syncs Claude scheduled-task outputs from ~/Documents/Claude into this repo
+# and pushes to GitHub. The NAS pulls on its own half-hourly cron (givster's
+# crontab on 192.168.1.94), so no Mac->NAS SSH is needed here.
 # Runs daily via launchd: ~/Library/LaunchAgents/com.chrisgiven.claude-artifacts-sync.plist
 set -euo pipefail
 export PATH=/usr/bin:/bin:/usr/local/bin:/opt/homebrew/bin:$PATH
 
 REPO="$HOME/Projects/claude-artifacts"
 SRC="$HOME/Documents/Claude"
-NAS="givster@192.168.1.94"
-NAS_REPO="/volume1/Web/projects/claude-artifacts"
-
 cd "$REPO"
 
 # Only sync paths already published; CLAUDE.md files hold private memory
@@ -29,5 +27,4 @@ git add -A
 git commit -m "chore: auto-sync artifact outputs $(date '+%F')"
 git push
 
-ssh -o BatchMode=yes -o ConnectTimeout=10 "$NAS" "cd $NAS_REPO && git pull"
-echo "$(date '+%F %T') synced and deployed"
+echo "$(date '+%F %T') synced and pushed (NAS pulls via its own cron)"
