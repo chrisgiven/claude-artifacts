@@ -412,6 +412,11 @@ footer .dot{color:var(--gold)}
         <span class="det">OFB — Battle of the Bands (Aug) · Footfalls (Sep)</span>
         <span class="st concept"><span class="led concept"></span>Booked</span>
       </div>
+      <div class="board-row" role="row">
+        <span class="sys">SYS / REPO</span>
+        <span class="det" id="repo-det">Checking GitHub…</span>
+        <span class="st" id="repo-st"><span class="led wip" id="repo-led"></span><span id="repo-label">…</span></span>
+      </div>
     </div>
   </div>
 </header>
@@ -583,6 +588,40 @@ footer .dot{color:var(--gold)}
 // footer year + board stamp
 document.getElementById('yr').textContent=new Date().getFullYear();
 document.getElementById('stamp').textContent=new Date().toISOString().slice(0,10);
+
+// GitHub repo sync check
+(function(){
+  var DEPLOYED='8cd9a7c3a388c435353260b7cf46db87765391bd';
+  var det=document.getElementById('repo-det');
+  var led=document.getElementById('repo-led');
+  var lbl=document.getElementById('repo-label');
+  var st=document.getElementById('repo-st');
+  fetch('https://api.github.com/repos/chrisgiven/claude-artifacts/commits/main',{headers:{'Accept':'application/vnd.github.v3+json'}})
+    .then(function(r){return r.json()})
+    .then(function(d){
+      var sha=d.sha||'';
+      var msg=(d.commit&&d.commit.message||'').split('\n')[0].slice(0,60);
+      var date=d.commit&&d.commit.committer&&d.commit.committer.date||'';
+      var age=date?Math.round((Date.now()-new Date(date))/60000)+'m ago':'';
+      var inSync=sha.startsWith(DEPLOYED.slice(0,7));
+      det.textContent=sha.slice(0,7)+' · '+msg+(age?' · '+age:'');
+      if(inSync){
+        led.className='led live';
+        st.className='st live';
+        lbl.textContent='In Sync';
+      } else {
+        led.className='led wip';
+        st.className='st wip';
+        lbl.textContent='Behind';
+        det.textContent+=' ← NAS behind';
+      }
+    })
+    .catch(function(){
+      det.textContent='GitHub unreachable';
+      led.className='led concept';
+      lbl.textContent='Unknown';
+    });
+})();
 </script>
 </body>
 </html>
