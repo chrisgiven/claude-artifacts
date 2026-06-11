@@ -3,130 +3,586 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Chris Given · Project Hub</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<title>Big Poppy Consulting — Signal Over Noise</title>
+<meta name="description" content="Independent IT consulting and a self-hosted lab. Infrastructure strategy, TCO analysis, lifecycle planning — plus the experiments, running live.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-  :root { --blue: #0066ff; --cyan: #00ffff; --bg: #0a0a0f; --surface: #111118; --border: #1e1e2e; --text: #e2e2f0; --muted: #6b6b8a; --white: #ffffff; }
-  body { font-family: 'Inter', sans-serif; background: var(--bg); color: var(--text); min-height: 100vh; }
-  body::before { content: ''; position: fixed; inset: 0; background-image: linear-gradient(rgba(0,102,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(0,102,255,0.03) 1px, transparent 1px); background-size: 40px 40px; pointer-events: none; z-index: 0; }
-  .wrapper { position: relative; z-index: 1; max-width: 1200px; margin: 0 auto; padding: 0 32px; }
-  header { position: relative; padding: 48px 0 40px; border-bottom: 1px solid var(--border); margin-bottom: 48px; display: flex; align-items: center; justify-content: space-between; }
-  .header-left { display: flex; align-items: center; gap: 20px; }
-  .avatar { width: 52px; height: 52px; background: linear-gradient(135deg, var(--blue), var(--cyan)); border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.4em; box-shadow: 0 0 24px rgba(0,102,255,0.4); }
-  .header-text h1 { font-size: 1.5em; font-weight: 700; color: var(--white); letter-spacing: -0.02em; }
-  .header-text p { font-size: 0.85em; color: var(--muted); margin-top: 2px; font-family: 'JetBrains Mono', monospace; }
-  .status-bar { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 8px 14px; font-size: 0.78em; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
-  .status-dot { width: 7px; height: 7px; border-radius: 50%; background: #00c853; box-shadow: 0 0 8px #00c853; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.4} }
-  section { margin-bottom: 48px; }
-  .section-header { display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
-  .section-header h2 { font-size: 0.72em; font-weight: 600; text-transform: uppercase; letter-spacing: 0.12em; color: var(--muted); white-space: nowrap; }
-  .section-line { flex: 1; height: 1px; background: var(--border); }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(270px, 1fr)); gap: 16px; }
-  .card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 24px; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 10px; transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s; position: relative; overflow: hidden; }
-  .card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--blue), var(--cyan)); opacity: 0; transition: opacity 0.2s; }
-  .card:hover { border-color: rgba(0,102,255,0.4); transform: translateY(-3px); box-shadow: 0 12px 40px rgba(0,102,255,0.12); }
-  .card:hover::before { opacity: 1; }
-  .card-icon { font-size: 1.6em; line-height: 1; }
-  .card h3 { font-size: 0.95em; font-weight: 600; color: var(--white); }
-  .card p { font-size: 0.8em; color: var(--muted); line-height: 1.55; flex: 1; }
-  .card-footer { display: flex; align-items: center; justify-content: space-between; margin-top: 4px; }
-  .badge { font-size: 0.68em; font-weight: 600; padding: 3px 10px; border-radius: 20px; font-family: 'JetBrains Mono', monospace; }
-  .badge-live { background: rgba(0,200,83,0.12); color: #00c853; border: 1px solid rgba(0,200,83,0.2); }
-  .badge-code { background: rgba(0,102,255,0.12); color: #4d9fff; border: 1px solid rgba(0,102,255,0.2); }
-  .badge-archive { background: rgba(107,107,138,0.15); color: var(--muted); border: 1px solid var(--border); }
-  .card-arrow { color: var(--muted); font-size: 0.85em; transition: color 0.2s, transform 0.2s; }
-  .card:hover .card-arrow { color: var(--cyan); transform: translateX(3px); }
-  footer { border-top: 1px solid var(--border); padding: 24px 0 40px; display: flex; align-items: center; justify-content: space-between; font-size: 0.75em; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
-  footer a { color: var(--blue); text-decoration: none; }
-  footer a:hover { color: var(--cyan); }
+:root{
+  --void:#100e0b;
+  --panel:#1a1713;
+  --panel-2:#221e18;
+  --line:#2e2820;
+  --line-soft:#262019;
+  --ink:#ece5d6;
+  --muted:#9b9080;
+  --faint:#6e655a;
+  --gold:#d2a24a;
+  --gold-dim:#8a6c34;
+  --live:#5cc781;
+  --wip:#e0a33c;
+  --concept:#8b9be6;
+  --maxw:1120px;
+  --pad:clamp(20px,4vw,48px);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+
+body{
+  background:var(--void);
+  color:var(--ink);
+  font-family:'Instrument Sans',system-ui,sans-serif;
+  font-size:16px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+}
+
+::selection{background:var(--gold);color:var(--void)}
+
+a{color:inherit}
+a:focus-visible,button:focus-visible{
+  outline:2px solid var(--gold);
+  outline-offset:3px;
+  border-radius:2px;
+}
+
+.mono{font-family:'Spline Sans Mono',monospace}
+
+/* ---------- meter bridge (signature) ---------- */
+.meters{
+  display:flex;
+  align-items:flex-end;
+  gap:5px;
+  height:34px;
+  padding:0 var(--pad);
+  overflow:hidden;
+  border-bottom:1px solid var(--line-soft);
+}
+.meters span{
+  flex:1;
+  min-width:3px;
+  height:100%;
+  background:linear-gradient(to top,var(--gold-dim),var(--gold) 55%,var(--live));
+  opacity:.5;
+  transform-origin:bottom;
+  animation:vu 1.6s ease-in-out infinite alternate;
+}
+@keyframes vu{
+  from{transform:scaleY(.12)}
+  to{transform:scaleY(var(--peak,.85))}
+}
+@media (prefers-reduced-motion:reduce){
+  .meters span{transform:scaleY(var(--peak,.5))}
+}
+
+/* ---------- nav ---------- */
+nav{
+  position:sticky;
+  top:0;
+  z-index:50;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:14px var(--pad);
+  background:rgba(16,14,11,.88);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line-soft);
+}
+.brand{
+  font-family:'Spline Sans Mono',monospace;
+  font-weight:600;
+  font-size:13px;
+  letter-spacing:.14em;
+  text-decoration:none;
+  color:var(--ink);
+}
+.brand b{color:var(--gold);font-weight:600}
+nav ul{display:flex;gap:26px;list-style:none}
+nav ul a{
+  font-family:'Spline Sans Mono',monospace;
+  font-size:12px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  text-decoration:none;
+  color:var(--muted);
+  transition:color .18s;
+}
+nav ul a:hover{color:var(--gold)}
+
+/* ---------- shared layout ---------- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+section{padding:clamp(64px,9vw,120px) 0}
+
+.eyebrow{
+  font-family:'Spline Sans Mono',monospace;
+  font-size:11px;
+  font-weight:500;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--gold);
+  display:flex;
+  align-items:center;
+  gap:14px;
+  margin-bottom:22px;
+}
+.eyebrow::after{content:"";flex:1;height:1px;background:var(--line)}
+
+h2{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:800;
+  font-size:clamp(30px,4.5vw,46px);
+  line-height:1.05;
+  letter-spacing:-.015em;
+  margin-bottom:14px;
+}
+.section-note{color:var(--muted);max-width:560px;margin-bottom:44px}
+
+/* ---------- hero ---------- */
+header.hero{padding:clamp(56px,8vw,104px) 0 clamp(48px,6vw,80px)}
+.hero h1{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:800;
+  font-size:clamp(46px,8.5vw,104px);
+  line-height:.98;
+  letter-spacing:-.025em;
+  max-width:11ch;
+}
+.hero h1 em{
+  font-style:normal;
+  color:var(--gold);
+}
+.hero .lede{
+  margin-top:26px;
+  max-width:560px;
+  font-size:clamp(16px,1.6vw,19px);
+  color:var(--muted);
+}
+.hero .lede strong{color:var(--ink);font-weight:500}
+
+/* status board */
+.board{
+  margin-top:52px;
+  border:1px solid var(--line);
+  background:var(--panel);
+}
+.board-head{
+  display:flex;
+  justify-content:space-between;
+  padding:10px 18px;
+  border-bottom:1px solid var(--line-soft);
+  font-family:'Spline Sans Mono',monospace;
+  font-size:10.5px;
+  letter-spacing:.18em;
+  text-transform:uppercase;
+  color:var(--faint);
+}
+.board-row{
+  display:grid;
+  grid-template-columns:150px 1fr auto;
+  gap:18px;
+  align-items:center;
+  padding:14px 18px;
+  font-family:'Spline Sans Mono',monospace;
+  font-size:13px;
+}
+.board-row + .board-row{border-top:1px solid var(--line-soft)}
+.board-row .sys{color:var(--faint);letter-spacing:.08em;font-size:11.5px}
+.board-row .det{color:var(--ink)}
+.board-row .st{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+
+.led{width:7px;height:7px;border-radius:50%;flex-shrink:0}
+.led.live{background:var(--live);box-shadow:0 0 8px rgba(92,199,129,.5)}
+.led.wip{background:var(--wip);box-shadow:0 0 8px rgba(224,163,60,.45)}
+.led.concept{background:var(--concept);box-shadow:0 0 8px rgba(139,155,230,.45)}
+.st.live{color:var(--live)}
+.st.wip{color:var(--wip)}
+.st.concept{color:var(--concept)}
+
+/* ---------- method strip ---------- */
+.method{
+  border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);
+  background:var(--panel);
+}
+.method .wrap{
+  display:flex;
+  align-items:center;
+  flex-wrap:wrap;
+  gap:10px 0;
+  padding-top:18px;
+  padding-bottom:18px;
+  font-family:'Spline Sans Mono',monospace;
+  font-size:12px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+}
+.method .lbl{color:var(--faint);margin-right:22px;font-size:10.5px;letter-spacing:.2em}
+.method .step{color:var(--ink)}
+.method .arr{color:var(--gold);margin:0 14px}
+
+/* ---------- cards ---------- */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
+  gap:18px;
+}
+.card{
+  position:relative;
+  display:flex;
+  flex-direction:column;
+  background:var(--panel);
+  border:1px solid var(--line);
+  padding:22px 22px 18px;
+  text-decoration:none;
+  transition:transform .18s ease,border-color .18s ease,background .18s ease;
+}
+.card::before{
+  content:"";
+  position:absolute;
+  top:0;left:0;right:0;
+  height:2px;
+  background:var(--card-led,var(--line));
+  opacity:.85;
+}
+a.card:hover{
+  transform:translateY(-3px);
+  border-color:var(--gold-dim);
+  background:var(--panel-2);
+}
+.card.s-live{--card-led:var(--live)}
+.card.s-wip{--card-led:var(--wip)}
+.card.s-concept{--card-led:var(--concept)}
+.card.s-engaged{--card-led:var(--gold)}
+
+.card-meta{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  font-family:'Spline Sans Mono',monospace;
+  font-size:10.5px;
+  letter-spacing:.16em;
+  text-transform:uppercase;
+  color:var(--faint);
+  margin-bottom:16px;
+}
+.card-meta .code{color:var(--gold)}
+.card h3{
+  font-family:'Bricolage Grotesque',sans-serif;
+  font-weight:700;
+  font-size:21px;
+  letter-spacing:-.01em;
+  line-height:1.15;
+  margin-bottom:10px;
+}
+.card p{font-size:14.5px;color:var(--muted);flex:1}
+.card-foot{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+  margin-top:18px;
+  padding-top:14px;
+  border-top:1px solid var(--line-soft);
+}
+.tag{
+  font-family:'Spline Sans Mono',monospace;
+  font-size:10px;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--muted);
+  border:1px solid var(--line);
+  padding:3px 9px;
+}
+.tag.hot{color:var(--gold);border-color:var(--gold-dim)}
+.go{
+  margin-left:auto;
+  font-family:'Spline Sans Mono',monospace;
+  font-size:11px;
+  letter-spacing:.1em;
+  color:var(--gold);
+}
+
+/* ---------- about ---------- */
+.about-grid{
+  display:grid;
+  grid-template-columns:1.4fr 1fr;
+  gap:48px;
+  align-items:start;
+}
+.about-grid p{color:var(--muted);margin-bottom:16px;max-width:56ch}
+.about-grid p strong{color:var(--ink);font-weight:500}
+.contact{
+  border:1px solid var(--line);
+  background:var(--panel);
+  padding:26px;
+}
+.contact .eyebrow{margin-bottom:18px}
+.contact a.cta{
+  display:inline-block;
+  font-family:'Spline Sans Mono',monospace;
+  font-size:13px;
+  letter-spacing:.1em;
+  text-transform:uppercase;
+  text-decoration:none;
+  color:var(--void);
+  background:var(--gold);
+  padding:12px 22px;
+  transition:background .18s;
+}
+.contact a.cta:hover{background:#e2b562}
+.contact .alt{
+  margin-top:16px;
+  font-family:'Spline Sans Mono',monospace;
+  font-size:12px;
+  color:var(--faint);
+}
+
+/* ---------- footer ---------- */
+footer{
+  border-top:1px solid var(--line);
+  padding:26px var(--pad);
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:10px;
+  font-family:'Spline Sans Mono',monospace;
+  font-size:11px;
+  letter-spacing:.12em;
+  text-transform:uppercase;
+  color:var(--faint);
+}
+footer .dot{color:var(--gold)}
+
+/* ---------- reveal ---------- */
+.fade{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
+.fade.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .fade{opacity:1;transform:none}
+}
+
+/* ---------- responsive ---------- */
+@media (max-width:760px){
+  nav ul{gap:16px}
+  .board-row{grid-template-columns:1fr;gap:6px;padding:14px 16px}
+  .board-row .st{justify-content:flex-start}
+  .about-grid{grid-template-columns:1fr}
+  .method .arr{margin:0 10px}
+}
 </style>
 </head>
 <body>
-<div class="wrapper">
 
-  <header>
-    <div class="header-left">
-      <div class="avatar">🚀</div>
-      <div class="header-text">
-        <h1>Chris Given · Project Hub</h1>
-        <p>192.168.1.94 · BCP/DR &amp; IT Consulting · OFB</p>
+<div class="meters" aria-hidden="true" id="meters"></div>
+
+<nav>
+  <a class="brand" href="#top"><b>BPC</b>&nbsp;//&nbsp;BIG POPPY</a>
+  <ul>
+    <li><a href="#consulting">Consulting</a></li>
+    <li><a href="#lab">Lab</a></li>
+    <li><a href="#about">About</a></li>
+  </ul>
+</nav>
+
+<header class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow">Big Poppy Consulting — Alexandria, VA</div>
+    <h1 class="fade in">Signal <em>over</em> noise.</h1>
+    <p class="lede fade in">Independent IT consulting for infrastructure decisions that carry real money — <strong>TCO, lifecycle, continuity</strong> — alongside a self-hosted lab where the experiments actually run.</p>
+
+    <div class="board fade in" role="table" aria-label="Current status">
+      <div class="board-head"><span>System status</span><span id="stamp"></span></div>
+      <div class="board-row" role="row">
+        <span class="sys">SYS / CONSULTING</span>
+        <span class="det">CTC · TCO model — owned DC vs. colo &nbsp;|&nbsp; PNC · advisory</span>
+        <span class="st live"><span class="led live"></span>Engaged</span>
+      </div>
+      <div class="board-row" role="row">
+        <span class="sys">SYS / LAB</span>
+        <span class="det">Jarvis · AI Sound Engineer · Order Up</span>
+        <span class="st wip"><span class="led wip"></span>Building</span>
+      </div>
+      <div class="board-row" role="row">
+        <span class="sys">SYS / STAGE</span>
+        <span class="det">OFB — Battle of the Bands (Aug) · Footfalls (Sep)</span>
+        <span class="st concept"><span class="led concept"></span>Booked</span>
       </div>
     </div>
-    <div class="status-bar"><span class="status-dot"></span>All systems online</div>
-  </header>
+  </div>
+</header>
 
-  <section>
-    <div class="section-header"><h2>📊 Dashboards &amp; Live Monitors</h2><div class="section-line"></div></div>
-    <div class="grid">
-      <a class="card" href="/claude-artifacts/Artifacts/ai-daily-brief/index.html">
-        <div class="card-icon">🤖</div><h3>AI Daily Brief</h3>
-        <p>Daily briefing covering OpenAI, Anthropic, Google Gemini, xAI, Meta, Mistral &amp; Perplexity.</p>
-        <div class="card-footer"><span class="badge badge-live">● LIVE</span><span class="card-arrow">→</span></div>
-      </a>
-      <a class="card" href="/claude-artifacts/Artifacts/bcdr-ransomware-monitor/index.html">
-        <div class="card-icon">🛡️</div><h3>BCDR Ransomware Monitor</h3>
-        <p>Real-time global threat monitoring — Ransomware, IT Outages, Cyber Incidents &amp; Physical Threats.</p>
-        <div class="card-footer"><span class="badge badge-live">● LIVE</span><span class="card-arrow">→</span></div>
-      </a>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-header"><h2>🎵 Music &amp; Audio Projects</h2><div class="section-line"></div></div>
-    <div class="grid">
-      <a class="card" href="https://localhost:8080">
-        <div class="card-icon">🎚️</div><h3>OFB Sound Engineer</h3>
-        <p>AI-powered live sound engineer for OFB. Controls Behringer XR18 mixer via OSC — 18 channels, FX presets, Claude AI feedback, setlist integration.</p>
-        <div class="card-footer"><span class="badge badge-code">PYTHON APP</span><span class="card-arrow">→</span></div>
-      </a>
-      <a class="card" href="http://192.168.1.94:5001">
-        <div class="card-icon">🎵</div><h3>Sonos Lyrics</h3>
-        <p>Karaoke-style synced lyrics for Sonos. Auto-detects which room is playing, shows scrolling lyrics with album art. Pick any speaker from a room picker. Runs permanently on the NAS.</p>
-        <div class="card-footer"><span class="badge badge-live">● LIVE</span><span class="card-arrow">→</span></div>
-      </a>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-header"><h2>👨‍🍳 Family &amp; Personal</h2><div class="section-line"></div></div>
-    <div class="grid">
-      <a class="card" href="/claude-artifacts/Artifacts/family-cookbook/index.html">
-        <div class="card-icon">📖</div><h3>Family Recipe Collection</h3>
-        <p>Digitized family cookbook — recipes from Aunt Rose, Mom, Papa &amp; more. Category filters, search, serving scaler, and per-step cooking timers.</p>
-        <div class="card-footer"><span class="badge badge-code">WEB APP</span><span class="card-arrow">→</span></div>
-      </a>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-header"><h2>🤖 Claude Skills &amp; Tools</h2><div class="section-line"></div></div>
-    <div class="grid">
-      <a class="card" href="/claude-skills/">
-        <div class="card-icon">⚡</div><h3>Claude Skills Library</h3>
-        <p>Custom Claude Code skills — Firecrawl agents, research tools, commit helpers, persona prompts (Kenny Powers, Patrick Bateman, Patrick Winston).</p>
-        <div class="card-footer"><span class="badge badge-code">CODE</span><span class="card-arrow">→</span></div>
-      </a>
-    </div>
-  </section>
-
-  <section>
-    <div class="section-header"><h2>🔄 Scheduled Outputs &amp; Archives</h2><div class="section-line"></div></div>
-    <div class="grid">
-      <a class="card" href="/claude-artifacts/Scheduled/ai-daily-brief-refresh/ai-daily-brief.html">
-        <div class="card-icon">📰</div><h3>AI Brief Archive</h3>
-        <p>Historical daily AI briefings from the automated scheduled refresh.</p>
-        <div class="card-footer"><span class="badge badge-archive">ARCHIVE</span><span class="card-arrow">→</span></div>
-      </a>
-    </div>
-  </section>
-
-  <footer>
-    <span>Asustor AS5404T · nginx · Docker</span>
-    <span><a href="https://192.168.1.94:19943">Portainer</a> · <a href="https://192.168.1.94:8001">ADM</a></span>
-  </footer>
-
+<div class="method" aria-label="Engagement method">
+  <div class="wrap">
+    <span class="lbl">Every engagement</span>
+    <span class="step">Current State</span><span class="arr">→</span>
+    <span class="step">Gaps</span><span class="arr">→</span>
+    <span class="step">Recommendations</span><span class="arr">→</span>
+    <span class="step">Next Steps</span>
+  </div>
 </div>
+
+<section id="consulting">
+  <div class="wrap">
+    <div class="eyebrow">01 / Consulting</div>
+    <h2 class="fade">Decisions, costed.</h2>
+    <p class="section-note fade">Engagement work and standing capabilities. Every recommendation lands labeled — tactical or strategic — so you know what to do this quarter and what to budget for next year.</p>
+
+    <div class="grid">
+      <div class="card s-engaged fade">
+        <div class="card-meta"><span class="code">CTC / TCO</span><span>Active</span></div>
+        <h3>Data Center vs. Colocation</h3>
+        <p>Full total-cost-of-ownership model for a Winnipeg facility: power, cooling, staffing, refresh cycles, and migration risk — owned floor versus colo, on one defensible spreadsheet.</p>
+        <div class="card-foot"><span class="tag hot">Strategic</span><span class="tag">TCO Model</span></div>
+      </div>
+
+      <div class="card s-engaged fade">
+        <div class="card-meta"><span class="code">PNC / ADV</span><span>Active</span></div>
+        <h3>Advisory Engagement</h3>
+        <p>Ongoing infrastructure advisory. Details stay with the client — the method above doesn't.</p>
+        <div class="card-foot"><span class="tag hot">Tactical</span><span class="tag">Advisory</span></div>
+      </div>
+
+      <div class="card s-live fade">
+        <div class="card-meta"><span class="code">CAP / STOR</span><span>Capability</span></div>
+        <h3>Storage &amp; Lifecycle</h3>
+        <p>EOL and EOS dates turned into compelling events. Refresh planning that happens before the warranty cliff, not in the incident review after it.</p>
+        <div class="card-foot"><span class="tag hot">Strategic</span><span class="tag">Lifecycle</span></div>
+      </div>
+
+      <div class="card s-live fade">
+        <div class="card-meta"><span class="code">CAP / BCDR</span><span>Capability</span></div>
+        <h3>Continuity &amp; Recovery</h3>
+        <p>BC/DR design sized to actual risk tolerance and actual budget — not the vendor checklist, and not hope.</p>
+        <div class="card-foot"><span class="tag hot">Strategic</span><span class="tag">BC / DR</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="lab">
+  <div class="wrap">
+    <div class="eyebrow">02 / Lab</div>
+    <h2 class="fade">Built, hosted, running.</h2>
+    <p class="section-note fade">Side projects served off the same NAS this page lives on. Green means live, amber means it's on the bench.</p>
+
+    <div class="grid">
+      <a class="card s-wip fade" href="/jarvis/">
+        <div class="card-meta"><span class="code">LAB / JRVS</span><span>In progress</span></div>
+        <h3>Jarvis — GIVEN-OS</h3>
+        <p>Personal ops dashboard: live machine telemetry, MCP feeds (mail, calendar, drive, generation credits), and a Claude-backed chat panel with the day's context loaded.</p>
+        <div class="card-foot"><span class="tag hot">App</span><span class="tag">Dashboard</span><span class="go">Open →</span></div>
+      </a>
+
+      <div class="card s-wip fade">
+        <div class="card-meta"><span class="code">LAB / SNDMN</span><span>In progress</span></div>
+        <h3>AI Sound Engineer</h3>
+        <p>Flask + OSC control of a Behringer XR18 with Claude in the loop — setlist management, room analysis, and EMM-6 measurement-mic capture for the band.</p>
+        <div class="card-foot"><span class="tag hot">App</span><span class="tag">Python</span><span class="tag">OSC</span></div>
+      </div>
+
+      <a class="card s-live fade" href="http://192.168.1.94:5001">
+        <div class="card-meta"><span class="code">LAB / SONOS</span><span>Live</span></div>
+        <h3>Sonos Lyrics</h3>
+        <p>Karaoke-style synced lyrics for any Sonos room. Album art, real-time scrolling, room picker — runs permanently on the NAS.</p>
+        <div class="card-foot"><span class="tag hot">App</span><span class="tag">Python</span><span class="tag">Flask</span><span class="go">Open →</span></div>
+      </a>
+
+      <a class="card s-wip fade" href="/order-up/">
+        <div class="card-meta"><span class="code">LAB / ORDUP</span><span>In progress</span></div>
+        <h3>Order Up</h3>
+        <p>Amazon purchase history in, AI-generated project and recipe ideas out. You already bought the parts — this tells you what they make.</p>
+        <div class="card-foot"><span class="tag hot">App</span><span class="tag">React</span><span class="go">Open →</span></div>
+      </a>
+
+      <a class="card s-live fade" href="/briefs/">
+        <div class="card-meta"><span class="code">LAB / BRIEF</span><span>Live</span></div>
+        <h3>Communication Briefs</h3>
+        <p>An editorial design study that treats fictional characters as serious communication theorists — rendered with complete sincerity and zero irony.</p>
+        <div class="card-foot"><span class="tag hot">Creative</span><span class="tag">HTML</span><span class="go">Open →</span></div>
+      </a>
+
+      <a class="card s-live fade" href="/prompt-library/">
+        <div class="card-meta"><span class="code">LAB / PRMPT</span><span>Live</span></div>
+        <h3>Prompt Library</h3>
+        <p>Slash commands, combo chains, and prompting techniques — maintained as a working reference, not a screenshot graveyard.</p>
+        <div class="card-foot"><span class="tag hot">Reference</span><span class="tag">Claude</span><span class="go">Open →</span></div>
+      </a>
+
+      <div class="card s-live fade">
+        <div class="card-meta"><span class="code">LAB / FCRWL</span><span>Live</span></div>
+        <h3>Firecrawl Skill</h3>
+        <p>Web research wired into consulting: EOL/EOS announcements, competitor signals, and compelling events scraped into clean, citable markdown.</p>
+        <div class="card-foot"><span class="tag hot">Tooling</span><span class="tag">Research</span></div>
+      </div>
+
+      <div class="card s-concept fade">
+        <div class="card-meta"><span class="code">LAB / NEXT</span><span>Concept</span></div>
+        <h3>Open Slot</h3>
+        <p>The bench is never empty for long. Next experiment patches in here.</p>
+        <div class="card-foot"><span class="tag">Concept</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="eyebrow">03 / About</div>
+    <div class="about-grid">
+      <div>
+        <h2 class="fade">One operator,<br>two consoles.</h2>
+        <p class="fade"><strong>Big Poppy Consulting is Chris Given</strong> — independent IT consultant in Alexandria, VA. The consulting work is infrastructure strategy: what to own, what to rent, when to refresh, and what it actually costs.</p>
+        <p class="fade">The rest of the time is spent at the other console — running sound and playing in <strong>OFB</strong>, and building the lab projects above. Same instinct in both rooms: listen to the signal, cut the noise, ship the mix.</p>
+        <p class="fade">This site is self-hosted on the home rack. If it's up, the lab is too.</p>
+      </div>
+      <div class="contact fade">
+        <div class="eyebrow">Get in touch</div>
+        <!-- TODO: drop real address into the mailto below -->
+        <a class="cta" href="mailto:">Email Chris</a>
+        <p class="alt">Alexandria, VA · Remote-friendly<br>Response inside one business day</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <span>© <span id="yr"></span> Big Poppy Consulting</span>
+  <span>Self-hosted <span class="dot">●</span> ASUSTOR NAS <span class="dot">●</span> Alexandria, VA</span>
+</footer>
+
+<script>
+// meter bridge bars
+(function(){
+  var m=document.getElementById('meters');
+  for(var i=0;i<48;i++){
+    var s=document.createElement('span');
+    s.style.setProperty('--peak',(0.25+Math.random()*0.75).toFixed(2));
+    s.style.animationDuration=(1.1+Math.random()*1.4).toFixed(2)+'s';
+    s.style.animationDelay=(-Math.random()*2).toFixed(2)+'s';
+    m.appendChild(s);
+  }
+})();
+
+// scroll reveal
+(function(){
+  var els=document.querySelectorAll('.fade:not(.in)');
+  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
+  var io=new IntersectionObserver(function(entries){
+    entries.forEach(function(en){
+      if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}
+    });
+  },{threshold:0.12});
+  els.forEach(function(e){io.observe(e)});
+})();
+
+// footer year + board stamp
+document.getElementById('yr').textContent=new Date().getFullYear();
+document.getElementById('stamp').textContent=new Date().toISOString().slice(0,10);
+</script>
 </body>
 </html>
