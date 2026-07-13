@@ -220,6 +220,7 @@
       <button id="btnNew" class="quiet">New plot</button>
       <button id="btnImport">Import JSON</button>
       <button id="btnExport">Export JSON</button>
+      <button id="btnPng">Export PNG</button>
       <button id="btnPrint" class="primary">Print / PDF</button>
       <input type="file" id="fileImport" accept=".json,application/json" hidden>
     </div>
@@ -374,6 +375,34 @@
     };
   }
 
+  function exampleDuo(){
+    return {
+      meta:{band:"Acoustic Duo", date:"", venue:"", contact:"", phone:""},
+      items:[
+        {id:uid(), type:"guitar", x:38, y:44, label:"Ac Gtr 1", s:1},
+        {id:uid(), type:"drums",  x:62, y:44, label:"Cajon", s:.9},
+        {id:uid(), type:"di",     x:30, y:30, label:"DI pair", s:.8},
+        {id:uid(), type:"vocal",  x:40, y:64, label:"Vox 1", s:1},
+        {id:uid(), type:"vocal",  x:60, y:64, label:"Vox 2", s:1},
+        {id:uid(), type:"wedge",  x:40, y:82, label:"Wedge 1", s:.8},
+        {id:uid(), type:"wedge",  x:60, y:82, label:"Wedge 2", s:.8},
+        {id:uid(), type:"power",  x:10, y:14, label:"Power drop", s:.8}
+      ],
+      inputs:[
+        {src:"Vox 1", mic:"SM58", stand:"Tall boom", ph:false, note:""},
+        {src:"Vox 2", mic:"SM58", stand:"Tall boom", ph:false, note:""},
+        {src:"Ac Gtr 1", mic:"Active DI", stand:"—", ph:true, note:""},
+        {src:"Ac Gtr 2", mic:"Active DI", stand:"—", ph:true, note:""},
+        {src:"Cajon", mic:"Beta 91 / SM57", stand:"Short boom", ph:false, note:""}
+      ],
+      mixes:[
+        {who:"Wedge 1 — Vox 1 side"},
+        {who:"Wedge 2 — Vox 2 side"}
+      ],
+      notes:"Duo carries its own DIs and mic stands. One power drop stage left is plenty."
+    };
+  }
+
   // -------- persistence --------
   var saveTimer = null;
   function save(){
@@ -403,8 +432,9 @@
         }
       }
     }catch(e){}
-    var ex = {current:"Example — festival set", plots:{}};
+    var ex = {current:"Example — full band", plots:{}};
     ex.plots[ex.current] = example();
+    ex.plots["Example — acoustic duo"] = exampleDuo();
     return ex;
   }
   var flashTimer = null;
@@ -657,6 +687,100 @@
   document.getElementById("addMix").addEventListener("click", function(){
     S.mixes.push({who:""});
     renderMixes(); save();
+  });
+
+  // -------- PNG export (drawn from state, matches on-screen stage) --------
+  function pillRect(g, x, y, w, h, r){
+    if(g.roundRect){ g.beginPath(); g.roundRect(x, y, w, h, r); }
+    else { g.beginPath(); g.rect(x, y, w, h); }
+  }
+  function stagePNG(){
+    var W = 1600, SH = 900, HDR = 96, H = SH + HDR, u = W / 100;
+    var c = document.createElement("canvas");
+    c.width = W; c.height = H;
+    var g = c.getContext("2d");
+    g.textBaseline = "middle";
+    g.fillStyle = "#121110"; g.fillRect(0, 0, W, H);
+    // header: band left, venue/date right, gaff rule
+    g.fillStyle = "#EBE6DA";
+    g.font = "700 42px 'Avenir Next Condensed','Arial Narrow',sans-serif";
+    g.fillText((S.meta.band || "Stage Plot").toUpperCase(), 32, HDR / 2 - 3);
+    var sub = [S.meta.venue, S.meta.date].filter(Boolean).join("  ·  ");
+    if(sub){
+      g.textAlign = "right"; g.fillStyle = "#9A937F";
+      g.font = "26px 'Avenir Next',sans-serif";
+      g.fillText(sub, W - 32, HDR / 2 - 3);
+      g.textAlign = "left";
+    }
+    g.fillStyle = "#E0A03C"; g.fillRect(0, HDR - 6, W, 6);
+    // grid
+    g.strokeStyle = "#2C2A24"; g.lineWidth = 2;
+    var i;
+    for(i = 1; i < 16; i++){ g.beginPath(); g.moveTo(i * W / 16, HDR); g.lineTo(i * W / 16, H); g.stroke(); }
+    for(i = 1; i < 10; i++){ g.beginPath(); g.moveTo(0, HDR + i * SH / 10); g.lineTo(W, HDR + i * SH / 10); g.stroke(); }
+    // edges
+    g.fillStyle = "#7E7867"; g.textAlign = "center";
+    g.font = "24px 'Avenir Next Condensed','Arial Narrow',sans-serif";
+    g.fillText("U P S T A G E   ·   B A C K L I N E", W / 2, HDR + 26);
+    g.fillText("D O W N S T A G E   ·   A U D I E N C E", W / 2, H - 22);
+    // items, risers underneath
+    var sorted = S.items.slice().sort(function(a, b){
+      var ta = TYPES[a.type] || TYPES.person, tb = TYPES[b.type] || TYPES.person;
+      return (ta.riser ? 0 : 1) - (tb.riser ? 0 : 1);
+    });
+    sorted.forEach(function(it){
+      var t = TYPES[it.type] || TYPES.person, s = it.s || 1;
+      var x = W * it.x / 100, y = HDR + SH * it.y / 100;
+      g.textAlign = "center";
+      if(t.riser){
+        var w = 22 * u * s, h = 11 * u * s;
+        g.setLineDash([12, 9]); g.strokeStyle = "#7E7867"; g.lineWidth = 3;
+        g.strokeRect(x - w / 2, y - h / 2, w, h);
+        g.setLineDash([]);
+        g.fillStyle = "#7E7867";
+        g.font = "600 " + (2 * u * s) + "px 'Avenir Next Condensed','Arial Narrow',sans-serif";
+        g.fillText(it.label.toUpperCase(), x, y);
+      } else if(t.labelType){
+        g.fillStyle = "#EBE6DA";
+        g.font = "600 " + (2.6 * u * s) + "px 'Avenir Next',sans-serif";
+        g.fillText(it.label, x, y);
+      } else {
+        var r = 3.5 * u * s;
+        g.fillStyle = "#26241E";
+        g.beginPath(); g.arc(x, y, r, 0, Math.PI * 2); g.fill();
+        g.strokeStyle = "#3A382F"; g.lineWidth = 2; g.stroke();
+        if(t.txt){
+          g.fillStyle = "#EBE6DA";
+          g.font = "700 " + (2.2 * u * s) + "px 'Avenir Next',sans-serif";
+          g.fillText(t.i, x, y);
+        } else {
+          g.font = (4 * u * s) + "px sans-serif";
+          g.fillText(t.i, x, y + 0.2 * u * s);
+        }
+        var f = 1.9 * u * s;
+        g.font = "500 " + f + "px 'Avenir Next',sans-serif";
+        var tw = g.measureText(it.label).width;
+        var py = y + r + f * 0.95;
+        g.fillStyle = "rgba(0,0,0,.55)";
+        pillRect(g, x - tw / 2 - 10, py - f * 0.75, tw + 20, f * 1.5, 8);
+        g.fill();
+        g.fillStyle = "#EBE6DA";
+        g.fillText(it.label, x, py);
+      }
+    });
+    return c;
+  }
+  document.getElementById("btnPng").addEventListener("click", function(){
+    var name = (S.meta.band || "gigplot").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "gigplot";
+    stagePNG().toBlob(function(b){
+      if(!b){ alert("PNG export isn't supported in this browser."); return; }
+      var a = document.createElement("a");
+      a.href = URL.createObjectURL(b);
+      a.download = name + "-stageplot.png";
+      document.body.appendChild(a); a.click(); a.remove();
+      setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+      flash("PNG exported");
+    }, "image/png");
   });
 
   // -------- notes --------
