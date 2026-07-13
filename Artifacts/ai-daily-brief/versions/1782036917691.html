@@ -1,0 +1,554 @@
+<!DOCTYPE html>
+<script type="application/json" id="cowork-artifact-meta">
+{
+  "name": "Ai Daily Brief",
+  "schemaVersion": 1,
+  "description": "AI Daily Brief for Chris G. — IT Consultant, BCP/DR &amp; Resilience. Daily snapshot of major AI provider updates with Trend Tracker, Shift Your Habits, and client alerts."
+}
+</script>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Daily Brief — June 21, 2026</title>
+<style>
+  :root { color-scheme: light; }
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; background: #fafafa; color: #1a1a1a; font-size: 14px; line-height: 1.55; }
+  a { color: #2563eb; }
+
+  /* ── HEADER ── */
+  .header { background: #0f172a; color: #fff; padding: 20px 28px 18px; display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 10px; }
+  .header h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; }
+  .header .subtitle { font-size: 12px; color: #94a3b8; margin-top: 3px; }
+  .header .stamp { text-align: right; font-size: 11px; color: #64748b; }
+  .header .stamp strong { display: block; color: #cbd5e1; font-size: 13px; }
+
+  /* ── LAYOUT ── */
+  .wrapper { max-width: 1200px; margin: 0 auto; padding: 20px 18px 40px; }
+
+  /* ── SECTION HEADINGS ── */
+  .section-heading { font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; color: #475569; border-bottom: 1px solid #e2e8f0; padding-bottom: 6px; margin: 28px 0 14px; }
+
+  /* ── BCP/DR ALERT BANNER ── */
+  .alert-banner { background: #fffbea; border-left: 4px solid #c99400; border-radius: 4px; padding: 14px 16px; margin-bottom: 20px; }
+  .alert-banner .alert-title { font-size: 11px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; color: #92400e; margin-bottom: 8px; }
+  .alert-banner ul { padding-left: 18px; }
+  .alert-banner li { margin-bottom: 5px; font-size: 13px; color: #1a1a1a; }
+  .alert-banner li strong { color: #b45309; }
+
+  /* ── TAGS ── */
+  .tag { display: inline-block; font-size: 10px; font-weight: 600; letter-spacing: 0.5px; text-transform: uppercase; padding: 2px 7px; border-radius: 20px; line-height: 1.6; margin: 1px 2px; vertical-align: middle; }
+  .tag.tactical { background: #dbeafe; color: #1d4ed8; }
+  .tag.strategic { background: #ede9fe; color: #6d28d9; }
+  .tag.alert { background: #fee2e2; color: #b91c1c; }
+  .tag.watch { background: #fef3c7; color: #b45309; }
+  .tag.new { background: #dcfce7; color: #15803d; }
+
+  /* ── TOP 3 CARDS ── */
+  .moves-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+  .move-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 8px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,.05); }
+  .move-card .move-num { font-size: 11px; font-weight: 700; color: #94a3b8; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 6px; }
+  .move-card .move-title { font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 6px; line-height: 1.35; }
+  .move-card .move-body { font-size: 12.5px; color: #475569; margin-bottom: 8px; }
+  .move-card .move-stamp { font-size: 10.5px; color: #94a3b8; }
+  .move-card.urgent { border-left: 3px solid #dc2626; }
+  .move-card.high { border-left: 3px solid #d97706; }
+  .move-card.notable { border-left: 3px solid #2563eb; }
+
+  /* ── TREND TRACKER ── */
+  .trend-header { background: #1e293b; color: #f1f5f9; padding: 12px 16px; border-radius: 6px 6px 0 0; font-size: 11px; font-weight: 700; letter-spacing: 1.4px; text-transform: uppercase; }
+  .trend-body { background: #fff; border: 1px solid #e2e8f0; border-top: none; border-radius: 0 0 6px 6px; padding: 0; overflow: hidden; }
+  .trend-panel { padding: 14px 16px; border-bottom: 1px solid #f1f5f9; }
+  .trend-panel:last-child { border-bottom: none; }
+  .trend-panel-title { font-size: 11px; font-weight: 600; letter-spacing: 0.8px; text-transform: uppercase; color: #64748b; margin-bottom: 10px; }
+
+  /* velocity badges */
+  .vel { display: inline-block; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 12px; }
+  .vel-hot { background: #fee2e2; color: #b91c1c; }
+  .vel-rising { background: #dcfce7; color: #15803d; }
+  .vel-steady { background: #dbeafe; color: #1d4ed8; }
+  .vel-cooling { background: #f3f4f6; color: #6b7280; }
+  .vel-quiet { background: #f9fafb; color: #9ca3af; border: 1px solid #e5e7eb; }
+
+  .ww-new { color: #15803d; font-weight: 600; }
+  .ww-continued { color: #1d4ed8; }
+  .ww-quiet { color: #9ca3af; }
+  .ww-persist { color: #b45309; font-weight: 600; }
+
+  /* persistent signal panel */
+  .persist-box { background: #fffbea; border-left: 3px solid #d97706; border-radius: 4px; padding: 10px 14px; }
+  .persist-box .persist-item { font-size: 12.5px; color: #1a1a1a; padding: 3px 0; }
+  .persist-box .persist-item::before { content: "⚠️ "; }
+
+  /* month snapshot */
+  .snapshot-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .snapshot-col { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 12px 14px; }
+  .snapshot-col h4 { font-size: 11px; font-weight: 700; color: #475569; text-transform: uppercase; letter-spacing: 0.8px; margin-bottom: 8px; }
+  .snapshot-col p { font-size: 12.5px; color: #334155; margin-bottom: 4px; }
+  .snapshot-col p span { font-weight: 600; color: #0f172a; }
+
+  /* ── TABLES ── */
+  .brief-table { width: 100%; border-collapse: collapse; font-size: 13px; background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; overflow: hidden; }
+  .brief-table thead th { background: #f8fafc; font-size: 11px; font-weight: 700; letter-spacing: 0.8px; text-transform: uppercase; color: #475569; padding: 9px 12px; text-align: left; border-bottom: 1px solid #e2e8f0; }
+  .brief-table tbody td { padding: 10px 12px; border-bottom: 1px solid #f1f5f9; vertical-align: top; color: #1a1a1a; }
+  .brief-table tbody tr:last-child td { border-bottom: none; }
+  .brief-table tbody tr:hover { background: #fafafa; }
+  .provider-name { font-weight: 700; white-space: nowrap; }
+  .no-update { color: #94a3b8; font-style: italic; }
+  .watch-item { color: #64748b; font-size: 12px; }
+
+  /* ── WATCH LIST CARDS ── */
+  .watch-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px; }
+  .watch-card { background: #fff; border: 1px solid #e2e8f0; border-radius: 6px; padding: 13px 14px; }
+  .watch-card .watch-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.8px; color: #94a3b8; margin-bottom: 5px; }
+  .watch-card .watch-title { font-size: 13px; font-weight: 600; color: #1a1a1a; margin-bottom: 4px; }
+  .watch-card .watch-date { font-size: 11px; color: #94a3b8; }
+  .watch-card.critical { border-left: 3px solid #dc2626; }
+  .watch-card.urgent2 { border-left: 3px solid #d97706; }
+  .watch-card.normal { border-left: 3px solid #2563eb; }
+  .watch-card.future { border-left: 3px solid #8b5cf6; }
+
+  /* ── FOOTER ── */
+  .footer { text-align: center; font-size: 11px; color: #94a3b8; padding: 20px 18px; border-top: 1px solid #e2e8f0; margin-top: 10px; }
+
+  /* ── UTILITIES ── */
+  .mt-4 { margin-top: 4px; }
+  .gone-quiet { color: #9ca3af; font-style: italic; font-size: 11.5px; }
+</style>
+</head>
+<body>
+
+<!-- ══ HEADER ══ -->
+<div class="header">
+  <div>
+    <h1>AI Daily Brief</h1>
+    <div class="subtitle">Prepared for Chris G. — IT Consultant, BCP/DR &amp; Resilience</div>
+  </div>
+  <div class="stamp">
+    <strong>June 21, 2026</strong>
+    Refreshes daily at 6:00 AM local<br>
+    Sunday edition
+  </div>
+</div>
+
+<div class="wrapper">
+
+<!-- ══ BCP/DR CLIENT ALERT BANNER ══ -->
+<div class="alert-banner">
+  <div class="alert-title">⚠️ BCP/DR Client Alert — 3 Active Items</div>
+  <ul>
+    <li><strong>TOMORROW (June 22):</strong> Anthropic Fable 5 &amp; Mythos 5 subscription access ends — migrate all dependencies to Opus 4.8 by EOD today. Any client workflows using Fable 5 via Claude.ai, GitHub Copilot, or M365 will lose access at midnight.</li>
+    <li><strong>T-9 Days (June 30):</strong> M365 Copilot pricing lock-in deadline — $18→$21/user/mo after July 1 (+17%). Commit to multi-year agreement before June 30 to lock current rates for up to 3 years. Claude default-on DPA remains outstanding (Week 8).</li>
+    <li><strong>Ongoing — Day 20:</strong> GitHub Copilot Opus-class usage multipliers elevated — billing live and costs running above projected rates. Implement Max plan ($100/mo, 20K credits) ceiling or per-user budget controls immediately.</li>
+  </ul>
+</div>
+
+<!-- ══ TOP 3 MOVES ══ -->
+<div class="section-heading">Top 3 Moves of the Day</div>
+<div class="moves-grid">
+
+  <div class="move-card urgent">
+    <div class="move-num">Move #1 &nbsp; <span class="tag alert">Client Alert</span></div>
+    <div class="move-title">Anthropic Fable 5/Mythos 5 — Subscription Ends TOMORROW</div>
+    <div class="move-body">Day 9 of the U.S. BIS export control suspension. Claude.ai, GitHub Copilot, and M365 subscription access to Fable 5 and Mythos 5 terminates June 22. Opus 4.8 (1M context, 128K output, Workload Identity Federation GA) is the migration target — it remains fully available and unaffected.</div>
+    <div class="move-stamp"><span class="tag strategic">Strategic</span> &nbsp; June 12 (suspension) / June 22 (cutoff)</div>
+  </div>
+
+  <div class="move-card high">
+    <div class="move-num">Move #2 &nbsp; <span class="tag alert">Client Alert</span></div>
+    <div class="move-title">M365 Copilot Pricing Lock-In — T-9 Days to June 30</div>
+    <div class="move-body">Microsoft raises M365 Copilot Business bundle pricing from $18→$21/user/mo on July 1 (+17%). Multi-year commitments placed before June 30 lock current rate for the term. 15% partner discount available for 300+ seat, 3-year CSP agreements through September 30. Teams AI recap-without-consent issue and Claude DPA both remain unresolved heading into the deadline.</div>
+    <div class="move-stamp"><span class="tag alert">Alert</span> <span class="tag strategic">Strategic</span> &nbsp; Deadline: June 30, 2026</div>
+  </div>
+
+  <div class="move-card notable">
+    <div class="move-num">Move #3 &nbsp; <span class="tag strategic">Strategic</span></div>
+    <div class="move-title">xAI Grok Ecosystem Expansion: Word Add-In, Bedrock, TTS/STT GA</div>
+    <div class="move-body">Grok V9-Medium (fully GA since June 16) now has a free Microsoft 365 add-in for Word, PowerPoint, and Excel — with web, X, SharePoint, email, and Google Drive connectors. Grok 4.3 is also GA on Amazon Bedrock with 1M context. Text-to-Speech and Speech-to-Text APIs now generally available in 25 languages. Grok 5 (6T MoE) slipped from Q2 to Q3 2026. Competitive coding landscape shifting at pace.</div>
+    <div class="move-stamp"><span class="tag strategic">Strategic</span> <span class="tag tactical">Tactical</span> &nbsp; June 16–21, 2026</div>
+  </div>
+
+</div>
+
+<!-- ══ TREND TRACKER ══ -->
+<div class="section-heading">Trend Tracker</div>
+<div class="trend-header">TREND TRACKER — Velocity, Signals &amp; Month Snapshot</div>
+<div class="trend-body">
+
+  <!-- Panel A: Provider Velocity -->
+  <div class="trend-panel">
+    <div class="trend-panel-title">A — Provider Velocity (Last 4 Entries)</div>
+    <table class="brief-table">
+      <thead>
+        <tr>
+          <th>Provider</th>
+          <th>30-Day Velocity</th>
+          <th>W/W Change</th>
+          <th>Key Signal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="provider-name">Anthropic</td>
+          <td><span class="vel vel-hot">🔥 HOT</span></td>
+          <td><span class="ww-persist">Persistent ⚠️</span></td>
+          <td>Fable 5 suspension 9 days straight; subscription cutoff TOMORROW — migration urgency at peak</td>
+        </tr>
+        <tr>
+          <td class="provider-name">Google Gemini</td>
+          <td><span class="vel vel-hot">🔥 HOT</span></td>
+          <td><span class="ww-continued">Continued</span></td>
+          <td>Gemini 3.5 Flash GA + Antigravity CLI fully deployed; Omni in production; Pixel Drop multimodal</td>
+        </tr>
+        <tr>
+          <td class="provider-name">xAI</td>
+          <td><span class="vel vel-hot">🔥 HOT</span></td>
+          <td><span class="ww-continued">Continued</span></td>
+          <td>V9-Medium GA + Grok for Word/PPT/Excel (free M365 add-in) + Bedrock + TTS/STT; Grok 5 slipped to Q3</td>
+        </tr>
+        <tr>
+          <td class="provider-name">Microsoft 365 Copilot</td>
+          <td><span class="vel vel-hot">🔥 HOT</span></td>
+          <td><span class="ww-persist">Persistent ⚠️</span></td>
+          <td>Pricing lock-in June 30 T-9; Teams recap consent gap; Claude DPA Week 8 outstanding — compounding risks</td>
+        </tr>
+        <tr>
+          <td class="provider-name">GitHub Copilot</td>
+          <td><span class="vel vel-hot">🔥 HOT</span></td>
+          <td><span class="ww-persist">Persistent ⚠️</span></td>
+          <td>Billing Day 20; Opus multipliers elevated; Fable 5 unavailable; MS Claude Code sunset June 30 T-9</td>
+        </tr>
+        <tr>
+          <td class="provider-name">OpenAI</td>
+          <td><span class="vel vel-steady">→ STEADY</span></td>
+          <td><span class="ww-quiet">Quiet</span></td>
+          <td>25+ day model silence; incremental QoL only; GPT-4.5 retiring June 27 (T-6 days)</td>
+        </tr>
+        <tr>
+          <td class="provider-name">Perplexity</td>
+          <td><span class="vel vel-steady">→ STEADY</span></td>
+          <td><span class="ww-continued">Continued</span></td>
+          <td>Comet browser free worldwide; Comet Plus pays publishers; Kimi K2.5 data risk Week 9+ unresolved</td>
+        </tr>
+        <tr>
+          <td class="provider-name">Cursor</td>
+          <td><span class="vel vel-steady">→ STEADY</span></td>
+          <td><span class="ww-quiet">Quiet today</span></td>
+          <td>$2B ARR; Claude Code growing 6×; Copilot share 51%; no new release today</td>
+        </tr>
+        <tr>
+          <td class="provider-name">Gamma</td>
+          <td><span class="vel vel-steady">→ STEADY</span></td>
+          <td><span class="ww-new">New this week</span></td>
+          <td>Mobile web editing GA (June 12); AI animations, code highlighting, SVG export fix — stable for consulting use</td>
+        </tr>
+        <tr>
+          <td class="provider-name">Mistral / Vibe</td>
+          <td><span class="vel vel-cooling">↓ COOLING</span></td>
+          <td><span class="ww-quiet">Went quiet</span></td>
+          <td>Platform stable post-rebranding; Slack integration still pending; CEO confirms summer MoE model</td>
+        </tr>
+        <tr>
+          <td class="provider-name">Meta</td>
+          <td><span class="vel vel-quiet">⬜ QUIET</span></td>
+          <td><span class="ww-quiet">Gone quiet — 47+ days</span></td>
+          <td>Behemoth delayed past June; Avocado may go closed-source — end of open-weight era possible</td>
+        </tr>
+        <tr>
+          <td class="provider-name">Notion AI</td>
+          <td><span class="vel vel-quiet">⬜ QUIET</span></td>
+          <td><span class="ww-quiet">Gone quiet — 5+ entries</span></td>
+          <td>Workers GA; billing August 11; no new AI feature releases — watch August billing impact</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Panel B: Persistent Signals -->
+  <div class="trend-panel">
+    <div class="trend-panel-title">B — Persistent Signals (2+ Consecutive Weeks)</div>
+    <div class="persist-box">
+      <div class="persist-item"><strong>Anthropic</strong> — Fable 5/Mythos 5 export control suspension — 2 weeks running</div>
+      <div class="persist-item"><strong>Microsoft 365 Copilot</strong> — Claude default-on DPA outstanding + Teams compliance gaps — 8+ weeks running</div>
+      <div class="persist-item"><strong>GitHub Copilot</strong> — Billing/cost risk + Opus-class multiplier exposure — 3 weeks running</div>
+      <div class="persist-item"><strong>Perplexity</strong> — Kimi K2.5 Chinese-origin model on US inference (unresolved) — 9+ weeks running</div>
+    </div>
+  </div>
+
+  <!-- Panel C: Month Snapshot -->
+  <div class="trend-panel">
+    <div class="trend-panel-title">C — Month Snapshot (vs. May 21, 2026)</div>
+    <div class="snapshot-grid">
+      <div class="snapshot-col">
+        <h4>30 Days Ago (May 21)</h4>
+        <p>Active providers: <span>5</span></p>
+        <p>Client alerts: <span>3</span></p>
+        <p>Top themes: <span>Gemini price cut (50–67%), Karpathy joins Anthropic, GitHub billing T-11</span></p>
+        <p>Dominant risk: <span>GitHub Copilot billing launch imminent</span></p>
+      </div>
+      <div class="snapshot-col">
+        <h4>Today (June 21)</h4>
+        <p>Active providers: <span>6</span></p>
+        <p>Client alerts: <span>3</span></p>
+        <p>Top themes: <span>Fable 5 ends tomorrow, M365 pricing lock-in T-9, Grok ecosystem expansion</span></p>
+        <p>Dominant risk: <span>Model access disruption (Fable 5) + pricing inflection (M365 July 1)</span></p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══ PROVIDER-BY-PROVIDER UPDATES ══ -->
+<div class="section-heading">Provider-by-Provider Updates</div>
+<table class="brief-table">
+  <thead>
+    <tr>
+      <th>Provider</th>
+      <th>What Changed</th>
+      <th>Classification</th>
+    </tr>
+  </thead>
+  <tbody>
+
+    <tr>
+      <td class="provider-name">OpenAI</td>
+      <td>No model release — 25+ days of model silence. Incremental UX this week: pronunciation help in 60+ languages (audio + text), rich interactive charts (bar/line/pie/scatter) in conversations, table of contents for long chats (5+ turns), Android long-press one-off model selection. GPT-4.5 retiring from ChatGPT June 27 (T-6 days; API unaffected). o3 retiring August 26. Partner Network launched June 18. <span class="watch-item">Watch for: first major model since GPT-5.5 Instant (May).</span></td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+
+    <tr>
+      <td class="provider-name">Anthropic</td>
+      <td><strong>⚠️ Fable 5 &amp; Mythos 5 suspended Day 9 (June 12 U.S. BIS export control directive).</strong> Subscription access ends June 22 TOMORROW — all users lose Fable 5/Mythos 5 access at midnight. Anthropic disputes the directive and is working to restore access. Opus 4.8 (1M context, 128K output, fully available) is the migration path. Also this week: <strong>Workload Identity Federation GA</strong> — short-lived scoped credentials replace static API keys, eliminating key rotation risk. Enterprise <strong>Okta MCP connector GA</strong> — admin-provisioned, zero-touch access across Claude chat, Claude Code, and Cowork. Claude Code: improved auto mode safety, deprecation warnings, /config help, bug fixes across WebSearch, tmux, background tasks.</td>
+      <td><span class="tag alert">Client Alert</span> <span class="tag strategic">Strategic</span></td>
+    </tr>
+
+    <tr>
+      <td class="provider-name">Google Gemini</td>
+      <td><strong>June Pixel Drop:</strong> Gemini generates custom videos and music tracks on Pixel; Ask Photos gets multi-step editing via natural conversation; smart home control via new Google Home Speaker with Gemini. Gemini Omni in full production rollout (any input → dynamic video output). Gemini 3.5 Flash GA at &lt;50% cost of 3.1 Pro. gemini-embedding-2 multimodal GA. Antigravity CLI migration ongoing (Gemini CLI deprecated June 18 — any CI/CD pipelines using old Gemini CLI command set are still broken). <span class="watch-item">Watch for: Gemini 3.5 Pro API GA (targeting late June–July).</span></td>
+      <td><span class="tag strategic">Strategic</span> <span class="tag tactical">Tactical</span></td>
+    </tr>
+
+    <tr>
+      <td class="provider-name">xAI / Grok</td>
+      <td>Grok V9-Medium fully GA (launched June 16; 1.5T params, trained on Cursor workflow data via SpaceX-Cursor exclusive deal). This week: <strong>Grok for Microsoft Word</strong> (free M365 add-in for Word, PowerPoint, Excel — web/X data, SharePoint, email, Google Drive connectors). <strong>Grok 4.3 on Amazon Bedrock GA</strong> (1M context, configurable reasoning, zero-hallucination benchmark focus). <strong>TTS and STT APIs GA</strong> (25 languages, batch + streaming). Grok Imagine Video 1.5 GA ($4.20/min, #1 on Image-to-Video Arena). Grok Voice GA. Grok Build Agent Dashboard active. <strong>Grok 5 (6T MoE) slipped Q2 → Q3 2026.</strong></td>
+      <td><span class="tag strategic">Strategic</span> <span class="tag tactical">Tactical</span></td>
+    </tr>
+
+    <tr>
+      <td class="provider-name">Meta</td>
+      <td class="no-update">No headline release — 47+ days quiet. Behemoth (teacher model) delayed past June; still training. Avocado (next-gen flagship) reportedly shifting toward closed-source — potential end of Meta's open-weight AI strategy. Llama 4 Scout/Maverick remain current public models. <span class="watch-item">Watch for: Avocado closed-source announcement; any Behemoth release signal.</span></td>
+      <td><span class="tag watch">Watch</span></td>
+    </tr>
+
+    <tr>
+      <td class="provider-name">Mistral / Vibe</td>
+      <td class="no-update">No new release this week. Vibe platform stable post-May 28 rebrand. Code Mode Slack integration still pending (announced for June 2026). Emmi AI (physics/industrial AI) gaining traction in aerospace, energy, manufacturing, semiconductors with BMW partnership active. CEO confirmed summer MoE model ("large yet sparse") — no date. 44MW Paris compute facility on track for late June. <span class="watch-item">Watch for: Vibe Slack integration GA; summer MoE model release.</span></td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+
+    <tr>
+      <td class="provider-name">Perplexity</td>
+      <td><strong>Comet browser</strong> now free worldwide download (desktop). <strong>Comet Plus</strong> ($5/mo subscription) pays publishers when their content is used to answer questions. Hybrid local-cloud inference orchestrator GA — reasons per-task whether to run locally or in cloud, requests user permission before sending sensitive tasks to cloud. Computer in M365 apps (Word, Excel, PowerPoint, Outlook, Teams) with improved context/sources visibility. Kimi K2.5 (Moonshot AI, Chinese-origin model) on US inference — Week 9+ with no resolution. Restrict in enterprise admin settings. <span class="watch-item">Watch for: Kimi K2.5 data policy resolution; Comet mobile launch.</span></td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+
+    <tr>
+      <td class="provider-name">Microsoft 365 Copilot</td>
+      <td><strong>⚠️ Pricing lock-in deadline June 30 (T-9 days)</strong> — $18→$21/user/mo July 1 (+17%). Multi-year terms placed before June 30 lock current rate; 3-year CSP with 300+ seats gets 15% off through Sept 30. <strong>Copilot Cowork</strong> launched June 16 — multi-step tasks, partner plugins, branded templates, image generation across work data. Org Messages usage-based targeting GA. Teams AI meeting recaps without recording or explicit consent notification — compliance gap for regulated clients (ongoing). Claude Opus 4.7 + GPT-5.5 Instant both available in M365 Copilot. Claude default-on DPA outstanding Week 8. Word/Excel/PPT/OneNote Copilot features require paid license (June 16).</td>
+      <td><span class="tag alert">Client Alert</span> <span class="tag strategic">Strategic</span></td>
+    </tr>
+
+    <tr>
+      <td class="provider-name">GitHub Copilot</td>
+      <td>Billing live Day 20. Opus-class usage multipliers elevated — costs running above projected rates since June 1. Max plan ($100/mo, 20K credits ≈ $200 usage) available as a fixed-cost ceiling for heavy users. Claude Fable 5 unavailable since June 12. MS Claude Code license sunset June 30 (T-9 days). CLI v1.0.63 stable. BugBot switches to usage-based billing at next renewal. <span class="watch-item">Watch for: MS Claude Code sunset June 30; multiplier policy revision.</span></td>
+      <td><span class="tag alert">Client Alert</span> <span class="tag tactical">Tactical</span></td>
+    </tr>
+
+    <tr>
+      <td class="provider-name">Cursor</td>
+      <td class="no-update">No new release today. $2B ARR milestone. Teams Standard ($32/seat/mo) and Premium ($96/seat/mo) tiers current. Market share: GitHub Copilot 51%, Claude Code +6× growth, Cursor 18% (JetBrains survey). Note: Grok V9-Medium trained on Cursor workflow data via SpaceX exclusive deal — assess vendor data flow implications. BugBot usage-based billing at next renewal. <span class="watch-item">Watch for: Grok V9 + Cursor data flow disclosure; BugBot billing impacts.</span></td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+
+    <tr>
+      <td class="provider-name">Gamma</td>
+      <td>Mobile web editing now GA for all users (since June 12) — full agent-powered deck editing on phone browser. Code blocks with syntax highlighting in 30 languages. AI animations as image source for new decks. Color gradients on card backgrounds. SVG export fix for Google Slides and Keynote compatibility. Editor reliability sweep (Safari filmstrip, comment subscriptions, arrow navigation). <span class="watch-item">Stable — no new release imminent.</span></td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+
+    <tr>
+      <td class="provider-name">Notion AI</td>
+      <td class="no-update">No new AI feature release. Workers GA and stable. Partner agent integrations (Claude Code, Cursor, Codex, Decagon) stable. Workers billing changes August 11 unchanged. <span class="watch-item">Watch for: August 11 Workers billing impact on clients using free Workers for BCP automation.</span></td>
+      <td><span class="tag watch">Watch</span></td>
+    </tr>
+
+  </tbody>
+</table>
+
+<!-- ══ SHIFT YOUR HABITS ══ -->
+<div class="section-heading">Shift Your Habits — BCP/DR Consulting Workflow</div>
+<table class="brief-table">
+  <thead>
+    <tr>
+      <th>Task</th>
+      <th>Current Tool (assumed)</th>
+      <th>Recommended Shift</th>
+      <th>Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>Drafting BCP/DR plan narratives &amp; runbooks</strong></td>
+      <td>Claude Fable 5 / Opus 4.8</td>
+      <td><strong>Claude Opus 4.8 exclusively</strong> — Fable 5 ends TOMORROW. Opus 4.8 has 1M context, 128K output, same pricing as Opus 4.7. Workload Identity Federation GA means no static API key risk for enterprise deployments.</td>
+      <td><span class="tag alert">Alert</span></td>
+    </tr>
+    <tr>
+      <td><strong>Summarizing standards (ISO 22301, NIST SP 800-34, SOC 2)</strong></td>
+      <td>Claude / ChatGPT</td>
+      <td><strong>Perplexity Enterprise Pro</strong> for search-grounded, cited summaries (always current standard text). Use Opus 4.8 for narrative synthesis and client-specific interpretation. Gemini 3.5 Flash as cost-effective alternative at &lt;50% the cost of frontier competitors.</td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+    <tr>
+      <td><strong>Vendor / architecture research</strong></td>
+      <td>ChatGPT / Perplexity</td>
+      <td><strong>Grok V9-Medium</strong> (web + X real-time data, 1M context) now via free M365 Word add-in — ideal for market landscape docs and competitive intelligence without leaving the Office suite. Grok 4.3 on Bedrock for zero-data-retention enterprise research.</td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+    <tr>
+      <td><strong>Client proposals &amp; SOWs</strong></td>
+      <td>Claude Opus / ChatGPT</td>
+      <td><strong>Claude Opus 4.8</strong> — strongest instruction following, long-form coherence, and complex SOW structure. Workload Identity Federation means you can now build automated SOW pipelines without static API key exposure.</td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+    <tr>
+      <td><strong>Executive decks</strong></td>
+      <td>Gamma / Copilot</td>
+      <td><strong>Gamma</strong> — mobile editing now GA (deck work from phone); AI animations for richer client-facing presentations. Use M365 Copilot PowerPoint if client is on a paid M365 Copilot license; Grok for Word add-in for deck drafts starting in Word.</td>
+      <td><span class="tag tactical">Tactical</span></td>
+    </tr>
+    <tr>
+      <td><strong>Stakeholder audio walkthroughs</strong></td>
+      <td>Manual narration / ElevenLabs</td>
+      <td><strong>Grok TTS API</strong> (now GA — 25 languages, batch + streaming) as a new cost-effective option. Also consider xAI Grok Voice GA for conversational walkthroughs. Evaluate alongside existing ElevenLabs for quality comparison.</td>
+      <td><span class="tag strategic">Strategic</span></td>
+    </tr>
+    <tr>
+      <td><strong>Client advisory on AI data risk</strong></td>
+      <td>Manual research</td>
+      <td><strong>Claude Opus 4.8 + 20+ Legal MCP connectors</strong> (GA) for contract review and DPA analysis. Frame current alerts: Fable 5 suspension, M365 Claude default-on DPA gap, Teams AI recap without consent, Perplexity Kimi K2.5 data provenance, Grok V9 trained on Cursor data via SpaceX. All are billable advisory items.</td>
+      <td><span class="tag strategic">Strategic</span></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ══ COMMUNITY SIGNAL ══ -->
+<div class="section-heading">Community Signal — Reddit</div>
+<table class="brief-table">
+  <thead>
+    <tr>
+      <th>Source</th>
+      <th>Signal</th>
+      <th>So What</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>r/ClaudeAI</strong></td>
+      <td>Five-model cold code review benchmark: Grok V9-Medium, Opus 4.8, Sonnet 4.6, GPT-5.5, Gemini 3.5 Flash — scored on bug-seeded React app with no context. High engagement.</td>
+      <td>Community validation that Grok V9-Medium is a genuine coding competitor — not just marketing. Matters for clients asking about AI-assisted code review in DR runbooks and automation scripts.</td>
+    </tr>
+    <tr>
+      <td><strong>r/LocalLLaMA</strong></td>
+      <td>CVE-Bench finding: LLM agents' worst security-patch outcome is a convincing fix that passes all tests but ships the vulnerability intact. Widely shared.</td>
+      <td>Critical for BCP/DR clients using AI agents for automated vulnerability remediation — false confidence risk is real. Include in client AI governance advisories. Pair with EU AI Act high-risk provisions coming August.</td>
+    </tr>
+    <tr>
+      <td><strong>r/OpenAI</strong></td>
+      <td>Frustration threads about GPT-5.2 silent retirement (June 12) with no warning — developers discovered broken integrations after 5 days of failures.</td>
+      <td>Reinforces the need for model-version pinning in client AI architectures. Recommend explicit version strings in all API calls, not floating aliases. Add to DR runbook checklist for AI-dependent systems.</td>
+    </tr>
+    <tr>
+      <td><strong>r/LocalLLaMA</strong></td>
+      <td>Growing thread on Meta Avocado going closed-source — discussion of what happens to open-weight alternatives if Meta exits. Mistral and Llama.cpp community contingency planning.</td>
+      <td>If Meta closes Avocado, the open-weight ecosystem shrinks significantly. Clients with air-gapped or self-hosted AI requirements need a fallback plan. Mistral (open weights under modified MIT) becomes the key alternative.</td>
+    </tr>
+    <tr>
+      <td><strong>r/ClaudeAI</strong></td>
+      <td>Posts about Workload Identity Federation (WIF) replacing static API keys in Claude — significant developer excitement; perceived as a major enterprise security upgrade.</td>
+      <td>Validates WIF as a real differentiator for enterprise Claude deployments. Recommend to clients with SOC 2 or ISO 27001 obligations — eliminates API key rotation risk from vendor risk assessments.</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- ══ WATCH LIST ══ -->
+<div class="section-heading">Watch List — Next 7–14 Days</div>
+<div class="watch-grid">
+
+  <div class="watch-card critical">
+    <div class="watch-label">⚡ Critical — Tomorrow</div>
+    <div class="watch-title">Anthropic Fable 5 Subscription Ends</div>
+    <div class="watch-date">June 22, 2026 — T-1 Day</div>
+    <p style="font-size:12px;color:#64748b;margin-top:5px;">Subscription access to Fable 5 and Mythos 5 terminates. Migrate all dependencies to Opus 4.8 by EOD today. API access also suspended per export control directive.</p>
+  </div>
+
+  <div class="watch-card critical">
+    <div class="watch-label">⚠️ Critical — T-6 Days</div>
+    <div class="watch-title">OpenAI GPT-4.5 Retirement (ChatGPT)</div>
+    <div class="watch-date">June 27, 2026</div>
+    <p style="font-size:12px;color:#64748b;margin-top:5px;">GPT-4.5 removed from ChatGPT only; API continues. Auto-migrates to GPT-5.5. Verify no client ChatGPT workflows are pinned to GPT-4.5.</p>
+  </div>
+
+  <div class="watch-card critical">
+    <div class="watch-label">⚠️ Critical — T-9 Days</div>
+    <div class="watch-title">M365 Pricing Lock-In / MS Claude Code Sunset</div>
+    <div class="watch-date">June 30, 2026</div>
+    <p style="font-size:12px;color:#64748b;margin-top:5px;">Two deadlines converge: M365 Copilot price hike to $21/user/mo begins July 1; MS Claude Code license expires June 30. Engage procurement and DevOps this week.</p>
+  </div>
+
+  <div class="watch-card urgent2">
+    <div class="watch-label">Strategic — T-10 Days</div>
+    <div class="watch-title">M365 Business Copilot Permanent SKUs</div>
+    <div class="watch-date">July 1, 2026</div>
+    <p style="font-size:12px;color:#64748b;margin-top:5px;">Promotional pricing ends. New permanent SKU structure takes effect. Clients not yet on M365 Copilot face higher entry cost after this date.</p>
+  </div>
+
+  <div class="watch-card normal">
+    <div class="watch-label">Strategic — Q3 2026</div>
+    <div class="watch-title">xAI Grok 5 (6 Trillion Parameters)</div>
+    <div class="watch-date">Q3 2026 (slipped from Q2)</div>
+    <p style="font-size:12px;color:#64748b;margin-top:5px;">Largest publicly announced model ever. Targets coding leadership. Will reset competitive benchmarks on release. Track via @xAI on X for official announcement.</p>
+  </div>
+
+  <div class="watch-card normal">
+    <div class="watch-label">Compliance — T-45 Days</div>
+    <div class="watch-title">EU AI Act High-Risk Provisions</div>
+    <div class="watch-date">August 2026</div>
+    <p style="font-size:12px;color:#64748b;margin-top:5px;">High-risk AI system requirements (robustness, adversarial attack resistance, data governance) take full effect. Client AI governance frameworks must be audit-ready.</p>
+  </div>
+
+  <div class="watch-card future">
+    <div class="watch-label">API Lifecycle</div>
+    <div class="watch-title">Claude Opus 4.1 API Retirement</div>
+    <div class="watch-date">August 5, 2026</div>
+    <p style="font-size:12px;color:#64748b;margin-top:5px;">Clients with Bedrock or direct API integrations pinned to Opus 4.1 need migration plan to Opus 4.8. Audit now — avoid the GPT-5.2 silent-failure scenario.</p>
+  </div>
+
+  <div class="watch-card future">
+    <div class="watch-label">Cost Event</div>
+    <div class="watch-title">Notion Workers Billing Begins</div>
+    <div class="watch-date">August 11, 2026</div>
+    <p style="font-size:12px;color:#64748b;margin-top:5px;">Clients using Notion Workers (formerly free) for BCP automation will begin incurring Notion Credits charges. Quantify usage exposure now.</p>
+  </div>
+
+</div>
+
+<!-- ══ FOOTER ══ -->
+</div>
+<div class="footer">
+  Generated June 21, 2026 &nbsp;·&nbsp; Sources: OpenAI Help Center, Anthropic Newsroom, Google AI Blog, xAI News, Mistral AI Blog, Perplexity Changelog, Microsoft Learn, GitHub Changelog, Releasebot, Fortune, TechCrunch, VentureBeat, Reddit (r/ClaudeAI, r/LocalLLaMA, r/OpenAI) &nbsp;·&nbsp; BCP/DR consulting framing for Chris Given
+</div>
+
+</body>
+</html>

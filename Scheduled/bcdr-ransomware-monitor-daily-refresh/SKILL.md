@@ -1,18 +1,20 @@
 ---
 name: bcdr-ransomware-monitor-daily-refresh
-description: Daily 24-hour refresh of the Global BCDR & Ransomware Monitor artifact with fresh event data.
+description: Daily 24-hour refresh of the Global BCDR & Ransomware Monitor artifact with fresh event data — date-grounded to current month.
 ---
 
 You are refreshing an existing Cowork artifact with ID `bcdr-ransomware-monitor` for Chris G, an IT consultant specializing in Business Continuity and Disaster Recovery. The artifact is a global BCDR & ransomware event monitor with four sections: Ransomware, IT Outages & Cloud, Cyber Incidents (non-ransomware), and Physical/Natural BC Events. Your objective is to re-fetch live data for each section and call `update_artifact` so the artifact reflects the last 24 hours of global activity.
 
+**Date grounding — do this first:** Note today's exact date (day, month, year) from the environment. Substitute the real current month and year into every search query below. Do NOT leave placeholders like `<current month>` in the actual search string. Example: if today is July 11, 2026, every query uses "July 2026". Discard any search results dated before the current month unless nothing more recent is available.
+
 ## Steps
 
 1. Fetch fresh data in parallel using WebSearch and WebFetch:
-   - WebSearch: "latest ransomware attacks named victims this week <current year>" — extract up to 8 distinct named victims.
-   - WebSearch: "major cloud outage AWS Azure Google Cloud SaaS disruption this week <current year>" — extract up to 6 distinct outage/disruption items from roughly the last 2 weeks.
-   - WebSearch: "major data breach zero day CISA NCSC advisory this week <current year>" — extract up to 8 distinct non-ransomware cyber items (breaches, supply-chain, zero-days, nation-state, CISA/NCSC advisories). Exclude anything that is pure ransomware (handled in the first bucket).
-   - WebSearch: "major natural disaster hurricane typhoon wildfire flood power grid <current month and year>" — extract up to 5 distinct non-earthquake natural/infrastructure events.
-   - WebFetch on https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson with prompt: "List all earthquakes with magnitude, location (place), time (ms epoch), and URL. Return ONLY a compact JSON array like [{\"magnitude\":7.4,\"location\":\"...\",\"time_ms\":1700000000000,\"url\":\"https://...\"}]". Parse and keep up to 5, sorted by magnitude descending. Combine with the natural-disaster news under the Physical/Natural section.
+   - WebSearch: "ransomware attack named victim <current month> <current year>" — extract up to 8 distinct named victims from the current month. Discard results from prior months.
+   - WebSearch: "cloud outage AWS Azure Google Cloud SaaS disruption <current month> <current year>" — extract up to 6 distinct outage/disruption items. Prefer items within the past 2 weeks; note if nothing current is found.
+   - WebSearch: "data breach zero day CISA KEV advisory <current month> <current year>" — extract up to 8 distinct non-ransomware cyber items (breaches, supply-chain, zero-days, nation-state, CISA/NCSC advisories). Exclude pure ransomware.
+   - WebSearch: "natural disaster hurricane typhoon wildfire flood <current month> <current year>" — extract up to 5 distinct non-earthquake natural/infrastructure events from the current month.
+   - WebFetch on https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_week.geojson — parse the JSON and keep up to 5 earthquakes sorted by magnitude descending. Combine with the natural-disaster news under the Physical/Natural section.
 
 2. For each item, capture: short title, 1-sentence factual summary, best-available source URL, and a tag label (use: "Critical", "High-profile", "Data exposure", "Credential exposure", "Newly claimed", "Municipal", "Healthcare", "Education", "Cloud", "Trend", "Reference", "KEV add", "Emergency Directive", "Zero-day", "Third-party", "Cat 4" / "M <value>", "FEMA MDD", etc.). Earthquake badges should be "M <magnitude>" with class `sig` for ≥6.5, `high` for ≥5.5, `mod` otherwise.
 
@@ -44,4 +46,4 @@ You are refreshing an existing Cowork artifact with ID `bcdr-ransomware-monitor`
 
 ## Success criteria
 
-The artifact at id `bcdr-ransomware-monitor` is updated with fresh items in all four categories, the timestamp reflects the current day, the top-bar metric counters match item counts in each section, and the update_summary clearly states this was the daily 24-hour refresh.
+The artifact at id `bcdr-ransomware-monitor` is updated with fresh items dated to the current month, the timestamp reflects the current day, the top-bar metric counters match item counts in each section, and the update_summary clearly states this was the daily 24-hour refresh.
