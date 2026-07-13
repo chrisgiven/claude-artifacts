@@ -66,6 +66,16 @@
   button.quiet{background:transparent}
   button.danger{color:var(--danger)}
 
+  /* ---------- plot bar ---------- */
+  .plotbar{display:flex; gap:8px; align-items:center; flex-wrap:wrap; margin-bottom:12px}
+  .plotbar .plabel{font-size:11px; letter-spacing:.14em; color:var(--ink-2)}
+  .plotbar select{
+    font:inherit; font-size:13.5px; color:var(--ink); background:var(--panel);
+    border:1px solid var(--line); border-radius:6px; padding:6px 10px; max-width:280px;
+  }
+  .plotbar select:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
+  .plotbar button{padding:5px 10px; font-size:12.5px}
+
   /* ---------- gig meta ---------- */
   .meta{
     display:grid; grid-template-columns:repeat(6,1fr); gap:10px 14px;
@@ -182,6 +192,7 @@
 
   /* ---------- print: a clean tech rider ---------- */
   @media print{
+    .plotbar{display:none !important}
     :root{--bg:#fff; --panel:#fff; --ink:#111; --ink-2:#555; --line:#bbb;
       --accent:#8a5f14; --accent-soft:#fff; --stage:#fff; --stage-line:#ccc; --stage-ink:#111; --stage-dim:#777; --chip:#fff; --shadow:none}
     body{font-size:12px}
@@ -213,6 +224,14 @@
       <input type="file" id="fileImport" accept=".json,application/json" hidden>
     </div>
   </header>
+
+  <div class="plotbar">
+    <span class="plabel disp">Plot</span>
+    <select id="plotSel" aria-label="Switch between saved plots"></select>
+    <button id="btnDup" type="button">Duplicate</button>
+    <button id="btnRenamePlot" type="button">Rename</button>
+    <button id="btnDeletePlot" type="button" class="danger">Delete</button>
+  </div>
 
   <div class="meta" id="meta">
     <label class="band"><span class="disp">Band / Act</span><input data-meta="band" placeholder="The Midnight Ramblers"></label>
@@ -299,8 +318,20 @@
     label:  {i:"Stage note", l:"Text", labelType:true}
   };
 
-  var KEY = "gigplot.v1";
-  var S = null, selId = null, uid = function(){ return "i" + Math.random().toString(36).slice(2,9); };
+  var KEY = "gigplot.v2", KEY1 = "gigplot.v1";
+  var DB = null, S = null, selId = null, uid = function(){ return "i" + Math.random().toString(36).slice(2,9); };
+
+  function blank(){
+    return {meta:{band:"",date:"",venue:"",contact:"",phone:""}, items:[],
+      inputs:[{src:"",mic:"",stand:"",ph:false,note:""}], mixes:[{who:""}], notes:""};
+  }
+  function uniqueName(name){
+    var n = (name || "Untitled plot").trim() || "Untitled plot";
+    if(!DB.plots[n]){ return n; }
+    var i = 2;
+    while(DB.plots[n + " " + i]){ i++; }
+    return n + " " + i;
+  }
 
   function example(){
     return {
@@ -348,15 +379,33 @@
   function save(){
     clearTimeout(saveTimer);
     saveTimer = setTimeout(function(){
-      try{ localStorage.setItem(KEY, JSON.stringify(S)); flash("Saved"); }catch(e){}
+      try{ localStorage.setItem(KEY, JSON.stringify(DB)); flash("Saved"); }catch(e){}
     }, 250);
   }
   function load(){
     try{
       var raw = localStorage.getItem(KEY);
-      if(raw){ return JSON.parse(raw); }
+      if(raw){
+        var d = JSON.parse(raw);
+        if(d && d.plots && d.current && d.plots[d.current]){ return d; }
+      }
     }catch(e){}
-    return example();
+    // migrate a single-plot v1 save
+    try{
+      var raw1 = localStorage.getItem(KEY1);
+      if(raw1){
+        var s = JSON.parse(raw1);
+        if(s && Array.isArray(s.items)){
+          var name = (s.meta && s.meta.band) || "My plot";
+          var db = {current:name, plots:{}};
+          db.plots[name] = s;
+          return db;
+        }
+      }
+    }catch(e){}
+    var ex = {current:"Example — festival set", plots:{}};
+    ex.plots[ex.current] = example();
+    return ex;
   }
   var flashTimer = null;
   function flash(msg){
@@ -370,9 +419,11 @@
   function bindMeta(){
     document.querySelectorAll("#meta input").forEach(function(inp){
       inp.value = S.meta[inp.dataset.meta] || "";
-      inp.addEventListener("input", function(){ S.meta[inp.dataset.meta] = inp.value; save(); });
     });
   }
+  document.querySelectorAll("#meta input").forEach(function(inp){
+    inp.addEventListener("input", function(){ S.meta[inp.dataset.meta] = inp.value; save(); });
+  });
 
   // -------- palette --------
   function buildPalette(){
@@ -612,14 +663,65 @@
   var notes = document.getElementById("notes");
   notes.addEventListener("input", function(){ S.notes = notes.value; save(); });
 
+  // -------- plot library --------
+  var plotSel = document.getElementById("plotSel");
+
+  function renderPlotSel(){
+    plotSel.innerHTML = "";
+    Object.keys(DB.plots).forEach(function(name){
+      var o = document.createElement("option");
+      o.value = name; o.textContent = name;
+      plotSel.appendChild(o);
+    });
+    plotSel.value = DB.current;
+    document.getElementById("btnDeletePlot").disabled = Object.keys(DB.plots).length < 2;
+  }
+
+  function switchPlot(name){
+    if(!DB.plots[name]){ return; }
+    DB.current = name;
+    S = DB.plots[name];
+    selId = null;
+    renderAll(); save();
+  }
+
+  plotSel.addEventListener("change", function(){ switchPlot(plotSel.value); });
+
+  document.getElementById("btnDup").addEventListener("click", function(){
+    var name = uniqueName(DB.current + " copy");
+    DB.plots[name] = JSON.parse(JSON.stringify(S));
+    switchPlot(name);
+    flash("Duplicated");
+  });
+
+  document.getElementById("btnRenamePlot").addEventListener("click", function(){
+    var v = prompt("Plot name:", DB.current);
+    if(v === null){ return; }
+    v = v.trim();
+    if(v === "" || v === DB.current){ return; }
+    var name = uniqueName(v);
+    DB.plots[name] = S;
+    delete DB.plots[DB.current];
+    DB.current = name;
+    renderPlotSel(); save();
+  });
+
+  document.getElementById("btnDeletePlot").addEventListener("click", function(){
+    if(Object.keys(DB.plots).length < 2){ return; }
+    if(!confirm('Delete plot "' + DB.current + '"? This can\'t be undone — export it first if unsure.')){ return; }
+    delete DB.plots[DB.current];
+    switchPlot(Object.keys(DB.plots)[0]);
+    flash("Deleted");
+  });
+
   // -------- toolbar --------
   document.getElementById("btnPrint").addEventListener("click", function(){ window.print(); });
   document.getElementById("btnNew").addEventListener("click", function(){
-    if(confirm("Start a new blank plot? Your current plot will be replaced — export it first if you want to keep it.")){
-      S = {meta:{band:"",date:"",venue:"",contact:"",phone:""}, items:[], inputs:[{src:"",mic:"",stand:"",ph:false,note:""}], mixes:[{who:""}], notes:""};
-      selId = null;
-      renderAll(); save();
-    }
+    var v = prompt("Name for the new plot:", "Plot " + (Object.keys(DB.plots).length + 1));
+    if(v === null){ return; }
+    var name = uniqueName(v);
+    DB.plots[name] = blank();
+    switchPlot(name);
   });
   document.getElementById("btnExport").addEventListener("click", function(){
     var name = (S.meta.band || "gigplot").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "gigplot";
@@ -645,8 +747,9 @@
           throw new Error("bad shape");
         }
         d.meta = d.meta || {}; d.mixes = d.mixes || []; d.notes = d.notes || "";
-        S = d; selId = null;
-        renderAll(); save();
+        var name = uniqueName((d.meta.band || f.name.replace(/\.json$/i, "")) + " (imported)");
+        DB.plots[name] = d;
+        switchPlot(name);
         flash("Imported");
       }catch(err){
         alert("That file isn't a GigPlot export. Nothing was changed.");
@@ -657,11 +760,12 @@
   });
 
   function renderAll(){
-    bindMeta(); renderStage(); renderInputs(); renderMixes();
+    renderPlotSel(); bindMeta(); renderStage(); renderInputs(); renderMixes();
     notes.value = S.notes || "";
   }
 
-  S = load();
+  DB = load();
+  S = DB.plots[DB.current];
   buildPalette();
   renderAll();
 })();
