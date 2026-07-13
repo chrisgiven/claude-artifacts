@@ -1,0 +1,670 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GigPlot — Stage Plot &amp; Input List Builder</title>
+</head>
+<body>
+<style>
+  :root{
+    --bg:#F1F2EC; --panel:#FAFAF6; --ink:#201D17; --ink-2:#6B6455; --line:#D8D6CB;
+    --accent:#B87E22; --accent-ink:#1C1207; --accent-soft:#F0E2C8;
+    --danger:#C4524D; --ok:#3F9B6E;
+    --stage:#1B1A16; --stage-line:#33312A; --stage-ink:#EBE6DA; --stage-dim:#8F8A7B;
+    --chip:#26241E; --shadow:0 1px 2px rgba(20,18,12,.12), 0 6px 20px rgba(20,18,12,.08);
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#161511; --panel:#1E1C17; --ink:#EBE6DA; --ink-2:#9A937F; --line:#333027;
+      --accent:#E0A03C; --accent-ink:#1C1207; --accent-soft:#3A2F17;
+      --danger:#E06A64; --ok:#57B586;
+      --stage:#121110; --stage-line:#2C2A24; --stage-ink:#EBE6DA; --stage-dim:#7E7867;
+      --chip:#26241E; --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#161511; --panel:#1E1C17; --ink:#EBE6DA; --ink-2:#9A937F; --line:#333027;
+    --accent:#E0A03C; --accent-ink:#1C1207; --accent-soft:#3A2F17;
+    --danger:#E06A64; --ok:#57B586;
+    --stage:#121110; --stage-line:#2C2A24; --stage-ink:#EBE6DA; --stage-dim:#7E7867;
+    --chip:#26241E; --shadow:0 1px 2px rgba(0,0,0,.4), 0 8px 24px rgba(0,0,0,.35);
+  }
+  :root[data-theme="light"]{
+    --bg:#F1F2EC; --panel:#FAFAF6; --ink:#201D17; --ink-2:#6B6455; --line:#D8D6CB;
+    --accent:#B87E22; --accent-ink:#1C1207; --accent-soft:#F0E2C8;
+    --danger:#C4524D; --ok:#3F9B6E;
+    --stage:#1B1A16; --stage-line:#33312A; --stage-ink:#EBE6DA; --stage-dim:#8F8A7B;
+    --chip:#26241E; --shadow:0 1px 2px rgba(20,18,12,.12), 0 6px 20px rgba(20,18,12,.08);
+  }
+
+  *{box-sizing:border-box; margin:0}
+  html,body{background:var(--bg)}
+  body{
+    font-family:"Avenir Next","Segoe UI",system-ui,-apple-system,sans-serif;
+    color:var(--ink); line-height:1.45; -webkit-font-smoothing:antialiased;
+  }
+  .disp{ font-family:"Avenir Next Condensed","Arial Narrow","Helvetica Neue Condensed",sans-serif-condensed,sans-serif;
+    text-transform:uppercase; letter-spacing:.06em; font-weight:700; }
+  .mono{ font-family:"SF Mono",ui-monospace,Menlo,Consolas,monospace; font-variant-numeric:tabular-nums; }
+
+  .wrap{max-width:1100px; margin:0 auto; padding:20px 20px 80px}
+
+  /* ---------- masthead ---------- */
+  header.mast{display:flex; align-items:flex-end; justify-content:space-between; gap:16px; flex-wrap:wrap; margin-bottom:14px}
+  .brand h1{font-size:clamp(26px,4vw,38px); line-height:1; letter-spacing:.04em}
+  .brand h1 .amp{color:var(--accent)}
+  .brand p{color:var(--ink-2); font-size:13px; margin-top:4px}
+  .actions{display:flex; gap:8px; flex-wrap:wrap}
+  button{
+    font:inherit; color:var(--ink); background:var(--panel); border:1px solid var(--line);
+    border-radius:6px; padding:7px 13px; cursor:pointer; font-size:13.5px;
+  }
+  button:hover{border-color:var(--accent)}
+  button:focus-visible, input:focus-visible, textarea:focus-visible{outline:2px solid var(--accent); outline-offset:1px}
+  button.primary{background:var(--accent); color:var(--accent-ink); border-color:var(--accent); font-weight:600}
+  button.quiet{background:transparent}
+  button.danger{color:var(--danger)}
+
+  /* ---------- gig meta ---------- */
+  .meta{
+    display:grid; grid-template-columns:repeat(6,1fr); gap:10px 14px;
+    background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:14px 16px; margin-bottom:16px;
+  }
+  .meta label{display:flex; flex-direction:column; gap:2px; font-size:10.5px; color:var(--ink-2)}
+  .meta label span{letter-spacing:.1em}
+  .meta input{
+    font:inherit; font-size:14px; color:var(--ink); background:transparent;
+    border:0; border-bottom:1px solid var(--line); padding:3px 1px; border-radius:0;
+  }
+  .meta input:focus{border-bottom-color:var(--accent)}
+  .meta .band{grid-column:span 2}
+  @media (max-width:760px){ .meta{grid-template-columns:repeat(2,1fr)} .meta .band{grid-column:span 2} }
+
+  /* ---------- sections ---------- */
+  section{margin-bottom:26px}
+  .sec-head{display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin-bottom:8px}
+  .sec-head h2{font-size:15px; letter-spacing:.14em; color:var(--ink)}
+  .sec-head h2::before{content:"▸ "; color:var(--accent)}
+  .sec-head .hint{font-size:12px; color:var(--ink-2)}
+
+  /* ---------- palette ---------- */
+  .palette{display:flex; gap:6px; flex-wrap:wrap; margin-bottom:10px}
+  .palette button{display:flex; align-items:center; gap:6px; padding:5px 10px; font-size:12.5px; border-radius:999px}
+  .palette button b{font-weight:400; font-size:15px}
+
+  /* ---------- stage ---------- */
+  .stage-outer{position:relative}
+  .stage{
+    position:relative; width:100%; aspect-ratio:16/9; container-type:inline-size;
+    background:
+      repeating-linear-gradient(0deg, transparent 0 calc(10% - 1px), var(--stage-line) calc(10% - 1px) 10%),
+      repeating-linear-gradient(90deg, transparent 0 calc(6.25% - 1px), var(--stage-line) calc(6.25% - 1px) 6.25%),
+      var(--stage);
+    border:1px solid var(--stage-line); border-top:4px solid var(--accent); border-radius:8px;
+    overflow:hidden; touch-action:none; box-shadow:var(--shadow);
+  }
+  .stage .edge{
+    position:absolute; left:0; right:0; text-align:center; color:var(--stage-dim);
+    font-size:11px; letter-spacing:.3em; pointer-events:none; text-transform:uppercase;
+    font-family:"Avenir Next Condensed","Arial Narrow",sans-serif;
+  }
+  .edge.up{top:6px} .edge.down{bottom:6px}
+
+  .item{
+    position:absolute; transform:translate(-50%,-50%);
+    display:flex; flex-direction:column; align-items:center; gap:2px;
+    cursor:grab; user-select:none; -webkit-user-select:none; touch-action:none;
+  }
+  .item:active{cursor:grabbing}
+  .item .glyph{
+    display:grid; place-items:center;
+    width:calc(7cqw * var(--s,1)); height:calc(7cqw * var(--s,1));
+    font-size:calc(4cqw * var(--s,1));
+    background:var(--chip); border:1px solid var(--stage-line); border-radius:50%;
+    color:var(--stage-ink); line-height:1;
+  }
+  .item .glyph.txt{font-size:calc(2.2cqw * var(--s,1)); font-weight:700; letter-spacing:.05em}
+  .item .tag{
+    font-size:calc(1.9cqw * var(--s,1)); color:var(--stage-ink); background:rgba(0,0,0,.45);
+    padding:1px 6px; border-radius:4px; white-space:nowrap; max-width:30cqw; overflow:hidden; text-overflow:ellipsis;
+  }
+  .item.riser-item .glyph{
+    width:calc(22cqw * var(--s,1)); height:calc(11cqw * var(--s,1));
+    border:2px dashed var(--stage-dim); border-radius:6px; background:rgba(255,255,255,.03);
+    font-size:calc(2cqw * var(--s,1)); color:var(--stage-dim); letter-spacing:.15em; text-transform:uppercase;
+    font-family:"Avenir Next Condensed","Arial Narrow",sans-serif;
+  }
+  .item.riser-item .tag{display:none}
+  .item.label-item .glyph{width:auto; height:auto; background:none; border:0; border-radius:0;
+    font-size:calc(2.6cqw * var(--s,1)); color:var(--stage-ink); font-weight:600; letter-spacing:.08em}
+  .item.label-item .tag{display:none}
+  .item.sel .glyph{outline:2px solid var(--accent); outline-offset:2px}
+
+  .item-bar{
+    display:flex; gap:6px; align-items:center; margin-top:8px; min-height:38px; flex-wrap:wrap;
+  }
+  .item-bar .who{font-size:12.5px; color:var(--ink-2); margin-right:4px}
+  .item-bar button{padding:4px 10px; font-size:12.5px}
+  .item-bar.empty .who{font-style:italic}
+
+  /* ---------- tables ---------- */
+  .cols{display:grid; grid-template-columns:minmax(0,2.1fr) minmax(0,1fr); gap:22px; align-items:start}
+  @media (max-width:860px){ .cols{grid-template-columns:1fr} }
+  .tbl-scroll{overflow-x:auto; border:1px solid var(--line); border-radius:10px; background:var(--panel)}
+  table{border-collapse:collapse; width:100%; font-size:13.5px}
+  th{
+    text-align:left; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase; font-weight:600;
+    color:var(--ink-2); padding:9px 10px; border-bottom:1px solid var(--line); white-space:nowrap;
+  }
+  td{border-bottom:1px solid var(--line); padding:2px 4px; vertical-align:middle}
+  tr:last-child td{border-bottom:0}
+  td input[type=text]{
+    font:inherit; font-size:13.5px; color:var(--ink); background:transparent; border:0; width:100%; padding:7px 6px; border-radius:4px;
+  }
+  td input[type=text]:focus{background:var(--accent-soft); outline:none}
+  td.ch{width:44px; text-align:right; padding-right:8px; color:var(--accent); font-weight:600}
+  td.ph{width:44px; text-align:center}
+  td.ph input{accent-color:var(--danger); width:15px; height:15px}
+  td.rowops{width:96px; white-space:nowrap; text-align:right; padding-right:8px}
+  td.rowops button{padding:2px 7px; font-size:12px; border:0; background:transparent; color:var(--ink-2)}
+  td.rowops button:hover{color:var(--ink)}
+  td.rowops button.del:hover{color:var(--danger)}
+  .add-row{margin-top:8px}
+
+  textarea{
+    font:inherit; font-size:13.5px; color:var(--ink); width:100%; min-height:90px; resize:vertical;
+    background:var(--panel); border:1px solid var(--line); border-radius:10px; padding:12px;
+  }
+
+  footer{margin-top:34px; color:var(--ink-2); font-size:12px; display:flex; justify-content:space-between; gap:10px; flex-wrap:wrap}
+  .savestate{color:var(--ok)}
+
+  /* ---------- print: a clean tech rider ---------- */
+  @media print{
+    :root{--bg:#fff; --panel:#fff; --ink:#111; --ink-2:#555; --line:#bbb;
+      --accent:#8a5f14; --accent-soft:#fff; --stage:#fff; --stage-line:#ccc; --stage-ink:#111; --stage-dim:#777; --chip:#fff; --shadow:none}
+    body{font-size:12px}
+    .wrap{max-width:none; padding:0}
+    .actions,.palette,.item-bar,.add-row,td.rowops,th.ops,.sec-head .hint,footer .savestate{display:none !important}
+    .stage{border:1.5px solid #333; border-top:4px solid #333; box-shadow:none; break-inside:avoid}
+    .item .tag{background:#eee; color:#111}
+    .meta{border:0; border-bottom:2px solid #333; border-radius:0; padding:0 0 10px}
+    .meta input{border-bottom:0; font-weight:600}
+    section{break-inside:avoid; margin-bottom:16px}
+    .cols{grid-template-columns:1fr; gap:16px}
+    .tbl-scroll{border-color:#999}
+    th,td{border-bottom:1px solid #ccc}
+    textarea{border:1px solid #ccc}
+  }
+</style>
+
+<div class="wrap">
+  <header class="mast">
+    <div class="brand">
+      <h1 class="disp">Gig<span class="amp">Plot</span></h1>
+      <p>Stage plots &amp; input lists for working bands. Everything saves in your browser — export JSON to share or back up.</p>
+    </div>
+    <div class="actions">
+      <button id="btnNew" class="quiet">New plot</button>
+      <button id="btnImport">Import JSON</button>
+      <button id="btnExport">Export JSON</button>
+      <button id="btnPrint" class="primary">Print / PDF</button>
+      <input type="file" id="fileImport" accept=".json,application/json" hidden>
+    </div>
+  </header>
+
+  <div class="meta" id="meta">
+    <label class="band"><span class="disp">Band / Act</span><input data-meta="band" placeholder="The Midnight Ramblers"></label>
+    <label><span class="disp">Date</span><input data-meta="date" placeholder="2026-08-14"></label>
+    <label><span class="disp">Venue</span><input data-meta="venue" placeholder="The Basement"></label>
+    <label><span class="disp">Contact</span><input data-meta="contact" placeholder="Chris"></label>
+    <label><span class="disp">Phone / Email</span><input data-meta="phone" placeholder="555-0100"></label>
+  </div>
+
+  <section>
+    <div class="sec-head">
+      <h2 class="disp">Stage Plot</h2>
+      <span class="hint">Tap a chip to add it · drag to place · double-click to rename · select for more</span>
+    </div>
+    <div class="palette" id="palette" aria-label="Add items to stage"></div>
+    <div class="stage-outer">
+      <div class="stage" id="stage" aria-label="Stage plot canvas">
+        <div class="edge up">Upstage · Backline</div>
+        <div class="edge down">Downstage · Audience</div>
+      </div>
+    </div>
+    <div class="item-bar empty" id="itemBar"><span class="who">Nothing selected — click an item on the stage.</span></div>
+  </section>
+
+  <div class="cols">
+    <section>
+      <div class="sec-head">
+        <h2 class="disp">Input List</h2>
+        <span class="hint">Channels number themselves</span>
+      </div>
+      <div class="tbl-scroll">
+        <table id="inputTbl">
+          <thead><tr>
+            <th style="text-align:right">Ch</th><th>Source</th><th>Mic / DI</th><th>Stand</th>
+            <th style="text-align:center">48V</th><th>Notes</th><th class="ops"></th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <button class="add-row" id="addInput">+ Add channel</button>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2 class="disp">Monitor Mixes</h2></div>
+      <div class="tbl-scroll">
+        <table id="mixTbl">
+          <thead><tr><th style="text-align:right">Mix</th><th>Who / What</th><th class="ops"></th></tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <button class="add-row" id="addMix">+ Add mix</button>
+    </section>
+  </div>
+
+  <section>
+    <div class="sec-head"><h2 class="disp">Tech Notes</h2></div>
+    <textarea id="notes" placeholder="Backline, power drops, console, who supplies what…"></textarea>
+  </section>
+
+  <footer>
+    <span>GigPlot · single-file, offline, no accounts. Made with Claude.</span>
+    <span class="savestate" id="saveState"></span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+
+  var TYPES = {
+    vocal:  {i:"🎤", l:"Vocal"},
+    guitar: {i:"🎸", l:"Guitar"},
+    bass:   {i:"🎸", l:"Bass"},
+    keys:   {i:"🎹", l:"Keys"},
+    drums:  {i:"🥁", l:"Drums"},
+    horn:   {i:"🎷", l:"Horn"},
+    fiddle: {i:"🎻", l:"Fiddle"},
+    amp:    {i:"🔊", l:"Amp"},
+    wedge:  {i:"🔉", l:"Wedge"},
+    di:     {i:"DI", l:"DI Box", txt:true},
+    power:  {i:"🔌", l:"Power"},
+    person: {i:"🧍", l:"Player"},
+    riser:  {i:"Riser 8×8", l:"Riser", riser:true},
+    label:  {i:"Stage note", l:"Text", labelType:true}
+  };
+
+  var KEY = "gigplot.v1";
+  var S = null, selId = null, uid = function(){ return "i" + Math.random().toString(36).slice(2,9); };
+
+  function example(){
+    return {
+      meta:{band:"Old Fashioned Band", date:"", venue:"", contact:"Chris", phone:""},
+      items:[
+        {id:uid(), type:"riser", x:50, y:22, label:"Drum riser 8×8", s:1},
+        {id:uid(), type:"drums", x:50, y:22, label:"Drums", s:1.2},
+        {id:uid(), type:"amp",  x:16, y:26, label:"Bass amp", s:1},
+        {id:uid(), type:"bass", x:24, y:42, label:"Bass", s:1},
+        {id:uid(), type:"amp",  x:84, y:26, label:"Gtr amp", s:1},
+        {id:uid(), type:"guitar",x:76, y:42, label:"Guitar", s:1},
+        {id:uid(), type:"keys", x:90, y:58, label:"Keys", s:1},
+        {id:uid(), type:"vocal",x:35, y:68, label:"Vox 1", s:1},
+        {id:uid(), type:"vocal",x:60, y:68, label:"Vox 2", s:1},
+        {id:uid(), type:"wedge",x:35, y:84, label:"Wedge 1", s:.8},
+        {id:uid(), type:"wedge",x:60, y:84, label:"Wedge 2", s:.8},
+        {id:uid(), type:"power",x:8,  y:12, label:"Power drop", s:.8},
+        {id:uid(), type:"power",x:92, y:12, label:"Power drop", s:.8}
+      ],
+      inputs:[
+        {src:"Kick", mic:"Beta 52 / D6", stand:"Short boom", ph:false, note:""},
+        {src:"Snare", mic:"SM57", stand:"Short boom", ph:false, note:""},
+        {src:"Overhead L", mic:"SDC", stand:"Tall boom", ph:true, note:""},
+        {src:"Overhead R", mic:"SDC", stand:"Tall boom", ph:true, note:""},
+        {src:"Bass", mic:"DI", stand:"—", ph:false, note:"Post-EQ from amp"},
+        {src:"Electric Gtr", mic:"SM57 / e906", stand:"Short boom", ph:false, note:""},
+        {src:"Acoustic Gtr", mic:"Active DI", stand:"—", ph:true, note:""},
+        {src:"Keys L", mic:"DI", stand:"—", ph:false, note:"Stereo pair"},
+        {src:"Keys R", mic:"DI", stand:"—", ph:false, note:""},
+        {src:"Vox 1", mic:"SM58", stand:"Tall boom", ph:false, note:"Lead"},
+        {src:"Vox 2", mic:"SM58", stand:"Straight", ph:false, note:"Harmony"}
+      ],
+      mixes:[
+        {who:"Vox wedges (1 and 2)"},
+        {who:"Guitar side"},
+        {who:"Bass side"},
+        {who:"Drums (IEM)"}
+      ],
+      notes:"Band supplies full backline and mixer (Behringer XR18, mixed from tablet at FOH).\nNeed two 20A circuits upstage (marked on plot) and a 6ft table for the mixer.\nSet length 2×45 min. Soundcheck 45 min before doors."
+    };
+  }
+
+  // -------- persistence --------
+  var saveTimer = null;
+  function save(){
+    clearTimeout(saveTimer);
+    saveTimer = setTimeout(function(){
+      try{ localStorage.setItem(KEY, JSON.stringify(S)); flash("Saved"); }catch(e){}
+    }, 250);
+  }
+  function load(){
+    try{
+      var raw = localStorage.getItem(KEY);
+      if(raw){ return JSON.parse(raw); }
+    }catch(e){}
+    return example();
+  }
+  var flashTimer = null;
+  function flash(msg){
+    var el = document.getElementById("saveState");
+    el.textContent = "● " + msg;
+    clearTimeout(flashTimer);
+    flashTimer = setTimeout(function(){ el.textContent = ""; }, 1400);
+  }
+
+  // -------- meta --------
+  function bindMeta(){
+    document.querySelectorAll("#meta input").forEach(function(inp){
+      inp.value = S.meta[inp.dataset.meta] || "";
+      inp.addEventListener("input", function(){ S.meta[inp.dataset.meta] = inp.value; save(); });
+    });
+  }
+
+  // -------- palette --------
+  function buildPalette(){
+    var pal = document.getElementById("palette");
+    pal.innerHTML = "";
+    Object.keys(TYPES).forEach(function(k){
+      var t = TYPES[k];
+      var b = document.createElement("button");
+      b.type = "button";
+      b.innerHTML = (t.txt || t.riser || t.labelType ? "" : "<b>" + t.i + "</b>") + t.l;
+      b.addEventListener("click", function(){ addItem(k); });
+      pal.appendChild(b);
+    });
+  }
+
+  function addItem(type){
+    var t = TYPES[type];
+    var n = S.items.length;
+    var it = {
+      id:uid(), type:type,
+      x: 46 + ((n * 7) % 14), y: 46 + ((n * 5) % 12),
+      label: t.riser ? "Riser 8×8" : (t.labelType ? "STAGE NOTE" : t.l),
+      s: t.riser ? 1 : 1
+    };
+    S.items.push(it);
+    selId = it.id;
+    renderStage(); save();
+  }
+
+  // -------- stage --------
+  var stage = document.getElementById("stage");
+
+  function renderStage(){
+    stage.querySelectorAll(".item").forEach(function(n){ n.remove(); });
+    S.items.forEach(function(it){
+      var t = TYPES[it.type] || TYPES.person;
+      var el = document.createElement("div");
+      el.className = "item" + (t.riser ? " riser-item" : "") + (t.labelType ? " label-item" : "") + (it.id === selId ? " sel" : "");
+      el.style.left = it.x + "%";
+      el.style.top = it.y + "%";
+      el.style.setProperty("--s", it.s);
+      el.dataset.id = it.id;
+      if(t.riser){ el.style.zIndex = 1; } else { el.style.zIndex = 2; }
+      var g = document.createElement("div");
+      g.className = "glyph" + (t.txt ? " txt" : "");
+      g.textContent = t.riser || t.labelType ? it.label : t.i;
+      el.appendChild(g);
+      if(!t.riser && !t.labelType){
+        var tag = document.createElement("div");
+        tag.className = "tag";
+        tag.textContent = it.label;
+        el.appendChild(tag);
+      }
+      stage.appendChild(el);
+    });
+    renderItemBar();
+  }
+
+  function renderItemBar(){
+    var bar = document.getElementById("itemBar");
+    var it = S.items.find(function(i){ return i.id === selId; });
+    if(!it){
+      bar.className = "item-bar empty";
+      bar.innerHTML = '<span class="who">Nothing selected — click an item on the stage.</span>';
+      return;
+    }
+    bar.className = "item-bar";
+    bar.innerHTML = "";
+    var who = document.createElement("span");
+    who.className = "who";
+    who.textContent = "Selected: " + it.label;
+    bar.appendChild(who);
+    [
+      ["Rename", function(){ rename(it); }],
+      ["Duplicate", function(){ dup(it); }],
+      ["− Smaller", function(){ scale(it, -0.2); }],
+      ["+ Bigger", function(){ scale(it, 0.2); }]
+    ].forEach(function(pair){
+      var b = document.createElement("button");
+      b.type = "button"; b.textContent = pair[0];
+      b.addEventListener("click", pair[1]);
+      bar.appendChild(b);
+    });
+    var del = document.createElement("button");
+    del.type = "button"; del.className = "danger"; del.textContent = "Delete";
+    del.addEventListener("click", function(){ removeItem(it.id); });
+    bar.appendChild(del);
+  }
+
+  function rename(it){
+    var v = prompt("Label:", it.label);
+    if(v !== null && v.trim() !== ""){ it.label = v.trim(); renderStage(); save(); }
+  }
+  function dup(it){
+    var c = JSON.parse(JSON.stringify(it));
+    c.id = uid(); c.x = Math.min(96, it.x + 5); c.y = Math.min(96, it.y + 5);
+    S.items.push(c); selId = c.id; renderStage(); save();
+  }
+  function scale(it, d){
+    it.s = Math.round(Math.min(2.4, Math.max(0.6, (it.s || 1) + d)) * 10) / 10;
+    renderStage(); save();
+  }
+  function removeItem(id){
+    S.items = S.items.filter(function(i){ return i.id !== id; });
+    if(selId === id){ selId = null; }
+    renderStage(); save();
+  }
+
+  // drag + select
+  var drag = null;
+  stage.addEventListener("pointerdown", function(e){
+    var el = e.target.closest(".item");
+    if(!el){ selId = null; renderStage(); return; }
+    var it = S.items.find(function(i){ return i.id === el.dataset.id; });
+    if(!it){ return; }
+    selId = it.id;
+    var r = stage.getBoundingClientRect();
+    drag = {it:it, r:r, moved:false,
+      dx: it.x - ((e.clientX - r.left) / r.width * 100),
+      dy: it.y - ((e.clientY - r.top) / r.height * 100)};
+    try{ stage.setPointerCapture(e.pointerId); }catch(err){}
+    renderStage();
+    e.preventDefault();
+  });
+  stage.addEventListener("pointermove", function(e){
+    if(!drag){ return; }
+    drag.moved = true;
+    var x = (e.clientX - drag.r.left) / drag.r.width * 100 + drag.dx;
+    var y = (e.clientY - drag.r.top) / drag.r.height * 100 + drag.dy;
+    drag.it.x = Math.min(98, Math.max(2, Math.round(x * 10) / 10));
+    drag.it.y = Math.min(96, Math.max(4, Math.round(y * 10) / 10));
+    var el = stage.querySelector('.item[data-id="' + drag.it.id + '"]');
+    if(el){ el.style.left = drag.it.x + "%"; el.style.top = drag.it.y + "%"; }
+  });
+  stage.addEventListener("pointerup", function(){
+    if(drag){ if(drag.moved){ save(); } drag = null; }
+  });
+  stage.addEventListener("pointercancel", function(){
+    if(drag){ if(drag.moved){ save(); } drag = null; }
+  });
+  stage.addEventListener("dblclick", function(e){
+    var el = e.target.closest(".item");
+    if(!el){ return; }
+    var it = S.items.find(function(i){ return i.id === el.dataset.id; });
+    if(it){ rename(it); }
+  });
+  document.addEventListener("keydown", function(e){
+    if((e.key === "Delete" || e.key === "Backspace") && selId &&
+       !/^(INPUT|TEXTAREA)$/.test(document.activeElement.tagName)){
+      removeItem(selId);
+      e.preventDefault();
+    }
+  });
+
+  // -------- input list --------
+  function renderInputs(){
+    var tb = document.querySelector("#inputTbl tbody");
+    tb.innerHTML = "";
+    S.inputs.forEach(function(row, i){
+      var tr = document.createElement("tr");
+      var ch = document.createElement("td");
+      ch.className = "ch mono"; ch.textContent = i + 1;
+      tr.appendChild(ch);
+      [["src","Source"],["mic","Mic / DI"],["stand","Stand"]].forEach(function(f){
+        var td = document.createElement("td");
+        var inp = document.createElement("input");
+        inp.type = "text"; inp.value = row[f[0]] || ""; inp.setAttribute("aria-label", f[1] + " ch " + (i+1));
+        inp.addEventListener("input", function(){ row[f[0]] = inp.value; save(); });
+        td.appendChild(inp); tr.appendChild(td);
+      });
+      var ph = document.createElement("td"); ph.className = "ph";
+      var cb = document.createElement("input");
+      cb.type = "checkbox"; cb.checked = !!row.ph; cb.setAttribute("aria-label", "48V phantom ch " + (i+1));
+      cb.addEventListener("change", function(){ row.ph = cb.checked; save(); });
+      ph.appendChild(cb); tr.appendChild(ph);
+      var nt = document.createElement("td");
+      var ni = document.createElement("input");
+      ni.type = "text"; ni.value = row.note || ""; ni.setAttribute("aria-label", "Notes ch " + (i+1));
+      ni.addEventListener("input", function(){ row.note = ni.value; save(); });
+      nt.appendChild(ni); tr.appendChild(nt);
+      tr.appendChild(rowOps(S.inputs, i, renderInputs));
+      tb.appendChild(tr);
+    });
+  }
+
+  function renderMixes(){
+    var tb = document.querySelector("#mixTbl tbody");
+    tb.innerHTML = "";
+    S.mixes.forEach(function(row, i){
+      var tr = document.createElement("tr");
+      var ch = document.createElement("td");
+      ch.className = "ch mono"; ch.textContent = i + 1;
+      tr.appendChild(ch);
+      var td = document.createElement("td");
+      var inp = document.createElement("input");
+      inp.type = "text"; inp.value = row.who || ""; inp.setAttribute("aria-label", "Mix " + (i+1));
+      inp.addEventListener("input", function(){ row.who = inp.value; save(); });
+      td.appendChild(inp); tr.appendChild(td);
+      tr.appendChild(rowOps(S.mixes, i, renderMixes));
+      tb.appendChild(tr);
+    });
+  }
+
+  function rowOps(arr, i, rerender){
+    var td = document.createElement("td");
+    td.className = "rowops";
+    var up = document.createElement("button");
+    up.type = "button"; up.textContent = "↑"; up.title = "Move up"; up.disabled = i === 0;
+    up.addEventListener("click", function(){
+      arr.splice(i - 1, 0, arr.splice(i, 1)[0]); rerender(); save();
+    });
+    var dn = document.createElement("button");
+    dn.type = "button"; dn.textContent = "↓"; dn.title = "Move down"; dn.disabled = i === arr.length - 1;
+    dn.addEventListener("click", function(){
+      arr.splice(i + 1, 0, arr.splice(i, 1)[0]); rerender(); save();
+    });
+    var del = document.createElement("button");
+    del.type = "button"; del.className = "del"; del.textContent = "✕"; del.title = "Delete row";
+    del.addEventListener("click", function(){ arr.splice(i, 1); rerender(); save(); });
+    td.appendChild(up); td.appendChild(dn); td.appendChild(del);
+    return td;
+  }
+
+  document.getElementById("addInput").addEventListener("click", function(){
+    S.inputs.push({src:"", mic:"", stand:"", ph:false, note:""});
+    renderInputs(); save();
+    var rows = document.querySelectorAll("#inputTbl tbody tr");
+    var last = rows[rows.length - 1];
+    if(last){ last.querySelector("input[type=text]").focus(); }
+  });
+  document.getElementById("addMix").addEventListener("click", function(){
+    S.mixes.push({who:""});
+    renderMixes(); save();
+  });
+
+  // -------- notes --------
+  var notes = document.getElementById("notes");
+  notes.addEventListener("input", function(){ S.notes = notes.value; save(); });
+
+  // -------- toolbar --------
+  document.getElementById("btnPrint").addEventListener("click", function(){ window.print(); });
+  document.getElementById("btnNew").addEventListener("click", function(){
+    if(confirm("Start a new blank plot? Your current plot will be replaced — export it first if you want to keep it.")){
+      S = {meta:{band:"",date:"",venue:"",contact:"",phone:""}, items:[], inputs:[{src:"",mic:"",stand:"",ph:false,note:""}], mixes:[{who:""}], notes:""};
+      selId = null;
+      renderAll(); save();
+    }
+  });
+  document.getElementById("btnExport").addEventListener("click", function(){
+    var name = (S.meta.band || "gigplot").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "") || "gigplot";
+    var blob = new Blob([JSON.stringify(S, null, 2)], {type:"application/json"});
+    var a = document.createElement("a");
+    a.href = URL.createObjectURL(blob);
+    a.download = name + "-stageplot.json";
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+    flash("Exported");
+  });
+  document.getElementById("btnImport").addEventListener("click", function(){
+    document.getElementById("fileImport").click();
+  });
+  document.getElementById("fileImport").addEventListener("change", function(e){
+    var f = e.target.files[0];
+    if(!f){ return; }
+    var rd = new FileReader();
+    rd.onload = function(){
+      try{
+        var d = JSON.parse(rd.result);
+        if(!d || typeof d !== "object" || !Array.isArray(d.items) || !Array.isArray(d.inputs)){
+          throw new Error("bad shape");
+        }
+        d.meta = d.meta || {}; d.mixes = d.mixes || []; d.notes = d.notes || "";
+        S = d; selId = null;
+        renderAll(); save();
+        flash("Imported");
+      }catch(err){
+        alert("That file isn't a GigPlot export. Nothing was changed.");
+      }
+      e.target.value = "";
+    };
+    rd.readAsText(f);
+  });
+
+  function renderAll(){
+    bindMeta(); renderStage(); renderInputs(); renderMixes();
+    notes.value = S.notes || "";
+  }
+
+  S = load();
+  buildPalette();
+  renderAll();
+})();
+</script>
+</body>
+</html>

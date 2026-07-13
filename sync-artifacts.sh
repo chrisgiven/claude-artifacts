@@ -11,7 +11,7 @@ SRC="$HOME/Documents/Claude"
 cd "$REPO"
 
 # Only sync paths already published; CLAUDE.md files hold private memory
-for d in ai-daily-brief bcdr-ransomware-monitor; do
+for d in ai-daily-brief bcdr-ransomware-monitor gigplot; do
   rsync -a --exclude .DS_Store --exclude CLAUDE.md "$SRC/Artifacts/$d/" "Artifacts/$d/"
 done
 for d in ai-daily-brief-refresh bcdr-ransomware-monitor-daily-refresh daily-comms-review refresh-dashboard-weather; do
