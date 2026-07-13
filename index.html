@@ -533,6 +533,13 @@ footer .dot{color:var(--gold)}
         <div class="card-foot"><span class="tag hot">Personal</span><span class="tag">HTML</span><span class="go">Open →</span></div>
       </a>
 
+      <a class="card s-live fade" href="/claude-artifacts/Artifacts/gigplot/">
+        <div class="card-meta"><span class="code">LAB / GIG</span><span>Live</span></div>
+        <h3>GigPlot</h3>
+        <p>Stage plots and input lists for working bands. Drag-and-drop plot canvas, auto-numbered channels, monitor mixes — prints a venue-ready tech rider. One file, offline, no accounts.</p>
+        <div class="card-foot"><span class="tag hot">App</span><span class="tag">HTML</span><span class="tag">Music</span><span class="go">Open →</span></div>
+      </a>
+
       <a class="card s-live fade" href="http://192.168.1.94:3001">
         <div class="card-meta"><span class="code">LAB / GNDWK</span><span>Live</span></div>
         <h3>Groundwork</h3>
@@ -628,16 +635,37 @@ footer .dot{color:var(--gold)}
 document.getElementById('yr').textContent=new Date().getFullYear();
 document.getElementById('stamp').textContent=new Date().toISOString().slice(0,10);
 
-// GitHub repo sync check
+// GitHub repo sync check — compares the ref the NAS clone actually has
+// (served from its own .git dir) against the latest commit on GitHub.
+// No hardcoded SHA to maintain on each push.
 (function(){
-  var DEPLOYED='058fd735432cd42888895b5df19debd037916eec';
   var det=document.getElementById('repo-det');
   var led=document.getElementById('repo-led');
   var lbl=document.getElementById('repo-label');
   var st=document.getElementById('repo-st');
-  fetch('https://api.github.com/repos/chrisgiven/claude-artifacts/commits/main',{headers:{'Accept':'application/vnd.github.v3+json'}})
-    .then(function(r){return r.json()})
-    .then(function(d){
+  function localRef(){
+    return fetch('/claude-artifacts/.git/refs/heads/main',{cache:'no-store'})
+      .then(function(r){if(!r.ok)throw 0;return r.text()})
+      .catch(function(){
+        // ref may be packed after git gc
+        return fetch('/claude-artifacts/.git/packed-refs',{cache:'no-store'})
+          .then(function(r){if(!r.ok)throw 0;return r.text()})
+          .then(function(t){
+            var m=t.split('\n').filter(function(l){return l.indexOf('refs/heads/main')>-1})[0];
+            if(!m)throw 0;
+            return m.split(' ')[0];
+          });
+      })
+      .then(function(t){return t.trim()});
+  }
+  Promise.all([
+    fetch('https://api.github.com/repos/chrisgiven/claude-artifacts/commits/main',{headers:{'Accept':'application/vnd.github.v3+json'}})
+      .then(function(r){return r.json()}),
+    localRef()
+  ])
+    .then(function(res){
+      var d=res[0];
+      var DEPLOYED=res[1];
       var sha=d.sha||'';
       var msg=(d.commit&&d.commit.message||'').split('\n')[0].slice(0,60);
       var date=d.commit&&d.commit.committer&&d.commit.committer.date||'';
@@ -656,7 +684,7 @@ document.getElementById('stamp').textContent=new Date().toISOString().slice(0,10
       }
     })
     .catch(function(){
-      det.textContent='GitHub unreachable';
+      det.textContent='Status unavailable';
       led.className='led concept';
       lbl.textContent='Unknown';
     });
