@@ -1,5 +1,10 @@
 # Changelog
 
+## [1.1.1] - 2026-07-14
+
+### Added
+- Switchboard card (LAB / SWBD) on the hub homepage — local multi-AI project hub (Flask, port 5757); links to localhost like the BCDR card since it runs on the Mac
+
 ## [1.1.0] - 2026-07-13
 
 ### Added
