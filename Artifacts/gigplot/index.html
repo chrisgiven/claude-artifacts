@@ -89,7 +89,8 @@
   }
   .meta input:focus{border-bottom-color:var(--accent)}
   .meta .band{grid-column:span 2}
-  @media (max-width:760px){ .meta{grid-template-columns:repeat(2,1fr)} .meta .band{grid-column:span 2} }
+  .meta .web{grid-column:span 2}
+  @media (max-width:760px){ .meta{grid-template-columns:repeat(2,1fr)} .meta .band,.meta .web{grid-column:span 2} }
 
   /* ---------- sections ---------- */
   section{margin-bottom:26px}
@@ -240,6 +241,11 @@
     <label><span class="disp">Venue</span><input data-meta="venue" placeholder="The Basement"></label>
     <label><span class="disp">Contact</span><input data-meta="contact" placeholder="Chris"></label>
     <label><span class="disp">Phone / Email</span><input data-meta="phone" placeholder="555-0100"></label>
+    <label><span class="disp">Text #</span><input data-meta="text" placeholder="555-0100"></label>
+    <label class="web"><span class="disp">Website</span><input data-meta="web" placeholder="oldfashionedband.com"></label>
+    <label><span class="disp">Facebook</span><input data-meta="fb" placeholder="@oldfashionedband"></label>
+    <label><span class="disp">Instagram</span><input data-meta="ig" placeholder="@oldfashionedband"></label>
+    <label><span class="disp">X</span><input data-meta="x" placeholder="@oldfashionedband"></label>
   </div>
 
   <section>
@@ -323,7 +329,7 @@
   var DB = null, S = null, selId = null, uid = function(){ return "i" + Math.random().toString(36).slice(2,9); };
 
   function blank(){
-    return {meta:{band:"",date:"",venue:"",contact:"",phone:""}, items:[],
+    return {meta:{band:"",date:"",venue:"",contact:"",phone:"",text:"",web:"",fb:"",ig:"",x:""}, items:[],
       inputs:[{src:"",mic:"",stand:"",ph:false,note:""}], mixes:[{who:""}], notes:""};
   }
   function uniqueName(name){
@@ -336,7 +342,7 @@
 
   function example(){
     return {
-      meta:{band:"Old Fashioned Band", date:"", venue:"", contact:"Chris", phone:""},
+      meta:{band:"Old Fashioned Band", date:"", venue:"", contact:"Chris", phone:"", text:"", web:"", fb:"", ig:"", x:""},
       items:[
         {id:uid(), type:"riser", x:50, y:22, label:"Drum riser 8×8", s:1},
         {id:uid(), type:"drums", x:50, y:22, label:"Drums", s:1.2},
@@ -377,7 +383,7 @@
 
   function exampleDuo(){
     return {
-      meta:{band:"Acoustic Duo", date:"", venue:"", contact:"", phone:""},
+      meta:{band:"Acoustic Duo", date:"", venue:"", contact:"", phone:"", text:"", web:"", fb:"", ig:"", x:""},
       items:[
         {id:uid(), type:"guitar", x:38, y:44, label:"Ac Gtr 1", s:1},
         {id:uid(), type:"drums",  x:62, y:44, label:"Cajon", s:.9},
