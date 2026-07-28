@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.2.0] - 2026-07-27
+
+### Added
+- Live service health board on the hub — new **Status** section and nav item listing all 10 self-hosted services with up/down, probed from the browser every 30s and on tab focus. Reuses the existing `board`/`led` components and design tokens
+- `services.json` support: the service list loads at runtime instead of being hardcoded
+
+### Security
+- **The network topology is deliberately not in this repo, which is public.** `index.html` contains the dashboard machinery and zero addresses; the host/port map lives in `services.json`, served only from the NAS and gitignored. Off-network the fetch 404s and the section plus its nav item stay hidden. Verified `raw.githubusercontent.com/.../services.json` returns 404
+- Probes use `credentials:'omit'` — CouchDB and ObsidianRemote answer `401 WWW-Authenticate: Basic`, and omitting credentials stops the browser starting an auth negotiation
+
+### Notes
+- Pre-existing and unchanged: Lab cards still link to `NAS-ADDR:5001/:3001/:5599`, so the LAN IP was already public before this release
+- nginx serves `index.html` without cache headers; hard-refresh once after a deploy
+
 ## [1.1.1] - 2026-07-14
 
 ### Added
