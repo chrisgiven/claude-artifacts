@@ -23,6 +23,7 @@
   --live:#5cc781;
   --wip:#e0a33c;
   --concept:#8b9be6;
+  --down:#e0574a;
   --maxw:1120px;
   --pad:clamp(20px,4vw,48px);
 }
@@ -205,6 +206,29 @@ header.hero{padding:clamp(56px,8vw,104px) 0 clamp(48px,6vw,80px)}
 .st.wip{color:var(--wip)}
 .st.concept{color:var(--concept)}
 
+/* ---------- live service health (LAN only) ---------- */
+.led.down{background:var(--down);box-shadow:0 0 8px rgba(224,87,74,.5)}
+.led.probing{background:var(--faint);animation:probe 1s ease-in-out infinite alternate}
+@keyframes probe{from{opacity:.25}to{opacity:.9}}
+.st.down{color:var(--down)}
+.st.probing{color:var(--faint)}
+#status .board-row{grid-template-columns:170px 1fr 96px auto}
+#status .port{color:var(--faint);font-size:11px;letter-spacing:.06em;text-align:right}
+#status .board-head .ok{color:var(--live)}
+#status .board-head .bad{color:var(--down)}
+@media(max-width:640px){
+  /* Explicit placement — auto-flow put .st on its own row and collapsed it to 0px. */
+  #status .board-row{grid-template-columns:1fr auto;gap:4px 12px}
+  #status .board-row .sys{grid-area:1/1/2/2}
+  #status .board-row .st{grid-area:1/2/2/3;justify-self:end}
+  #status .board-row .det{grid-area:2/1/3/3}
+  #status .board-row .port{grid-area:3/1/4/3;text-align:left}
+  /* The nav has no wrap or scroll, so a 5th item pushes the page 56px wide.
+     The section is still reachable by scrolling. */
+  #nav-status{display:none}
+}
+@media(prefers-reduced-motion:reduce){.led.probing{animation:none}}
+
 /* ---------- method strip ---------- */
 .method{
   border-top:1px solid var(--line);
@@ -386,6 +410,7 @@ footer .dot{color:var(--gold)}
     <li><a href="#consulting">Consulting</a></li>
     <li><a href="#lab">Lab</a></li>
     <li><a href="#intel">Intel</a></li>
+    <li id="nav-status" hidden><a href="#status">Status</a></li>
     <li><a href="#about">About</a></li>
   </ul>
 </nav>
@@ -431,6 +456,24 @@ footer .dot{color:var(--gold)}
     <span class="step">Next Steps</span>
   </div>
 </div>
+
+<!-- Live service health. Hidden unless viewed from the LAN over plain HTTP —
+     these hosts are private, so off-network visitors would only ever see red. -->
+<section id="status" hidden>
+  <div class="wrap">
+    <div class="eyebrow">00 / Status</div>
+    <h2 class="fade">Everything, at a glance.</h2>
+    <p class="section-note fade">Live reachability, checked from this browser every 30 seconds. A service counts as up if it answers at all — an auth prompt is a healthy answer.</p>
+
+    <div class="board fade in" role="table" aria-label="Live service health">
+      <div class="board-head">
+        <span id="svc-origin">Local services</span>
+        <span id="svc-summary">Probing&hellip;</span>
+      </div>
+      <!-- rows injected from /services.json, which is NAS-only and gitignored -->
+    </div>
+  </div>
+</section>
 
 <section id="consulting">
   <div class="wrap">
@@ -643,6 +686,102 @@ footer .dot{color:var(--gold)}
     });
   },{threshold:0.12});
   els.forEach(function(e){io.observe(e)});
+})();
+
+// ---------- live service health ----------
+// Only runs on the LAN over plain HTTP. Off-network the hosts are unreachable and
+// every row would read DOWN, so the section stays hidden rather than lying.
+// Probes use mode:'no-cors' — the response is opaque, so this proves the port
+// answered, not what it said. A 401 is a healthy answer here.
+(function(){
+  var host=location.hostname;
+  var onLan=/^192\.168\./.test(host)||/^10\./.test(host)||/^172\.(1[6-9]|2\d|3[01])\./.test(host)
+            ||host==='localhost'||host==='127.0.0.1'||/\.local$/.test(host);
+  if(!onLan||location.protocol!=='http:')return;
+
+  var board=document.querySelector('#status .board');
+  var summary=document.getElementById('svc-summary');
+  var rows=[];
+  var TIMEOUT=5000;
+
+  function ping(url){
+    return new Promise(function(resolve){
+      var done=false;
+      var ctl=('AbortController' in window)?new AbortController():null;
+      var timer=setTimeout(function(){
+        if(done)return; done=true;
+        if(ctl)ctl.abort();
+        resolve(false);
+      },TIMEOUT);
+      // credentials:'omit' matters — CouchDB (:5984) and ObsidianRemote (:39180)
+      // both answer 401 with WWW-Authenticate: Basic. Chrome and Firefox suppress
+      // auth dialogs for cross-origin subresources, but omitting credentials means
+      // the browser never starts the negotiation in the first place.
+      var opts={mode:'no-cors',cache:'no-store',credentials:'omit',redirect:'follow'};
+      if(ctl)opts.signal=ctl.signal;
+      fetch(url+'?_='+Date.now(),opts).then(function(){
+        if(done)return; done=true; clearTimeout(timer); resolve(true);
+      }).catch(function(){
+        if(done)return; done=true; clearTimeout(timer); resolve(false);
+      });
+    });
+  }
+
+  function paint(row,up){
+    var st=row.querySelector('.st'),led=row.querySelector('.led'),lab=row.querySelector('.lab');
+    st.className='st '+(up?'live':'down');
+    led.className='led '+(up?'live':'down');
+    lab.textContent=up?'Up':'Down';
+  }
+
+  function sweep(){
+    Promise.all(rows.map(function(row){
+      return ping(row.getAttribute('data-url')).then(function(up){
+        paint(row,up);
+        return up;
+      });
+    })).then(function(results){
+      var up=results.filter(Boolean).length,total=results.length;
+      var t=new Date().toTimeString().slice(0,5);
+      summary.innerHTML='<span class="'+(up===total?'ok':'bad')+'">'+up+'/'+total+' up</span> &middot; '+t;
+    });
+  }
+
+  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
+    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];
+  })}
+
+  function build(svcs){
+    board.insertAdjacentHTML('beforeend', svcs.map(function(s){
+      return '<div class="board-row" role="row" data-svc data-url="'+esc(s.url)+'">'
+        +'<span class="sys">'+esc(s.name)+'</span>'
+        +'<span class="det">'+esc(s.detail||'')+'</span>'
+        +'<span class="port">'+esc(s.port||'')+'</span>'
+        +'<span class="st probing"><span class="led probing"></span><span class="lab">&hellip;</span></span>'
+        +'</div>';
+    }).join(''));
+    rows=[].slice.call(document.querySelectorAll('#status [data-svc]'));
+  }
+
+  // The service list is deliberately NOT in this file. index.html lives in a public
+  // GitHub repo; a full host-and-port map of the private network does not belong there.
+  // services.json is served only from the NAS and is gitignored, so off-network this
+  // fetch 404s and the section never appears.
+  fetch('/services.json',{cache:'no-store'})
+    .then(function(r){if(!r.ok)throw 0;return r.json()})
+    .then(function(cfg){
+      var svcs=(cfg&&cfg.services)||[];
+      if(!svcs.length)throw 0;
+      if(cfg.label)document.getElementById('svc-origin').textContent=cfg.label;
+      document.getElementById('status').hidden=false;
+      document.getElementById('nav-status').hidden=false;
+      build(svcs);
+      sweep();
+      setInterval(sweep,30000);
+      // A laptop waking from sleep should not show stale greens.
+      document.addEventListener('visibilitychange',function(){if(!document.hidden)sweep()});
+    })
+    .catch(function(){/* no services.json — stay hidden */});
 })();
 
 // footer year + board stamp
