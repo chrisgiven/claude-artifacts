@@ -275,11 +275,14 @@ header.hero{padding:clamp(56px,8vw,104px) 0 clamp(48px,6vw,80px)}
   background:var(--card-led,var(--line));
   opacity:.85;
 }
-a.card:hover{
+a.card[href]:hover{
   transform:translateY(-3px);
   border-color:var(--gold-dim);
   background:var(--panel-2);
 }
+/* Cards whose URL is private get their href injected from /services.json at runtime.
+   Until (or unless) that happens they are plain, unclickable panels. */
+a.card:not([href]) .go{display:none}
 .card.s-live{--card-led:var(--live)}
 .card.s-wip{--card-led:var(--wip)}
 .card.s-concept{--card-led:var(--concept)}
@@ -611,7 +614,9 @@ footer .dot{color:var(--gold)}
         <div class="card-foot"><span class="tag hot">App</span><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Claude</span><span class="go">Open →</span></div>
       </a>
 
-      <a class="card s-live fade" href="https://VAULT-HOST">
+      <!-- No href here on purpose: the vault's hostname is private and this repo is public.
+           The link is injected from /services.json, which exists only on the NAS. -->
+      <a class="card s-live fade" data-svc-link="vault">
         <div class="card-meta"><span class="code">LAB / VAULT</span><span>Live</span></div>
         <h3>Vaultwarden</h3>
         <p>Self-hosted password vault — Bitwarden-compatible, running on the NAS behind a Tailscale node with a real Let's Encrypt cert. Nightly backups pulled off-box and integrity-checked. No third party holds the keys.</p>
@@ -777,6 +782,14 @@ footer .dot{color:var(--gold)}
   fetch('/services.json',{cache:'no-store'})
     .then(function(r){if(!r.ok)throw 0;return r.json()})
     .then(function(cfg){
+      // Private URLs for Lab cards live here too, so the public HTML never carries them.
+      // Off-network this fetch fails and those cards simply stay unclickable.
+      var links=(cfg&&cfg.links)||{};
+      Array.prototype.forEach.call(document.querySelectorAll('[data-svc-link]'),function(el){
+        var u=links[el.getAttribute('data-svc-link')];
+        if(u)el.setAttribute('href',u);
+      });
+
       var svcs=(cfg&&cfg.services)||[];
       if(!svcs.length)throw 0;
       if(cfg.label)document.getElementById('svc-origin').textContent=cfg.label;
