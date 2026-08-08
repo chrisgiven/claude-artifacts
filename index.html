@@ -621,6 +621,17 @@ footer .dot{color:var(--gold)}
         <div class="card-foot"><span class="tag hot">App</span><span class="tag">Python</span><span class="tag">Docker</span><span class="tag">IoT</span><span class="go">Open →</span></div>
       </a>
 
+      <!-- No href here on purpose. This one matters more than most: publishing the
+           address of an intrusion-detection system and its honeypot tells an attacker
+           exactly what is watching and where the decoys are. Injected from
+           /services.json on the NAS. -->
+      <a class="card s-live fade" data-svc-link="tripwire">
+        <div class="card-meta"><span class="code">LAB / TRIP</span><span>Live</span></div>
+        <h3>Tripwire</h3>
+        <p>Network intrusion detection and deception for a UniFi network. Reads the gateway's firewall log and the controller API, then runs SSH, telnet and HTTP decoys that nothing legitimate should ever touch — so every hit is signal. Captures each credential and keystroke, maps them to MITRE ATT&amp;CK, and clusters sessions by SSH client fingerprint to recognise one operator across rotating addresses. Records payload URLs; never fetches them.</p>
+        <div class="card-foot"><span class="tag hot">Security</span><span class="tag">Python</span><span class="tag">Docker</span><span class="tag">UniFi</span><span class="go">Open →</span></div>
+      </a>
+
       <!-- No href here on purpose: the vault's hostname is private and this repo is public.
            The link is injected from /services.json, which exists only on the NAS. -->
       <a class="card s-live fade" data-svc-link="vault">
