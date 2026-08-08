@@ -1,5 +1,16 @@
 # Changelog
 
+## [1.3.0] - 2026-08-07
+
+### Security
+- **No LAN address remains in the tracked tree.** The four Lab cards that still hardcoded the NAS IP — Sonos Lyrics, Groundwork, AgentOS and Lights — moved to the `data-svc-link` pattern Vaultwarden and Tripwire already used, with their URLs added under `links` in the NAS-only `services.json`. Off-network those cards stay unclickable, which is the intent
+- `sync-artifacts.sh` no longer embeds the deploy target; it reads `~/.config/claude-artifacts/nas-host` (overridable with `NAS_HOST`), which also keeps the SSH username out of the repo. A missing file degrades to the existing "NAS cron will catch up" warning
+- `Artifacts/todo-dashboard` Quick Links now points at `/` instead of the NAS IP — it is served from that same host anyway
+
+### Notes
+- These addresses are still in this repo's public git history; the working-tree fix does not remove them from past commits
+- `localhost` cards were left as-is: they expose nothing about the network and those services really do run on the Mac
+
 ## [1.2.0] - 2026-07-27
 
 ### Added
@@ -11,7 +22,7 @@
 - Probes use `credentials:'omit'` — CouchDB and ObsidianRemote answer `401 WWW-Authenticate: Basic`, and omitting credentials stops the browser starting an auth negotiation
 
 ### Notes
-- Pre-existing and unchanged: Lab cards still link to `NAS-ADDR:5001/:3001/:5599`, so the LAN IP was already public before this release
+- Pre-existing and unchanged: Lab cards still link to the NAS LAN address on ports 5001/3001/5599, so that address was already public before this release (addressed in 1.3.0)
 - nginx serves `index.html` without cache headers; hard-refresh once after a deploy
 
 ## [1.1.1] - 2026-07-14

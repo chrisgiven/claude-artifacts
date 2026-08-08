@@ -12,6 +12,12 @@ REPO="$HOME/Projects/claude-artifacts"
 SRC="$HOME/Claude"
 cd "$REPO"
 
+# The NAS target lives outside this repo, which is public. Override with NAS_HOST,
+# otherwise read ~/.config/claude-artifacts/nas-host (one line, user@host).
+# Missing or unreadable is not fatal: the push still happens and the NAS's own
+# cron catches up, same as when the NAS is simply unreachable.
+NAS_HOST="${NAS_HOST:-$(cat "$HOME/.config/claude-artifacts/nas-host" 2>/dev/null || true)}"
+
 # Only sync paths already published; CLAUDE.md files hold private memory
 for d in ai-daily-brief bcdr-ransomware-monitor gigplot; do
   rsync -a --exclude .DS_Store --exclude CLAUDE.md "$SRC/Artifacts/$d/" "Artifacts/$d/"
@@ -31,9 +37,11 @@ fi
 
 # Bring the NAS clone current immediately; its own cron is just a fallback.
 # Non-fatal: if the NAS is unreachable it catches up on its next cron run.
-if ssh -o BatchMode=yes -o ConnectTimeout=10 NAS-USER@NAS-ADDR \
+if [[ -n "$NAS_HOST" ]] && ssh -o BatchMode=yes -o ConnectTimeout=10 "$NAS_HOST" \
     'cd /volume1/Web/projects/claude-artifacts && git fetch origin && git reset --hard origin/main' >/dev/null 2>&1; then
   echo "$(date '+%F %T') NAS clone updated"
+elif [[ -z "$NAS_HOST" ]]; then
+  echo "$(date '+%F %T') WARNING: no NAS_HOST configured; NAS cron will catch up"
 else
   echo "$(date '+%F %T') WARNING: NAS clone not updated (unreachable?); NAS cron will catch up"
 fi
