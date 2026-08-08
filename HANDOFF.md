@@ -14,9 +14,11 @@ Shipped: LAN addresses removed from the tracked tree (v1.3.0, 2026-08-07). Nothi
 - **Every Lab card with a private address now uses `data-svc-link`.** Sonos, Groundwork, AgentOS and Lights joined Vaultwarden and Tripwire on the runtime-injection pattern, so the tracked tree carries no LAN address. The `localhost` cards (AI Sound Engineer, BCDR, Switchboard) were left alone — `localhost` reveals nothing about the network and those genuinely run on the Mac, not the NAS.
 - **The NAS target in `sync-artifacts.sh` moved out of the repo** to `~/.config/claude-artifacts/nas-host` (one line, `user@host`), overridable with `NAS_HOST`. If that file is missing the script still syncs and pushes, then warns and lets the NAS's own cron catch up — the same degradation as an unreachable NAS.
 
+- **The git history was rewritten on 2026-08-07** to purge those addresses from all 54 commits, so a working-tree grep and a full-history grep now agree. Backup bundle of the pre-rewrite history was taken before the force-push.
+
 ## Open questions
 
-- **The LAN addresses remain in this repo's public git history.** Scrubbing the working tree does not remove them from past commits. Undecided whether that warrants a history rewrite; they are RFC1918 addresses only reachable from inside the LAN.
+- **The orphaned pre-rewrite commits are still on GitHub.** Force-pushing unreferenced them but does not delete them; they remain reachable by direct SHA (old tip `caf77e5`) until GitHub garbage-collects. Only a GitHub Support request expunges them. Left as-is — the scrubbed values are RFC1918 addresses plus a Tailscale name that still requires being on the tailnet.
 - `services.json` lists AgentOS on the Mac mini, while the old hub card pointed at port 5599 on the NAS instead. Both were down when checked on 2026-08-07, so the `links.agentos` entry follows `services.json`. Confirm once AgentOS is running.
 - The board checks HTTP reachability, not container health. A container stuck in a restart loop could answer between probes and read green. Container state needs `docker ps` parsing, which belongs in `nas-health`, not a browser.
 

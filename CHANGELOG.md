@@ -7,8 +7,11 @@
 - `sync-artifacts.sh` no longer embeds the deploy target; it reads `~/.config/claude-artifacts/nas-host` (overridable with `NAS_HOST`), which also keeps the SSH username out of the repo. A missing file degrades to the existing "NAS cron will catch up" warning
 - `Artifacts/todo-dashboard` Quick Links now points at `/` instead of the NAS IP — it is served from that same host anyway
 
+- **Git history rewritten** with `git-filter-repo` to purge the addresses from all 54 commits: 261 occurrences of the NAS IP, 37 of the `user@host` deploy target, and one Vaultwarden Tailscale hostname (committed in `feat(hub): add Vaultwarden to the Lab grid` before that card moved to `data-svc-link`) became `NAS-ADDR`, `NAS-USER@NAS-ADDR` and `VAULT-HOST`. Every commit was preserved and the tip's tree hash is unchanged, so no deployed content moved
+
 ### Notes
-- These addresses are still in this repo's public git history; the working-tree fix does not remove them from past commits
+- The rewrite changed every commit SHA. Any other clone needs `git fetch origin && git reset --hard origin/main`; local and NAS clones were both re-pointed
+- Force-pushing orphans the old commits but does not delete them — they stay reachable on GitHub by direct SHA (old tip `caf77e5`) until GitHub garbage-collects. Fully expunging them would need a GitHub Support request
 - `localhost` cards were left as-is: they expose nothing about the network and those services really do run on the Mac
 
 ## [1.2.0] - 2026-07-27
