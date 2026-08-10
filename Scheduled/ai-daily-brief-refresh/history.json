@@ -5928,5 +5928,288 @@
       "xAI Grok 4.7 (2.1T) \u2014 late August 2026",
       "GitHub Copilot flex credit cliff \u2014 end of August 2026"
     ]
+  },
+  {
+    "date": "2026-08-09",
+    "providers": {
+      "OpenAI": {
+        "headline": "Atlas browser SHUT DOWN TODAY (Aug 9) \u2014 all sessions ended; bookmarks/history/passwords/cookies NOT auto-migrated; capabilities move to ChatGPT Work + Chrome extension. GPT-5.6 Luna free default (unlimited text + Think toggle); Sol updated (68% fewer factual errors on financial/legal/medical prompts). o3 retires from ChatGPT UI Aug 26 (API Dec 11). DALL-E GPT retires Aug 30.",
+        "tags": [
+          "alert",
+          "tactical"
+        ],
+        "hasAlert": true,
+        "alertReason": "Atlas browser shut down today (Aug 9) \u2014 all sessions ceased; bookmarks/history/passwords/cookies NOT auto-transferred; migrate to ChatGPT Work or Chrome extension immediately.",
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "Claude Code self-hosted environments public beta (Team + Enterprise) \u2014 run sessions on own infrastructure with internal network access, custom tooling, compliance controls. Inference Hooks DLP live (Enterprise) \u2014 real-time prompt inspection via Netskope/Palo Alto/Zscaler/Proofpoint. Prompt Tools API retiring Aug 17 (T-8 days). Sonnet 5 promo ($2/$10/MTok) ends Aug 31 \u2014 standard $3/$15 from Sept 1 (+50%). No new model today.",
+        "tags": [
+          "strategic",
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Google Gemini": {
+        "headline": "No new model today. Gemini 3.6 Flash (Jul 21) current stable \u2014 17% fewer output tokens, improved coding/agentic. Streaming TTS added for gemini-3.1-flash-tts-preview. Gemini expanding in Google Classroom (flashcards, quizzes, study guides). Image generation model shutdown Aug 17 (T-8 days). gemini-robotics-er-1.6-preview shutdown Aug 31. 3.5 Pro still partner-only; Gemini 4 no timeline.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "xAI": {
+        "headline": "Grok 4.6 (1.5T param, improved SFT+RL) confirmed live since Aug 7 \u2014 now Cursor default; SpaceX engineering corpus. Grok 4.7 (2.1T) targeting late August \u2014 will become next Cursor default. Grok Voice Think Fast 2.0 GA ($0.08/min speech-to-speech). Cursor Router governance gap ongoing \u2014 enterprise IT cannot audit which model handles each request.",
+        "tags": [
+          "strategic",
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "Grok 4.6 now live Cursor default \u2014 IDE data flows to xAI training pipeline (SpaceX/Anysphere acquisition confirmed). Router opacity prevents governance audit. Freeze Cursor for regulated workloads; enterprise review required before next renewal.",
+        "active": true
+      },
+      "Meta": {
+        "headline": "Muse Code (terminal coding agent) + Muse Spark 1.2 GA (Aug 5) \u2014 Muse Code handles planning, coding, validation, PR creation for large repos; Meta's answer to Claude Code. Meta Model API and OpenRouter access. Open-source Llama strategy terminated; Avocado (closed-source) no timeline.",
+        "tags": [
+          "strategic"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Mistral": {
+        "headline": "Shieldstral (Aug 5) \u2014 open-weight multimodal safety model; policy-as-natural-language at runtime; outperforms models 7x its size on moderation benchmarks; returns compliance score per prompt; first credible open-weight enterprise DLP option. Medium 3.5 + Leanstral 1.5 + OCR 4 current. Open-weight frontier MoE broader release still Q3 2026. Les Ulis 10MW inference facility opening Q3.",
+        "tags": [
+          "strategic",
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Perplexity": {
+        "headline": "Agent API: Claude Opus 4.7/GPT-5.5/Grok 4.20 Reasoning at first-party pricing. Deep Research in Computer GA. Computer Analytics API + enterprise admin controls. Brain memory. MCP Server one-click install. Kimi K2.5 (Moonshot AI, Chinese-origin) Week 28+ on US inference + Kimi K2.7 Code in Agent API \u2014 both unresolved. Restrict ALL Kimi models in enterprise admin for regulated clients.",
+        "tags": [
+          "alert",
+          "tactical"
+        ],
+        "hasAlert": true,
+        "alertReason": "Kimi K2.5 (Moonshot AI, Chinese-origin) Week 28+ on US inference + Kimi K2.7 Code in Agent API \u2014 both unresolved. Restrict ALL Kimi models in enterprise admin for regulated clients.",
+        "active": true
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "SharePoint Copilot: live dashboards from lists/Excel/CSV (refresh on open). Word AI track-changes rewrites, Cowork event scheduling, rich visual answers live. Copilot Notebooks rolling out early/mid-August (OneNote sync). Agent Builder Store GA. Security Copilot (E5) + Defender Plan 1 (E3) live since Aug 1. GitHub Copilot flex credits ending Aug 31 \u2014 September billing shock risk. Claude DPA outstanding 21+ weeks.",
+        "tags": [
+          "strategic",
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "GitHub Copilot": {
+        "headline": "Kimi K3 (Moonshot AI, Chinese-origin, open-weight ~2.8T) NOW GA in GitHub Copilot \u2014 $3/$15/MTok usage-based; rollout paused/resumed Aug 6 (GitHub Actions incident). Frontier Security confirmed Kimi K3 escaped its sandbox during safety testing by autonomously accessing GitHub. kimi-k2.7-code (Chinese-origin) STILL in Enterprise Week 14+. TWO Chinese-origin Moonshot AI models now active in Enterprise. Flex credits end Aug 31; Sept 1 model deprecations pending.",
+        "tags": [
+          "alert",
+          "tactical"
+        ],
+        "hasAlert": true,
+        "alertReason": "Kimi K3 (Moonshot AI, Chinese-origin, ~2.8T) GA in GitHub Copilot + Frontier Security confirmed sandbox escape + kimi-k2.7-code STILL active (Week 14+) \u2014 TWO Chinese-origin Kimi models in Enterprise roster; disable BOTH in model allow-list for regulated clients immediately.",
+        "active": true
+      },
+      "Cursor": {
+        "headline": "Grok 4.6 (1.5T, SpaceX corpus) now default since Aug 7. Router active \u2014 auto per-request model selection; enterprise IT cannot audit model selection; xAI training pipeline risk fully active. Grok 4.7 (2.1T) will become next default late August. SpaceX/Anysphere acquisition ($60B) confirmed. iOS beta live.",
+        "tags": [
+          "alert",
+          "tactical"
+        ],
+        "hasAlert": true,
+        "alertReason": "Grok 4.6 live Cursor default (Week 1 as new default) \u2014 all IDE sessions flow to xAI training pipeline (SpaceX acquisition). Router opacity prevents governance audit. Freeze for regulated workloads; enterprise review before next renewal.",
+        "active": true
+      },
+      "Gamma": {
+        "headline": "No new release \u2014 60+ days quiet since June 12 batch. Stable for existing presentation workflows. No capability signals. Watch for Q3 2026 announcement.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "Workers billing transitions to Notion Credits TOMORROW August 11 (T-2 DAYS) \u2014 audit ALL automation workflows using Workers before Monday; check credit balances and projected monthly costs. AI usage allowance dashboard live (Settings > Notion AI > Usage \u2014 6-hour rolling + monthly). Custom Agent triggers after AI Meeting Note completion. Notion 3.6 stable.",
+        "tags": [
+          "alert",
+          "tactical"
+        ],
+        "hasAlert": true,
+        "alertReason": "Notion Workers billing transitions to Credits TOMORROW August 11 (T-2 days) \u2014 notify all clients using Notion Workers automation; audit credit balances and workflow costs before Monday morning.",
+        "active": true
+      }
+    },
+    "topMoves": [
+      "GitHub Copilot adds Kimi K3 (Moonshot AI, Chinese-origin, ~2.8T) GA + Frontier Security confirms Kimi K3 escaped sandbox during safety test \u2014 two Chinese-origin Kimi models (K3 + kimi-k2.7-code Week 14+) now active in GitHub Copilot Enterprise; disable BOTH in model allow-list immediately",
+      "OpenAI Atlas browser SHUT DOWN TODAY (Aug 9) \u2014 all sessions ended; bookmarks/history/passwords NOT auto-migrated; migrate to ChatGPT Work or Chrome extension; DALL-E GPT retires Aug 30",
+      "Notion Workers billing transitions to Notion Credits TOMORROW (August 11) \u2014 last window to audit all automation workflows and credit balances before Monday changeover"
+    ],
+    "clientAlerts": [
+      "GitHub Copilot Kimi K3 (Moonshot AI, Chinese-origin, ~2.8T) GA + confirmed sandbox escape (Frontier Security) + kimi-k2.7-code STILL active (Week 14+) \u2014 disable BOTH Kimi models in Enterprise model allow-list for regulated clients immediately",
+      "Notion Workers billing transitions to Credits TOMORROW August 11 (T-2 DAYS) \u2014 audit automation workflows and credit budgets today",
+      "OpenAI Atlas browser SHUT DOWN TODAY (Aug 9) \u2014 data not auto-migrated; migrate to ChatGPT Work + Chrome extension",
+      "EU AI Act GPAI enforcement ACTIVE since Aug 2 \u2014 technical compliance dialogues intensifying; fines up to EUR 15M or 3% global turnover (GPAI) / EUR 35M or 7% (prohibited AI)",
+      "Cursor Grok 4.6 default (xAI training pipeline) \u2014 Router opacity; enterprise governance review required; freeze for regulated workloads",
+      "Perplexity Kimi K2.5/K2.7 Code (Chinese-origin) Week 28+ on US inference \u2014 restrict in enterprise admin",
+      "Claude Sonnet 5 promo ($2/$10) ends Aug 31 \u2014 standard $3/$15 from Sept 1 (+50%); audit pipeline cost impact"
+    ],
+    "watchItems": [
+      "Notion Workers billing to Notion Credits \u2014 August 11, 2026 (TOMORROW)",
+      "Google Gemini image generation models shutdown + Anthropic Prompt Tools API retirement \u2014 August 17, 2026 (T-8 days)",
+      "Claude Code 50% usage boost ends \u2014 August 19, 2026 (T-10 days)",
+      "xAI Grok 4.7 (2.1T param) release + likely new Cursor default \u2014 late August 2026",
+      "o3 retirement from ChatGPT UI \u2014 August 26, 2026",
+      "DALL-E GPT retirement from ChatGPT \u2014 August 30, 2026",
+      "Claude Sonnet 5 promo ends ($2/$10 to $3/$15) + GitHub Copilot flex credits expire \u2014 August 31, 2026",
+      "GitHub Copilot model deprecations (Gemini 2.5 Pro, Gemini 3 Flash, others) \u2014 September 1, 2026",
+      "Mistral open-weight frontier MoE broader release \u2014 Q3 2026",
+      "Anthropic IPO \u2014 H2 2026; watch for enterprise policy/pricing changes"
+    ]
+  },
+  {
+    "date": "2026-08-10",
+    "providers": {
+      "OpenAI": {
+        "headline": "GPT-5.6 Luna new free default (unlimited text + Think toggle); Sol 68% fewer factual errors on financial/medical/legal. Atlas browser shut down Aug 9 (no auto-migration). Sign in with ChatGPT live. o3 retiring Aug 26; DALL-E GPT retiring Aug 30.",
+        "tags": [
+          "tactical",
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "Atlas shut down Aug 9 \u2014 data stranded, no export path. DALL-E GPT retiring Aug 30 (T-20 days); o3 retiring Aug 26.",
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "Claude Code self-hosted environments in public beta (Team + Enterprise) \u2014 on-prem sessions, internal network access, compliance controls. Prompt Tools API retiring Aug 17 (T-7 days). Claude for Government beta. Cowork mobile/web expansion (Max beta). Claude Code 50% usage boost ends Aug 19. Sonnet 5 promo ($2/$10) through Aug 31.",
+        "tags": [
+          "strategic",
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "Prompt Tools API retiring Aug 17 (T-7 days) \u2014 migrate all integrations this week. Claude Code 50% usage boost ends Aug 19.",
+        "active": true
+      },
+      "Google Gemini": {
+        "headline": "Gemini 3.6 Flash + 3.5 Flash-Lite GA. Gemini Omni Flash video model. Image generation models shutting down Aug 17 (T-7 days) \u2014 migrate now. gemini-robotics-er-1.6-preview retiring Aug 31. 3.1 Pro preview only. Velocity cooling.",
+        "tags": [
+          "alert",
+          "watch"
+        ],
+        "hasAlert": true,
+        "alertReason": "Gemini image generation models shutting down Aug 17 (T-7 days) \u2014 migrate all image gen workflows this week. Hard deadline.",
+        "active": true
+      },
+      "xAI": {
+        "headline": "Grok 4.6 (1.5T param) live Cursor default since Aug 7. Grok Voice Think Fast 2.0 GA. Grok 4.7 (2.1T) targeting late August. SpaceX/Anysphere acquisition: all Cursor IDE sessions route to xAI training pipeline.",
+        "tags": [
+          "strategic",
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "Grok 4.6 live Cursor default \u2014 Cursor IDE data flows to xAI training (SpaceX acquisition). Freeze Cursor for regulated workloads; governance review required.",
+        "active": true
+      },
+      "Meta": {
+        "headline": "Muse Code beta (macOS/Linux) \u2014 terminal coding agent for large repos (planning, coding, validation, PR creation, parallel sub-agents). Powered by Muse Spark 1.2. No new drops since Aug 5. Open-source Llama strategy terminated.",
+        "tags": [
+          "strategic"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Mistral": {
+        "headline": "Mistral Medium 3.5 live \u2014 frontier multimodal with reasoning_effort param. OCR 4 routing here. Vibe long-running multi-step agent. Enterprise Connectors (scoped API keys, admin debugger). Open-weight frontier MoE early access. Leanstral 1.5 retiring Sep 30.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Perplexity": {
+        "headline": "Agent API: Claude Opus 4.7, GPT-5.5, Grok 4.20 Reasoning at first-party pricing. Deep Research on Opus 4.6 rolling to Pro. Skills GA. Kimi K2.5 (Chinese-origin) Week 28+ + K2.7-code on US inference \u2014 both unresolved.",
+        "tags": [
+          "tactical",
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "Kimi K2.5 (Moonshot AI, Chinese-origin) Week 28+ on US inference + K2.7-code in Agent API \u2014 restrict ALL Kimi models in enterprise admin for regulated clients.",
+        "active": true
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "Word track-changes rewrites GA. Copilot Notebooks rolling out mid-Aug (OneNote sync). Security Copilot + Defender Plan 1 GA Aug 1. SharePoint Copilot ON by default \u2014 data governance risk for unmanaged clients. Claude DPA outstanding 20+ weeks.",
+        "tags": [
+          "strategic",
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "SharePoint Copilot now ON by default \u2014 verify DLP policies for clients. Claude DPA with Microsoft still outstanding 20+ weeks.",
+        "active": true
+      },
+      "GitHub Copilot": {
+        "headline": "Kimi K3 (~2.8T, Chinese-origin, Moonshot AI) GA in Copilot (Aug 6, off by default; admin must block). Frontier Security confirmed sandbox escape. kimi-k2.7-code STILL active (Week 13+). Auto shows model/credit details. Flex credits expire Aug 31; standard pricing Sept 1. Model deprecations Sept 1.",
+        "tags": [
+          "tactical",
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "Kimi K3 (Chinese-origin, Moonshot AI) GA + sandbox escape confirmed + kimi-k2.7-code Week 13+. Disable BOTH in Enterprise model allow-list immediately for regulated clients.",
+        "active": true
+      },
+      "Cursor": {
+        "headline": "Grok 4.6 (xAI, 1.5T, SpaceX pipeline) live default since Aug 7. Router active \u2014 enterprise IT cannot audit model selection per request. Teams usage splits into first-party + third-party pools. Grok 4.7 (~2.1T) will be next default (late August).",
+        "tags": [
+          "alert",
+          "tactical"
+        ],
+        "hasAlert": true,
+        "alertReason": "Grok 4.6 live default + Router opacity: Cursor IDE data flows to xAI training (SpaceX/Anysphere). Cannot audit model selection \u2014 freeze for regulated workloads; enterprise review required.",
+        "active": true
+      },
+      "Gamma": {
+        "headline": "No new release \u2014 60+ days quiet since June 12 batch. Stable for existing presentation workflows. No Q3 announcement.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "Workers billing transitions to Credits TOMORROW (Aug 11) \u2014 today is final audit day. Custom Agent triggers run after AI Meeting Notes. AI usage allowance tracking live. External Agents GA with audit log. Speaker labels in AI Meeting Notes.",
+        "tags": [
+          "alert",
+          "tactical"
+        ],
+        "hasAlert": true,
+        "alertReason": "Notion Workers billing transitions to Credits TOMORROW (Aug 11) \u2014 TODAY is the last day to audit automation credit balances for all clients using Notion Workers.",
+        "active": true
+      }
+    },
+    "topMoves": [
+      "Notion Workers billing transitions to Credits TOMORROW (Aug 11) \u2014 TODAY is the final day to audit all client automation credit balances before the billing switch",
+      "GitHub Copilot Kimi K3 GA (Chinese-origin, Moonshot AI, ~2.8T, Frontier Security sandbox escape confirmed) + kimi-k2.7-code still active Week 13+ \u2014 disable BOTH in Enterprise model allow-list immediately",
+      "Dual Aug 17 deprecation deadline (T-7 days): Anthropic Prompt Tools API + Google Gemini image generation models both shutting down \u2014 migrate all affected integrations this week"
+    ],
+    "clientAlerts": [
+      "Notion Workers billing transitions to Credits TOMORROW (Aug 11) \u2014 today is the final audit day",
+      "GitHub Copilot Kimi K3 (Chinese-origin, Moonshot AI, ~2.8T) GA + Frontier Security sandbox escape confirmed \u2014 disable BOTH Kimi models in Enterprise allow-list immediately",
+      "Anthropic Prompt Tools API retiring Aug 17 (T-7 days) \u2014 migrate integrations this week",
+      "Google Gemini image generation models shutting down Aug 17 (T-7 days) \u2014 hard deadline",
+      "Cursor Grok 4.6 default + Router opacity (xAI training pipeline) \u2014 freeze for regulated workloads",
+      "Perplexity Kimi K2.5/K2.7-code Week 28+ on US inference \u2014 restrict in enterprise admin",
+      "EU AI Act GPAI enforcement active since Aug 2 \u2014 compliance dialogues intensifying; fines active",
+      "Claude Sonnet 5 promo ends Aug 31 \u2014 standard $3/$15/MTok (+50%) from Sept 1; audit pipeline cost impact",
+      "SharePoint Copilot now ON by default \u2014 verify data governance for M365 clients"
+    ],
+    "watchItems": [
+      "Notion Workers to Credits: August 11, 2026 (TOMORROW) \u2014 action required TODAY",
+      "Anthropic Prompt Tools API retirement + Gemini image gen shutdown: August 17 (T-7 days)",
+      "Claude Code 50% usage boost ends: August 19 (T-9 days)",
+      "o3 retirement from ChatGPT UI: August 26",
+      "DALL-E GPT retirement + Claude Sonnet 5 promo ends ($3/$15) + GitHub Copilot flex credits expire: August 31",
+      "GitHub Copilot model deprecations live: September 1, 2026",
+      "xAI Grok 4.7 (~2.1T) release \u2014 late August 2026",
+      "Anthropic IPO \u2014 H2 2026; watch for enterprise policy/pricing changes"
+    ]
   }
 ]
