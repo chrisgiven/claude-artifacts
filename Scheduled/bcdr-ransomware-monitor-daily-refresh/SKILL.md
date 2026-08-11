@@ -30,6 +30,7 @@ EMAIL RECIPIENTS: chris.given@gmail.com, chris.given@wwt.com, mikebannach@gmail.
    a. Most recent `bcdr-monitor-*.html` in OUTPUT DIRECTORY. This is the normal path — prefer it.
    b. `list_artifacts` → if `bcdr-ransomware-monitor` exists, read its path. Expect nothing while the store is broken; spend at most one call here.
    c. Build from scratch: light-mode, self-contained, `:root { color-scheme: light }`, dark-slate header (#0f172a) with green pulse dot, four-cell metric counter row, four `.card` blocks each with `h2` and `.body`, footer sources bar.
+   The metric row is a `<table>` (not flexbox — this HTML is emailed), and each counter is exactly `<span class="metric-value">N</span>` in this order: ransomware, cloud/outage, cyber, physical. `~/bin/send-bcdr-monitor.sh` parses those four spans for the email subject line; changing the class name or the order silently degrades the subject to "counts unavailable".
    Never abort at this step — (c) always succeeds.
 
 4. **Write the local file (REQUIRED).** Update the header's "Last refreshed" date/time, swap the four `.card .body` sections, update the metric counters. Write the complete HTML to `<OUTPUT DIRECTORY>/bcdr-monitor-<YYYY-MM-DD>.html`, and an identical copy to `<OUTPUT DIRECTORY>/bcdr-monitor.html` as a stable "latest" pointer. Both writes use the Write tool. This step must complete before step 5.
@@ -48,8 +49,9 @@ EMAIL RECIPIENTS: chris.given@gmail.com, chris.given@wwt.com, mikebannach@gmail.
 8. Emit a status line: item counts per section, the local file path written, whether the Gmail draft was created (with draft ID) or failed (with error), and whether the artifact mirror succeeded, failed, or was skipped. If the artifact has failed 3+ consecutive runs, say so plainly.
 
 ## Constraints
-- Chris's local timezone (cron is 6:30 AM local).
+- Chris's local timezone (scheduled task runs 6:30 AM local; `~/bin/send-bcdr-monitor.sh` mails the file at 7:15 AM local via launchd, independently of whether this run succeeded).
 - HTML stays light-mode, self-contained, stylistically consistent with the prior version.
+- **Email-safe CSS.** This HTML is sent as a message body, so: no CSS custom properties (`var(--x)`) — Gmail drops them and the mail renders unstyled; no flexbox or `position` for layout; use tables. An embedded `<style>` block in `<head>` is fine, Gmail supports it.
 - All source links `target="_blank" rel="noopener"`.
 - No new features — refresh only. No charts, no new sections.
 
