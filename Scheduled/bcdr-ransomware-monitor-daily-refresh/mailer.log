@@ -14,3 +14,8 @@
 [2026-08-13 10:00:05] WAIT: file is stale (dated 2026-08-12); today's run has not written yet. Will retry next hour.
 [2026-08-13 11:00:05] WAIT: file is stale (dated 2026-08-12); today's run has not written yet. Will retry next hour.
 [2026-08-13 12:00:07] FAIL: SMTP send failed — smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials af79cd13be357-936cdf55e41sm13577085a.2 - gsmtp')
+[2026-08-14 08:00:05] WAIT: file is stale (dated 2026-08-13); today's run has not written yet. Will retry next hour.
+[2026-08-14 09:00:04] WAIT: file is stale (dated 2026-08-13); today's run has not written yet. Will retry next hour.
+[2026-08-14 10:00:08] FAIL: SMTP send failed — smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 6a1803df08f44-90a9359658asm18727986d6.47 - gsmtp')
+[2026-08-14 11:00:06] FAIL: SMTP send failed — smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials af79cd13be357-936cdf55e4csm292382685a.7 - gsmtp')
+[2026-08-14 12:00:06] FAIL: SMTP send failed — smtplib.SMTPAuthenticationError: (535, b'5.7.8 Username and Password not accepted. For more information, go to\n5.7.8  https://support.google.com/mail/?p=BadCredentials 6a1803df08f44-90a935a2bf4sm19255856d6.49 - gsmtp')
