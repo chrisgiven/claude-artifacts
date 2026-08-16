@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Global BCDR &amp; Ransomware Monitor — August 16, 2026</title>
+<style>
+  :root { color-scheme: light; }
+  body {
+    margin: 0;
+    background: #f1f5f9;
+    color: #0f172a;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+  }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 16px 32px; }
+  .header {
+    background: #0f172a;
+    color: #ffffff;
+    padding: 20px 24px;
+    border-radius: 0 0 10px 10px;
+  }
+  .header h1 { margin: 0 0 4px; font-size: 20px; font-weight: 700; }
+  .header .sub { margin: 0; font-size: 13px; color: #94a3b8; }
+  .pulse {
+    display: inline-block;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: #22c55e;
+    margin-right: 8px;
+    vertical-align: middle;
+    box-shadow: 0 0 0 0 rgba(34,197,94,0.6);
+  }
+  table.metrics {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 8px;
+    margin: 16px 0 8px;
+  }
+  table.metrics td {
+    width: 25%;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    text-align: center;
+    padding: 14px 8px;
+    vertical-align: middle;
+  }
+  .metric-value { display: block; font-size: 30px; font-weight: 700; color: #0f172a; line-height: 1.1; }
+  .metric-label { display: block; font-size: 11px; text-transform: uppercase; letter-spacing: 0.04em; color: #64748b; margin-top: 4px; }
+  .card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 10px;
+    margin: 16px 0;
+    overflow: hidden;
+  }
+  .card h2 {
+    margin: 0;
+    padding: 12px 18px;
+    font-size: 15px;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+    color: #0f172a;
+  }
+  .card .body { padding: 6px 18px 14px; }
+  .item { padding: 10px 0; border-bottom: 1px solid #f1f5f9; }
+  .item:last-child { border-bottom: none; }
+  .item .t { font-weight: 600; font-size: 14px; }
+  .item .s { margin: 3px 0 0; font-size: 13px; color: #334155; }
+  .item a { color: #1d4ed8; text-decoration: none; }
+  .item a:hover { text-decoration: underline; }
+  .badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin-left: 6px;
+    vertical-align: middle;
+    background: #e2e8f0;
+    color: #334155;
+  }
+  .badge.crit { background: #fee2e2; color: #b91c1c; }
+  .badge.high { background: #ffedd5; color: #c2410c; }
+  .badge.data { background: #fef9c3; color: #a16207; }
+  .badge.cloud { background: #dbeafe; color: #1d4ed8; }
+  .badge.kev { background: #ede9fe; color: #6d28d9; }
+  .badge.trend { background: #dcfce7; color: #15803d; }
+  .badge.sig { background: #fee2e2; color: #b91c1c; }
+  .badge.eqhigh { background: #ffedd5; color: #c2410c; }
+  .badge.mod { background: #e2e8f0; color: #475569; }
+  .note { font-size: 12px; color: #64748b; font-style: italic; padding: 6px 0 2px; }
+  .error { background: #fef2f2; border: 1px solid #fecaca; color: #b91c1c; border-radius: 8px; padding: 10px 12px; font-size: 13px; margin: 8px 0; }
+  .footer { font-size: 12px; color: #64748b; text-align: center; margin-top: 20px; line-height: 1.7; }
+  .footer a { color: #475569; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="wrap" style="padding:0;">
+    <h1><span class="pulse"></span>Global BCDR &amp; Ransomware Monitor</h1>
+    <p class="sub">Business Continuity &amp; Disaster Recovery daily brief · Last refreshed August 16, 2026 · 6:30 AM</p>
+  </div>
+</div>
+<div class="wrap">
+
+  <table class="metrics">
+    <tr>
+      <td><span class="metric-value">8</span><span class="metric-label">Ransomware</span></td>
+      <td><span class="metric-value">4</span><span class="metric-label">Cloud / Outage</span></td>
+      <td><span class="metric-value">8</span><span class="metric-label">Cyber</span></td>
+      <td><span class="metric-value">8</span><span class="metric-label">Physical / Natural</span></td>
+    </tr>
+  </table>
+
+  <div class="card">
+    <h2>🔒 Ransomware</h2>
+    <div class="body">
+      <div class="item">
+        <div class="t">Alcon hit by ShinyHunters — 25M+ Salesforce records<span class="badge crit">Critical</span></div>
+        <p class="s">ShinyHunters claimed theft of over 25 million Salesforce records containing PII from eye-care company Alcon, part of an ongoing Salesforce-focused extortion wave. <a href="https://sharkstriker.com/blog/august-2026-data-breaches/" target="_blank" rel="noopener">SharkStriker</a></p>
+      </div>
+      <div class="item">
+        <div class="t">FIS Global claimed by Clop — 874GB exfiltrated<span class="badge crit">Critical</span></div>
+        <p class="s">The Clop ransomware group listed financial-services giant FIS Global as a victim, claiming exfiltration of roughly 874GB of sensitive data and threatening the wider financial sector with exposure. <a href="https://www.ransomware.live/" target="_blank" rel="noopener">ransomware.live</a></p>
+      </div>
+      <div class="item">
+        <div class="t">Lumenis claimed by ShinyHunters — 1.1M records, 176GB<span class="badge high">High-profile</span></div>
+        <p class="s">ShinyHunters claimed to have stolen over 1.1 million customer and employee records plus roughly 176GB of internal corporate data from medical-device maker Lumenis. <a href="https://sharkstriker.com/blog/august-2026-data-breaches/" target="_blank" rel="noopener">SharkStriker</a></p>
+      </div>
+      <div class="item">
+        <div class="t">Allied Telesis claimed by Everest<span class="badge high">High-profile</span></div>
+        <p class="s">The Everest ransomware group named Japanese networking-equipment vendor Allied Telesis as a victim, with negotiations ongoing and sensitive data at risk of publication. <a href="https://www.ransomware.live/" target="_blank" rel="noopener">ransomware.live</a></p>
+      </div>
+      <div class="item">
+        <div class="t">Morguard (Canadian real estate) claimed by Helix<span class="badge high">High-profile</span></div>
+        <p class="s">The Helix ransomware group announced an attack on leading Canadian real estate firm Morguard on Aug 7, threatening data exposure after negotiations stalled. <a href="https://www.ransomware.live/" target="_blank" rel="noopener">ransomware.live</a></p>
+      </div>
+      <div class="item">
+        <div class="t">ProHealth Medical Group claimed by Krybit — 114GB<span class="badge high">Healthcare</span></div>
+        <p class="s">The Krybit ransomware group claimed to have stolen over 114GB of data from ProHealth Medical Group. <a href="https://sharkstriker.com/blog/august-2026-data-breaches/" target="_blank" rel="noopener">SharkStriker</a></p>
+      </div>
+      <div class="item">
+        <div class="t">Trulite Glass &amp; Aluminum Solutions claimed by INC Ransom<span class="badge">Newly claimed</span></div>
+        <p class="s">INC Ransom listed Trulite Glass &amp; Aluminum Solutions as a victim on Aug 4, as the group's activity accelerated on the back of newly disclosed SonicWall SMA 1000 VPN flaws. <a href="https://sharkstriker.com/blog/august-2026-data-breaches/" target="_blank" rel="noopener">SharkStriker</a></p>
+      </div>
+      <div class="item">
+        <div class="t">Brainhunter Companies/Systems claimed by Dark Project — 160GB<span class="badge">Newly claimed</span></div>
+        <p class="s">The Dark Project ransomware group claimed responsibility for an attack on staffing firms Brainhunter Companies LLC and Brainhunter Systems Ltd., with over 160GB of sensitive data reportedly compromised. <a href="https://www.ransomware.live/" target="_blank" rel="noopener">ransomware.live</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>☁️ IT Outages &amp; Cloud</h2>
+    <div class="body">
+      <div class="note">No major multi-day hyperscaler outage confirmed since the August US-WEST-2 blip; AWS's connectivity pattern remains the notable watch item heading into the second half of August 2026. Verify live status pages before relying on them.</div>
+      <div class="item">
+        <div class="t">AWS US-WEST-2 hit by brief connectivity issue (August 2026)<span class="badge cloud">Cloud</span></div>
+        <p class="s">AWS confirmed a regional US-WEST-2 connectivity issue that resolved in roughly 20 minutes, followed by a brief reconvergence event, traced to the same networking path named in the July 24 outage toward Seattle Metro. <a href="https://tech-insider.org/aws-outage-us-west-2-2026/" target="_blank" rel="noopener">Tech Insider</a></p>
+      </div>
+      <div class="item">
+        <div class="t">AWS reliability pattern: 4th notable incident in 4 months<span class="badge trend">Trend</span></div>
+        <p class="s">The August blip is the fourth AWS-linked reliability incident since May 2026 — a Northern Virginia data-center thermal event (May), a June network disruption that also hit Cloudflare, and two US-WEST-2 connectivity issues (July 24 and August). <a href="https://tech-insider.org/aws-outage-us-west-2-2026/" target="_blank" rel="noopener">Tech Insider</a></p>
+      </div>
+      <div class="item">
+        <div class="t">Azure operational but logging user-submitted reports<span class="badge cloud">Cloud</span></div>
+        <p class="s">StatusGator's latest check shows Azure operational, but records a cluster of user-submitted outage reports in a 24-hour window with no confirmed platform-wide incident. <a href="https://statusgator.com/services/azure" target="_blank" rel="noopener">StatusGator</a></p>
+      </div>
+      <div class="item">
+        <div class="t">Forrester: two major multi-day hyperscaler outages expected in 2026<span class="badge trend">Trend</span></div>
+        <p class="s">Forrester predicts at least two major multi-day AWS/Azure/Google Cloud outages in 2026 as providers prioritize AI-infrastructure upgrades over aging legacy systems. <a href="https://openmetal.io/resources/blog/forrester-predicts-two-major-cloud-outages-in-2026/" target="_blank" rel="noopener">OpenMetal</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🛡️ Cyber Incidents (non-ransomware)</h2>
+    <div class="body">
+      <div class="item">
+        <div class="t">CVE-2026-18577 — N-able N-central auth-bypass flaw added to KEV<span class="badge kev">KEV add</span></div>
+        <p class="s">CISA added an actively exploited N-able N-central authentication-bypass flaw (CVSS 8.2) to KEV after reports of customer compromises enabling admin access and pivoting into managed endpoints; FCEB fix deadline was Aug 6. <a href="https://thehackernews.com/2026/08/cisa-adds-exploited-n-able-n-central.html" target="_blank" rel="noopener">The Hacker News</a></p>
+      </div>
+      <div class="item">
+        <div class="t">CVE-2026-20349 — Cisco ASA/FTD heap inspection flaw added to KEV<span class="badge kev">KEV add</span></div>
+        <p class="s">CISA added an actively exploited heap-inspection vulnerability in Cisco Secure Firewall ASA and FTD software to its KEV catalog on Aug 11, one of three CVEs added that day. <a href="https://www.cisa.gov/news-events/alerts/2026/08/11/cisa-adds-three-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA</a></p>
+      </div>
+      <div class="item">
+        <div class="t">CVE-2026-68820 — Windows AFD for WinSock use-after-free added to KEV<span class="badge kev">KEV add</span></div>
+        <p class="s">CISA's Aug 11 KEV batch also added an actively exploited use-after-free vulnerability in the Windows Ancillary Function Driver for WinSock. <a href="https://www.cisa.gov/news-events/alerts/2026/08/11/cisa-adds-three-known-exploited-vulnerabilities-catalog" target="_blank" rel="noopener">CISA</a></p>
+      </div>
+      <div class="item">
+        <div class="t">CVE-2026-72898 — Metabase SQL-injection zero-day (CVSS 10.0) in KEV<span class="badge kev">Zero-day</span></div>
+        <p class="s">CISA added a maximum-severity Metabase SQL-injection flaw to KEV (FCEB fix deadline Aug 14) after in-the-wild exploitation on Aug 2 caused breaches including Kilo Code, where Slack access tokens were exposed for some users. <a href="https://thehackernews.com/2026/08/metabase-zero-day-exploited-in-wild.html" target="_blank" rel="noopener">The Hacker News</a></p>
+      </div>
+      <div class="item">
+        <div class="t">CVE-2026-58644 — Microsoft SharePoint RCE zero-day in KEV<span class="badge kev">Zero-day</span></div>
+        <p class="s">CISA added an actively exploited Microsoft SharePoint remote-code-execution zero-day to its KEV catalog, urging federal agencies to prioritize patching of the internet-facing collaboration platform. <a href="https://thehackernews.com/2026/07/cisa-adds-exploited-sharepoint-rce-zero.html" target="_blank" rel="noopener">The Hacker News</a></p>
+      </div>
+      <div class="item">
+        <div class="t">CVE-2026-8037 — Progress Kemp LoadMaster flaw added to KEV<span class="badge kev">KEV add</span></div>
+        <p class="s">CISA added a Progress Kemp LoadMaster vulnerability to KEV after active exploitation — 792 exploit attempts logged across 65 IPs in 41 days; FCEB agencies were told to patch by Aug 10. <a href="https://thehackernews.com/2026/08/progress-kemp-loadmaster-flaw-hits-cisa.html" target="_blank" rel="noopener">The Hacker News</a></p>
+      </div>
+      <div class="item">
+        <div class="t">Conduent breach — 62.2M individuals, 3rd-largest US healthcare breach<span class="badge crit">Data exposure</span></div>
+        <p class="s">The Conduent Business Services breach affected 62,224,658 individuals, ranking as the third-largest U.S. healthcare data breach on record. <a href="https://axis-intelligence.com/axis-data-breach-tracker/" target="_blank" rel="noopener">Axis Intelligence</a></p>
+      </div>
+      <div class="item">
+        <div class="t">Canvas / Instructure compromise — 275M victim notices<span class="badge high">Education</span></div>
+        <p class="s">The Canvas/Instructure compromise resulted in roughly 275 million victim notifications globally, one of the largest education-sector exposures of the year. <a href="https://axis-intelligence.com/axis-data-breach-tracker/" target="_blank" rel="noopener">Axis Intelligence</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🌍 Physical / Natural BC Events</h2>
+    <div class="body">
+      <div class="item">
+        <div class="t">M 7.7 — 68 km NNW of Ende, Indonesia<span class="badge sig">M 7.7</span></div>
+        <p class="s">Major earthquake struck near Ende, Indonesia on Aug 14 (USGS significant-events feed, past 7 days); check USGS for updated impact assessment. <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000tkt2" target="_blank" rel="noopener">USGS</a></p>
+      </div>
+      <div class="item">
+        <div class="t">M 7.4 — western Colombia quake death toll reaches 111<span class="badge sig">M 7.4</span></div>
+        <p class="s">The Aug 10 major earthquake near San José del Palmar, western Colombia, has killed at least 111 people and damaged hundreds of buildings, carrying a USGS red-alert impact status. <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000tjl2" target="_blank" rel="noopener">USGS</a></p>
+      </div>
+      <div class="item">
+        <div class="t">M 6.9 — 15 km NNW of Pematangsiantar, Indonesia<span class="badge sig">M 6.9</span></div>
+        <p class="s">Major earthquake struck near Pematangsiantar, Indonesia on Aug 15 (USGS significant-events feed, past 7 days); check USGS for updated impact assessment. <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000tkyk" target="_blank" rel="noopener">USGS</a></p>
+      </div>
+      <div class="item">
+        <div class="t">M 5.2 — 1 km SW of Otura, Spain<span class="badge mod">M 5.2</span></div>
+        <p class="s">Moderate earthquake near Otura, Spain (USGS significant-events feed, past 7 days). <a href="https://earthquake.usgs.gov/earthquakes/eventpage/us6000tkv2" target="_blank" rel="noopener">USGS</a></p>
+      </div>
+      <div class="item">
+        <div class="t">Typhoon Dolphin — 1M+ evacuated across China, Japan, Philippines<span class="badge high">Cat 1</span></div>
+        <p class="s">Typhoon Dolphin made landfall near Yuhuan, Zhejiang Province on Aug 9 with winds equivalent to a Category 1 hurricane; over 1 million evacuated in China (including 30,300 in Shanghai, ~1,500 flights canceled), power cut to 50,000+ buildings in Okinawa, and flooding displaced 12,000+ in Luzon, Philippines. <a href="https://www.aljazeera.com/news/2026/8/10/one-million-evacuated-as-typhoon-dolphin-pummels-east-china-what-we-know" target="_blank" rel="noopener">Al Jazeera</a></p>
+      </div>
+      <div class="item">
+        <div class="t">Spokane Complex Fire — ~60,000 evacuated, worst disaster in city history<span class="badge high">FEMA MDD</span></div>
+        <p class="s">The Spokane Complex Fire forced evacuation of roughly 60,000 people and burned 5,439 acres and 600+ structures; at least 15 wildfires across Washington have scorched about 250,000 acres. <a href="https://disasterphilanthropy.org/blog/what-were-watching-weekly-disaster-update-august-3-2026/" target="_blank" rel="noopener">Center for Disaster Philanthropy</a></p>
+      </div>
+      <div class="item">
+        <div class="t">British Columbia wildfire — 20,000+ evacuated near Okanagan Lake<span class="badge high">Wildfire</span></div>
+        <p class="s">British Columbia declared a state of emergency as a fast-moving wildfire forced more than 20,000 people from communities in western Canada, destroying homes as it raced toward towns along Okanagan Lake. <a href="https://disasterphilanthropy.org/blog/what-were-watching-weekly-disaster-update-august-3-2026/" target="_blank" rel="noopener">Center for Disaster Philanthropy</a></p>
+      </div>
+      <div class="item">
+        <div class="t">Oregon wildfires — 2M+ acres burned, 30+ homes destroyed<span class="badge high">Wildfire</span></div>
+        <p class="s">Oregon wildfires have burned more than two million acres so far in 2026, with at least 30 homes destroyed; intense wildfires are also burning in France, Spain, and the Pacific Northwest in early August. <a href="https://disasterresiliencenews.com/category/wildfire/" target="_blank" rel="noopener">Disaster Resilience News</a></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Sources: ransomware.live · SharkStriker · The Hacker News · CISA KEV · Axis Intelligence · StatusGator · Tech Insider · Forrester/OpenMetal · USGS Earthquake Feed · Center for Disaster Philanthropy · Al Jazeera · Disaster Resilience News<br>
+    Global BCDR &amp; Ransomware Monitor · Automated daily refresh · Not an official advisory — verify before acting.
+  </div>
+
+</div>
+</body>
+</html>
