@@ -57,16 +57,14 @@ BCP/DR relevance:
 
 ========== STEP 3: BUILD THE HTML ==========
 Produce a COMPLETE self-contained HTML document. Style requirements:
-- Light mode: `<body style="background-color:#fafafa; color:#1a1a1a; ...">`
+- `:root { color-scheme: light }`, background #fafafa, text #1a1a1a
 - Header: h1 "AI Daily Brief", subtitle "Prepared for Chris G. — IT Consultant, BCP/DR & Resilience", right-aligned stamp with today's date and "Refreshes daily at 6:00 AM local"
 - Section headings uppercase, letter-spaced, thin bottom border
-- Top 3 Moves as 3 cards laid out with a `<table>` (three `<td style="width:33%">` cells) — NOT CSS grid or flexbox, which email clients drop
-- Tags are pill-style `<span>`s styled inline: tactical blue, strategic purple, alert red, watch amber (e.g. `style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; background-color:#dbeafe; color:#1e40af;"`)
+- Top 3 Moves as 3 cards: `grid-template-columns: repeat(auto-fit, minmax(260px, 1fr))`
+- Tag classes: `.tag.tactical` (blue), `.tag.strategic` (purple), `.tag.alert` (red), `.tag.watch` (amber), pill-style
 - Client-alert callout: background #fffbea, left border #c99400
 - Trend Tracker: dark slate (#1e293b) header, colored velocity badges
-- **EVERY style must be an inline `style="..."` attribute on the element. ZERO `<style>` blocks, zero styling `class` attributes.** This document is sent as a Gmail message body, and Gmail's API sanitizer **strips `<style>` blocks and strips `class` attributes on send** — anything styled via a stylesheet or class selector is silently deleted and the brief arrives as bare unstyled HTML. This is exactly why past editions looked broken; do not reintroduce it.
-- No external stylesheets, no network dependencies, no CSS custom properties (`var(--x)`), no flexbox, no CSS grid, no `position`. Use tables for layout. Valid HTML5.
-- Self-check before writing: `grep -c '<style' <file>` must be `0`, and the inline `style="` count should be 150+ for a full edition.
+- All CSS inline in a `<style>` block. No external stylesheets, no network dependencies. Valid HTML5.
 - Footer with today's date and a brief sources-consulted sentence.
 
 Sections in order: 1 Header · 2 BCP/DR Client Alert banner (if applicable) · 3 Top 3 Moves (cards) · 4 Trend Tracker · 5 Provider-by-Provider (table) · 6 Shift Your Habits (table) · 7 Community Signal (table) · 8 Watch List (cards) · 9 Footer.

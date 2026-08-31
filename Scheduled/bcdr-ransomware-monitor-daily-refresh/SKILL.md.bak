@@ -29,11 +29,11 @@ EMAIL RECIPIENTS: chris.given@gmail.com, chris.given@wwt.com, mikebannach@gmail.
 3. **Establish the base HTML.** Stop at the first that succeeds:
    a. Most recent `bcdr-monitor-*.html` in OUTPUT DIRECTORY. This is the normal path — prefer it.
    b. `list_artifacts` → if `bcdr-ransomware-monitor` exists, read its path. Expect nothing while the store is broken; spend at most one call here.
-   c. Build from scratch, **fully inline-styled** (see the Email-safe CSS constraint — no `<style>` block anywhere): light background `#f1f5f9`, dark-slate header bar `#0f172a` with a green `#22c55e` pulse dot, a four-cell metric counter row, four white section cards (`#ffffff`, `1px solid #e2e8f0`, `border-radius:10px`) each with a heading and a body, and a footer sources bar. Content column `max-width:860px; margin:0 auto`.
-   The metric row is a `<table>` (not flexbox — this HTML is emailed), and each counter is a `<span class="metric-value" style="...">N</span>` in this order: ransomware, cloud/outage, cyber, physical. The `metric-value` class is a parser hook only; the number's appearance comes from its inline `style`. `~/bin/send-bcdr-monitor.sh` parses those four spans for the email subject line; changing the class name or the order silently degrades the subject to "counts unavailable".
+   c. Build from scratch: light-mode, self-contained, `:root { color-scheme: light }`, dark-slate header (#0f172a) with green pulse dot, four-cell metric counter row, four `.card` blocks each with `h2` and `.body`, footer sources bar.
+   The metric row is a `<table>` (not flexbox — this HTML is emailed), and each counter is exactly `<span class="metric-value">N</span>` in this order: ransomware, cloud/outage, cyber, physical. `~/bin/send-bcdr-monitor.sh` parses those four spans for the email subject line; changing the class name or the order silently degrades the subject to "counts unavailable".
    Never abort at this step — (c) always succeeds.
 
-4. **Write the local file (REQUIRED).** Update the header's "Last refreshed" date/time, swap the four section card bodies, update the metric counters. Preserve the base file's inline `style="..."` attributes verbatim — copy them onto any new elements rather than inventing bare tags. Write the complete HTML to `<OUTPUT DIRECTORY>/bcdr-monitor-<YYYY-MM-DD>.html`, and an identical copy to `<OUTPUT DIRECTORY>/bcdr-monitor.html` as a stable "latest" pointer. Both writes use the Write tool. This step must complete before step 5.
+4. **Write the local file (REQUIRED).** Update the header's "Last refreshed" date/time, swap the four `.card .body` sections, update the metric counters. Write the complete HTML to `<OUTPUT DIRECTORY>/bcdr-monitor-<YYYY-MM-DD>.html`, and an identical copy to `<OUTPUT DIRECTORY>/bcdr-monitor.html` as a stable "latest" pointer. Both writes use the Write tool. This step must complete before step 5.
 
 5. **Send the email directly (REQUIRED — do not create a draft).** Using the tool `mcp__9a815f15-06b6-4c12-b516-de5f058e68d1__send_message`:
    - to: ["chris.given@gmail.com", "chris.given@wwt.com", "mikebannach@gmail.com"]
@@ -51,12 +51,7 @@ EMAIL RECIPIENTS: chris.given@gmail.com, chris.given@wwt.com, mikebannach@gmail.
 ## Constraints
 - Chris's local timezone (scheduled task runs 6:30 AM local; `~/bin/send-bcdr-monitor.sh` mails the file at 7:15 AM local via launchd, independently of whether this run succeeded).
 - HTML stays light-mode, self-contained, stylistically consistent with the prior version.
-- **Email-safe CSS — EVERY style must be an inline `style="..."` attribute.** This HTML is sent as a Gmail message body. Gmail's API sanitizer **strips `<style>` blocks and strips `class` attributes on send**, so any styling that lives in a stylesheet or depends on a class selector is silently deleted and the mail arrives as bare unstyled HTML. This has been the cause of ugly editions in the past — do not reintroduce it.
-  - Put every visual property (color, background, font, padding, border, border-radius, width, text-align) directly on the element as `style="..."`.
-  - **Zero `<style>` blocks.** Not in `<head>`, not in `<body>`.
-  - `class` attributes are allowed ONLY as parser hooks (`class="metric-value"`, which `~/bin/send-bcdr-monitor.sh` greps for). They must carry no styling meaning — the element must still look correct with the class removed.
-  - No CSS custom properties (`var(--x)`), no flexbox, no `position`. Use tables for layout.
-  - Self-check before sending: `grep -c '<style' file` must be `0`, and the inline `style="` count must be in the 150+ range for a full edition.
+- **Email-safe CSS.** This HTML is sent as a message body, so: no CSS custom properties (`var(--x)`) — Gmail drops them and the mail renders unstyled; no flexbox or `position` for layout; use tables. An embedded `<style>` block in `<head>` is fine, Gmail supports it.
 - All source links `target="_blank" rel="noopener"`.
 - No new features — refresh only. No charts, no new sections.
 
