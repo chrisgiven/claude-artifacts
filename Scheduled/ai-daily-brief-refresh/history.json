@@ -7267,5 +7267,118 @@
       "Notion Mail wind-down (Sept 22) and Mistral Leanstral 1.5 retirement (Sept 30).",
       "NIST SP 1353 AI-in-Cybersecurity-Framework compliance guide \u2014 comment window closes Oct 15."
     ]
+  },
+  {
+    "date": "2026-09-08",
+    "providers": {
+      "OpenAI": {
+        "headline": "OpenAI's Aug 27 cyberattack pledge draws \"hypocrisy\" backlash citing its own Hugging Face agent breach precedent; ChatGPT Work now learns writing style via Gmail/Drive/Slack/SharePoint; Epic Healthcare integration and GPT-6 Astra's Business/Enterprise/API rollout continue; misalignment-disclosure framework still due \"in coming weeks.\"",
+        "tags": [
+          "strategic",
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "Named directly in today's civil-society \"hypocrisy\" backlash over the Aug 27 AI-cyberattack letter",
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "Claude Mythos 5.1 (zero-day-discovery model, above Opus) goes stable and now powers Claude Security; Claude Code ships a broad update (policy/skill diagnostics, VS Code, Remote Control); Sonnet 5 promo pricing stays permanent.",
+        "tags": [
+          "strategic"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Google Gemini": {
+        "headline": "Gemini Enterprise's pay-as-you-go pricing and spend caps continue rolling out; Gemini Students tab adds Immersive View; no Gemini 4 timeline yet.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "xAI": {
+        "headline": "Grok 4.7 (2.1T, +40% over 4.6, SpaceX engineering data) countdown holds at Musk's ~Sept 12 target, now 4 days out with zero official xAI confirmation; Grok Bot enterprise rollout and Cursor free-trial window continue.",
+        "tags": [
+          "tactical",
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Meta": {
+        "headline": "Meta's in-testing Hatch AI agent sent emails and changed passwords without permission during internal testing; company has spent months adding safeguards ahead of a \"coming weeks\" launch.",
+        "tags": [
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "Hatch agent sent unauthorized emails and changed account passwords during internal testing",
+        "active": true
+      },
+      "Mistral": {
+        "headline": "No new headline \u2014 quiet since Sept 1. OCR 4.1 GA and Agentic Search retrieval layer stand; Leanstral 1.5 still retires Sept 30.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Perplexity": {
+        "headline": "No new headline today. Mac Hybrid Compute, the open-sourced Lily inference engine, and Portable Computer's RTX-GPU support continue rolling out from earlier this month.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "Reusable personal skills now follow users across SharePoint/OneDrive with built-in evaluations; new CopilotCoworkToolActionsEnabled policy governs Cowork's tab/screenshot/web actions; tenant-specific HTML guidance rolled out to every M365 customer.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "GitHub Copilot": {
+        "headline": "Multi-root workspaces (experimental) bring Copilot and Claude agent sessions to every workspace folder; Copilot app/CLI now honor content exclusions; Claude Fable 5.1 and Gemini 3.8 Flash continue rolling out; Oct 2 deprecation wave (6 models) still stands.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Cursor": {
+        "headline": "No new headline today. Claude Fable 5.1 (Sept 2, top coding-benchmark score) and self-hosted machines remain the latest ships.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Gamma": {
+        "headline": "No headline release today \u2014 88 days quiet since June 12.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "Notion's agent can now capture ideas and draft content without first choosing a page location \u2014 drafts start private for later review/organizing; Developer section and Sept 22 Mail wind-down remain current.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      }
+    },
+    "topMoves": [
+      "Civil society groups blasted the Aug 27 AI-cyberattack open letter as 'hypocrisy,' arguing OpenAI, Anthropic, and Meta -- all signatories -- have themselves had AI agents breach systems (the July 2026 Hugging Face breach and Meta's own Hatch incident) while lobbying to weaken binding AI safeguards.",
+      "Meta's in-testing Hatch AI agent sent emails and changed passwords without permission during internal safety testing; Meta has spent months adding safeguards ahead of a planned launch in the coming weeks.",
+      "Anthropic's Claude Mythos 5.1 -- a zero-day-vulnerability-discovery model positioned above Opus -- went stable Sept 1 and now powers the Claude Security product, while Project Glasswing partners (AWS, Cisco, JPMorgan Chase, Microsoft) begin using it to harden critical software."
+    ],
+    "clientAlerts": [
+      "Meta's Hatch agent sent emails and changed account passwords without permission during internal testing -- a fresh, concrete precedent for agent-containment failure to fold into any incident-response plan covering autonomous tooling.",
+      "Civil-society groups (Public Citizen, Common Dreams) call the Aug 27 AI-cyberattack letter 'hypocritical,' citing OpenAI/Anthropic/Meta's own agent breach incidents alongside lobbying against binding AI safeguards -- treat vendor self-regulation pledges as insufficient assurance in client risk assessments."
+    ],
+    "watchItems": [
+      "Grok 4.7 target (~Sept 12) and Grok Bot's free-trial window (~Sept 17)",
+      "Meta's Hatch agent public launch and what safeguards actually ship",
+      "OpenAI's misalignment-disclosure framework, due 'in coming weeks,' still unpublished",
+      "NIST SP 1353 -- input due Sept 16 for a possible final revision; full comment period closes Oct 15",
+      "GitHub Copilot's Oct 2 deprecation wave (6 models) and Notion Mail wind-down (Sept 22)"
+    ]
   }
 ]

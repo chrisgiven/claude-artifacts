@@ -1,6 +1,6 @@
 ---
 name: bcdr-ransomware-monitor-daily-refresh
-description: Daily 24-hour refresh of the Global BCDR & Ransomware Monitor. Writes dated local HTML (primary), sends email directly to Chris + WWT + Mike (required, no draft), Cowork artifact mirror is best-effort only.
+description: Daily 24-hour refresh of the Global BCDR & Ransomware Monitor. Writes dated local HTML (primary), sends email directly to Chris + WWT + Mike + David (Volar) (required, no draft), Cowork artifact mirror is best-effort only.
 ---
 
 This is an automated run of a scheduled task. The user is not present to answer questions. Execute autonomously without asking clarifying questions — make reasonable choices and note them in your output.
@@ -11,7 +11,7 @@ You are producing the daily edition of the Global BCDR & Ransomware Monitor for 
 
 OUTPUT DIRECTORY: `/Users/chrisgiven/Documents/Claude/Scheduled/bcdr-ransomware-monitor-daily-refresh/`
 
-EMAIL RECIPIENTS: chris.given@gmail.com, chris.given@wwt.com, mikebannach@gmail.com
+EMAIL RECIPIENTS: chris.given@gmail.com, chris.given@wwt.com, mikebannach@gmail.com, David.africano@volarsecurity.com
 
 **Date grounding — do this first:** Note today's exact date (day, month, year) from the environment. Substitute the real current month and year into every search query below. Do NOT leave placeholders like `<current month>` in the actual search string. Example: if today is July 25, 2026, every query uses "July 2026". Discard any search results dated before the current month unless nothing more recent is available.
 
@@ -36,7 +36,7 @@ EMAIL RECIPIENTS: chris.given@gmail.com, chris.given@wwt.com, mikebannach@gmail.
 4. **Write the local file (REQUIRED).** Update the header's "Last refreshed" date/time, swap the four section card bodies, update the metric counters. Preserve the base file's inline `style="..."` attributes verbatim — copy them onto any new elements rather than inventing bare tags. Write the complete HTML to `<OUTPUT DIRECTORY>/bcdr-monitor-<YYYY-MM-DD>.html`, and an identical copy to `<OUTPUT DIRECTORY>/bcdr-monitor.html` as a stable "latest" pointer. Both writes use the Write tool. This step must complete before step 5.
 
 5. **Send the email directly (REQUIRED — do not create a draft).** Using the tool `mcp__9a815f15-06b6-4c12-b516-de5f058e68d1__send_message`:
-   - to: ["chris.given@gmail.com", "chris.given@wwt.com", "mikebannach@gmail.com"]
+   - to: ["chris.given@gmail.com", "chris.given@wwt.com", "mikebannach@gmail.com", "David.africano@volarsecurity.com"]
    - subject: "BCDR & Ransomware Monitor — <Month Day, Year>" (e.g. "BCDR & Ransomware Monitor — August 7, 2026")
    - htmlBody: the complete HTML content of the monitor (same content written to disk in step 4)
    - body (plain text fallback): a brief summary listing item counts per section and top 2–3 headlines
@@ -61,4 +61,4 @@ EMAIL RECIPIENTS: chris.given@gmail.com, chris.given@wwt.com, mikebannach@gmail.
 - No new features — refresh only. No charts, no new sections.
 
 ## Success criteria
-A dated HTML file exists in OUTPUT DIRECTORY with items from the current month, the timestamp reflects today, and the metric counters match section item counts. The email has been sent directly to all three recipients (not left as a draft). The artifact mirror is reported honestly. A run that writes the file and sends the email but cannot reach the artifact store is a SUCCESS. **A run that produces no file on disk is a FAILURE regardless of anything else.**
+A dated HTML file exists in OUTPUT DIRECTORY with items from the current month, the timestamp reflects today, and the metric counters match section item counts. The email has been sent directly to all four recipients (not left as a draft). The artifact mirror is reported honestly. A run that writes the file and sends the email but cannot reach the artifact store is a SUCCESS. **A run that produces no file on disk is a FAILURE regardless of anything else.**

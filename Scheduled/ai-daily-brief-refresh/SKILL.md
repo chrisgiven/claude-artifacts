@@ -95,12 +95,12 @@ Read history.json, append today's entry:
 }
 Trim to the most recent 60 entries. Write back with the Write tool.
 
-========== STEP 6: EMAIL DRAFT (REQUIRED — NOT gated on the artifact) ==========
-Call mcp__9a815f15-06b6-4c12-b516-de5f058e68d1__create_draft with:
-- to: ["chris.given@gmail.com", "chris.given@wwt.com", "mikebannach@gmail.com"]
+========== STEP 6: SEND EMAIL DIRECTLY (REQUIRED — NOT gated on the artifact) ==========
+Call mcp__9a815f15-06b6-4c12-b516-de5f058e68d1__send_message directly (NOT create_draft — Chris confirmed 2026-09-08 that this should never sit as a draft) with:
+- to: ["chris.given@gmail.com", "chris.given@wwt.com", "mikebannach@gmail.com", "David.africano@volarsecurity.com"]
 - subject: "AI Daily Brief — [today's date, e.g. July 25, 2026]"
 - htmlBody: the exact HTML from Step 3
-A Google Apps Script sends the draft within 5 minutes. If create_draft fails, note the error in Step 8 and do not retry.
+This sends the email immediately — no draft, no Apps Script, no 5-minute delay. If send_message fails, note the error in Step 8 and do not retry (do not fall back to create_draft).
 
 ========== STEP 7: ARTIFACT MIRROR (BEST-EFFORT — LAST) ==========
 Call mcp__cowork__update_artifact with id "ai-daily-brief", update_summary "Daily refresh — [today's date]", and the Step 3 HTML. If it does not exist, try create_artifact with the same id. **One attempt. No retries. Failure here is not a run failure** — steps 4–6 already delivered. Capture the exact error text.
