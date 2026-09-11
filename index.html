@@ -625,6 +625,14 @@ footer .dot{color:var(--gold)}
         <div class="card-foot"><span class="tag hot">App</span><span class="tag">Python</span><span class="tag">Docker</span><span class="tag">IoT</span><span class="go">Open →</span></div>
       </a>
 
+      <!-- NAS-hosted: address injected from /services.json, which is NAS-only and gitignored. -->
+      <a class="card s-live fade" data-svc-link="sense">
+        <div class="card-meta"><span class="code">LAB / SENSE</span><span>Live</span></div>
+        <h3>Sense Control</h3>
+        <p>Whole-home energy intelligence on top of a Sense monitor. Live watts and per-device draw, a minute-by-minute history, and a waste finder that ranks always-on and overnight load by dollars a year. It also reports the house's smart-bulb power back to Sense as emulated Kasa plugs, so Sense stops lumping lighting into "Other". Claude answers plain-English questions about the data.</p>
+        <div class="card-foot"><span class="tag hot">App</span><span class="tag">Python</span><span class="tag">Docker</span><span class="tag">Claude</span><span class="go">Open →</span></div>
+      </a>
+
       <!-- No href here on purpose. This one matters more than most: publishing the
            address of an intrusion-detection system and its honeypot tells an attacker
            exactly what is watching and where the decoys are. Injected from
@@ -643,6 +651,27 @@ footer .dot{color:var(--gold)}
         <h3>Vaultwarden</h3>
         <p>Self-hosted password vault — Bitwarden-compatible, running on the NAS behind a Tailscale node with a real Let's Encrypt cert. Nightly backups pulled off-box and integrity-checked. No third party holds the keys.</p>
         <div class="card-foot"><span class="tag hot">Infra</span><span class="tag">Docker</span><span class="tag">Tailscale</span><span class="go">Open →</span></div>
+      </a>
+
+      <a class="card s-live fade" href="http://localhost:5858">
+        <div class="card-meta"><span class="code">LAB / CONT</span><span>Local</span></div>
+        <h3>Continuity</h3>
+        <p>A resilience console for a one-person estate. Probes every self-hosted service and tells a dead service from a sleeping host, flags code that has drifted from what's deployed or was never backed up, and runs guards that grep for outages already paid for. Its first run found two production apps with no git repo at all.</p>
+        <div class="card-foot"><span class="tag hot">Infra</span><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">BCDR</span><span class="go">Open →</span></div>
+      </a>
+
+      <div class="card s-live fade">
+        <div class="card-meta"><span class="code">LAB / HWTCH</span><span>Live</span></div>
+        <h3>host-watch</h3>
+        <p>Emails when a LAN host or service goes down, and again when it comes back. A sleeping machine looks exactly like a dead one, and probing it wakes it up, so it retries inside a sweep before it pages anyone. One mail per outage, runs on the NAS, stdlib Python.</p>
+        <div class="card-foot"><span class="tag hot">Infra</span><span class="tag">Python</span><span class="tag">Docker</span></div>
+      </div>
+
+      <a class="card s-live fade" href="http://localhost:5454">
+        <div class="card-meta"><span class="code">LAB / TOKEN</span><span>Local</span></div>
+        <h3>Token Coach</h3>
+        <p>Reads Claude Code session transcripts, prices every turn, and ranks the habits that waste tokens by dollars: long breaks that force a full re-cache, oversized contexts, routine work on the biggest model. Its first audit cut the cost of each scheduled-brief run by about half.</p>
+        <div class="card-foot"><span class="tag hot">Tooling</span><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Claude</span><span class="go">Open →</span></div>
       </a>
     </div>
   </div>
