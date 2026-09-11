@@ -1,0 +1,78 @@
+{
+ "date": "2026-09-11",
+ "sections": {
+  "ransomware": {
+   "items": [
+    {
+     "title": "Canadian airline hit by Gentlemen ransomware group",
+     "tags": ["High-profile"],
+     "summary": "The Gentlemen ransomware group claimed an attack on a Canadian airline in September 2026, disrupting operations.",
+     "source": {"name": "CYFIRMA", "url": "https://www.cyfirma.com/news/weekly-intelligence-report-04-sep-2026/"}
+    },
+    {
+     "title": "Berlin Senate network breached by Rhysida ransomware",
+     "tags": ["Municipal", "Critical"],
+     "summary": "Rhysida ransomware operators compromised the network of Berlin's Senate (city government), one of the higher-profile municipal ransomware incidents of the month.",
+     "source": {"name": "SharkStriker", "url": "https://sharkstriker.com/blog/top-10-ransomware-attack-of-2026/"}
+    },
+    {
+     "title": "AI agents ran an entire ransomware intrusion end-to-end",
+     "tags": ["Trend", "Critical"],
+     "summary": "A human operator used frontier AI models to autonomously execute a full ransomware attack on an enterprise network in under 10 hours, with the AI leaving behind an 80-page security audit for the victim.",
+     "source": {"name": "The Register", "url": "https://www.theregister.com/security/2026/09/02/ai-agents-carried-out-every-step-of-this-ransomware-attack-then-left-the-victim-an-80-page-security-audit/5294009"}
+    }
+   ],
+   "note": "Named-victim disclosures were sparse in open sources this run; trackers cite Krybit and Gentlemen as the most active claimed groups in September 2026."
+  },
+  "outage": {
+   "items": [
+    {
+     "title": "Azure East US outage takes down ChatGPT, Claude, and Grok",
+     "tags": ["Cloud", "Critical", "Third-party"],
+     "summary": "A roughly 90-minute Azure East US outage on September 3, 2026 cascaded into simultaneous disruptions for ChatGPT, Claude, and Grok, underscoring shared hyperscaler dependency risk.",
+     "source": {"name": "Meridian Micro", "url": "https://www.meridian-micro.com/2026/09/08/azure-east-us-outage-september-2026-chatgpt-claude-grok-uk-smes-multi-cloud-resilience/"}
+    }
+   ],
+   "note": "No additional major hyperscaler incidents surfaced for September so far; trackers note AWS, Azure, and GCP have each had multi-day regional outages earlier in 2026."
+  },
+  "cyber": {
+   "items": [
+    {
+     "title": "CISA adds Cisco and Citrix auth-bypass flaws to KEV",
+     "tags": ["Critical", "KEV add", "Emergency Directive"],
+     "summary": "CISA added a maximum-severity Cisco Secure Firewall Management Center auth-bypass (CVE-2026-20079, CVSS 10.0) and a Citrix NetScaler ADC/Gateway auth-bypass (CVE-2026-19490, CVSS 9.3) to its KEV catalog, with a federal patch deadline of September 12, 2026.",
+     "source": {"name": "The Hacker News", "url": "https://thehackernews.com/2026/09/cisa-flags-exploited-cisco-citrix.html"}
+    },
+    {
+     "title": "Fortinet flaw weaponized to deploy PivotC2 RAT",
+     "tags": ["Third-party", "KEV add"],
+     "summary": "A Fortinet vulnerability (CVE-2025-25249) is being exploited in a campaign that has infected 178 devices with the PivotC2 Node.js RAT out of roughly 3,000 targeted IP addresses; activity is attributed to a Russian-speaking, financially motivated actor.",
+     "source": {"name": "The Hacker News", "url": "https://thehackernews.com/2026/08/cisa-adds-six-exploited-flaws-to-kev.html"}
+    },
+    {
+     "title": "CISA adds seven more exploited flaws to KEV catalog",
+     "tags": ["KEV add"],
+     "summary": "CISA added seven newly exploited vulnerabilities to its Known Exploited Vulnerabilities catalog this month, citing attackers deploying reverse shells and cryptocurrency miners.",
+     "source": {"name": "The Hacker News", "url": "https://thehackernews.com/2026/09/cisa-adds-seven-exploited-flaws-as.html"}
+    }
+   ]
+  },
+  "physical": {
+   "items": [
+    {
+     "title": "M3.8 earthquake near Castle Rock, Washington",
+     "tags": ["M 3.8"],
+     "summary": "A magnitude 3.8 earthquake struck 20 km east of Castle Rock, Washington on September 5, 2026; no tsunami warning was issued.",
+     "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/uw714095342"}
+    },
+    {
+     "title": "2026 billion-dollar U.S. disaster count keeps climbing",
+     "tags": ["Reference"],
+     "summary": "Climate Central's mid-year update tracks a growing tally of billion-dollar U.S. weather and climate disasters in 2026, including winter storms, Hawaii flooding, and a run of central-U.S. severe storms.",
+     "source": {"name": "Climate Central", "url": "https://www.climatecentral.org/climate-matters/mid-year-billion-dollar-disasters"}
+    }
+   ],
+   "note": "September-specific single-event disasters (e.g. South Asia and U.S. flash flooding reported in late August/early September) surfaced only in secondary roundups without a clear primary source this run and are omitted pending confirmation."
+  }
+ }
+}

@@ -1,22 +1,26 @@
 ---
 name: ai-daily-brief-refresh
-description: Daily AI industry brief — researches major AI providers + Reddit signal, synthesizes habit-shift recommendations for Chris's BCP/DR consulting work, tracks W/W and M/M provider trends. Writes local HTML + history.json + Gmail draft every run; Cowork artifact mirror is best-effort.
+description: Daily AI industry brief — researches major AI providers + Reddit signal, synthesizes habit-shift recommendations for Chris's BCP/DR consulting work, tracks W/W and M/M provider trends. Claude writes content JSON; brief.py renders the email-safe HTML and keeps history.json. Sends the email directly; Cowork artifact mirror is best-effort.
 ---
 
 You are generating today's edition of Chris's "AI Daily Brief". Chris is an IT consultant specializing in Business Continuity Planning (BCP), Disaster Recovery (DR), and IT resilience programs. He wants a concise, structured daily brief on major AI provider changes so he can decide which tool to use for which task — and see how those changes are trending over time.
 
-**Output contract — read this first.** The durable deliverables are, in priority order: (1) the local HTML file, (2) history.json, (3) the Gmail draft. The Cowork artifact is a best-effort mirror ONLY. The artifact store currently fails — `update_artifact` and `create_artifact` both return "Failed to save artifact" (diagnosed 2026-07-18, re-verified 2026-07-25). **No step may be gated on artifact success.** Produce every durable output first, attempt the artifact last, and report its failure without treating the run as failed.
+**Output contract — read this first.** The durable deliverables are, in priority order: (1) the local HTML file, (2) history.json, (3) the email. The Cowork artifact is a best-effort mirror ONLY (the artifact store has failed since 2026-07-18). **No step may be gated on artifact success.**
 
 WORKING DIRECTORY: /Users/chrisgiven/Documents/Claude/Scheduled/ai-daily-brief-refresh/
-HISTORY FILE: <WORKING DIRECTORY>/history.json
 
-========== STEP 0: LOAD HISTORY ==========
-Read the history file with the Read tool. Parse the JSON. If missing or empty, skip trend analysis and note "First run — no history yet" in the Trend Tracker.
+**Token budget rules (added 2026-09-10).** `brief.py` owns the layout and the history file. Therefore:
+- **Never Read history.json** (it is ~400 KB). Use `python3 brief.py trends` instead.
+- **Never Read a previous edition's HTML, and never hand-write HTML.** You write only content JSON.
+- Batch all searches into one message. At most 18 WebSearch calls; WebFetch only when a search result is too thin to summarise.
 
-Track: LAST_WEEK_ENTRY (closest to today − 7 days, or null) · LAST_MONTH_ENTRY (closest to today − 30 days, or null) · ALL_ENTRIES (full list, for velocity).
+========== STEP 0: TREND SUMMARY ==========
+Run exactly this command — no `cd`, no extra arguments; the exact string is what the permission allowlist matches:
+`python3 /Users/chrisgiven/Documents/Claude/Scheduled/ai-daily-brief-refresh/brief.py trends`
+It prints per-provider activity over the last entries, each provider's last-week headline, yesterday's top moves, and the month-ago snapshot (~1K tokens). If it prints "First run — no history yet", note that in your summary.
 
-========== STEP 1: RESEARCH (run in parallel) ==========
-Use WebSearch, targeting the LAST 24–48 HOURS. Derive today's date first and use the current year in every query. Batch into a single message where possible.
+========== STEP 1: RESEARCH (one batched message) ==========
+Use WebSearch, targeting the LAST 24–48 HOURS. Derive today's date first and use the current year in every query.
 
 Provider searches (required):
 - "OpenAI ChatGPT new features release [this week, current year]"
@@ -40,70 +44,45 @@ BCP/DR relevance:
 - "AI tools compliance ISO 22301 NIST [current month, current year]"
 
 ========== STEP 2: SYNTHESIZE ==========
-1. **Top 3 Moves of the Day** — the three most important changes today (not just this month). Each a 1–2 sentence card with a date stamp.
-2. **Provider-by-Provider Updates** — table: Provider | What Changed | Classification (Tactical/Strategic/Client Alert). Cover OpenAI, Anthropic, Google Gemini, xAI, Meta, Mistral, Perplexity, Microsoft 365 Copilot, GitHub Copilot, Cursor, Gamma, Notion AI. If no material update, say "No headline release today" and note what to watch for.
-3. **Shift Your Habits — BCP/DR Consulting Workflow** — table: Task | Current Tool (assumed) | Recommended Shift | Type (Tactical/Strategic). Cover daily: BCP/DR plan narratives & runbooks; standards summaries (ISO 22301, NIST SP 800-34, SOC 2); vendor/architecture research; client proposals & SOWs; executive decks; stakeholder audio walkthroughs; client advisory on AI data risk.
-4. **Community Signal (Reddit)** — 3–5 items max, table: Source | Signal | So What. Visible high engagement only; skip memes and speculation.
-5. **Watch List — Next 7–14 Days** — 3–5 cards for upcoming releases, policy changes, deadlines. Flag anything affecting client data handling, training policies, or pricing transitions.
-6. If any item is a **client data risk** (training policy changes, data-residency shifts, supply-chain disclosures like "powered by X"), add a callout banner at the top labeled "BCP/DR client alert."
+1. **Top 3 Moves of the Day** — the three most important changes today (not just this month). Don't repeat yesterday's moves (listed by `trends`) unless something new happened.
+2. **Provider-by-Provider** — all 12 providers: OpenAI, Anthropic, Google Gemini, xAI, Meta, Mistral, Perplexity, Microsoft 365 Copilot, GitHub Copilot, Cursor, Gamma, Notion AI. `active: true` only if there is a material update today.
+3. **Shift Your Habits** — rows for: BCP/DR plan narratives & runbooks; standards summaries (ISO 22301, NIST SP 800-34, SOC 2); vendor/architecture research; client proposals & SOWs; executive decks; stakeholder audio walkthroughs; client advisory on AI data risk.
+4. **Community Signal (Reddit)** — 3–5 items; visible high engagement only.
+5. **Watch List — Next 7–14 Days** — 3–5 cards (kind: watch / deadline / security / regulatory / pricing).
+6. **Client alerts** — any client data risk (training-policy changes, data residency, "powered by X" disclosures). Empty list = no banner.
+7. **Persistent signals** — compare today's headlines with each provider's last-week headline from `trends`; same topic = persistent. The renderer computes velocity, W/W, quiet streaks and month-over-month counts itself — do not compute those.
 
-========== STEP 2b: TREND SIGNALS ==========
-**A. Provider Velocity** — over ALL_ENTRIES for the last 30 days, count entries with `active: true` per provider:
-🔥 HOT = 4+ of last 4 · ↑ RISING = 3 of 4 · → STEADY = 2 of 4 · ↓ COOLING = 1 of 4 · ⬜ QUIET = 0 of 4. Fewer than 4 entries: use what exists, note "Limited history."
-**B. Week-over-Week Delta** — vs LAST_WEEK_ENTRY: NEW THIS WEEK / CONTINUED (note same topic = "Persistent Signal") / WENT QUIET.
-**C. Month-over-Month** — vs LAST_MONTH_ENTRY: consistently active providers, active→quiet flips, client-alert rate direction.
-**D. Persistent Signals** — topic appearing in both today's and last week's headlines for the same provider: "Persistent Signal — [n] weeks."
-**E. Quiet Streak** — provider with active=false for 2+ consecutive entries: "Gone Quiet — [n] days."
-
-========== STEP 3: BUILD THE HTML ==========
-Produce a COMPLETE self-contained HTML document. Style requirements:
-- Light mode: `<body style="background-color:#fafafa; color:#1a1a1a; ...">`
-- Header: h1 "AI Daily Brief", subtitle "Prepared for Chris G. — IT Consultant, BCP/DR & Resilience", right-aligned stamp with today's date and "Refreshes daily at 6:00 AM local"
-- Section headings uppercase, letter-spaced, thin bottom border
-- Top 3 Moves as 3 cards laid out with a `<table>` (three `<td style="width:33%">` cells) — NOT CSS grid or flexbox, which email clients drop
-- Tags are pill-style `<span>`s styled inline: tactical blue, strategic purple, alert red, watch amber (e.g. `style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; background-color:#dbeafe; color:#1e40af;"`)
-- Client-alert callout: background #fffbea, left border #c99400
-- Trend Tracker: dark slate (#1e293b) header, colored velocity badges
-- **EVERY style must be an inline `style="..."` attribute on the element. ZERO `<style>` blocks, zero styling `class` attributes.** This document is sent as a Gmail message body, and Gmail's API sanitizer **strips `<style>` blocks and strips `class` attributes on send** — anything styled via a stylesheet or class selector is silently deleted and the brief arrives as bare unstyled HTML. This is exactly why past editions looked broken; do not reintroduce it.
-- No external stylesheets, no network dependencies, no CSS custom properties (`var(--x)`), no flexbox, no CSS grid, no `position`. Use tables for layout. Valid HTML5.
-- Self-check before writing: `grep -c '<style' <file>` must be `0`, and the inline `style="` count should be 150+ for a full edition.
-- Footer with today's date and a brief sources-consulted sentence.
-
-Sections in order: 1 Header · 2 BCP/DR Client Alert banner (if applicable) · 3 Top 3 Moves (cards) · 4 Trend Tracker · 5 Provider-by-Provider (table) · 6 Shift Your Habits (table) · 7 Community Signal (table) · 8 Watch List (cards) · 9 Footer.
-
-**TREND TRACKER SPEC** — heading "TREND TRACKER", three sub-panels:
-- Panel A — Provider Velocity table: Provider | 30-Day Velocity | W/W Change | Key Signal. Badge colors: 🔥 HOT #fee2e2/#b91c1c · ↑ RISING #dcfce7/#15803d · → STEADY #dbeafe/#1d4ed8 · ↓ COOLING #f3f4f6/#6b7280 · ⬜ QUIET #f9fafb/#9ca3af. W/W column: "New this week" / "Continued" / "Went quiet" / "Persistent ⚠️". Fewer than 2 history entries: muted italic row "Building history — check back next week".
-- Panel B — Persistent Signals (omit entirely if none): amber-left-border callout, "[Provider] — [topic] — [n] weeks running".
-- Panel C — Month Snapshot (omit if no LAST_MONTH_ENTRY): 2-column "30 Days Ago" vs "Today" — active provider count, client alert count, top themes.
-
-No refresh button. No connector calls from inside the HTML — it is a static snapshot.
-
-========== STEP 4: WRITE LOCAL FILE (REQUIRED) ==========
-Write the complete HTML with the Write tool to BOTH:
-- `<WORKING DIRECTORY>/ai-daily-brief-<YYYY-MM-DD>.html`
-- `<WORKING DIRECTORY>/ai-daily-brief.html` (stable "latest" pointer)
-This step is unconditional and must complete before steps 5–7.
-
-========== STEP 5: SAVE HISTORY (REQUIRED — NOT gated on the artifact) ==========
-Read history.json, append today's entry:
+========== STEP 3: WRITE content JSON ==========
+Write `<WORKING DIRECTORY>/content.json` with the Write tool — always this fixed name, overwriting yesterday's (the renderer archives a dated copy under `content/`) — in this shape (plain text; `**bold**` is the only markup):
+```json
 {
   "date": "YYYY-MM-DD",
-  "providers": { "[ProviderName]": { "headline": "[1-sentence summary or 'No update today']", "tags": ["tactical"|"strategic"|"alert"], "hasAlert": true|false, "alertReason": "[if hasAlert]", "active": true|false }, ... all 12 providers },
-  "topMoves": ["move1","move2","move3"],
-  "clientAlerts": ["alert1", ...],
-  "watchItems": ["item1", ...]
+  "client_alerts": [{"headline": "...", "body": "..."}],
+  "top_moves": [{"title": "...", "date_label": "Sept 10, 2026", "urgent": false, "body": "1–2 sentences", "tag": "tactical|strategic|watch|alert"}],
+  "providers": [{"name": "OpenAI", "display": "OpenAI", "headline": "1-sentence key signal", "detail": "2–4 sentences for the table", "tags": ["tactical"], "classification": "tactical|strategic|watch|alert|null", "active": true, "hasAlert": false, "alertReason": ""}],
+  "persistent_signals": [{"provider": "xAI", "text": "xAI — [topic] — [n] weeks running (...)"}],
+  "month_themes": {"then": "3 themes from the month-ago top moves", "now": "3 themes today"},
+  "habits": [{"task": "...", "tool": "...", "shift": "...", "type": "tactical|strategic|watch"}],
+  "community": [{"source": "r/ClaudeAI", "signal": "...", "so_what": "..."}],
+  "watch": [{"kind": "deadline", "title": "...", "body": "..."}],
+  "sources": "Sources consulted: ... (one sentence)"
 }
-Trim to the most recent 60 entries. Write back with the Write tool.
+```
+Use `"display": "xAI / Grok"` for xAI. `urgent: true` makes the move's date label red (ongoing/deadline items).
 
-========== STEP 6: SEND EMAIL DIRECTLY (REQUIRED — NOT gated on the artifact) ==========
-Call mcp__9a815f15-06b6-4c12-b516-de5f058e68d1__send_message directly (NOT create_draft — Chris confirmed 2026-09-08 that this should never sit as a draft) with:
+========== STEP 4: RENDER (REQUIRED) ==========
+Run exactly this command (no `cd`, no arguments — it reads `content.json`):
+`python3 /Users/chrisgiven/Documents/Claude/Scheduled/ai-daily-brief-refresh/brief.py render`
+It writes BOTH `ai-daily-brief-<YYYY-MM-DD>.html` and `ai-daily-brief.html`, verifies email-safe styling (no `<style>`, inline styles only, tables for layout), and appends today's entry to history.json (backup in history.json.bak, trimmed to 60). If it prints `"ok": false`, fix the content JSON and re-run. **A run that produces no HTML file is a FAILURE.**
+
+========== STEP 5: SEND EMAIL DIRECTLY (REQUIRED) ==========
+Read `<WORKING DIRECTORY>/ai-daily-brief.html` once and pass its contents verbatim as `htmlBody` to mcp__9a815f15-06b6-4c12-b516-de5f058e68d1__send_message (NOT create_draft — Chris confirmed 2026-09-08 this must never sit as a draft):
 - to: ["chris.given@gmail.com", "chris.given@wwt.com", "mikebannach@gmail.com", "David.africano@volarsecurity.com"]
-- subject: "AI Daily Brief — [today's date, e.g. July 25, 2026]"
-- htmlBody: the exact HTML from Step 3
-This sends the email immediately — no draft, no Apps Script, no 5-minute delay. If send_message fails, note the error in Step 8 and do not retry (do not fall back to create_draft).
+- subject: the `subject` value printed by the render step
+Exactly one send per run. If it fails, report the error; do not retry and do not fall back to create_draft.
 
-========== STEP 7: ARTIFACT MIRROR (BEST-EFFORT — LAST) ==========
-Call mcp__cowork__update_artifact with id "ai-daily-brief", update_summary "Daily refresh — [today's date]", and the Step 3 HTML. If it does not exist, try create_artifact with the same id. **One attempt. No retries. Failure here is not a run failure** — steps 4–6 already delivered. Capture the exact error text.
+========== STEP 6: ARTIFACT MIRROR (BEST-EFFORT — LAST) ==========
+Call mcp__cowork__update_artifact with id "ai-daily-brief", update_summary "Daily refresh — [today's date]", and the same HTML. If absent, try create_artifact once. No retries; failure is not a run failure.
 
-========== STEP 8: CONFIRM ==========
-Reply in 5 sentences: (1) the single biggest change to flag to Chris today, (2) any client-alert items, (3) the most notable trend signal (most active provider, persistent signals, providers gone quiet), (4) confirmation that the local HTML file, history.json, and email draft were all written — name the file path, (5) artifact mirror status: succeeded, or failed with the error text. If the artifact has failed 3+ consecutive runs, say so plainly.
+========== STEP 7: CONFIRM ==========
+Reply in 5 sentences: (1) the single biggest change today, (2) any client-alert items, (3) the most notable trend signal, (4) confirmation that the HTML file, history.json and the email were all done — name the file path, (5) artifact mirror status. If the artifact has failed 3+ consecutive runs, say so plainly.
