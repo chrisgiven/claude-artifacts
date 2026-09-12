@@ -530,8 +530,9 @@ footer .dot{color:var(--gold)}
         <div class="card-foot"><span class="tag hot">App</span><span class="tag">Dashboard</span><span class="go">Open →</span></div>
       </a>
 
-      <a class="card s-wip fade" href="https://localhost:8080">
-        <div class="card-meta"><span class="code">LAB / SNDMN</span><span>Local</span></div>
+      <!-- NAS-hosted: address injected from /services.json, which is NAS-only and gitignored. -->
+      <a class="card s-wip fade" data-svc-link="soundman">
+        <div class="card-meta"><span class="code">LAB / SNDMN</span><span>Live</span></div>
         <h3>AI Sound Engineer</h3>
         <p>Flask + OSC control of a Behringer XR18 with Claude in the loop — setlist management, room analysis, and EMM-6 measurement-mic capture for the band.</p>
         <div class="card-foot"><span class="tag hot">App</span><span class="tag">Python</span><span class="tag">OSC</span><span class="go">Open →</span></div>
@@ -545,7 +546,9 @@ footer .dot{color:var(--gold)}
         <div class="card-foot"><span class="tag hot">App</span><span class="tag">Python</span><span class="tag">Flask</span><span class="go">Open →</span></div>
       </a>
 
-      <a class="card s-wip fade" href="/order-up/">
+      <!-- NAS-hosted: address injected from /services.json. The static /order-up/ copy is a
+           pre-proxy build that asks for an API key in the browser; the container is current. -->
+      <a class="card s-wip fade" data-svc-link="orderup">
         <div class="card-meta"><span class="code">LAB / ORDUP</span><span>In progress</span></div>
         <h3>Order Up</h3>
         <p>Amazon purchase history in, AI-generated project and recipe ideas out. You already bought the parts — this tells you what they make.</p>
@@ -566,12 +569,12 @@ footer .dot{color:var(--gold)}
         <div class="card-foot"><span class="tag hot">Reference</span><span class="tag">Claude</span><span class="go">Open →</span></div>
       </a>
 
-      <div class="card s-live fade">
+      <a class="card s-live fade" href="/claude-skills/firecrawl/SKILL.md">
         <div class="card-meta"><span class="code">LAB / FCRWL</span><span>Live</span></div>
         <h3>Firecrawl Skill</h3>
         <p>Web research wired into consulting: EOL/EOS announcements, competitor signals, and compelling events scraped into clean, citable markdown.</p>
-        <div class="card-foot"><span class="tag hot">Tooling</span><span class="tag">Research</span></div>
-      </div>
+        <div class="card-foot"><span class="tag hot">Tooling</span><span class="tag">Research</span><span class="go">Open →</span></div>
+      </a>
 
       <a class="card s-live fade" href="/claude-artifacts/Artifacts/family-cookbook/">
         <div class="card-meta"><span class="code">LAB / CKBK</span><span>Live</span></div>
@@ -595,7 +598,8 @@ footer .dot{color:var(--gold)}
         <div class="card-foot"><span class="tag hot">App</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Claude</span><span class="go">Open →</span></div>
       </a>
 
-      <a class="card s-live fade" href="http://localhost:5173">
+      <!-- NAS-hosted: address injected from /services.json, which is NAS-only and gitignored. -->
+      <a class="card s-live fade" data-svc-link="bcdr">
         <div class="card-meta"><span class="code">LAB / BCDR</span><span>Live</span></div>
         <h3>BCDR Resilience Platform</h3>
         <p>Interactive prototype for enterprise business continuity, disaster recovery, and resilience posture analysis — dependency mapping, recovery orchestration, evidence tracking, and governance.</p>
