@@ -1,122 +1,5 @@
 [
   {
-    "date": "2026-05-25",
-    "providers": {
-      "OpenAI": {
-        "headline": "No new model. Memory personalization expanding to Plus/Pro. ChatGPT Images 2.0 rolling out.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": false
-      },
-      "Anthropic": {
-        "headline": "Claude Design (Anthropic Labs) launched — visual output tool. Claude Code v1.0.53 minor fixes. Managed Agents + Dreaming in beta.",
-        "tags": [
-          "strategic",
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Google Gemini": {
-        "headline": "Gemini Spark going live this week for AI Ultra subscribers. Gemini Omni Flash API rollout. Gemini 3.5 Pro internal use, rolling out next month.",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "xAI": {
-        "headline": "No new release. Grok Skills GA, Grok Connectors current. Grok Build beta ongoing.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": false
-      },
-      "Meta": {
-        "headline": "No new release. Llama 4 Scout/Maverick current. Muse Spark confirmed, no date.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Mistral": {
-        "headline": "No headline. Le Chat Work Mode + Medium 3.5 current.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Perplexity": {
-        "headline": "Computer now as Teams app. Space skills for team task packages GA. Kimi K2.5 Week 5, no resolution.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": true,
-        "alertReason": "Kimi K2.5 Week 5 ongoing.",
-        "active": true
-      },
-      "Microsoft 365 Copilot": {
-        "headline": "GPT-5.5 Instant + Claude Opus 4.7 in M365 Copilot. Claude default-on ongoing. SharePoint Copilot redesign.",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": true,
-        "alertReason": "Claude default-on DPA review outstanding Week 2.",
-        "active": true
-      },
-      "GitHub Copilot": {
-        "headline": "v1.0.53 multiline fix. T-7 days to billing June 1. Code review also consumes Actions minutes. Business/Enterprise bonus credits June–Sept.",
-        "tags": [
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "T-7 days. Code review burns Actions minutes. Cost projections critically overdue.",
-        "active": true
-      },
-      "Cursor": {
-        "headline": "No release since Cursor 2.5 (May 18). Cloud dev environments + Teams integration current.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Gamma": {
-        "headline": "No standalone release. Grok connector live.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": false
-      },
-      "Notion AI": {
-        "headline": "No new AI feature. Workers GA. Workers billing August 11.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": false
-      }
-    },
-    "topMoves": [
-      "GitHub Copilot T-7 days to billing — code review burns Actions minutes",
-      "Gemini Spark going live this week for AI Ultra",
-      "Anthropic Claude Design launches — visual output tool with Opus 4.7"
-    ],
-    "clientAlerts": [
-      "GitHub Copilot billing June 1 T-7, code review burns Actions minutes",
-      "Perplexity Kimi K2.5 Week 5",
-      "M365 Copilot Claude default-on DPA outstanding Week 2"
-    ],
-    "watchItems": [
-      "GitHub Copilot billing June 1 T-7",
-      "ChatGPT for Excel/Sheets preview ends June 2 T-8",
-      "Gemini 3.5 Pro next month",
-      "MS Claude Code sunset June 30 T-36",
-      "EU AI Act August 2026",
-      "Notion Workers billing August 11"
-    ]
-  },
-  {
     "date": "2026-05-28",
     "providers": {
       "OpenAI": {
@@ -7451,6 +7334,117 @@
       "Mistral Leanstral 1.5 retirement — Sept 30",
       "NIST SP 1353 comment period closes Sept 16",
       "Notion Mail standalone app winding down — Sept 22"
+    ]
+  },
+  {
+    "date": "2026-09-14",
+    "providers": {
+      "OpenAI": {
+        "headline": "GPT-6 Astra reached full GA across ChatGPT and the API, with a new full-duplex voice API (GPT-Live-1) and Images 2.5.",
+        "tags": [
+          "tactical",
+          "strategic"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "Sonnet 5's scheduled price increase was cancelled and Claude Code shipped a bug-fix release.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Google Gemini": {
+        "headline": "Gemini Live is pushing past chat into task automation with Personal Intelligence, Daily Brief, and Spark.",
+        "tags": [
+          "strategic"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "xAI": {
+        "headline": "Grok 4.7 slipped past its Sept 12 target again, even as Grok expands into Microsoft Copilot and gets native iPad/Android apps.",
+        "tags": [
+          "watch",
+          "strategic"
+        ],
+        "hasAlert": true,
+        "alertReason": "Grok now available inside Microsoft Copilot tenants",
+        "active": true
+      },
+      "Meta": {
+        "headline": "No new headline since Muse Spark 1.3 (Sept 2); the open-weights release remains undated.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Mistral": {
+        "headline": "Quiet since Sept 1 — OCR 4.1 GA and Agentic Search remain the latest ships.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "Perplexity": {
+        "headline": "No new headline today — Computer in Email, the Teams app, and expanded model access continue rolling out from August.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "Copilot Cowork got a substantial rebuild: renamed Automations, a GPT/Claude model picker in the prompt box, and a reasoning-effort slider.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "GitHub Copilot": {
+        "headline": "MAI-Code-1-Flash was deprecated across all Copilot surfaces (Sept 10); CLI v1.0.83 adds Windows taskbar status and custom agents.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Cursor": {
+        "headline": "No new ship today — Claude Fable 5.1 (added Sept 2) and self-hosted machines remain the latest features.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Gamma": {
+        "headline": "No headline release today — 87 days quiet since June 12.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "Workspace owners can now restrict which AI models Notion Agent and Custom Agents are allowed to use.",
+        "tags": [
+          "strategic"
+        ],
+        "hasAlert": false,
+        "active": true
+      }
+    },
+    "topMoves": [
+      "Grok expands into Microsoft Copilot while Grok 4.7 itself keeps slipping",
+      "Claude Sonnet 5's scheduled price hike didn't happen",
+      "CBTS acquires Recovery Point Systems"
+    ],
+    "clientAlerts": [
+      "Grok models now inside Microsoft Copilot"
+    ],
+    "watchItems": [
+      "NIST SP 1353 public comment period",
+      "Grok 4.7 launch keeps slipping",
+      "Mistral retires Leanstral 1.5",
+      "Meta's Muse Spark open-weights release",
+      "AI agent sprawl outpacing DR planning"
     ]
   }
 ]
