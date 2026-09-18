@@ -1,0 +1,114 @@
+{
+  "date": "2026-09-17",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {
+          "title": "FDC Putman (Netherlands) claimed by LockBit 5.0",
+          "tags": ["Newly claimed"],
+          "summary": "Dutch firm FDC Putman was listed as a victim by the LockBit 5.0 ransomware group on September 9, 2026.",
+          "source": {"name": "SharkStriker", "url": "https://sharkstriker.com/blog/top-10-ransomware-attack-of-2026/"}
+        },
+        {
+          "title": "Contreras Hermanos S.A. (Argentina) claimed by LockBit 5.0",
+          "tags": ["Newly claimed"],
+          "summary": "Argentine company Contreras Hermanos S.A. was named on the LockBit 5.0 leak site on September 9, 2026.",
+          "source": {"name": "SharkStriker", "url": "https://sharkstriker.com/blog/top-10-ransomware-attack-of-2026/"}
+        },
+        {
+          "title": "EMS1 (USA) claimed by Direwolf",
+          "tags": ["Newly claimed", "Healthcare"],
+          "summary": "US emergency-services media/data firm EMS1 was listed as a Direwolf ransomware victim on September 9, 2026.",
+          "source": {"name": "SharkStriker", "url": "https://sharkstriker.com/blog/top-10-ransomware-attack-of-2026/"}
+        },
+        {
+          "title": "Brent Electric Inc. (USA) claimed by Akira",
+          "tags": ["Newly claimed"],
+          "summary": "US electrical contractor Brent Electric Inc. was named on the Akira ransomware leak site on September 9, 2026.",
+          "source": {"name": "SharkStriker", "url": "https://sharkstriker.com/blog/top-10-ransomware-attack-of-2026/"}
+        },
+        {
+          "title": "Brentwood Country Club (USA) claimed by Akira",
+          "tags": ["Newly claimed"],
+          "summary": "Brentwood Country Club in the US was listed as an Akira ransomware victim on September 9, 2026.",
+          "source": {"name": "SharkStriker", "url": "https://sharkstriker.com/blog/top-10-ransomware-attack-of-2026/"}
+        },
+        {
+          "title": "Kido International nursery chain cyberattack fallout continues",
+          "tags": ["Critical", "Data exposure", "Education"],
+          "summary": "The UK/international nursery chain Kido International remains a reference case this cycle after attackers stole and briefly published data on young children to pressure the company.",
+          "source": {"name": "Wikipedia", "url": "https://en.wikipedia.org/wiki/Kido_International_cyberattack"}
+        }
+      ],
+      "note": "Named-victim detail this cycle skewed toward leak-site listings (LockBit 5.0, Akira, Direwolf) dated September 9; per-incident write-ups had not yet been published for most."
+    },
+    "outage": {
+      "items": [
+        {
+          "title": "Azure East US outage disrupted ChatGPT, Claude, and Grok",
+          "tags": ["Cloud", "Third-party"],
+          "summary": "An Azure East US outage on September 3, 2026 caused roughly 90 minutes of simultaneous disruption to ChatGPT, Claude, and Grok, illustrating shared hyperscaler-region dependency risk across unrelated SaaS vendors.",
+          "source": {"name": "Meridian Micro", "url": "https://www.meridian-micro.com/2026/09/08/azure-east-us-outage-september-2026-chatgpt-claude-grok-uk-smes-multi-cloud-resilience/"}
+        }
+      ],
+      "note": "No new named multi-service cloud outage surfaced in the past two weeks beyond the September 3 Azure East US incident; analyst trackers continue to flag AWS us-east-1, Azure, and Google Cloud as elevated-risk regions for 2026."
+    },
+    "cyber": {
+      "items": [
+        {
+          "title": "Cisco Secure Firewall Management Center auth bypass added to KEV",
+          "tags": ["Critical", "KEV add", "Emergency Directive"],
+          "summary": "CISA added CVE-2026-20079 (CVSS 10.0), an authentication bypass in Cisco Secure Firewall Management Center allowing unauthenticated root access, to its Known Exploited Vulnerabilities catalog with a September 12 federal patch deadline.",
+          "source": {"name": "The Hacker News", "url": "https://thehackernews.com/2026/09/cisa-flags-exploited-cisco-citrix.html"}
+        },
+        {
+          "title": "Citrix NetScaler ADC/Gateway auth bypass added to KEV",
+          "tags": ["Critical", "KEV add"],
+          "summary": "CVE-2026-19490 (CVSS 9.3), an authentication bypass in Citrix NetScaler ADC and NetScaler Gateway, was added to the CISA KEV catalog alongside the Cisco and Fortinet flaws, with a September 12 federal patch deadline.",
+          "source": {"name": "The Hacker News", "url": "https://thehackernews.com/2026/09/cisa-flags-exploited-cisco-citrix.html"}
+        },
+        {
+          "title": "Cisco ISE zero-day under active exploitation",
+          "tags": ["Zero-day", "Critical"],
+          "summary": "CISA flagged active exploitation of a Cisco Identity Services Engine zero-day enabling root-privilege command execution, urging federal agencies to patch within three days.",
+          "source": {"name": "SecurityWeek", "url": "https://www.securityweek.com/active-exploitation-triggers-emergency-patch-for-cisco-ise-zero-day/"}
+        },
+        {
+          "title": "Seven more exploited flaws added to CISA KEV (SonicWall, Artifactory, Switchvox, Starlette, Kestra, LiteLLM)",
+          "tags": ["KEV add", "Third-party"],
+          "summary": "CISA added seven actively exploited vulnerabilities spanning SonicWall, JFrog Artifactory, Sangoma Switchvox, Starlette, Kestra, and LiteLLM to its KEV catalog after real-world attacker use.",
+          "source": {"name": "The Hacker News", "url": "https://thehackernews.com/2026/09/cisa-adds-seven-exploited-flaws-as.html"}
+        },
+        {
+          "title": "Node.js RAT campaign exploits weaponized flaw, ~3,000 IPs targeted",
+          "tags": ["Critical", "Third-party"],
+          "summary": "A malicious campaign weaponized a recently disclosed flaw to deliver a feature-rich Node.js remote access trojan, with an estimated 3,000+ IP addresses targeted and 178 devices confirmed infected.",
+          "source": {"name": "The Hacker News", "url": "https://thehackernews.com/2026/09/cisa-adds-seven-exploited-flaws-as.html"}
+        }
+      ]
+    },
+    "physical": {
+      "items": [
+        {
+          "title": "FEMA major disaster declaration for Colorado (wildfires, flooding, mudslides)",
+          "tags": ["FEMA MDD", "Wildfire", "Flood"],
+          "summary": "A presidential major disaster declaration for public assistance was issued for Colorado on September 1, 2026, covering wildfire, flooding, and mudslide damage from an incident period of June 27–July 29, 2026.",
+          "source": {"name": "Federal Register", "url": "https://www.federalregister.gov/documents/2026/09/11/2026-18519/presidential-declaration-of-a-major-disaster-for-public-assistance-only-for-the-state-of-colorado"}
+        },
+        {
+          "title": "FEMA major disaster declaration amended for Texas (severe storms, tornadoes, flooding)",
+          "tags": ["FEMA MDD", "Flood"],
+          "summary": "A Texas major disaster declaration for severe storms, straight-line winds, tornadoes, and flooding (incident period July 12–August 4, 2026) was issued September 1 and amended September 9 and September 14, 2026.",
+          "source": {"name": "Federal Register", "url": "https://www.federalregister.gov/documents/2026/09/14/2026-18756/presidential-declaration-amendment-of-a-major-disaster-for-public-assistance-only-for-the-state-of"}
+        },
+        {
+          "title": "M 6.5 earthquake, 126 km NNE of Teluknaga, Indonesia",
+          "tags": ["M 6.5"],
+          "summary": "A magnitude 6.5 earthquake struck 126 km NNE of Teluknaga, Indonesia on September 11, 2026; USGS listed no tsunami threat and a green alert.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tgrk"}
+        }
+      ],
+      "note": "Search results for active September hurricane/typhoon/wildfire events were thin; the FEMA declarations above cover damage incident periods from earlier in the summer but were formally declared/amended this month."
+    }
+  }
+}
