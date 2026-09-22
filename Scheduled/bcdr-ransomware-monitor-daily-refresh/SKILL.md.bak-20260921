@@ -44,7 +44,7 @@ EMAIL RECIPIENTS: chris.given@gmail.com, chris.given@wwt.com, mikebannach@gmail.
 
 4. **Render (REQUIRED).** Run exactly (no `cd`, no arguments — it reads `content.json`): `python3 /Users/chrisgiven/Documents/Claude/Scheduled/bcdr-ransomware-monitor-daily-refresh/monitor.py render`. It writes BOTH `bcdr-monitor-<YYYY-MM-DD>.html` and `bcdr-monitor.html`, sets the metric counters from the item counts (keeping the `metric-value` parser hooks), and verifies email-safe styling. It prints JSON with `ok`, `counts`, `subject` and `text_body`. If `ok` is false, fix the content and re-run. **A run that produces no file on disk is a FAILURE.**
 
-5. **Send the email directly (REQUIRED — do not create a draft).** **Duplicate guard (added 2026-09-21), do this BEFORE sending:** call mcp__9a815f15-06b6-4c12-b516-de5f058e68d1__search_threads with query `in:sent subject:"BCDR & Ransomware Monitor" newer_than:16h`. If any message comes back, a run already mailed the recipients within the last 16 hours (e.g. a stalled earlier run that finished late after the Mac slept). SKIP send_message entirely, and report "email skipped: already sent at <time>". Only one email per feed per day. The HTML file is still required. Otherwise: Read `<OUTPUT DIRECTORY>/bcdr-monitor.html` once and call `mcp__9a815f15-06b6-4c12-b516-de5f058e68d1__send_message` with:
+5. **Send the email directly (REQUIRED — do not create a draft).** Read `<OUTPUT DIRECTORY>/bcdr-monitor.html` once and call `mcp__9a815f15-06b6-4c12-b516-de5f058e68d1__send_message` with:
    - to: ["chris.given@gmail.com", "chris.given@wwt.com", "mikebannach@gmail.com", "David.africano@volarsecurity.com"]
    - subject: the `subject` printed by the render step
    - htmlBody: the file contents, verbatim

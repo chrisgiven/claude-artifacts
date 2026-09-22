@@ -1,0 +1,78 @@
+{
+  "date": "2026-09-20",
+  "client_alerts": [
+    {
+      "headline": "Plugin4Shell: zero-click RCE via marketplace plugin verification bypass",
+      "body": "A critical flaw (disclosed Sept 17) lets a crafted plugin bypass marketplace commit verification because Git prefers a branch named like a 40-hex hash over the real commit object. Claude Code needs 2.1.179+ and Codex 0.146.0+; GitHub Copilot remains unpatched for non-github.com hosts (Bitbucket, self-hosted), and Google will not patch Gemini CLI. Ask clients running AI coding agents on DR/automation tooling to update now or disable marketplace auto-update for untrusted plugin sources."
+    }
+  ],
+  "top_moves": [
+    {
+      "title": "Plugin4Shell hits every major AI coding agent",
+      "date_label": "Sept 17, 2026",
+      "urgent": true,
+      "body": "A zero-click remote-code-execution bypass of marketplace plugin verification affects Claude Code, Codex, Copilot and Gemini CLI. Claude Code and Codex are patched; Copilot is partly unpatched and Gemini CLI will not be fixed. Update agents and lock down plugin auto-update before touching client environments.",
+      "tag": "alert"
+    },
+    {
+      "title": "Claude Code Projects beta: a coordinator runs parallel cloud threads",
+      "date_label": "Sept 17, 2026",
+      "urgent": false,
+      "body": "Anthropic redesigned Projects so one coordinator manages parallel Claude Code threads on separate branches with shared memory and a project library. It is rolling out to select Pro/Max users first, then Team, Enterprise and chat. It suits long multi-artifact work such as a full BCP/DR plan set.",
+      "tag": "strategic"
+    },
+    {
+      "title": "Gemini 3.8 Live models reach the API",
+      "date_label": "Sept 15, 2026",
+      "urgent": false,
+      "body": "Google shipped gemini-3.8-live and gemini-3.8-live-extended-thinking, audio-to-audio models with 131K input and 64K output. They follow the Gemini 3.8 Flash release and make voice-driven stakeholder walkthroughs and tabletop-exercise facilitation more practical.",
+      "tag": "tactical"
+    }
+  ],
+  "providers": [
+    {"name": "OpenAI", "display": "OpenAI", "headline": "No new dated announcement today; GPT-6 Astra, Images 2.5 and the Word add-in continue rolling out.", "detail": "GPT-6 Astra (Sept 3) is the current flagship, with about 72.6% on OSWorld 2.0 in roughly half the time of GPT-5.6 Sol. ChatGPT Images 2.5 (Sept 8) adds Sketch-to-image at half the latency. The Microsoft add-in now covers Word alongside Excel and PowerPoint, so drafting inside client-format documents is easier. Voice has been consolidated onto unified reasoning controls.", "tags": ["tactical"], "classification": "tactical", "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Anthropic", "display": "Anthropic", "headline": "Claude Code Projects beta launches; Cowork folds into standard Claude chats with Docs and Slides in beta.", "detail": "Projects (Sept 17) adds a coordinator over parallel cloud Claude Code threads, one branch each. Cowork merged into regular chats on Sept 16, with Docs and Slides in beta. Claude Code 2.1.179 patches Plugin4Shell, so update immediately. Fable 5.1's cache-read price cut and Enterprise Smart Reports continue rolling out.", "tags": ["strategic", "alert"], "classification": "strategic", "active": true, "hasAlert": true, "alertReason": "Plugin4Shell: update Claude Code to 2.1.179+"},
+    {"name": "Google Gemini", "display": "Google Gemini", "headline": "Gemini 3.8 Live and Live Extended Thinking arrive on the Gemini API.", "detail": "Both models (Sept 15) are audio-to-audio for real-time voice, with 131K input and 64K output. They sit alongside Gemini 3.8 Flash (Sept 2) and the now-GA Gemini Omni Flash video model. Workspace gained MCP integrations for Asana, Atlassian Rovo, HubSpot, QuickBooks, Monday and Salesforce. Google will not patch Gemini CLI for Plugin4Shell and points users to Antigravity.", "tags": ["tactical", "alert"], "classification": "tactical", "active": true, "hasAlert": true, "alertReason": "Gemini CLI unpatched for Plugin4Shell"},
+    {"name": "xAI", "display": "xAI / Grok", "headline": "Grok 4.7 still not shipped after its Sept 12 target; Grok Bot for enterprises is the live news.", "detail": "Grok 4.6 (Aug 12) remains the stable release. Grok 4.7 has slipped from Aug 22 to 'about 10 days' from Sept 2 and is now past that date. Grok Bot gives enterprises autonomous workers with access, network and audit controls. Treat launch dates as unreliable.", "tags": ["watch"], "classification": "watch", "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Meta", "display": "Meta", "headline": "No new headline today.", "detail": "No Meta release found. Muse Spark (April 2026) replaced Llama as the flagship and the company has shifted toward closed models. No open-weight Llama successor is confirmed.", "tags": [], "classification": "null", "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Mistral", "display": "Mistral", "headline": "No new headline; OCR 4.1 is GA and Leanstral 1.5 retires Sept 30.", "detail": "OCR 4.1 is now generally available and Agentic Search lets AI systems navigate and verify complex documents. The lineup is Medium 3.5, Small 4, Large 3 and Ministral 3. OCR and document retrieval are relevant to digesting client policy binders.", "tags": ["watch"], "classification": "watch", "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Perplexity", "display": "Perplexity", "headline": "No material dated update today; Agent API custom MCP connectors and Computer effort controls are current.", "detail": "Custom connectors let you bring your own MCP server with credentials stored by Perplexity. The remote MCP server now supports OAuth sign-in. Computer adds Light to Ultra effort controls. Pro and Max subscribers have eight models including Claude Sonnet 5 and GPT-5.6 Terra.", "tags": ["tactical"], "classification": "tactical", "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Microsoft 365 Copilot", "display": "Microsoft 365 Copilot", "headline": "No new dated announcement today; Cowork model picker, reasoning slider and Facilitator web answers continue rolling out.", "detail": "The Cowork model picker now sits in the prompt box, split into GPT and Claude sections, with a reasoning-effort slider. Chat responses can be shared by link, and Excel adds finance skills and trusted data connectors. Facilitator can post web answers to unanswered meeting questions with Copilot Premium.", "tags": ["tactical"], "classification": "tactical", "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "GitHub Copilot", "display": "GitHub Copilot", "headline": "Copilot Auto tiers land, but Plugin4Shell remains unpatched off github.com.", "detail": "Auto now offers efficiency, balance and intelligence tiers (Sept 14). Copilot CLI improves prompt recall, session resume and MCP reliability. Model deprecations still take effect in October. GitHub says github.com rejects SHA-shaped branch names, but Bitbucket and self-hosted remotes stay exposed.", "tags": ["alert"], "classification": "alert", "active": true, "hasAlert": true, "alertReason": "Plugin4Shell unpatched for non-github.com hosts"},
+    {"name": "Cursor", "display": "Cursor", "headline": "No new headline today.", "detail": "No Cursor release found. Coverage notes Cursor is now owned by SpaceX, which matters for vendor-risk reviews of AI coding tools.", "tags": [], "classification": "null", "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Gamma", "display": "Gamma", "headline": "No release since June 12; the extended quiet stretch continues.", "detail": "No Gamma news found again. For executive decks, rely on other tools until it ships something.", "tags": [], "classification": "null", "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Notion AI", "display": "Notion AI", "headline": "Notion 3.7 ships shared agent Skills for whole teams and 50% faster AI Search.", "detail": "Skills (Sept 15) are reusable team instructions, such as a monthly business review in your format, kept in a shared library. AI Search is about 50% faster. On Sept 9, workspace owners gained per-workspace control over which models Notion Agent and Custom Agents can use.", "tags": ["tactical"], "classification": "tactical", "active": true, "hasAlert": false, "alertReason": ""}
+  ],
+  "persistent_signals": [
+    {"provider": "xAI", "text": "xAI — Grok 4.7 launch slippage — 2 weeks running (Sept 12 target passed without a release)"},
+    {"provider": "Gamma", "text": "Gamma — no release since June 12 — extended quiet stretch, now over 14 weeks"},
+    {"provider": "GitHub Copilot", "text": "GitHub Copilot — model deprecation wave and tooling churn — 2 weeks running (October cutoffs)"},
+    {"provider": "Notion AI", "text": "Notion AI — AI model governance and agent controls — 2 weeks running (model controls Sept 9, shared Skills Sept 15)"}
+  ],
+  "month_themes": {
+    "then": "No month-ago snapshot available yet in history.",
+    "now": "1) AI coding-agent supply-chain security (Plugin4Shell). 2) Parallel and coordinated agents (Claude Projects, Cowork, Copilot Auto). 3) Real-time voice and multi-model choice (Gemini 3.8 Live, Copilot model picker)."
+  },
+  "habits": [
+    {"task": "BCP/DR plan narratives & runbooks", "tool": "Claude Code Projects (beta) or Claude Fable 5.1", "shift": "Let a coordinator run parallel threads for plan sections, runbooks and appendices with shared memory. Update Claude Code to 2.1.179+ first and keep plugin auto-update off.", "type": "tactical"},
+    {"task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)", "tool": "Claude or GPT-6 Astra, checked against primary text", "shift": "Ask for clause-level mappings, then verify against the standard. Watch NIST's zero-draft AI documentation guidance (comments closed Sept 16) for citable material.", "type": "watch"},
+    {"task": "Vendor/architecture research", "tool": "Perplexity (Pro/Max multi-model) or Gemini 3.8 Flash", "shift": "Use Perplexity's model choice for cited comparisons. Use Mistral Agentic Search or OCR 4.1 to digest long vendor documents.", "type": "tactical"},
+    {"task": "Client proposals & SOWs", "tool": "ChatGPT with the Word add-in (GPT-6 Astra)", "shift": "Draft and revise directly in Word from notes, preserving headings and formatting in your SOW template.", "type": "tactical"},
+    {"task": "Executive decks", "tool": "Claude Docs and Slides (beta) or ChatGPT PowerPoint add-in", "shift": "Try Claude's new Slides beta for first drafts. Gamma has been silent since June, so don't wait on it.", "type": "watch"},
+    {"task": "Stakeholder audio walkthroughs", "tool": "Gemini 3.8 Live / Live Extended Thinking", "shift": "Prototype voice-driven walkthroughs or tabletop facilitation on the new Live models. Not yet a client deliverable, so pilot internally.", "type": "strategic"},
+    {"task": "Client advisory on AI data risk", "tool": "Plugin4Shell brief plus Notion/Copilot governance controls", "shift": "Add coding-agent supply-chain risk and per-workspace model allow-lists to AI data-risk advisories. Recommend inventorying agents with plugin marketplaces.", "type": "strategic"}
+  ],
+  "community": [
+    {"source": "Dev press (Reddit unavailable)", "signal": "Plugin4Shell dominates developer coverage this week. Reddit search returned no dated top posts today, so this reflects developer press rather than subreddit engagement.", "so_what": "Assume clients' engineers are asking about it. Have an update-and-lock-down answer ready."},
+    {"source": "Dev press (Reddit unavailable)", "signal": "Gemini CLI not being patched, with users pushed to Antigravity, is a notable vendor-support signal.", "so_what": "Unpatched tools with no fix are a vendor-risk finding for any client standardizing on them."},
+    {"source": "r/LocalLLaMA (stats only)", "signal": "Top posts this week average about 1k points and 255 comments, but specific threads could not be retrieved.", "so_what": "No actionable local-model signal today. Meta's silence on open weights leaves open-model interest to other vendors."}
+  ],
+  "watch": [
+    {"kind": "security", "title": "Plugin4Shell patch status for Copilot", "body": "GitHub Copilot is unpatched for Bitbucket and self-hosted remotes. Watch for a fix or a client-facing advisory."},
+    {"kind": "deadline", "title": "Leanstral 1.5 retires Sept 30", "body": "Mistral retires labs-leanstral-1-5 on Sept 30. Only relevant if any client workflow calls that model."},
+    {"kind": "deadline", "title": "GitHub Copilot model deprecation wave (October)", "body": "Selected Copilot models are deprecated across chat, edits, agent modes and completions, with cutoffs in October. Check any pinned model settings."},
+    {"kind": "watch", "title": "Grok 4.7 launch", "body": "Grok 4.7 has missed its Sept 12 target. A release, or another slip, is likely in the next two weeks."},
+    {"kind": "watch", "title": "Claude Projects expansion to Team and Enterprise", "body": "Currently limited to select Pro/Max users. Expansion to Team, Enterprise and chat is expected in the coming weeks."}
+  ],
+  "sources": "Sources consulted: Releasebot, OpenAI/Anthropic/Notion/Mistral release notes, Microsoft Learn and UC Today, the Dev Weekly Sept 14-20 roundup, CSA research on NIST SP 1353, and BCI/DRJ coverage. Reddit search returned no dated posts."
+}

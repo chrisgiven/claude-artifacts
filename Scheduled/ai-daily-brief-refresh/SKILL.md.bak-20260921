@@ -76,7 +76,6 @@ Run exactly this command (no `cd`, no arguments — it reads `content.json`):
 It writes BOTH `ai-daily-brief-<YYYY-MM-DD>.html` and `ai-daily-brief.html`, verifies email-safe styling (no `<style>`, inline styles only, tables for layout), and appends today's entry to history.json (backup in history.json.bak, trimmed to 60). If it prints `"ok": false`, fix the content JSON and re-run. **A run that produces no HTML file is a FAILURE.**
 
 ========== STEP 5: SEND EMAIL DIRECTLY (REQUIRED) ==========
-**Duplicate guard (added 2026-09-21), do this BEFORE sending:** call mcp__9a815f15-06b6-4c12-b516-de5f058e68d1__search_threads with query `in:sent subject:"AI Daily Brief" newer_than:16h`. If any message comes back, a run already mailed the recipients within the last 16 hours (e.g. a stalled earlier run that finished late after the Mac slept). SKIP send_message entirely, and report "email skipped: already sent at <time>". Only one email per feed per day. The HTML file is still required.
 Read `<WORKING DIRECTORY>/ai-daily-brief.html` once and pass its contents verbatim as `htmlBody` to mcp__9a815f15-06b6-4c12-b516-de5f058e68d1__send_message (NOT create_draft — Chris confirmed 2026-09-08 this must never sit as a draft):
 - to: ["chris.given@gmail.com", "chris.given@wwt.com", "mikebannach@gmail.com", "David.africano@volarsecurity.com"]
 - subject: the `subject` value printed by the render step

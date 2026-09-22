@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Daily Brief — September 20, 2026</title>
+</head>
+<body style="margin:0; padding:0; background-color:#fafafa; color:#1a1a1a; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size:15px; line-height:1.55;">
+
+<div style="max-width:900px; margin:0 auto; padding:0 16px 40px;">
+
+  <!-- 1. HEADER -->
+  <table style="width:100%; border-collapse:collapse; margin:20px 0 4px;">
+    <tr>
+      <td style="vertical-align:bottom; padding:0;">
+        <h1 style="margin:0 0 4px; font-size:26px; font-weight:700; color:#1a1a1a; letter-spacing:-0.01em;">AI Daily Brief</h1>
+        <div style="font-size:13px; color:#6b7280;">Prepared for Chris G. — IT Consultant, BCP/DR &amp; Resilience</div>
+      </td>
+      <td style="vertical-align:bottom; text-align:right; padding:0;">
+        <div style="font-size:15px; font-weight:700; color:#1a1a1a;">September 20, 2026</div>
+        <div style="font-size:11px; color:#9ca3af;">Refreshes daily at 6:00 AM local</div>
+      </td>
+    </tr>
+  </table>
+  <div style="height:3px; background-color:#1e293b; margin:0 0 22px;"></div>
+
+  <!-- 2. CLIENT ALERT -->
+  <div style="background-color:#fffbea; border-left:4px solid #c99400; border-radius:0 8px 8px 0; padding:14px 18px; margin:0 0 26px;">
+    <div style="font-size:13px; font-weight:700; color:#7c5e00; text-transform:uppercase; letter-spacing:0.06em; margin:0 0 10px;">&#9888; BCP/DR Client Alert — 1 Active Item</div>
+    <p style="margin:0; font-size:14px; color:#3f3000;"><strong style="color:#1a1a1a;">Plugin4Shell: zero-click RCE via marketplace plugin verification bypass</strong> A critical flaw (disclosed Sept 17) lets a crafted plugin bypass marketplace commit verification because Git prefers a branch named like a 40-hex hash over the real commit object. Claude Code needs 2.1.179+ and Codex 0.146.0+; GitHub Copilot remains unpatched for non-github.com hosts (Bitbucket, self-hosted), and Google will not patch Gemini CLI. Ask clients running AI coding agents on DR/automation tooling to update now or disable marketplace auto-update for untrusted plugin sources.</p>
+  </div>
+
+  <!-- 3. TOP 3 MOVES -->
+  <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#6b7280; border-bottom:1px solid #e5e7eb; padding-bottom:7px; margin:0 0 14px;">Top 3 Moves of the Day</div>
+  <table style="width:100%; border-collapse:separate; border-spacing:10px 0; margin:0 0 28px;">
+    <tr>
+      <td style="width:33%; vertical-align:top; background-color:#ffffff; border:1px solid #e5e7eb; border-radius:8px; padding:15px;">
+        <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#9ca3af; margin:0 0 6px;">Move #1</div>
+        <div style="font-size:15px; font-weight:700; color:#1a1a1a; margin:0 0 5px; line-height:1.3;">Plugin4Shell hits every major AI coding agent</div>
+        <div style="font-size:11px; color:#b91c1c; font-weight:600; margin:0 0 8px;">Sept 17, 2026</div>
+        <div style="font-size:13px; color:#4b5563; margin:0 0 10px;">A zero-click remote-code-execution bypass of marketplace plugin verification affects Claude Code, Codex, Copilot and Gemini CLI. Claude Code and Codex are patched; Copilot is partly unpatched and Gemini CLI will not be fixed. Update agents and lock down plugin auto-update before touching client environments.</div>
+        <div><span style="display:inline-block; padding:2px 9px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fee2e2; color:#b91c1c;">Client Alert</span></div>
+      </td>
+      <td style="width:33%; vertical-align:top; background-color:#ffffff; border:1px solid #e5e7eb; border-radius:8px; padding:15px;">
+        <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#9ca3af; margin:0 0 6px;">Move #2</div>
+        <div style="font-size:15px; font-weight:700; color:#1a1a1a; margin:0 0 5px; line-height:1.3;">Claude Code Projects beta: a coordinator runs parallel cloud threads</div>
+        <div style="font-size:11px; color:#6b7280; font-weight:600; margin:0 0 8px;">Sept 17, 2026</div>
+        <div style="font-size:13px; color:#4b5563; margin:0 0 10px;">Anthropic redesigned Projects so one coordinator manages parallel Claude Code threads on separate branches with shared memory and a project library. It is rolling out to select Pro/Max users first, then Team, Enterprise and chat. It suits long multi-artifact work such as a full BCP/DR plan set.</div>
+        <div><span style="display:inline-block; padding:2px 9px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></div>
+      </td>
+      <td style="width:33%; vertical-align:top; background-color:#ffffff; border:1px solid #e5e7eb; border-radius:8px; padding:15px;">
+        <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#9ca3af; margin:0 0 6px;">Move #3</div>
+        <div style="font-size:15px; font-weight:700; color:#1a1a1a; margin:0 0 5px; line-height:1.3;">Gemini 3.8 Live models reach the API</div>
+        <div style="font-size:11px; color:#6b7280; font-weight:600; margin:0 0 8px;">Sept 15, 2026</div>
+        <div style="font-size:13px; color:#4b5563; margin:0 0 10px;">Google shipped gemini-3.8-live and gemini-3.8-live-extended-thinking, audio-to-audio models with 131K input and 64K output. They follow the Gemini 3.8 Flash release and make voice-driven stakeholder walkthroughs and tabletop-exercise facilitation more practical.</div>
+        <div><span style="display:inline-block; padding:2px 9px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></div>
+      </td>
+    </tr>
+  </table>
+
+  <!-- 4. TREND TRACKER -->
+  <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#6b7280; border-bottom:1px solid #e5e7eb; padding-bottom:7px; margin:0 0 14px;">Trend Tracker</div>
+  <div style="background-color:#1e293b; color:#ffffff; padding:12px 16px; border-radius:8px 8px 0 0;">
+    <div style="font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;">Panel A &mdash; Provider Velocity</div>
+    <div style="font-size:11px; color:#94a3b8; margin-top:3px;">Velocity computed over the last 4 recorded entries (Sept 16, 17, 18, 20). W/W compares against Sept 13 (closest entry to 7 days ago).</div>
+  </div>
+  <table style="width:100%; border-collapse:collapse; background-color:#ffffff; border:1px solid #e5e7eb; border-top:none; margin:0 0 18px; font-size:13px;">
+    <thead>
+      <tr>
+        <th style="text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Provider</th>
+        <th style="text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">30-Day Velocity</th>
+        <th style="text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">W/W Change</th>
+        <th style="text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Key Signal Today</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">OpenAI</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#dcfce7; color:#15803d;">&#8593; RISING</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">&mdash;</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No new dated announcement today; GPT-6 Astra, Images 2.5 and the Word add-in continue rolling out.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Anthropic</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#fee2e2; color:#b91c1c;">&#128293; HOT</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#15803d; font-weight:600;">New this week</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Claude Code Projects beta launches; Cowork folds into standard Claude chats with Docs and Slides in beta.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Google Gemini</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#fee2e2; color:#b91c1c;">&#128293; HOT</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#15803d; font-weight:600;">New this week</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Gemini 3.8 Live and Live Extended Thinking arrive on the Gemini API.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">xAI</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#dcfce7; color:#15803d;">&#8593; RISING</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#b91c1c; font-weight:600;">Went quiet</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Grok 4.7 still not shipped after its Sept 12 target; Grok Bot for enterprises is the live news.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Meta</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">&mdash;</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No new headline today.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Mistral</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f3f4f6; color:#6b7280;">&#8595; COOLING</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">&mdash;</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No new headline; OCR 4.1 is GA and Leanstral 1.5 retires Sept 30.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Perplexity</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#dbeafe; color:#1d4ed8;">&#8594; STEADY</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">&mdash;</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No material dated update today; Agent API custom MCP connectors and Computer effort controls are current.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Microsoft 365 Copilot</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#dcfce7; color:#15803d;">&#8593; RISING</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">&mdash;</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No new dated announcement today; Cowork model picker, reasoning slider and Facilitator web answers continue rolling out.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">GitHub Copilot</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#fee2e2; color:#b91c1c;">&#128293; HOT</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#b45309; font-weight:600;">Persistent &#9888;&#65039;</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Copilot Auto tiers land, but Plugin4Shell remains unpatched off github.com.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Cursor</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">Gone quiet &mdash; 15 days</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No new headline today.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Gamma</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">Gone quiet &mdash; 91 days</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No release since June 12; the extended quiet stretch continues.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; font-weight:600;">Notion AI</td>
+        <td style="padding:9px 12px;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#dcfce7; color:#15803d;">&#8593; RISING</span></td>
+        <td style="padding:9px 12px; color:#b45309; font-weight:600;">Persistent &#9888;&#65039;</td>
+        <td style="padding:9px 12px; color:#4b5563;">Notion 3.7 ships shared agent Skills for whole teams and 50% faster AI Search.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="background-color:#fffbea; border-left:4px solid #c99400; border-radius:0 8px 8px 0; padding:12px 16px; margin:0 0 18px;">
+    <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#7c5e00; margin:0 0 8px;">Panel B &mdash; Persistent Signals</div>
+    <p style="margin:0 0 6px; font-size:13px; color:#3f3000;">xAI — Grok 4.7 launch slippage — 2 weeks running (Sept 12 target passed without a release)</p>
+    <p style="margin:0 0 6px; font-size:13px; color:#3f3000;">Gamma — no release since June 12 — extended quiet stretch, now over 14 weeks</p>
+    <p style="margin:0 0 6px; font-size:13px; color:#3f3000;">GitHub Copilot — model deprecation wave and tooling churn — 2 weeks running (October cutoffs)</p>
+    <p style="margin:0; font-size:13px; color:#3f3000;">Notion AI — AI model governance and agent controls — 2 weeks running (model controls Sept 9, shared Skills Sept 15)</p>
+  </div>
+
+  <!-- 5. PROVIDER BY PROVIDER -->
+  <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#6b7280; border-bottom:1px solid #e5e7eb; padding-bottom:7px; margin:0 0 14px;">Provider-by-Provider Updates</div>
+  <table style="width:100%; border-collapse:collapse; background-color:#ffffff; border:1px solid #e5e7eb; margin:0 0 28px; font-size:13px;">
+    <thead>
+      <tr>
+        <th style="width:16%; text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Provider</th>
+        <th style="width:62%; text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">What Changed</th>
+        <th style="width:22%; text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Classification</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">OpenAI</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">GPT-6 Astra (Sept 3) is the current flagship, with about 72.6% on OSWorld 2.0 in roughly half the time of GPT-5.6 Sol. ChatGPT Images 2.5 (Sept 8) adds Sketch-to-image at half the latency. The Microsoft add-in now covers Word alongside Excel and PowerPoint, so drafting inside client-format documents is easier. Voice has been consolidated onto unified reasoning controls.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Anthropic</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Projects (Sept 17) adds a coordinator over parallel cloud Claude Code threads, one branch each. Cowork merged into regular chats on Sept 16, with Docs and Slides in beta. Claude Code 2.1.179 patches Plugin4Shell, so update immediately. Fable 5.1's cache-read price cut and Enterprise Smart Reports continue rolling out.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Google Gemini</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Both models (Sept 15) are audio-to-audio for real-time voice, with 131K input and 64K output. They sit alongside Gemini 3.8 Flash (Sept 2) and the now-GA Gemini Omni Flash video model. Workspace gained MCP integrations for Asana, Atlassian Rovo, HubSpot, QuickBooks, Monday and Salesforce. Google will not patch Gemini CLI for Plugin4Shell and points users to Antigravity.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">xAI / Grok</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Grok 4.6 (Aug 12) remains the stable release. Grok 4.7 has slipped from Aug 22 to 'about 10 days' from Sept 2 and is now past that date. Grok Bot gives enterprises autonomous workers with access, network and audit controls. Treat launch dates as unreliable.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fef3c7; color:#92400e;">Watch</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Meta</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No Meta release found. Muse Spark (April 2026) replaced Llama as the flagship and the company has shifted toward closed models. No open-weight Llama successor is confirmed.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Mistral</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">OCR 4.1 is now generally available and Agentic Search lets AI systems navigate and verify complex documents. The lineup is Medium 3.5, Small 4, Large 3 and Ministral 3. OCR and document retrieval are relevant to digesting client policy binders.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fef3c7; color:#92400e;">Watch</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Perplexity</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Custom connectors let you bring your own MCP server with credentials stored by Perplexity. The remote MCP server now supports OAuth sign-in. Computer adds Light to Ultra effort controls. Pro and Max subscribers have eight models including Claude Sonnet 5 and GPT-5.6 Terra.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Microsoft 365 Copilot</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">The Cowork model picker now sits in the prompt box, split into GPT and Claude sections, with a reasoning-effort slider. Chat responses can be shared by link, and Excel adds finance skills and trusted data connectors. Facilitator can post web answers to unanswered meeting questions with Copilot Premium.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">GitHub Copilot</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Auto now offers efficiency, balance and intelligence tiers (Sept 14). Copilot CLI improves prompt recall, session resume and MCP reliability. Model deprecations still take effect in October. GitHub says github.com rejects SHA-shaped branch names, but Bitbucket and self-hosted remotes stay exposed.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fee2e2; color:#b91c1c;">Client Alert</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Cursor</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No Cursor release found. Coverage notes Cursor is now owned by SpaceX, which matters for vendor-risk reviews of AI coding tools.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Gamma</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No Gamma news found again. For executive decks, rely on other tools until it ships something.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; font-weight:700; vertical-align:top;">Notion AI</td>
+        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">Skills (Sept 15) are reusable team instructions, such as a monthly business review in your format, kept in a shared library. AI Search is about 50% faster. On Sept 9, workspace owners gained per-workspace control over which models Notion Agent and Custom Agents can use.</td>
+        <td style="padding:10px 12px; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 6. SHIFT YOUR HABITS -->
+  <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#6b7280; border-bottom:1px solid #e5e7eb; padding-bottom:7px; margin:0 0 14px;">Shift Your Habits &mdash; BCP/DR Consulting Workflow</div>
+  <table style="width:100%; border-collapse:collapse; background-color:#ffffff; border:1px solid #e5e7eb; margin:0 0 28px; font-size:13px;">
+    <thead>
+      <tr>
+        <th style="width:22%; text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Task</th>
+        <th style="width:18%; text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Current Tool</th>
+        <th style="width:45%; text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Recommended Shift</th>
+        <th style="width:15%; text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">BCP/DR plan narratives &amp; runbooks</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Claude Code Projects (beta) or Claude Fable 5.1</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Let a coordinator run parallel threads for plan sections, runbooks and appendices with shared memory. Update Claude Code to 2.1.179+ first and keep plugin auto-update off.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Claude or GPT-6 Astra, checked against primary text</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Ask for clause-level mappings, then verify against the standard. Watch NIST's zero-draft AI documentation guidance (comments closed Sept 16) for citable material.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fef3c7; color:#92400e;">Watch</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Vendor/architecture research</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Perplexity (Pro/Max multi-model) or Gemini 3.8 Flash</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Use Perplexity's model choice for cited comparisons. Use Mistral Agentic Search or OCR 4.1 to digest long vendor documents.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Client proposals &amp; SOWs</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">ChatGPT with the Word add-in (GPT-6 Astra)</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Draft and revise directly in Word from notes, preserving headings and formatting in your SOW template.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Executive decks</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Claude Docs and Slides (beta) or ChatGPT PowerPoint add-in</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Try Claude's new Slides beta for first drafts. Gamma has been silent since June, so don't wait on it.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fef3c7; color:#92400e;">Watch</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Stakeholder audio walkthroughs</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Gemini 3.8 Live / Live Extended Thinking</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Prototype voice-driven walkthroughs or tabletop facilitation on the new Live models. Not yet a client deliverable, so pilot internally.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; font-weight:600; vertical-align:top;">Client advisory on AI data risk</td>
+        <td style="padding:10px 12px; color:#6b7280; vertical-align:top;">Plugin4Shell brief plus Notion/Copilot governance controls</td>
+        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">Add coding-agent supply-chain risk and per-workspace model allow-lists to AI data-risk advisories. Recommend inventorying agents with plugin marketplaces.</td>
+        <td style="padding:10px 12px; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 7. COMMUNITY SIGNAL -->
+  <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#6b7280; border-bottom:1px solid #e5e7eb; padding-bottom:7px; margin:0 0 14px;">Community Signal</div>
+  <table style="width:100%; border-collapse:collapse; background-color:#ffffff; border:1px solid #e5e7eb; margin:0 0 28px; font-size:13px;">
+    <thead>
+      <tr>
+        <th style="width:18%; text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Source</th>
+        <th style="width:41%; text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Signal</th>
+        <th style="width:41%; text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">So What</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Dev press (Reddit unavailable)</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Plugin4Shell dominates developer coverage this week. Reddit search returned no dated top posts today, so this reflects developer press rather than subreddit engagement.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Assume clients' engineers are asking about it. Have an update-and-lock-down answer ready.</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Dev press (Reddit unavailable)</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Gemini CLI not being patched, with users pushed to Antigravity, is a notable vendor-support signal.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Unpatched tools with no fix are a vendor-risk finding for any client standardizing on them.</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; font-weight:600; vertical-align:top;">r/LocalLLaMA (stats only)</td>
+        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">Top posts this week average about 1k points and 255 comments, but specific threads could not be retrieved.</td>
+        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">No actionable local-model signal today. Meta's silence on open weights leaves open-model interest to other vendors.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 8. WATCH LIST -->
+  <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#6b7280; border-bottom:1px solid #e5e7eb; padding-bottom:7px; margin:0 0 24px;">Watch List &mdash; Next 7&ndash;14 Days</div>
+  <table style="width:100%; border-collapse:separate; border-spacing:0 8px; margin:0 0 24px;">
+    <tr>
+      <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #b91c1c; border-radius:0 8px 8px 0; padding:13px 16px;">
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#b91c1c; margin:0 0 4px;">&#9888; Security</div>
+        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Plugin4Shell patch status for Copilot</div>
+        <div style="font-size:13px; color:#4b5563;">GitHub Copilot is unpatched for Bitbucket and self-hosted remotes. Watch for a fix or a client-facing advisory.</div>
+      </td>
+    </tr>
+    <tr>
+      <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #92400e; border-radius:0 8px 8px 0; padding:13px 16px;">
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#92400e; margin:0 0 4px;">&#128176; Deadline</div>
+        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Leanstral 1.5 retires Sept 30</div>
+        <div style="font-size:13px; color:#4b5563;">Mistral retires labs-leanstral-1-5 on Sept 30. Only relevant if any client workflow calls that model.</div>
+      </td>
+    </tr>
+    <tr>
+      <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #92400e; border-radius:0 8px 8px 0; padding:13px 16px;">
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#92400e; margin:0 0 4px;">&#128176; Deadline</div>
+        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">GitHub Copilot model deprecation wave (October)</div>
+        <div style="font-size:13px; color:#4b5563;">Selected Copilot models are deprecated across chat, edits, agent modes and completions, with cutoffs in October. Check any pinned model settings.</div>
+      </td>
+    </tr>
+    <tr>
+      <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #6d28d9; border-radius:0 8px 8px 0; padding:13px 16px;">
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#6d28d9; margin:0 0 4px;">&#128269; Watch</div>
+        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Grok 4.7 launch</div>
+        <div style="font-size:13px; color:#4b5563;">Grok 4.7 has missed its Sept 12 target. A release, or another slip, is likely in the next two weeks.</div>
+      </td>
+    </tr>
+    <tr>
+      <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #6d28d9; border-radius:0 8px 8px 0; padding:13px 16px;">
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#6d28d9; margin:0 0 4px;">&#128269; Watch</div>
+        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Claude Projects expansion to Team and Enterprise</div>
+        <div style="font-size:13px; color:#4b5563;">Currently limited to select Pro/Max users. Expansion to Team, Enterprise and chat is expected in the coming weeks.</div>
+      </td>
+    </tr>
+  </table>
+
+  <!-- 9. FOOTER -->
+  <div style="border-top:1px solid #e5e7eb; padding-top:14px; margin-top:8px;">
+    <p style="margin:0 0 6px; font-size:12px; color:#6b7280;"><strong style="color:#1a1a1a;">AI Daily Brief &mdash; September 20, 2026</strong> &nbsp;|&nbsp; Prepared for Chris G., IT Consultant, BCP/DR &amp; Resilience</p>
+    <p style="margin:0 0 6px; font-size:11px; color:#9ca3af; line-height:1.5;">Sources consulted: Releasebot, OpenAI/Anthropic/Notion/Mistral release notes, Microsoft Learn and UC Today, the Dev Weekly Sept 14-20 roundup, CSA research on NIST SP 1353, and BCI/DRJ coverage. Reddit search returned no dated posts.</p>
+    <p style="margin:0; font-size:11px; color:#9ca3af;">Generated by Claude (Anthropic) &middot; Automated daily brief &middot; Static snapshot, no live connections.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
