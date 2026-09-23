@@ -1,129 +1,5 @@
 [
   {
-    "date": "2026-06-19",
-    "providers": {
-      "OpenAI": {
-        "headline": "OpenAI Partner Network launched June 18. Health Intelligence improvements. Scheduled Tasks GA. GPT-4.5 retiring June 27 (T-8 days). No new model for 22+ days.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Anthropic": {
-        "headline": "Fable 5/Mythos 5 suspended Day 7 (U.S. BIS export control). Subscription access ends June 22 (T-3 DAYS). Enterprise Okta MCP connector launched for centralized auth. Managed Agents cron/CLI/vault beta. 20+ legal MCP connectors GA.",
-        "tags": [
-          "alert",
-          "strategic"
-        ],
-        "hasAlert": true,
-        "alertReason": "Fable 5/Mythos 5 subscription ends June 22 — T-3 DAYS. Migrate all dependencies to Opus 4.8 NOW.",
-        "active": true
-      },
-      "Google Gemini": {
-        "headline": "Gemini CLI deprecated June 18 (yesterday) — Antigravity CLI replaces it; developer pipelines must migrate. Gemini 3.5 Flash GA at <50% cost. Neural Expressive design language. gemini-embedding-2 multimodal file search GA. Video-to-image GA on flash-image model.",
-        "tags": [
-          "alert",
-          "strategic"
-        ],
-        "hasAlert": true,
-        "alertReason": "Gemini CLI deprecated June 18 — pipelines using old Gemini CLI command set already failing.",
-        "active": true
-      },
-      "xAI": {
-        "headline": "Grok V9-Medium fully GA (arrived June 16). Now on Databricks Agent Bricks with zero-data-retention endpoint (announced June 18). Grok Imagine Video 1.5 GA at 86% below Sora ($4.20/min). Grok 4.3 GA on Amazon Bedrock. Grok 5 (6T MoE) slipped to Q3.",
-        "tags": [
-          "strategic",
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Meta": {
-        "headline": "No release (30+ days quiet). Behemoth delayed past June. Avocado (next-gen) shifting to closed-source — potential end of open-weight strategy.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Mistral": {
-        "headline": "No new release. CEO confirms summer MoE model ('large yet sparse'). Code Mode Slack integration still pending. Emmi AI gaining enterprise traction in aerospace, energy, manufacturing. BMW partnership active.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Perplexity": {
-        "headline": "No major new announcement today. Focus GA, Pages GA, Enterprise Pro GA all current. Kimi K2.5 (Chinese-origin model on US inference) Week 8 — still unresolved; restrict in enterprise admin settings.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": false
-      },
-      "Microsoft 365 Copilot": {
-        "headline": "Pricing lock-in June 30 (T-11 days). Teams AI recaps without recording — no consent trigger; regulated client compliance gap. Word/Excel/PPT/OneNote Copilot requires paid license. Claude default-on DPA outstanding Week 7.",
-        "tags": [
-          "alert",
-          "strategic"
-        ],
-        "hasAlert": true,
-        "alertReason": "M365 pricing lock-in June 30 T-11. Teams recap without consent — compliance audit gap. Claude DPA outstanding Week 7.",
-        "active": true
-      },
-      "GitHub Copilot": {
-        "headline": "Billing live Day 18. Opus-class multipliers elevated — costs above projections. Max plan ($100/mo, 20K credits) as fixed ceiling. Fable 5 unavailable. CLI v1.0.63. BugBot usage-based at next renewal.",
-        "tags": [
-          "alert",
-          "tactical"
-        ],
-        "hasAlert": true,
-        "alertReason": "Opus-class elevated multipliers Day 18. Recommend Max plan ceiling or per-user budget controls.",
-        "active": true
-      },
-      "Cursor": {
-        "headline": "No new release today. $2B ARR. Standard ($32)/Premium ($96) tiers live. Grok V9-Medium trained on Cursor workflow data (SpaceX exclusive deal) — vendor lock-in signal. Claude Code growing 6x.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": false
-      },
-      "Gamma": {
-        "headline": "Mobile web editing GA for all (since June 12). Code blocks syntax highlighting (30 languages). Color gradients and AI animations GA. Recent batch positions Gamma for mobile-first consultants.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Notion AI": {
-        "headline": "No new AI feature. Workers GA. Workers billing August 11 unchanged. Partner agent integrations stable.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      }
-    },
-    "topMoves": [
-      "Anthropic Fable 5/Mythos 5 — T-3 DAYS to subscription cutoff (June 22); migrate all Fable 5 workflows to Opus 4.8 NOW",
-      "Grok V9-Medium GA + Databricks enterprise integration with zero-data-retention — coding competitive landscape and enterprise data risk both shift",
-      "M365 Copilot pricing lock-in June 30 (T-11) + Teams recap compliance gap — two intersecting client risk items"
-    ],
-    "clientAlerts": [
-      "Anthropic Fable 5/Mythos 5 subscription ends June 22 — T-3 DAYS",
-      "Google Gemini CLI deprecated June 18 — developer pipelines already failing",
-      "M365 Copilot pricing lock-in June 30 T-11 — lock in rates now",
-      "GitHub Copilot Opus-class elevated multipliers Day 18"
-    ],
-    "watchItems": [
-      "Anthropic Fable 5 subscription removal — June 22 T-3",
-      "OpenAI GPT-4.5 retirement — June 27 T-8",
-      "MS Claude Code sunset / M365 pricing lock-in — June 30 T-11",
-      "Grok 5 (6T MoE) — Q3 2026",
-      "EU AI Act high-risk provisions — August 2026 T-42",
-      "Claude Opus 4.1 API retirement — August 5 T-47",
-      "Notion Workers billing — August 11 2026"
-    ]
-  },
-  {
     "date": "2026-06-20",
     "providers": {
       "OpenAI": {
@@ -7375,6 +7251,119 @@
       "Oct 19: GitHub Copilot model deprecations",
       "Gemini incident follow-ups",
       "Grok 4.8 / 4.9 ahead of Grok 5"
+    ]
+  },
+  {
+    "date": "2026-09-22",
+    "providers": {
+      "OpenAI": {
+        "headline": "New misalignment tracking/disclosure framework ships alongside six model-behavior transparency reports; GPT-6 Astra rollout continues.",
+        "tags": [
+          "strategic"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "Claude Code beta adds parallel-thread project coordination; auto mode drops classifier-overhead charges for API/Enterprise.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Google Gemini": {
+        "headline": "Gemini Live 3.8 and Live Extended Thinking reach general availability alongside a new Transcribe model.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "xAI": {
+        "headline": "Grok 4.7's rollout continues expanding into enterprise and dev tools after finally shipping Monday.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Meta": {
+        "headline": "Muse Spark 1.3 — Meta's third proprietary release in eight weeks — ships closed-weight with no confirmed EU availability.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": true,
+        "alertReason": "No confirmed EU availability — data residency/GDPR implications for clients evaluating Meta models.",
+        "active": true
+      },
+      "Mistral": {
+        "headline": "Quiet week — OCR 4.1 GA and Agentic Search stand; Leanstral 1.5 retires Sept 30.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "Perplexity": {
+        "headline": "Agent API adds custom MCP connectors; remote MCP server now supports OAuth sign-in.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "Teams Facilitator can auto-post a Copilot web search answer into meeting chat; Cowork adds a GPT/Claude model picker.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "GitHub Copilot": {
+        "headline": "CLI v1.0.87 adds prompt-recall shortcuts; selected Copilot models face an Oct 19 deprecation cutoff.",
+        "tags": [
+          "tactical",
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Cursor": {
+        "headline": "No new release today; Claude Fable 5.1 integration and self-hosted machines remain the latest ships.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Gamma": {
+        "headline": "No headline release today — over 90 days quiet since June 12.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "No new headline today; Notion 3.7's Agent Skills library and per-agent model controls remain the latest ships.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      }
+    },
+    "topMoves": [
+      "OpenAI ships a misalignment transparency framework",
+      "Claude Code beta: one project now coordinates parallel work",
+      "Meta quietly pivots to closed-weight models outside the Llama brand"
+    ],
+    "clientAlerts": [
+      "Meta's newest flagship model has no confirmed EU availability"
+    ],
+    "watchItems": [
+      "Leanstral 1.5 retirement — Sept 30, 2026",
+      "GitHub Copilot model deprecations — Oct 19, 2026",
+      "NIST AI documentation 'Zero Draft' — comment window closed Sept 16",
+      "Meta's closed-weight pivot"
     ]
   }
 ]
