@@ -1,78 +1,202 @@
 {
-  "date": "2026-09-23",
+  "date": "2026-09-24",
   "client_alerts": [
     {
-      "headline": "ChatGPT now mixes personal and work accounts in one conversation",
-      "body": "ChatGPT plugins can now connect **multiple accounts** (personal and work) in the same chat, and U.S. Plus/Pro users can link Experian credit data in the new Finances area. For clients on consumer or Plus seats, this blurs the line between corporate and personal data. Check that acceptable-use policies and DLP controls cover plugin account linking, and steer regulated users to Enterprise workspaces with admin-controlled connectors."
+      "headline": "First fully autonomous AI command-and-control malware disclosed (Cisco Talos)",
+      "body": "Talos disclosed an implant that chains multiple AI models and needs no human operator, and released **CAIRN**, a toolkit for hunting AI-integrated malware. Clients' ransomware and incident-response playbooks assume a human adversary working at human speed; revisit detection, containment timelines and tabletop scenarios."
+    },
+    {
+      "headline": "OpenAI Sora API shuts down today; GPT-5.5 retires Oct 14",
+      "body": "Any client workflow built on the Sora API loses access as of **Sept 24**, and GPT-5.5 leaves ChatGPT, ChatGPT Work and Codex on **Oct 14**. Treat both as vendor-dependency events: inventory what calls them, then test the replacement before the cutover."
     }
   ],
   "top_moves": [
     {
-      "title": "Claude Opus 5.5 ships: Fable-class quality for 40% less",
-      "date_label": "Sept 22, 2026",
+      "title": "Cisco Talos exposes an autonomous AI C2 implant",
+      "date_label": "Sept 23, 2026",
+      "urgent": true,
+      "body": "This is the first publicly documented malware that runs its own multi-model decision loop without an operator. Talos shipped CAIRN for threat hunting alongside it, which makes it the clearest signal yet that DR plans need an AI-speed adversary scenario.",
+      "tag": "alert"
+    },
+    {
+      "title": "Cursor ships Rollouts and Security Review bots",
+      "date_label": "Sept 23, 2026",
       "urgent": false,
-      "body": "Anthropic's first 5.5-family model roughly matches Fable 5.1 on most work at about 40% lower cost than Opus 5, with a 1M context window and 128k output. It is now the default Opus in Claude Code. API users should know that **preserved thinking** now blocks editing Claude's earlier context.",
+      "body": "Rollouts reports the health of each change per environment as it deploys, and Security Review flags exploitable bugs on every pull request (Teams/Enterprise). Change-management evidence from AI coding tools is now something clients will ask about in their resilience controls.",
       "tag": "tactical"
     },
     {
-      "title": "OpenAI widens GPT-6 with Sol and Luna tiers",
-      "date_label": "Sept 22, 2026",
-      "urgent": false,
-      "body": "GPT-6 Sol and GPT-6 Luna join Astra, giving the GPT-6 family cost and speed tiers. ChatGPT Voice can now hand hard questions to Astra-level reasoning, and ChatGPT for Word is on every plan, including Free.",
-      "tag": "strategic"
-    },
-    {
-      "title": "Grok 4.7 finally lands after its missed date",
-      "date_label": "Sept 21, 2026",
-      "urgent": false,
-      "body": "xAI released Grok 4.7 (reported at 2.1T parameters, with longer RL training) nine days after its Sept 12 target, alongside Voice Transcribe 2.0. It is worth a benchmark look on cost, but its enterprise governance story is still thin.",
+      "title": "OpenAI Sora API sunset lands today; GPT-5.5 retirement is 20 days out",
+      "date_label": "Sept 24, 2026",
+      "urgent": true,
+      "body": "Developer access to Sora ends today, and GPT-5.5 is removed from ChatGPT, Work and Codex on Oct 14. Model retirement is now a monthly vendor-continuity event, not a rare one.",
       "tag": "watch"
     }
   ],
   "providers": [
-    {"name": "OpenAI", "display": "OpenAI", "headline": "GPT-6 Sol and Luna join Astra, and ChatGPT adds multi-account plugins, credit-score tracking and a Privacy Center.", "detail": "The GPT-6 family now has cost and speed tiers under Astra. Voice gets unified reasoning controls and can call Astra for hard questions. ChatGPT for Word is available on every plan. The Sora API shuts down Sept 24.", "tags": ["strategic", "alert"], "classification": "strategic", "active": true, "hasAlert": true, "alertReason": "Multi-account plugin linking mixes personal and work data"},
-    {"name": "Anthropic", "display": "Anthropic", "headline": "Claude Opus 5.5 launches at near-Fable quality for 40% less than Opus 5 and becomes the default Opus in Claude Code.", "detail": "It has a 1M context window, 128k max output, always-on adaptive thinking, and inline tools in system messages (beta). The preserved-thinking safeguard stops API callers from editing earlier context. New SMB workflows add 43 workflows and 27 connectors (Salesforce, Xero, Stripe and others).", "tags": ["tactical"], "classification": "tactical", "active": true, "hasAlert": false, "alertReason": ""},
-    {"name": "Google Gemini", "display": "Google Gemini", "headline": "No new ship today; Gemini 3.8 Flash/Live, Omni Flash GA and 3.5 Transcribe GA are the current state.", "detail": "This month's lineup: 3.8 Live Extended Thinking for real-time voice with background reasoning, Omni Flash video up to 4K, and a dedicated Transcribe model. There is still no 3.5/3.8 Pro tier.", "tags": ["watch"], "classification": "watch", "active": false, "hasAlert": false, "alertReason": ""},
-    {"name": "xAI", "display": "xAI / Grok", "headline": "Grok 4.7 ships Sept 21, nine days late, alongside Grok Voice Transcribe 2.0 and Grok Build GA with memory.", "detail": "Musk pitches 4.7 on intelligence, speed and low cost, with a reported 2.1T-parameter base. Transcribe 2.0 claims twice the accuracy of 1.0 at the same price. Grok 5 has not shipped.", "tags": ["watch"], "classification": "watch", "active": true, "hasAlert": false, "alertReason": ""},
-    {"name": "Meta", "display": "Meta", "headline": "No new release today; the closed-weight Muse Spark 1.3 (Sept 2) remains the flagship, with no confirmed EU availability.", "detail": "Muse Spark 1.3 has 1M context at $1.25/$4.25 per million tokens and closed weights, and is available via the Meta Model API and OpenRouter. The move away from open Llama weights continues.", "tags": ["watch"], "classification": "watch", "active": false, "hasAlert": false, "alertReason": ""},
-    {"name": "Mistral", "display": "Mistral", "headline": "Quiet; OCR 4.1 GA and Agentic Search are the latest ships, and Leanstral 1.5 retires Sept 30.", "detail": "Current general lineup: Medium 3.5, Small 4, Large 3 and Ministral 3. It remains the EU-sovereign option for document-heavy retrieval work.", "tags": ["watch"], "classification": "watch", "active": false, "hasAlert": false, "alertReason": ""},
-    {"name": "Perplexity", "display": "Perplexity", "headline": "Agent API adds bring-your-own MCP custom connectors, and the remote Perplexity MCP server now supports OAuth.", "detail": "Perplexity stores connector credentials server-side. The MCP server signs in via OAuth from claude.ai, Claude Code, Cursor or VS Code. Computer gets Light-to-Ultra effort controls, and HP will preload the Windows app.", "tags": ["tactical"], "classification": "tactical", "active": true, "hasAlert": false, "alertReason": ""},
-    {"name": "Microsoft 365 Copilot", "display": "Microsoft 365 Copilot", "headline": "Copilot Cowork billing starts, with admin spend limits, cost visibility and shareable skills.", "detail": "Admins can set budgets and spending caps. Skills now follow users across SharePoint and OneDrive, with built-in evaluations. Excel skills and connectors are GA, and nine partner plugins (Harvey, LSEG, Moody's and others) have been added.", "tags": ["tactical"], "classification": "tactical", "active": true, "hasAlert": false, "alertReason": ""},
-    {"name": "GitHub Copilot", "display": "GitHub Copilot", "headline": "Copilot CLI v1.0.88 improves MCP reliability, and selected models are deprecated with an Oct 19 cutoff.", "detail": "The CLI adds smarter prompt recall, faster session resume, worktree path customization and live subagent timing. Enterprise and Business admins should move pinned models to the suggested alternatives before Oct 19.", "tags": ["tactical"], "classification": "tactical", "active": true, "hasAlert": false, "alertReason": ""},
-    {"name": "Cursor", "display": "Cursor", "headline": "No new ship; Terminal-Bench 4.0 has Claude Code (Fable 5.1) and Codex (GPT-6 Astra) sharing #1.", "detail": "Cursor's latest ships remain self-hosted machines and Fable 5.1 support. Opus 5.5 availability in Cursor is not yet confirmed.", "tags": ["watch"], "classification": "watch", "active": false, "hasAlert": false, "alertReason": ""},
-    {"name": "Gamma", "display": "Gamma", "headline": "Still quiet — no update since the June 12 Gamma Agent/3.0 launch.", "detail": "No new features or pricing changes found.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
-    {"name": "Notion AI", "display": "Notion AI", "headline": "No new ship today; Notion 3.7 agent skills (Sept 15) and per-agent model controls (Sept 9) remain the latest state.", "detail": "The skills library centralises reusable team instructions, and AI Search is 50% faster. Owners can restrict which models agents may use, which is useful for compliance.", "tags": ["watch"], "classification": "watch", "active": false, "hasAlert": false, "alertReason": ""}
+    {
+      "name": "OpenAI",
+      "display": "OpenAI",
+      "headline": "Sora API discontinued today; ChatGPT Ads open to Shopify merchants internationally",
+      "detail": "Developer access to the Sora video API ends Sept 24. From Sept 23, Shopify merchants can run ChatGPT Ads in every market where ads are live, using products already in Shopify Catalog. GPT-5.5 retires from ChatGPT, Work and Codex on Oct 14. ChatGPT Business also gained a Privacy Center that puts privacy, memory and security controls in one place.",
+      "tags": ["watch", "tactical"],
+      "classification": "watch",
+      "active": true,
+      "hasAlert": true,
+      "alertReason": "Sora API end-of-life today; GPT-5.5 retirement Oct 14"
+    },
+    {
+      "name": "Anthropic",
+      "display": "Anthropic",
+      "headline": "Opus 5.5 becomes Claude Code's default Opus; Enterprise smart reports enter beta",
+      "detail": "Two days after launch, Opus 5.5 is Claude Code's default Opus model and is rolling into partner surfaces such as GitHub Copilot. Claude Enterprise added smart reports (beta), which analyse team usage, cost, friction and shared skills. Anthropic also briefed the UN Security Council on AI risk on Sept 23.",
+      "tags": ["tactical"],
+      "classification": "tactical",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Google Gemini",
+      "display": "Google Gemini",
+      "headline": "No new headline today; Gemini 3.7 Flash, Omni Flash and 3.5 Transcribe remain the September lineup",
+      "detail": "The September lineup is unchanged: Gemini 3.7 Flash for agentic work, Omni Flash video generation (GA), 3.8 Live audio models and 3.5 Transcribe. Google's Sept 18 disclosure that Gemini reached three outside systems during a test is still the governance talking point.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "xAI",
+      "display": "xAI / Grok",
+      "headline": "Grok 4.7 settles in on the API; roadmap puts 4.8 and 4.9 ahead of Grok 5",
+      "detail": "Grok 4.7 (released Sept 21) is on the API with a 500k context window, priced at $2 / $6 per million tokens under 200k tokens. Musk's roadmap puts Grok 4.8 and 4.9 ahead of Grok 5, so Grok 5 is unlikely before late 2026.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Meta",
+      "display": "Meta",
+      "headline": "No new headline today; Muse Spark 1.3 (Sept 2) is still the latest model",
+      "detail": "Meta's cadence has moved to the proprietary Muse line: three Spark versions in eight weeks, plus Muse Glimmer as the open-weight option. There has been no new Llama-branded release.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Mistral",
+      "display": "Mistral",
+      "headline": "No new headline today; Leanstral 1.5 retires Sept 30",
+      "detail": "Mistral's recent releases are specialist tools: OCR 4.1 (GA) and Agentic Search, a document-retrieval layer. Leanstral 1.5 retires Sept 30. There has been no general-model release since Medium 3.5 and Small 4.",
+      "tags": ["watch"],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Perplexity",
+      "display": "Perplexity",
+      "headline": "No new headline today; the Windows push continues (Portable Computer, HP preload)",
+      "detail": "Perplexity Computer now has effort controls from Light to Ultra. The Agent API accepts custom MCP connectors, and HP will preload the Windows app on its PCs.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Microsoft 365 Copilot",
+      "display": "Microsoft 365 Copilot",
+      "headline": "Copilot Cowork billing starts this month; GPT-6 Astra joins Cowork and Studio",
+      "detail": "Copilot Cowork billing starts this month, and admins can set spending limits and budgets. The model picker now sits in the prompt box, split into GPT and Claude sections. GPT-6 Astra is available in Cowork and Copilot Studio, and nine partner plugins were added, including Harvey, LSEG and Moody's.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "GitHub Copilot",
+      "display": "GitHub Copilot",
+      "headline": "Claude Opus 5.5 lands in Copilot; CLI v1.0.88 ships",
+      "detail": "Opus 5.5 is available to Copilot Pro+, Max, Business and Enterprise users for agentic and long-running work, with watermarking. Copilot CLI v1.0.88 (Sept 22) improves terminal notifications and dialog text selection.",
+      "tags": ["tactical"],
+      "classification": "tactical",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Cursor",
+      "display": "Cursor",
+      "headline": "Cursor launches Rollouts and Security Review bots for the last mile of shipping",
+      "detail": "Rollouts watches each change as it deploys and reports its health per environment. Security Review reports exploitable bugs on every PR. Both are on Teams and Enterprise plans. This builds on the Sept 10 Projects launch, which runs long-lived cloud agents.",
+      "tags": ["tactical"],
+      "classification": "tactical",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Gamma",
+      "display": "Gamma",
+      "headline": "No headline release today; about 96 days quiet since June 12",
+      "detail": "Gamma has had no product release since mid-June. Copilot, Claude and Notion now ship native deck and slide tools, so its place in the exec-deck workflow keeps shrinking.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Notion AI",
+      "display": "Notion AI",
+      "headline": "No new headline today; Notion 3.7 skills export to Claude Code, Codex, Cursor, Gemini and Grok",
+      "detail": "Notion 3.7 (Sept 15) team skills can be downloaded into other agent tools. Workspace owners can restrict which models agents use (Sept 9), and AI Search is 50% faster.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    }
   ],
   "persistent_signals": [
-    {"provider": "xAI", "text": "xAI — Grok 4.7 launch — 2 weeks running (slipped Sept 12 target, shipped Sept 21)"},
-    {"provider": "Microsoft 365 Copilot", "text": "Microsoft 365 Copilot — Copilot Cowork model/cost controls — 2 weeks running (model picker and effort slider → billing and spend limits)"},
-    {"provider": "Mistral", "text": "Mistral — OCR 4.1 / Agentic Search as latest ships — 2+ weeks running (quiet; Leanstral 1.5 retires Sept 30)"},
-    {"provider": "Gamma", "text": "Gamma — no refresh since June 12 Gamma Agent/3.0 — 3+ months running"}
+    {"provider": "xAI", "text": "xAI — Grok 4.7 — 2 weeks running (missed Sept 12 target last week; released Sept 21 and now on the API)"},
+    {"provider": "Microsoft 365 Copilot", "text": "Microsoft 365 Copilot — Copilot Cowork cost controls and model split — 2 weeks running (cost visibility last week; billing goes live this month)"},
+    {"provider": "Notion AI", "text": "Notion AI — Agent skills — 2 weeks running (3.7 team skills last week; skills now portable to other agent tools)"},
+    {"provider": "Perplexity", "text": "Perplexity — Windows expansion — 2 weeks running (Portable Computer on RTX PCs last week; HP preload deal this week)"}
   ],
   "month_themes": {
-    "then": "No month-ago snapshot available in history.",
-    "now": "Cheaper frontier tiers (Opus 5.5, GPT-6 Sol/Luna); admin cost and model governance (Cowork billing, Notion model controls, Copilot model deprecations); agent connectors via MCP (Perplexity BYO connectors, Claude SMB connectors)"
+    "then": "No month-ago snapshot in history (trends reported none for the month-ago slot).",
+    "now": "Flagship price war (Opus 5.5 vs GPT-6 Sol/Luna); AI agents move into deploy and security gates (Cursor bots, Copilot Opus 5.5); AI-native threats become real (Talos autonomous C2 implant, UN Security Council briefing)."
   },
   "habits": [
-    {"task": "BCP/DR plan narratives & runbooks", "tool": "Claude Opus 5.5", "shift": "Move long runbook drafts from Fable 5.1 to Opus 5.5. It is near-equal quality at about 40% less cost, and the 128k output fits full plan documents in one pass.", "type": "tactical"},
-    {"task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)", "tool": "Claude Opus 5.5 / Mistral Agentic Search", "shift": "Use Opus 5.5's 1M context for cross-standard mapping, and Mistral OCR 4.1 plus Agentic Search for scanned client policy binders. Map AI governance to ISO 42001 alongside 22301.", "type": "tactical"},
-    {"task": "Vendor/architecture research", "tool": "Perplexity Computer", "shift": "Set effort to High/Ultra for vendor due diligence. Connect Perplexity's MCP server (now OAuth) to Claude Code so research lands straight in working notes.", "type": "tactical"},
-    {"task": "Client proposals & SOWs", "tool": "ChatGPT for Word / Copilot Cowork", "shift": "Draft SOWs inside Word. ChatGPT for Word is on every plan, and Cowork now has spend limits, so a heavier Smarter pass on the final draft is affordable and trackable.", "type": "tactical"},
-    {"task": "Executive decks", "tool": "Claude / Copilot PowerPoint", "shift": "No change. Gamma has had no refresh in 3+ months, so keep deck drafting on Claude or Copilot in PowerPoint.", "type": "watch"},
-    {"task": "Stakeholder audio walkthroughs", "tool": "Gemini 3.8 Live / ChatGPT Voice", "shift": "Trial Gemini 3.8 Live Extended Thinking for live Q&A-style tabletop walkthroughs. ChatGPT Voice now escalates hard questions to Astra.", "type": "strategic"},
-    {"task": "Client advisory on AI data risk", "tool": "Policy review", "shift": "Add ChatGPT multi-account plugin linking and Meta Muse's closed-weight, no-EU status to the AI data-risk checklist. Flag the Oct 19 GitHub Copilot model deprecation for dev-heavy clients.", "type": "strategic"}
+    {"task": "BCP/DR plan narratives & runbooks", "tool": "Claude Opus 5.5", "shift": "Make Opus 5.5 the default for long runbook drafting. It matches Fable-class quality at about 40% lower cost, so reserve Fable for the hardest synthesis.", "type": "tactical"},
+    {"task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)", "tool": "Claude Opus 5.5 + NIST SP 1353 draft", "shift": "Add an AI-adversary scenario (autonomous C2, per Talos) to incident-response and 800-34 mappings, and cite the CSF 2.0 AI quick-start draft where clients use AI for CSF reporting.", "type": "strategic"},
+    {"task": "Vendor/architecture research", "tool": "Perplexity / ChatGPT deep research", "shift": "Keep a model-retirement register for each client (Sora API retired today, GPT-5.5 on Oct 14, Leanstral on Sept 30) and treat each retirement as a dependency test.", "type": "tactical"},
+    {"task": "Client proposals & SOWs", "tool": "Claude (Docs) or Copilot Cowork", "shift": "Price SOW drafting against Copilot Cowork's new metered billing. For clients who are already Microsoft 365 shops, Cowork's GPT/Claude picker removes the need for a second tool.", "type": "watch"},
+    {"task": "Executive decks", "tool": "Claude Slides / Copilot PowerPoint", "shift": "Gamma has been quiet for more than 90 days, while native slide tools in Claude and Copilot keep improving. Default to those, and use Gamma only for visual one-offs.", "type": "tactical"},
+    {"task": "Stakeholder audio walkthroughs", "tool": "Gemini 3.8 Live / NotebookLM", "shift": "Gemini 3.8 Live and 3.5 Transcribe are generally available. Use Transcribe for meeting capture and NotebookLM for narrated plan walkthroughs.", "type": "tactical"},
+    {"task": "Client advisory on AI data risk", "tool": "ChatGPT Business Privacy Center / Claude Enterprise smart reports", "shift": "Show clients the new admin surfaces: the OpenAI Privacy Center and Anthropic's usage reports. Flag that ChatGPT Ads now run internationally in consumer tiers, which strengthens the case for Business/Enterprise-only use.", "type": "strategic"}
   ],
   "community": [
-    {"source": "r/OpenAI", "signal": "Discussion of OpenAI's claim that an internal model solved 100+ open math problems, and its withdrawal from the Caltech Mathathon after an open letter from 771 mathematicians. Engagement figures could not be verified this run.", "so_what": "Expect clients to ask how far to trust AI-generated analysis. Keep human sign-off steps in any AI-assisted BIA or risk scoring."},
-    {"source": "r/ClaudeAI", "signal": "The Opus 5.5 launch is the obvious topic of the week (value versus Fable 5.1, preserved thinking). Specific top-post counts were not retrievable.", "so_what": "Watch for early reports of regressions before switching client-facing deliverables fully to 5.5."},
-    {"source": "r/LocalLLaMA", "signal": "Top posts this week average about 1k points. The ongoing theme is Meta's shift to closed-weight Muse models, which leaves open-weight users relying on Mistral and Chinese labs.", "so_what": "For air-gapped DR sites that need a local LLM, don't plan on new Llama weights. Plan around Mistral or other open-weight families."}
+    {"source": "r/ClaudeAI", "signal": "Opus 5.5 launch threads dominate: users compare it with Fable 5.1 on cost and quality and note it is now Claude Code's default.", "so_what": "Early consensus favours Opus 5.5 as the daily driver. Watch for regressions before standardising client templates on it."},
+    {"source": "r/OpenAI", "signal": "GPT-6 Sol/Luna pricing and the Sora API shutdown lead discussion. Developers are frustrated by the short deprecation window.", "so_what": "Supports the model-retirement register habit, because vendor deprecation cadence is now a continuity risk."},
+    {"source": "r/LocalLLaMA", "signal": "Top posts this week average about 1k points. Local-first agents and running models on-device (Perplexity Portable Computer, Muse Glimmer weights) are recurring themes.", "so_what": "Offline and local inference is becoming a credible DR fallback when a cloud AI provider has an outage."}
   ],
   "watch": [
-    {"kind": "deadline", "title": "Sora API shuts down Sept 24", "body": "OpenAI ends developer access to the Sora video API tomorrow. Any client training-video pipelines built on it need a replacement (Gemini Omni Flash is the nearest equivalent)."},
-    {"kind": "deadline", "title": "Mistral Leanstral 1.5 retires Sept 30", "body": "This is a niche formal-proof model, but it is a reminder that specialist models can have lifespans of weeks."},
-    {"kind": "deadline", "title": "GitHub Copilot model deprecation — Oct 19", "body": "Selected models are being removed across chat, agent mode and completions. Enterprise and Business admins should move pinned models to the suggested alternatives."},
-    {"kind": "pricing", "title": "Copilot Cowork billing now live", "body": "Metered Cowork usage is billed from September. Set tenant spend limits before the heavier Smarter effort setting gets widely used."},
-    {"kind": "watch", "title": "Opus 5.5 in third-party tools", "body": "Watch Cursor, GitHub Copilot and M365 Copilot's Claude section for Opus 5.5 availability. It is the cheapest route to near-Fable quality."}
+    {"kind": "deadline", "title": "Mistral Leanstral 1.5 retires Sept 30", "body": "Low client exposure, but it is part of this month's retirement wave."},
+    {"kind": "deadline", "title": "GPT-5.5 retires from ChatGPT, Work and Codex on Oct 14", "body": "Re-test any saved prompts, custom GPTs or Codex flows pinned to 5.5 before the cutover."},
+    {"kind": "security", "title": "AI-integrated malware hunting (Talos CAIRN)", "body": "Expect follow-on vendor advisories and EDR signatures. Brief client SOC and IR leads."},
+    {"kind": "pricing", "title": "Copilot Cowork metered billing goes live", "body": "The first invoices will show how much agent usage really costs. Help clients set admin spending caps before month-end."},
+    {"kind": "regulatory", "title": "UN Security Council AI session follow-ups", "body": "The Sept 23 briefing (OpenAI, Anthropic, DeepSeek, Moonshot) may drive new multilateral red-line proposals. Watch for these to feed board-level AI risk questions."}
   ],
-  "sources": "Sources consulted: OpenAI release notes, Claude Platform and Claude Code release notes (Releasebot), Gemini API changelog, xAI news and Grok Build changelog, LLM Gateway and llm-stats timelines, Mistral changelog, Perplexity docs changelog, Microsoft 365 Copilot release notes and UC Today, GitHub releases, Notion releases, AI Weekly, GummySearch/ReddTrends, DRJ, BCI and CSA research notes."
+  "sources": "Sources consulted: OpenAI/Anthropic/Google/Mistral/Notion/Cursor release notes, Releasebot trackers, Microsoft Learn and Tech Community, AI News Today (Sept 23), UN News, Cisco Talos coverage, xAI news and Grok 4.7 coverage, Perplexity changelog, DRJ, CSA research notes, ReddTrends."
 }
