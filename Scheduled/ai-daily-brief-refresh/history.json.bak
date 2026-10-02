@@ -1,130 +1,5 @@
 [
   {
-    "date": "2026-06-24",
-    "providers": {
-      "OpenAI": {
-        "headline": "GPT-5.6 not yet officially launched as of June 24 — prediction markets at 83%+ for this week; chief scientist calls it a 'meaningful leap.' GPT-4.5 retiring ChatGPT June 27 T-3. Lockdown Mode GA.",
-        "tags": [
-          "strategic",
-          "watch"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Anthropic": {
-        "headline": "Fable 5/Mythos 5 suspended Day 12 (U.S. BIS export control, ECRA § 4817). Subscription ended June 22; usage credits ($10/$50/MTok) required from June 23. No resolution timeline. Opus 4.8 unaffected (1M context, full GA). Workload Identity Federation GA.",
-        "tags": [
-          "alert",
-          "strategic"
-        ],
-        "hasAlert": true,
-        "alertReason": "Fable 5 BIS-suspended Day 12 — all Fable 5 dependencies must use Opus 4.8. Usage credits required for any Fable 5 access.",
-        "active": true
-      },
-      "Google Gemini": {
-        "headline": "Gemini Omni in full production rollout. Gemini 3.5 Flash GA (<50% cost). Antigravity CLI migration ongoing. No new model today.",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "xAI": {
-        "headline": "Grok V9-Medium fully GA. Grok for Word/PPT/Excel free M365 add-in live. Grok 4.3 on Amazon Bedrock GA (1M context). Grok 5 (6T MoE) slipped to Q3. No new announcement today.",
-        "tags": [
-          "strategic",
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Meta": {
-        "headline": "No release — 50+ days quiet. Behemoth delayed past June. Avocado possibly going closed-source.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Mistral": {
-        "headline": "No headline release. Vibe stable. Summer MoE model confirmed, not launched. Voxtral TTS with zero-shot voice cloning available.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": false
-      },
-      "Perplexity": {
-        "headline": "Deep Research in Computer GA. Comet browser free worldwide. Enterprise Pro GA with audit logs. Kimi K2.5 Week 10+ unresolved.",
-        "tags": [
-          "tactical",
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Microsoft 365 Copilot": {
-        "headline": "PRICING LOCK-IN JUNE 30 T-6 DAYS — $18→$21/user/mo (+17%) after July 1; enterprise volume discounts expire. Teams AI recap without consent trigger ongoing. Claude DPA outstanding Week 9+. Agent 365 requires E5.",
-        "tags": [
-          "alert",
-          "strategic"
-        ],
-        "hasAlert": true,
-        "alertReason": "M365 pricing lock-in June 30 T-6 — engage procurement TODAY to lock in current rates.",
-        "active": true
-      },
-      "GitHub Copilot": {
-        "headline": "Billing live Day 23. Opus-class elevated multipliers — costs above projections. Max plan ($100/mo) as cost ceiling. Fable 5 unavailable. MS Claude Code sunset June 30 T-6. BugBot usage-based at next renewal.",
-        "tags": [
-          "alert",
-          "tactical"
-        ],
-        "hasAlert": true,
-        "alertReason": "Opus-class elevated multipliers Day 23. Implement Max plan ceiling or per-user budget controls now.",
-        "active": true
-      },
-      "Cursor": {
-        "headline": "No new release. $2B ARR. Teams Standard ($32)/Premium ($96) stable. Market: GitHub Copilot 51%, Cursor 18%, Claude Code 10% growing 6x.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": false
-      },
-      "Gamma": {
-        "headline": "No new release. Mobile editing GA (June 12), code syntax highlighting, AI animations current. Gone quiet 4+ entries.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Notion AI": {
-        "headline": "No new AI feature. Workers GA. Workers billing August 11. Partner agent integrations stable.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      }
-    },
-    "topMoves": [
-      "OpenAI GPT-5.6 imminent (not yet launched June 24) — prediction markets 83%+ this week; breaks 30-day model silence when it drops",
-      "M365 Copilot pricing lock-in June 30 T-6 — $18→$21/user (+17%) after July 1; final week to commit at current rates",
-      "Anthropic Fable 5 Day 12 BIS suspension — now on usage credits ($10/$50/MTok); no resolution timeline; Opus 4.8 is validated fallback"
-    ],
-    "clientAlerts": [
-      "M365 Copilot pricing lock-in June 30 T-6 — engage procurement TODAY",
-      "Anthropic Fable 5 BIS-suspended Day 12 — all dependencies must use Opus 4.8",
-      "GitHub Copilot Opus-class elevated multipliers Day 23 — implement cost ceiling now"
-    ],
-    "watchItems": [
-      "OpenAI GPT-5.6 — imminent, late June / early July",
-      "OpenAI GPT-4.5 ChatGPT retirement — June 27 T-3",
-      "MS Claude Code sunset / M365 pricing lock-in — June 30 T-6",
-      "M365 Business Copilot permanent SKUs — July 1 T-7",
-      "Grok 5 (6T MoE) — Q3 2026",
-      "Claude Opus 4.1 API retirement — August 5",
-      "EU AI Act high-risk provisions — August 2026",
-      "Notion Workers billing — August 11 2026",
-      "OpenAI o3 retirement — August 26 2026"
-    ]
-  },
-  {
     "date": "2026-06-25",
     "providers": {
       "OpenAI": {
@@ -7329,6 +7204,125 @@
       "NIST SP 1353 draft (AI for CSF 2.0) comments close Oct 15",
       "GitHub Plugin4Shell on non-github.com deployments",
       "HP ZBook Ultra G3a ships with Perplexity (October)"
+    ]
+  },
+  {
+    "date": "2026-09-30",
+    "providers": {
+      "OpenAI": {
+        "headline": "DevDay follow-through: plug-in extensions get a ChatGPT sidebar home, plus Pages, Slides and Spaces; run-rate nears $70B.",
+        "tags": [
+          "strategic"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "Sonnet 5.5 settles in as the default GA model; IPO prospectus reveals $518B decade-long infrastructure plan.",
+        "tags": [
+          "tactical",
+          "strategic"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Google Gemini": {
+        "headline": "Gemini now powers America.gov, the new federal AI services front door; no new model today.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "xAI": {
+        "headline": "Grok co-powers America.gov; Grok 4.7 (Sept 21) remains current, with 4.8 and 4.9 slated before Grok 5.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Meta": {
+        "headline": "Muse for Small Business launches with Shopify, Stripe, QuickBooks, Notion and Box connectors.",
+        "tags": [
+          "strategic",
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "Cross-app access to SMB financial and customer data",
+        "active": true
+      },
+      "Mistral": {
+        "headline": "Leanstral 1.5 retires today; otherwise quiet after Agentic Search and the Mistral Work migration.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "Perplexity": {
+        "headline": "Computer adds Effort Mode (Light to Ultra) and GPT-6 Astra; HP will pre-install Perplexity on Windows PCs from October.",
+        "tags": [
+          "tactical",
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "Copilot Cowork model picker splits into GPT and Claude sections as GPT-6 Astra joins; nine partner plugins added.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "GitHub Copilot": {
+        "headline": "Copilot CLI v1.0.89 reads Claude Code rule files; Sonnet 5.5 GA; model deprecations cut off Oct 19.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Cursor": {
+        "headline": "No new ship; still the only public home for Grok 4.7 Fast, with the OpenAI cutoff six weeks out.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "Gamma": {
+        "headline": "Still quiet — no update since the June Gamma Agent/3.0 launch, as ChatGPT Slides encroaches.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "No new ship; now a named Muse for Small Business connector, with Notion 3.7 skills (Sept 15) the latest release.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      }
+    },
+    "topMoves": [
+      "Meta takes Muse into business with a small-business agent wired into 12+ SaaS apps",
+      "White House AI self-regulation accord signed; America.gov launches on Gemini and Grok",
+      "Mistral retires Leanstral 1.5 today; GitHub Copilot model cutoff Oct 19"
+    ],
+    "clientAlerts": [
+      "Meta Muse for Small Business connects to QuickBooks, Stripe, Shopify, Box and Notion",
+      "White House voluntary AI accord + America.gov on Gemini and Grok"
+    ],
+    "watchItems": [
+      "GitHub Copilot model deprecation — Oct 19",
+      "OpenAI cuts Cursor's model access — Nov 12",
+      "White House AI oversight adviser appointment",
+      "Muse for Small Business connector scopes",
+      "Perplexity HP pre-install — October"
     ]
   }
 ]
