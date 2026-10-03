@@ -1,246 +1,5 @@
 [
   {
-    "date": "2026-06-25",
-    "providers": {
-      "OpenAI": {
-        "headline": "GPT-5.6 launch window (June 22–28) collapsed — prediction market odds fell from 83% to 18%; launch most likely July 2026. GPT-4.5 retiring from ChatGPT June 27 T-2 (API unaffected). No new model for 30+ days.",
-        "tags": [
-          "watch"
-        ],
-        "hasAlert": false,
-        "active": false
-      },
-      "Anthropic": {
-        "headline": "Fable 5/Mythos 5 BIS suspension Day 13. Congressional letter to Commerce Sec. Lutnick demands explanation by June 26. Trump met Amodei at G7 Évian-les-Bains — tensions eased. Prediction markets 57% odds for restoration before July 1. July 8 and August 1 structural dates. Usage credits ($10/$50/MTok) required. Claude Tag on Slack (beta) — enterprise team workspace.",
-        "tags": [
-          "alert",
-          "strategic"
-        ],
-        "hasAlert": true,
-        "alertReason": "Fable 5 Day 13 BIS suspension — Congressional response due June 26. All Fable 5 dependencies must use Opus 4.8.",
-        "active": true
-      },
-      "Google Gemini": {
-        "headline": "No major new announcement today. Ongoing rollouts: Antigravity CLI migration, Gemini 3.5 Flash GA, Gemini Omni production, gemini-embedding-2 GA. Watch next month: Gemini 3.5 Pro.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "xAI": {
-        "headline": "Grok Build /goal mode launched — long-running autonomous task agent with plan/execute/verify loop. V9-Medium ecosystem expanding (Word/PPT/Excel M365 add-in, Bedrock GA). Grok Imagine Video 1.5 GA ($4.20/min). Grok 5 (6T MoE) slipped to Q3 2026.",
-        "tags": [
-          "tactical",
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Meta": {
-        "headline": "No model release — 50+ days quiet. Behemoth delayed. Avocado possibly going closed-source. Documents revealed Meta planning AI-powered prediction market app.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Mistral": {
-        "headline": "No new model. 10MW Les Ulis inference facility opening Q3 2026 (compute supply-chain hedge). Vibe stable. Summer MoE confirmed, not launched.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Perplexity": {
-        "headline": "Enterprise Pro audit logs GA. Deep Research in Computer GA. Comet browser free worldwide. Kimi K2.5 Week 11 unresolved — restrict in enterprise admin settings.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": false
-      },
-      "Microsoft 365 Copilot": {
-        "headline": "Pricing lock-in June 30 T-5 days — $18→$21/user/mo (+17%) for small business after July 1. Enterprise volume discounts 15–40% expire. 3-year NCE commitment locks current rates. Teams AI recap without consent ongoing. Claude DPA outstanding Week 9+.",
-        "tags": [
-          "alert",
-          "strategic"
-        ],
-        "hasAlert": true,
-        "alertReason": "M365 pricing lock-in June 30 T-5 — engage procurement today. Volume discounts expire permanently.",
-        "active": true
-      },
-      "GitHub Copilot": {
-        "headline": "Billing live Day 24. Claude added as agent provider preview in JetBrains IDEs (announced June 22). Opus-class multipliers elevated. Max plan ($100/mo, 20K credits) as fixed ceiling. Fable 5 unavailable. MS Claude Code sunset June 30 T-5.",
-        "tags": [
-          "alert",
-          "tactical"
-        ],
-        "hasAlert": true,
-        "alertReason": "Opus-class elevated multipliers Day 24. MS Claude Code sunset June 30 T-5. Implement cost ceiling now.",
-        "active": true
-      },
-      "Cursor": {
-        "headline": "No new release. $2B ARR. Standard ($32)/Premium ($96) tiers stable. Grok V9-Medium trained on Cursor data via SpaceX exclusive — vendor lock-in concern.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": false
-      },
-      "Gamma": {
-        "headline": "No new release — gone quiet 4+ consecutive entries. Last batch: mobile editing GA June 12.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Notion AI": {
-        "headline": "MCP tools now available across all plans. Business plan can now query single data sources (previously Enterprise-only). External Agents API (Alpha) bringing Claude, Codex, custom agents into Notion.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      }
-    },
-    "topMoves": [
-      "Anthropic Fable 5 BIS suspension Day 13 — Congressional letter demands Commerce response by June 26; Trump/Amodei G7 meeting eased tensions; 57% odds of restoration before July 1",
-      "M365 Copilot pricing lock-in June 30 T-5 — $18→$21/user (+17%) after July 1; engage procurement today or pay more permanently",
-      "OpenAI GPT-5.6 launch window collapsed (83%→18%) — now expected July 2026; GPT-4.5 ChatGPT retirement T-2 days"
-    ],
-    "clientAlerts": [
-      "Anthropic Fable 5 BIS suspension Day 13 — Congressional response due June 26; Opus 4.8 is validated fallback",
-      "M365 Copilot pricing lock-in June 30 T-5 — engage procurement today"
-    ],
-    "watchItems": [
-      "Commerce response on Fable 5 — June 26 tomorrow",
-      "OpenAI GPT-4.5 ChatGPT retirement — June 27 T-2",
-      "MS Claude Code sunset / M365 pricing lock-in — June 30 T-5",
-      "M365 Business Copilot permanent SKUs — July 1 T-6",
-      "OpenAI GPT-5.6 — July 2026 (est.)",
-      "Grok 5 (6T MoE) — Q3 2026",
-      "Claude Opus 4.1 API retirement — August 5",
-      "EU AI Act high-risk provisions — August 2026",
-      "Notion Workers billing — August 11 2026",
-      "OpenAI o3 retirement — August 26 2026"
-    ]
-  },
-  {
-    "date": "2026-06-30",
-    "providers": {
-      "OpenAI": {
-        "headline": "GPT-5.6 Sol/Terra/Luna launched June 26 to 20 govt-coordinated partners via API/Codex only — not in ChatGPT. New speech-to-text model (10%+ lower WER). Codex Remote GA all plans. GPT-4.5 retired from ChatGPT June 26 (API unaffected).",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Anthropic": {
-        "headline": "Fable 5/Mythos 5 BIS-suspended Day 18+; subscription ended June 22; usage credits ($10/$50/MTok) required; Micron strategic compute partnership announced; Claude Code /rewind + ~37% CPU reduction; Claude in Microsoft Foundry on Azure GA.",
-        "tags": [
-          "alert",
-          "strategic"
-        ],
-        "hasAlert": true,
-        "alertReason": "Fable 5 BIS-suspended Day 18+ — all Fable 5 dependencies must use Opus 4.8; no resolution timeline.",
-        "active": true
-      },
-      "Google Gemini": {
-        "headline": "Gemini 3.5 Flash GA (outperforms 3.1 Pro, <50% cost); Gemini Omni production rollout; gemini-embedding-2 multimodal GA; Antigravity CLI migration from deprecated Gemini CLI complete; Veo 4K added.",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "xAI": {
-        "headline": "Grok 4.5 enters private beta at Tesla & SpaceX (Opus-class rival per Musk); Grok V9-Medium fully GA; Grok Build /goal autonomous mode launched; Grok for Word/PPT/Excel free M365 add-in; Grok 4.3 on Amazon Bedrock GA (1M context); TTS/STT APIs GA (25 languages).",
-        "tags": [
-          "strategic",
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Meta": {
-        "headline": "No release (50+ days quiet). Behemoth delayed past June. Avocado possibly going closed-source — open-weight strategy uncertain.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Mistral": {
-        "headline": "OCR 4 GA (June 23) — structure-aware document AI, fully self-hosted, 2,000pp/min per GPU, 170 languages, 72% win rate vs competitors; Vibe Connectors enhanced with scoped API keys and debugger.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Perplexity": {
-        "headline": "Deep Research in Computer GA (command panel, thread forking, enterprise audit logs, Computer Analytics API); Kimi K2.5 (Moonshot AI, Chinese-origin) Week 11+ on US inference still unresolved — restrict in enterprise admin settings.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Microsoft 365 Copilot": {
-        "headline": "PRICING LOCK-IN EXPIRES TODAY — $18→$21/user after July 1 (+17%); Copilot Cowork GA (June 16, $0.01/credit); Microsoft Scout Autopilot agent launched; M365 Copilot app auto-installs June–July; FLUX.2 in PowerPoint; Federated Copilot Connectors GA.",
-        "tags": [
-          "alert",
-          "strategic"
-        ],
-        "hasAlert": true,
-        "alertReason": "M365 Copilot pricing lock-in EXPIRES TODAY June 30 — $21/user effective July 1. Engage procurement NOW.",
-        "active": true
-      },
-      "GitHub Copilot": {
-        "headline": "MS Claude Code license SUNSET TODAY June 30; billing Day 29 with Opus-class multipliers elevated; Claude as agent provider preview in JetBrains IDEs (June 22); Fable 5 unavailable since June 12; Max plan ($100/mo, 20K credits) as cost ceiling.",
-        "tags": [
-          "alert",
-          "tactical"
-        ],
-        "hasAlert": true,
-        "alertReason": "MS Claude Code license sunset TODAY June 30. Billing Day 29 with elevated Opus-class multipliers. Migrate and implement cost controls now.",
-        "active": true
-      },
-      "Cursor": {
-        "headline": "No new release. $2B ARR. Teams Standard ($32)/Premium ($96) stable. Market: GitHub Copilot 51%, Claude Code 10% (growing 6x), Cursor 18%. Grok V9-Medium trained on Cursor data via SpaceX exclusive deal.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Gamma": {
-        "headline": "No new release since June 12 batch. Gone quiet. Mobile editing, code syntax highlighting (30 languages), AI animations current.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Notion AI": {
-        "headline": "No new AI features. Workers GA. Workers billing transitions to Notion Credits August 11, 2026. Partner agent integrations stable.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      }
-    },
-    "topMoves": [
-      "M365 Copilot pricing lock-in EXPIRES TODAY — $21/user effective July 1 (+17%); last chance to commit at current rates",
-      "OpenAI GPT-5.6 Sol/Terra/Luna launched June 26 to 20 govt-coordinated partners — public launch expected July 2026",
-      "Grok 4.5 enters private beta at Tesla & SpaceX — xAI positions as Opus-class rival as Fable 5 remains BIS-suspended Day 18+"
-    ],
-    "clientAlerts": [
-      "M365 Copilot pricing lock-in expires TODAY June 30 — $21/user effective July 1",
-      "GitHub Copilot MS Claude Code license sunset TODAY June 30 — migrate immediately",
-      "Anthropic Fable 5 BIS-suspended Day 18+ — all dependencies must use Opus 4.8"
-    ],
-    "watchItems": [
-      "M365 Business Copilot permanent SKUs — July 1 TOMORROW",
-      "OpenAI GPT-5.6 public launch — July 2026 (est.)",
-      "Anthropic Fable 5 BIS suspension — no resolution timeline",
-      "Grok 5 (6T MoE) — Q3 2026",
-      "Claude Opus 4.1 API retirement — August 5",
-      "EU AI Act high-risk provisions — August 2026",
-      "Notion Workers billing — August 11 2026",
-      "OpenAI o3 retirement — August 26 2026"
-    ]
-  },
-  {
     "date": "2026-07-01",
     "providers": {
       "OpenAI": {
@@ -7323,6 +7082,224 @@
       "White House AI oversight adviser appointment",
       "Muse for Small Business connector scopes",
       "Perplexity HP pre-install — October"
+    ]
+  },
+  {
+    "date": "2026-10-01",
+    "providers": {
+      "OpenAI": {
+        "headline": "DevDay 2026 rollout under way: Dots always-on agents, GPT-6.1 Sol at one-fifth pricing, ChatGPT Space and a $500 Pro tier.",
+        "tags": [
+          "strategic",
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "Always-on agents with 4,000+ plug-ins and unlicensed @ChatGPT mentions in Teams/Slack expand what client data the assistant can reach.",
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "No new ship today; Sonnet 5.5 (Sept 28) and Opus 5.5 (Sept 22) are the current state.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Google Gemini": {
+        "headline": "No confirmed ship today; press reports point to a Gemini 4 Pro launch in October, unconfirmed by Google.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "xAI": {
+        "headline": "Musk flags a new round of Grok upgrades today and a new Grok/X subscription model is reported; details are thin.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Meta": {
+        "headline": "No new release today; Muse hardware announced at Connect arrives later in October from $349.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Mistral": {
+        "headline": "Enterprise migration from Le Chat to the merged Mistral Vibe product opens today, with a six-month admin-controlled window.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Perplexity": {
+        "headline": "No dated ship confirmed for today; the recent Computer upgrade (Effort Mode, GPT-6 Astra, Portable and Hybrid Computer) is the current state.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "Work IQ preview rolls out through October, the Copilot web app moves to copilot.cloud.microsoft, and cost management extends to Copilot Studio agents.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "GitHub Copilot": {
+        "headline": "No new ship today; Copilot CLI v1.0.89 (Sept 28) reads Claude Code rule files, and the Oct 19 model cutoff is 18 days out.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "Cursor": {
+        "headline": "No new ship today.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Gamma": {
+        "headline": "Still quiet — no update since the June 12 Gamma Agent/3.0 launch.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "No new ship today; Notion 3.7 agent skills (Sept 15) remain the latest state.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      }
+    },
+    "topMoves": [
+      "Mistral opens the enterprise Le Chat → Vibe migration window today",
+      "OpenAI DevDay rollout: Dots agents, GPT-6.1 Sol at one-fifth the price, and a $500 Pro tier",
+      "Microsoft 365 Copilot: Work IQ preview rolling out, web address changes in early October"
+    ],
+    "clientAlerts": [
+      "OpenAI DevDay: always-on agents and unlicensed @ChatGPT mentions widen the data-exposure surface"
+    ],
+    "watchItems": [
+      "NIST SP 1353 comment period closes Oct 15",
+      "GitHub Copilot model cutoff — Oct 19",
+      "Gemini 4 Pro rumoured for October",
+      "xAI subscription changes",
+      "Mistral Vibe enterprise migration window"
+    ]
+  },
+  {
+    "date": "2026-10-02",
+    "providers": {
+      "OpenAI": {
+        "headline": "Post-DevDay follow-ups: Codex 0.160.0 today, plus consumer shopping features and an Albertsons partnership on Oct 1",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "Claude Code gets mods — TypeScript functions that change or extend the CLI and desktop app",
+        "tags": [
+          "tactical",
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Google Gemini": {
+        "headline": "Gemini 4 Argon remains a restricted preview for cyber defenders; no wider access date yet",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "xAI": {
+        "headline": "Musk announces major Grok speed improvements on Oct 1, with no benchmarks published",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Meta": {
+        "headline": "Quiet today; no Muse or Llama release found",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Mistral": {
+        "headline": "Quiet today; the enterprise Le Chat → Vibe migration window that opened Oct 1 is the live item",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Perplexity": {
+        "headline": "Quiet today; latest published release notes are still the Sept 21 Effort Mode update",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "October wave begins: Copilot Cowork, Code and Autopilot entry points visible by default for standard-release tenants",
+        "tags": [
+          "strategic",
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "Agent entry points become visible to licensed users by default in October (standard) and November (deferred).",
+        "active": true
+      },
+      "GitHub Copilot": {
+        "headline": "Computer use enters public preview in the Copilot CLI and app; dynamic workflows ship; upfront seat billing starts",
+        "tags": [
+          "alert",
+          "tactical"
+        ],
+        "hasAlert": true,
+        "alertReason": "Computer use gives the agent access to whatever is on screen in desktop applications.",
+        "active": true
+      },
+      "Cursor": {
+        "headline": "Quiet today; changelog unchanged since the Sept 23 Rollouts and Security Review bots",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Gamma": {
+        "headline": "Still no Gamma release",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "Notion's JavaScript SDK v5.27.0 blocks browser-side tokens by default and adds an Agent Skills API",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      }
+    },
+    "topMoves": [
+      "GitHub Copilot adds desktop computer use and code-defined multi-agent workflows",
+      "Anthropic ships mods for Claude Code",
+      "Microsoft 365 Copilot's October wave starts: agent entry points on by default, 'Today' in private preview"
+    ],
+    "clientAlerts": [
+      "GitHub Copilot can now drive desktop applications — a new path to client data on developer machines",
+      "Microsoft 365 Copilot: Cowork, Code and Autopilot entry points become visible by default this month"
+    ],
+    "watchItems": [
+      "Oct 7 — DRJ webinar on AI in tabletop testing and incident response",
+      "Oct 15 — reported Notion credits for workers on Business and Enterprise",
+      "Gemini 4 Argon wider access",
+      "Microsoft 365 Copilot defaults for deferred-release tenants in November",
+      "Nov 30 — Claude Sonnet 4.5 retirement"
     ]
   }
 ]
