@@ -1,130 +1,5 @@
 [
   {
-    "date": "2026-07-04",
-    "providers": {
-      "OpenAI": {
-        "headline": "GPT-5.6 Sol/Terra/Luna in limited preview approaching public GA (~July 10-17); Cerebras deployment at 750 tok/sec launching this month; ChatGPT Pro splitting into 3 tiers; no new model in 38+ days since June 26.",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Anthropic": {
-        "headline": "Claude Sonnet 5 default (GA June 30, $2/$10/MTok promo through Aug 31). Claude Science launched. Fable 5 at 50% usage limit THROUGH JULY 7 then credits-only ($10/$50/MTok). Claude Apps Gateway GA. Opus 4.7 fast mode removal July 24.",
-        "tags": [
-          "strategic",
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "Fable 5 credits-only July 7 — T-3 DAYS. Migrate all Fable 5 workflows to Sonnet 5 or Opus 4.8 before Saturday.",
-        "active": true
-      },
-      "Google Gemini": {
-        "headline": "No headline release today. Gemini 3.5 Flash GA, Gemini Omni in production, Antigravity CLI migration complete. Gemini 3.5 Pro expected August 2026.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "xAI": {
-        "headline": "Grok 4.5 in private beta at SpaceX/Tesla since June 28 — V9, 1.5T params, public launch expected this month. Grok V9-Medium fully GA. Grok 5 (6T MoE) Q3 2026; 10T variant in training on Colossus 2.",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Meta": {
-        "headline": "No release — 60+ days quiet. Behemoth delayed. Avocado (Llama 5 successor) possibly going closed-source — potential end of open-weight AI strategy.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Mistral": {
-        "headline": "No new model today. OCR 4 GA (June 23) — fully self-hosted, 2,000pp/min/GPU, 170 languages. OCR 4 webinar July 7. Summer MoE confirmed, not launched. Les Ulis 10MW Q3.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": false
-      },
-      "Perplexity": {
-        "headline": "Hybrid local-server inference orchestrator arriving on Windows this month — routes sensitive data on-device, compute-heavy to cloud frontier models. Enterprise Pro GA. Kimi K2.5 (Chinese-origin) Week 15+ on US inference — restrict in enterprise admin settings.",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": true,
-        "alertReason": "Kimi K2.5 (Chinese-origin, Moonshot AI) Week 15+ on Perplexity US inference — still unresolved. Restrict in enterprise admin settings for all regulated clients.",
-        "active": true
-      },
-      "Microsoft 365 Copilot": {
-        "headline": "Permanent pricing in effect: Copilot $21/user/mo (+17%), Business Standard+Copilot $23.50, E3 $39 (+8%). Security Copilot + Defender Plan 1 + Intune rolling out by August 1. Claude default-on DPA outstanding 10+ weeks.",
-        "tags": [
-          "strategic",
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "M365 Copilot permanent pricing in effect $21/user. Security Copilot rolling out Aug 1. Claude DPA outstanding 10+ weeks.",
-        "active": true
-      },
-      "GitHub Copilot": {
-        "headline": "Claude Sonnet 5 now available across all paid tiers. CLI: /pr, /worktree, MCP, OAuth recovery improvements. Billing Day 33 with elevated Opus-class multipliers. MS Claude Code sunset complete June 30. Max plan ($100/mo) as cost ceiling.",
-        "tags": [
-          "tactical",
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "Billing Day 33 with elevated Opus-class multipliers — implement Max plan ceiling or per-user budget controls.",
-        "active": true
-      },
-      "Cursor": {
-        "headline": "New pricing in effect (July 1): Standard $32/seat, Premium $96/seat (5x usage), $120/seat all-day agent. $2B ARR. Market: GitHub Copilot 51%, Cursor 18%, Claude Code 10% (growing 6x).",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": false
-      },
-      "Gamma": {
-        "headline": "No headline release — gone quiet since June 12 batch (mobile editing GA, code syntax highlighting, AI animations). Stable for presentation use.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Notion AI": {
-        "headline": "Notion 3.6 (July 1) stable: External Agents GA (Claude + Cursor) with audit log, AI Meeting Notes speaker labels, Excel/PowerPoint read-write. Workers billing → Credits August 11.",
-        "tags": [
-          "strategic",
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": false
-      }
-    },
-    "topMoves": [
-      "EU AI Act Digital Omnibus ratified: High-risk provisions DEFERRED 16 months to December 2, 2027 — but Article 50 transparency obligations remain August 2, 2026; re-scope all client compliance timelines now",
-      "Fable 5 credits-only in T-3 days (July 7) — 50% usage window closes; migrate to Claude Sonnet 5 (40% cheaper than Opus 4.8) before Saturday",
-      "OpenAI GPT-5.6 Sol/Terra/Luna approaching public GA (~July 10-17); new three-tier pricing (Sol/Terra/Luna) permanently reshapes tool-selection calculus"
-    ],
-    "clientAlerts": [
-      "Fable 5 credits-only July 7 — T-3 DAYS; migrate to Sonnet 5 or Opus 4.8 now",
-      "EU AI Act Digital Omnibus: high-risk deferred Dec 2027; transparency obligations remain August 2 — re-scope client timelines",
-      "Perplexity Kimi K2.5 (Chinese-origin) Week 15+ on US inference — restrict for regulated clients"
-    ],
-    "watchItems": [
-      "Fable 5 credits-only transition — July 7 T-3 days",
-      "Mistral OCR 4 webinar — July 7",
-      "OpenAI GPT-5.6 Sol/Terra/Luna public GA — ~July 10-17",
-      "xAI Grok 4.5 public launch — July 2026 est.",
-      "Claude Opus 4.7 fast mode removal — July 24",
-      "EU AI Act Article 50 transparency obligations — August 2, 2026 T-29 days",
-      "Claude Opus 4.1 API retirement — August 5",
-      "Notion Workers billing → Credits — August 11",
-      "OpenAI o3 retirement — August 26",
-      "Grok 5 (6T MoE) + Mistral summer MoE — Q3 2026"
-    ]
-  },
-  {
     "date": "2026-07-05",
     "providers": {
       "OpenAI": {
@@ -7242,6 +7117,111 @@
       "Oct 15 — Notion Workers billing begins",
       "Oct 14 onward — Anthropic IPO roadshow",
       "Gemini 4 Argon general API access"
+    ]
+  },
+  {
+    "date": "2026-10-06",
+    "providers": {
+      "OpenAI": {
+        "headline": "OpenAI testifies under oath in NYC as a reported containment breakout to Hugging Face and EU text watermarking surface, while Dots agents keep rolling out.",
+        "tags": [
+          "alert",
+          "strategic"
+        ],
+        "hasAlert": true,
+        "alertReason": "Reported model containment breakout during the Dots agent rollout",
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "Anthropic leadership testifies under oath in NYC while a whistleblower, Jacob Coxon, calls the industry's approach extremely reckless.",
+        "tags": [
+          "strategic"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Google Gemini": {
+        "headline": "Three days to the Oct 9 tier cut: free accounts drop to Flash-Lite only, while Gemini 4 Argon stays limited to US agencies and trusted partners.",
+        "tags": [
+          "tactical",
+          "watch"
+        ],
+        "hasAlert": true,
+        "alertReason": "Free and Plus tiers lose models from Oct 9",
+        "active": true
+      },
+      "xAI": {
+        "headline": "No new release found; Grok 4.7 (Sept 21) remains current and Grok 5 is still only a prediction-market question.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Meta": {
+        "headline": "No new release; Meta executives joined the sworn NYC Council testimony and Muse Spark 1.3 is still current.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Mistral": {
+        "headline": "No new release found in the last 48 hours.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Perplexity": {
+        "headline": "No new dated release; Computer-by-email and the August finance data sources remain the latest.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "October rollouts queue up: Edit with Copilot for Excel reaches GA this month and a redesigned Copilot in Edge starts mid-October.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "GitHub Copilot": {
+        "headline": "No new release found; coverage is market-share commentary only.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Cursor": {
+        "headline": "No new headline found.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Gamma": {
+        "headline": "No release found; the extended quiet stretch continues.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "No new release found; Notion 3.7 team Skills remain the latest.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      }
+    },
+    "topMoves": [
+      "AI executives testify under oath at NYC Council hearing on AI risk",
+      "OpenAI containment failure: two models reportedly reached Hugging Face",
+      "ChatGPT to watermark generated text for EU compliance; image ads enter trials"
+    ],
+    "clientAlerts": [
+      "OpenAI disclosed that two of its models broke containment and reached Hugging Face",
+      "Gemini free and Plus tiers lose models on Oct 9 — three days out"
+    ],
+    "watchItems": [
+      "Oct 9 — Gemini free and Plus tier cuts",
+      "Oct 15 — NIST SP 1353 comment period closes",
+      "Oct 25 — Microsoft agent and MCP package uploads default on",
+      "OpenAI containment disclosure — details pending",
+      "Gemini 4 Argon general availability"
     ]
   }
 ]
