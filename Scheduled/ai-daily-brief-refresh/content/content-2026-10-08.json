@@ -1,0 +1,198 @@
+{
+  "date": "2026-10-08",
+  "client_alerts": [
+    {
+      "headline": "Copilot desktop control and upload settings need an admin decision this month",
+      "body": "GitHub Copilot's computer-use preview (Oct 1) lets the agent operate macOS and Windows desktops once a user opts in; organisations can disable it in policy. Separately, a third-party Microsoft 365 roundup says admins have until **Oct 25** to decide on Copilot advanced uploads (Microsoft's dates are tentative). Clients with regulated data should set both policies deliberately rather than inherit the defaults."
+    }
+  ],
+  "top_moves": [
+    {
+      "title": "Anthropic ships Claude Haiku 5.5 at a reported 75% lower cost",
+      "date_label": "Oct 7, 2026",
+      "urgent": false,
+      "body": "Aggregator reports describe the first Haiku with effort controls, a 1M-token context and two-tier pricing, plus a companion change to Sonnet caching. GitHub added Haiku 5.5 to Copilot the same day, which corroborates the release; confirm pricing on Anthropic's own pages before quoting it.",
+      "tag": "tactical"
+    },
+    {
+      "title": "White House signs a voluntary AI accord with six AI and chip CEOs",
+      "date_label": "Oct 7, 2026",
+      "urgent": false,
+      "body": "OpenAI, Anthropic, Google, Meta, xAI and Nvidia are reported signatories. The terms were not available in today's coverage, so treat it as a direction-of-travel signal, not a compliance requirement.",
+      "tag": "strategic"
+    },
+    {
+      "title": "GitHub Copilot local sandboxing goes GA; Gemini free-tier cut lands tomorrow",
+      "date_label": "Oct 7–9, 2026",
+      "urgent": true,
+      "body": "GitHub's Oct 7 changelog marks local sandboxing generally available and adds local-model discovery to the Copilot CLI. Google's previously announced change takes effect **Oct 9**: personal accounts without a subscription keep only Flash-Lite, and AI Plus loses Gemini Pro on a per-user schedule.",
+      "tag": "tactical"
+    }
+  ],
+  "providers": [
+    {
+      "name": "OpenAI",
+      "display": "OpenAI",
+      "headline": "Published a public math repository of model-found proofs and a computer-use agent evaluation built on Ironclad workflows.",
+      "detail": "OpenAI released 722 manuscripts across 372 problem families with Lean formalisations for many proofs, saying an internal model solved hundreds of open problems. A separate post turns 11 hosted Ironclad legal, commercial and procurement workflows into tasks for evaluating computer-use agents. A WSJ-sourced report, citing OpenRouter data, says OpenAI has regained coding share from Anthropic this year. No new ChatGPT feature was confirmed for today.",
+      "tags": ["strategic"],
+      "classification": "strategic",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Anthropic",
+      "display": "Anthropic",
+      "headline": "Claude Haiku 5.5 reported shipping at 75% lower cost, with effort controls and a 1M-token context.",
+      "detail": "Aggregators list Haiku 5.5 with two-tier pricing and a companion Sonnet caching change; GitHub's same-day Copilot integration corroborates the release, but pricing should be checked against Anthropic's own documentation. Anthropic also expanded Claude Startups (one year of Claude Team for up to five Premium seats plus a $1,000 API credit). The wider security-team access under Project Glasswing was covered yesterday.",
+      "tags": ["tactical"],
+      "classification": "tactical",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Google Gemini",
+      "display": "Google Gemini",
+      "headline": "EmbeddingGemma 2 and the Playground game builder ship; Gemini 4 Pro is still unconfirmed and the free-tier model cut starts Oct 9.",
+      "detail": "Google DeepMind released EmbeddingGemma 2, a 740M-parameter Apache 2.0 embedding model covering text, code, images, video and audio. Google also launched Playground, a Unity-backed tool for building games from text prompts. Gemini 4 Pro remains a press projection for October with no Google announcement. From Oct 9, personal accounts without a subscription keep only Flash-Lite.",
+      "tags": ["tactical", "watch"],
+      "classification": "tactical",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "xAI",
+      "display": "xAI / Grok",
+      "headline": "No new ship today; Grok 4.7 (Sept 21) is the current flagship and Grok 5 has no date.",
+      "detail": "xAI was reported among the signatories of the White House voluntary AI accord. Third-party trackers say Musk now places Grok 4.8 and 4.9 ahead of Grok 5. Nothing dated to the last 48 hours was found on product.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Meta",
+      "display": "Meta",
+      "headline": "No new release today; Meta is a reported signatory of the White House AI accord and Muse hardware is still due later in October.",
+      "detail": "No Llama or Meta AI model release was found for the last 48 hours. The Muse hardware announced at Connect remains scheduled for later this month from $349.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Mistral",
+      "display": "Mistral",
+      "headline": "Large 4 preview coverage continues; sources now conflict on parameter count and licence.",
+      "detail": "Follow-up reporting on the Oct 6 preview puts the open-weight release at Oct 27 (per Reuters, via secondary reports) under a custom licence rather than Apache 2.0. One outlet notes Mistral's own model listing shows 675B total parameters with 41B active, against the roughly 1 trillion widely reported. An early Artificial Analysis read places it well behind the top OpenAI and Anthropic models.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Perplexity",
+      "display": "Perplexity",
+      "headline": "No dated ship found for today.",
+      "detail": "Search returned nothing newer than the late-summer Computer updates. Treat the current state as unchanged.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Microsoft 365 Copilot",
+      "display": "Microsoft 365 Copilot",
+      "headline": "October rollout continues: connector access and content scope are now self-serve for admins, with more changes landing through the month.",
+      "detail": "Microsoft's Oct 6 release notes let admins fix a mis-scoped connection or broken identity mapping without a support case. A third-party roundup lists a new Copilot Chat interface in Teams and Outlook, Copilot in SharePoint and OneDrive reaching GA, and an Oct 25 admin deadline on advanced uploads; Microsoft labels these dates tentative. The Edge Copilot refresh is due mid-October.",
+      "tags": ["tactical"],
+      "classification": "tactical",
+      "active": true,
+      "hasAlert": true,
+      "alertReason": "Admin decision on advanced uploads reported due Oct 25"
+    },
+    {
+      "name": "GitHub Copilot",
+      "display": "GitHub Copilot",
+      "headline": "Local sandboxing is GA, Claude Haiku 5.5 is added and the CLI discovers local models; the Oct 19 model cutoff is 11 days out.",
+      "detail": "All three items are in GitHub's Oct 7 changelog. The Oct 1 computer-use preview, which lets Copilot drive macOS and Windows desktops with user approval, can be disabled at the organisation level. Teams should confirm their pinned models before the Oct 19 cutoff.",
+      "tags": ["tactical"],
+      "classification": "tactical",
+      "active": true,
+      "hasAlert": true,
+      "alertReason": "Computer-use preview can operate desktops; org policy can disable it"
+    },
+    {
+      "name": "Cursor",
+      "display": "Cursor",
+      "headline": "No new ship found today.",
+      "detail": "Search returned only comparison pieces; no dated Cursor changelog entry for the last 48 hours.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Gamma",
+      "display": "Gamma",
+      "headline": "Still quiet — no update found since the June 12 Gamma Agent/3.0 launch.",
+      "detail": "No dated Gamma release was found.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Notion AI",
+      "display": "Notion AI",
+      "headline": "No new ship found today; Notion 3.7 agent skills (Sept 15) remain the latest state.",
+      "detail": "No dated Notion AI release was found.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    }
+  ],
+  "persistent_signals": [
+    {"provider": "Google Gemini", "text": "Google Gemini — Gemini 4 Pro October launch still unconfirmed by Google — 2 weeks running"},
+    {"provider": "GitHub Copilot", "text": "GitHub Copilot — Oct 19 model cutoff countdown — 2 weeks running (now 11 days out)"},
+    {"provider": "Microsoft 365 Copilot", "text": "Microsoft 365 Copilot — staged October rollout of Copilot changes — 2 weeks running"},
+    {"provider": "Meta", "text": "Meta — Muse hardware due later in October, no model release — 2 weeks running"}
+  ],
+  "month_themes": {
+    "then": "Backlash to the AI-cyberattack open letter; Meta's Hatch agent acting without permission in testing; Anthropic's Mythos 5.1 security model going stable",
+    "now": "Cheaper small models (Haiku 5.5); a voluntary White House AI accord; sandboxing and admin controls for desktop-operating agents"
+  },
+  "habits": [
+    {"task": "BCP/DR plan narratives & runbooks", "tool": "Claude Sonnet 5.5 (drafting) + Haiku 5.5 (bulk passes)", "shift": "Try Haiku 5.5 for high-volume reformatting and consistency checks across runbooks once pricing is confirmed; keep Sonnet for the narrative itself.", "type": "tactical"},
+    {"task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)", "tool": "Claude or ChatGPT with the source document attached", "shift": "No change. NIST's draft SP 1353 guidance still applies: treat any AI-generated control mapping as proposed until a qualified person reviews it.", "type": "watch"},
+    {"task": "Vendor/architecture research", "tool": "Perplexity or ChatGPT deep research", "shift": "No change. Cross-check Mistral Large 4 claims: sources disagree on parameter count and licence.", "type": "watch"},
+    {"task": "Client proposals & SOWs", "tool": "Claude Sonnet 5.5", "shift": "No change today.", "type": "watch"},
+    {"task": "Executive decks", "tool": "Gamma or Microsoft 365 Copilot", "shift": "No change; Gamma remains quiet and the Copilot October changes are interface-level.", "type": "watch"},
+    {"task": "Stakeholder audio walkthroughs", "tool": "NotebookLM", "shift": "If you rely on a free or AI Plus Google account, check what the Oct 9 Gemini model-access change leaves you with.", "type": "tactical"},
+    {"task": "Client advisory on AI data risk", "tool": "Your own checklist + vendor admin docs", "shift": "Add two items: an explicit org policy on agent computer use (GitHub Copilot preview), and the Microsoft 365 Copilot advanced-uploads decision reported due Oct 25.", "type": "strategic"}
+  ],
+  "community": [
+    {"source": "Reddit (all three subs)", "signal": "No dated, high-engagement threads from this week could be retrieved today; search returned only older or undated snapshots.", "so_what": "No community signal is reported rather than recycling stale threads."},
+    {"source": "r/LocalLLaMA", "signal": "Undated aggregator snapshot shows GLM-5.2 open-weight discussion leading the sub's most-discussed topics.", "so_what": "Open-weight options keep improving, relevant for clients who need on-premises or air-gapped models; verify currency before citing."},
+    {"source": "r/ClaudeAI", "signal": "Undated feed snapshot includes a thread arguing Claude asks permission too often before using its tools.", "so_what": "Low confidence on timing; if it matches your experience, state up front in prompts which actions are pre-approved."}
+  ],
+  "watch": [
+    {"kind": "deadline", "title": "Oct 9 — Gemini model access cut for free personal accounts", "body": "Accounts without a Google AI subscription keep only Flash-Lite; AI Plus loses Gemini Pro on a per-user date sent by email."},
+    {"kind": "regulatory", "title": "Oct 15 — NIST SP 1353 draft comment deadline", "body": "Draft guide on using generative AI for Cybersecurity Framework 2.0 work. Confirm the date on NIST's site before acting."},
+    {"kind": "deadline", "title": "Oct 19 — GitHub Copilot model cutoff", "body": "Eleven days out. Confirm which models your teams and clients have pinned."},
+    {"kind": "deadline", "title": "Oct 25 — Microsoft 365 Copilot advanced-uploads admin decision", "body": "Reported by a third-party roundup; Microsoft marks its dates tentative. Check the Message Center."},
+    {"kind": "watch", "title": "Oct 27 — Mistral Large 4 open weights; Gemini 4 Pro possible in October", "body": "Mistral's weights are reported for Oct 27 under a custom licence. Gemini 4 Pro remains a press projection with no Google confirmation."}
+  ],
+  "sources": "Sources consulted: OpenAI news page, GitHub Copilot changelog, Microsoft 365 Copilot release notes, CNBC, eWeek, Dataconomy, ComputerBase, Fox News live coverage, Gizmodo, TechStartups and aiweekly.co roundups, llm-stats.com, a Cloud Security Alliance research note on NIST SP 1353, letsdatascience.com, and Reddit aggregator snapshots."
+}
