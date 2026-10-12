@@ -1,0 +1,198 @@
+{
+  "date": "2026-10-11",
+  "client_alerts": [],
+  "top_moves": [
+    {
+      "title": "Claude Code 2.1.295 and 2.1.296: hooks can now fail closed, and admins get a managed policy key for the Code tab",
+      "date_label": "Oct 11, 2026",
+      "urgent": false,
+      "body": "Two releases landed on top of Friday's 2.1.294. **2.1.295** adds `onFailure: \"block\"` so a command or HTTP hook that times out or crashes blocks the action instead of letting it through; **2.1.296** adds a `code` key to managed gateway policies (also governing the Desktop Code tab) and, per the changelog, halves Sonnet 5.5 cache-read pricing to $0.10 per million tokens.",
+      "tag": "tactical"
+    },
+    {
+      "title": "Notion Workers start billing against Notion credits on Thursday",
+      "date_label": "Oct 15, 2026 — 4 days out",
+      "urgent": true,
+      "body": "No new announcement, but the deadline is now inside the week. Any Worker left running after Oct 15 draws down credits, so audit what is deployed before Thursday.",
+      "tag": "watch"
+    },
+    {
+      "title": "Google's Gemini tier reshuffle is in effect for free personal accounts; Plus loses Pro on a per-account date",
+      "date_label": "Oct 9, 2026 — rolling",
+      "urgent": true,
+      "body": "Since Oct 9, personal accounts without a Google AI plan see only Flash-Lite. Google AI Plus keeps Flash but drops Gemini Pro on a date emailed to each subscriber; Pro and Ultra are unchanged. The notice covers personal accounts only and says nothing about Workspace.",
+      "tag": "strategic"
+    }
+  ],
+  "providers": [
+    {
+      "name": "OpenAI",
+      "display": "OpenAI",
+      "headline": "Quiet weekend — nothing dated Oct 10–11; this week's GPT-6 rollout in ChatGPT and the Oct 8–9 Codex updates remain the latest",
+      "detail": "No new release found for Oct 10 or 11. The week's changes stand: GPT-6 with the interactive 'Intelligent UI' response format reached paid tiers Oct 7 and Free/Go Oct 8 (Enterprise access depends on admin settings); audio file uploads arrived Oct 6; Codex gained faster mid-task steering and a composer-predictions beta limited to personal Pro users on Oct 8–9.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Anthropic",
+      "display": "Anthropic",
+      "headline": "Claude Code 2.1.295 and 2.1.296 add fail-closed hooks, a managed policy key for the Code tab, and a Sonnet 5.5 cache-read price cut",
+      "detail": "2.1.295 adds `onFailure: \"block\"` for command and HTTP hooks, plus a terminal status protocol and new gateway options. 2.1.296 adds a `code` key to managed gateway policies (applies to the Desktop Code tab too), earlier auto-compaction for subagents, a higher MCP tool-description limit, and lists Sonnet 5.5 cache reads at $0.10 per million tokens, down from $0.20. The changelog shows no dates; both sit above Friday's 2.1.294. No new model or claude.ai release notes were found for October.",
+      "tags": ["tactical"],
+      "classification": "tactical",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Google Gemini",
+      "display": "Google Gemini",
+      "headline": "Quiet today — the Oct 9 tier change is live for free personal accounts; a 'Gemini 4 Argon' listing on one aggregator is unconfirmed",
+      "detail": "Nothing new dated Oct 10–11. The subscription change announced Oct 3 took effect Oct 9 for personal accounts with no Google AI plan (Flash-Lite only); Plus subscribers lose Gemini Pro on individually emailed dates. One changelog aggregator lists a 'Gemini 4 Argon' release on Oct 1, but no Google source backs it, so treat it as unverified.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "xAI",
+      "display": "xAI / Grok",
+      "headline": "Quiet — Grok 4.7 (Sept 21) is still the frontier model; the experimental TypeScript SDK from Oct 2 is the latest item",
+      "detail": "No October model release found. Grok 4.7 remains current and is on Amazon Bedrock since Sept 28. Grok 5 has no official date; prediction markets are tracking an Oct 31 cutoff, which is speculation rather than a signal.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Meta",
+      "display": "Meta",
+      "headline": "Quiet — no October release found; Muse Spark 1.3 (Sept 2) remains the latest",
+      "detail": "Searches returned only older coverage and Llama 5 speculation. Llama 4 is still the most recent open-weight generation.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Mistral",
+      "display": "Mistral",
+      "headline": "Quiet today — Large 4 preview (Oct 6) is API-only, with open weights still promised and the licence still unpublished",
+      "detail": "Nothing new since the Large 4 preview coverage. The preview is available through Mistral's API; no benchmarks, licence text or weights have appeared yet.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Perplexity",
+      "display": "Perplexity",
+      "headline": "Quiet — nothing dated October found; September's Computer upgrades are still the latest",
+      "detail": "Search results stop at August–September items. No sign yet of the HP ZBook Windows rollout expected this month.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Microsoft 365 Copilot",
+      "display": "Microsoft 365 Copilot",
+      "headline": "Quiet today — October notes unchanged: Edge Copilot redesign due mid-month, Word Agent consolidation reaching GCC and DoD",
+      "detail": "No new Message Center items surfaced for Oct 10–11. Still pending this month: the automatic Copilot in Edge redesign (MC1484007), Word entry points consolidating on Word Agent for GCC/DoD, and the SharePoint Copilot October updates published Oct 1.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "GitHub Copilot",
+      "display": "GitHub Copilot",
+      "headline": "Quiet — no October changelog items surfaced in today's searches",
+      "detail": "Results were mid-2026 comparison pieces only. Nothing newer than what earlier editions reported.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Cursor",
+      "display": "Cursor",
+      "headline": "Quiet — Rollouts and Security Review bots (Sept 23) are still the latest",
+      "detail": "No October release found.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Gamma",
+      "display": "Gamma",
+      "headline": "Still no release — about 121 days quiet since June 12",
+      "detail": "No changelog or news items found for October.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Notion AI",
+      "display": "Notion AI",
+      "headline": "Quiet today — Workers start billing against Notion credits on Oct 15, now four days away",
+      "detail": "No new release found. The Oct 15 billing start for Workers is the only live item; Agent SDK remains in public beta.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    }
+  ],
+  "persistent_signals": [
+    {"provider": "Notion AI", "text": "Notion AI — Workers billing against credits from Oct 15 — 2 weeks running (deadline now 4 days out)"},
+    {"provider": "Anthropic", "text": "Anthropic — Claude Code hook and permission-rule hardening — 2 weeks running (2.1.289 deny rules, then 2.1.294–2.1.295 hooks)"},
+    {"provider": "Microsoft 365 Copilot", "text": "Microsoft 365 Copilot — October release-note rollouts — 2 weeks running (entry-point changes, SharePoint, now Edge)"},
+    {"provider": "xAI", "text": "xAI — no new model, Grok 4.7 still the frontier — 2 weeks running"},
+    {"provider": "Meta", "text": "Meta — Muse Spark 1.3 still the latest — 2 weeks running"},
+    {"provider": "Perplexity", "text": "Perplexity — September Computer upgrades still the latest, HP ZBook rollout pending — 2 weeks running"},
+    {"provider": "Cursor", "text": "Cursor — nothing since the Sept 23 bots — 2 weeks running"},
+    {"provider": "Gamma", "text": "Gamma — no release since June 12 — 2 weeks running (about 121 days)"}
+  ],
+  "month_themes": {
+    "then": "New frontier models reaching GA (GPT-6 Astra, Fable 5.1 / Mythos 5.1); Google ending a quiet streak with Gemini 3.8 Flash; pricing being locked in (Sonnet 5)",
+    "now": "Guardrail hardening in coding agents (fail-closed hooks, managed policies); vendors narrowing what cheaper tiers include (Gemini, Notion credits); a slow weekend with most providers quiet"
+  },
+  "habits": [
+    {"task": "BCP/DR plan narratives & runbooks", "tool": "Claude (Opus 5.5 / Sonnet 5.5)", "shift": "No change. If you script runbook generation through Claude Code hooks, set `onFailure: \"block\"` on any hook that acts as a guardrail so a crashed hook stops the action.", "type": "tactical"},
+    {"task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)", "tool": "Claude, with the source document attached", "shift": "No change. Nothing new from ISO or NIST surfaced today; keep summarising from the attached standard, not from model memory.", "type": "watch"},
+    {"task": "Vendor / architecture research", "tool": "ChatGPT (GPT-6) or Perplexity", "shift": "Gemini is a weaker fallback on a free or Plus personal account now that Pro is restricted to Pro and Ultra plans. Check which Gemini model you are actually getting before trusting a comparison.", "type": "tactical"},
+    {"task": "Client proposals & SOWs", "tool": "Claude", "shift": "No change.", "type": "watch"},
+    {"task": "Executive decks", "tool": "Copilot in PowerPoint; Gamma as a fallback", "shift": "No change. Gamma has shipped nothing in about four months, so do not build a workflow around features it has not released.", "type": "watch"},
+    {"task": "Stakeholder audio walkthroughs", "tool": "ChatGPT audio uploads for transcripts; NotebookLM for audio overviews", "shift": "ChatGPT's audio file upload (Oct 6, paid plans) is worth trying for turning recorded tabletop exercises into transcripts and summaries. Keep client recordings out of personal accounts.", "type": "tactical"},
+    {"task": "Client advisory on AI data risk", "tool": "Vendor admin documentation, read first-hand", "shift": "Two talking points: GPT-6 access in Enterprise workspaces depends on admin settings, and Claude Code now has a managed `code` policy key. Both are controls a client's admin should review rather than leave at default.", "type": "strategic"}
+  ],
+  "community": [
+    {"source": "r/OpenAI", "signal": "A post asking whether OpenAI's $230 mini keyboard is worth buying leads an undated top-posts snapshot at 764 upvotes, ahead of a 672-upvote thread on an Elon Musk tweet about OpenAI's model.", "so_what": "Hardware and personality chatter, not capability news. Nothing here changes tool choice."},
+    {"source": "r/OpenAI", "signal": "A user who measured their $100 Pro Lite weekly limit reports that limits seem to vary between accounts, possibly from A/B testing.", "so_what": "Anecdotal, but do not plan a deadline-week workload around a limit someone else posted."},
+    {"source": "r/LocalLLaMA", "signal": "'GLM-5.2 is a win for Local AI' tops an aggregator's topic list at 79 posts, with Unsloth's Gemma 4 QAT releases close behind at 64. The aggregator's time window is not stated.", "so_what": "Open-weight options keep improving for clients who need models on their own hardware; relevant to data-residency conversations."},
+    {"source": "r/ClaudeAI", "signal": "No current-week snapshot was retrievable today; the results were months old.", "so_what": "No read on whether last week's unconfirmed Opus 5.5 quality complaints have continued."}
+  ],
+  "watch": [
+    {"kind": "pricing", "title": "Notion Workers billing — Oct 15", "body": "Workers begin drawing on Notion credits Thursday. Review and switch off anything not needed before then."},
+    {"kind": "deadline", "title": "Copilot in Edge redesign — mid-October", "body": "Rolls out automatically worldwide with no admin action and no opt-out window (MC1484007). Warn clients whose staff use the Edge sidebar so the new layout is not reported as an incident."},
+    {"kind": "pricing", "title": "Google AI Plus loses Gemini Pro — per-account dates", "body": "Plus subscribers get an email with their own effective date. Personal accounts only; no Workspace change has been announced."},
+    {"kind": "watch", "title": "Mistral Large 4 open weights and licence — by end of October", "body": "Weights are promised this month but the licence is unpublished. Do not recommend it for on-premises client use until the terms are readable."},
+    {"kind": "watch", "title": "Gemini 4 — rumoured, unconfirmed", "body": "One aggregator lists a 'Gemini 4 Argon' release on Oct 1 with no Google source behind it. Wait for an official post."}
+  ],
+  "sources": "Sources consulted: the Claude Code changelog on GitHub, OpenAI ChatGPT release-note coverage (letsdatascience, resultsense), a letsdatascience report on Google's Gemini tier notice, Microsoft Message Center mirrors (MC1484007), third-party trackers for xAI, Mistral, Meta and Perplexity, and Reddit mirror snapshots for r/OpenAI and r/LocalLLaMA; no dated BCP/DR or ISO 22301 / NIST news was found today."
+}

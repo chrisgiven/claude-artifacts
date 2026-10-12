@@ -1,0 +1,269 @@
+{
+  "date": "2026-10-10",
+  "client_alerts": [],
+  "top_moves": [
+    {
+      "title": "Mistral Large 4 preview: open weights promised by end of October, licence still unpublished",
+      "date_label": "Oct 10, 2026",
+      "urgent": false,
+      "body": "Follow-up coverage of the Oct 6 public preview says the weights are planned for the end of this month, but **no licence terms have been released**, so self-hosting cannot be planned yet. Pricing reports conflict ($0.68/$2.09 vs $1.36/$4.18 per 1M tokens — the lower figure looks like a time-limited preview discount); none of this was confirmed on a Mistral-owned page.",
+      "tag": "strategic"
+    },
+    {
+      "title": "Claude Code 2.1.294 fixes hooks whose blocking rules were not being honoured",
+      "date_label": "Oct 8, 2026",
+      "urgent": false,
+      "body": "A third-party release tracker reports v2.1.294 corrects how instruction-based hooks are interpreted so **blocking rules actually block**; v2.1.291 two days earlier fixed ignored permission prompts. If a client treats Claude Code hooks as a control, have them update and re-test — not yet confirmed against Anthropic's own changelog.",
+      "tag": "watch"
+    },
+    {
+      "title": "Copilot in Edge redesign starts rolling out mid-October — no admin action, no opt-out window",
+      "date_label": "Mid-Oct 2026",
+      "urgent": true,
+      "body": "Message Center item MC1484007 says the new Copilot icon, simplified side pane and upgraded **Voice and Vision** features reach every user with Copilot enabled in Edge, starting mid-October and finishing within the month. Worth a heads-up to client help desks before users notice the change.",
+      "tag": "tactical"
+    }
+  ],
+  "providers": [
+    {
+      "name": "OpenAI",
+      "display": "OpenAI",
+      "headline": "Quiet today — nothing newer than the Oct 8 Codex follow-up steering change and the GPT-6 / Intelligent UI rollout",
+      "detail": "No release-note entries dated Oct 9 or 10 were found. The most recent items remain the GPT-6 rollout (Sol for paid tiers, Luna for Free and Go), faster follow-up steering in Codex (Oct 8) and audio-file uploads for transcripts on paid plans (Oct 6). Enterprise GPT-6 access still depends on workspace admin settings.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Anthropic",
+      "display": "Anthropic",
+      "headline": "Claude Code 2.1.294 (Oct 8) fixes instruction-based hooks so blocking rules take effect; plugin installs from marketplaces landed Oct 6",
+      "detail": "A third-party tracker lists eight Claude Code releases so far in October. The latest, v2.1.294, fixes how instruction-based hooks are interpreted so blocking rules work as intended; v2.1.292 added direct plugin installs from marketplaces and sub-agent effort control; v2.1.291 fixed ignored permission prompts. The same tracker claims v2.1.293 changed a default to Haiku 5.5 — unconfirmed. No official October release-notes page surfaced in search.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Google Gemini",
+      "display": "Google Gemini",
+      "headline": "No new release today — the free-tier cut to Flash-Lite is now in force and AI Plus subscribers are still waiting for their individual effective dates",
+      "detail": "Free personal accounts lost Flash and Pro on Oct 9. Google AI Plus subscribers are to be emailed their own cutoff date; none has been published. Pro and Ultra keep all three models and Deep Think. Gemini 4 Argon is still only described by third-party changelogs, with no official availability detail found.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "xAI",
+      "display": "xAI / Grok",
+      "headline": "Quiet — Grok 4.7 (Sept 21) remains the latest; no Grok 5 announcement",
+      "detail": "No October release found. A prediction market is tracking whether Grok 5 reaches general availability by Oct 31, but there is no official signal either way.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Meta",
+      "display": "Meta",
+      "headline": "Quiet — no Llama or Muse release found for October",
+      "detail": "Search returned only older reporting and speculation about a Llama successor. Nothing dated this week.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Mistral",
+      "display": "Mistral",
+      "headline": "Large 4 public preview: weights planned for end of October, licence terms unpublished, pricing reports conflict",
+      "detail": "Large 4 has been in public preview through Mistral Studio since Oct 6, reported at 1.05T total / 49B active parameters with native image input and a 1M-token context. Secondary sources say weights follow at the end of October, but the licence has not been released. Reported pricing is either $0.68/$2.09 or $1.36/$4.18 per 1M input/output tokens — the lower rate appears to be a preview discount with no stated end. Artificial Analysis scores it 38 on its Intelligence Index at about 116 tokens/sec. No Mistral-owned source was found to confirm these figures.",
+      "tags": ["strategic"],
+      "classification": "strategic",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Perplexity",
+      "display": "Perplexity",
+      "headline": "Quiet — no October changelog entries found",
+      "detail": "The most recent indexed changes are from the summer (Projects, Brain memory, Computer by email). Nothing dated this week.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Microsoft 365 Copilot",
+      "display": "Microsoft 365 Copilot",
+      "headline": "Copilot in Edge gets a new icon, simplified side pane and upgraded Voice/Vision from mid-October (MC1484007); no admin action required",
+      "detail": "The Edge rollout begins mid-October and is expected to complete the same month for all users with Copilot turned on. Also slated for October: PowerPoint Copilot continuing long jobs after the app is closed, Skills in Brand Kit, and Word Agent entry-point changes reaching GCC/DoD. A 'Today' experience is reported to enter private preview this month, per a secondary source.",
+      "tags": ["tactical"],
+      "classification": "tactical",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "GitHub Copilot",
+      "display": "GitHub Copilot",
+      "headline": "Quiet today — Copilot CLI 1.0.93 (Oct 7, real-time sandboxing for all users) is still the latest",
+      "detail": "A third-party tracker lists three CLI releases this month: 1.0.91 (Windows sandbox commands), 1.0.92 (configuration commands and an environment picker) and 1.0.93 (real-time sandboxing for everyone). Nothing newer was found, and GitHub's own October changelog page did not surface in search.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Cursor",
+      "display": "Cursor",
+      "headline": "Quiet — no October release found",
+      "detail": "Search returned only comparison pieces. The Sept 23 Rollouts and Security Review bots remain the latest known items.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Gamma",
+      "display": "Gamma",
+      "headline": "Still no feature release — nothing dated October",
+      "detail": "Search returned only comparisons and background. No changelog entry found.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Notion AI",
+      "display": "Notion AI",
+      "headline": "Quiet — no October update found",
+      "detail": "Nothing newer than last week's AI Search speed-up and SDK additions surfaced in search.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    }
+  ],
+  "persistent_signals": [
+    {
+      "provider": "Anthropic",
+      "text": "Anthropic — Claude Code plugin and mods follow-through — 2 weeks running (developer portal last week; marketplace installs and hook fixes this week)"
+    },
+    {
+      "provider": "Gamma",
+      "text": "Gamma — no feature release — 2+ weeks running (no changelog entry found again today)"
+    }
+  ],
+  "month_themes": {
+    "then": "Claude Code workflow polish; Copilot content exclusions extended to agents; Grok 4.7 countdown",
+    "now": "Open-weight frontier models (Mistral Large 4); agent guardrails that actually enforce (Claude Code hooks, Copilot CLI sandboxing); consumer tier tightening and UI overhauls (Gemini free tier, GPT-6 Intelligent UI, Copilot in Edge)"
+  },
+  "habits": [
+    {
+      "task": "BCP/DR plan narratives & runbooks",
+      "tool": "Claude (Opus 5.5)",
+      "shift": "No change. If you script runbook checks through Claude Code hooks, update to 2.1.294 and re-test any blocking rule before trusting it.",
+      "type": "tactical"
+    },
+    {
+      "task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)",
+      "tool": "Claude, with NIST SP 1353 draft as the method reference",
+      "shift": "Label every AI-produced control mapping 'Proposed/Derived' until a human reviews it — the SP 1353 draft's own safeguard. Comments close Oct 15.",
+      "type": "tactical"
+    },
+    {
+      "task": "Vendor / architecture research",
+      "tool": "Perplexity or ChatGPT (GPT-6) with sources checked",
+      "shift": "Treat Mistral Large 4 figures as provisional: pricing sources disagree by 2x and no licence is published. Don't put it in a client option paper yet.",
+      "type": "watch"
+    },
+    {
+      "task": "Client proposals & SOWs",
+      "tool": "Claude",
+      "shift": "No change today.",
+      "type": "tactical"
+    },
+    {
+      "task": "Executive decks",
+      "tool": "PowerPoint Copilot or Gamma",
+      "shift": "PowerPoint Copilot is due to keep working on long jobs after you close the app this month — worth a trial once it lands; Gamma remains static.",
+      "type": "watch"
+    },
+    {
+      "task": "Stakeholder audio walkthroughs",
+      "tool": "NotebookLM; ChatGPT audio uploads for transcripts",
+      "shift": "ChatGPT paid plans now accept audio files for transcripts and summaries (Oct 6) — handy for turning tabletop-exercise recordings into notes; check transcripts for errors.",
+      "type": "tactical"
+    },
+    {
+      "task": "Client advisory on AI data risk",
+      "tool": "Claude plus vendor trust pages",
+      "shift": "For clients eyeing self-hosted open weights for data-sovereignty reasons, flag Mistral Large 4 as a late-October candidate — conditional on the licence.",
+      "type": "strategic"
+    }
+  ],
+  "community": [
+    {
+      "source": "r/OpenAI",
+      "signal": "A user measuring the $100 Pro Lite weekly limit reports that limits seem to differ between accounts, possibly A/B testing (undated top-page snapshot).",
+      "so_what": "Don't quote a fixed usage ceiling to a client from a forum post; plan capacity from the admin console."
+    },
+    {
+      "source": "r/OpenAI",
+      "signal": "Business Insider piece on OpenAI pushing into office software, with legal work next, is circulating on the top page.",
+      "so_what": "Expect clients to ask whether ChatGPT overlaps their Microsoft 365 Copilot spend."
+    },
+    {
+      "source": "r/LocalLLaMA",
+      "signal": "'GLM-5.2 is a win for Local AI' and Gemma 4 QAT builds from Unsloth are among the tracked popular threads (snapshot date unclear).",
+      "so_what": "Local-model interest stays high ahead of the Mistral Large 4 weights; relevant for air-gapped DR scenarios."
+    },
+    {
+      "source": "r/ClaudeAI",
+      "signal": "No current-week listing could be retrieved today — only snapshots from earlier in the year.",
+      "so_what": "No signal to act on."
+    }
+  ],
+  "watch": [
+    {
+      "kind": "deadline",
+      "title": "NIST SP 1353 draft — comments close Oct 15",
+      "body": "Five days left to comment on NIST's draft guide to using generative AI for CSF 2.0 analysis and reporting. Confirm the date on csrc.nist.gov."
+    },
+    {
+      "kind": "watch",
+      "title": "Mistral Large 4 weights and licence — end of October",
+      "body": "The licence decides whether this is usable for client self-hosting. Watch for an official Mistral post and settled pricing."
+    },
+    {
+      "kind": "watch",
+      "title": "Copilot in Edge redesign — mid to late October",
+      "body": "New icon, simplified side pane, Voice and Vision upgrades for all Copilot-enabled Edge users (MC1484007). Brief help desks."
+    },
+    {
+      "kind": "watch",
+      "title": "N-able webinar: Beyond Backup — AI, Cyber Resilience & Business Continuity (Oct 13, 11:00 EDT)",
+      "body": "Vendor session, but squarely on the BCP/DR-plus-AI theme; useful for talking points."
+    },
+    {
+      "kind": "pricing",
+      "title": "Google AI Plus model-access cutoff dates",
+      "body": "Plus subscribers are to be emailed individual effective dates for losing higher Gemini models. Clients on personal Plus accounts should watch their inbox."
+    }
+  ],
+  "sources": "Sources consulted: OpenAI ChatGPT release notes and coverage from Let's Data Science and Resultsense; Havoptic release trackers for Claude Code and GitHub Copilot CLI; Let's Data Science, Artificial Analysis, Computeprices and AIREITER on Mistral Large 4; Microsoft Message Center MC1484007 mirrors and Office Watch; a Cloud Security Alliance research note on NIST SP 1353; N-able's event calendar; and Reddit top-page mirrors for r/OpenAI and r/LocalLLaMA. It was a quiet Saturday and several items rest on third-party trackers rather than vendor pages."
+}
