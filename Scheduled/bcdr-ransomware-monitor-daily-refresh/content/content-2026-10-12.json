@@ -1,0 +1,120 @@
+{
+  "date": "2026-10-12",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {
+          "title": "Osaka Public University — ~500 servers down, backups encrypted",
+          "tags": ["Critical", "Education", "Data exposure"],
+          "summary": "An October 2 attack on the university's virtualization infrastructure shut down nearly 500 servers across all five campuses and encrypted many backups, with personal data of at least 130,000 students and alumni possibly exposed and classes suspended through October 9.",
+          "source": {"name": "Hendry Adrian (aggregator)", "url": "https://www.hendryadrian.com/?p=115040"}
+        },
+        {
+          "title": "Andersen Group — claimed by SilentRansomGroup",
+          "tags": ["Newly claimed"],
+          "summary": "SilentRansomGroup listed US professional-services firm Andersen Group on its leak site on October 6; the claim comes from the attackers and has not been confirmed by the company.",
+          "source": {"name": "Hendry Adrian (aggregator)", "url": "https://www.hendryadrian.com/?p=115183"}
+        },
+        {
+          "title": "Qilin and Settra exploiting Palo Alto GlobalProtect auth bypass",
+          "tags": ["Trend", "KEV add"],
+          "summary": "ReliaQuest reported on October 9 that multiple ransomware operations, including Qilin and Settra, are using CVE-2026-0257 to establish unauthorized VPN sessions on unpatched GlobalProtect gateways; the flaw has been in CISA KEV since May 29.",
+          "source": {"name": "Infosecurity Magazine", "url": "https://infosecurity-magazine.com/news/palo-alto-vpn-vulnerability-target"}
+        }
+      ],
+      "note": "SilentRansomGroup also posted two victims with redacted names (Oct 5 and Oct 7) pending a countdown timer. Leak-site claims are unverified until the victim confirms; the Osaka details rest on a single secondary source."
+    },
+    "outage": {
+      "items": [
+        {
+          "title": "GitHub Actions — hosted runners delayed, jobs failed",
+          "tags": ["Cloud"],
+          "summary": "Between 19:11 and 22:49 UTC on October 5, GitHub-hosted runners were slow to be assigned to Actions jobs, delaying workflows across several runner configurations and failing some jobs; resolved.",
+          "source": {"name": "IsInternetUp outage roundup", "url": "https://www.isinternetup.com/outages"}
+        },
+        {
+          "title": "C2C submarine cable segment down — Philippines internet impaired",
+          "tags": ["High-profile"],
+          "summary": "A segment of the C2C submarine cable system failed at 06:20 UTC on October 2, degrading internet service in the Philippines for roughly a day before service returned.",
+          "source": {"name": "IODA (Georgia Tech)", "url": "https://ioda.inetintel.cc.gatech.edu/"}
+        },
+        {
+          "title": "Seattle City Light — 6,000 customers lose power",
+          "tags": ["Municipal"],
+          "summary": "An October 9 outage cut power to about 6,000 customers in North Seattle and Shoreline; power was later restored and the cause was under investigation.",
+          "source": {"name": "MyNorthwest", "url": "https://mynorthwest.com/local/power-outage-north-seattle-shoreline/4284721"}
+        }
+      ],
+      "note": "No major AWS, Azure or Google Cloud outage was found for October so far; the most recent large SaaS disruption was Salesforce on September 16."
+    },
+    "cyber": {
+      "items": [
+        {
+          "title": "CISA adds Citrix NetScaler CVE-2026-88779 to KEV",
+          "tags": ["KEV add"],
+          "summary": "CISA added a NetScaler memory buffer vulnerability to the Known Exploited Vulnerabilities catalog on October 4, with a federal remediation deadline reported as October 7.",
+          "source": {"name": "CISA", "url": "https://www.cisa.gov/news-events/alerts/2026/10/04/cisa-adds-one-known-exploited-vulnerability-catalog"}
+        },
+        {
+          "title": "CISA adds two Zammad flaws to KEV after DIVD breach",
+          "tags": ["KEV add", "Zero-day"],
+          "summary": "On October 2 CISA added CVE-2026-102489 (session fixation) and CVE-2026-102490 (improper privilege management) in the Zammad ticketing system, the zero-day chain the Dutch Institute for Vulnerability Disclosure said was used to breach its network.",
+          "source": {"name": "CISA", "url": "https://www.cisa.gov/news-events/alerts/2026/10/02/cisa-adds-two-known-exploited-vulnerabilities-catalog"}
+        },
+        {
+          "title": "FortiBleed — Fortinet firewall exploitation continues",
+          "tags": ["Critical", "Data exposure"],
+          "summary": "The FBI warned that a Fortinet firewall vulnerability known since June is still being widely exploited, in what is being described as one of the largest firewall-related data leaks to date.",
+          "source": {"name": "ITdaily", "url": "https://itdaily.com/news/security/fortibleed-attacks-continue-unabated/"}
+        },
+        {
+          "title": "NetScaler CVE-2026-88771 / 88772 exploited on unmitigated appliances",
+          "tags": ["Reference"],
+          "summary": "Sygnia's September 28 advisory says Citrix and CISA confirmed exploitation of two NetScaler flaws and urges immediate patching of customer-managed appliances plus a check for compromise predating the patch.",
+          "source": {"name": "Sygnia", "url": "https://www.sygnia.co/threat-reports-and-advisories/actively-exploited-netscaler-vulnerabilities/"}
+        },
+        {
+          "title": "KEV pace: 247 additions by October 1, already past all of 2025",
+          "tags": ["Trend"],
+          "summary": "An October 1 roundup counts 247 KEV entries added in 2026 against 245 in all of 2025, with 91 of the 114 entries added since BOD 26-04 took effect on June 10 carrying a three-day remediation deadline.",
+          "source": {"name": "Stingrai", "url": "https://www.stingrai.io/blog/zero-day-statistics-2026"}
+        }
+      ]
+    },
+    "physical": {
+      "items": [
+        {
+          "title": "M 7.7 earthquake — Pitaloza Arriba, Panama",
+          "tags": ["M 7.7", "Critical"],
+          "summary": "A magnitude 7.7 earthquake struck 12 km WSW of Pitaloza Arriba, Panama on October 9; USGS PAGER alert level is red, with no tsunami flag on this event.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u18k"}
+        },
+        {
+          "title": "M 6.6 earthquake — Río Grande, Panama",
+          "tags": ["M 6.6"],
+          "summary": "A magnitude 6.6 earthquake hit 14 km W of Río Grande, Panama on October 9, carrying a USGS tsunami flag and a yellow PAGER alert.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u19w"}
+        },
+        {
+          "title": "M 6.3 earthquake — Vanuatu",
+          "tags": ["M 6.3"],
+          "summary": "A magnitude 6.3 earthquake occurred 102 km NE of Norsup, Vanuatu on October 8; PAGER alert green.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u0xi"}
+        },
+        {
+          "title": "M 6.0 earthquake — La Tronosa, Panama",
+          "tags": ["M 6.0"],
+          "summary": "A magnitude 6.0 earthquake struck 7 km N of La Tronosa, Panama on October 10, continuing the Panama sequence; PAGER alert yellow.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1cf"}
+        },
+        {
+          "title": "M 5.8 earthquake — El Cacao, Panama",
+          "tags": ["M 5.8"],
+          "summary": "A magnitude 5.8 earthquake hit 1 km S of El Cacao, Panama on October 9, the same day as the M 7.7; PAGER alert yellow.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u18x"}
+        }
+      ],
+      "note": "The Panama earthquake sequence (M 7.7, red PAGER alert) is the week's dominant event. The search returned no October-dated hurricane, typhoon, wildfire or flood reporting; check NHC and JTWC directly for active storms."
+    }
+  }
+}
