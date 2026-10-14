@@ -1,136 +1,5 @@
 [
   {
-    "date": "2026-07-11",
-    "providers": {
-      "OpenAI": {
-        "headline": "ChatGPT Work launched (GPT-5.6 powered, connects team tool context for collaborative document production). Atlas agentic browser deprecating August 9. GPT-5.5 Instant Mini as fallback. Group chat creation disabled July 9. GPT-Live-1 voice models continuing broad rollout.",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Anthropic": {
-        "headline": "No new model today. Opus 4.7 fast mode removal T-13 days (July 24) — critical deadline. Claude Cowork expanding to web/mobile (Max plan). Monthly recap beta (Settings > Reflect). M365 connector write tools GA. Sonnet 5 default ($2/$10 promo Aug 31).",
-        "tags": [
-          "tactical",
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "Opus 4.7 fast mode removal T-13 days (July 24) — audit all workflows using Opus 4.7 fast mode now.",
-        "active": true
-      },
-      "Google Gemini": {
-        "headline": "Gemini 3.5 Pro launch T-6 days (July 17) — 2M context + Deep Think Reasoning Layer + autonomous workflows. Gemini Omni Flash API in public preview for developers. Fill with Gemini expanded to 10+ languages. No new model today.",
-        "tags": [
-          "strategic",
-          "watch"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "xAI": {
-        "headline": "Grok Voice expansion: 21 new multilingual voices, improved naturalness, speech tags, voice cloning across Voice Agent API, TTS API, and Voice Agent Builder. Grok Build CLI improvements (/goal, /sessions, bash/file output). Grok Imagine feature marked 'Done' (July 5). Grok 4.5 not yet in EU (mid-July ETA). Grok 5 (6T MoE) Q3 2026.",
-        "tags": [
-          "strategic",
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "Grok Voice telephony data flows to xAI training pipeline. Enterprise voice workflow data governance review required. Grok 4.5 still not EU-available.",
-        "active": true
-      },
-      "Meta": {
-        "headline": "No release — 70+ days quiet. Llama 4 Scout/Maverick current. Avocado (Llama 5 successor) possibly shifting to closed-source. No Behemoth signal.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Mistral": {
-        "headline": "Robostral Navigate (July 8) still latest — 8B robotics navigation model, hardware-agnostic, single RGB camera, language-prompt navigation. Open-weight frontier MoE in early access with research/gov/industry partners. Leanstral 1.5 current. Les Ulis 10MW Q3.",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Perplexity": {
-        "headline": "Enterprise memory features GA — cross-session context at org level with individual controls. Personal Computer now available on Mac for all. M365 app integration (Word, Excel, PPT, Outlook, Teams) stable. Hybrid local-server inference orchestrator for Windows still pending this month. Kimi K2.5 (Chinese-origin) Week 18+ on US inference — still unresolved.",
-        "tags": [
-          "strategic",
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "Kimi K2.5 (Chinese-origin) Week 18+ on Perplexity US inference — still unresolved. Restrict in enterprise admin settings for all regulated clients.",
-        "active": true
-      },
-      "Microsoft 365 Copilot": {
-        "headline": "Copilot Cowork now GA — multi-model support, Purview integration, branded templates. Codex as agent in JetBrains IDEs (public preview). Inline Chat GA. Custom model support for Enterprise admins. Redesigned interface with Tasks tab. Claude selectable in Copilot Chat. Security Copilot + Defender Plan 1 rollout August 1 (T-21 days). Claude DPA outstanding Week 13+.",
-        "tags": [
-          "strategic",
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "Security Copilot + Defender Aug 1 T-21 days. Claude DPA outstanding Week 13+. kimi-k2.7-code still in GitHub Copilot Enterprise roster.",
-        "active": true
-      },
-      "GitHub Copilot": {
-        "headline": "Codex as agent in JetBrains IDEs (public preview). Inline Chat GA. Custom model support for Enterprise admins. CLI approval controls for sessions. Claude debug logs support. kimi-k2.7-code (Chinese-origin) still in Enterprise model roster — Week 2. Vision capabilities GA (July 4).",
-        "tags": [
-          "alert",
-          "tactical"
-        ],
-        "hasAlert": true,
-        "alertReason": "kimi-k2.7-code (Chinese-origin, Moonshot AI) in GitHub Copilot Enterprise — disable in enterprise model allow-list for regulated clients. Week 2 unresolved.",
-        "active": true
-      },
-      "Cursor": {
-        "headline": "Usage pool split: Composer/Auto (first-party) billed separately from third-party API models (Claude, GPT, Gemini). Admin dashboards, privacy controls, spending limits added. iOS beta live. Teams MCP support. Grok 4.5 still default on all plans — all sessions feed xAI training pipeline.",
-        "tags": [
-          "alert",
-          "tactical"
-        ],
-        "hasAlert": true,
-        "alertReason": "Grok 4.5 default on all Cursor plans — Cursor IDE data flows to xAI training; enterprise data governance review required before next renewal.",
-        "active": true
-      },
-      "Gamma": {
-        "headline": "No new release — 29+ days quiet since June 12 batch (mobile editing GA, code syntax highlighting, AI animations). Stable for presentation use.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Notion AI": {
-        "headline": "No new AI features today. Notion 3.6 (July 1) stable — External Agents GA, AI Meeting Notes speaker labels, Excel/PowerPoint read-write. Workers billing → Credits August 11 (T-31 days). No new AI features.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      }
-    },
-    "topMoves": [
-      "Gemini 3.5 Pro launch T-6 days (July 17) — 2M context + Deep Think Reasoning Layer; biggest model drop of the month; evaluate for long-document BCP/DR standard processing",
-      "ChatGPT Work launched (GPT-5.6 powered) — integrates team tool context for collaborative document production; direct competitor to M365 Copilot and Notion AI for enterprise workflow automation",
-      "xAI Grok Voice expansion — 21 new multilingual voices + voice cloning + speech tags across Voice Agent API; stacks on Grok 4.5 launch to position xAI as full-stack AI platform; data governance review required"
-    ],
-    "clientAlerts": [
-      "Perplexity Kimi K2.5 (Chinese-origin) Week 18+ on US inference — still unresolved; restrict for regulated clients",
-      "GitHub Copilot kimi-k2.7-code (Chinese-origin, Moonshot AI) in Enterprise model roster — disable in allow-list for regulated clients",
-      "Cursor + Grok 4.5 default — Cursor IDE data flows to xAI training; governance review before next renewal",
-      "EU AI Act Article 50 transparency obligations — August 2, 2026 (T-22 days); fines up to €15M or 3% global turnover",
-      "Claude Opus 4.7 fast mode removal — July 24 (T-13 days)"
-    ],
-    "watchItems": [
-      "Gemini 3.5 Pro launch — July 17 (T-6 days), 2M context + Deep Think layer",
-      "Claude Opus 4.7 fast mode removal — July 24 (T-13 days)",
-      "M365 Security Copilot + Defender Plan 1 + Intune rollout — August 1 (T-21 days)",
-      "EU AI Act Article 50 transparency obligations — August 2, 2026 (T-22 days)",
-      "Claude Opus 4.1 API retirement — August 5 (T-25 days)",
-      "OpenAI Atlas agent deprecation — August 9 (T-29 days)",
-      "Notion Workers billing → Credits — August 11 (T-31 days)",
-      "Grok 5 (6T MoE) — Q3 2026",
-      "Mistral open-weight MoE broader release — Q3 2026"
-    ]
-  },
-  {
     "date": "2026-07-12",
     "providers": {
       "OpenAI": {
@@ -7057,6 +6926,111 @@
       "Oct 15 — Notion Workers start billing against Notion credits",
       "Oct 25 — Microsoft 365 agent and MCP package uploads become default-on",
       "White House Super Intelligence task force report"
+    ]
+  },
+  {
+    "date": "2026-10-13",
+    "providers": {
+      "OpenAI": {
+        "headline": "A Decisions API for fast typed classification on GPT-6 Luna is being documented in secondary coverage, while GPT-6 and Intelligent UI continue rolling out.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "Anthropic says new safeguards cut reasoning-data distillation by 90–99%, with locked earlier context on newer API accounts and charges for some blocked requests.",
+        "tags": [
+          "alert",
+          "tactical"
+        ],
+        "hasAlert": true,
+        "alertReason": "Some blocked API requests are billed and earlier context is locked on accounts created from Aug 31",
+        "active": true
+      },
+      "Google Gemini": {
+        "headline": "No new release found; the Oct 9 tier cut is now in effect, leaving free accounts on Flash-Lite only.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "xAI": {
+        "headline": "No new release found; Grok 4.7 (Sept 21) remains current and Grok 5 is still only a prediction-market question.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Meta": {
+        "headline": "Meta launches Muse Wonder and Muse Wonder Full, closed-weight agent models with cross-conversation Active Memory.",
+        "tags": [
+          "strategic",
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "Active Memory retains user information and no enterprise data terms are published yet",
+        "active": true
+      },
+      "Mistral": {
+        "headline": "No new release in the last 48 hours; Large 4 stays a hosted preview with open weights promised by the end of October.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "Perplexity": {
+        "headline": "No new dated release; Computer-by-email and the August finance data sources remain the latest.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "No new release today; the redesigned Copilot in Edge is due to start rolling out mid-October and leadership is pressing for AI regulation.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "GitHub Copilot": {
+        "headline": "No new release found; coverage is comparison and market-share commentary only.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Cursor": {
+        "headline": "No new headline found.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Gamma": {
+        "headline": "No release found; the extended quiet stretch continues.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "No new release found; Notion 3.7 team Skills remain the latest.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      }
+    },
+    "topMoves": [
+      "Meta launches Muse Wonder and Muse Wonder Full as closed-weight agent models",
+      "Anthropic says anti-distillation safeguards cut reasoning extraction by 90–99%",
+      "OpenAI's Decisions API surfaces for fast typed yes/no and classification calls"
+    ],
+    "clientAlerts": [
+      "Meta's new Muse Wonder models ship with cross-conversation memory and no published enterprise data terms",
+      "Anthropic now bills for some blocked API requests and locks earlier context on newer accounts"
+    ],
+    "watchItems": [
+      "Anthropic's reported investor day — Wednesday Oct 14",
+      "Mistral Large 4 open weights — by end of October",
+      "Meta Muse Wonder safety report and data terms",
+      "Anthropic API billing for blocked requests",
+      "Grok 5 public release market — Oct 31"
     ]
   }
 ]

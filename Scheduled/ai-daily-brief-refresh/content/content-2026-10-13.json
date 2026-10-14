@@ -1,0 +1,270 @@
+{
+  "date": "2026-10-13",
+  "client_alerts": [
+    {
+      "headline": "Meta's new Muse Wonder models ship with cross-conversation memory and no published enterprise data terms",
+      "body": "Muse Wonder and Muse Wonder Full (announced Oct 12) include **Active Memory**, which retains user information across conversations. Coverage so far gives no enterprise terms, retention period, or training-use statement, and Meta's detailed safety report is still pending. Advise clients to keep client data out of Muse Code and the Meta Model API until those terms are published."
+    },
+    {
+      "headline": "Anthropic now bills for some blocked API requests and locks earlier context on newer accounts",
+      "body": "Anthropic's Oct 12 anti-distillation update confirms that API accounts created on or after Aug 31 cannot edit Claude's earlier context on supported models, and that since Sept 24 some requests blocked before the model responds are still charged. Anthropic acknowledges legitimate requests may occasionally be blocked. Clients running Claude integrations should review error handling and cost monitoring."
+    }
+  ],
+  "top_moves": [
+    {
+      "title": "Meta launches Muse Wonder and Muse Wonder Full as closed-weight agent models",
+      "date_label": "Oct 12, 2026",
+      "urgent": false,
+      "body": "Meta calls them its most capable models to date, aimed at long-running tasks, computer use, and legal, finance and health work. Muse Wonder is on the Meta Model API and Muse Code; Wonder Full needs a paid Muse Code plan from **$50/month**. No open weights, benchmark claims are Meta's own, and the safety report comes later.",
+      "tag": "strategic"
+    },
+    {
+      "title": "Anthropic says anti-distillation safeguards cut reasoning extraction by 90–99%",
+      "date_label": "Oct 12, 2026",
+      "urgent": false,
+      "body": "The package combines preserved thinking, a two-stage classifier across Sonnet 5.5, Opus 5/5.5 and Fable 5/5.1, and bans on thousands of accounts. The practical side effects are locked earlier context on newer API accounts, reasoning transcripts limited to the requesting organization, and **charges for some blocked requests**.",
+      "tag": "alert"
+    },
+    {
+      "title": "OpenAI's Decisions API surfaces for fast typed yes/no and classification calls",
+      "date_label": "Oct 12, 2026",
+      "urgent": false,
+      "body": "A Towards Data Science guide describes a Decisions API built on GPT-6 Luna that returns typed decisions and probabilities, which OpenAI claims run up to ten times faster than the Responses API. This rests on one secondary source and the launch date is not confirmed, so verify against OpenAI's docs before designing around it.",
+      "tag": "watch"
+    }
+  ],
+  "providers": [
+    {
+      "name": "OpenAI",
+      "display": "OpenAI",
+      "headline": "A Decisions API for fast typed classification on GPT-6 Luna is being documented in secondary coverage, while GPT-6 and Intelligent UI continue rolling out.",
+      "detail": "A Towards Data Science guide describes the Decisions API as returning typed decisions such as yes/no probabilities, with an OpenAI claim of up to ten times the speed of the Responses API on GPT-6 Luna; the launch date is not confirmed. Release notes from Oct 6–9 remain the latest dated items: audio uploads for paid plans, faster steering in Codex, and Composer predictions in beta. A Financial Times report last week put annualized revenue roughly $20 billion below figures circulating among investors.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Anthropic",
+      "display": "Anthropic",
+      "headline": "Anthropic says new safeguards cut reasoning-data distillation by 90–99%, with locked earlier context on newer API accounts and charges for some blocked requests.",
+      "detail": "The Oct 12 announcement covers preserved thinking for API accounts created on or after Aug 31, reasoning transcripts for Sonnet 5.5 limited to the requesting organization, and a two-stage classifier with a claimed false-positive rate under 0.1%. Since Sept 24 some requests blocked before the model responds are still billed. Anthropic says thousands of accounts were banned and concedes some developers must update integrations. The reported Wednesday investor day could not be re-confirmed in today's searches.",
+      "tags": ["alert", "tactical"],
+      "classification": "alert",
+      "active": true,
+      "hasAlert": true,
+      "alertReason": "Some blocked API requests are billed and earlier context is locked on accounts created from Aug 31"
+    },
+    {
+      "name": "Google Gemini",
+      "display": "Google Gemini",
+      "headline": "No new release found; the Oct 9 tier cut is now in effect, leaving free accounts on Flash-Lite only.",
+      "detail": "Free personal accounts dropped to Flash-Lite on Oct 9 and AI Plus subscribers lose Pro on dates sent by email, while AI Pro and Ultra keep all three models and Deep Think. News in the last 48 hours was limited to an Arden University deal for Gemini Enterprise and DeepMind's AMIE clinical study. Gemini 4 Argon is still reported by a single third-party changelog only.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "xAI",
+      "display": "xAI / Grok",
+      "headline": "No new release found; Grok 4.7 (Sept 21) remains current and Grok 5 is still only a prediction-market question.",
+      "detail": "Nothing dated in the last 48 hours. The most recent item is an experimental TypeScript SDK published Oct 2. A prediction market on a public Grok 5 release by Oct 31 remains open with no launch reported.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Meta",
+      "display": "Meta",
+      "headline": "Meta launches Muse Wonder and Muse Wonder Full, closed-weight agent models with cross-conversation Active Memory.",
+      "detail": "Announced Monday Oct 12 as Meta's most capable models to date, built for long-running tasks, computer use and specialized legal, finance and health work. Muse Wonder is available through the Meta Model API and Muse Code; Wonder Full requires a paid Muse Code plan starting at $50 per month. Meta gave no plan to open the weights, its benchmark claims are not independently tested, and coverage states no enterprise data-retention or training terms.",
+      "tags": ["strategic", "alert"],
+      "classification": "strategic",
+      "active": true,
+      "hasAlert": true,
+      "alertReason": "Active Memory retains user information and no enterprise data terms are published yet"
+    },
+    {
+      "name": "Mistral",
+      "display": "Mistral",
+      "headline": "No new release in the last 48 hours; Large 4 stays a hosted preview with open weights promised by the end of October.",
+      "detail": "The Large 4 public preview opened in Mistral Studio around Oct 6 with a one-million-token context window per Mistral's documentation. Downloadable weights are planned by the end of October after further red-team testing with cybersecurity and public-sector partners. Licence and pricing are not stated in the coverage found.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Perplexity",
+      "display": "Perplexity",
+      "headline": "No new dated release; Computer-by-email and the August finance data sources remain the latest.",
+      "detail": "Searches returned nothing dated October 2026. The August additions of licensed finance data sources, Portable Computer and Computer-by-email are still the most recent confirmed changes.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Microsoft 365 Copilot",
+      "display": "Microsoft 365 Copilot",
+      "headline": "No new release today; the redesigned Copilot in Edge is due to start rolling out mid-October and leadership is pressing for AI regulation.",
+      "detail": "Message Center item MC1484007 puts the updated Copilot in Edge experience at mid-October with no admin action required and existing policies preserved. October also brings background processing for long PowerPoint Copilot jobs and the GCC/DoD rollout of the Word entry-point change. Microsoft's president publicly called for global AI regulation on Oct 12.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "GitHub Copilot",
+      "display": "GitHub Copilot",
+      "headline": "No new release found; coverage is comparison and market-share commentary only.",
+      "detail": "No October changelog item surfaced. Results were third-party comparisons citing usage-based billing with GitHub AI Credits since June and survey figures showing Cursor and Claude Code gaining share.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Cursor",
+      "display": "Cursor",
+      "headline": "No new headline found.",
+      "detail": "No dated October release surfaced. Comparison pieces note background agents can run inside customer infrastructure, which is not new this week.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Gamma",
+      "display": "Gamma",
+      "headline": "No release found; the extended quiet stretch continues.",
+      "detail": "Searches returned only general guides and comparisons, none dated October 2026.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Notion AI",
+      "display": "Notion AI",
+      "headline": "No new release found; Notion 3.7 team Skills remain the latest.",
+      "detail": "Searches returned only comparisons and a June panel listing, with nothing dated October 2026.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    }
+  ],
+  "persistent_signals": [
+    {"provider": "xAI", "text": "xAI — no release since Grok 4.7, Grok 5 still a prediction-market question — 2 weeks running (market deadline Oct 31)"},
+    {"provider": "Microsoft 365 Copilot", "text": "Microsoft 365 Copilot — October rollout queue, redesigned Copilot in Edge due mid-October — 2 weeks running"},
+    {"provider": "Perplexity", "text": "Perplexity — no dated release since the August Computer updates — 2 weeks running"},
+    {"provider": "Gamma", "text": "Gamma — no release found — 2 weeks running (never active in tracked history)"},
+    {"provider": "Notion AI", "text": "Notion AI — no release since Notion 3.7 team Skills — 2 weeks running"}
+  ],
+  "month_themes": {
+    "then": "Grok 4.7 slipping past its target date; GitHub Copilot's Oct 2 model deprecation wave; Notion adding per-workspace AI model governance.",
+    "now": "Meta going closed-weight with agent models and persistent memory; Anthropic hardening its API against distillation at some cost to developers; open-weight Mistral Large 4 still pending for end of October."
+  },
+  "habits": [
+    {
+      "task": "BCP/DR plan narratives & runbooks",
+      "tool": "Claude (Opus 5.5 / Sonnet 5.5)",
+      "shift": "No change of tool. If you drive Claude through the API, expect locked earlier context on accounts created from Aug 31 and watch for billed blocked requests.",
+      "type": "tactical"
+    },
+    {
+      "task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)",
+      "tool": "Claude, cross-checked against the source standard",
+      "shift": "No change. Nothing new on ISO 22301 or NIST surfaced today; SOC 2 auditors treating AI vendors as subprocessors is the recurring theme to cite.",
+      "type": "watch"
+    },
+    {
+      "task": "Vendor/architecture research",
+      "tool": "Perplexity or ChatGPT (GPT-6) with citations",
+      "shift": "Treat Meta's Muse Wonder benchmark claims as vendor-reported until independent tests appear; do not place it on client shortlists yet.",
+      "type": "watch"
+    },
+    {
+      "task": "Client proposals & SOWs",
+      "tool": "Claude",
+      "shift": "Where a SOW includes Claude API integration work, add a line covering integration updates and cost variance from blocked-but-billed requests.",
+      "type": "tactical"
+    },
+    {
+      "task": "Executive decks",
+      "tool": "PowerPoint Copilot or Gamma",
+      "shift": "PowerPoint Copilot is due to keep working on long jobs after the app is closed this month; worth a trial once it reaches your tenant.",
+      "type": "watch"
+    },
+    {
+      "task": "Stakeholder audio walkthroughs",
+      "tool": "ChatGPT audio uploads / NotebookLM",
+      "shift": "ChatGPT paid plans accept audio uploads for transcripts and summaries since Oct 6, useful for turning recorded tabletop sessions into after-action notes.",
+      "type": "tactical"
+    },
+    {
+      "task": "Client advisory on AI data risk",
+      "tool": "Vendor terms review",
+      "shift": "Add Meta Muse Wonder's Active Memory to the watch list of memory features with no published enterprise terms, and flag Gemini's free tier dropping to Flash-Lite for clients relying on unpaid accounts.",
+      "type": "strategic"
+    }
+  ],
+  "community": [
+    {
+      "source": "r/LocalLLaMA",
+      "signal": "GLM-5.2 dominates a tracker snapshot of the subreddit, including a claim that it is the first open-weights model past 80% on Terminal-Bench (snapshot undated, not confirmed as this week).",
+      "so_what": "Open-weight options for air-gapped or regulated clients keep improving; the benchmark claim is community-reported."
+    },
+    {
+      "source": "r/ClaudeAI",
+      "signal": "A recent post complains that Claude asks permission to use its tools instead of taking initiative (from a mirror of the new feed, engagement not visible).",
+      "so_what": "Low-confidence signal; permission friction in agent workflows is a recurring complaint worth knowing before client demos."
+    },
+    {
+      "source": "r/OpenAI",
+      "signal": "No dated high-engagement thread from this week could be retrieved; search results were from July or earlier.",
+      "so_what": "No community signal to act on today."
+    }
+  ],
+  "watch": [
+    {
+      "kind": "watch",
+      "title": "Anthropic's reported investor day — Wednesday Oct 14",
+      "body": "Reported for tomorrow, with no public S-1 confirmed. Today's searches did not re-confirm the date."
+    },
+    {
+      "kind": "watch",
+      "title": "Mistral Large 4 open weights — by end of October",
+      "body": "Weights are promised after further red-team testing. Licence and pricing are still unstated, which decides whether it suits client self-hosting."
+    },
+    {
+      "kind": "security",
+      "title": "Meta Muse Wonder safety report and data terms",
+      "body": "Meta says a detailed safety report follows. Watch for enterprise retention and training-use terms covering Active Memory."
+    },
+    {
+      "kind": "pricing",
+      "title": "Anthropic API billing for blocked requests",
+      "body": "In effect since Sept 24 in areas with sub-0.1% false positives. Check client invoices for unexpected charges on rejected calls."
+    },
+    {
+      "kind": "deadline",
+      "title": "Grok 5 public release market — Oct 31",
+      "body": "A prediction market resolves on general public availability by Oct 31. No launch has been reported."
+    }
+  ],
+  "sources": "Sources consulted: OpenAI ChatGPT release notes and secondary coverage, The Nation (Meta Muse Wonder), Times of AI (Anthropic distillation safeguards), Let's Data Science (Mistral Large 4, Gemini tiers), RIO Rundown Oct 12 roundup, Microsoft Message Center MC1484007 mirrors, Fox News live blog, third-party xAI, Perplexity, Copilot, Cursor, Gamma and Notion trackers, and Reddit snapshot trackers."
+}

@@ -1,0 +1,127 @@
+{
+  "date": "2026-10-13",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {
+          "title": "IDC Frontier (SoftBank cloud subsidiary) — ransomware outage hits 495 customers",
+          "tags": ["Critical", "Cloud", "Third-party"],
+          "summary": "A ransomware attack reported October 7 on SoftBank's cloud subsidiary IDC Frontier disrupted 495 companies and local governments, halting Nissui Logistics' logistics system at 17 sites and taking Ibaraki Prefecture's websites offline; no group has been named.",
+          "source": {"name": "The Next Web", "url": "https://thenextweb.com/news/japan-cyberattacks-warning-data-leaks"}
+        },
+        {
+          "title": "DexCom — claimed by \"Redact\" group",
+          "tags": ["Newly claimed", "Healthcare"],
+          "summary": "A group calling itself Redact posted a claim against US medical-device maker DexCom on October 10; the claim is unverified and DexCom has not confirmed an incident.",
+          "source": {"name": "Hendry Adrian (leak-site tracker)", "url": "https://www.hendryadrian.com/?p=115501"}
+        },
+        {
+          "title": "SilentRansomGroup — two new victims listed with names withheld",
+          "tags": ["Newly claimed"],
+          "summary": "SilentRansomGroup listed two partially redacted victims on October 5 and October 7, with full names held back behind the leak site's countdown timer; neither listing is confirmed.",
+          "source": {"name": "Hendry Adrian (leak-site tracker)", "url": "https://www.hendryadrian.com/?p=115278"}
+        },
+        {
+          "title": "Japan — record 123 ransomware incidents in H1 2026",
+          "tags": ["Trend"],
+          "summary": "Japan's National Police Agency counted a record 123 ransomware incidents in the first half of 2026, and more than 20 major Japanese companies have disclosed attacks in recent weeks.",
+          "source": {"name": "The Next Web", "url": "https://thenextweb.com/news/japan-cyberattacks-warning-data-leaks"}
+        },
+        {
+          "title": "BlackFog — State of Ransomware, September 2026",
+          "tags": ["Reference"],
+          "summary": "The most recent full monthly roundup covers September; no October roundup has been published yet.",
+          "source": {"name": "BlackFog", "url": "https://www.blackfog.com/the-state-of-ransomware-september-2026/"}
+        }
+      ],
+      "note": "October coverage is thin: apart from IDC Frontier, the named victims are unverified leak-site claims."
+    },
+    "outage": {
+      "items": [
+        {
+          "title": "Google Cloud Storage — us-central1 degradation, October 8",
+          "tags": ["Cloud", "High-profile"],
+          "summary": "Cloud Storage in us-central1 (Iowa) saw elevated latency and errors on writes and some reads for roughly 11 to 12 hours on October 8; Google's preliminary account cites a traffic-sorting change that exhausted backend storage nodes plus a separate metadata database problem, with a full root cause still pending.",
+          "source": {"name": "IncidentHub", "url": "https://blog.incidenthub.cloud/2026-10-12-google-cloud-storage-outage-oct-8-2026"}
+        },
+        {
+          "title": "Yandex Cloud — three data centers damaged, October 8–11",
+          "tags": ["Critical", "Cloud"],
+          "summary": "Yandex said drone attacks damaged data centers in Sasovo, Kaluga and Vladimir, shutting down two and partly disabling the third, leaving customers unable to reach cloud-hosted files; the attribution rests on Yandex's own statements.",
+          "source": {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/yandex-confirms-service-outage-as-users-lose-access-to-cloud-files/"}
+        }
+      ],
+      "note": "No major active AWS, Azure, Cloudflare or Microsoft 365 incident was found this week. The IDC Frontier cloud outage is listed under Ransomware."
+    },
+    "cyber": {
+      "items": [
+        {
+          "title": "Times Car (Japan) — 6.6 million member accounts leaked",
+          "tags": ["Data exposure", "High-profile"],
+          "summary": "An attack on car-sharing service Times Car in September leaked data on about 6.6 million member accounts, including images of driving licences.",
+          "source": {"name": "The Next Web", "url": "https://thenextweb.com/news/japan-cyberattacks-warning-data-leaks"}
+        },
+        {
+          "title": "JR East — 1.67 million customer email addresses exposed",
+          "tags": ["Data exposure"],
+          "summary": "Rail operator JR East lost 1.67 million customer email addresses, one of a run of Japanese disclosures that also includes Lawson, Daiwa Securities and Bookoff.",
+          "source": {"name": "The Next Web", "url": "https://thenextweb.com/news/japan-cyberattacks-warning-data-leaks"}
+        },
+        {
+          "title": "CISA KEV — Joomla iCagenda and Balbooa extension flaws",
+          "tags": ["KEV add", "Zero-day"],
+          "summary": "CISA added two Joomla extension vulnerabilities to the Known Exploited Vulnerabilities catalog after active zero-day attacks on the iCagenda and Balbooa extensions; the addition date could not be confirmed from the source.",
+          "source": {"name": "The Cyber Express", "url": "https://thecyberexpress.com/tag/cve-2026-48939/"}
+        },
+        {
+          "title": "KEV and zero-day pace — 247 KEV additions through October 1",
+          "tags": ["Trend"],
+          "summary": "An October 1 roundup counts 247 CISA KEV additions between January 1 and October 1, 2026, and cites Google Threat Intelligence Group's figure of about 11 zero-days a month from January to August.",
+          "source": {"name": "Stingrai", "url": "https://www.stingrai.io/blog/zero-day-statistics-2026"}
+        }
+      ],
+      "note": "No new October-dated CISA emergency directive or major zero-day disclosure surfaced in today's search."
+    },
+    "physical": {
+      "items": [
+        {
+          "title": "Hurricane Isaias — federal emergency declarations for Florida, Alabama and Georgia",
+          "tags": ["Tropical", "High-profile"],
+          "summary": "Emergency declarations were approved for Florida and Alabama on October 9 and Georgia on October 10 (incident periods starting October 6, 7 and 8), with FEMA pre-positioning resources and warning of life-threatening storm surge along the Florida Panhandle and Alabama coasts; category and landfall details were not confirmed.",
+          "source": {"name": "FEMA", "url": "https://www.fema.gov/about/news-multimedia/press-releases"}
+        },
+        {
+          "title": "M 7.7 — 12 km WSW of Pitaloza Arriba, Panama (Oct 09)",
+          "tags": ["M 7.7"],
+          "summary": "Magnitude 7.7 earthquake on October 9 with a USGS PAGER alert level of orange; no tsunami flag.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u18k"}
+        },
+        {
+          "title": "M 6.7 — central Mid-Atlantic Ridge (Oct 13)",
+          "tags": ["M 6.7"],
+          "summary": "Magnitude 6.7 earthquake on October 13 in the remote central Mid-Atlantic Ridge; PAGER alert green.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1z5"}
+        },
+        {
+          "title": "M 6.6 — 14 km W of Río Grande, Panama (Oct 09)",
+          "tags": ["M 6.6"],
+          "summary": "Magnitude 6.6 earthquake on October 9 following the M 7.7 the same day; USGS tsunami flag set, PAGER alert yellow.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u19w"}
+        },
+        {
+          "title": "M 6.3 — 102 km NE of Norsup, Vanuatu (Oct 08)",
+          "tags": ["M 6.3"],
+          "summary": "Magnitude 6.3 earthquake on October 8 off Vanuatu; PAGER alert green.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u0xi"}
+        },
+        {
+          "title": "M 6.1 — 17 km W of Río Grande, Panama (Oct 12)",
+          "tags": ["M 6.1"],
+          "summary": "Magnitude 6.1 earthquake on October 12, continuing the Panama sequence that began October 9; PAGER alert green.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1wn"}
+        }
+      ],
+      "note": "Panama has had three significant earthquakes since October 9. No October-dated typhoon, wildfire or flood events surfaced in today's search."
+    }
+  }
+}
