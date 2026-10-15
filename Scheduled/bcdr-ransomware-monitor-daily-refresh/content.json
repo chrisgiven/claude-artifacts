@@ -1,127 +1,52 @@
 {
-  "date": "2026-10-13",
+  "date": "2026-10-14",
   "sections": {
     "ransomware": {
       "items": [
-        {
-          "title": "IDC Frontier (SoftBank cloud subsidiary) — ransomware outage hits 495 customers",
-          "tags": ["Critical", "Cloud", "Third-party"],
-          "summary": "A ransomware attack reported October 7 on SoftBank's cloud subsidiary IDC Frontier disrupted 495 companies and local governments, halting Nissui Logistics' logistics system at 17 sites and taking Ibaraki Prefecture's websites offline; no group has been named.",
-          "source": {"name": "The Next Web", "url": "https://thenextweb.com/news/japan-cyberattacks-warning-data-leaks"}
-        },
-        {
-          "title": "DexCom — claimed by \"Redact\" group",
-          "tags": ["Newly claimed", "Healthcare"],
-          "summary": "A group calling itself Redact posted a claim against US medical-device maker DexCom on October 10; the claim is unverified and DexCom has not confirmed an incident.",
-          "source": {"name": "Hendry Adrian (leak-site tracker)", "url": "https://www.hendryadrian.com/?p=115501"}
-        },
-        {
-          "title": "SilentRansomGroup — two new victims listed with names withheld",
-          "tags": ["Newly claimed"],
-          "summary": "SilentRansomGroup listed two partially redacted victims on October 5 and October 7, with full names held back behind the leak site's countdown timer; neither listing is confirmed.",
-          "source": {"name": "Hendry Adrian (leak-site tracker)", "url": "https://www.hendryadrian.com/?p=115278"}
-        },
-        {
-          "title": "Japan — record 123 ransomware incidents in H1 2026",
-          "tags": ["Trend"],
-          "summary": "Japan's National Police Agency counted a record 123 ransomware incidents in the first half of 2026, and more than 20 major Japanese companies have disclosed attacks in recent weeks.",
-          "source": {"name": "The Next Web", "url": "https://thenextweb.com/news/japan-cyberattacks-warning-data-leaks"}
-        },
-        {
-          "title": "BlackFog — State of Ransomware, September 2026",
-          "tags": ["Reference"],
-          "summary": "The most recent full monthly roundup covers September; no October roundup has been published yet.",
-          "source": {"name": "BlackFog", "url": "https://www.blackfog.com/the-state-of-ransomware-september-2026/"}
-        }
+        {"title": "IDC Frontier (Japan) cloud provider hit by ransomware", "tags": ["Critical", "Cloud", "Third-party"], "summary": "IDC Frontier confirmed a ransomware attack beginning Oct 7 forced it to shut down its network and systems, disrupting about 495 client companies and local governments; no group named yet.", "source": {"name": "SC World", "url": "https://www.scworld.com/brief/japanese-cloud-provider-idc-frontier-hit-by-ransomware-attack"}},
+        {"title": "DexCom claimed by Redact group", "tags": ["Newly claimed", "Healthcare"], "summary": "Redact listed US medical-device maker DexCom on its leak site on Oct 10 and claimed operational impact; the company has not confirmed.", "source": {"name": "hendryadrian.com (leak-site tracker)", "url": "https://www.hendryadrian.com/?p=115501"}},
+        {"title": "City of Vicksburg, Mississippi systems shut down", "tags": ["Municipal"], "summary": "City computer systems were taken offline while officials investigate possible access to personal data; police, fire and 911 stayed operational.", "source": {"name": "KonBriefing", "url": "https://konbriefing.com/en-topics/cyber-attacks.html"}},
+        {"title": "UIC College of Medicine data theft", "tags": ["Education", "Healthcare", "Data exposure"], "summary": "University of Illinois Chicago College of Medicine reported data stolen from servers and some systems temporarily unavailable; main network and patient care unaffected.", "source": {"name": "KonBriefing", "url": "https://konbriefing.com/en-topics/cyber-attacks.html"}},
+        {"title": "Osaka Metropolitan University ~500 servers offline", "tags": ["Education"], "summary": "Aggregator reports around 500 servers went offline, taking down campus network and systems and cancelling classes; no primary university statement found.", "source": {"name": "KonBriefing", "url": "https://konbriefing.com/en-topics/cyber-attacks.html"}},
+        {"title": "Warlock hits four sectors via on-prem SharePoint", "tags": ["Trend", "Critical"], "summary": "A China-linked Warlock operation reportedly breached water utility, telecom, regional government and higher-education targets by exploiting on-premises SharePoint servers.", "source": {"name": "Tech Insider", "url": "https://tech-insider.org/warlock-ransomware-sharepoint-toolshell-2026"}},
+        {"title": "Qilin claims Japanese pro-video electronics maker", "tags": ["Newly claimed"], "summary": "CYFIRMA observed a Qilin leak-site claim against a Japanese manufacturer of professional video and imaging equipment; unconfirmed by the company.", "source": {"name": "CYFIRMA", "url": "https://www.cyfirma.com/news/weekly-intelligence-report-9-oct-2026/"}},
+        {"title": "SilentRansomGroup lists two redacted victims", "tags": ["Newly claimed"], "summary": "SilentRansomGroup posted partially redacted victims on Oct 5 and Oct 7 with full-data countdown timers running; names, sectors and countries not yet disclosed.", "source": {"name": "hendryadrian.com (leak-site tracker)", "url": "https://www.hendryadrian.com/?p=115278"}}
       ],
-      "note": "October coverage is thin: apart from IDC Frontier, the named victims are unverified leak-site claims."
+      "note": "Several items rest on leak-site claims or aggregator listings; only IDC Frontier is victim-confirmed with primary reporting."
     },
     "outage": {
       "items": [
-        {
-          "title": "Google Cloud Storage — us-central1 degradation, October 8",
-          "tags": ["Cloud", "High-profile"],
-          "summary": "Cloud Storage in us-central1 (Iowa) saw elevated latency and errors on writes and some reads for roughly 11 to 12 hours on October 8; Google's preliminary account cites a traffic-sorting change that exhausted backend storage nodes plus a separate metadata database problem, with a full root cause still pending.",
-          "source": {"name": "IncidentHub", "url": "https://blog.incidenthub.cloud/2026-10-12-google-cloud-storage-outage-oct-8-2026"}
-        },
-        {
-          "title": "Yandex Cloud — three data centers damaged, October 8–11",
-          "tags": ["Critical", "Cloud"],
-          "summary": "Yandex said drone attacks damaged data centers in Sasovo, Kaluga and Vladimir, shutting down two and partly disabling the third, leaving customers unable to reach cloud-hosted files; the attribution rests on Yandex's own statements.",
-          "source": {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/yandex-confirms-service-outage-as-users-lose-access-to-cloud-files/"}
-        }
+        {"title": "Cloudflare DNS disruption (Oct 4)", "tags": ["Cloud"], "summary": "User forums report a Cloudflare disruption on Oct 4 affecting DNS resolution for many hours; no official post-mortem found, duration unverified.", "source": {"name": "Cocoontech forum", "url": "https://cocoontech.com/threads/cloudflare-experienced-a-service-outage-on-october-4-2026-the-outage-lasted-for-nearly-24-hours-affecting-various-services.33842/"}},
+        {"title": "Comcast network outage (Oct 8)", "tags": ["Third-party"], "summary": "ThousandEyes observed a Comcast outage across multiple regions lasting 1h21m that also affected partner networks and customers.", "source": {"name": "Network World / ThousandEyes", "url": "https://www.networkworld.com/article/4113326/2026-network-outage-report-and-internet-health-check.html"}},
+        {"title": "Microsoft 365 SharePoint Online access issues (Oct 1)", "tags": ["Cloud"], "summary": "Users reported being unable to reach SharePoint Online sites or seeing delays and navigation errors.", "source": {"name": "UptimeRobot", "url": "https://uptimerobot.com/is-it-down/outages/"}},
+        {"title": "Cloudflare R2 / Durable Objects errors in Amsterdam (Oct 1)", "tags": ["Cloud"], "summary": "Cloudflare logged elevated error rates for Durable Objects and R2 storage served from Amsterdam.", "source": {"name": "UptimeRobot", "url": "https://uptimerobot.com/is-it-down/outages/"}},
+        {"title": "MongoDB Atlas Triggers delayed (Oct 1)", "tags": ["Cloud"], "summary": "Some Atlas Triggers users saw delayed unordered trigger processing during a 5h14m incident.", "source": {"name": "UptimeRobot", "url": "https://uptimerobot.com/is-it-down/outages/"}},
+        {"title": "310 global network outage events, week of Oct 5–11", "tags": ["Trend", "Reference"], "summary": "ThousandEyes counted 310 outage events across ISPs, cloud provider networks, collaboration apps and edge networks for the week.", "source": {"name": "Network World / ThousandEyes", "url": "https://www.networkworld.com/article/4113326/2026-network-outage-report-and-internet-health-check.html"}}
       ],
-      "note": "No major active AWS, Azure, Cloudflare or Microsoft 365 incident was found this week. The IDC Frontier cloud outage is listed under Ransomware."
+      "note": "No major AWS, Azure or Google Cloud region outage reported in October so far; items are smaller incidents."
     },
     "cyber": {
       "items": [
-        {
-          "title": "Times Car (Japan) — 6.6 million member accounts leaked",
-          "tags": ["Data exposure", "High-profile"],
-          "summary": "An attack on car-sharing service Times Car in September leaked data on about 6.6 million member accounts, including images of driving licences.",
-          "source": {"name": "The Next Web", "url": "https://thenextweb.com/news/japan-cyberattacks-warning-data-leaks"}
-        },
-        {
-          "title": "JR East — 1.67 million customer email addresses exposed",
-          "tags": ["Data exposure"],
-          "summary": "Rail operator JR East lost 1.67 million customer email addresses, one of a run of Japanese disclosures that also includes Lawson, Daiwa Securities and Bookoff.",
-          "source": {"name": "The Next Web", "url": "https://thenextweb.com/news/japan-cyberattacks-warning-data-leaks"}
-        },
-        {
-          "title": "CISA KEV — Joomla iCagenda and Balbooa extension flaws",
-          "tags": ["KEV add", "Zero-day"],
-          "summary": "CISA added two Joomla extension vulnerabilities to the Known Exploited Vulnerabilities catalog after active zero-day attacks on the iCagenda and Balbooa extensions; the addition date could not be confirmed from the source.",
-          "source": {"name": "The Cyber Express", "url": "https://thecyberexpress.com/tag/cve-2026-48939/"}
-        },
-        {
-          "title": "KEV and zero-day pace — 247 KEV additions through October 1",
-          "tags": ["Trend"],
-          "summary": "An October 1 roundup counts 247 CISA KEV additions between January 1 and October 1, 2026, and cites Google Threat Intelligence Group's figure of about 11 zero-days a month from January to August.",
-          "source": {"name": "Stingrai", "url": "https://www.stingrai.io/blog/zero-day-statistics-2026"}
-        }
-      ],
-      "note": "No new October-dated CISA emergency directive or major zero-day disclosure surfaced in today's search."
+        {"title": "Ivanti Connect Secure: three chained zero-days", "tags": ["Critical", "Zero-day"], "summary": "Volexity found attackers achieving root RCE on fully patched ICS VPN appliances; Ivanti patched CVE-2026-104935 on Oct 13 with a privilege-escalation fix still pending, so treat VPN-reachable credentials as compromised.", "source": {"name": "HIPAA Journal", "url": "https://hipaajournal.com/ivanti-connect-secure-zero-day-2026"}},
+        {"title": "FortiMail zero-day CVE-2026-104286 exploited", "tags": ["Critical", "Zero-day"], "summary": "An actively exploited CVSS 9.8 flaw lets unauthenticated attackers write arbitrary files on FortiMail appliances.", "source": {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/critical-fortimail-zero-day-flaw.html"}},
+        {"title": "Cisco Secure FMC CVE-2026-20131 used by Interlock", "tags": ["Critical", "Zero-day"], "summary": "A CVSS 10.0 flaw in Cisco Secure Firewall Management Center is being exploited for root access and pivoting to managed security devices; fixes are available and exploitation continues.", "source": {"name": "Cyware", "url": "https://www.cyware.com/resources/threat-briefings/daily-threat-briefing/cyware-daily-threat-intelligence-october-08-2026"}},
+        {"title": "Citrix NetScaler zero-day can knock SAML offline", "tags": ["Zero-day", "High-profile"], "summary": "Citrix patched a high-severity NetScaler ADC/Gateway flaw exploited in targeted attacks to cause denial of service on SAML deployments.", "source": {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/new-netscaler-zero-day-exploited-in.html"}},
+        {"title": "Zammad helpdesk zero-days used to breach DIVD", "tags": ["Zero-day", "Data exposure"], "summary": "Two exploited Zammad flaws were used to breach the Dutch Institute for Vulnerability Disclosure.", "source": {"name": "The Hacker News", "url": "https://thehackernews.com/2026/10/weekly-recap-helpdesk-0-days-rogue.html"}},
+        {"title": "Bitget $388M loss via third-party zero-day", "tags": ["High-profile", "Third-party"], "summary": "A breach that surfaced Sep 24 grew to a $388M theft from hot and warm wallets via a zero-day in third-party security software, attributed to North Korea-linked actors.", "source": {"name": "PKWARE", "url": "https://www.pkware.com/blog/2026-data-breaches"}},
+        {"title": "NAIC PeopleSoft breach claimed by ShinyHunters", "tags": ["Data exposure"], "summary": "Unauthorized access to the insurance regulator's PeopleSoft system, attributed to ShinyHunters' wider Oracle PeopleSoft zero-day campaign; disclosure date unconfirmed.", "source": {"name": "PKWARE", "url": "https://www.pkware.com/blog/2026-data-breaches"}},
+        {"title": "CISA KEV hits 247 entries for 2026 by Oct 1", "tags": ["KEV add", "Trend", "Reference"], "summary": "KEV additions for 2026 already exceed all of 2025, and most newer entries carry a three-day remediation deadline under BOD 26-04.", "source": {"name": "Stingrai", "url": "https://www.stingrai.io/blog/zero-day-statistics-2026"}}
+      ]
     },
     "physical": {
       "items": [
-        {
-          "title": "Hurricane Isaias — federal emergency declarations for Florida, Alabama and Georgia",
-          "tags": ["Tropical", "High-profile"],
-          "summary": "Emergency declarations were approved for Florida and Alabama on October 9 and Georgia on October 10 (incident periods starting October 6, 7 and 8), with FEMA pre-positioning resources and warning of life-threatening storm surge along the Florida Panhandle and Alabama coasts; category and landfall details were not confirmed.",
-          "source": {"name": "FEMA", "url": "https://www.fema.gov/about/news-multimedia/press-releases"}
-        },
-        {
-          "title": "M 7.7 — 12 km WSW of Pitaloza Arriba, Panama (Oct 09)",
-          "tags": ["M 7.7"],
-          "summary": "Magnitude 7.7 earthquake on October 9 with a USGS PAGER alert level of orange; no tsunami flag.",
-          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u18k"}
-        },
-        {
-          "title": "M 6.7 — central Mid-Atlantic Ridge (Oct 13)",
-          "tags": ["M 6.7"],
-          "summary": "Magnitude 6.7 earthquake on October 13 in the remote central Mid-Atlantic Ridge; PAGER alert green.",
-          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1z5"}
-        },
-        {
-          "title": "M 6.6 — 14 km W of Río Grande, Panama (Oct 09)",
-          "tags": ["M 6.6"],
-          "summary": "Magnitude 6.6 earthquake on October 9 following the M 7.7 the same day; USGS tsunami flag set, PAGER alert yellow.",
-          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u19w"}
-        },
-        {
-          "title": "M 6.3 — 102 km NE of Norsup, Vanuatu (Oct 08)",
-          "tags": ["M 6.3"],
-          "summary": "Magnitude 6.3 earthquake on October 8 off Vanuatu; PAGER alert green.",
-          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u0xi"}
-        },
-        {
-          "title": "M 6.1 — 17 km W of Río Grande, Panama (Oct 12)",
-          "tags": ["M 6.1"],
-          "summary": "Magnitude 6.1 earthquake on October 12, continuing the Panama sequence that began October 9; PAGER alert green.",
-          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1wn"}
-        }
+        {"title": "M 7.7 — 12 km WSW of Pitaloza Arriba, Panama (Oct 09)", "tags": ["M 7.7", "Critical"], "summary": "USGS orange PAGER alert for a major shallow-region quake in western Panama, followed by an M 6.6 nearby with a tsunami flag.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u18k"}},
+        {"title": "M 6.6 — 14 km W of Río Grande, Panama (Oct 09)", "tags": ["M 6.6"], "summary": "USGS yellow alert; tsunami flag set. Companion event to the M 7.7.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u19w"}},
+        {"title": "M 6.8 and M 6.7 — central Mid-Atlantic Ridge (Oct 13)", "tags": ["M 6.8"], "summary": "Two offshore quakes, green alert; minimal impact on land expected.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u214"}},
+        {"title": "M 6.3 — 102 km NE of Norsup, Vanuatu (Oct 08)", "tags": ["M 6.3"], "summary": "USGS green alert; no significant damage expected.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u0xi"}},
+        {"title": "Hurricane Isaias hits northern Gulf Coast", "tags": ["Tropical", "Critical"], "summary": "First Atlantic hurricane of 2026 strengthened rapidly; states of emergency in AL, FL and GA with mandatory evacuations in the Panhandle and Dauphin Island and up to 9 ft of surge forecast.", "source": {"name": "CNN", "url": "https://www.cnn.com/2026/10/08/weather/live-news/hurricane-isaias-gulf-storm"}},
+        {"title": "Northern California Red Flag Warning", "tags": ["Wildfire"], "summary": "Red Flag Warning around Redding, Chico and Sacramento with rapid fire-spread potential; small fire near Marysville threatened a residence on Oct 9.", "source": {"name": "YubaNet", "url": "https://yubanet.com/featured/now/"}}
       ],
-      "note": "Panama has had three significant earthquakes since October 9. No October-dated typhoon, wildfire or flood events surfaced in today's search."
+      "note": "Reports differ on Isaias's landfall strength (Cat 2 vs Cat 3); check NHC. No 2026 typhoon coverage was found."
     }
   }
 }
