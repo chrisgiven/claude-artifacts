@@ -1,0 +1,139 @@
+{
+  "date": "2026-10-19",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {
+          "title": "Osaka Metropolitan University — ~500 servers down",
+          "tags": ["Critical", "Education", "Data exposure"],
+          "summary": "Attackers breached the virtualization layer and encrypted nearly 500 servers and many backups across all five campuses. Classes were suspended until Oct 9, and data on at least 130,000 students and alumni may be exposed.",
+          "source": {"name": "Hendry Adrian (aggregator)", "url": "https://www.hendryadrian.com/?p=115040"}
+        },
+        {
+          "title": "DexCom claimed by Redact",
+          "tags": ["Newly claimed", "Healthcare", "High-profile"],
+          "summary": "The Redact group listed US medical-device maker DexCom on its leak site around Oct 10 and claimed operational impact. No company confirmation was found.",
+          "source": {"name": "Hendry Adrian / ransomware.live", "url": "https://www.hendryadrian.com/?p=115501"}
+        },
+        {
+          "title": "Andersen Group — SilentRansomGroup",
+          "tags": ["Newly claimed", "Third-party"],
+          "summary": "A professional-services firm was listed Oct 6 in an attack attributed to SilentRansomGroup, with reported system disruption and a ransom demand.",
+          "source": {"name": "Hendry Adrian / ransomware.live", "url": "https://www.hendryadrian.com/?p=115183"}
+        },
+        {
+          "title": "Fake 'data deletion' offers used as second extortion",
+          "tags": ["Trend"],
+          "summary": "A group is emailing breached organizations offering to delete their stolen data for a fee. Researchers assess it as a second extortion attempt rather than a remediation service.",
+          "source": {"name": "ThaiCERT", "url": "https://www.thaicert.or.th/?p=16045"}
+        }
+      ],
+      "note": "Leak-site claims are unverified until the victim confirms. One report counts 7,551 disclosed victims for 2026 so far, with Qilin the most prolific group."
+    },
+    "outage": {
+      "items": [
+        {
+          "title": "ThousandEyes: 310 global network outages, week of Oct 5–11",
+          "tags": ["Trend", "Reference"],
+          "summary": "The weekly internet health report counted 310 global network outage events across ISPs, cloud providers and collaboration apps.",
+          "source": {"name": "Network World", "url": "https://www.networkworld.com/article/4113326/2026-network-outage-report-and-internet-health-check.html"}
+        },
+        {
+          "title": "NDIS (Australia) portals and app offline Oct 17–18",
+          "tags": ["Reference"],
+          "summary": "Planned maintenance took the NDIS participant and provider portals and the app offline for about seven hours, starting 11:30 pm AEDT Oct 17.",
+          "source": {"name": "NDIS", "url": "https://www.ndis.gov.au/news/11732-planned-system-updates-17-18-october-2026"}
+        },
+        {
+          "title": "Guam / CNMI utility outages after Typhoon Champi",
+          "tags": ["Tropical"],
+          "summary": "Champi caused widespread power outages on Guam. CUC in the Northern Marianas issued emergency power and water interruptions for Oct 17.",
+          "source": {"name": "Commonwealth Utilities Corp.", "url": "https://cucgov.org/news-and-events/public-advisories/2026-10-17-public-advisory-re-emergency-power-service-interruption-from-garapan-to-beach-road-on-october-17-2026/"}
+        }
+      ],
+      "note": "No major AWS, Azure or Google Cloud outage was found for October 2026. The most recent hyperscaler incidents in results were Google Cloud Melbourne and an AWS partial outage, both Aug 14–20."
+    },
+    "cyber": {
+      "items": [
+        {
+          "title": "Ivanti Connect Secure zero-day — CISA urges immediate patching",
+          "tags": ["Critical", "Zero-day", "KEV add"],
+          "summary": "An authentication bypass in Ivanti Connect Secure has been exploited since at least Oct 1. Volexity says actor UTA0576 is chaining it with two other flaws, and Ivanti has released patches.",
+          "source": {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-admins-to-immediately-fix-ivanti-flaw-exploited-as-zero-day/amp/"}
+        },
+        {
+          "title": "KEV catalog passes 2025's full-year total",
+          "tags": ["Trend", "Reference"],
+          "summary": "CISA added 247 KEV entries from Jan 1 to Oct 1, 2026, more than in all of 2025. Since BOD 26-04 took effect, 91 of 114 new entries carry a three-day remediation deadline.",
+          "source": {"name": "Stingrai", "url": "https://www.stingrai.io/blog/zero-day-statistics-2026"}
+        },
+        {
+          "title": "Joomla extension zero-day added to KEV",
+          "tags": ["KEV add", "Zero-day"],
+          "summary": "CISA warned that a Joomla extension vulnerability (CVE-2026-48939) is being actively exploited and added it to the catalog.",
+          "source": {"name": "The Cyber Express", "url": "https://thecyberexpress.com/tag/cve-2026-48939/amp/"}
+        },
+        {
+          "title": "September 2026 zero-day vulnerability report",
+          "tags": ["Reference"],
+          "summary": "Indusface's monthly roundup of zero-days exploited during September 2026, published in early October.",
+          "source": {"name": "Indusface", "url": "https://www.indusface.com/wp-content/uploads/2026/10/zero-day-vulnerability-report-september-2026.pdf"}
+        }
+      ],
+      "note": "The search returned only a few October items. Check the Ivanti CVE ID against NVD or the KEV catalog, since the reported identifier looks irregular."
+    },
+    "physical": {
+      "items": [
+        {
+          "title": "Santa Ana wildfires force Orange County evacuations",
+          "tags": ["Wildfire", "Critical"],
+          "summary": "Multiple fires broke out across Southern California in the season's first Santa Ana event. The Norte Fire burned 250 acres quickly, and Governor Newsom activated a statewide response.",
+          "source": {"name": "The Watchers", "url": "https://watchers.news/2026/10/16/multiple-wildfires-prompt-evacuations-during-the-first-santa-ana-event-of-the-season-in-southern-california/"}
+        },
+        {
+          "title": "Istanbul floods: 3 dead, 2,727 evacuated",
+          "tags": ["Flood"],
+          "summary": "Heavy rain flooded roads and homes on Oct 15, leaving at least three dead and three missing.",
+          "source": {"name": "The Watchers", "url": "https://watchers.news/2026/10/15/floods-leave-at-least-3-dead-over-2-700-evacuated-in-istanbul-turkiye/"}
+        },
+        {
+          "title": "Hatteras Island visitor evacuation (NC coastal storm)",
+          "tags": ["TS"],
+          "summary": "Dare County ordered all visitors off Hatteras Island from 8 pm EDT Oct 16 because a coastal storm was threatening NC Highway 12.",
+          "source": {"name": "The Watchers", "url": "https://watchers.news/"}
+        },
+        {
+          "title": "Hurricane Isaias aftermath — Florida / Gulf Coast",
+          "tags": ["Tropical"],
+          "summary": "After its early-October Florida landfall, Isaias left at least six dead and hundreds of thousands without power.",
+          "source": {"name": "CNN", "url": "https://www.cnn.com/2026/10/08/weather/live-news/hurricane-isaias-gulf-storm"}
+        },
+        {
+          "title": "M 6.9 — 76 km NE of Ozernovskiy, Russia (Oct 16)",
+          "tags": ["M 6.9"],
+          "summary": "Kamchatka-region quake with a USGS green alert and no tsunami.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u2mq"}
+        },
+        {
+          "title": "M 6.8 & M 6.7 — central Mid-Atlantic Ridge (Oct 13)",
+          "tags": ["M 6.8"],
+          "summary": "A doublet on the remote mid-ocean ridge. USGS flagged a tsunami on the 6.8 and gave both a green alert.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u214"}
+        },
+        {
+          "title": "M 6.1 — 17 km W of Río Grande, Panama (Oct 12)",
+          "tags": ["M 6.1"],
+          "summary": "Shallow-region quake in Panama with a USGS green alert.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u1wn"}
+        },
+        {
+          "title": "M 5.7 — 48 km WNW of Khuzdar, Pakistan (Oct 17)",
+          "tags": ["M 5.7"],
+          "summary": "USGS yellow alert, meaning some casualties or damage are possible.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u2y1"}
+        }
+      ],
+      "note": "Typhoon Champi briefly reached super typhoon strength after passing Guam. Earthquakes are from the USGS significant-week feed."
+    }
+  }
+}

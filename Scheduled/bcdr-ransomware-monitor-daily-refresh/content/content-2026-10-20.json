@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-20",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {"title": "Osaka public university: ~500 servers down, backups encrypted", "tags": ["Critical", "Education", "Data exposure"], "summary": "Attackers reached the virtualization layer and shut down nearly 500 servers across all five campuses. Many backups were also encrypted, and data on at least 130,000 students and alumni may be exposed.", "source": {"name": "Hendry Adrian (aggregator)", "url": "https://www.hendryadrian.com/?p=115040"}},
+        {"title": "DexCom claimed by Redact group", "tags": ["Newly claimed", "Healthcare"], "summary": "Redact listed US medical-device maker DexCom on its leak site on Oct 10 and claimed operational impact. Unconfirmed by the company.", "source": {"name": "Hendry Adrian (leak-site tracker)", "url": "https://www.hendryadrian.com/?p=115501"}},
+        {"title": "Andersen Group hit by SilentRansomGroup", "tags": ["Newly claimed", "Third-party"], "summary": "Professional-services firm Andersen Group was listed Oct 6 after a reported attack attributed to SilentRansomGroup, with system disruption and a payment demand.", "source": {"name": "Hendry Adrian (leak-site tracker)", "url": "https://www.hendryadrian.com/?p=115183"}},
+        {"title": "SilentRansomGroup posts two redacted October victims", "tags": ["Newly claimed", "Trend"], "summary": "Two more October victims are listed only by initials, with names withheld pending disclosure. This is SilentRansomGroup's usual pressure tactic.", "source": {"name": "Hendry Adrian (leak-site tracker)", "url": "https://www.hendryadrian.com/?p=115278"}}
+      ],
+      "note": "Only the Osaka incident has confirmed operational impact; the other entries are group claims and remain unverified."
+    },
+    "outage": {
+      "items": [
+        {"title": "Revolut major outage (~3 hours)", "tags": ["High-profile"], "summary": "StatusGator logged a major Revolut incident starting Oct 19 at 2:36 PM that lasted about 3 hours, with roughly 6,000 user reports in 24 hours. Now resolved.", "source": {"name": "StatusGator", "url": "https://statusgator.com/services/revolut"}},
+        {"title": "Google Antigravity: repeated incidents Oct 12–16", "tags": ["Cloud"], "summary": "Google's Antigravity service logged several outages between Oct 12 and Oct 16. It is reported operational now.", "source": {"name": "StatusGator", "url": "https://statusgator.com/services/google-antigravity"}},
+        {"title": "ChatGPT file-download incident (42 min)", "tags": ["Cloud"], "summary": "A minor ChatGPT incident affecting file downloads began Oct 19 at 1:31 PM and resolved after 42 minutes.", "source": {"name": "Pulsetic", "url": "https://pulsetic.com/status/chatgpt/"}}
+      ],
+      "note": "No major AWS, Azure or Google Cloud outage found for October; Google Cloud was reported operational as of Oct 20, 06:30 UTC. Items come from third-party trackers."
+    },
+    "cyber": {
+      "items": [
+        {"title": "Ivanti Connect Secure zero-day under active exploitation", "tags": ["Critical", "Zero-day", "KEV add"], "summary": "CISA urged an immediate patch for an Ivanti Connect Secure authentication bypass that allows unauthenticated remote command execution and has been exploited since at least Oct 1. Volexity saw it chained with two other flaws.", "source": {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-admins-to-immediately-fix-ivanti-flaw-exploited-as-zero-day/amp/"}},
+        {"title": "CISA KEV passes 2025 total with a quarter to go", "tags": ["Trend", "Reference"], "summary": "CISA added 247 KEV entries between Jan 1 and Oct 1, 2026, already more than the 245 it added in all of 2025.", "source": {"name": "Stingrai", "url": "https://www.stingrai.io/blog/zero-day-statistics-2026"}},
+        {"title": "Zero-day exploitation pace up ~40% year over year", "tags": ["Trend", "Zero-day"], "summary": "Google threat intelligence puts 2026 at about 11 zero-days a month for Jan–Aug, against 8 a month in 2025. The September zero-day report has been published.", "source": {"name": "Indusface (Sep 2026 report)", "url": "https://www.indusface.com/wp-content/uploads/2026/10/zero-day-vulnerability-report-september-2026.pdf"}}
+      ]
+    },
+    "physical": {
+      "items": [
+        {"title": "Typhoon Champi: Guam outages, now heading for Luzon as 'Rosal'", "tags": ["Tropical", "Critical"], "summary": "Champi briefly reached super-typhoon strength after passing closest to Guam, causing widespread outages and shutting the Ugum water treatment plant. It is forecast to enter PAR on Oct 20 and threaten northern Luzon and Taiwan.", "source": {"name": "The Watchers", "url": "https://watchers.news/2026/10/18/champi-briefly-reaches-super-typhoon-strength-after-its-closest-approach-to-guam-causes-widespread-outages"}},
+        {"title": "Hurricane Trudy threatens Mexico's Pacific coast", "tags": ["Tropical", "Flood"], "summary": "On Oct 18, hurricane-force winds and heavy rain brought warnings of life-threatening flooding and mudslides along Mexico's Pacific coast.", "source": {"name": "Suara Garut", "url": "https://suaragarut.id/en/trudy-mexico-coast-flooding-mudslides"}},
+        {"title": "Hurricane Simon / TS Rachel remnants kill six in Mexico", "tags": ["Tropical", "Flood"], "summary": "As of Oct 13, flooding and landslides had killed six people, five of them in Ensenada, Baja California, and Simon was tracking toward Sinaloa.", "source": {"name": "PAHO/WHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-14-october-2026"}},
+        {"title": "Santa Ana wildfires force SoCal evacuations", "tags": ["Wildfire"], "summary": "The season's first Santa Ana wind event on Oct 16 drove several Southern California wildfires that prompted evacuations.", "source": {"name": "The Watchers", "url": "https://watchers.news/"}},
+        {"title": "Hatteras Island visitor evacuation, NC Highway 12 at risk", "tags": ["Flood"], "summary": "Around Oct 17, visitors were ordered off Hatteras Island as a coastal storm threatened NC Highway 12, the island's only road link.", "source": {"name": "The Watchers", "url": "https://watchers.news/2026/10/17/visitors-ordered-to-evacuate-hatteras-island-as-coastal-storm-threatens-n-c-highway-12-u-s/"}},
+        {"title": "M 6.9 off Kamchatka (Oct 16)", "tags": ["M 6.9"], "summary": "Struck 76 km NE of Ozernovskiy, Russia, with a green PAGER alert and no tsunami.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u2mq"}},
+        {"title": "M 6.8 central Mid-Atlantic Ridge (Oct 13)", "tags": ["M 6.8"], "summary": "Remote mid-ocean event with a green PAGER alert. It carried a tsunami flag but posed no significant coastal threat.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u214"}},
+        {"title": "M 6.3 Vanuatu (Oct 20)", "tags": ["M 6.3"], "summary": "Struck 197 km NW of Port-Olry with a green PAGER alert and a tsunami flag set.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3jl"}},
+        {"title": "M 5.7 Khuzdar, Pakistan (Oct 17)", "tags": ["M 5.7"], "summary": "A shallow quake 48 km WNW of Khuzdar drew a yellow PAGER alert, meaning some casualties and damage are possible.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u2y1"}}
+      ],
+      "note": "Watch Champi/Rosal for Luzon and Taiwan impacts over the next 72 hours."
+    }
+  }
+}

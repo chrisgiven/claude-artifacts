@@ -1,0 +1,79 @@
+{
+  "date": "2026-10-19",
+  "client_alerts": [
+    {
+      "headline": "Microsoft 365: advanced agent and plugin uploads stay open to all users unless admins act by Oct 25",
+      "body": "Message Center **MC1472007** adds a control for who can upload advanced agents and plugins (all, none, selected users or Entra groups). If admins do nothing by **Oct 25**, uploads stay enabled for everyone. Correction to earlier briefs: this is the upload control. MCP-based agents themselves have been default-on since the Nov 2025 rollout (MC1169071). Clients in regulated sectors should set this to an approved group this week."
+    },
+    {
+      "headline": "OpenCode console security incident: 1.4% of Console users affected",
+      "body": "OpenCode says a security incident compromised 1.4% of its Console users, and it is working with Google, OpenAI and Anthropic on remediation. Ask any client dev teams using OpenCode to rotate the provider API keys stored in that console and review usage logs."
+    }
+  ],
+  "top_moves": [
+    {
+      "title": "Microsoft's Oct 25 agent-upload default is 6 days out, and it is not the MCP switch we had reported",
+      "date_label": "Oct 25, 2026",
+      "urgent": true,
+      "body": "MC1472007 leaves **advanced agent and plugin uploads** enabled for all users unless admins restrict them by Oct 25. MCP-based agents were already default-on in 2025, so the real change is who can upload agents."
+    },
+    {
+      "title": "Undocumented OpenAI 'aurora' model IDs appear in the API",
+      "date_label": "Oct 18, 2026",
+      "urgent": false,
+      "body": "Reports say aurora-red/green/blue-alpha IDs appeared in OpenAI's API on Oct 18. Only red responds, with 503 capacity errors, which points to a model being staged. OpenAI also disclosed four more AI-agent incidents on Oct 16, bringing the reported total to 19."
+    },
+    {
+      "title": "Anthropic pledges $48B in stock ahead of its IPO, but there is still no public S-1",
+      "date_label": "Oct 18, 2026",
+      "urgent": false,
+      "body": "An Oct 18 company post pledges $48B in stock before the IPO, and separate reports say Anthropic is negotiating a $9B loan. EDGAR still shows no public S-1. The public filing must come at least 15 days before a roadshow, so a mid-November listing would need it soon."
+    }
+  ],
+  "providers": [
+    {"name": "OpenAI", "display": "OpenAI", "headline": "Undocumented aurora-*-alpha model IDs surface in the API (Oct 18), and four more agent incidents are disclosed (19 total).", "detail": "Three aurora alpha IDs appeared in the API without documentation. Only the red variant answers, with capacity errors. GPT-6 (Sol for paid plans, Luna for Free/Go) with Intelligent UI has been live since Oct 7, and audio uploads are available on paid plans. OpenAI's tally of reported agent incidents reached 19 on Oct 16.", "tags": ["watch", "alert"], "classification": "watch", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "Anthropic", "display": "Anthropic", "headline": "$48B stock pledge ahead of the IPO (Oct 18); public S-1 still not filed.", "detail": "An Oct 18 company post pledges $48B in stock before listing, and reports describe $9B debt talks. No public S-1 on EDGAR as of Oct 13 or since. No new model or Claude Code release was found in the window.", "tags": ["strategic"], "classification": "strategic", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "Google Gemini", "display": "Google Gemini", "headline": "No new release; the consumer tier changes continue (Free dropped to Flash-Lite Oct 9, Plus loses Pro on emailed dates).", "detail": "Reports of a 'Gemini 4 Argon' model and Gems being replaced by skills come only from unverified changelogs. Pro and Ultra subscribers keep full model access.", "tags": ["watch"], "classification": "watch", "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "xAI", "display": "xAI / Grok", "headline": "Grok Voice 3.0 listed as launching Oct 14, breaking a 16-day quiet streak; Grok 5 still not shipped.", "detail": "BenchLM lists Grok Voice 3.0 (Oct 14), and an experimental official TypeScript SDK appeared Oct 2. Grok 4.7 (Sept 21) remains the flagship and has been on Bedrock since Sept 28.", "tags": ["tactical"], "classification": "tactical", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "Meta", "display": "Meta", "headline": "No new release; Meta's frontier models remain closed and API-only, with no new open Llama.", "detail": "No October Llama or Avocado-line release found. The open-weights story stays on Llama 4 (Scout/Maverick).", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Mistral", "display": "Mistral", "headline": "No new release; the Large 4 preview (Oct 6) is still API-only, with open weights to come.", "detail": "No changelog entry since the Large 4 preview. For EU-resident workloads it is still the obvious candidate once the weights ship.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Perplexity", "display": "Perplexity", "headline": "No new headline; no dated Perplexity release found for October.", "detail": "The most recent verified items are from August (finance data sources in Computer, Portable Computer on DGX Spark, task launch by email).", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Microsoft 365 Copilot", "display": "Microsoft 365 Copilot", "headline": "The Oct 25 MC1472007 deadline turns out to cover advanced agent and plugin uploads, which stay open to all users by default; local inferencing is on the October roadmap.", "detail": "Admins must restrict uploads to chosen users or groups by Oct 25 or they stay open. The October roadmap also lists in-region local inferencing (US, UK, AU, IN, UAE) and Teams/Entra ID backup. The direct-prompt Copilot button keeps rolling out across Word, Excel and PowerPoint through December.", "tags": ["alert", "tactical"], "classification": "alert", "active": true, "hasAlert": true, "alertReason": "Agent uploads stay default-open unless restricted by Oct 25."},
+    {"name": "GitHub Copilot", "display": "GitHub Copilot", "headline": "No new release found; usage-based billing (since June 1) and market-share pressure from Cursor and Claude Code remain the story.", "detail": "No October changelog item surfaced in the window. Survey data puts Copilot at 29%, with Cursor and Claude Code tied at 18%.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Cursor", "display": "Cursor", "headline": "No new headline; no dated Cursor release found in the window.", "detail": "No new release found.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Gamma", "display": "Gamma", "headline": "No release found; the long quiet stretch continues.", "detail": "No official changelog or post for October.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Notion AI", "display": "Notion AI", "headline": "No new release; Notion Workers billing against Notion credits was due to start Oct 15.", "detail": "No confirmation found of the Oct 15 billing change taking effect. Check workspace credit usage if clients rely on Workers.", "tags": ["watch"], "classification": "watch", "active": false, "hasAlert": false, "alertReason": ""}
+  ],
+  "persistent_signals": [
+    {"provider": "Anthropic", "text": "Anthropic — IPO / S-1 still not public — 2+ weeks running (investor day Oct 14, $48B stock pledge Oct 18, no EDGAR filing)"},
+    {"provider": "Microsoft 365 Copilot", "text": "Microsoft 365 Copilot — Oct 25 agent-upload default — 2+ weeks running (now clarified as MC1472007 advanced-agent uploads)"},
+    {"provider": "Google Gemini", "text": "Google Gemini — consumer tier reshuffle — 2+ weeks running (Plus losing Pro on per-account dates)"},
+    {"provider": "Mistral", "text": "Mistral — Large 4 open weights pending — 2 weeks running (preview Oct 6, API-only)"}
+  ],
+  "month_themes": {
+    "then": "Mistral's product refresh (OCR, Agentic Search); Copilot meeting agents acting on their own; NIST AI-CSF (SP 1353) comment window",
+    "now": "Admin defaults on agent uploads; pre-IPO capital moves at Anthropic; stealth model staging and agent-incident disclosures at OpenAI"
+  },
+  "habits": [
+    {"task": "BCP/DR plan narratives & runbooks", "tool": "Claude (Opus/Fable 5)", "shift": "No change. Keep long-form runbook drafting in Claude and use GPT-6 Intelligent UI only for quick RTO/RPO visual tables.", "type": "tactical"},
+    {"task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)", "tool": "Claude + NIST source PDFs", "shift": "The SP 1353 comment window closed Oct 15. Treat AI-generated CSF mappings as provisional until a human reviews them, which is the draft's own recommendation, and note that in deliverables.", "type": "strategic"},
+    {"task": "Vendor/architecture research", "tool": "Perplexity + ChatGPT GPT-6 Sol", "shift": "Be wary of undocumented model IDs (OpenAI aurora). Don't benchmark or cite them in client work until they are documented.", "type": "watch"},
+    {"task": "Client proposals & SOWs", "tool": "Claude", "shift": "Add an AI-agent governance line item covering upload controls (MC1472007) and incident disclosure, now that agent incidents are public and counted.", "type": "tactical"},
+    {"task": "Executive decks", "tool": "Microsoft 365 Copilot PowerPoint Skills / Gamma", "shift": "Try PowerPoint Copilot Skills ('Sharpen slide titles') for client-branded decks. Gamma has no updates, so there is no reason to switch.", "type": "tactical"},
+    {"task": "Stakeholder audio walkthroughs", "tool": "ChatGPT audio upload / Grok Voice 3.0", "shift": "Use ChatGPT's audio upload (paid plans) to transcribe and summarize tabletop-exercise recordings. Grok Voice 3.0 is worth a test but stays off client data.", "type": "watch"},
+    {"task": "Client advisory on AI data risk", "tool": "M365 admin center + vendor trust pages", "shift": "This week, have clients restrict advanced agent uploads to an approved Entra group and rotate any keys held in OpenCode Console.", "type": "strategic"}
+  ],
+  "community": [
+    {"source": "r/LocalLLaMA", "signal": "GLM-5.2 is the most-discussed recent model, and a mid-2026 analysis of 49K posts and 800K comments is driving debate on the state of local AI.", "so_what": "Open-weight Chinese models keep leading local deployments. Relevant to air-gapped DR tooling, with supply-chain caveats."},
+    {"source": "r/OpenAI / HN", "signal": "Speculation over the aurora-alpha model IDs and OpenAI's running count of agent incidents.", "so_what": "Expect a model release soon. Hold any client-facing model recommendations until it lands."},
+    {"source": "r/ClaudeAI", "signal": "Usage-limit and performance megathreads stay pinned, and anticipation of the IPO is a recurring topic.", "so_what": "No change in reliability signal. Keep a fallback model in critical workflows."}
+  ],
+  "watch": [
+    {"kind": "deadline", "title": "Oct 25 — M365 advanced agent upload control (MC1472007)", "body": "Uploads stay enabled for all users unless admins restrict them by Oct 25. Rollout completes by end of October."},
+    {"kind": "watch", "title": "OpenAI aurora model launch", "body": "Three alpha IDs are staged in the API. A launch, possibly a GPT-6 variant or a new agent model, could come within days."},
+    {"kind": "pricing", "title": "Anthropic public S-1", "body": "It must go public at least 15 days before a roadshow. A mid-November listing means a filing in the next 1–2 weeks, with the first audited financials and risk factors on data use."},
+    {"kind": "security", "title": "OpenCode console incident follow-up", "body": "Watch for a post-mortem and any provider-side key revocations from Google, OpenAI or Anthropic."},
+    {"kind": "regulatory", "title": "NIST SP 1353 final", "body": "Comments closed Oct 15. Next comes the adjudicated final quick-start guide on generative AI in CSF 2.0."}
+  ],
+  "sources": "Sources consulted: OpenAI release notes, Anthropic newsroom and secondary IPO coverage, Microsoft Message Center mirrors (MC1472007, MC1169071), BenchLM/aggregator model trackers, AIWeekly and aitoolly Oct 18–19 roundups, NIST/CSA SP 1353 notes, and Reddit mirrors; Reddit data was thin this week."
+}
