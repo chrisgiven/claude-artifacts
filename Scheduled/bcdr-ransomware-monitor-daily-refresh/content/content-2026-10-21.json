@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-21",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {"title": "SEETEL Hotels (Germany)", "tags": ["High-profile"], "summary": "German hotel group SEETEL reported a ransomware attack; systems were isolated and a forensic investigation was launched.", "source": {"name": "KonBriefing", "url": "https://konbriefing.com/en-topics/cyber-attacks.html"}},
+        {"title": "City of Vicksburg, Mississippi", "tags": ["Municipal"], "summary": "The City of Vicksburg is listed among October 2026 confirmed ransomware victims; group attribution is provisional.", "source": {"name": "Ransomnews", "url": "https://ransomnews.com/ransomware-attacks/2026/"}},
+        {"title": "Green Clinic (Louisiana)", "tags": ["Healthcare"], "summary": "Louisiana healthcare provider Green Clinic is listed as an October victim attributed to the Wallstreet group; ransom status unknown.", "source": {"name": "Ransomnews", "url": "https://ransomnews.com/ransomware-attacks/2026/"}},
+        {"title": "University of Illinois Chicago", "tags": ["Education", "Newly claimed"], "summary": "UIC is listed as a victim attributed to the Booba Project group; the university has not been confirmed as paying or restoring.", "source": {"name": "Ransomnews", "url": "https://ransomnews.com/ransomware-attacks/2026/"}},
+        {"title": "Osaka Metropolitan University & IDC Frontier (Japan)", "tags": ["Education", "Cloud"], "summary": "Osaka Metropolitan University and Tokyo data-center operator IDC Frontier both appear on October 2026 ransomware victim lists.", "source": {"name": "Ransomnews", "url": "https://ransomnews.com/ransomware-attacks/2026/"}},
+        {"title": "DexCom (claimed by Redact)", "tags": ["Healthcare", "Newly claimed"], "summary": "The Redact group claimed an attack on US medical device maker DexCom on Oct 10; the claim is unverified and the company has not confirmed.", "source": {"name": "HendryAdrian (leak-site tracker)", "url": "https://www.hendryadrian.com/?p=115501"}},
+        {"title": "KHOU 11 (claimed by LockBit 3.0)", "tags": ["Newly claimed"], "summary": "LockBit 3.0 listed Houston broadcaster KHOU 11 on its leak site in October 2026; not independently confirmed.", "source": {"name": "Rankiteo", "url": "https://blog.rankiteo.com/ran1792500127-lockbit-30-ransomware-october-2026/"}}
+      ],
+      "note": "Most October victims come from leak-site aggregators; group attributions are provisional until organisations confirm. Bitdefender counted 790 claimed victims in September (+30% YoY)."
+    },
+    "outage": {
+      "items": [
+        {"title": "Google Cloud europe-west2 (London) outage", "tags": ["Critical", "Cloud"], "summary": "A power event in Google's London region from 06:08 UTC on Oct 20 caused elevated errors and network failures across multiple GCP services; Google says it is mitigated for most customers.", "source": {"name": "The Register", "url": "https://theregister.com/paas-and-iaas/2026/10/20/google-clouds-london-zones-takes-a-nap-multiple-services-disrupted/5304084"}},
+        {"title": "Revolut worldwide outage (GCP knock-on)", "tags": ["High-profile", "Third-party"], "summary": "Revolut lost 28 services including card payments, transfers and crypto access for millions of users after the GCP London failure; Lloyds, HSBC and Royal Mail were also reported affected.", "source": {"name": "Euronews", "url": "https://euronews.com/2026/10/20/digital-bank-revolut-down-in-major-worldwide-outage"}}
+      ],
+      "note": "Single-region dependency again cascaded into banking; no other major hyperscaler outage found in the past two weeks."
+    },
+    "cyber": {
+      "items": [
+        {"title": "State Bank of India discloses cyberattack", "tags": ["Data exposure"], "summary": "SBI told exchanges on Oct 21 that 3,897 customer records (names, DOB, addresses, mobiles, loan details) were stolen and leaked, after CERT-In alerted it on Oct 16.", "source": {"name": "Outlook Money", "url": "https://www.outlookmoney.com/personal-finance/sbi-confirms-cyberattack-3897-customer-records-stolen-leaked-on-dark-web"}},
+        {"title": "OpenCode console breach", "tags": ["Credential exposure", "Third-party"], "summary": "OpenCode disclosed on Oct 18 a 'distillation attack' affecting 1.4% of Console users with linked Anthropic, OpenAI or Google provider keys.", "source": {"name": "StepSecurity", "url": "https://www.stepsecurity.io/blog/opencode-security-breach"}},
+        {"title": "ASOS customer data breach", "tags": ["High-profile", "Data exposure"], "summary": "ASOS confirmed attackers socially engineered an employee's credentials, stole names, addresses, phones and search history, and pushed rogue app notifications to customers.", "source": {"name": "TechCrunch", "url": "https://techcrunch.com/2026/10/08/asos-confirms-breach-of-customer-data-after-hackers-send-rogue-app-notification/"}},
+        {"title": "Ivanti Connect Secure zero-day exploited", "tags": ["Zero-day", "KEV add"], "summary": "CISA urged immediate patching of an Ivanti Connect Secure flaw exploited since at least Oct 1; Volexity reports actor UTA0576 chaining it with two other bugs.", "source": {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-admins-to-immediately-fix-ivanti-flaw-exploited-as-zero-day/amp/"}},
+        {"title": "Japanese mass breaches: Nippon Columbia, Skyticket", "tags": ["Data exposure"], "summary": "Trackers report Nippon Columbia exposing ~8.72M customer records and Adventure Inc. (Skyticket) ~14.6M records; primary notices not yet verified.", "source": {"name": "SharkStriker tracker", "url": "https://sharkstriker.com/blog/october-2026-data-breaches/"}},
+        {"title": "ETS contractor breach hits California students", "tags": ["Education", "Third-party"], "summary": "The California Department of Education notified students of a data breach at testing contractor Educational Testing Service.", "source": {"name": "SharkStriker tracker", "url": "https://sharkstriker.com/blog/october-2026-data-breaches/"}}
+      ]
+    },
+    "physical": {
+      "items": [
+        {"title": "Super Typhoon Champi nears Taiwan / East China", "tags": ["Critical", "Tropical"], "summary": "The strongest storm of 2026 (winds to 245 km/h) is heading for Taiwan; Zhejiang and Fujian are evacuating residents, suspending ferries and halting construction, with Shanghai on watch.", "source": {"name": "Malay Mail", "url": "https://www.malaymail.com/news/world/2026/10/21/worlds-strongest-storm-of-2026-champi-barrels-towards-taiwan-china-prepares-evacuations-and-shutdowns/240042"}},
+        {"title": "Hatteras Island evacuation (coastal storm)", "tags": ["Flood"], "summary": "Visitors were ordered off Hatteras Island on Oct 17 as a coastal storm threatened NC Highway 12.", "source": {"name": "The Watchers", "url": "https://watchers.news/2026/10/17/visitors-ordered-to-evacuate-hatteras-island-as-coastal-storm-threatens-n-c-highway-12-u-s/"}},
+        {"title": "Hurricane Isaias (Gulf Coast / Florida)", "tags": ["Tropical"], "summary": "Isaias made landfall around Oct 8–10 with at least six deaths and hundreds of thousands without power; landfall details differ between reports.", "source": {"name": "CNN", "url": "https://www.cnn.com/2026/10/08/weather/live-news/hurricane-isaias-gulf-storm"}},
+        {"title": "Hurricane Simon (Mexico Pacific coast)", "tags": ["Cat 4", "Tropical"], "summary": "Simon strengthened to a major hurricane off western Mexico around Oct 9–11, bringing flash floods to Acapulco; US Embassy issued alerts.", "source": {"name": "U.S. Embassy Mexico", "url": "https://mx.usembassy.gov/weather-alert-upgraded-storm-hurricane-simon-u-s-consulate-general-guadalajara-u-s-embassy-mexico-city-on-friday-october-9-2026/"}},
+        {"title": "M 6.9 — 76 km NE of Ozernovskiy, Russia (Oct 16)", "tags": ["M 6.9"], "summary": "Kamchatka quake; USGS green alert, no tsunami.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u2mq"}},
+        {"title": "M 6.3 — 197 km NW of Port-Olry, Vanuatu (Oct 20)", "tags": ["M 6.3"], "summary": "Offshore Vanuatu quake; USGS green alert with tsunami flag set.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3jl"}},
+        {"title": "M 5.7 — 48 km WNW of Khuzdar, Pakistan (Oct 17)", "tags": ["M 5.7"], "summary": "Balochistan quake; USGS yellow alert for possible casualties and damage.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u2y1"}}
+      ],
+      "note": "Watch Champi's track for APAC data-center and supply-chain impact (Taiwan fabs, Shanghai/Ningbo ports) over the next 48 hours."
+    }
+  }
+}
