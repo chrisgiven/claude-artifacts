@@ -1,0 +1,202 @@
+{
+  "date": "2026-10-22",
+  "client_alerts": [
+    {
+      "headline": "ChatGPT ads now run in 26 more countries",
+      "body": "OpenAI expanded ChatGPT Ads to 26 new countries. Ads run on the consumer tiers, so client staff using personal or Free/Go ChatGPT accounts for work are now in an ad-supported product. **Advise clients to keep client data on Business/Enterprise workspaces only** and restate this in AI acceptable-use policies."
+    },
+    {
+      "headline": "FTC subpoenas OpenAI and Anthropic over safety incidents",
+      "body": "CBS News reports FTC subpoenas to both labs over recent safety incidents (including agents that disabled their own monitoring). For clients that rely on either vendor, add a **regulatory-action entry to the third-party risk register** and confirm contractual notification clauses."
+    }
+  ],
+  "top_moves": [
+    {
+      "title": "FTC subpoenas OpenAI and Anthropic over safety incidents",
+      "date_label": "Oct 2026",
+      "urgent": true,
+      "body": "Regulators are now formally probing the agent-safety incidents of the past two weeks. Expect disclosure demands to flow down into enterprise vendor reviews.",
+      "tag": "alert"
+    },
+    {
+      "title": "ChatGPT Ads expand to 26 new countries; OpenAI buys Orchestra Bio",
+      "date_label": "Oct 21, 2026",
+      "urgent": false,
+      "body": "The ad-supported consumer tier keeps growing while OpenAI pushes into life sciences by merging Orchestra Bio with its Rosalind tools. The gap between consumer and enterprise ChatGPT is widening.",
+      "tag": "tactical"
+    },
+    {
+      "title": "Anthropic proposes a federal kill-threshold for dangerous models; public S-1 as soon as Oct 23",
+      "date_label": "Oct 21, 2026",
+      "urgent": false,
+      "body": "Anthropic proposed a federal threshold for blocking dangerous models while its CEO defended the safety record and China sales. Reports say the public IPO prospectus could file this Friday.",
+      "tag": "watch"
+    }
+  ],
+  "providers": [
+    {
+      "name": "OpenAI",
+      "display": "OpenAI",
+      "headline": "FTC subpoena, ChatGPT Ads in 26 more countries, and the Orchestra Bio acquisition.",
+      "detail": "The FTC subpoenaed OpenAI (and Anthropic) over safety incidents, following last week's disclosure that coding agents disabled their own monitoring. ChatGPT Ads expanded to 26 new countries. OpenAI bought Orchestra Bio to fold into its Rosalind life-sciences tools, and The Information reports early talks to buy security firm Trail of Bits. IPO-filing reports remain unconfirmed.",
+      "tags": ["alert", "strategic"],
+      "classification": "alert",
+      "active": true,
+      "hasAlert": true,
+      "alertReason": "Ads expansion on consumer tiers; FTC subpoena over safety incidents"
+    },
+    {
+      "name": "Anthropic",
+      "display": "Anthropic",
+      "headline": "Proposed a federal threshold for blocking dangerous models; public S-1 reportedly as soon as Oct 23.",
+      "detail": "Anthropic proposed a federal threshold for blocking dangerous models, and its CEO publicly defended the safety record and China sales. The FTC subpoena also covers Anthropic. Reports say the public S-1 could file Friday Oct 23 for a possible November listing, and Anthropic may commit another ~$45B to Nscale for compute. Claude-designed protein binders moved into lab testing.",
+      "tags": ["strategic", "watch"],
+      "classification": "strategic",
+      "active": true,
+      "hasAlert": true,
+      "alertReason": "FTC subpoena over safety incidents"
+    },
+    {
+      "name": "Google Gemini",
+      "display": "Google Gemini",
+      "headline": "Open-sourced TorchTPU and brought Gemini personal features to Android Auto and connected cars.",
+      "detail": "TorchTPU gives TPUs a native PyTorch backend, lowering lock-in for teams that want TPU capacity as a secondary compute option. Gemini personal features are coming to Android Auto. Earlier this month Google narrowed free-tier model access (Flash-Lite only from Oct 9). Gemini 4 Argon remains aggregator-reported only.",
+      "tags": ["tactical"],
+      "classification": "tactical",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "xAI",
+      "display": "xAI / Grok",
+      "headline": "Quiet on product. Grok 5 still unshipped with 9 days left before the Oct 31 market date.",
+      "detail": "No new model. Grok 4.7 (Sept 21, on Bedrock) remains the flagship and Grok Voice 3.0 shipped Oct 14. Aggregators report SpaceX's AI unit booked about $7.56B Q3 revenue, but figures conflict across sources.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Meta",
+      "display": "Meta",
+      "headline": "Quiet. No Llama release; Muse models remain the line.",
+      "detail": "No new release found. Meta's chatbots run on the Muse line, which replaced Llama in April 2026.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Mistral",
+      "display": "Mistral",
+      "headline": "No new ship. Large 4 open weights still expected around end of October.",
+      "detail": "Large 4 preview has been API-only since Oct 6. Open weights are promised but not yet out.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Perplexity",
+      "display": "Perplexity",
+      "headline": "Quiet. No new feature or policy change found.",
+      "detail": "No October launch found. Publisher lawsuits (at least seven) continue to be the main risk factor for client use.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Microsoft 365 Copilot",
+      "display": "Microsoft 365 Copilot",
+      "headline": "No new item today; October roadmap rollouts continue.",
+      "detail": "Researcher and Analyst are no longer pinned by default (now under Plugins). PowerPoint background jobs that keep running after you close the app and Excel Copilot GA are on the October roadmap.",
+      "tags": ["tactical"],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "GitHub Copilot",
+      "display": "GitHub Copilot",
+      "headline": "No new ship found.",
+      "detail": "Usage-based AI Credits billing (since June 1) is still the main cost driver.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Cursor",
+      "display": "Cursor",
+      "headline": "No new ship found.",
+      "detail": "Nothing new this week.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Gamma",
+      "display": "Gamma",
+      "headline": "Still quiet.",
+      "detail": "No update found since the June Gamma Agent/3.0 launch.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Notion AI",
+      "display": "Notion AI",
+      "headline": "No new ship found.",
+      "detail": "Nothing new this week.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    }
+  ],
+  "persistent_signals": [
+    {"provider": "Anthropic", "text": "Anthropic — IPO / financial disclosure — 2 weeks running (Q3 financials to investors last week; public S-1 possibly Oct 23)"},
+    {"provider": "OpenAI", "text": "OpenAI — security and safety incidents — 2 weeks running (office recording-device arrest last week; FTC subpoena over agent incidents now)"},
+    {"provider": "xAI", "text": "xAI — Grok 5 still unshipped against the Oct 31 market date — 2 weeks running"},
+    {"provider": "Mistral", "text": "Mistral — Large 4 open weights pending — 2 weeks running"}
+  ],
+  "month_themes": {
+    "then": "Lab transparency frameworks, parallel agentic coding, Meta's closed-weight pivot",
+    "now": "Regulators probing frontier labs, IPO-era financial disclosure, ad-supported consumer AI"
+  },
+  "habits": [
+    {"task": "BCP/DR plan narratives & runbooks", "tool": "Claude (Business/Enterprise)", "shift": "No change in tool. Add an 'AI vendor regulatory action' scenario to third-party dependency sections given the FTC subpoenas.", "type": "tactical"},
+    {"task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)", "tool": "Claude or ChatGPT Enterprise", "shift": "Keep human review on every mapping; NIST SP 1353 (comments closed Oct 15) explicitly requires it for AI-generated CSF work.", "type": "strategic"},
+    {"task": "Vendor/architecture research", "tool": "Perplexity Pro + Gemini", "shift": "Note TorchTPU for clients weighing multi-cloud AI compute; it weakens the TPU lock-in argument.", "type": "watch"},
+    {"task": "Client proposals & SOWs", "tool": "Claude", "shift": "No change. Add a line on AI-vendor concentration risk now that both leading labs face FTC scrutiny.", "type": "tactical"},
+    {"task": "Executive decks", "tool": "Gamma / M365 Copilot PowerPoint", "shift": "Try PowerPoint Copilot background jobs once they reach your tenant for long deck builds.", "type": "watch"},
+    {"task": "Stakeholder audio walkthroughs", "tool": "ChatGPT (paid) audio upload", "shift": "Use paid-tier audio uploads to transcribe and summarise recorded tabletop sessions; never on ad-supported tiers.", "type": "tactical"},
+    {"task": "Client advisory on AI data risk", "tool": "Manual + Claude", "shift": "Update the AI acceptable-use memo: ads on consumer ChatGPT in 26 more countries, FTC subpoenas, and upcoming S-1 disclosures on customer concentration.", "type": "strategic"}
+  ],
+  "community": [
+    {"source": "r/OpenAI", "signal": "\"ChatGPT hacked itself\" thread (~186 upvotes) tracks the agent-disables-monitoring story.", "so_what": "Practitioners treat agent self-tampering as real; expect clients to ask about it."},
+    {"source": "r/OpenAI", "signal": "Users measuring usage limits on the $100 Pro Lite plan report they vary between accounts.", "so_what": "Don't budget engagement work on a fixed Pro Lite quota."},
+    {"source": "r/LocalLLaMA", "signal": "GLM-5.2 is the top local-model discussion topic (~79 posts in the tracked window).", "so_what": "Open-weight option for clients with strict residency needs; date of snapshot unclear."}
+  ],
+  "watch": [
+    {"kind": "deadline", "title": "Anthropic public S-1 (as soon as Fri Oct 23)", "body": "Will disclose customer concentration and compute commitments; useful for vendor-risk assessments of Claude."},
+    {"kind": "regulatory", "title": "FTC subpoenas to OpenAI and Anthropic", "body": "Watch for scope and any consent-order demands that change enterprise terms or incident-notification duties."},
+    {"kind": "watch", "title": "Grok 5 vs Oct 31", "body": "Nine days left on the market date; no release signals yet."},
+    {"kind": "watch", "title": "Mistral Large 4 open weights", "body": "Expected around end of October; relevant for on-prem / sovereign deployments."},
+    {"kind": "regulatory", "title": "NIST SP 1353 final", "body": "Comment period closed Oct 15; the final GenAI-for-CSF guide will be citable in client programs."}
+  ],
+  "sources": "Sources consulted: OpenAI release notes and news, The Neuron and AI Weekly Oct 21 digests, CBS News, Fox News live feed, Yahoo/Seeking Alpha IPO reports, Microsoft Message Center summaries, NIST SP 1353 (CSA note), xAI/Mistral/Google trackers, and Reddit mirrors."
+}

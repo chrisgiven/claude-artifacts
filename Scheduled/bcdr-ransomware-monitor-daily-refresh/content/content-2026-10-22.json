@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-22",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {"title": "Osaka Public University — ~500 servers down, backups encrypted", "tags": ["Critical", "Education", "Data exposure"], "summary": "Attackers breached the university's virtualization infrastructure, took nearly 500 servers offline and encrypted many backups; data on up to 130,000 students and alumni may be exposed, and classes were suspended to Oct 9.", "source": {"name": "Hendry Adrian (repost)", "url": "https://www.hendryadrian.com/?p=115040"}},
+        {"title": "DexCom listed by Redact ransomware group", "tags": ["Newly claimed", "Healthcare", "High-profile"], "summary": "The US medical-device maker appeared on Redact's leak site on Oct 10; the claim has not been confirmed by the company.", "source": {"name": "Hendry Adrian", "url": "https://www.hendryadrian.com/?p=115501"}},
+        {"title": "Andersen Group claimed by SilentRansomGroup", "tags": ["Newly claimed"], "summary": "A US professional-services firm was listed as a SilentRansomGroup victim on Oct 6; the claim is unverified.", "source": {"name": "Hendry Adrian", "url": "https://www.hendryadrian.com/?p=115183"}},
+        {"title": "SilentRansomGroup posts two more partially redacted victims", "tags": ["Newly claimed", "Trend"], "summary": "Victims shown only as 'A…n' (Oct 5) and 'K…' (Oct 7) were posted with full names pending, which points to an active extortion pace this month.", "source": {"name": "Hendry Adrian", "url": "https://www.hendryadrian.com/?p=115278"}}
+      ],
+      "note": "Check Point counted ransomware attacks up 53% year on year in September 2026, and Bitdefender counted 790 claimed victims that month. Leak-site claims are unverified."
+    },
+    "outage": {
+      "items": [
+        {"title": "Wikipedia outage during emergency maintenance", "tags": ["Reference"], "summary": "On Oct 21, Downdetector reports peaked above 2,000 in the US and 850 in the UK around 10:51 ET during emergency Wikimedia maintenance, and service recovered within about an hour.", "source": {"name": "TechRadar", "url": "https://www.techradar.com/news/live/wikipedia-down-october-2026"}},
+        {"title": "Final Fantasy XIV logins halted over a PHP vulnerability", "tags": ["Third-party"], "summary": "Square Enix took its patch servers offline on Oct 21–22 as a precaution against a critical PHP vulnerability, which blocked new logins on every world for about an hour.", "source": {"name": "Sunday Guardian Live", "url": "https://sundayguardianlive.com/world/ff14-outage-today-is-final-fantasy-xiv-games-down-in-the-us-players-report-launch-issues-server-connection-problems-download-errors-gameplay-disruptions-check-latest-downdetector-status-309712"}}
+      ],
+      "note": "AWS, Azure and Google Cloud reported no major outages in the past 24 hours. Both items above come from Downdetector-style reports."
+    },
+    "cyber": {
+      "items": [
+        {"title": "CISA urges immediate patching of Ivanti Connect Secure zero-day", "tags": ["Zero-day", "KEV add", "Critical"], "summary": "An authentication bypass that allows unauthenticated remote command execution has been exploited since at least Oct 1, and Volexity reports a tracked actor chaining it with two other flaws. Verify the CVE ID against NVD before acting.", "source": {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-admins-to-immediately-fix-ivanti-flaw-exploited-as-zero-day/amp/"}},
+        {"title": "Joomla iCagenda and Balbooa extension zero-days added to KEV", "tags": ["KEV add", "Zero-day"], "summary": "CISA added two Joomla extension flaws (incl. CVE-2026-48939) to the KEV catalog after active zero-day exploitation.", "source": {"name": "The Cyber Express", "url": "https://thecyberexpress.com/tag/cve-2026-48939/"}},
+        {"title": "KEV catalog: 247 additions so far this year, most with 3-day deadlines", "tags": ["Trend", "Reference"], "summary": "From Jan 1 to Oct 1 2026, CISA added 247 KEV entries. Since BOD 26-04 replaced BOD 22-01 on Jun 10, 91 of the 114 new entries carry a three-day remediation deadline.", "source": {"name": "Stingrai", "url": "https://www.stingrai.io/blog/zero-day-statistics-2026"}},
+        {"title": "Critical PHP vulnerability prompts precautionary shutdowns", "tags": ["Third-party", "Critical"], "summary": "Square Enix took its patch servers offline on Oct 21 over a critical PHP flaw. Operators running PHP should check vendor advisories.", "source": {"name": "Sunday Guardian Live", "url": "https://sundayguardianlive.com/world/ff14-outage-today-is-final-fantasy-xiv-games-down-in-the-us-players-report-launch-issues-server-connection-problems-download-errors-gameplay-disruptions-check-latest-downdetector-status-309712"}}
+      ]
+    },
+    "physical": {
+      "items": [
+        {"title": "M 6.9 — 76 km NE of Ozernovskiy, Russia (Oct 16)", "tags": ["M 6.9"], "summary": "Kamchatka earthquake with a USGS green alert and no tsunami.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u2mq"}},
+        {"title": "M 6.3 — 197 km NW of Port-Olry, Vanuatu (Oct 20)", "tags": ["M 6.3"], "summary": "Offshore earthquake with a USGS green alert. The tsunami flag was set, and no significant tsunami damage has been reported.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3jl"}},
+        {"title": "M 5.7 — 48 km WNW of Khuzdar, Pakistan (Oct 17)", "tags": ["M 5.7"], "summary": "Shallow inland earthquake with a USGS yellow alert for possible casualties and damage.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u2y1"}},
+        {"title": "Isaias aftermath — Gulf Coast to Mid-Atlantic", "tags": ["Tropical", "Flood"], "summary": "Isaias made landfall near Destin, FL, and became post-tropical. About 500,000 customers lost power and around 10 million people were under flood alerts from north Florida to southern Virginia, and restoration continued in Florida and Alabama.", "source": {"name": "CBS News", "url": "https://www.cbsnews.com/live-updates/isaias-southeastern-u-s-gulf-coast/"}},
+        {"title": "Rachel remnants flood the Southwest; Hurricane Simon threatens western Mexico", "tags": ["Tropical", "Flood"], "summary": "Post-tropical Rachel flooded Las Vegas and killed at least four people in Baja California, while Hurricane Simon threatened flash flooding and mudslides along Mexico's Pacific coast.", "source": {"name": "ABC News (AP)", "url": "https://abcnews.com/US/wireStory/flash-flood-risk-lingers-southwest-after-rachels-remnants-137202589"}}
+      ],
+      "note": "The tropical items date from about Oct 10–12 because searches found no newer storm coverage, and no current wildfire events turned up."
+    }
+  }
+}
