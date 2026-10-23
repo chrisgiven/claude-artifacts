@@ -1,0 +1,96 @@
+{
+  "date": "2026-10-23",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {
+          "title": "Osaka Public University — ~500 servers down, backups encrypted",
+          "tags": ["Critical", "Education", "Data exposure"],
+          "summary": "Ransomware reached the virtualization layer across all five campuses, taking nearly 500 servers offline and encrypting many backups; personal data of at least 130,000 students and alumni may be affected and classes were suspended into October 9.",
+          "source": {"name": "Hendry Adrian (aggregator)", "url": "https://www.hendryadrian.com/?p=115040"}
+        },
+        {
+          "title": "DexCom (US medical devices) claimed by Redact",
+          "tags": ["Newly claimed", "Healthcare", "High-profile"],
+          "summary": "The Redact group listed the $4.97B-revenue glucose-monitoring maker on its leak site on October 10; the claim is unconfirmed by the company.",
+          "source": {"name": "Hendry Adrian (leak-site tracker)", "url": "https://www.hendryadrian.com/?p=115501"}
+        },
+        {
+          "title": "Andersen Group hit by SilentRansomGroup",
+          "tags": ["Newly claimed", "Data exposure"],
+          "summary": "The US professional-services firm was listed October 6 by SilentRansomGroup (a data-extortion crew known for callback phishing), with system disruption and a payment demand reported.",
+          "source": {"name": "Hendry Adrian (leak-site tracker)", "url": "https://www.hendryadrian.com/?p=115183"}
+        }
+      ],
+      "note": "Leak-site claims are unverified until victims confirm. SilentRansomGroup also posted two masked victims (Oct 5 and Oct 7). Bitdefender counted 790 claimed victims in September 2026, up 30% year over year."
+    },
+    "outage": {
+      "items": [
+        {
+          "title": "Google Cloud europe-west2 (London) regional outage, ~5.5 hours",
+          "tags": ["Cloud"],
+          "summary": "A third-party tracker logged a regional incident beginning 08:35 UTC on October 20 affecting 12 services including Compute Engine, App Engine and Cloud Storage; confirm details against Google Cloud Service Health.",
+          "source": {"name": "UptimeRobot", "url": "https://uptimerobot.com/is-it-down/google-cloud/2026-10-20/"}
+        }
+      ],
+      "note": "Thin week: no confirmed major AWS or Azure outage found for October 2026. The most recent large AWS events remain the May 2026 Virginia thermal/power event and the Aug 20 partial outage."
+    },
+    "cyber": {
+      "items": [
+        {
+          "title": "Ivanti Connect Secure zero-day chained in attacks since Oct 1",
+          "tags": ["Zero-day", "KEV add", "Critical"],
+          "summary": "CISA told admins to patch immediately after Volexity found a threat actor chaining the flaw with two others since early October; the CVE number in coverage looks malformed, so verify against Ivanti's advisory and the KEV catalog.",
+          "source": {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-admins-to-immediately-fix-ivanti-flaw-exploited-as-zero-day/amp/"}
+        },
+        {
+          "title": "CISA adds exploited Joomla extension zero-days to KEV",
+          "tags": ["KEV add", "Zero-day", "Third-party"],
+          "summary": "CVE-2026-48939 and CVE-2026-56291, in the iCagenda and Balbooa Joomla extensions, were added to the catalog after active exploitation.",
+          "source": {"name": "The Cyber Express", "url": "https://thecyberexpress.com/tag/cve-2026-48939/"}
+        },
+        {
+          "title": "KEV pace: 247 additions YTD, most with 3-day deadlines",
+          "tags": ["Trend", "Reference"],
+          "summary": "Since BOD 26-04 replaced BOD 22-01 on June 10, 91 of 114 new KEV entries carry a three-day remediation window; Google GTIG reports an average of 11 exploited zero-days a month in Jan–Aug 2026, versus 8 in 2025.",
+          "source": {"name": "Stingrai", "url": "https://www.stingrai.io/blog/zero-day-statistics-2026"}
+        }
+      ]
+    },
+    "physical": {
+      "items": [
+        {
+          "title": "M 7.0 earthquake — 191 km ENE of Nagqu, Tibet, China (Oct 22)",
+          "tags": ["M 7.0"],
+          "summary": "USGS PAGER orange alert, signalling significant likely losses; no tsunami threat.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u43g"}
+        },
+        {
+          "title": "M 6.3 earthquake — 197 km NW of Port-Olry, Vanuatu (Oct 20)",
+          "tags": ["M 6.3", "TS"],
+          "summary": "Offshore event flagged with a tsunami indicator; PAGER green alert.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3jl"}
+        },
+        {
+          "title": "M 5.7 earthquake — 48 km WNW of Khuzdar, Pakistan (Oct 17)",
+          "tags": ["M 5.7"],
+          "summary": "PAGER yellow alert, meaning some damage is possible in Balochistan.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u2y1"}
+        },
+        {
+          "title": "Hurricane Simon (Cat 4) strikes Mexico; Florida recovering from Isaias",
+          "tags": ["Tropical", "Cat 4"],
+          "summary": "News listings from October 10–11 report a Category 4 Hurricane Simon off Mexico's coast and an earlier Category 2 landfall in Florida that left thousands without power; check NHC for official details.",
+          "source": {"name": "Global News (video listings)", "url": "https://globalnews.ca/video/12023369/hurricane-lala-it-bears-down-on-hawaiis-big-island/"}
+        },
+        {
+          "title": "Nebraska disaster declaration after record Omaha/Lincoln flooding",
+          "tags": ["Flood", "FEMA MDD"],
+          "summary": "A news digest dated Oct 2 reports a disaster declaration after record flooding in Omaha and Lincoln, alongside 99 flood warnings across the Midwest and Tropical Storm Choi-wan closing Saipan and Tinian.",
+          "source": {"name": "News digest podcast", "url": "https://podcastrepublic.net/podcast/1837456562"}
+        }
+      ],
+      "note": "Tropical and flood items come from aggregator listings and have not been confirmed against NHC or FEMA primary sources. No October 2026 wildfire reporting was found."
+    }
+  }
+}
