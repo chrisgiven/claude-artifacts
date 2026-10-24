@@ -1,0 +1,38 @@
+{
+  "date": "2026-10-24",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {"title": "Osaka Public University — ~500 servers down", "tags": ["Critical", "Education"], "summary": "Ransomware hit the university's virtualization layer on Oct 2, taking nearly 500 servers offline and encrypting many backups; classes were suspended until Oct 9.", "source": {"name": "Hendry Adrian", "url": "https://www.hendryadrian.com/?p=115040"}},
+        {"title": "DexCom claimed by Redact", "tags": ["Newly claimed", "Healthcare"], "summary": "The Redact group listed US medical-device maker DexCom on its leak site on Oct 10; the claim is unconfirmed by the company.", "source": {"name": "Hendry Adrian", "url": "https://www.hendryadrian.com/?p=115501"}},
+        {"title": "Andersen Group claimed by SilentRansomGroup", "tags": ["Newly claimed", "Data exposure"], "summary": "SilentRansomGroup claimed an attack on the US professional-services firm on Oct 6, alleging system disruption and a payment demand.", "source": {"name": "Hendry Adrian", "url": "https://www.hendryadrian.com/?p=115183"}},
+        {"title": "SilentRansomGroup posts more partially-redacted victims", "tags": ["Newly claimed"], "summary": "The group posted additional victims on Oct 5 and Oct 7 with names withheld pending disclosure, consistent with its data-extortion playbook.", "source": {"name": "Hendry Adrian", "url": "https://www.hendryadrian.com/?p=115278"}},
+        {"title": "September ransomware volume up sharply year over year", "tags": ["Trend"], "summary": "Bitdefender counted 790 claimed victims in September 2026 (+30% YoY) and Check Point reported ransomware attacks up 53% YoY for the month.", "source": {"name": "Tech Insider", "url": "https://tech-insider.org/?p=37607"}}
+      ],
+      "note": "Most October victims are leak-site claims, not confirmed disclosures."
+    },
+    "outage": {
+      "items": [
+        {"title": "Google Cloud europe-west2 regional outage", "tags": ["Cloud"], "summary": "A ~5.5-hour regional incident starting 08:35 UTC Oct 20 affected twelve services in London including Compute Engine, App Engine and Cloud Storage.", "source": {"name": "UptimeRobot", "url": "https://uptimerobot.com/is-it-down/google-cloud/2026-10-20/"}}
+      ],
+      "note": "Quiet stretch: no other major AWS, Azure or SaaS outages found in the past two weeks. Google item is from a third-party monitor; confirm against Google's status history."
+    },
+    "cyber": {
+      "items": [
+        {"title": "Ivanti Connect Secure auth-bypass exploited as zero-day", "tags": ["Critical", "Zero-day", "KEV add"], "summary": "CISA urged immediate patching of an unauthenticated RCE in Ivanti Connect Secure exploited since at least Oct 1; Volexity ties chained attacks to actor UTA0576.", "source": {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-admins-to-immediately-fix-ivanti-flaw-exploited-as-zero-day/amp/"}},
+        {"title": "Zero-day pace running ahead of 2025", "tags": ["Trend"], "summary": "Third-party tallies put KEV additions at 247 for Jan 1–Oct 1 2026 and exploited zero-days at ~11 a month, up from ~8 in 2025.", "source": {"name": "Stingrai", "url": "https://www.stingrai.io/blog/zero-day-statistics-2026"}},
+        {"title": "September 2026 zero-day vulnerability report", "tags": ["Reference"], "summary": "Indusface's monthly roundup of zero-days disclosed and exploited during September 2026, useful for patch-backlog review.", "source": {"name": "Indusface", "url": "https://www.indusface.com/wp-content/uploads/2026/10/zero-day-vulnerability-report-september-2026.pdf"}}
+      ]
+    },
+    "physical": {
+      "items": [
+        {"title": "M 7.0 — 191 km ENE of Nagqu, China", "tags": ["M 7.0"], "summary": "Oct 22 shallow quake on the Tibetan Plateau; USGS PAGER alert orange, indicating significant potential casualties or losses.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u43g"}},
+        {"title": "M 6.9 — 197 km WNW of Port-Olry, Vanuatu", "tags": ["M 6.9"], "summary": "Oct 24 quake with a tsunami flag, followed by an M 6.3 aftershock; PAGER green.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u4j2"}},
+        {"title": "M 6.3 — 197 km NW of Port-Olry, Vanuatu", "tags": ["M 6.3"], "summary": "Oct 20 foreshock-region event in the same Vanuatu sequence, tsunami flag set; PAGER green.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u3jl"}},
+        {"title": "Hurricane Simon (Cat 4) strikes Mexico's Pacific coast", "tags": ["Tropical", "Cat 4"], "summary": "Category 4 Hurricane Simon affected Mexico's Pacific coast around Oct 11, following Hurricane Polo in late September.", "source": {"name": "Global News", "url": "https://globalnews.ca/"}},
+        {"title": "Hurricane Isaias landfall in Florida", "tags": ["Tropical"], "summary": "Isaias came ashore in Florida as a Category 2 around Oct 10, cutting power to thousands with at least four deaths reported.", "source": {"name": "Global News", "url": "https://globalnews.ca/"}}
+      ],
+      "note": "Hurricane items come from headline listings only; details not independently verified."
+    }
+  }
+}
