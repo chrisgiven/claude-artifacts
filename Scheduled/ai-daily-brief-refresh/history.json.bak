@@ -1,132 +1,5 @@
 [
   {
-    "date": "2026-07-27",
-    "providers": {
-      "OpenAI": {
-        "headline": "No new model today. GPT-5.6 Sol/Terra/Luna active deployment. ChatGPT Health GA (US 18+, health records + Apple Health). Custom instructions 5,000 chars. Universal search GA. ChatGPT Work live. Atlas deprecation August 9 (T-13 days). No headline release today.",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Anthropic": {
-        "headline": "Claude Opus 5 added to GitHub Copilot (Pro+, Max, Business, Enterprise) for complex agentic coding tasks. Opus 5 GA July 24 ongoing — same $5/$25/MTok as Opus 4.8, effort toggle (low/medium/high), 3x next-best on ARC-AGI 3, surpasses Fable 5 on OSWorld 2.0 at 1/3 cost, 2.5x faster in fast mode. Mid-conversation tool changes + auto safety fallbacks (beta). Claude Code: subagent text streaming, background agent improvements.",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Google Gemini": {
-        "headline": "No new release since July 21. Gemini 3.6 Flash + 3.5 Flash-Lite + 3.5 Flash Cyber current. Gemini Omni in Google Vids. Nano Banana 2 Lite available. Gemini 3.5 Pro still partner-only — no GA date. Gemini 4 teased with no timeline.",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": false
-      },
-      "xAI": {
-        "headline": "Grok 4.6 (2T param) timeline revised to late August / mid-September 2026 — pre-training complete week of July 20; supplemental SpaceX corpus training ongoing; community estimates 4-6 weeks out vs Aug 7 prior estimate. Grok for Google Workspace + Outlook add-in both live. Cursor Grok 4.5 still default (Week 4). Grok 4.7 follows ~4 weeks after 4.6.",
-        "tags": [
-          "strategic",
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "Grok 4.6 release pushed to late August/September — extends Cursor governance risk window 4-6 weeks. Cursor Grok 4.5 still default (xAI training pipeline). Enterprise governance review required before next Cursor renewal.",
-        "active": true
-      },
-      "Meta": {
-        "headline": "100+ days quiet. Llama 4 Scout/Maverick current. Open-source Llama strategy terminated Q1 2026 (confirmed). Avocado (closed-source successor) no timeline. 11 of 14 original Llama researchers left Meta.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Mistral": {
-        "headline": "No new release. Medium 3.5, Robostral Navigate, Leanstral 1.5, OCR 4 current. Open-weight frontier MoE broader Q3 release still pending. Connectors: scoped API keys, multi-account, debugger stable.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Perplexity": {
-        "headline": "SPACE sandbox 100% powering Computer sessions. Brain memory system live. Computer Analytics API + enterprise admin controls. Kimi K2.5 Week 23+ on US inference — still unresolved. Kimi K2.7 Code in Agent API ongoing. No new model this week.",
-        "tags": [
-          "strategic",
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "Kimi K2.5 (Moonshot AI, Chinese-origin) Week 23+ on US inference + Kimi K2.7 Code in Agent API — both unresolved. Restrict ALL Kimi models in enterprise admin for regulated clients.",
-        "active": true
-      },
-      "Microsoft 365 Copilot": {
-        "headline": "Security Copilot + Defender Plan 1 rollout August 1 (T-5 days) — assess E5/E3 licensing NOW. Copilot SharePoint ON by default for all M365 Copilot license holders. M365 Copilot auto-installing on Windows commercial. Governed agent publishing, tenant-wide prompt galleries, MCP agent access. AI watermarks active. Claude DPA outstanding Week 17+.",
-        "tags": [
-          "strategic",
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "Security Copilot + Defender Aug 1 T-5 — assess E5/E3 licensing immediately. Claude DPA with Microsoft outstanding 17+ weeks. kimi-k2.7-code still in GitHub Copilot Enterprise roster Week 7.",
-        "active": true
-      },
-      "GitHub Copilot": {
-        "headline": "Claude Opus 5 ADDED to GitHub Copilot (Pro+, Max, Business, Enterprise) — available for complex coding tasks, agentic workflows, multi-step execution. kimi-k2.7-code (Moonshot AI, Chinese-origin) Week 7 in Enterprise — still unresolved. /security-review command public preview. Usage-based billing from June 1.",
-        "tags": [
-          "alert",
-          "tactical"
-        ],
-        "hasAlert": true,
-        "alertReason": "kimi-k2.7-code (Chinese-origin, Moonshot AI) in GitHub Copilot Enterprise — Week 7 unresolved. Disable in enterprise model allow-list for all regulated clients immediately.",
-        "active": true
-      },
-      "Cursor": {
-        "headline": "Grok 4.5 still default (Week 4). iOS beta live. Admin dashboards, privacy controls, spending limits active. Grok 4.6 timeline revised to late Aug/Sep — extends governance risk window. Enterprise governance review required before next renewal.",
-        "tags": [
-          "alert",
-          "tactical"
-        ],
-        "hasAlert": true,
-        "alertReason": "Grok 4.5 default on all Cursor plans — IDE data flows to xAI training pipeline. Grok 4.6 transition now late Aug/Sep (extended from Aug 7). Enterprise governance review required before next renewal.",
-        "active": true
-      },
-      "Gamma": {
-        "headline": "No new release — 50+ days quiet since June 12 batch. Stable for existing presentation use. Watch for Q3 announcement.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Notion AI": {
-        "headline": "Notion 3.6 (July 1) stable. Workers billing → Credits August 11 (T-15 days). No new AI features. External Agents GA (Claude, Cursor), AI Meeting Notes speaker labels, Excel/PowerPoint read-write active.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      }
-    },
-    "topMoves": [
-      "Claude Opus 5 added to GitHub Copilot (Pro+, Max, Business, Enterprise) — now available for complex agentic coding tasks alongside kimi-k2.7-code (Week 7, Chinese-origin, still unresolved in Enterprise roster)",
-      "Grok 4.6 (2T param) release timeline revised to late August / mid-September 2026 — pre-training complete July 20; SpaceX corpus supplemental training ongoing; extends Cursor governance risk window 4-6 weeks",
-      "EU AI Act Digital Omnibus confirmed: high-risk AI (Annex III) deferred to December 2, 2027 — but August 2 (T-6 days) still activates Article 50 transparency, GPAI penalty powers, and market surveillance authority"
-    ],
-    "clientAlerts": [
-      "M365 Security Copilot + Defender Plan 1 rollout August 1, 2026 (T-5 days) — assess E5/E3 licensing immediately; Claude DPA with Microsoft outstanding Week 17+",
-      "GitHub Copilot kimi-k2.7-code (Chinese-origin, Moonshot AI) Week 7 in Enterprise — disable in model allow-list immediately for regulated clients",
-      "Perplexity Kimi K2.5 Week 23+ on US inference + Kimi K2.7 Code in Agent API — both Chinese-origin, both unresolved; restrict in enterprise admin",
-      "Cursor Grok 4.5 default (Week 4) + Grok 4.6 incoming late Aug/Sep — IDE data flows to xAI training; extended risk window; governance review required",
-      "EU AI Act August 2 (T-6 days) — Article 50 transparency + GPAI penalty powers activate; high-risk AI Annex III deferred to Dec 2027 via Omnibus (formal adoption pending)"
-    ],
-    "watchItems": [
-      "M365 Security Copilot + Defender Plan 1 rollout — August 1, 2026 (T-5 days)",
-      "EU AI Act Article 50 transparency + GPAI penalty powers — August 2, 2026 (T-6 days)",
-      "Claude Opus 4.1 API retirement — August 5, 2026 (T-9 days)",
-      "OpenAI Atlas deprecation — August 9, 2026 (T-13 days)",
-      "Notion Workers billing → Credits — August 11, 2026 (T-15 days)",
-      "Grok 4.6 (2T param) release — late August to mid-September 2026 (revised from Aug 7)",
-      "Grok 4.7 (~4-6T) — ~4 weeks after Grok 4.6",
-      "EU AI Act high-risk AI conformity (Annex III) — December 2, 2027 (deferred via Omnibus)",
-      "Gemini 3.5 Pro GA — partner-only, no confirmed date; Gemini 4 teased",
-      "Mistral open-weight frontier MoE broader release — Q3 2026"
-    ]
-  },
-  {
     "date": "2026-07-28",
     "providers": {
       "OpenAI": {
@@ -6883,6 +6756,112 @@
       "LiteLLM backdoor follow-up",
       "FTC agent-safety probe",
       "Mistral Large 4 open weights"
+    ]
+  },
+  {
+    "date": "2026-10-24",
+    "providers": {
+      "OpenAI": {
+        "headline": "OpenAI is reported close to a bridge round of up to $30B at a $1.25T pre-money valuation, below the $1.4T it pitched earlier this month.",
+        "tags": [
+          "strategic"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "No new release after the Duet waitlist (Oct 23); the public S-1 has still not been filed.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "Google Gemini": {
+        "headline": "No new release; the consumer tier changes continue to roll through.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "xAI": {
+        "headline": "Quiet since Grok Voice 3.0 (Oct 14); Grok 5 has a week left to meet the prediction-market Oct 31 line.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "Meta": {
+        "headline": "No new release; Muse Spark replaced Llama in April and Meta's frontier work remains closed.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Mistral": {
+        "headline": "No new release; the Large 4 preview (Oct 6) is still API-only, with open weights promised.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Perplexity": {
+        "headline": "No dated October product release found; publisher lawsuits (at least seven) remain the story.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "MC1472007 takes effect tomorrow (Oct 25): advanced agent and plugin uploads stay open to all users by default.",
+        "tags": [
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "Agent/plugin upload default open to all users; deadline Oct 25",
+        "active": false
+      },
+      "GitHub Copilot": {
+        "headline": "One unconfirmed report says Computer Use reached public preview in Copilot CLI and the desktop apps.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "Cursor": {
+        "headline": "One unconfirmed report puts Cursor at 3.24 with new safety controls for auto-review.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Gamma": {
+        "headline": "No release found; the long quiet stretch continues.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "No new release; Notion Workers billing against Notion credits started Oct 15.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      }
+    },
+    "topMoves": [
+      "\"Black October\": AI-found PHP flaws trigger a global patch scramble",
+      "China-linked group used agentic AI to speed up a major supply-chain attack",
+      "Big banks race to contain third-party AI agents touching customer accounts"
+    ],
+    "clientAlerts": [
+      "Banks moving to fence off third-party AI agents",
+      "M365 Copilot MC1472007 deadline is tomorrow (Oct 25)"
+    ],
+    "watchItems": [
+      "M365 Copilot MC1472007 — Oct 25",
+      "PHP2Shell exploitation wave",
+      "Grok 5 by Oct 31?",
+      "OpenAI bridge round at $1.25T",
+      "Financial-sector AI agent controls"
     ]
   }
 ]

@@ -1,0 +1,126 @@
+{
+  "date": "2026-10-25",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {
+          "title": "Osaka Public University — ~500 servers offline",
+          "tags": ["Critical", "Education", "Data exposure"],
+          "summary": "Ransomware hit the university's virtualization infrastructure, taking nearly 500 servers down and potentially exposing data on 130,000+ students and alumni; classes were suspended into October.",
+          "source": {"name": "Hendry Adrian", "url": "https://www.hendryadrian.com/?p=115040"}
+        },
+        {
+          "title": "DexCom claimed by Redact",
+          "tags": ["Newly claimed", "Healthcare"],
+          "summary": "The Redact group listed medical-device maker DexCom on its leak site on Oct 10; the claim is unverified by the company.",
+          "source": {"name": "Hendry Adrian", "url": "https://www.hendryadrian.com/?p=115501"}
+        },
+        {
+          "title": "Andersen Group claimed by SilentRansomGroup",
+          "tags": ["Newly claimed"],
+          "summary": "SilentRansomGroup posted professional-services firm Andersen Group on Oct 6, claiming system disruption and a payment demand.",
+          "source": {"name": "Hendry Adrian", "url": "https://www.hendryadrian.com/?p=115183"}
+        }
+      ],
+      "note": "Most October victim listings come from leak-site trackers and remain unconfirmed by the named organizations. Bitdefender counted 790 claimed victims in September (+30% YoY)."
+    },
+    "outage": {
+      "items": [
+        {
+          "title": "Google Cloud europe-west2 regional outage (Oct 20)",
+          "tags": ["Cloud", "Critical"],
+          "summary": "A 5h32m incident from 08:35 UTC hit twelve services in London (europe-west2), including Compute Engine, App Engine and Cloud Storage.",
+          "source": {"name": "UptimeRobot", "url": "https://uptimerobot.com/is-it-down/google-cloud/2026-10-20/"}
+        },
+        {
+          "title": "Google Cloud Storage write errors, us-central1 (Oct 8)",
+          "tags": ["Cloud"],
+          "summary": "Elevated latency and error rates on GCS uploads and writes in us-central1 lasted 5h52m.",
+          "source": {"name": "UptimeRobot", "url": "https://uptimerobot.com/is-it-down/google-cloud/2026-10-08/"}
+        }
+      ],
+      "note": "No AWS or Azure October 2026 incidents surfaced. Google items come from a third-party tracker, not Google's status page."
+    },
+    "cyber": {
+      "items": [
+        {
+          "title": "Capcom: 11.7M CAPCOM ID records exposed",
+          "tags": ["High-profile", "Data exposure", "Credential exposure"],
+          "summary": "Capcom confirmed an intrusion detected Oct 19 that exposed 11,774,247 CAPCOM ID records; attackers changed passwords on 196 accounts, and phishing follow-ons are expected.",
+          "source": {"name": "Help Net Security", "url": "https://www.helpnetsecurity.com/2026/10/23/capcom-id-data-breach-11-million-records-exposed/"}
+        },
+        {
+          "title": "Sourcenext (Pocketalk): 22.5M member records",
+          "tags": ["Data exposure", "Credential exposure"],
+          "summary": "Sourcenext disclosed on Oct 15 that unauthorized access to its member-management system may have exposed 22,519,960 records, reportedly including passwords.",
+          "source": {"name": "FireCompass weekly (12–18 Oct)", "url": "https://firecompass.com/weekly-cybersecurity-intelligence-report-12-oct-to-18-oct-2026/"}
+        },
+        {
+          "title": "Burger King Japan: server with 11.18M customer records hit",
+          "tags": ["Data exposure"],
+          "summary": "The company says the attacked server held 11.18M customer records but no card numbers, and it has found no sign that credentials were accessed.",
+          "source": {"name": "Privacy Guides roundup (Oct 16–22)", "url": "https://www.privacyguides.org/news/2026/10/23/data-breach-roundup-oct-16-22-2026/"}
+        },
+        {
+          "title": "CenterPoint Energy breach hits 1M+ Texans",
+          "tags": ["Critical", "Data exposure"],
+          "summary": "The US utility disclosed a breach exposing names, addresses and Social Security numbers of more than 1 million Texas residents.",
+          "source": {"name": "Privacy Guides roundup (Oct 16–22)", "url": "https://www.privacyguides.org/news/2026/10/23/data-breach-roundup-oct-16-22-2026/"}
+        },
+        {
+          "title": "Japan National Police Agency data via cloud vendor Arcadia",
+          "tags": ["Third-party", "Data exposure"],
+          "summary": "Personal data of about 125,000 officers and staff across 20 prefectural police forces may be compromised after an attack on cloud provider Arcadia.",
+          "source": {"name": "Check Point Research (19 Oct)", "url": "https://research.checkpoint.com/2026/19th-october-threat-intelligence-report/"}
+        },
+        {
+          "title": "ETS breach exposes 5.7M students",
+          "tags": ["Education", "Data exposure"],
+          "summary": "Educational Testing Service disclosed a breach covering student data going back to 2006.",
+          "source": {"name": "Privacy Guides roundup (Oct 16–22)", "url": "https://www.privacyguides.org/news/2026/10/23/data-breach-roundup-oct-16-22-2026/"}
+        },
+        {
+          "title": "Railway and PingCAP: developer-platform intrusions",
+          "tags": ["Third-party", "Credential exposure"],
+          "summary": "Railway confirmed attackers reached some customer secrets, and PingCAP (TiDB) reported internal access via stolen service-account credentials, with customer impact still under investigation.",
+          "source": {"name": "FireCompass weekly (12–18 Oct)", "url": "https://firecompass.com/weekly-cybersecurity-intelligence-report-12-oct-to-18-oct-2026/"}
+        }
+      ]
+    },
+    "physical": {
+      "items": [
+        {
+          "title": "Typhoon Champi sweeps past Taiwan toward China/Japan",
+          "tags": ["Tropical", "Critical"],
+          "summary": "Champi passed Taiwan on Oct 24, leaving 1 dead, 527 injured and widespread power outages, then tracked north with heavy-rain warnings for China and Japan.",
+          "source": {"name": "SCMP", "url": "https://www.scmp.com/topics/natural-disasters"}
+        },
+        {
+          "title": "Southern Utah flash floods damage 80+ homes",
+          "tags": ["Flood"],
+          "summary": "Repeat flash flooding in Hurricane, Utah has damaged more than 80 homes, and flood warnings were also issued in Colorado.",
+          "source": {"name": "Salt Lake Tribune", "url": "https://sltrib.com/news/2026/10/24/utah-flash-floods-damage-hurricane"}
+        },
+        {
+          "title": "M 7.0 — 191 km ENE of Nagqu, Tibet, China (Oct 22)",
+          "tags": ["M 7.0", "Critical"],
+          "summary": "USGS issued an orange PAGER alert, meaning significant casualties and damage are likely.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u43g"}
+        },
+        {
+          "title": "Bonin Islands, Japan — M 7.0 doublet + M 6.5 (Oct 24–25)",
+          "tags": ["M 7.0", "TS"],
+          "summary": "Two M 7.0 events on Oct 24 were followed by an M 6.5 on Oct 25 that carried a tsunami flag; USGS PAGER is green.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/pt26298050"}
+        },
+        {
+          "title": "M 6.9 — 197 km WNW of Port-Olry, Vanuatu (Oct 24)",
+          "tags": ["M 6.9", "TS"],
+          "summary": "An offshore event with a tsunami flag; USGS PAGER is green.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u4j2"}
+        }
+      ],
+      "note": "Search results that resurfaced old storms (Isaias, Irma, Michael) under 2026 dates were excluded as stale."
+    }
+  }
+}
