@@ -1,0 +1,61 @@
+{
+  "date": "2026-10-26",
+  "client_alerts": [
+    {"headline": "Google: Gmail, Drive and Photos content can now shape ad targeting", "body": "Newsletter coverage (Oct 25) says Google changed its privacy policy so that content from Gmail, Drive and Google Photos can help select ads when users connect those services to Gemini features. **Advise clients** to check whether staff use personal Google accounts with connected AI features for work material, and to confirm that Workspace (business) tenants are excluded before anyone relies on it."},
+    {"headline": "DeepSeek removal order for US federal civilian agencies", "body": "Reported alongside DeepSeek's ~$15B raise: federal civilian agencies were ordered to remove DeepSeek technology. Clients that sell to or support federal agencies should inventory DeepSeek models, apps and embedded 'powered by' components in their stack and in vendor products."},
+    {"headline": "Shadow-AI patient-data incident at a hospital", "body": "A Johns Hopkins Bayview notice (via daily digests, not primary-verified) describes a staffer uploading patient data to an unapproved public AI tool. A ready-made case study for client acceptable-use and data-loss-prevention reviews."}
+  ],
+  "top_moves": [
+    {"title": "Google lets connected Gmail/Drive/Photos content inform ads", "date_label": "Oct 25, 2026", "urgent": true, "body": "A privacy-policy change ties Gemini's connected-app features to ad selection. This is the biggest client data-risk change of the week for anyone mixing personal Google accounts with work content.", "tag": "alert"},
+    {"title": "DeepSeek raises ~$15B days after a US federal removal order", "date_label": "Oct 25, 2026", "urgent": false, "body": "The open-model geopolitics split hardens: federal civilian agencies must strip DeepSeek, Moonshot ships Kimi K3.1 open weights with cyberattack training data removed, and countries are being pushed to pick US or China AI blocs.", "tag": "strategic"},
+    {"title": "Anthropic and Suno face ~$340M in music copyright suits", "date_label": "Oct 25, 2026", "urgent": false, "body": "New copyright exposure for Anthropic lands while its IPO is still pending, with no public S-1. Worth noting in vendor-risk sections of client AI assessments.", "tag": "watch"}
+  ],
+  "providers": [
+    {"name": "OpenAI", "display": "OpenAI", "headline": "No new dated release in the window; GPT-6 (Sol paid / Luna free), Slides in Spaces and PIN-locked chats (Oct 20) remain the current set.", "detail": "GPT-6 shipped Oct 7–8 with Intelligent UI. Slides arrived in Spaces on Oct 16 and Locked chats began a gradual rollout on Oct 20. Enterprise access to GPT-6 depends on admin settings. Nothing new found for Oct 24–26.", "tags": ["tactical"], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Anthropic", "display": "Anthropic", "headline": "Named with Suno in ~$340M of music copyright suits; public S-1 still not filed.", "detail": "Newsletter coverage (Oct 25) reports the combined copyright claims. The IPO track remains confidential since the June 1 draft S-1. No new model or product release found in the window; Claude Code continues frequent point builds.", "tags": ["watch"], "classification": "watch", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "Google Gemini", "display": "Google Gemini", "headline": "Privacy policy now lets connected Gmail, Drive and Photos content inform ad selection.", "detail": "The change applies when users connect those services to AI features. It follows the October tier squeeze (Free dropped to Flash-Lite Oct 9; Plus loses Pro on emailed dates). An unconfirmed 'Gemini 4 Argon' and Gems-to-skills migration also circulate in changelogs.", "tags": ["alert"], "classification": "alert", "active": true, "hasAlert": true, "alertReason": "Consumer content used for ad targeting when AI features are connected"},
+    {"name": "xAI", "display": "xAI / Grok", "headline": "Quiet; Grok 4.7 remains flagship and Grok 5 still has not shipped ahead of the Oct 31 market deadline.", "detail": "Last dated release was Grok Voice 3.0 on Oct 14. Grok 4.7 (Sept 21, 500K context, $2/$6 per M tokens) is on Bedrock. Prediction markets still ask whether Grok 5 ships by Oct 31.", "tags": ["watch"], "classification": "watch", "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Meta", "display": "Meta", "headline": "No new release; Muse Spark remains Meta AI's model and no new open Llama has appeared.", "detail": "Llama has effectively been replaced by Meta Superintelligence Labs' closed models since April. No October release found.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Mistral", "display": "Mistral", "headline": "No new release; Large 4 preview (Oct 6) is still API-only with open weights promised.", "detail": "Mistral Large 4 preview is available on the API; the open-weight release is said to follow in coming months. No further October news found.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Perplexity", "display": "Perplexity", "headline": "No dated release; publisher lawsuits (at least seven) remain the main story.", "detail": "No October changelog found. Legal coverage notes at least seven publisher suits, with one ruling in Perplexity's favour.", "tags": ["watch"], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Microsoft 365 Copilot", "display": "Microsoft 365 Copilot", "headline": "No new message-center item; Copilot Home is in Frontier only and the in-app prompt box rolls out through December.", "detail": "Chat and Cowork share a Home screen for Frontier users in October, not GA. The Word/Excel/PowerPoint Copilot-button prompt box rolls out Sept–Dec with no admin action. Suleyman's Oct 22 medical-AI claim is consumer/research, not M365.", "tags": ["tactical"], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "GitHub Copilot", "display": "GitHub Copilot", "headline": "No new release beyond the Computer Use preview covered yesterday; usage-based billing and share pressure persist.", "detail": "Computer Use is in public preview in Copilot CLI and desktop apps. Usage-based billing with AI Credits since June 1. JetBrains survey share: Copilot 29%, Cursor 18%, Claude Code 18%.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Cursor", "display": "Cursor", "headline": "No new release beyond 3.24's auto-review safety controls covered yesterday.", "detail": "Cursor 3.24 added auto-review safety controls (secondary source). Nothing newer found for Oct 24–26.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Gamma", "display": "Gamma", "headline": "No release found; the long quiet stretch continues.", "detail": "No dated Gamma release notes found for October.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Notion AI", "display": "Notion AI", "headline": "No new release; Notion Workers credit billing (from Oct 15) is the last change.", "detail": "No October release notes found beyond the Workers billing change.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""}
+  ],
+  "persistent_signals": [
+    {"provider": "xAI", "text": "xAI — Grok 5 still not shipped — 2+ weeks running (Oct 31 market deadline this week)"},
+    {"provider": "Meta", "text": "Meta — no new open Llama, closed models only — 2+ weeks running"},
+    {"provider": "Mistral", "text": "Mistral — Large 4 preview API-only, open weights pending — 2+ weeks running"},
+    {"provider": "Perplexity", "text": "Perplexity — no dated October release — 2+ weeks running"},
+    {"provider": "GitHub Copilot", "text": "GitHub Copilot — usage-based billing and share pressure from Cursor/Claude Code — 2+ weeks running"},
+    {"provider": "Gamma", "text": "Gamma — no release found — 2+ weeks running"}
+  ],
+  "month_themes": {
+    "then": "Admin controls over new ChatGPT surfaces; NIST SP 1353 draft on AI for CSF 2.0; voice agents driving connected apps",
+    "now": "Consumer AI data feeding ad targeting; US/China split over open models (DeepSeek removal, Kimi K3.1); copyright liability for model vendors"
+  },
+  "habits": [
+    {"task": "BCP/DR plan narratives & runbooks", "tool": "Claude (Fable/Opus) or GPT-6 Sol", "shift": "No change today. Keep drafting in an enterprise tenant; never in personal Google accounts with connected AI features.", "type": "tactical"},
+    {"task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)", "tool": "Claude with source documents attached", "shift": "NIST SP 1353 comments closed Oct 15; keep labelling AI-derived control mappings 'Proposed/Derived' until reviewed, per the draft's guidance.", "type": "tactical"},
+    {"task": "Vendor/architecture research", "tool": "Perplexity / ChatGPT search", "shift": "Add a 'model origin' check (DeepSeek, Kimi, other China-origin weights) to vendor questionnaires for federal-adjacent clients.", "type": "strategic"},
+    {"task": "Client proposals & SOWs", "tool": "Claude or GPT-6 Sol", "shift": "No change; keep client names out of consumer tiers.", "type": "tactical"},
+    {"task": "Executive decks", "tool": "ChatGPT Slides (in Spaces) or Gamma", "shift": "ChatGPT Slides is the newest option; trial it on a non-client deck before switching from Gamma.", "type": "watch"},
+    {"task": "Stakeholder audio walkthroughs", "tool": "ChatGPT Voice / NotebookLM", "shift": "Avoid personal Google accounts for client material given the ads-policy change; use a Workspace account.", "type": "tactical"},
+    {"task": "Client advisory on AI data risk", "tool": "Claude for drafting", "shift": "Fold three new examples into advisories: Google's ads-policy change, the federal DeepSeek removal order and the hospital shadow-AI upload.", "type": "strategic"}
+  ],
+  "community": [
+    {"source": "r/OpenAI", "signal": "Top posts (unverified mirror snapshot): reviews of OpenAI's $230 mini keyboard (~764 upvotes) and debate over a Musk tweet on 'GPT 5.6' (~672).", "so_what": "Consumer hardware and hype dominate; nothing actionable for client work."},
+    {"source": "r/OpenAI", "signal": "A user measuring usage limits on the $100 Pro Lite plan notes limits may vary by A/B test.", "so_what": "Don't promise clients fixed usage quotas on consumer tiers; budget with headroom."},
+    {"source": "r/LocalLLaMA", "signal": "GLM-5.2 is a recurring 'win for local AI' topic (~79 posts in aggregator snapshot).", "so_what": "Open-weight options keep improving, but origin checks now matter for federal-adjacent clients."}
+  ],
+  "watch": [
+    {"kind": "watch", "title": "Grok 5 by Oct 31?", "body": "Prediction markets close at month-end. A launch would be xAI's first new major version since Grok 4.x."},
+    {"kind": "regulatory", "title": "DeepSeek removal scope", "body": "Watch for whether the federal civilian order extends to contractors or other China-origin models such as Kimi."},
+    {"kind": "pricing", "title": "Gemini Plus loses Pro access", "body": "Google is emailing Plus subscribers their dates. Clients relying on consumer Gemini Plus for Pro-model work should plan for Pro/Ultra or Workspace."},
+    {"kind": "watch", "title": "Anthropic public S-1", "body": "A listing was reportedly targeted for as soon as October; the copyright suits may appear in risk factors once the S-1 goes public."},
+    {"kind": "deadline", "title": "Word Copilot entry point for GCC/GCC High/DoD", "body": "Scheduled to begin rolling out in October 2026 per an earlier Message Center item; confirm current dates for government-cloud clients."}
+  ],
+  "sources": "Sources consulted: OpenAI release notes coverage, Google Gemini tier coverage, xAI/BenchLM trackers, Mistral and Meta coverage, M365 Message Center mirrors, coding-tool roundups, Oct 25 AI newsletters (RIO Rundown, Daily Post of AI, AI Weekly), Reddit aggregator snapshots, and NIST/CSA compliance notes."
+}
