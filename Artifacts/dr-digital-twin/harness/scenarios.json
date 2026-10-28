@@ -1,0 +1,27 @@
+{
+  "ha-app-node": {
+    "title": "HA: application node failure",
+    "tier": "HA",
+    "description": "One of two site A application nodes is killed. The load balancer should route around it with no human action.",
+    "targets": {"rto_s": 5, "rpo_s": 0}
+  },
+  "ha-db-primary": {
+    "title": "HA: primary database failure",
+    "tier": "HA",
+    "description": "The primary database is killed. The standby is promoted after an incident declaration; apps reconnect via a multi-host connection string.",
+    "targets": {"rto_s": 60, "rpo_s": 0}
+  },
+  "dr-site-a-loss": {
+    "title": "DR: loss of primary site",
+    "tier": "DR",
+    "description": "All of site A (both app nodes and the primary database) is lost at once. Site B's replica is promoted and its warm standby app takes traffic.",
+    "targets": {"rto_s": 120, "rpo_s": 5}
+  },
+  "cyber-logical-corruption": {
+    "title": "Cyber: destructive logical corruption",
+    "tier": "Cyber",
+    "description": "The orders table is destroyed on the primary, and replication faithfully copies the damage to site B. Recovery requires containment, choosing a clean restore point, and restoring from the backup vault.",
+    "warmup_s": 45,
+    "targets": {"rto_s": 300, "rpo_s": 30}
+  }
+}

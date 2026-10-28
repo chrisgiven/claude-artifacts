@@ -1,0 +1,3 @@
+reports/*
+!reports/sample/
+__pycache__/
