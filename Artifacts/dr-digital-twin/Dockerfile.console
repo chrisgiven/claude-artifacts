@@ -1,0 +1,18 @@
+# DR Twin Console: web UI + drill engine. Drives the host's Docker through
+# /var/run/docker.sock, using docker-compose.yml baked into this image.
+FROM python:3.12-alpine
+RUN apk add --no-cache docker-cli docker-cli-compose \
+ && pip install --no-cache-dir "PyYAML>=6.0"
+WORKDIR /opt/drtwin
+COPY docker-compose.yml twin.yaml ./
+COPY app ./app
+COPY db ./db
+COPY scenarios ./scenarios
+COPY drtwin ./drtwin
+ENV DRTWIN_REPORTS=/opt/drtwin/reports \
+    DRTWIN_ENDPOINT=http://lb:8080 \
+    DRTWIN_PULL=1 \
+    PYTHONUNBUFFERED=1
+VOLUME /opt/drtwin/reports
+EXPOSE 8095
+CMD ["python", "-m", "drtwin", "console"]

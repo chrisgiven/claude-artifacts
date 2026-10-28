@@ -5,6 +5,7 @@ Stands up an isolated, production-faithful twin and gates every drill on an isol
 - Enterprise build brief: [BUILD_PROMPT.md](BUILD_PROMPT.md)
 - Architecture: [docs/ADR-001-platform-architecture.md](docs/ADR-001-platform-architecture.md)
 - What's next: [ROADMAP.md](ROADMAP.md)
+- Deploy on Portainer (web console): [docs/PORTAINER.md](docs/PORTAINER.md)
 
 ## Run (local Docker)
 
@@ -17,6 +18,7 @@ python3 -m drtwin run                               # all scenarios, ~6 min
 python3 -m drtwin run dr-site-a-loss --declare-delay 60
 python3 -m drtwin run --build                       # rebuild app image after code changes
 python3 -m drtwin teardown                          # kill switch + attestation
+python3 -m drtwin console                           # web console on :8095
 python3 -m unittest discover -s tests -t .          # unit tests
 ```
 

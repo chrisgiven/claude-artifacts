@@ -1,10 +1,13 @@
 """Reference provider: the two-site twin in docker-compose.yml on local Docker."""
 import json
+import os
 import subprocess
 import time
 
 from drtwin.providers.base import Provider
 from drtwin.util import wait_for
+
+EDGE_NETWORK = "drtwin-edge"
 
 ISOLATION_PROBE = """
 import json, socket
@@ -50,7 +53,17 @@ class DockerProvider(Provider):
 
     # ------------------------------------------------------------ lifecycle
 
+    def prepare(self):
+        """Shared edge network, and (in the console) prebuilt images from the registry."""
+        if subprocess.run(["docker", "network", "inspect", EDGE_NETWORK], capture_output=True).returncode:
+            subprocess.run(["docker", "network", "create", EDGE_NETWORK], capture_output=True, check=True)
+        if os.environ.get("DRTWIN_PULL") == "1":
+            for var in ("DRTWIN_APP_IMAGE", "DRTWIN_DB_IMAGE"):
+                if os.environ.get(var):
+                    subprocess.run(["docker", "pull", "-q", os.environ[var]], capture_output=True, check=True)
+
     def up(self, healthy):
+        self.prepare()
         self.compose("down", "-v", "--remove-orphans", check=False)
         self.compose("up", "-d", *(["--build"] if self.build else []), timeout=600)
         wait_for("LB healthy", healthy, timeout=120)

@@ -5,9 +5,11 @@
     python3 -m drtwin run                          # all scenarios
     python3 -m drtwin run dr-site-a-loss --declare-delay 60
     python3 -m drtwin teardown                     # kill switch + attestation
+    python3 -m drtwin console                      # web console on :8095
 """
 import argparse
 import json
+import os
 import sys
 from pathlib import Path
 
@@ -19,10 +21,13 @@ from drtwin.load import Client
 from drtwin.providers import PROVIDERS
 
 ROOT = Path(__file__).resolve().parent.parent
+REPORTS = Path(os.environ.get("DRTWIN_REPORTS", ROOT / "reports"))
 
 
 def setup(args):
     manifest = yaml.safe_load((ROOT / args.manifest).read_text())
+    # The console container reaches the twin's LB over the shared edge network.
+    manifest["endpoint"] = os.environ.get("DRTWIN_ENDPOINT", manifest["endpoint"])
     provider_name = args.provider or manifest["provider"]
     provider = PROVIDERS[provider_name](manifest, ROOT, **({"build": args.build} if hasattr(args, "build") else {}))
     args.provider = provider_name
@@ -49,8 +54,8 @@ def cmd_run(args):
     chosen = [scenarios[s] for s in (args.scenarios or scenarios)]
     client = Client(manifest["endpoint"], manifest.get("health_path", "/health"))
     results, errors, attestation = run_all(chosen, provider, client, args)
-    out = evidence.write_pack(ROOT / "reports", results, errors, attestation, args)
-    print(f"\nEvidence pack: {out}\nScorecard:     {out / 'scorecard.html'}\nTrend:         {ROOT / 'reports' / 'trend.html'}")
+    out = evidence.write_pack(REPORTS, results, errors, attestation, args)
+    print(f"\nEvidence pack: {out}\nScorecard:     {out / 'scorecard.html'}\nTrend:         {REPORTS / 'trend.html'}")
     if attestation is not None:
         print(f"Teardown:      {'verified' if attestation['destroyed'] else 'RESIDUAL OBJECTS — check results.json'}")
     sys.exit(1 if errors or not all(r["metrics"]["rto_pass"] and r["metrics"]["rpo_pass"] for r in results) else 0)
@@ -63,6 +68,11 @@ def cmd_teardown(args):
     sys.exit(0 if att["destroyed"] else 1)
 
 
+def cmd_console(args):
+    from drtwin.console import serve
+    serve(setup, REPORTS, args.port)
+
+
 def main(argv=None):
     p = argparse.ArgumentParser(prog="drtwin", description=__doc__,
                                 formatter_class=argparse.RawDescriptionHelpFormatter)
@@ -72,6 +82,9 @@ def main(argv=None):
     sub.add_parser("list").set_defaults(fn=cmd_list)
     sub.add_parser("validate").set_defaults(fn=cmd_validate)
     sub.add_parser("teardown").set_defaults(fn=cmd_teardown)
+    c = sub.add_parser("console", help="web console for running drills")
+    c.add_argument("--port", type=int, default=int(os.environ.get("CONSOLE_PORT", 8095)))
+    c.set_defaults(fn=cmd_console)
     r = sub.add_parser("run")
     r.add_argument("scenarios", nargs="*")
     r.add_argument("--rate", type=float, default=10, help="writes per second")
