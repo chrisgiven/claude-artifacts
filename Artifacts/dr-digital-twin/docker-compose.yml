@@ -1,11 +1,14 @@
 # DR digital twin: two-site production replica inside an isolated network.
 #
-#   edge  (host-reachable, 127.0.0.1 only)  -> lb
-#   bubble (internal: no route out, no route to prod) -> everything else
+#   edge   (shared network "drtwin-edge"; lb also published on 127.0.0.1)  -> lb
+#   bubble (internal: no route out, no route to prod)                       -> everything else
 #
 #   Site A (primary):  app-a1, app-a2, pg-a
 #   Site B (DR):       app-b1 (warm standby), pg-b (streaming replica)
 #   Shared:            backup -> vault volume
+#
+# No bind mounts: the console container drives this file through the host's
+# Docker socket, where container-local paths would not resolve.
 name: drtwin
 
 x-db-env: &db-env
@@ -14,7 +17,13 @@ x-db-env: &db-env
 
 x-app: &app
   build: ./app
-  image: drtwin-app:latest
+  image: ${DRTWIN_APP_IMAGE:-drtwin-app:latest}
+  networks: [bubble]
+  restart: "no"
+
+x-db: &db
+  build: ./db
+  image: ${DRTWIN_DB_IMAGE:-drtwin-db:latest}
   networks: [bubble]
   restart: "no"
 
@@ -48,38 +57,33 @@ services:
       DB_DSN: host=pg-b,pg-a dbname=orders user=postgres password=twin-only-password target_session_attrs=read-write
 
   pg-a:
-    image: postgres:16-alpine
+    <<: *db
     environment: *db-env
     command: ["postgres", "-c", "wal_level=replica", "-c", "max_wal_senders=5", "-c", "max_replication_slots=5"]
-    volumes: ["./db/primary-init.sh:/docker-entrypoint-initdb.d/10-init.sh:ro"]
-    networks: [bubble]
 
   pg-b:
-    image: postgres:16-alpine
+    <<: *db
     user: postgres
     environment:
       <<: *db-env
       PRIMARY_HOST: pg-a
       PGDATA: /var/lib/postgresql/data/pgdata
-    entrypoint: ["/replica-entrypoint.sh"]
-    volumes: ["./db/replica-entrypoint.sh:/replica-entrypoint.sh:ro"]
-    networks: [bubble]
+    entrypoint: ["replica-entrypoint.sh"]
 
   backup:
-    image: postgres:16-alpine
+    <<: *db
     environment:
       <<: *db-env
       PGPASSWORD: twin-only-password
       DB_DSN: host=pg-a,pg-b dbname=orders user=postgres target_session_attrs=read-write
       BACKUP_INTERVAL: ${BACKUP_INTERVAL:-20}
-    entrypoint: ["/backup-loop.sh"]
-    volumes:
-      - ./db/backup-loop.sh:/backup-loop.sh:ro
-      - vault:/vault
-    networks: [bubble]
+    entrypoint: ["backup-loop.sh"]
+    volumes: [vault:/vault]
 
 networks:
-  edge: {}
+  edge:
+    name: drtwin-edge
+    external: true
   bubble:
     internal: true
 

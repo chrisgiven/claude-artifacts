@@ -1,0 +1,18 @@
+id: cyber-logical-corruption
+title: "Cyber: destructive logical corruption"
+tier: Cyber
+description: >
+  The orders table is destroyed on the primary, and replication faithfully
+  copies the damage to site B. Recovery requires containment, choosing a clean
+  restore point, and restoring from the backup vault.
+targets: {rto_s: 300, rpo_s: 30}
+warmup_s: 45   # longer than the backup interval, so a backup holds drill data
+fault:
+  - {name: "Fault: orders table destroyed on primary (replicates to DR)", action: sql, service: pg-a, statement: "DROP TABLE orders CASCADE"}
+runbook:
+  - {name: "Declare incident", actor: human, action: declare}
+  - {name: "Contain: stop application tier", actor: runbook, action: stop, services: [app-a1, app-a2, app-b1]}
+  - {name: "Identify last clean restore point in vault", actor: runbook, action: find_clean_backup}
+  - {name: "Restore database from vault", actor: runbook, action: restore_backup, service: pg-a}
+  - {name: "Restart application tier", actor: runbook, action: start, services: [app-a1, app-a2, app-b1]}
+  - {name: "Validate service via LB", actor: runbook, action: wait_healthy}

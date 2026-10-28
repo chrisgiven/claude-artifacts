@@ -1,0 +1,28 @@
+# Portainer: Stacks -> Add stack -> Web editor -> paste this file.
+# Set DRTWIN_CONSOLE_PASSWORD under "Environment variables" before deploying.
+#
+# The console drives the host's Docker through the socket (root-equivalent on
+# that host). Keep the port on your LAN only; do not expose it to the internet.
+services:
+  console:
+    image: ghcr.io/chrisgiven/drtwin-console:latest
+    restart: unless-stopped
+    ports:
+      - "${CONSOLE_PORT:-8095}:8095"
+    environment:
+      DRTWIN_CONSOLE_PASSWORD: ${DRTWIN_CONSOLE_PASSWORD:?set DRTWIN_CONSOLE_PASSWORD}
+      DRTWIN_APP_IMAGE: ghcr.io/chrisgiven/drtwin-app:latest
+      DRTWIN_DB_IMAGE: ghcr.io/chrisgiven/drtwin-db:latest
+      # Host port for the twin's load balancer (bound to 127.0.0.1 only).
+      TWIN_PORT: ${TWIN_PORT:-18080}
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - reports:/opt/drtwin/reports
+    networks: [edge]
+
+networks:
+  edge:
+    name: drtwin-edge
+
+volumes:
+  reports: {}

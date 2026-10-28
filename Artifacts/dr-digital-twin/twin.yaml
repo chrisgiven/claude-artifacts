@@ -1,0 +1,23 @@
+# Twin manifest: what "production-faithful" means for this twin.
+# The drift check compares the running twin against this before every drill.
+name: drtwin-reference
+provider: docker
+endpoint: http://127.0.0.1:8080
+health_path: /health
+compose_file: docker-compose.yml
+
+expected:
+  services:
+    lb:     {site: global, role: load-balancer}
+    app-a1: {site: A, role: app}
+    app-a2: {site: A, role: app}
+    app-b1: {site: B, role: app-standby}
+    pg-a:   {site: A, role: db-primary}
+    pg-b:   {site: B, role: db-standby}
+    backup: {site: shared, role: backup}
+  replication:
+    primary: pg-a
+    standbys: 1
+  backup:
+    service: backup
+    max_age_s: 60

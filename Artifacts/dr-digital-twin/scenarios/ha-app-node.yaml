@@ -1,0 +1,11 @@
+id: ha-app-node
+title: "HA: application node failure"
+tier: HA
+description: >
+  One of two site A application nodes is killed. The load balancer should
+  route around it with no human action.
+targets: {rto_s: 5, rpo_s: 0}
+fault:
+  - {name: "Fault: app-a1 lost", action: kill, services: [app-a1]}
+runbook:
+  - {name: "LB health check removes node (no human action)", actor: auto, action: wait_healthy}

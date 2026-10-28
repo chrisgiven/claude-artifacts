@@ -1,0 +1,44 @@
+# Builds the DR twin images (console, app, db) for amd64 + arm64 and pushes
+# them to GHCR, so the Portainer stack can deploy without building anything.
+name: drtwin images
+
+on:
+  push:
+    branches: [main, claude/dr-twin-platform]
+    paths: ["Artifacts/dr-digital-twin/**", ".github/workflows/drtwin-images.yml"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  packages: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        include:
+          - {image: drtwin-console, context: ., file: Dockerfile.console}
+          - {image: drtwin-app, context: app, file: app/Dockerfile}
+          - {image: drtwin-db, context: db, file: db/Dockerfile}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: docker/setup-qemu-action@v3
+      - uses: docker/setup-buildx-action@v3
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - uses: docker/build-push-action@v6
+        with:
+          context: Artifacts/dr-digital-twin/${{ matrix.context }}
+          file: Artifacts/dr-digital-twin/${{ matrix.file }}
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository_owner }}/${{ matrix.image }}:latest
+            ghcr.io/${{ github.repository_owner }}/${{ matrix.image }}:${{ github.sha }}
+          labels: |
+            org.opencontainers.image.source=https://github.com/${{ github.repository }}
+            org.opencontainers.image.description=DR digital twin ${{ matrix.image }}
