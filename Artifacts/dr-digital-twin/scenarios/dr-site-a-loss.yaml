@@ -1,0 +1,13 @@
+id: dr-site-a-loss
+title: "DR: loss of primary site"
+tier: DR
+description: >
+  All of site A (both app nodes and the primary database) is lost at once.
+  Site B's replica is promoted and its warm standby app takes traffic.
+targets: {rto_s: 120, rpo_s: 5}
+fault:
+  - {name: "Fault: site A lost (app-a1, app-a2, pg-a)", action: kill, services: [app-a1, app-a2, pg-a]}
+runbook:
+  - {name: "Declare incident", actor: human, action: declare}
+  - {name: "Promote site B database pg-b", actor: runbook, action: promote, service: pg-b}
+  - {name: "Validate site B serving via LB", actor: runbook, action: wait_healthy}

@@ -1,0 +1,13 @@
+id: ha-db-primary
+title: "HA: primary database failure"
+tier: HA
+description: >
+  The primary database is killed. The standby is promoted after an incident
+  declaration; apps reconnect via a multi-host connection string.
+targets: {rto_s: 60, rpo_s: 0}
+fault:
+  - {name: "Fault: primary database pg-a lost", action: kill, services: [pg-a]}
+runbook:
+  - {name: "Declare incident", actor: human, action: declare}
+  - {name: "Promote standby pg-b", actor: runbook, action: promote, service: pg-b}
+  - {name: "Validate service via LB", actor: runbook, action: wait_healthy}
