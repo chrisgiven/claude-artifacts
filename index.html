@@ -725,12 +725,12 @@ try{if(localStorage.getItem('hub.theme')==='dark')document.documentElement.datas
         <div class="card-foot"><span class="tag hot">App</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">SQLite</span><span class="go">Open →</span></div>
       </a>
 
-      <!-- Links to the sample evidence pack; the drill console (Portainer stack) isn't deployed yet. -->
-      <a class="card s-wip reveal" href="/claude-artifacts/Artifacts/dr-digital-twin/reports/sample/scorecard.html">
+      <!-- NAS-hosted drill console: address injected from /services.json, which is NAS-only and gitignored. -->
+      <a class="card s-wip reveal" data-svc-link="drtwin">
         <div class="card-meta"><span class="code">LAB / TWIN</span><span class="stat">In progress</span></div>
         <h3>DR Digital Twin</h3>
         <p>Stands up an isolated copy of a two-site stack, proves it can't reach the internet, checks it for drift, then breaks it on purpose: a dead app node, a dead primary database, the loss of a whole site, a dropped table that replicates to DR. Each recovery runbook is timed step by step, and RTO and RPO are measured from the client's side. Every drill ends in an evidence pack and a teardown attestation. First lesson: replication is not backup.</p>
-        <div class="card-foot"><span class="tag hot">Infra</span><span class="tag">Python</span><span class="tag">Docker</span><span class="tag">BCDR</span><span class="go">Scorecard →</span></div>
+        <div class="card-foot"><span class="tag hot">Infra</span><span class="tag">Python</span><span class="tag">Docker</span><span class="tag">BCDR</span><span class="go">Open →</span></div>
       </a>
 
       <a class="card s-live reveal" href="http://localhost:5757">

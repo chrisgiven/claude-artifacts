@@ -34,10 +34,10 @@ class Load(threading.Thread):
     def __init__(self, client, rate):
         super().__init__(daemon=True)
         self.client, self.gap = client, 1.0 / rate
-        self.records, self._stop, self.seq = [], threading.Event(), 0
+        self.records, self._halt, self.seq = [], threading.Event(), 0
 
     def run(self):
-        while not self._stop.is_set():
+        while not self._halt.is_set():
             self.seq += 1
             t = time.time()
             # Longer than the LB's upstream timeout, so a slow-but-committed
@@ -48,5 +48,5 @@ class Load(threading.Thread):
             time.sleep(max(0, self.gap - (time.time() - t)))
 
     def stop(self):
-        self._stop.set()
+        self._halt.set()
         self.join()
