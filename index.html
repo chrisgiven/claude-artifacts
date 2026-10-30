@@ -3,448 +3,486 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0d0b09">
 <title>Big Poppy Consulting — Signal Over Noise</title>
 <meta name="description" content="Independent IT consulting and a self-hosted lab. Infrastructure strategy, TCO analysis, lifecycle planning — plus the experiments, running live.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Instrument+Sans:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-:root{
-  --void:#100e0b;
-  --panel:#1a1713;
-  --panel-2:#221e18;
-  --line:#2e2820;
-  --line-soft:#262019;
-  --ink:#ece5d6;
-  --muted:#9b9080;
-  --faint:#6e655a;
-  --gold:#d2a24a;
-  --gold-dim:#8a6c34;
-  --live:#5cc781;
-  --wip:#e0a33c;
-  --concept:#8b9be6;
-  --down:#e0574a;
-  --maxw:1120px;
-  --pad:clamp(20px,4vw,48px);
+@layer reset, tokens, base, layout, components, motion;
+
+@layer reset{
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  img,svg{display:block}
+  button,input{font:inherit;color:inherit}
 }
 
-*{box-sizing:border-box;margin:0;padding:0}
-
-html{scroll-behavior:smooth}
-@media (prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{animation:none!important;transition:none!important}
+@layer tokens{
+  :root{
+    --void:#0d0b09;
+    --panel:#17140f;
+    --panel-2:#201c16;
+    --line:#2e2820;
+    --line-soft:#231e18;
+    --ink:#efe8d9;
+    --muted:#a39885;
+    --faint:#6f665a;
+    --gold:#d8a74c;
+    --gold-hi:#f0c46e;
+    --gold-dim:#8a6c34;
+    --live:#5cc781;
+    --wip:#e0a33c;
+    --concept:#8b9be6;
+    --down:#e5594b;
+    --glass:color-mix(in oklab,var(--panel) 72%,transparent);
+    --edge:linear-gradient(160deg,color-mix(in oklab,var(--gold) 38%,transparent),var(--line) 38%,var(--line-soft));
+    --radius:14px;
+    --maxw:1200px;
+    --pad:clamp(16px,4vw,48px);
+    --display:'Bricolage Grotesque',sans-serif;
+    --sans:'Instrument Sans',system-ui,sans-serif;
+    --mono:'Spline Sans Mono',ui-monospace,monospace;
+  }
 }
 
-body{
-  background:var(--void);
-  color:var(--ink);
-  font-family:'Instrument Sans',system-ui,sans-serif;
-  font-size:16px;
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
+@layer base{
+  html{scroll-behavior:smooth;scroll-padding-top:72px}
+  body{
+    background:var(--void);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  /* ambient light + blueprint grid, fixed behind everything */
+  body::before{
+    content:"";
+    position:fixed;inset:0;z-index:-1;pointer-events:none;
+    background:
+      radial-gradient(60rem 36rem at 78% -8%,color-mix(in oklab,var(--gold) 16%,transparent),transparent 70%),
+      radial-gradient(40rem 30rem at -10% 30%,color-mix(in oklab,var(--concept) 7%,transparent),transparent 70%),
+      linear-gradient(var(--line-soft) 1px,transparent 1px) 0 0/56px 56px,
+      linear-gradient(90deg,var(--line-soft) 1px,transparent 1px) 0 0/56px 56px;
+    mask-image:linear-gradient(to bottom,#000 0%,rgba(0,0,0,.35) 60%,transparent 100%);
+  }
+  ::selection{background:var(--gold);color:var(--void)}
+  a{color:inherit}
+  :where(a,button,input,summary):focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:6px}
+  .mono{font-family:var(--mono)}
+  .sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  [hidden]{display:none!important}
 }
 
-::selection{background:var(--gold);color:var(--void)}
-
-a{color:inherit}
-a:focus-visible,button:focus-visible{
-  outline:2px solid var(--gold);
-  outline-offset:3px;
-  border-radius:2px;
+@layer layout{
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+  section{padding:clamp(64px,9vw,112px) 0}
+  .eyebrow{
+    font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;
+    color:var(--gold);display:flex;align-items:center;gap:14px;margin-bottom:20px;
+  }
+  .eyebrow::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+  h2{
+    font-family:var(--display);font-weight:800;font-size:clamp(30px,4.6vw,50px);
+    line-height:1.03;letter-spacing:-.02em;margin-bottom:14px;text-wrap:balance;
+  }
+  .section-note{color:var(--muted);max-width:60ch;margin-bottom:36px;text-wrap:pretty}
+  .section-head{display:flex;justify-content:space-between;align-items:end;gap:24px;flex-wrap:wrap}
+  .section-head .section-note{margin-bottom:0}
 }
 
-.mono{font-family:'Spline Sans Mono',monospace}
+@layer components{
+  /* ---------- scroll progress ---------- */
+  .progress{position:fixed;top:0;left:0;right:0;height:2px;z-index:60;transform-origin:0 50%;transform:scaleX(0);
+    background:linear-gradient(90deg,var(--gold-dim),var(--gold),var(--live))}
 
-/* ---------- meter bridge (signature) ---------- */
-.meters{
-  display:flex;
-  align-items:flex-end;
-  gap:5px;
-  height:34px;
-  padding:0 var(--pad);
-  overflow:hidden;
-  border-bottom:1px solid var(--line-soft);
-}
-.meters span{
-  flex:1;
-  min-width:3px;
-  height:100%;
-  background:linear-gradient(to top,var(--gold-dim),var(--gold) 55%,var(--live));
-  opacity:.5;
-  transform-origin:bottom;
-  animation:vu 1.6s ease-in-out infinite alternate;
-}
-@keyframes vu{
-  from{transform:scaleY(.12)}
-  to{transform:scaleY(var(--peak,.85))}
-}
-@media (prefers-reduced-motion:reduce){
-  .meters span{transform:scaleY(var(--peak,.5))}
-}
+  /* ---------- meter bridge (signature) ---------- */
+  .meters{display:flex;align-items:flex-end;gap:4px;height:26px;padding:0 var(--pad);overflow:hidden;opacity:.7}
+  .meters span{
+    flex:1;min-width:3px;height:100%;border-radius:2px 2px 0 0;
+    background:linear-gradient(to top,var(--gold-dim),var(--gold) 55%,var(--live));
+    opacity:.45;transform-origin:bottom;animation:vu 1.6s ease-in-out infinite alternate;
+  }
+  @keyframes vu{from{transform:scaleY(.12)}to{transform:scaleY(var(--peak,.85))}}
 
-/* ---------- nav ---------- */
-nav{
-  position:sticky;
-  top:0;
-  z-index:50;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:14px var(--pad);
-  background:rgba(16,14,11,.88);
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid var(--line-soft);
-}
-.brand{
-  font-family:'Spline Sans Mono',monospace;
-  font-weight:600;
-  font-size:13px;
-  letter-spacing:.14em;
-  text-decoration:none;
-  color:var(--ink);
-}
-.brand b{color:var(--gold);font-weight:600}
-nav ul{display:flex;gap:26px;list-style:none}
-nav ul a{
-  font-family:'Spline Sans Mono',monospace;
-  font-size:12px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  text-decoration:none;
-  color:var(--muted);
-  transition:color .18s;
-}
-nav ul a:hover{color:var(--gold)}
+  /* ---------- nav ---------- */
+  nav{
+    position:sticky;top:0;z-index:50;
+    display:flex;align-items:center;gap:18px;
+    padding:12px var(--pad);
+    background:color-mix(in oklab,var(--void) 78%,transparent);
+    backdrop-filter:blur(14px) saturate(140%);
+    border-bottom:1px solid var(--line-soft);
+  }
+  .brand{font-family:var(--mono);font-weight:600;font-size:13px;letter-spacing:.14em;text-decoration:none;white-space:nowrap}
+  .brand b{color:var(--gold);font-weight:600}
+  nav ul{
+    display:flex;gap:4px;list-style:none;margin-left:auto;
+    overflow-x:auto;scrollbar-width:none;min-width:0;
+  }
+  nav ul::-webkit-scrollbar{display:none}
+  nav ul a{
+    display:block;padding:6px 12px;border-radius:999px;
+    font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;
+    color:var(--muted);white-space:nowrap;transition:color .18s,background .18s;
+  }
+  nav ul a:hover{color:var(--ink)}
+  nav ul a[aria-current="true"]{color:var(--void);background:var(--gold)}
+  .kbd-btn{
+    display:inline-flex;align-items:center;gap:8px;flex-shrink:0;
+    padding:6px 10px;border-radius:8px;border:1px solid var(--line);background:var(--panel);
+    font-family:var(--mono);font-size:11px;color:var(--muted);cursor:pointer;transition:border-color .18s,color .18s;
+  }
+  .kbd-btn:hover{border-color:var(--gold-dim);color:var(--ink)}
+  kbd{font-family:var(--mono);font-size:10.5px;padding:1px 5px;border:1px solid var(--line);border-radius:4px;color:var(--faint)}
 
-/* ---------- shared layout ---------- */
-.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
-section{padding:clamp(64px,9vw,120px) 0}
+  /* ---------- glass panel w/ gradient edge ---------- */
+  .panel{
+    border:1px solid transparent;border-radius:var(--radius);
+    background:linear-gradient(var(--panel),var(--panel)) padding-box,var(--edge) border-box;
+  }
 
-.eyebrow{
-  font-family:'Spline Sans Mono',monospace;
-  font-size:11px;
-  font-weight:500;
-  letter-spacing:.22em;
-  text-transform:uppercase;
-  color:var(--gold);
-  display:flex;
-  align-items:center;
-  gap:14px;
-  margin-bottom:22px;
-}
-.eyebrow::after{content:"";flex:1;height:1px;background:var(--line)}
+  /* ---------- hero ---------- */
+  header.hero{padding:clamp(48px,7vw,96px) 0 clamp(36px,5vw,64px)}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(28px,4vw,56px);align-items:center}
+  .hero h1{
+    font-family:var(--display);font-weight:800;font-size:clamp(48px,8.4vw,112px);
+    line-height:.95;letter-spacing:-.035em;max-width:10ch;
+  }
+  .hero h1 em{
+    font-style:normal;
+    background:linear-gradient(100deg,var(--gold-dim),var(--gold-hi) 45%,var(--gold));
+    -webkit-background-clip:text;background-clip:text;color:transparent;
+  }
+  .hero .lede{margin-top:24px;max-width:52ch;font-size:clamp(16px,1.5vw,19px);color:var(--muted);text-wrap:pretty}
+  .hero .lede strong{color:var(--ink);font-weight:500}
+  .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;padding:12px 20px;border-radius:10px;
+    font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;
+    border:1px solid var(--line);background:var(--panel);color:var(--ink);cursor:pointer;
+    transition:transform .18s,border-color .18s,background .18s;
+  }
+  .btn:hover{transform:translateY(-2px);border-color:var(--gold-dim)}
+  .btn.primary{background:var(--gold);color:var(--void);border-color:var(--gold)}
+  .btn.primary:hover{background:var(--gold-hi)}
 
-h2{
-  font-family:'Bricolage Grotesque',sans-serif;
-  font-weight:800;
-  font-size:clamp(30px,4.5vw,46px);
-  line-height:1.05;
-  letter-spacing:-.015em;
-  margin-bottom:14px;
-}
-.section-note{color:var(--muted);max-width:560px;margin-bottom:44px}
+  /* status board */
+  .board{overflow:hidden}
+  .board-head{
+    display:flex;justify-content:space-between;align-items:center;gap:12px;
+    padding:12px 18px;border-bottom:1px solid var(--line-soft);
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint);
+  }
+  .board-head .clock{color:var(--muted);font-variant-numeric:tabular-nums;letter-spacing:.1em}
+  .board-row{
+    display:grid;grid-template-columns:120px 1fr auto;gap:16px;align-items:center;
+    padding:14px 18px;font-family:var(--mono);font-size:12.5px;
+  }
+  .board-row + .board-row{border-top:1px solid var(--line-soft)}
+  .board-row .sys{color:var(--faint);letter-spacing:.08em;font-size:11px}
+  .board-row .det{color:var(--ink);min-width:0;overflow-wrap:anywhere}
+  .st{display:flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;white-space:nowrap}
 
-/* ---------- hero ---------- */
-header.hero{padding:clamp(56px,8vw,104px) 0 clamp(48px,6vw,80px)}
-.hero h1{
-  font-family:'Bricolage Grotesque',sans-serif;
-  font-weight:800;
-  font-size:clamp(46px,8.5vw,104px);
-  line-height:.98;
-  letter-spacing:-.025em;
-  max-width:11ch;
-}
-.hero h1 em{
-  font-style:normal;
-  color:var(--gold);
-}
-.hero .lede{
-  margin-top:26px;
-  max-width:560px;
-  font-size:clamp(16px,1.6vw,19px);
-  color:var(--muted);
-}
-.hero .lede strong{color:var(--ink);font-weight:500}
+  .led{width:7px;height:7px;border-radius:50%;flex-shrink:0;background:var(--faint)}
+  .led.live{background:var(--live);box-shadow:0 0 0 3px color-mix(in oklab,var(--live) 18%,transparent),0 0 10px color-mix(in oklab,var(--live) 60%,transparent)}
+  .led.wip{background:var(--wip);box-shadow:0 0 0 3px color-mix(in oklab,var(--wip) 18%,transparent)}
+  .led.concept{background:var(--concept);box-shadow:0 0 0 3px color-mix(in oklab,var(--concept) 18%,transparent)}
+  .led.down{background:var(--down);box-shadow:0 0 0 3px color-mix(in oklab,var(--down) 22%,transparent),0 0 10px color-mix(in oklab,var(--down) 60%,transparent)}
+  .led.probing{animation:probe 1s ease-in-out infinite alternate}
+  @keyframes probe{from{opacity:.25}to{opacity:.9}}
+  .st.live{color:var(--live)} .st.wip{color:var(--wip)} .st.concept{color:var(--concept)} .st.down{color:var(--down)} .st.probing{color:var(--faint)}
 
-/* status board */
-.board{
-  margin-top:52px;
-  border:1px solid var(--line);
-  background:var(--panel);
-}
-.board-head{
-  display:flex;
-  justify-content:space-between;
-  padding:10px 18px;
-  border-bottom:1px solid var(--line-soft);
-  font-family:'Spline Sans Mono',monospace;
-  font-size:10.5px;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-  color:var(--faint);
-}
-.board-row{
-  display:grid;
-  grid-template-columns:150px 1fr auto;
-  gap:18px;
-  align-items:center;
-  padding:14px 18px;
-  font-family:'Spline Sans Mono',monospace;
-  font-size:13px;
-}
-.board-row + .board-row{border-top:1px solid var(--line-soft)}
-.board-row .sys{color:var(--faint);letter-spacing:.08em;font-size:11.5px}
-.board-row .det{color:var(--ink)}
-.board-row .st{display:flex;align-items:center;gap:8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+  /* ---------- pulse strip (KPI bento) ---------- */
+  .pulse{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:clamp(36px,5vw,56px)}
+  .kpi{padding:18px 20px;position:relative;overflow:hidden}
+  .kpi .k-lbl{font-family:var(--mono);font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+  .kpi .k-val{
+    font-family:var(--display);font-weight:800;font-size:clamp(34px,4vw,46px);line-height:1.05;
+    letter-spacing:-.02em;margin-top:6px;font-variant-numeric:tabular-nums;
+  }
+  .kpi .k-val small{font-size:.42em;color:var(--muted);font-weight:600;letter-spacing:0;margin-left:4px}
+  .kpi .k-sub{font-size:13px;color:var(--muted);margin-top:2px}
+  .kpi .k-bar{display:flex;height:4px;border-radius:4px;overflow:hidden;margin-top:12px;background:var(--line-soft)}
+  .kpi .k-bar i{display:block;height:100%}
 
-.led{width:7px;height:7px;border-radius:50%;flex-shrink:0}
-.led.live{background:var(--live);box-shadow:0 0 8px rgba(92,199,129,.5)}
-.led.wip{background:var(--wip);box-shadow:0 0 8px rgba(224,163,60,.45)}
-.led.concept{background:var(--concept);box-shadow:0 0 8px rgba(139,155,230,.45)}
-.st.live{color:var(--live)}
-.st.wip{color:var(--wip)}
-.st.concept{color:var(--concept)}
+  /* ---------- method strip ---------- */
+  .method{border-block:1px solid var(--line-soft);background:color-mix(in oklab,var(--panel) 60%,transparent)}
+  .method .wrap{
+    display:flex;align-items:center;flex-wrap:wrap;gap:10px 0;padding-block:16px;
+    font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  }
+  .method .lbl{color:var(--faint);margin-right:22px;font-size:10.5px;letter-spacing:.2em}
+  .method .arr{color:var(--gold);margin:0 14px}
 
-/* ---------- live service health (LAN only) ---------- */
-.led.down{background:var(--down);box-shadow:0 0 8px rgba(224,87,74,.5)}
-.led.probing{background:var(--faint);animation:probe 1s ease-in-out infinite alternate}
-@keyframes probe{from{opacity:.25}to{opacity:.9}}
-.st.down{color:var(--down)}
-.st.probing{color:var(--faint)}
-#status .board-row{grid-template-columns:170px 1fr 96px auto}
-#status .port{color:var(--faint);font-size:11px;letter-spacing:.06em;text-align:right}
-#status .board-head .ok{color:var(--live)}
-#status .board-head .bad{color:var(--down)}
-@media(max-width:640px){
-  /* Explicit placement — auto-flow put .st on its own row and collapsed it to 0px. */
-  #status .board-row{grid-template-columns:1fr auto;gap:4px 12px}
-  #status .board-row .sys{grid-area:1/1/2/2}
-  #status .board-row .st{grid-area:1/2/2/3;justify-self:end}
-  #status .board-row .det{grid-area:2/1/3/3}
-  #status .board-row .port{grid-area:3/1/4/3;text-align:left}
-  /* The nav has no wrap or scroll, so a 5th item pushes the page 56px wide.
-     The section is still reachable by scrolling. */
-  #nav-status{display:none}
-}
-@media(prefers-reduced-motion:reduce){.led.probing{animation:none}}
+  /* ---------- live status dashboard ---------- */
+  .dash-tools{display:flex;align-items:center;gap:12px;flex-wrap:wrap}
+  .next{width:120px;height:4px;border-radius:4px;background:var(--line);overflow:hidden}
+  .next i{display:block;height:100%;background:var(--gold);transform-origin:left;transform:scaleX(0)}
+  .next.run i{animation:drain var(--interval,30s) linear forwards}
+  @keyframes drain{from{transform:scaleX(1)}to{transform:scaleX(0)}}
+  .dash-meta{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--faint)}
 
-/* ---------- method strip ---------- */
-.method{
-  border-top:1px solid var(--line);
-  border-bottom:1px solid var(--line);
-  background:var(--panel);
-}
-.method .wrap{
-  display:flex;
-  align-items:center;
-  flex-wrap:wrap;
-  gap:10px 0;
-  padding-top:18px;
-  padding-bottom:18px;
-  font-family:'Spline Sans Mono',monospace;
-  font-size:12px;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-}
-.method .lbl{color:var(--faint);margin-right:22px;font-size:10.5px;letter-spacing:.2em}
-.method .step{color:var(--ink)}
-.method .arr{color:var(--gold);margin:0 14px}
+  .dash-kpis{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:14px;margin:28px 0 14px}
+  .gauge-kpi{display:flex;align-items:center;gap:18px}
+  .gauge{width:84px;height:84px;flex-shrink:0;transform:rotate(-90deg)}
+  .gauge circle{fill:none;stroke-width:8}
+  .gauge .track{stroke:var(--line)}
+  .gauge .val{stroke:var(--live);stroke-linecap:round;transition:stroke-dashoffset .9s cubic-bezier(.2,.8,.2,1),stroke .3s}
+  .gauge-kpi.bad .gauge .val{stroke:var(--down)}
+  .gauge-kpi.bad .k-val{color:var(--down)}
 
-/* ---------- cards ---------- */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fill,minmax(300px,1fr));
-  gap:18px;
-}
-.card{
-  position:relative;
-  display:flex;
-  flex-direction:column;
-  background:var(--panel);
-  border:1px solid var(--line);
-  padding:22px 22px 18px;
-  text-decoration:none;
-  transition:transform .18s ease,border-color .18s ease,background .18s ease;
-}
-.card::before{
-  content:"";
-  position:absolute;
-  top:0;left:0;right:0;
-  height:2px;
-  background:var(--card-led,var(--line));
-  opacity:.85;
-}
-a.card[href]:hover{
-  transform:translateY(-3px);
-  border-color:var(--gold-dim);
-  background:var(--panel-2);
-}
-/* Cards whose URL is private get their href injected from /services.json at runtime.
-   Until (or unless) that happens they are plain, unclickable panels. */
-a.card:not([href]) .go{display:none}
-.card.s-live{--card-led:var(--live)}
-.card.s-wip{--card-led:var(--wip)}
-.card.s-concept{--card-led:var(--concept)}
-.card.s-engaged{--card-led:var(--gold)}
+  .svc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
+  .svc{padding:16px 18px 14px;display:flex;flex-direction:column;gap:10px;transition:background .3s}
+  .svc[data-state="down"]{background:linear-gradient(color-mix(in oklab,var(--down) 7%,var(--panel)),var(--panel)) padding-box,linear-gradient(160deg,color-mix(in oklab,var(--down) 55%,transparent),var(--line)) border-box}
+  .svc-top{display:flex;align-items:center;gap:10px}
+  .svc-top b{font-family:var(--mono);font-size:12px;letter-spacing:.1em;font-weight:600;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .svc-top .port{font-family:var(--mono);font-size:11px;color:var(--faint)}
+  .svc .det{font-size:13px;color:var(--muted);line-height:1.45;min-height:2.9em}
+  .svc-mid{display:flex;align-items:end;justify-content:space-between;gap:12px}
+  .svc .ms{font-family:var(--display);font-weight:700;font-size:26px;line-height:1;font-variant-numeric:tabular-nums}
+  .svc .ms small{font-family:var(--mono);font-size:11px;color:var(--faint);font-weight:400;margin-left:3px}
+  .svc[data-state="down"] .ms{color:var(--down)}
+  .spark{width:110px;height:30px;overflow:visible}
+  .spark polyline{fill:none;stroke:var(--gold);stroke-width:1.6;stroke-linejoin:round;stroke-linecap:round}
+  .spark .area{fill:color-mix(in oklab,var(--gold) 14%,transparent);stroke:none}
+  .ticks{display:flex;gap:2px;height:14px}
+  .ticks i{flex:1;border-radius:2px;background:var(--line)}
+  .ticks i.u{background:color-mix(in oklab,var(--live) 75%,transparent)}
+  .ticks i.d{background:var(--down)}
+  .ticks-lbl{display:flex;justify-content:space-between;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;color:var(--faint);text-transform:uppercase}
 
-.card-meta{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  font-family:'Spline Sans Mono',monospace;
-  font-size:10.5px;
-  letter-spacing:.16em;
-  text-transform:uppercase;
-  color:var(--faint);
-  margin-bottom:16px;
-}
-.card-meta .code{color:var(--gold)}
-.card h3{
-  font-family:'Bricolage Grotesque',sans-serif;
-  font-weight:700;
-  font-size:21px;
-  letter-spacing:-.01em;
-  line-height:1.15;
-  margin-bottom:10px;
-}
-.card p{font-size:14.5px;color:var(--muted);flex:1}
-.card-foot{
-  display:flex;
-  gap:8px;
-  flex-wrap:wrap;
-  margin-top:18px;
-  padding-top:14px;
-  border-top:1px solid var(--line-soft);
-}
-.tag{
-  font-family:'Spline Sans Mono',monospace;
-  font-size:10px;
-  letter-spacing:.14em;
-  text-transform:uppercase;
-  color:var(--muted);
-  border:1px solid var(--line);
-  padding:3px 9px;
-}
-.tag.hot{color:var(--gold);border-color:var(--gold-dim)}
-.go{
-  margin-left:auto;
-  font-family:'Spline Sans Mono',monospace;
-  font-size:11px;
-  letter-spacing:.1em;
-  color:var(--gold);
-}
+  /* ---------- filter bar ---------- */
+  .filters{display:flex;gap:10px;flex-wrap:wrap;align-items:center;margin-bottom:22px}
+  .chip{
+    padding:7px 14px;border-radius:999px;border:1px solid var(--line);background:var(--panel);cursor:pointer;
+    font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);
+    transition:all .18s;
+  }
+  .chip:hover{color:var(--ink);border-color:var(--gold-dim)}
+  .chip[aria-pressed="true"]{background:var(--gold);border-color:var(--gold);color:var(--void)}
+  .chip .n{opacity:.6;margin-left:6px}
+  .search{
+    margin-left:auto;display:flex;align-items:center;gap:8px;padding:7px 12px;border-radius:10px;
+    border:1px solid var(--line);background:var(--panel);min-width:min(260px,100%);
+  }
+  .search input{background:none;border:0;outline:0;flex:1;font-size:14px;min-width:0}
+  .search svg{width:15px;height:15px;stroke:var(--faint)}
+  .empty{padding:40px;text-align:center;color:var(--faint);font-family:var(--mono);font-size:12px;letter-spacing:.1em;border:1px dashed var(--line);border-radius:var(--radius)}
 
-/* ---------- about ---------- */
-.about-grid{
-  display:grid;
-  grid-template-columns:1.4fr 1fr;
-  gap:48px;
-  align-items:start;
-}
-.about-grid p{color:var(--muted);margin-bottom:16px;max-width:56ch}
-.about-grid p strong{color:var(--ink);font-weight:500}
-.contact{
-  border:1px solid var(--line);
-  background:var(--panel);
-  padding:26px;
-}
-.contact .eyebrow{margin-bottom:18px}
-.contact a.cta{
-  display:inline-block;
-  font-family:'Spline Sans Mono',monospace;
-  font-size:13px;
-  letter-spacing:.1em;
-  text-transform:uppercase;
-  text-decoration:none;
-  color:var(--void);
-  background:var(--gold);
-  padding:12px 22px;
-  transition:background .18s;
-}
-.contact a.cta:hover{background:#e2b562}
-.contact .alt{
-  margin-top:16px;
-  font-family:'Spline Sans Mono',monospace;
-  font-size:12px;
-  color:var(--faint);
+  /* ---------- cards ---------- */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:16px}
+  .card{
+    container-type:inline-size;
+    position:relative;isolation:isolate;display:flex;flex-direction:column;
+    padding:22px 22px 18px;text-decoration:none;overflow:hidden;
+    border:1px solid transparent;border-radius:var(--radius);
+    background:linear-gradient(var(--panel),var(--panel)) padding-box,
+               linear-gradient(160deg,color-mix(in oklab,var(--card-led,var(--line)) 50%,transparent),var(--line) 35%,var(--line-soft)) border-box;
+    transition:transform .22s cubic-bezier(.2,.8,.2,1),box-shadow .22s;
+  }
+  /* pointer spotlight */
+  .card::after{
+    content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .25s;
+    background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),color-mix(in oklab,var(--gold) 11%,transparent),transparent 60%);
+  }
+  .card:hover::after{opacity:1}
+  a.card[href]:hover{transform:translateY(-3px);box-shadow:0 18px 40px -20px rgba(0,0,0,.7),0 0 0 1px var(--gold-dim)}
+  /* Cards whose URL is private get their href injected from /services.json at runtime.
+     Until (or unless) that happens they are plain, unclickable panels. */
+  a.card:not([href]) .go{display:none}
+  .card.s-live{--card-led:var(--live)}
+  .card.s-wip{--card-led:var(--wip)}
+  .card.s-concept{--card-led:var(--concept)}
+  .card.s-engaged{--card-led:var(--gold)}
+  .card.flash{animation:flash 1.4s ease}
+  @keyframes flash{0%,60%{box-shadow:0 0 0 2px var(--gold)}100%{box-shadow:0 0 0 0 transparent}}
+
+  .card-meta{
+    display:flex;justify-content:space-between;align-items:center;gap:10px;
+    font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:16px;
+  }
+  .card-meta .code{color:var(--gold)}
+  .card-meta .stat{display:flex;align-items:center;gap:7px}
+  .card-meta .stat::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--card-led,var(--faint))}
+  .card[data-probe="up"] .card-meta .stat::before{box-shadow:0 0 8px var(--live)}
+  .card[data-probe="down"]{--card-led:var(--down)}
+  .card[data-probe="down"] .card-meta .stat{color:var(--down)}
+  .probe-ms{color:var(--live);letter-spacing:.06em}
+  .card h3{font-family:var(--display);font-weight:700;font-size:21px;letter-spacing:-.01em;line-height:1.15;margin-bottom:10px;text-wrap:balance}
+  .card p{font-size:14.5px;color:var(--muted);flex:1;text-wrap:pretty}
+  .card-foot{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:18px;padding-top:14px;border-top:1px solid var(--line-soft)}
+  .tag{font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:999px;padding:3px 10px}
+  .tag.hot{color:var(--gold);border-color:var(--gold-dim)}
+  .go{margin-left:auto;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--gold);transition:transform .2s}
+  a.card[href]:hover .go{transform:translateX(4px)}
+  @container (min-width:520px){ .card h3{font-size:24px} }
+
+  /* ---------- about ---------- */
+  .about-grid{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;align-items:start}
+  .about-grid p{color:var(--muted);margin-bottom:16px;max-width:56ch}
+  .about-grid p strong{color:var(--ink);font-weight:500}
+  .contact{padding:26px}
+  .contact .eyebrow{margin-bottom:18px}
+  .contact .alt{margin-top:16px;font-family:var(--mono);font-size:12px;color:var(--faint)}
+
+  /* ---------- footer ---------- */
+  footer{
+    border-top:1px solid var(--line-soft);padding:26px var(--pad);
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
+    font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);
+  }
+  footer .dot{color:var(--gold)}
+
+  /* ---------- command palette ---------- */
+  dialog.cmdk{
+    margin:12vh auto auto;width:min(620px,calc(100% - 32px));max-height:70vh;
+    border:1px solid var(--line);border-radius:16px;background:var(--panel);color:var(--ink);
+    box-shadow:0 40px 80px -20px rgba(0,0,0,.8);overflow:hidden;
+  }
+  dialog.cmdk::backdrop{background:rgba(5,4,3,.6);backdrop-filter:blur(4px)}
+  dialog.cmdk[open]{display:flex;flex-direction:column;animation:pop .18s ease}
+  @keyframes pop{from{opacity:0;transform:translateY(8px) scale(.98)}}
+  .cmdk-in{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--line-soft)}
+  .cmdk-in input{flex:1;background:none;border:0;outline:0;font-size:17px}
+  .cmdk ul{list-style:none;overflow-y:auto;padding:8px}
+  .cmdk li a{
+    display:flex;align-items:center;gap:12px;padding:10px 12px;border-radius:10px;text-decoration:none;cursor:pointer;
+  }
+  .cmdk li a .c{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;color:var(--gold);width:96px;flex-shrink:0}
+  .cmdk li a .t{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .cmdk li a .s{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+  .cmdk li a[aria-selected="true"]{background:var(--panel-2);outline:1px solid var(--gold-dim)}
+  .cmdk .hint{padding:10px 18px;border-top:1px solid var(--line-soft);font-family:var(--mono);font-size:10.5px;color:var(--faint);display:flex;gap:16px}
+
+  /* ---------- responsive ---------- */
+  @media (max-width:1100px){
+    .hero-grid{grid-template-columns:1fr}
+  }
+  @media (max-width:980px){
+    .pulse{grid-template-columns:repeat(2,1fr)}
+    .dash-kpis{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:760px){
+    .about-grid{grid-template-columns:1fr}
+    .board-row{grid-template-columns:1fr auto;gap:4px 12px}
+    .board-row .det{grid-column:1/-1;grid-row:2}
+    .method .arr{margin:0 10px}
+    .kbd-btn .lbl{display:none}
+    .search{margin-left:0;flex:1 1 100%}
+  }
+  @media (max-width:420px){
+    .pulse,.dash-kpis{grid-template-columns:1fr}
+  }
 }
 
-/* ---------- footer ---------- */
-footer{
-  border-top:1px solid var(--line);
-  padding:26px var(--pad);
-  display:flex;
-  justify-content:space-between;
-  flex-wrap:wrap;
-  gap:10px;
-  font-family:'Spline Sans Mono',monospace;
-  font-size:11px;
-  letter-spacing:.12em;
-  text-transform:uppercase;
-  color:var(--faint);
-}
-footer .dot{color:var(--gold)}
+@layer motion{
+  /* Scroll-driven reveal where supported; elsewhere everything is simply visible. */
+  @supports (animation-timeline:view()){
+    .reveal{animation:rise linear both;animation-timeline:view();animation-range:entry 0% entry 35%}
+    .progress{animation:grow linear both;animation-timeline:scroll(root)}
+  }
+  @keyframes rise{from{opacity:0;transform:translateY(22px)}}
+  @keyframes grow{to{transform:scaleX(1)}}
+  ::view-transition-group(*){animation-duration:.32s;animation-timing-function:cubic-bezier(.2,.8,.2,1)}
 
-/* ---------- reveal ---------- */
-.fade{opacity:0;transform:translateY(14px);transition:opacity .5s ease,transform .5s ease}
-.fade.in{opacity:1;transform:none}
-@media (prefers-reduced-motion:reduce){
-  .fade{opacity:1;transform:none}
-}
-
-/* ---------- responsive ---------- */
-@media (max-width:760px){
-  nav ul{gap:16px}
-  .board-row{grid-template-columns:1fr;gap:6px;padding:14px 16px}
-  .board-row .st{justify-content:flex-start}
-  .about-grid{grid-template-columns:1fr}
-  .method .arr{margin:0 10px}
+  @media (prefers-reduced-motion:reduce){
+    html{scroll-behavior:auto}
+    *,*::before,*::after{animation:none!important;transition:none!important}
+    .meters span{transform:scaleY(var(--peak,.5))}
+    .progress{display:none}
+  }
 }
 </style>
 </head>
 <body>
 
+<div class="progress" aria-hidden="true"></div>
 <div class="meters" aria-hidden="true" id="meters"></div>
 
 <nav>
   <a class="brand" href="#top"><b>BPC</b>&nbsp;//&nbsp;BIG POPPY</a>
   <ul>
+    <li id="nav-status" hidden><a href="#status">Status</a></li>
     <li><a href="#consulting">Consulting</a></li>
     <li><a href="#lab">Lab</a></li>
     <li><a href="#intel">Intel</a></li>
-    <li id="nav-status" hidden><a href="#status">Status</a></li>
     <li><a href="#about">About</a></li>
   </ul>
+  <button class="kbd-btn" id="cmdk-open" type="button" aria-label="Jump to a project">
+    <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <span class="lbl">Jump to</span><kbd>⌘K</kbd>
+  </button>
 </nav>
 
 <header class="hero" id="top">
   <div class="wrap">
-    <div class="eyebrow">Big Poppy Consulting — Alexandria, VA</div>
-    <h1 class="fade in">Signal <em>over</em> noise.</h1>
-    <p class="lede fade in">Independent IT consulting for infrastructure decisions that carry real money — <strong>TCO, lifecycle, continuity</strong> — alongside a self-hosted lab where the experiments actually run.</p>
+    <div class="hero-grid">
+      <div>
+        <div class="eyebrow">Big Poppy Consulting — Alexandria, VA</div>
+        <h1>Signal <em>over</em> noise.</h1>
+        <p class="lede">Independent IT consulting for infrastructure decisions that carry real money — <strong>TCO, lifecycle, continuity</strong> — alongside a self-hosted lab where the experiments actually run.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#consulting">The work →</a>
+          <a class="btn" href="#lab">Open the lab</a>
+        </div>
+      </div>
 
-    <div class="board fade in" role="table" aria-label="Current status">
-      <div class="board-head"><span>System status</span><span id="stamp"></span></div>
-      <div class="board-row" role="row">
-        <span class="sys">SYS / CONSULTING</span>
-        <span class="det">CTC · TCO model — owned DC vs. colo &nbsp;|&nbsp; PNC · advisory</span>
-        <span class="st live"><span class="led live"></span>Engaged</span>
+      <div class="board panel" role="table" aria-label="Current status">
+        <div class="board-head"><span>System status</span><span class="clock" id="clock"></span></div>
+        <div class="board-row" role="row">
+          <span class="sys">SYS / CONSULTING</span>
+          <span class="det">CTC · TCO model — owned DC vs. colo &nbsp;|&nbsp; PNC · advisory</span>
+          <span class="st live"><span class="led live"></span>Engaged</span>
+        </div>
+        <div class="board-row" role="row">
+          <span class="sys">SYS / LAB</span>
+          <span class="det" id="lab-det">Jarvis · AI Sound Engineer · Order Up</span>
+          <span class="st wip"><span class="led wip"></span>Building</span>
+        </div>
+        <div class="board-row" role="row">
+          <span class="sys">SYS / STAGE</span>
+          <span class="det">OFB — Battle of the Bands (Aug) · Footfalls (Sep)</span>
+          <span class="st concept"><span class="led concept"></span>Booked</span>
+        </div>
+        <div class="board-row" role="row">
+          <span class="sys">SYS / REPO</span>
+          <span class="det" id="repo-det">Checking GitHub…</span>
+          <span class="st" id="repo-st"><span class="led wip" id="repo-led"></span><span id="repo-label">…</span></span>
+        </div>
+        <div class="board-row" role="row" id="svc-row" hidden>
+          <span class="sys">SYS / NETWORK</span>
+          <span class="det" id="svc-row-det">Probing services…</span>
+          <span class="st probing" id="svc-row-st"><span class="led probing"></span><span class="lab">…</span></span>
+        </div>
       </div>
-      <div class="board-row" role="row">
-        <span class="sys">SYS / LAB</span>
-        <span class="det">Jarvis · AI Sound Engineer · Order Up</span>
-        <span class="st wip"><span class="led wip"></span>Building</span>
+    </div>
+
+    <div class="pulse" aria-label="At a glance">
+      <div class="kpi panel">
+        <div class="k-lbl">Lab projects</div>
+        <div class="k-val" data-count id="k-lab">0</div>
+        <div class="k-sub" id="k-lab-sub">built &amp; self-hosted</div>
+        <div class="k-bar" id="k-lab-bar"></div>
       </div>
-      <div class="board-row" role="row">
-        <span class="sys">SYS / STAGE</span>
-        <span class="det">OFB — Battle of the Bands (Aug) · Footfalls (Sep)</span>
-        <span class="st concept"><span class="led concept"></span>Booked</span>
+      <div class="kpi panel">
+        <div class="k-lbl">Consulting</div>
+        <div class="k-val" data-count id="k-eng">0</div>
+        <div class="k-sub">active engagements</div>
       </div>
-      <div class="board-row" role="row">
-        <span class="sys">SYS / REPO</span>
-        <span class="det" id="repo-det">Checking GitHub…</span>
-        <span class="st" id="repo-st"><span class="led wip" id="repo-led"></span><span id="repo-label">…</span></span>
+      <div class="kpi panel">
+        <div class="k-lbl">Daily intel</div>
+        <div class="k-val" data-count id="k-intel">0</div>
+        <div class="k-sub">briefs, refreshed by 6:30 AM</div>
+      </div>
+      <div class="kpi panel" id="k-svc-tile">
+        <div class="k-lbl">Services</div>
+        <div class="k-val" id="k-svc">—</div>
+        <div class="k-sub" id="k-svc-sub">live board on the home network</div>
+        <div class="k-bar" id="k-svc-bar"></div>
       </div>
     </div>
   </div>
@@ -465,49 +503,82 @@ footer .dot{color:var(--gold)}
 <section id="status" hidden>
   <div class="wrap">
     <div class="eyebrow">00 / Status</div>
-    <h2 class="fade">Everything, at a glance.</h2>
-    <p class="section-note fade">Live reachability, checked from this browser every 30 seconds. A service counts as up if it answers at all — an auth prompt is a healthy answer.</p>
-
-    <div class="board fade in" role="table" aria-label="Live service health">
-      <div class="board-head">
-        <span id="svc-origin">Local services</span>
-        <span id="svc-summary">Probing&hellip;</span>
+    <div class="section-head">
+      <div>
+        <h2 class="reveal">Everything, at a glance.</h2>
+        <p class="section-note">Live reachability and response time, checked from this browser every 30 seconds. A service counts as up if it answers at all — an auth prompt is a healthy answer. History is kept in this browser only.</p>
       </div>
-      <!-- rows injected from /services.json, which is NAS-only and gitignored -->
+      <div class="dash-tools">
+        <span class="dash-meta" id="svc-origin">Local services</span>
+        <div class="next" id="next" title="Next sweep"><i></i></div>
+        <button class="btn" type="button" id="sweep-now">Sweep now</button>
+      </div>
     </div>
+
+    <div class="dash-kpis">
+      <div class="kpi panel gauge-kpi" id="g-kpi">
+        <svg class="gauge" viewBox="0 0 84 84" aria-hidden="true">
+          <circle class="track" cx="42" cy="42" r="34"/>
+          <circle class="val" id="g-val" cx="42" cy="42" r="34" stroke-dasharray="213.6" stroke-dashoffset="213.6"/>
+        </svg>
+        <div>
+          <div class="k-lbl">Reachable</div>
+          <div class="k-val" id="g-num">—</div>
+          <div class="k-sub" id="svc-summary">Probing&hellip;</div>
+        </div>
+      </div>
+      <div class="kpi panel">
+        <div class="k-lbl">Median response</div>
+        <div class="k-val" id="d-med">—</div>
+        <div class="k-sub">across reachable services</div>
+      </div>
+      <div class="kpi panel">
+        <div class="k-lbl">Observed uptime</div>
+        <div class="k-val" id="d-up">—</div>
+        <div class="k-sub" id="d-up-sub">this browser's history</div>
+      </div>
+      <div class="kpi panel">
+        <div class="k-lbl">Slowest</div>
+        <div class="k-val" id="d-slow" style="font-size:clamp(22px,2.4vw,28px);padding-top:8px">—</div>
+        <div class="k-sub" id="d-slow-sub">&nbsp;</div>
+      </div>
+    </div>
+
+    <!-- tiles injected from /services.json, which is NAS-only and gitignored -->
+    <div class="svc-grid" id="svc-grid" aria-live="polite"></div>
   </div>
 </section>
 
 <section id="consulting">
   <div class="wrap">
     <div class="eyebrow">01 / Consulting</div>
-    <h2 class="fade">Decisions, costed.</h2>
-    <p class="section-note fade">Engagement work and standing capabilities. Every recommendation lands labeled — tactical or strategic — so you know what to do this quarter and what to budget for next year.</p>
+    <h2 class="reveal">Decisions, costed.</h2>
+    <p class="section-note reveal">Engagement work and standing capabilities. Every recommendation lands labeled — tactical or strategic — so you know what to do this quarter and what to budget for next year.</p>
 
     <div class="grid">
-      <div class="card s-engaged fade">
-        <div class="card-meta"><span class="code">CTC / TCO</span><span>Active</span></div>
+      <div class="card s-engaged reveal">
+        <div class="card-meta"><span class="code">CTC / TCO</span><span class="stat">Active</span></div>
         <h3>Data Center vs. Colocation</h3>
         <p>Full total-cost-of-ownership model for a Winnipeg facility: power, cooling, staffing, refresh cycles, and migration risk — owned floor versus colo, on one defensible spreadsheet.</p>
         <div class="card-foot"><span class="tag hot">Strategic</span><span class="tag">TCO Model</span></div>
       </div>
 
-      <div class="card s-engaged fade">
-        <div class="card-meta"><span class="code">PNC / ADV</span><span>Active</span></div>
+      <div class="card s-engaged reveal">
+        <div class="card-meta"><span class="code">PNC / ADV</span><span class="stat">Active</span></div>
         <h3>Advisory Engagement</h3>
         <p>Ongoing infrastructure advisory. Details stay with the client — the method above doesn't.</p>
         <div class="card-foot"><span class="tag hot">Tactical</span><span class="tag">Advisory</span></div>
       </div>
 
-      <div class="card s-live fade">
-        <div class="card-meta"><span class="code">CAP / STOR</span><span>Capability</span></div>
+      <div class="card s-live reveal">
+        <div class="card-meta"><span class="code">CAP / STOR</span><span class="stat">Capability</span></div>
         <h3>Storage &amp; Lifecycle</h3>
         <p>EOL and EOS dates turned into compelling events. Refresh planning that happens before the warranty cliff, not in the incident review after it.</p>
         <div class="card-foot"><span class="tag hot">Strategic</span><span class="tag">Lifecycle</span></div>
       </div>
 
-      <div class="card s-live fade">
-        <div class="card-meta"><span class="code">CAP / BCDR</span><span>Capability</span></div>
+      <div class="card s-live reveal">
+        <div class="card-meta"><span class="code">CAP / BCDR</span><span class="stat">Capability</span></div>
         <h3>Continuity &amp; Recovery</h3>
         <p>BC/DR design sized to actual risk tolerance and actual budget — not the vendor checklist, and not hope.</p>
         <div class="card-foot"><span class="tag hot">Strategic</span><span class="tag">BC / DR</span></div>
@@ -519,28 +590,36 @@ footer .dot{color:var(--gold)}
 <section id="lab">
   <div class="wrap">
     <div class="eyebrow">02 / Lab</div>
-    <h2 class="fade">Built, hosted, running.</h2>
-    <p class="section-note fade">Side projects served off the same NAS this page lives on. Green means live, amber means it's on the bench.</p>
+    <h2 class="reveal">Built, hosted, running.</h2>
+    <p class="section-note reveal">Side projects served off the same NAS this page lives on. Green means live, amber means it's on the bench.</p>
+
+    <div class="filters" id="lab-filters" role="toolbar" aria-label="Filter lab projects">
+      <label class="search">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+        <span class="sr-only">Search lab projects</span>
+        <input id="lab-q" type="search" placeholder="Search the lab…" autocomplete="off">
+      </label>
+    </div>
 
     <div class="grid">
-      <a class="card s-wip fade" href="/jarvis/">
-        <div class="card-meta"><span class="code">LAB / JRVS</span><span>In progress</span></div>
+      <a class="card s-wip reveal" href="/jarvis/">
+        <div class="card-meta"><span class="code">LAB / JRVS</span><span class="stat">In progress</span></div>
         <h3>Jarvis — GIVEN-OS</h3>
         <p>Personal ops dashboard: live machine telemetry, MCP feeds (mail, calendar, drive, generation credits), and a Claude-backed chat panel with the day's context loaded.</p>
         <div class="card-foot"><span class="tag hot">App</span><span class="tag">Dashboard</span><span class="go">Open →</span></div>
       </a>
 
       <!-- NAS-hosted: address injected from /services.json, which is NAS-only and gitignored. -->
-      <a class="card s-wip fade" data-svc-link="soundman">
-        <div class="card-meta"><span class="code">LAB / SNDMN</span><span>Live</span></div>
+      <a class="card s-wip reveal" data-svc-link="soundman">
+        <div class="card-meta"><span class="code">LAB / SNDMN</span><span class="stat">Live</span></div>
         <h3>AI Sound Engineer</h3>
         <p>Flask + OSC control of a Behringer XR18 with Claude in the loop — setlist management, room analysis, and EMM-6 measurement-mic capture for the band.</p>
         <div class="card-foot"><span class="tag hot">App</span><span class="tag">Python</span><span class="tag">OSC</span><span class="go">Open →</span></div>
       </a>
 
       <!-- NAS-hosted: address injected from /services.json, which is NAS-only and gitignored. -->
-      <a class="card s-live fade" data-svc-link="sonos">
-        <div class="card-meta"><span class="code">LAB / SONOS</span><span>Live</span></div>
+      <a class="card s-live reveal" data-svc-link="sonos">
+        <div class="card-meta"><span class="code">LAB / SONOS</span><span class="stat">Live</span></div>
         <h3>Sonos Lyrics</h3>
         <p>Karaoke-style synced lyrics for any Sonos room. Album art, real-time scrolling, room picker — runs permanently on the NAS.</p>
         <div class="card-foot"><span class="tag hot">App</span><span class="tag">Python</span><span class="tag">Flask</span><span class="go">Open →</span></div>
@@ -548,90 +627,90 @@ footer .dot{color:var(--gold)}
 
       <!-- NAS-hosted: address injected from /services.json. The static /order-up/ copy is a
            pre-proxy build that asks for an API key in the browser; the container is current. -->
-      <a class="card s-wip fade" data-svc-link="orderup">
-        <div class="card-meta"><span class="code">LAB / ORDUP</span><span>In progress</span></div>
+      <a class="card s-wip reveal" data-svc-link="orderup">
+        <div class="card-meta"><span class="code">LAB / ORDUP</span><span class="stat">In progress</span></div>
         <h3>Order Up</h3>
         <p>Amazon purchase history in, AI-generated project and recipe ideas out. You already bought the parts — this tells you what they make.</p>
         <div class="card-foot"><span class="tag hot">App</span><span class="tag">React</span><span class="go">Open →</span></div>
       </a>
 
-      <a class="card s-live fade" href="/briefs/">
-        <div class="card-meta"><span class="code">LAB / BRIEF</span><span>Live</span></div>
+      <a class="card s-live reveal" href="/briefs/">
+        <div class="card-meta"><span class="code">LAB / BRIEF</span><span class="stat">Live</span></div>
         <h3>Communication Briefs</h3>
         <p>An editorial design study that treats fictional characters as serious communication theorists — rendered with complete sincerity and zero irony.</p>
         <div class="card-foot"><span class="tag hot">Creative</span><span class="tag">HTML</span><span class="go">Open →</span></div>
       </a>
 
-      <a class="card s-live fade" href="/prompt-library/">
-        <div class="card-meta"><span class="code">LAB / PRMPT</span><span>Live</span></div>
+      <a class="card s-live reveal" href="/prompt-library/">
+        <div class="card-meta"><span class="code">LAB / PRMPT</span><span class="stat">Live</span></div>
         <h3>Prompt Library</h3>
         <p>Slash commands, combo chains, and prompting techniques — maintained as a working reference, not a screenshot graveyard.</p>
         <div class="card-foot"><span class="tag hot">Reference</span><span class="tag">Claude</span><span class="go">Open →</span></div>
       </a>
 
-      <a class="card s-live fade" href="/claude-skills/firecrawl/SKILL.md">
-        <div class="card-meta"><span class="code">LAB / FCRWL</span><span>Live</span></div>
+      <a class="card s-live reveal" href="/claude-skills/firecrawl/SKILL.md">
+        <div class="card-meta"><span class="code">LAB / FCRWL</span><span class="stat">Live</span></div>
         <h3>Firecrawl Skill</h3>
         <p>Web research wired into consulting: EOL/EOS announcements, competitor signals, and compelling events scraped into clean, citable markdown.</p>
         <div class="card-foot"><span class="tag hot">Tooling</span><span class="tag">Research</span><span class="go">Open →</span></div>
       </a>
 
-      <a class="card s-live fade" href="/claude-artifacts/Artifacts/family-cookbook/">
-        <div class="card-meta"><span class="code">LAB / CKBK</span><span>Live</span></div>
+      <a class="card s-live reveal" href="/claude-artifacts/Artifacts/family-cookbook/">
+        <div class="card-meta"><span class="code">LAB / CKBK</span><span class="stat">Live</span></div>
         <h3>Family Cookbook</h3>
         <p>Three generations of recipes — oatmeal raisin cookies, sticky buns, rum cake, moonshine, and more — digitized with embedded photos and a live search filter.</p>
         <div class="card-foot"><span class="tag hot">Personal</span><span class="tag">HTML</span><span class="go">Open →</span></div>
       </a>
 
-      <a class="card s-live fade" href="/claude-artifacts/Artifacts/gigplot/">
-        <div class="card-meta"><span class="code">LAB / GIG</span><span>Live</span></div>
+      <a class="card s-live reveal" href="/claude-artifacts/Artifacts/gigplot/">
+        <div class="card-meta"><span class="code">LAB / GIG</span><span class="stat">Live</span></div>
         <h3>GigPlot</h3>
         <p>Stage plots and input lists for working bands. Drag-and-drop plot canvas, auto-numbered channels, monitor mixes — prints a venue-ready tech rider. One file, offline, no accounts.</p>
         <div class="card-foot"><span class="tag hot">App</span><span class="tag">HTML</span><span class="tag">Music</span><span class="go">Open →</span></div>
       </a>
 
       <!-- NAS-hosted: address injected from /services.json, which is NAS-only and gitignored. -->
-      <a class="card s-live fade" data-svc-link="groundwork">
-        <div class="card-meta"><span class="code">LAB / GNDWK</span><span>Live</span></div>
+      <a class="card s-live reveal" data-svc-link="groundwork">
+        <div class="card-meta"><span class="code">LAB / GNDWK</span><span class="stat">Live</span></div>
         <h3>Groundwork</h3>
         <p>A daily gratitude ritual. Three things you're grateful for, one person to appreciate, one intention for the day — then reflect with AI. Rescue mode for when things get hard.</p>
         <div class="card-foot"><span class="tag hot">App</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Claude</span><span class="go">Open →</span></div>
       </a>
 
       <!-- NAS-hosted: address injected from /services.json, which is NAS-only and gitignored. -->
-      <a class="card s-live fade" data-svc-link="bcdr">
-        <div class="card-meta"><span class="code">LAB / BCDR</span><span>Live</span></div>
+      <a class="card s-live reveal" data-svc-link="bcdr">
+        <div class="card-meta"><span class="code">LAB / BCDR</span><span class="stat">Live</span></div>
         <h3>BCDR Resilience Platform</h3>
         <p>Interactive prototype for enterprise business continuity, disaster recovery, and resilience posture analysis — dependency mapping, recovery orchestration, evidence tracking, and governance.</p>
         <div class="card-foot"><span class="tag hot">App</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">SQLite</span><span class="go">Open →</span></div>
       </a>
 
-      <a class="card s-live fade" href="http://localhost:5757">
-        <div class="card-meta"><span class="code">LAB / SWBD</span><span>Live</span></div>
+      <a class="card s-live reveal" href="http://localhost:5757">
+        <div class="card-meta"><span class="code">LAB / SWBD</span><span class="stat">Live</span></div>
         <h3>Switchboard</h3>
         <p>One hub for every project, topic, and AI CLI. Reads each repo's handoff state and launches Claude, Codex, Gemini, or Copilot at that project — any model picks up mid-thought. LEGO-brick UI built by Codex from a Claude spec.</p>
         <div class="card-foot"><span class="tag hot">App</span><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Multi-AI</span><span class="go">Open →</span></div>
       </a>
 
       <!-- NAS-hosted: address injected from /services.json, which is NAS-only and gitignored. -->
-      <a class="card s-live fade" data-svc-link="agentos">
-        <div class="card-meta"><span class="code">LAB / AGOS</span><span>Live</span></div>
+      <a class="card s-live reveal" data-svc-link="agentos">
+        <div class="card-meta"><span class="code">LAB / AGOS</span><span class="stat">Live</span></div>
         <h3>AgentOS</h3>
         <p>A desktop-style operating system for Claude agents — process table, message bus, cron scheduler, shared workspace. Agents talk to each other, run standing jobs, and live inside draggable windows with a dock.</p>
         <div class="card-foot"><span class="tag hot">App</span><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Claude</span><span class="go">Open →</span></div>
       </a>
 
       <!-- NAS-hosted: address injected from /services.json, which is NAS-only and gitignored. -->
-      <a class="card s-live fade" data-svc-link="lights">
-        <div class="card-meta"><span class="code">LAB / LGHT</span><span>Live</span></div>
+      <a class="card s-live reveal" data-svc-link="lights">
+        <div class="card-meta"><span class="code">LAB / LGHT</span><span class="stat">Live</span></div>
         <h3>Lights</h3>
         <p>One panel for two dead-end lighting systems — a Philips Hue bridge Signify end-of-lifed in 2020 and 22 WiZ bulbs and plugs. Talks the local APIs directly, so the abandoned hardware keeps working with no cloud and no vendor app. Colour, brightness, and recurring schedules that follow sunset rather than the clock — the sun times are computed on the box, so even the automation needs no internet. Stdlib Python, zero dependencies.</p>
         <div class="card-foot"><span class="tag hot">App</span><span class="tag">Python</span><span class="tag">Docker</span><span class="tag">IoT</span><span class="go">Open →</span></div>
       </a>
 
       <!-- NAS-hosted: address injected from /services.json, which is NAS-only and gitignored. -->
-      <a class="card s-live fade" data-svc-link="sense">
-        <div class="card-meta"><span class="code">LAB / SENSE</span><span>Live</span></div>
+      <a class="card s-live reveal" data-svc-link="sense">
+        <div class="card-meta"><span class="code">LAB / SENSE</span><span class="stat">Live</span></div>
         <h3>Sense Control</h3>
         <p>Whole-home energy intelligence on top of a Sense monitor. Live watts and per-device draw, a minute-by-minute history, and a waste finder that ranks always-on and overnight load by dollars a year. It also reports the house's smart-bulb power back to Sense as emulated Kasa plugs, so Sense stops lumping lighting into "Other". Claude answers plain-English questions about the data.</p>
         <div class="card-foot"><span class="tag hot">App</span><span class="tag">Python</span><span class="tag">Docker</span><span class="tag">Claude</span><span class="go">Open →</span></div>
@@ -641,8 +720,8 @@ footer .dot{color:var(--gold)}
            address of an intrusion-detection system and its honeypot tells an attacker
            exactly what is watching and where the decoys are. Injected from
            /services.json on the NAS. -->
-      <a class="card s-live fade" data-svc-link="tripwire">
-        <div class="card-meta"><span class="code">LAB / TRIP</span><span>Live</span></div>
+      <a class="card s-live reveal" data-svc-link="tripwire">
+        <div class="card-meta"><span class="code">LAB / TRIP</span><span class="stat">Live</span></div>
         <h3>Tripwire</h3>
         <p>Network intrusion detection and deception for a UniFi network. Reads the gateway's firewall log and the controller API, then runs SSH, telnet and HTTP decoys that nothing legitimate should ever touch — so every hit is signal. Captures each credential and keystroke, maps them to MITRE ATT&amp;CK, and clusters sessions by SSH client fingerprint to recognise one operator across rotating addresses. Records payload URLs; never fetches them.</p>
         <div class="card-foot"><span class="tag hot">Security</span><span class="tag">Python</span><span class="tag">Docker</span><span class="tag">UniFi</span><span class="go">Open →</span></div>
@@ -650,8 +729,8 @@ footer .dot{color:var(--gold)}
 
       <!-- localhost on purpose, like Switchboard: this app can run software updates,
            so it binds to 127.0.0.1 and only opens on the Mac it runs on. -->
-      <a class="card s-live fade" href="http://localhost:5920">
-        <div class="card-meta"><span class="code">LAB / BSTN</span><span>Live</span></div>
+      <a class="card s-live reveal" href="http://localhost:5920">
+        <div class="card-meta"><span class="code">LAB / BSTN</span><span class="stat">Live</span></div>
         <h3>Bastion</h3>
         <p>A vulnerability scanner for the home network, built on Nessus principles. Every device gets a port and service scan with safe checks only, CVE matching, and direct version checks against the device itself where it allows one. Each finding carries a plugin ID, a CVSS score and a fix. Scans run twice a day and are compared with the last one, so a device that shows up at night or a port someone opened and forgot is flagged as new. Pick devices and push updates where there's a local path to do it; everything else gets exact manual steps.</p>
         <div class="card-foot"><span class="tag hot">Security</span><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">nmap</span><span class="go">Open →</span></div>
@@ -659,79 +738,80 @@ footer .dot{color:var(--gold)}
 
       <!-- No href here on purpose: the vault's hostname is private and this repo is public.
            The link is injected from /services.json, which exists only on the NAS. -->
-      <a class="card s-live fade" data-svc-link="vault">
-        <div class="card-meta"><span class="code">LAB / VAULT</span><span>Live</span></div>
+      <a class="card s-live reveal" data-svc-link="vault">
+        <div class="card-meta"><span class="code">LAB / VAULT</span><span class="stat">Live</span></div>
         <h3>Vaultwarden</h3>
         <p>Self-hosted password vault — Bitwarden-compatible, running on the NAS behind a Tailscale node with a real Let's Encrypt cert. Nightly backups pulled off-box and integrity-checked. No third party holds the keys.</p>
         <div class="card-foot"><span class="tag hot">Infra</span><span class="tag">Docker</span><span class="tag">Tailscale</span><span class="go">Open →</span></div>
       </a>
 
       <!-- Mac-hosted: address injected from /services.json, which is NAS-only and gitignored. -->
-      <a class="card s-live fade" data-svc-link="continuity">
-        <div class="card-meta"><span class="code">LAB / CONT</span><span>Live</span></div>
+      <a class="card s-live reveal" data-svc-link="continuity">
+        <div class="card-meta"><span class="code">LAB / CONT</span><span class="stat">Live</span></div>
         <h3>Continuity</h3>
         <p>A resilience console for a one-person estate. Probes every self-hosted service and tells a dead service from a sleeping host, flags code that has drifted from what's deployed or was never backed up, and runs guards that grep for outages already paid for. Its first run found two production apps with no git repo at all.</p>
         <div class="card-foot"><span class="tag hot">Infra</span><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">BCDR</span><span class="go">Open →</span></div>
       </a>
 
-      <div class="card s-live fade">
-        <div class="card-meta"><span class="code">LAB / HWTCH</span><span>Live</span></div>
+      <div class="card s-live reveal">
+        <div class="card-meta"><span class="code">LAB / HWTCH</span><span class="stat">Live</span></div>
         <h3>host-watch</h3>
         <p>Emails when a LAN host or service goes down, and again when it comes back. A sleeping machine looks exactly like a dead one, and probing it wakes it up, so it retries inside a sweep before it pages anyone. One mail per outage, runs on the NAS, stdlib Python.</p>
         <div class="card-foot"><span class="tag hot">Infra</span><span class="tag">Python</span><span class="tag">Docker</span></div>
       </div>
 
       <!-- Mac-hosted: address injected from /services.json, which is NAS-only and gitignored. -->
-      <a class="card s-live fade" data-svc-link="tokencoach">
-        <div class="card-meta"><span class="code">LAB / TOKEN</span><span>Live</span></div>
+      <a class="card s-live reveal" data-svc-link="tokencoach">
+        <div class="card-meta"><span class="code">LAB / TOKEN</span><span class="stat">Live</span></div>
         <h3>Token Coach</h3>
         <p>Reads Claude Code session transcripts, prices every turn, and ranks the habits that waste tokens by dollars: long breaks that force a full re-cache, oversized contexts, routine work on the biggest model. Its first audit cut the cost of each scheduled-brief run by about half.</p>
         <div class="card-foot"><span class="tag hot">Tooling</span><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Claude</span><span class="go">Open →</span></div>
       </a>
 
       <!-- NAS-hosted: address injected from /services.json, which is NAS-only and gitignored. -->
-      <a class="card s-live fade" data-svc-link="gridiron">
-        <div class="card-meta"><span class="code">LAB / GRID</span><span>Live</span></div>
+      <a class="card s-live reveal" data-svc-link="gridiron">
+        <div class="card-meta"><span class="code">LAB / GRID</span><span class="stat">Live</span></div>
         <h3>Gridiron Edge</h3>
         <p>An NFL betting desk that argues with itself. Prices every game against the book, then blends the model 35/65 with the market rather than pretending it knows better — and flags the traps, like a line that moved four points away from the model while both quarterbacks were questionable. Weekly card of picks and parlays ranked by Kelly growth, player props off its own projections, a tracker that grades bets and closing-line value, and a checker that reads a typed bet or a photographed slip and tells you what it’s really worth.</p>
         <div class="card-foot"><span class="tag hot">App</span><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">SQLite</span><span class="tag">Claude</span><span class="go">Open →</span></div>
       </a>
 
       <!-- NAS-hosted: address injected from /services.json, which is NAS-only and gitignored. -->
-      <a class="card s-live fade" data-svc-link="coinscout">
-        <div class="card-meta"><span class="code">LAB / COIN</span><span>Live</span></div>
+      <a class="card s-live reveal" data-svc-link="coinscout">
+        <div class="card-meta"><span class="code">LAB / COIN</span><span class="stat">Live</span></div>
         <h3>Coin Scout</h3>
         <p>Photograph a handful of coins and get Keep, Check or Spend for each one. Claude only reads the coin: date, mint mark, series, visible errors. An auditable rules table decides what it's worth keeping, covering silver by date, key dates and mint marks, known varieties like the 2004-D Wisconsin extra leaf, and obsolete types, so a rarity is never something the model made up. It also holds the collection itself, with grade, quantity, album location, cost, value, cert numbers and photos, cropped per coin from the group shot.</p>
         <div class="card-foot"><span class="tag hot">App</span><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">SQLite</span><span class="tag">Claude</span><span class="go">Open →</span></div>
       </a>
 
       <!-- NAS-hosted: address injected from /services.json, which is NAS-only and gitignored. -->
-      <a class="card s-live fade" data-svc-link="cmdb">
-        <div class="card-meta"><span class="code">LAB / CMDB</span><span>Live</span></div>
+      <a class="card s-live reveal" data-svc-link="cmdb">
+        <div class="card-meta"><span class="code">LAB / CMDB</span><span class="stat">Live</span></div>
         <h3>CMDB</h3>
         <p>A hybrid CMDB and disaster-recovery planner on stock NetBox. Collectors discover the ESXi host, its VMs and every UniFi device, then reconcile them into one inventory without ever deleting anything on their own. Each application carries an owner, a tier, and recovery targets. A dependency graph answers "what breaks if this switch dies?" with the path that explains each hit. Grafana scores data quality and DR readiness, and a small portal lets owners fill in the business-impact data.</p>
         <div class="card-foot"><span class="tag hot">Infra</span><span class="tag">NetBox</span><span class="tag">Python</span><span class="tag">Grafana</span><span class="tag">BCDR</span><span class="go">Open →</span></div>
       </a>
     </div>
+    <p class="empty" id="lab-empty" hidden>Nothing on the bench matches that.</p>
   </div>
 </section>
 
 <section id="intel">
   <div class="wrap">
     <div class="eyebrow">03 / Intel</div>
-    <h2 class="fade">Daily signal,<br>always fresh.</h2>
-    <p class="section-note fade">Scheduled briefs that auto-refresh overnight — open any morning and the data is current.</p>
+    <h2 class="reveal">Daily signal,<br>always fresh.</h2>
+    <p class="section-note reveal">Scheduled briefs that auto-refresh overnight — open any morning and the data is current.</p>
 
     <div class="grid">
-      <a class="card s-live fade" href="/claude-artifacts/Artifacts/ai-daily-brief/">
-        <div class="card-meta"><span class="code">INT / BRIEF</span><span>Daily</span></div>
+      <a class="card s-live reveal" href="/claude-artifacts/Artifacts/ai-daily-brief/">
+        <div class="card-meta"><span class="code">INT / BRIEF</span><span class="stat">Daily</span></div>
         <h3>AI Daily Brief</h3>
         <p>Provider-by-provider AI updates, client alerts for BCP/DR consulting, trend tracking, and a 30-day watch list — scoped to what moves consulting work. Refreshes at 6 AM.</p>
         <div class="card-foot"><span class="tag hot">Research</span><span class="tag">AI</span><span class="tag">Consulting</span><span class="go">Open →</span></div>
       </a>
 
-      <a class="card s-live fade" href="/claude-artifacts/Artifacts/bcdr-ransomware-monitor/">
-        <div class="card-meta"><span class="code">INT / BCDR</span><span>Daily</span></div>
+      <a class="card s-live reveal" href="/claude-artifacts/Artifacts/bcdr-ransomware-monitor/">
+        <div class="card-meta"><span class="code">INT / BCDR</span><span class="stat">Daily</span></div>
         <h3>BCDR &amp; Ransomware Monitor</h3>
         <p>Global threat intelligence — ransomware victims, cloud and IT outages, active CISA advisories, and physical/natural BC events. Sourced from CISA, USGS, and industry feeds. Refreshes at 6:30 AM.</p>
         <div class="card-foot"><span class="tag hot">Research</span><span class="tag">Threat Intel</span><span class="tag">BCDR</span><span class="go">Open →</span></div>
@@ -745,15 +825,15 @@ footer .dot{color:var(--gold)}
     <div class="eyebrow">04 / About</div>
     <div class="about-grid">
       <div>
-        <h2 class="fade">One operator,<br>two consoles.</h2>
-        <p class="fade"><strong>Big Poppy Consulting is Chris Given</strong> — independent IT consultant in Alexandria, VA. The consulting work is infrastructure strategy: what to own, what to rent, when to refresh, and what it actually costs.</p>
-        <p class="fade">The rest of the time is spent at the other console — running sound and playing in <strong>OFB</strong>, and building the lab projects above. Same instinct in both rooms: listen to the signal, cut the noise, ship the mix.</p>
-        <p class="fade">This site is self-hosted on the home rack. If it's up, the lab is too.</p>
+        <h2 class="reveal">One operator,<br>two consoles.</h2>
+        <p class="reveal"><strong>Big Poppy Consulting is Chris Given</strong> — independent IT consultant in Alexandria, VA. The consulting work is infrastructure strategy: what to own, what to rent, when to refresh, and what it actually costs.</p>
+        <p class="reveal">The rest of the time is spent at the other console — running sound and playing in <strong>OFB</strong>, and building the lab projects above. Same instinct in both rooms: listen to the signal, cut the noise, ship the mix.</p>
+        <p class="reveal">This site is self-hosted on the home rack. If it's up, the lab is too.</p>
       </div>
-      <div class="contact fade">
+      <div class="contact reveal">
         <div class="eyebrow">Get in touch</div>
         <!-- TODO: drop real address into the mailto below -->
-        <a class="cta" href="mailto:">Email Chris</a>
+        <a class="btn primary" href="mailto:">Email Chris</a>
         <p class="alt">Alexandria, VA · Remote-friendly<br>Response inside one business day</p>
       </div>
     </div>
@@ -765,12 +845,27 @@ footer .dot{color:var(--gold)}
   <span>Self-hosted <span class="dot">●</span> ASUSTOR NAS <span class="dot">●</span> Alexandria, VA</span>
 </footer>
 
+<dialog class="cmdk" id="cmdk" aria-label="Jump to a project">
+  <div class="cmdk-in">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true" style="color:var(--faint)"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+    <input id="cmdk-q" type="text" placeholder="Jump to a project, brief or service…" autocomplete="off" spellcheck="false" aria-controls="cmdk-list">
+    <kbd>esc</kbd>
+  </div>
+  <ul id="cmdk-list" role="listbox"></ul>
+  <div class="hint"><span><kbd>↑</kbd> <kbd>↓</kbd> move</span><span><kbd>↵</kbd> open</span><span><kbd>/</kbd> or <kbd>⌘K</kbd> anywhere</span></div>
+</dialog>
+
 <script>
+const $=(s,r=document)=>r.querySelector(s);
+const $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const reduceMotion=matchMedia('(prefers-reduced-motion:reduce)').matches;
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
 // meter bridge bars
-(function(){
-  var m=document.getElementById('meters');
-  for(var i=0;i<48;i++){
-    var s=document.createElement('span');
+(()=>{
+  const m=$('#meters');
+  for(let i=0;i<64;i++){
+    const s=document.createElement('span');
     s.style.setProperty('--peak',(0.25+Math.random()*0.75).toFixed(2));
     s.style.animationDuration=(1.1+Math.random()*1.4).toFixed(2)+'s';
     s.style.animationDelay=(-Math.random()*2).toFixed(2)+'s';
@@ -778,91 +873,274 @@ footer .dot{color:var(--gold)}
   }
 })();
 
-// scroll reveal
-(function(){
-  var els=document.querySelectorAll('.fade:not(.in)');
-  if(!('IntersectionObserver' in window)){els.forEach(function(e){e.classList.add('in')});return}
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(en){
-      if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}
+// footer year + live clock on the status board
+$('#yr').textContent=new Date().getFullYear();
+(()=>{
+  const c=$('#clock');
+  const tick=()=>{const d=new Date();c.textContent=d.toISOString().slice(0,10)+' · '+d.toTimeString().slice(0,8)};
+  tick();setInterval(tick,1000);
+})();
+
+// count-up for KPI numbers
+function countTo(el,n){
+  if(reduceMotion){el.textContent=n;return}
+  const t0=performance.now(),dur=900;
+  const step=t=>{const p=Math.min(1,(t-t0)/dur);el.textContent=Math.round(n*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(step)};
+  requestAnimationFrame(step);
+}
+
+// ---------- card index (used by KPIs, filters and the palette) ----------
+const cards=$$('.card').map((el,i)=>{
+  const section=el.closest('section').id;
+  const hot=$('.tag.hot',el);
+  el.style.viewTransitionName='card-'+i;
+  return {
+    el,section,
+    title:$('h3',el).textContent.trim(),
+    code:$('.code',el).textContent.trim(),
+    status:el.classList.contains('s-wip')?'wip':el.classList.contains('s-engaged')?'engaged':'live',
+    cat:hot?hot.textContent.trim().toLowerCase():'',
+    text:el.textContent.toLowerCase().replace(/\s+/g,' ')
+  };
+});
+
+// hero pulse + SYS / LAB row, computed from the cards so they never go stale
+(()=>{
+  const lab=cards.filter(c=>c.section==='lab');
+  const live=lab.filter(c=>c.status==='live').length,wip=lab.length-live;
+  countTo($('#k-lab'),lab.length);
+  $('#k-lab-sub').textContent=live+' live · '+wip+' on the bench';
+  $('#k-lab-bar').innerHTML='<i style="width:'+(live/lab.length*100)+'%;background:var(--live)"></i><i style="width:'+(wip/lab.length*100)+'%;background:var(--wip)"></i>';
+  countTo($('#k-eng'),cards.filter(c=>c.status==='engaged').length);
+  countTo($('#k-intel'),cards.filter(c=>c.section==='intel').length);
+  const building=lab.filter(c=>c.status==='wip').map(c=>c.title.split(' — ')[0]);
+  if(building.length)$('#lab-det').textContent=building.join(' · ');
+})();
+
+// pointer spotlight on cards
+if(matchMedia('(hover:hover)').matches){
+  document.addEventListener('pointermove',e=>{
+    const c=e.target.closest&&e.target.closest('.card');
+    if(!c)return;
+    const r=c.getBoundingClientRect();
+    c.style.setProperty('--mx',(e.clientX-r.left)+'px');
+    c.style.setProperty('--my',(e.clientY-r.top)+'px');
+  },{passive:true});
+}
+
+// scrollspy for the nav
+(()=>{
+  const links=new Map($$('nav ul a').map(a=>[a.getAttribute('href').slice(1),a]));
+  const io=new IntersectionObserver(es=>{
+    es.forEach(e=>{
+      if(!e.isIntersecting)return;
+      links.forEach(a=>a.removeAttribute('aria-current'));
+      const a=links.get(e.target.id);
+      if(!a)return;
+      a.setAttribute('aria-current','true');
+      // Scroll only the nav strip (narrow screens) — scrollIntoView would move the page too.
+      const ul=a.closest('ul');
+      ul.scrollTo({left:a.offsetLeft-ul.clientWidth/2+a.offsetWidth/2,behavior:'smooth'});
     });
-  },{threshold:0.12});
-  els.forEach(function(e){io.observe(e)});
+  },{rootMargin:'-45% 0px -50% 0px'});
+  $$('section[id]').forEach(s=>io.observe(s));
+})();
+
+// ---------- Lab filters + search ----------
+(()=>{
+  const bar=$('#lab-filters');if(!bar)return;
+  const lab=cards.filter(c=>c.section==='lab');
+  const cats=[...new Set(lab.map(c=>c.cat))].filter(Boolean)
+    .sort((a,b)=>lab.filter(c=>c.cat===b).length-lab.filter(c=>c.cat===a).length);
+  const defs=[['all','All',lab.length],['live','Live',lab.filter(c=>c.status==='live').length],['wip','Building',lab.filter(c=>c.status==='wip').length]]
+    .concat(cats.map(c=>['cat:'+c,c,lab.filter(x=>x.cat===c).length]));
+  bar.insertAdjacentHTML('afterbegin',defs.map(([k,l,n],i)=>
+    '<button class="chip" type="button" data-f="'+esc(k)+'" aria-pressed="'+(i===0)+'">'+esc(l)+'<span class="n">'+n+'</span></button>').join(''));
+  let filter='all',q='';
+  const empty=$('#lab-empty');
+  function apply(){
+    let shown=0;
+    lab.forEach(c=>{
+      const okF=filter==='all'||(filter.startsWith('cat:')?c.cat===filter.slice(4):c.status===filter);
+      const ok=okF&&(!q||c.text.includes(q));
+      c.el.hidden=!ok;if(ok)shown++;
+    });
+    empty.hidden=shown>0;
+  }
+  const run=()=>document.startViewTransition&&!reduceMotion?document.startViewTransition(apply):apply();
+  bar.addEventListener('click',e=>{
+    const b=e.target.closest('.chip');if(!b)return;
+    $$('.chip',bar).forEach(x=>x.setAttribute('aria-pressed',x===b));
+    filter=b.dataset.f;run();
+  });
+  let t;
+  $('#lab-q').addEventListener('input',e=>{clearTimeout(t);t=setTimeout(()=>{q=e.target.value.trim().toLowerCase();run()},120)});
+})();
+
+// ---------- command palette ----------
+(()=>{
+  const dlg=$('#cmdk'),input=$('#cmdk-q'),list=$('#cmdk-list');
+  let items=[],sel=0;
+  const label={consulting:'Consulting',lab:'Lab',intel:'Intel'};
+  function render(){
+    const q=input.value.trim().toLowerCase();
+    items=cards.filter(c=>!q||c.text.includes(q)||c.code.toLowerCase().includes(q));
+    sel=Math.min(sel,Math.max(0,items.length-1));
+    list.innerHTML=items.length?items.map((c,i)=>
+      '<li><a role="option" data-i="'+i+'" aria-selected="'+(i===sel)+'"><span class="c">'+esc(c.code)+'</span><span class="t">'+esc(c.title)+'</span><span class="s">'+(c.el.getAttribute('href')?'Open ↗':label[c.section]||'')+'</span></a></li>').join('')
+      :'<li style="padding:18px;color:var(--faint);font-family:var(--mono);font-size:12px">No match</li>';
+  }
+  function go(c){
+    dlg.close();
+    const href=c.el.getAttribute('href');
+    if(href){location.href=href;return}
+    c.el.hidden=false;
+    c.el.scrollIntoView({behavior:reduceMotion?'auto':'smooth',block:'center'});
+    c.el.classList.remove('flash');void c.el.offsetWidth;c.el.classList.add('flash');
+  }
+  function open(){input.value='';sel=0;render();dlg.showModal();input.focus()}
+  $('#cmdk-open').addEventListener('click',open);
+  document.addEventListener('keydown',e=>{
+    if((e.key==='k'&&(e.metaKey||e.ctrlKey))||(e.key==='/'&&!/INPUT|TEXTAREA/.test(document.activeElement.tagName))){
+      e.preventDefault();dlg.open?dlg.close():open();
+    }
+  });
+  input.addEventListener('input',()=>{sel=0;render()});
+  input.addEventListener('keydown',e=>{
+    if(e.key==='ArrowDown'||e.key==='ArrowUp'){
+      e.preventDefault();sel=(sel+(e.key==='ArrowDown'?1:-1)+items.length)%Math.max(1,items.length);render();
+      $('[aria-selected="true"]',list)?.scrollIntoView({block:'nearest'});
+    }else if(e.key==='Enter'&&items[sel]){e.preventDefault();go(items[sel])}
+  });
+  list.addEventListener('click',e=>{const a=e.target.closest('[data-i]');if(a)go(items[+a.dataset.i])});
+  dlg.addEventListener('click',e=>{if(e.target===dlg)dlg.close()});
 })();
 
 // ---------- live service health ----------
 // Only runs on the LAN over plain HTTP. Off-network the hosts are unreachable and
 // every row would read DOWN, so the section stays hidden rather than lying.
 // Probes use mode:'no-cors' — the response is opaque, so this proves the port
-// answered, not what it said. A 401 is a healthy answer here.
-(function(){
-  var host=location.hostname;
-  var onLan=/^192\.168\./.test(host)||/^10\./.test(host)||/^172\.(1[6-9]|2\d|3[01])\./.test(host)
+// answered, not what it said. A 401 is a healthy answer here. Response time is
+// wall-clock for that opaque fetch, so treat it as a trend, not a benchmark.
+(()=>{
+  const host=location.hostname;
+  const onLan=/^192\.168\./.test(host)||/^10\./.test(host)||/^172\.(1[6-9]|2\d|3[01])\./.test(host)
             ||host==='localhost'||host==='127.0.0.1'||/\.local$/.test(host);
   if(!onLan||location.protocol!=='http:')return;
 
-  var board=document.querySelector('#status .board');
-  var summary=document.getElementById('svc-summary');
-  var rows=[];
-  var TIMEOUT=5000;
+  const TIMEOUT=5000,INTERVAL=30000,HIST_MAX=40,HIST_KEY='hub.probes.v1';
+  const grid=$('#svc-grid'),summary=$('#svc-summary'),next=$('#next');
+  let svcs=[],tiles=[],sweeping=false;
+
+  // Per-browser history only — a convenience for trend lines, never relied on.
+  let hist={};
+  try{hist=JSON.parse(localStorage.getItem(HIST_KEY))||{}}catch(e){}
+  const saveHist=()=>{try{localStorage.setItem(HIST_KEY,JSON.stringify(hist))}catch(e){}};
 
   function ping(url){
-    return new Promise(function(resolve){
-      var done=false;
-      var ctl=('AbortController' in window)?new AbortController():null;
-      var timer=setTimeout(function(){
-        if(done)return; done=true;
-        if(ctl)ctl.abort();
-        resolve(false);
-      },TIMEOUT);
+    return new Promise(resolve=>{
+      let done=false;
+      const ctl=new AbortController(),t0=performance.now();
+      const timer=setTimeout(()=>{if(done)return;done=true;ctl.abort();resolve({up:false,ms:null})},TIMEOUT);
       // credentials:'omit' matters — CouchDB (:5984) and ObsidianRemote (:39180)
       // both answer 401 with WWW-Authenticate: Basic. Chrome and Firefox suppress
       // auth dialogs for cross-origin subresources, but omitting credentials means
       // the browser never starts the negotiation in the first place.
-      var opts={mode:'no-cors',cache:'no-store',credentials:'omit',redirect:'follow'};
-      if(ctl)opts.signal=ctl.signal;
-      fetch(url+'?_='+Date.now(),opts).then(function(){
-        if(done)return; done=true; clearTimeout(timer); resolve(true);
-      }).catch(function(){
-        if(done)return; done=true; clearTimeout(timer); resolve(false);
-      });
+      fetch(url+'?_='+Date.now(),{mode:'no-cors',cache:'no-store',credentials:'omit',redirect:'follow',signal:ctl.signal})
+        .then(()=>{if(done)return;done=true;clearTimeout(timer);resolve({up:true,ms:Math.round(performance.now()-t0)})})
+        .catch(()=>{if(done)return;done=true;clearTimeout(timer);resolve({up:false,ms:null})});
     });
   }
 
-  function paint(row,up){
-    var st=row.querySelector('.st'),led=row.querySelector('.led'),lab=row.querySelector('.lab');
-    st.className='st '+(up?'live':'down');
-    led.className='led '+(up?'live':'down');
-    lab.textContent=up?'Up':'Down';
+  function spark(h){
+    const pts=h.filter(p=>p.up&&p.ms!=null);
+    if(pts.length<2)return '';
+    const W=110,H=30,max=Math.max(...pts.map(p=>p.ms))*1.1||1,n=h.length;
+    const xy=h.map((p,i)=>p.up&&p.ms!=null?[(i/(Math.max(1,n-1)))*W,H-(p.ms/max)*H]:null).filter(Boolean);
+    const line=xy.map(p=>p[0].toFixed(1)+','+p[1].toFixed(1)).join(' ');
+    return '<polygon class="area" points="'+xy[0][0].toFixed(1)+','+H+' '+line+' '+xy[xy.length-1][0].toFixed(1)+','+H+'"/><polyline points="'+line+'"/>';
   }
 
-  function sweep(){
-    Promise.all(rows.map(function(row){
-      return ping(row.getAttribute('data-url')).then(function(up){
-        paint(row,up);
-        return up;
-      });
-    })).then(function(results){
-      var up=results.filter(Boolean).length,total=results.length;
-      var t=new Date().toTimeString().slice(0,5);
-      summary.innerHTML='<span class="'+(up===total?'ok':'bad')+'">'+up+'/'+total+' up</span> &middot; '+t;
+  function build(){
+    grid.innerHTML=svcs.map((s,i)=>
+      '<article class="svc panel" data-i="'+i+'" data-state="probing">'
+      +'<div class="svc-top"><span class="led probing"></span><b>'+esc(s.name)+'</b><span class="port">'+esc(s.port||'')+'</span></div>'
+      +'<p class="det">'+esc(s.detail||'')+'</p>'
+      +'<div class="svc-mid"><span class="ms">—</span><svg class="spark" viewBox="0 0 110 30" preserveAspectRatio="none" aria-hidden="true"></svg></div>'
+      +'<div><div class="ticks" aria-hidden="true">'+'<i></i>'.repeat(HIST_MAX)+'</div>'
+      +'<div class="ticks-lbl"><span>older</span><span class="pct"></span><span>now</span></div></div>'
+      +'</article>').join('');
+    tiles=$$('.svc',grid);
+    svcs.forEach((s,i)=>paintTile(i,null));
+  }
+
+  function paintTile(i,res){
+    const s=svcs[i],el=tiles[i],h=hist[s.url]||[];
+    if(res){
+      el.dataset.state=res.up?'up':'down';
+      $('.led',el).className='led '+(res.up?'live':'down');
+      $('.ms',el).innerHTML=res.up?res.ms+'<small>ms</small>':'Down';
+    }
+    $('.spark',el).innerHTML=spark(h);
+    const ticks=$$('.ticks i',el),off=HIST_MAX-h.length;
+    ticks.forEach((t,k)=>{const p=h[k-off];t.className=p?(p.up?'u':'d'):''});
+    if(h.length){$('.pct',el).textContent=Math.round(h.filter(p=>p.up).length/h.length*100)+'%'}
+  }
+
+  // Lab cards whose link points at a probed service show its live state too.
+  function paintCards(results){
+    const byOrigin={};
+    svcs.forEach((s,i)=>{try{byOrigin[new URL(s.url).origin]=results[i]}catch(e){}});
+    cards.forEach(c=>{
+      const href=c.el.getAttribute('href');if(!href||!/^https?:/.test(href))return;
+      let r;try{r=byOrigin[new URL(href,location.href).origin]}catch(e){}
+      if(!r)return;
+      c.el.dataset.probe=r.up?'up':'down';
+      let p=$('.probe-ms',c.el);
+      if(!p){p=document.createElement('span');p.className='probe-ms';$('.card-meta',c.el).appendChild(p)}
+      p.textContent=r.up?r.ms+' ms':'DOWN';
+      p.style.color=r.up?'':'var(--down)';
     });
   }
 
-  function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){
-    return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];
-  })}
+  async function sweep(){
+    if(sweeping)return;sweeping=true;
+    next.classList.remove('run');
+    const now=Date.now();
+    const results=await Promise.all(svcs.map((s,i)=>ping(s.url).then(r=>{
+      const h=hist[s.url]=(hist[s.url]||[]);
+      h.push({t:now,up:r.up,ms:r.ms});
+      if(h.length>HIST_MAX)h.splice(0,h.length-HIST_MAX);
+      paintTile(i,r);
+      return r;
+    })));
+    saveHist();
+    sweeping=false;
 
-  function build(svcs){
-    board.insertAdjacentHTML('beforeend', svcs.map(function(s){
-      return '<div class="board-row" role="row" data-svc data-url="'+esc(s.url)+'">'
-        +'<span class="sys">'+esc(s.name)+'</span>'
-        +'<span class="det">'+esc(s.detail||'')+'</span>'
-        +'<span class="port">'+esc(s.port||'')+'</span>'
-        +'<span class="st probing"><span class="led probing"></span><span class="lab">&hellip;</span></span>'
-        +'</div>';
-    }).join(''));
-    rows=[].slice.call(document.querySelectorAll('#status [data-svc]'));
+    const up=results.filter(r=>r.up).length,total=results.length,ok=up===total;
+    const t=new Date().toTimeString().slice(0,5);
+    // gauge + KPIs
+    $('#g-val').style.strokeDashoffset=(213.6*(1-up/total)).toFixed(1);
+    $('#g-kpi').classList.toggle('bad',!ok);
+    $('#g-num').innerHTML=up+'<small>/ '+total+'</small>';
+    summary.textContent=(ok?'All services answering':(total-up)+' not answering')+' · '+t;
+    const ms=results.filter(r=>r.up).map(r=>r.ms).sort((a,b)=>a-b);
+    $('#d-med').innerHTML=ms.length?ms[Math.floor(ms.length/2)]+'<small>ms</small>':'—';
+    let all=0,good=0;svcs.forEach(s=>(hist[s.url]||[]).forEach(p=>{all++;if(p.up)good++}));
+    $('#d-up').innerHTML=all?(good/all*100).toFixed(1)+'<small>%</small>':'—';
+    $('#d-up-sub').textContent='last '+Math.max(...svcs.map(s=>(hist[s.url]||[]).length))+' sweeps, this browser';
+    const slow=results.map((r,i)=>[r,i]).filter(([r])=>r.up).sort((a,b)=>b[0].ms-a[0].ms)[0];
+    if(slow){$('#d-slow').textContent=svcs[slow[1]].name;$('#d-slow-sub').textContent=slow[0].ms+' ms'}
+    // hero echoes
+    $('#k-svc').innerHTML=up+'<small>/ '+total+' up</small>';
+    $('#k-svc').style.color=ok?'':'var(--down)';
+    $('#k-svc-sub').textContent=ok?'all answering · '+t:(total-up)+' down · '+t;
+    $('#k-svc-bar').innerHTML='<i style="width:'+(up/total*100)+'%;background:var(--live)"></i><i style="width:'+((total-up)/total*100)+'%;background:var(--down)"></i>';
+    $('#svc-row-det').textContent=ok?total+' services answering':svcs.filter((s,i)=>!results[i].up).map(s=>s.name).join(' · ')+' not answering';
+    const st=$('#svc-row-st');st.className='st '+(ok?'live':'down');
+    st.innerHTML='<span class="led '+(ok?'live':'down')+'"></span>'+(ok?'Nominal':'Degraded');
+    paintCards(results);
+    void next.offsetWidth;next.classList.add('run');
   }
 
   // The service list is deliberately NOT in this file. index.html lives in a public
@@ -870,87 +1148,63 @@ footer .dot{color:var(--gold)}
   // services.json is served only from the NAS and is gitignored, so off-network this
   // fetch 404s and the section never appears.
   fetch('/services.json',{cache:'no-store'})
-    .then(function(r){if(!r.ok)throw 0;return r.json()})
-    .then(function(cfg){
+    .then(r=>{if(!r.ok)throw 0;return r.json()})
+    .then(cfg=>{
       // Private URLs for Lab cards live here too, so the public HTML never carries them.
       // Off-network this fetch fails and those cards simply stay unclickable.
-      var links=(cfg&&cfg.links)||{};
-      Array.prototype.forEach.call(document.querySelectorAll('[data-svc-link]'),function(el){
-        var u=links[el.getAttribute('data-svc-link')];
-        if(u)el.setAttribute('href',u);
-      });
+      const links=(cfg&&cfg.links)||{};
+      $$('[data-svc-link]').forEach(el=>{const u=links[el.getAttribute('data-svc-link')];if(u)el.setAttribute('href',u)});
 
-      var svcs=(cfg&&cfg.services)||[];
+      svcs=(cfg&&cfg.services)||[];
       if(!svcs.length)throw 0;
-      if(cfg.label)document.getElementById('svc-origin').textContent=cfg.label;
-      document.getElementById('status').hidden=false;
-      document.getElementById('nav-status').hidden=false;
-      build(svcs);
+      if(cfg.label)$('#svc-origin').textContent=cfg.label;
+      next.style.setProperty('--interval',INTERVAL+'ms');
+      $('#status').hidden=false;
+      $('#nav-status').hidden=false;
+      $('#svc-row').hidden=false;
+      build();
       sweep();
-      setInterval(sweep,30000);
+      setInterval(sweep,INTERVAL);
+      $('#sweep-now').addEventListener('click',sweep);
       // A laptop waking from sleep should not show stale greens.
-      document.addEventListener('visibilitychange',function(){if(!document.hidden)sweep()});
+      document.addEventListener('visibilitychange',()=>{if(!document.hidden)sweep()});
     })
-    .catch(function(){/* no services.json — stay hidden */});
+    .catch(()=>{$('#k-svc-tile .k-sub').textContent='live board on the home network only'});
 })();
-
-// footer year + board stamp
-document.getElementById('yr').textContent=new Date().getFullYear();
-document.getElementById('stamp').textContent=new Date().toISOString().slice(0,10);
 
 // GitHub repo sync check — compares the ref the NAS clone actually has
 // (served from its own .git dir) against the latest commit on GitHub.
 // No hardcoded SHA to maintain on each push.
-(function(){
-  var det=document.getElementById('repo-det');
-  var led=document.getElementById('repo-led');
-  var lbl=document.getElementById('repo-label');
-  var st=document.getElementById('repo-st');
-  function localRef(){
-    return fetch('/claude-artifacts/.git/refs/heads/main',{cache:'no-store'})
-      .then(function(r){if(!r.ok)throw 0;return r.text()})
-      .catch(function(){
-        // ref may be packed after git gc
-        return fetch('/claude-artifacts/.git/packed-refs',{cache:'no-store'})
-          .then(function(r){if(!r.ok)throw 0;return r.text()})
-          .then(function(t){
-            var m=t.split('\n').filter(function(l){return l.indexOf('refs/heads/main')>-1})[0];
-            if(!m)throw 0;
-            return m.split(' ')[0];
-          });
-      })
-      .then(function(t){return t.trim()});
-  }
+(()=>{
+  const det=$('#repo-det'),led=$('#repo-led'),lbl=$('#repo-label'),st=$('#repo-st');
+  const localRef=()=>fetch('/claude-artifacts/.git/refs/heads/main',{cache:'no-store'})
+    .then(r=>{if(!r.ok)throw 0;return r.text()})
+    .catch(()=>
+      // ref may be packed after git gc
+      fetch('/claude-artifacts/.git/packed-refs',{cache:'no-store'})
+        .then(r=>{if(!r.ok)throw 0;return r.text()})
+        .then(t=>{const m=t.split('\n').find(l=>l.includes('refs/heads/main'));if(!m)throw 0;return m.split(' ')[0]}))
+    .then(t=>t.trim());
   Promise.all([
-    fetch('https://api.github.com/repos/chrisgiven/claude-artifacts/commits/main',{headers:{'Accept':'application/vnd.github.v3+json'}})
-      .then(function(r){return r.json()}),
+    fetch('https://api.github.com/repos/chrisgiven/claude-artifacts/commits/main',{headers:{'Accept':'application/vnd.github.v3+json'}}).then(r=>r.json()),
     localRef()
-  ])
-    .then(function(res){
-      var d=res[0];
-      var DEPLOYED=res[1];
-      var sha=d.sha||'';
-      var msg=(d.commit&&d.commit.message||'').split('\n')[0].slice(0,60);
-      var date=d.commit&&d.commit.committer&&d.commit.committer.date||'';
-      var age=date?Math.round((Date.now()-new Date(date))/60000)+'m ago':'';
-      var inSync=sha.startsWith(DEPLOYED.slice(0,7));
-      det.textContent=sha.slice(0,7)+' · '+msg+(age?' · '+age:'');
-      if(inSync){
-        led.className='led live';
-        st.className='st live';
-        lbl.textContent='In Sync';
-      } else {
-        led.className='led wip';
-        st.className='st wip';
-        lbl.textContent='Behind';
-        det.textContent+=' ← NAS behind';
-      }
-    })
-    .catch(function(){
-      det.textContent='Status unavailable';
-      led.className='led concept';
-      lbl.textContent='Unknown';
-    });
+  ]).then(([d,DEPLOYED])=>{
+    const sha=d.sha||'';
+    const msg=(d.commit?.message||'').split('\n')[0].slice(0,60);
+    const date=d.commit?.committer?.date||'';
+    let age='';
+    if(date){const m=Math.round((Date.now()-new Date(date))/60000);age=m<60?m+'m ago':m<1440?Math.round(m/60)+'h ago':Math.round(m/1440)+'d ago'}
+    const inSync=sha.startsWith(DEPLOYED.slice(0,7));
+    det.textContent=sha.slice(0,7)+' · '+msg+(age?' · '+age:'');
+    led.className='led '+(inSync?'live':'wip');
+    st.className='st '+(inSync?'live':'wip');
+    lbl.textContent=inSync?'In Sync':'Behind';
+    if(!inSync)det.textContent+=' ← NAS behind';
+  }).catch(()=>{
+    det.textContent='Status unavailable';
+    led.className='led concept';
+    lbl.textContent='Unknown';
+  });
 })();
 </script>
 </body>

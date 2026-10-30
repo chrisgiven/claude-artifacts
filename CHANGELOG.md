@@ -1,5 +1,25 @@
 # Changelog
 
+## [1.4.0] - 2026-10-29
+
+### Changed
+- **Hub redesign.** Same Big Poppy identity (amber on near-black, Bricolage / Instrument Sans / Spline Sans Mono), rebuilt on current CSS: cascade layers, `color-mix()`, gradient-edged glass panels, container queries on cards, `text-wrap: balance/pretty`, and scroll-driven reveal and progress bar (`animation-timeline`) with no JS fallback needed — unsupported browsers just show everything
+- Hero is now two columns: headline + CTAs beside the live system board, which gains a ticking clock and, on the LAN, a **SYS / NETWORK** row summarising the probe results
+- New **pulse strip** of KPI tiles: lab projects (live vs. bench bar), active engagements, daily briefs, services up. Counts are computed from the cards, so they never go stale; the SYS / LAB row now lists the cards marked in-progress automatically
+
+### Added
+- **Status is now a dashboard**: reachable gauge, median response time, observed uptime, slowest service, and a tile per service with response time, a sparkline and a 40-sweep up/down history bar. "Sweep now" button and a countdown to the next sweep. History is kept in `localStorage` (per browser, best-effort)
+- Lab cards that link to a probed service show its live state and response time in the card header, and turn red when it is down
+- Lab **filter chips** (status + category) and search, animated with the View Transitions API where available
+- **⌘K / `/` jump palette** over every card: opens the link, or scrolls to and highlights cards that have none
+- Scrollspy highlights the current section in the nav
+
+### Fixed
+- The Status nav item no longer has to be hidden on phones — the nav scrolls horizontally instead of overflowing the page
+
+### Notes
+- Privacy model unchanged: still no LAN address in the tracked tree; `services.json` (NAS-only) supplies both the service list and private card links
+
 ## [1.3.0] - 2026-08-07
 
 ### Security
