@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.1] - 2026-10-29
+
+### Changed
+- **Light theme is now the default**: warm cream page, white panels, deeper amber accents and darker status colours tuned for contrast on white. The previous look felt too dark
+- Dark theme kept behind a sun/moon toggle in the nav (choice saved per browser as `hub.theme`, applied before first paint so there is no flash), and lifted slightly brighter than 1.4.0
+- Shadows, glows and the palette backdrop now come from theme tokens instead of hard-coded black
+
 ## [1.4.0] - 2026-10-29
 
 ### Changed

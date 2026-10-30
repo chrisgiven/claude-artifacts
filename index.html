@@ -3,8 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="color-scheme" content="dark">
-<meta name="theme-color" content="#0d0b09">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#f8f4ec">
+<script>
+// Apply the saved theme before first paint so there is no flash.
+try{if(localStorage.getItem('hub.theme')==='dark')document.documentElement.dataset.theme='dark'}catch(e){}
+</script>
 <title>Big Poppy Consulting — Signal Over Noise</title>
 <meta name="description" content="Independent IT consulting and a self-hosted lab. Infrastructure strategy, TCO analysis, lifecycle planning — plus the experiments, running live.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -20,23 +24,50 @@
 }
 
 @layer tokens{
+  /* Light is the default; dark is opt-in via the nav toggle (remembered per browser). */
   :root{
-    --void:#0d0b09;
-    --panel:#17140f;
-    --panel-2:#201c16;
-    --line:#2e2820;
-    --line-soft:#231e18;
-    --ink:#efe8d9;
-    --muted:#a39885;
-    --faint:#6f665a;
-    --gold:#d8a74c;
-    --gold-hi:#f0c46e;
-    --gold-dim:#8a6c34;
-    --live:#5cc781;
-    --wip:#e0a33c;
-    --concept:#8b9be6;
-    --down:#e5594b;
-    --glass:color-mix(in oklab,var(--panel) 72%,transparent);
+    color-scheme:light;
+    --void:#f8f4ec;
+    --panel:#ffffff;
+    --panel-2:#fdf9f1;
+    --line:#e6dccb;
+    --line-soft:#efe8dc;
+    --ink:#1f1b14;
+    --muted:#5c5445;
+    --faint:#8a7f6b;
+    --gold:#a96d0e;
+    --gold-hi:#e09b2d;
+    --gold-dim:#e2c48e;
+    --live:#1e9a52;
+    --wip:#c27a08;
+    --concept:#4f5fd1;
+    --down:#d43a2c;
+    --shadow:rgba(80,55,20,.18);
+    --glow:color-mix(in oklab,#f0a531 22%,transparent);
+    --glow-2:color-mix(in oklab,#6fb6e8 16%,transparent);
+  }
+  :root[data-theme="dark"]{
+    color-scheme:dark;
+    --void:#121009;
+    --panel:#1c1913;
+    --panel-2:#25211a;
+    --line:#352e24;
+    --line-soft:#29231c;
+    --ink:#f3ecdd;
+    --muted:#b5aa94;
+    --faint:#7d7364;
+    --gold:#e2b057;
+    --gold-hi:#f6cd7a;
+    --gold-dim:#8f7038;
+    --live:#62d08a;
+    --wip:#e8ab44;
+    --concept:#97a6f0;
+    --down:#ec6253;
+    --shadow:rgba(0,0,0,.7);
+    --glow:color-mix(in oklab,#e2b057 18%,transparent);
+    --glow-2:color-mix(in oklab,#97a6f0 9%,transparent);
+  }
+  :root{
     --edge:linear-gradient(160deg,color-mix(in oklab,var(--gold) 38%,transparent),var(--line) 38%,var(--line-soft));
     --radius:14px;
     --maxw:1200px;
@@ -63,8 +94,8 @@
     content:"";
     position:fixed;inset:0;z-index:-1;pointer-events:none;
     background:
-      radial-gradient(60rem 36rem at 78% -8%,color-mix(in oklab,var(--gold) 16%,transparent),transparent 70%),
-      radial-gradient(40rem 30rem at -10% 30%,color-mix(in oklab,var(--concept) 7%,transparent),transparent 70%),
+      radial-gradient(60rem 36rem at 78% -8%,var(--glow),transparent 70%),
+      radial-gradient(40rem 30rem at -10% 30%,var(--glow-2),transparent 70%),
       linear-gradient(var(--line-soft) 1px,transparent 1px) 0 0/56px 56px,
       linear-gradient(90deg,var(--line-soft) 1px,transparent 1px) 0 0/56px 56px;
     mask-image:linear-gradient(to bottom,#000 0%,rgba(0,0,0,.35) 60%,transparent 100%);
@@ -154,7 +185,7 @@
   }
   .hero h1 em{
     font-style:normal;
-    background:linear-gradient(100deg,var(--gold-dim),var(--gold-hi) 45%,var(--gold));
+    background:linear-gradient(100deg,var(--gold),var(--gold-hi) 50%,var(--gold));
     -webkit-background-clip:text;background-clip:text;color:transparent;
   }
   .hero .lede{margin-top:24px;max-width:52ch;font-size:clamp(16px,1.5vw,19px);color:var(--muted);text-wrap:pretty}
@@ -168,7 +199,7 @@
   }
   .btn:hover{transform:translateY(-2px);border-color:var(--gold-dim)}
   .btn.primary{background:var(--gold);color:var(--void);border-color:var(--gold)}
-  .btn.primary:hover{background:var(--gold-hi)}
+  .btn.primary:hover{background:color-mix(in oklab,var(--gold) 85%,var(--ink))}
 
   /* status board */
   .board{overflow:hidden}
@@ -290,7 +321,9 @@
     background:radial-gradient(420px circle at var(--mx,50%) var(--my,0%),color-mix(in oklab,var(--gold) 11%,transparent),transparent 60%);
   }
   .card:hover::after{opacity:1}
-  a.card[href]:hover{transform:translateY(-3px);box-shadow:0 18px 40px -20px rgba(0,0,0,.7),0 0 0 1px var(--gold-dim)}
+  a.card[href]:hover{transform:translateY(-3px);box-shadow:0 18px 40px -20px var(--shadow),0 0 0 1px var(--gold-dim)}
+  .panel,.card{box-shadow:0 1px 2px var(--shadow)}
+  :root[data-theme="dark"] :is(.panel,.card){box-shadow:none}
   /* Cards whose URL is private get their href injected from /services.json at runtime.
      Until (or unless) that happens they are plain, unclickable panels. */
   a.card:not([href]) .go{display:none}
@@ -341,9 +374,12 @@
   dialog.cmdk{
     margin:12vh auto auto;width:min(620px,calc(100% - 32px));max-height:70vh;
     border:1px solid var(--line);border-radius:16px;background:var(--panel);color:var(--ink);
-    box-shadow:0 40px 80px -20px rgba(0,0,0,.8);overflow:hidden;
+    box-shadow:0 40px 80px -20px var(--shadow);overflow:hidden;
   }
-  dialog.cmdk::backdrop{background:rgba(5,4,3,.6);backdrop-filter:blur(4px)}
+  dialog.cmdk::backdrop{background:color-mix(in oklab,var(--ink) 35%,transparent);backdrop-filter:blur(4px)}
+  .theme-btn{width:34px;height:30px;justify-content:center;padding:0}
+  .theme-btn .moon,:root[data-theme="dark"] .theme-btn .sun{display:none}
+  :root[data-theme="dark"] .theme-btn .moon{display:block}
   dialog.cmdk[open]{display:flex;flex-direction:column;animation:pop .18s ease}
   @keyframes pop{from{opacity:0;transform:translateY(8px) scale(.98)}}
   .cmdk-in{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--line-soft)}
@@ -415,6 +451,10 @@
   <button class="kbd-btn" id="cmdk-open" type="button" aria-label="Jump to a project">
     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
     <span class="lbl">Jump to</span><kbd>⌘K</kbd>
+  </button>
+  <button class="kbd-btn theme-btn" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+    <svg class="sun" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+    <svg class="moon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
   </button>
 </nav>
 
@@ -871,6 +911,21 @@ const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&g
     s.style.animationDelay=(-Math.random()*2).toFixed(2)+'s';
     m.appendChild(s);
   }
+})();
+
+// light / dark toggle
+(()=>{
+  const root=document.documentElement,meta=$('meta[name="theme-color"]');
+  const sync=()=>{const d=root.dataset.theme==='dark';meta.content=d?'#121009':'#f8f4ec';$('#theme-toggle').setAttribute('aria-pressed',d)};
+  sync();
+  $('#theme-toggle').addEventListener('click',()=>{
+    const flip=()=>{
+      if(root.dataset.theme==='dark')delete root.dataset.theme;else root.dataset.theme='dark';
+      try{localStorage.setItem('hub.theme',root.dataset.theme||'light')}catch(e){}
+      sync();
+    };
+    document.startViewTransition&&!reduceMotion?document.startViewTransition(flip):flip();
+  });
 })();
 
 // footer year + live clock on the status board
