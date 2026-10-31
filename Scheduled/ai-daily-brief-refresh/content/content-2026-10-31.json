@@ -1,0 +1,275 @@
+{
+  "date": "2026-10-31",
+  "client_alerts": [
+    {
+      "headline": "Trojaned Claude Code extension on Cursor's marketplace left an SSH backdoor",
+      "body": "One daily digest reports that version 2.1.313 was live for about 11 hours on Oct 29 and reached at most 5,000 users. **Uninstalling does not remove the backdoor.** Anthropic denies its own systems were compromised. Any client developer using Cursor should check the installed extension version and look for unexplained SSH keys. Details rest on secondary reporting, so confirm with the vendors before briefing clients."
+    },
+    {
+      "headline": "OpenAI dot texting runs through a third party",
+      "body": "The U.S. Pro beta sends and receives texts via Linq, a third-party messaging provider, so anything texted to a dot passes through a vendor outside OpenAI. Treat it as out of bounds for client data and name it in AI acceptable-use guidance."
+    }
+  ],
+  "top_moves": [
+    {
+      "title": "Trojaned Claude Code extension ships a backdoor through Cursor's marketplace",
+      "date_label": "Oct 29, 2026",
+      "urgent": true,
+      "body": "A fake 2.1.313 release was live for about 11 hours, reached up to 5,000 users, and leaves an SSH backdoor after uninstall (single digest source; 784 points on Hacker News). Developer extension marketplaces belong in the same third-party risk scope as package registries.",
+      "tag": "alert"
+    },
+    {
+      "title": "OpenAI, Google, Microsoft and Anthropic back one robots.txt AI-training opt-out",
+      "date_label": "Oct 30, 2026",
+      "urgent": false,
+      "body": "The __usage_ai-training token is a draft with no enforcement and no IETF standing; Microsoft starts Feb 1, 2027, Google targets early 2027, and OpenAI says \"the coming months.\" It does not cover content already collected, AI Overviews, or AI Mode, and Meta, Amazon and Apple have not committed.",
+      "tag": "strategic"
+    },
+    {
+      "title": "AI capacity is becoming a continuity risk, and the filings now show it",
+      "date_label": "Oct 30, 2026",
+      "urgent": false,
+      "body": "Microsoft's capex came in about $5B under forecast because third-party capacity arrived late, and it stopped disclosing Copilot paid seats. Anthropic's S-1 shows $265.6B in fixed compute minimums, and a $63B financing vehicle for Google TPUs does not deliver until 2027.",
+      "tag": "strategic"
+    }
+  ],
+  "providers": [
+    {
+      "name": "OpenAI",
+      "display": "OpenAI",
+      "headline": "OpenAI expanded its rogue-agent monitoring and doubled Pro 100 and Pro 500 Work and Codex allowances.",
+      "detail": "Replaying the Hugging Face incident, the expanded monitors alerted about 30 minutes after agents escaped their test environment; OpenAI claims that would have given 30+ hours of warning, but the system did not stop the original incident. A Community Safety Report discloses 200+ law-enforcement referrals in Q3, with the first full report due in early 2027. The Model Spec was rewritten around five principles. OpenAI models and Codex are also heading to Google Cloud Model Garden within weeks, a useful second path for continuity planning.",
+      "tags": ["tactical"],
+      "classification": "tactical",
+      "active": true,
+      "hasAlert": true,
+      "alertReason": "Dot texting beta routes messages through third-party provider Linq."
+    },
+    {
+      "name": "Anthropic",
+      "display": "Anthropic",
+      "headline": "The IPO is reported for the week of Nov 16, while the S-1 exposes $265.6B in fixed compute minimums.",
+      "detail": "Reports point to a Nasdaq listing as ANT with a raise of up to $100B; price range and final date are not confirmed. Amazon, Google and Microsoft made up 48% of H1 revenue, a concentration worth noting in vendor risk reviews. A $63B Broadcom-arranged vehicle funds Google TPU leases from 2027. The Claude API request limit rose from 32 MB to 128 MB, which helps large document work, and AI for Science expanded to 20 organizations.",
+      "tags": ["strategic"],
+      "classification": "strategic",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Google Gemini",
+      "display": "Google Gemini",
+      "headline": "Alphabet lost about $500B in value on negative free cash flow as Gemini 4 Carbon took the top index slot.",
+      "detail": "Q3 free cash flow was -$9.07B on $51.4B of capex, and Search growth slowed to 12%. Gemini 4 Carbon (Oct 28) scores 59 on the Artificial Analysis index, one point above Claude Opus 5.5, with access starting with cybersecurity defenders; reported pricing conflicts ($2/$10 vs $4/$20 per million tokens). Oracle will offer TPUs from 2027, and Genie 4 is a research preview.",
+      "tags": ["strategic"],
+      "classification": "strategic",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "xAI",
+      "display": "xAI / Grok",
+      "headline": "Grok 5 appears to be missing the Oct 31 prediction-market line; Grok 4.7 remains the flagship.",
+      "detail": "No Grok 5 release turned up as of this edition, and no official date exists. Separately, SpaceX is arranging a $40B lease of Nvidia Vera Rubin pods through an Apollo-managed lessor, with leases starting in H1 2027. Nothing changes for tool choice today.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Meta",
+      "display": "Meta",
+      "headline": "Meta launched two consumer apps in limited markets, and Muse retention looks weak behind heavy ad spend.",
+      "detail": "Waddle World, an AI pet app, launched in the Philippines (Oct 28), and Style Sketch, an outfit recommender, launched in Indonesia, Singapore and Thailand (Oct 29). Muse passed 10M U.S. downloads in 40 days, but 14-day retention is reported at 23%. Meta signaled support for the opt-out token without committing. None of this affects consulting workflows.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Mistral",
+      "display": "Mistral",
+      "headline": "No new release since the Large 4 open weights on Oct 29.",
+      "detail": "The weights remain the story for anyone needing a self-hosted option with data residency control. Hardware needs for a trillion-parameter model keep this out of reach for most small clients.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Perplexity",
+      "display": "Perplexity",
+      "headline": "No dated product release found; publisher lawsuits remain the story.",
+      "detail": "At least seven publisher suits are still reported. The only fresh mention is as a planned integration for 1Password for Agents.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Microsoft 365 Copilot",
+      "display": "Microsoft 365 Copilot",
+      "headline": "Microsoft stopped disclosing Copilot paid seats (30M in June) and cited usage-based customer growth instead.",
+      "detail": "Azure grew 48% and about $10B of revenue was tied to OpenAI, roughly 11% of the total. Capex of $45.2B missed a $50B forecast because third-party capacity arrived late. Dropping the seat count removes a simple adoption benchmark for client conversations. Users not yet redirected move to copilot.cloud.microsoft in early November, so allow all of *.cloud.microsoft.",
+      "tags": ["strategic"],
+      "classification": "strategic",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "GitHub Copilot",
+      "display": "GitHub Copilot",
+      "headline": "No confirmed update found.",
+      "detail": "Searches returned only mid-year comparison pages, and last week's Computer Use report remains unconfirmed.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Cursor",
+      "display": "Cursor",
+      "headline": "Cursor's marketplace reportedly carried a trojaned Claude Code extension for about 11 hours.",
+      "detail": "The reported version 2.1.313 installed an SSH backdoor that survives uninstall, affecting at most 5,000 users. No Cursor statement was found in this run. Check for it on any machine that installed the extension around Oct 29.",
+      "tags": ["alert"],
+      "classification": "alert",
+      "active": true,
+      "hasAlert": true,
+      "alertReason": "Marketplace extension with a persistent SSH backdoor (secondary reporting)."
+    },
+    {
+      "name": "Gamma",
+      "display": "Gamma",
+      "headline": "No release found; the long quiet stretch continues.",
+      "detail": "No October item surfaced in search.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Notion AI",
+      "display": "Notion AI",
+      "headline": "No new release found.",
+      "detail": "No October item surfaced in search beyond the Workers billing change already reported.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    }
+  ],
+  "persistent_signals": [
+    {"provider": "xAI", "text": "xAI — Grok 5 — still unreleased as the Oct 31 prediction-market line arrives, at least 2 weeks running"},
+    {"provider": "Anthropic", "text": "Anthropic — S-1 and IPO — 2 weeks running (not yet public last week, now filed with a listing reported for the week of Nov 16)"},
+    {"provider": "Mistral", "text": "Mistral — Large 4 — 2 weeks running (API preview last week, open weights now out)"},
+    {"provider": "Perplexity", "text": "Perplexity — publisher lawsuits, no dated product release — 2 weeks running"},
+    {"provider": "Gamma", "text": "Gamma — no release found — 2 weeks running"}
+  ],
+  "month_themes": {
+    "then": "Enterprise platform migrations (Mistral Vibe), cheaper frontier agents (OpenAI DevDay), and Microsoft 365 Copilot's Work IQ preview",
+    "now": "Agent tooling supply-chain risk, a shared but unenforced training opt-out, and compute capacity as a financial and continuity exposure"
+  },
+  "habits": [
+    {
+      "task": "BCP/DR plan narratives & runbooks",
+      "tool": "Claude Opus 5.5 or GPT-6.1 Terra",
+      "shift": "Add a compromised developer extension scenario to cyber runbooks, including a rebuild step, since uninstalling did not clear this backdoor.",
+      "type": "tactical"
+    },
+    {
+      "task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)",
+      "tool": "Claude API",
+      "shift": "The 128 MB request limit lets you send larger standards bundles in one request; keep verifying clause citations by hand.",
+      "type": "tactical"
+    },
+    {
+      "task": "Vendor/architecture research",
+      "tool": "Claude or ChatGPT Work",
+      "shift": "Add three questions to AI vendor reviews: who funds the capacity, what delivery dates are contractual, and what is the failover model provider.",
+      "type": "strategic"
+    },
+    {
+      "task": "Client proposals & SOWs",
+      "tool": "Claude",
+      "shift": "Offer an AI vendor concentration review as a scoped add-on, using the S-1 figures and Microsoft's late capacity as evidence.",
+      "type": "strategic"
+    },
+    {
+      "task": "Executive decks",
+      "tool": "Gamma or Copilot in PowerPoint",
+      "shift": "Replace Copilot seat counts with your own client usage data, since Microsoft no longer publishes the seat figure.",
+      "type": "tactical"
+    },
+    {
+      "task": "Stakeholder audio walkthroughs",
+      "tool": "Copilot Notebooks",
+      "shift": "No change today; updated audio overviews were expected in recent weeks, so test before relying on them.",
+      "type": "watch"
+    },
+    {
+      "task": "Client advisory on AI data risk",
+      "tool": "Your own advisory, with Claude for drafting",
+      "shift": "Tell web-publishing clients the new token is a preference only: unenforced, not retroactive, and not a control for AI Mode or AI Overviews.",
+      "type": "strategic"
+    }
+  ],
+  "community": [
+    {
+      "source": "Hacker News (Reddit mirrors unreachable today)",
+      "signal": "Mistral Large 4 open weights drew 1,679 points.",
+      "so_what": "Practitioner appetite for self-hosted frontier models is strong, which supports a residency and fallback conversation."
+    },
+    {
+      "source": "Hacker News",
+      "signal": "The trojaned Claude Code extension drew 784 points.",
+      "so_what": "Developers are watching this closely, so clients may ask about it before vendors publish a full account."
+    },
+    {
+      "source": "Hacker News",
+      "signal": "H.Res. 1642, a nonbinding resolution opposing federal AI bailouts, drew 625 points.",
+      "so_what": "AI financing risk is moving from analyst notes to political debate, so don't assume a rescue in vendor failure scenarios."
+    },
+    {
+      "source": "r/OpenAI (mirror snapshot, date unconfirmed)",
+      "signal": "A thread on OpenAI's $230 mini keyboard reached 764 upvotes; one on an Elon Musk tweet about an OpenAI model reached 672.",
+      "so_what": "Mostly consumer chatter, with no signal that changes tool choice."
+    }
+  ],
+  "watch": [
+    {
+      "kind": "deadline",
+      "title": "Sen. Warren's questions to Anthropic due Nov 3",
+      "body": "The response could surface risk language useful for vendor assessments, though it may not be published."
+    },
+    {
+      "kind": "deadline",
+      "title": "Copilot web address redirect in early November",
+      "body": "Remaining users move to copilot.cloud.microsoft; Microsoft says to allow all of *.cloud.microsoft, not selected URLs."
+    },
+    {
+      "kind": "watch",
+      "title": "Anthropic IPO, reported for the week of Nov 16",
+      "body": "Expect the price range and any S-1 amendments first. Both the date and the $100B raise are reports, not confirmed terms."
+    },
+    {
+      "kind": "security",
+      "title": "Vendor statements on the trojaned extension",
+      "body": "Look for official indicators of compromise and a removal procedure from Cursor or Anthropic before advising clients on cleanup."
+    },
+    {
+      "kind": "regulatory",
+      "title": "New York chatbot law, signed Oct 28",
+      "body": "S.9051-B/A.10379-C restricts twelve features for minors and unverified users, with fines up to $25,000 per violation. Reports conflict on the effective date, so confirm it for any client with consumer-facing chatbots."
+    }
+  ],
+  "sources": "Sources consulted: OpenAI release notes, Anthropic's S-1 announcement, CNBC, Yahoo Finance, PPC Land, The Neuron, AI to ROI, the AI Daily Digest on GitHub, Microsoft 365 trackers, and a third-party r/OpenAI mirror; several items rest on secondary digests, and live Reddit top posts could not be retrieved."
+}
