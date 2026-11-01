@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-29",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {"title": "DexCom listed as ransomware victim", "tags": ["High-profile", "Healthcare", "Newly claimed"], "summary": "The US glucose-monitoring maker was posted as a victim attributed to the Redact actor; no company confirmation found yet.", "source": {"name": "HendryAdrian (leak-site tracker)", "url": "https://www.hendryadrian.com/?p=115501"}},
+        {"title": "Andersen Group hit by SilentRansomGroup", "tags": ["Newly claimed", "Data exposure"], "summary": "Tracker reports system disruption and a payment demand attributed to SilentRansomGroup.", "source": {"name": "HendryAdrian (leak-site tracker)", "url": "https://www.hendryadrian.com/?p=115183"}},
+        {"title": "Osaka Public University shuts ~500 servers", "tags": ["Education", "Critical", "Data exposure"], "summary": "Attack on Oct 2 suspended classes into the following week; possible leak of addresses, emails and phone numbers under investigation.", "source": {"name": "HendryAdrian", "url": "https://www.hendryadrian.com/?p=115040"}},
+        {"title": "All Business Technologies / Fox Hill bookkeeping claimed by n0n", "tags": ["Newly claimed", "Data exposure"], "summary": "Tax and bookkeeping practice listed Oct 18 by the n0n group; status is claimed only.", "source": {"name": "SOCRadar Ransomware Intelligence", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/all-business-technologies-fox-hill-bookkeeping-and-tax-practice-n0n-d670ee63"}},
+        {"title": "Solid Trading B.V. (NL) claimed by n0n", "tags": ["Newly claimed"], "summary": "Dutch firm listed Oct 18 by n0n in the same batch; unverified by the victim.", "source": {"name": "SOCRadar Ransomware Intelligence", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/solid-trading-b-v-n0n-a1562799"}},
+        {"title": "September claimed-victim volume up ~30% year over year", "tags": ["Trend", "Reference"], "summary": "Monthly tallies put September 2026 at roughly 790 claimed victims, continuing the 2026 climb led by Qilin.", "source": {"name": "BlackFog — State of Ransomware Sep 2026", "url": "https://www.blackfog.com/the-state-of-ransomware-september-2026/"}}
+      ],
+      "note": "Victim names come from leak-site trackers and are not yet confirmed by the victims themselves."
+    },
+    "outage": {
+      "items": [
+        {"title": "Azure gateway and AI services outages across 18 regions", "tags": ["Cloud", "Critical"], "summary": "Two Azure incidents between Sep 29 and Oct 1 took gateway and AI services offline in 18 regions.", "source": {"name": "Tech Insider AU", "url": "https://tech-insider.org/au/cloud-outages-australia-week-2026/"}},
+        {"title": "Azure DevOps Australia core-services reports", "tags": ["Cloud"], "summary": "StatusGator logged two separate Australia core-services incidents for Azure DevOps within 24 hours around Oct 15.", "source": {"name": "Tech Insider AU", "url": "https://tech-insider.org/au/?p=2284"}},
+        {"title": "AWS legacy services enter maintenance mode today", "tags": ["Cloud", "Reference"], "summary": "Per AWS's Sep 29 notice, several legacy services stop accepting new customers from Oct 29 — a planned change, not an outage; check dependencies.", "source": {"name": "Tech Insider AU", "url": "https://tech-insider.org/au/?p=1014"}}
+      ],
+      "note": "No major confirmed hyperscaler outage found for mid-to-late October; items are secondary-source reports."
+    },
+    "cyber": {
+      "items": [
+        {"title": "CISA adds six CVEs to KEV (Plex, Siemens, SiteGuard)", "tags": ["KEV add", "Critical"], "summary": "Oct 20 additions cover Plex Media Server, Siemens Software Center and EG Secure Solutions SiteGuard Server Edition.", "source": {"name": "TechJack Solutions", "url": "https://techjacksolutions.com/?p=99023"}},
+        {"title": "KEV passes 247 additions for 2026 by October 1", "tags": ["Trend", "KEV add"], "summary": "More entries already than all of 2025; median time to fully remediate a KEV flaw has risen to 43 days per the 2026 DBIR.", "source": {"name": "Stingrai", "url": "https://www.stingrai.io/blog/zero-day-statistics-2026"}},
+        {"title": "September zero-day roundup: Drupal, Gitea, N-able", "tags": ["Zero-day", "Reference", "Third-party"], "summary": "Monthly report lists exploited flaws in Drupal, Gitea and N-able, all flagged as KEV.", "source": {"name": "Indusface", "url": "https://www.indusface.com/wp-content/uploads/2026/10/zero-day-vulnerability-report-september-2026.pdf"}}
+      ],
+      "note": "No October data-breach disclosure tied to a KEV zero-day surfaced in today's search."
+    },
+    "physical": {
+      "items": [
+        {"title": "Typhoon Champi nears Taiwan", "tags": ["Tropical"], "summary": "Powerful typhoon approached Taiwan around Oct 22, triggering flight cancellations.", "source": {"name": "Global News (video listing)", "url": "https://globalnews.ca/video/11953718/tropical-storm-maysak-slams-southern-china-leaves-5-dead/"}},
+        {"title": "Hurricane Simon strikes Mexico as Category 4", "tags": ["Tropical", "Cat 4"], "summary": "Coastal residents felt Simon's effects as it swept in off the Mexican Pacific coast around Oct 11.", "source": {"name": "Global News (video listing)", "url": "https://globalnews.ca/video/11953718/tropical-storm-maysak-slams-southern-china-leaves-5-dead/"}},
+        {"title": "Hurricane Isaias lands in Florida, at least 4 dead", "tags": ["Tropical"], "summary": "Isaias made landfall in Florida as a Category 2 around Oct 10.", "source": {"name": "Global News (video listing)", "url": "https://globalnews.ca/video/11953718/tropical-storm-maysak-slams-southern-china-leaves-5-dead/"}},
+        {"title": "M 6.9 — 197 km WNW of Port-Olry, Vanuatu", "tags": ["M 6.9"], "summary": "Oct 24; tsunami flag set, USGS PAGER green.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u4j2"}},
+        {"title": "M 6.5 — Bonin Islands, Japan region", "tags": ["M 6.5"], "summary": "Oct 25; tsunami flag set, USGS PAGER green.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u4r9"}},
+        {"title": "M 6.4 — southeast of Easter Island", "tags": ["M 6.4"], "summary": "Oct 29; no tsunami, USGS PAGER green.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ttxz"}},
+        {"title": "M 6.3 — 170 km NW of Port-Olry, Vanuatu", "tags": ["M 6.3"], "summary": "Oct 24 companion event; no tsunami, USGS PAGER green.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000u4jb"}}
+      ],
+      "note": "Storm items come from news video listings and are unverified; confirm against NHC / JTWC. No October wildfire or flood reports surfaced."
+    }
+  }
+}
