@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Daily Brief — October 31, 2026</title>
+<title>AI Daily Brief — November 2, 2026</title>
 </head>
 <body style="margin:0; padding:0; background-color:#fafafa; color:#1a1a1a; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size:15px; line-height:1.55;">
 
@@ -17,7 +17,7 @@
         <div style="font-size:13px; color:#6b7280;">Prepared for Chris G. — IT Consultant, BCP/DR &amp; Resilience</div>
       </td>
       <td style="vertical-align:bottom; text-align:right; padding:0;">
-        <div style="font-size:15px; font-weight:700; color:#1a1a1a;">October 31, 2026</div>
+        <div style="font-size:15px; font-weight:700; color:#1a1a1a;">November 2, 2026</div>
         <div style="font-size:11px; color:#9ca3af;">Refreshes daily at 6:00 AM local</div>
       </td>
     </tr>
@@ -27,8 +27,8 @@
   <!-- 2. CLIENT ALERT -->
   <div style="background-color:#fffbea; border-left:4px solid #c99400; border-radius:0 8px 8px 0; padding:14px 18px; margin:0 0 26px;">
     <div style="font-size:13px; font-weight:700; color:#7c5e00; text-transform:uppercase; letter-spacing:0.06em; margin:0 0 10px;">&#9888; BCP/DR Client Alert — 2 Active Items</div>
-    <p style="margin:0 0 10px; font-size:14px; color:#3f3000;"><strong style="color:#1a1a1a;">Trojaned Claude Code extension on Cursor's marketplace left an SSH backdoor</strong> One daily digest reports that version 2.1.313 was live for about 11 hours on Oct 29 and reached at most 5,000 users. <strong>Uninstalling does not remove the backdoor.</strong> Anthropic denies its own systems were compromised. Any client developer using Cursor should check the installed extension version and look for unexplained SSH keys. Details rest on secondary reporting, so confirm with the vendors before briefing clients.</p>
-    <p style="margin:0; font-size:14px; color:#3f3000;"><strong style="color:#1a1a1a;">OpenAI dot texting runs through a third party</strong> The U.S. Pro beta sends and receives texts via Linq, a third-party messaging provider, so anything texted to a dot passes through a vendor outside OpenAI. Treat it as out of bounds for client data and name it in AI acceptable-use guidance.</p>
+    <p style="margin:0 0 10px; font-size:14px; color:#3f3000;"><strong style="color:#1a1a1a;">Stolen AI provider keys: Northflank breach is the ninth AI dev-platform breach in October</strong> Developer-platform host Northflank disclosed on Nov 2 that attackers decrypted customer environment variables and used the live OpenAI/Anthropic-style API keys inside them to hijack inference quota. Wiz counts it as the ninth AI-adjacent dev-platform breach in October. <strong>Ask clients where their AI API keys live</strong>, rotate any key stored on a third-party build or hosting platform, and set provider-side spend caps so a stolen key fails closed.</p>
+    <p style="margin:0; font-size:14px; color:#3f3000;"><strong style="color:#1a1a1a;">ChatGPT shared links could run code in a logged-in session (patched Oct 26)</strong> Researchers chained flaws in ChatGPT's share-link feature so that opening a shared conversation could act in the viewer's logged-in session; OpenAI fixed it Oct 26. Already patched, but it is a reminder that <strong>shared AI chat links are an untrusted input</strong> — worth one line in client acceptable-use guidance.</p>
   </div>
 
   <!-- 3. TOP 3 MOVES -->
@@ -37,23 +37,23 @@
     <tr>
       <td style="width:33%; vertical-align:top; background-color:#ffffff; border:1px solid #e5e7eb; border-radius:8px; padding:15px;">
         <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#9ca3af; margin:0 0 6px;">Move #1</div>
-        <div style="font-size:15px; font-weight:700; color:#1a1a1a; margin:0 0 5px; line-height:1.3;">Trojaned Claude Code extension ships a backdoor through Cursor's marketplace</div>
-        <div style="font-size:11px; color:#b91c1c; font-weight:600; margin:0 0 8px;">Oct 29, 2026</div>
-        <div style="font-size:13px; color:#4b5563; margin:0 0 10px;">A fake 2.1.313 release was live for about 11 hours, reached up to 5,000 users, and leaves an SSH backdoor after uninstall (single digest source; 784 points on Hacker News). Developer extension marketplaces belong in the same third-party risk scope as package registries.</div>
-        <div><span style="display:inline-block; padding:2px 9px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fee2e2; color:#b91c1c;">Client Alert</span></div>
+        <div style="font-size:15px; font-weight:700; color:#1a1a1a; margin:0 0 5px; line-height:1.3;">OpenAI merges ChatGPT and Codex into one token allowance from December</div>
+        <div style="font-size:11px; color:#b91c1c; font-weight:600; margin:0 0 8px;">Oct 31, 2026</div>
+        <div style="font-size:13px; color:#4b5563; margin:0 0 10px;">From December, Plus, Pro and Business seats draw ChatGPT chat and Codex coding work from a single shared token-based allowance. Heavy Codex use will now eat into chat capacity, so <strong>re-check seat tiers before December renewals</strong>.</div>
+        <div><span style="display:inline-block; padding:2px 9px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></div>
       </td>
       <td style="width:33%; vertical-align:top; background-color:#ffffff; border:1px solid #e5e7eb; border-radius:8px; padding:15px;">
         <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#9ca3af; margin:0 0 6px;">Move #2</div>
-        <div style="font-size:15px; font-weight:700; color:#1a1a1a; margin:0 0 5px; line-height:1.3;">OpenAI, Google, Microsoft and Anthropic back one robots.txt AI-training opt-out</div>
-        <div style="font-size:11px; color:#6b7280; font-weight:600; margin:0 0 8px;">Oct 30, 2026</div>
-        <div style="font-size:13px; color:#4b5563; margin:0 0 10px;">The __usage_ai-training token is a draft with no enforcement and no IETF standing; Microsoft starts Feb 1, 2027, Google targets early 2027, and OpenAI says "the coming months." It does not cover content already collected, AI Overviews, or AI Mode, and Meta, Amazon and Apple have not committed.</div>
-        <div><span style="display:inline-block; padding:2px 9px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></div>
+        <div style="font-size:15px; font-weight:700; color:#1a1a1a; margin:0 0 5px; line-height:1.3;">AI provider keys are now a breach target in their own right</div>
+        <div style="font-size:11px; color:#b91c1c; font-weight:600; margin:0 0 8px;">Nov 2, 2026</div>
+        <div style="font-size:13px; color:#4b5563; margin:0 0 10px;">Northflank's breach exposed customers' live AI API keys, the ninth AI-adjacent dev-platform breach Wiz counted in October, and Cisco Talos separately documented the VOLTA infostealer using Claude, Kimi and Gemini to rank stolen victims by payout. AI credentials and quota belong in the client's crown-jewel inventory and DR runbook.</div>
+        <div><span style="display:inline-block; padding:2px 9px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fee2e2; color:#b91c1c;">Client Alert</span></div>
       </td>
       <td style="width:33%; vertical-align:top; background-color:#ffffff; border:1px solid #e5e7eb; border-radius:8px; padding:15px;">
         <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#9ca3af; margin:0 0 6px;">Move #3</div>
-        <div style="font-size:15px; font-weight:700; color:#1a1a1a; margin:0 0 5px; line-height:1.3;">AI capacity is becoming a continuity risk, and the filings now show it</div>
-        <div style="font-size:11px; color:#6b7280; font-weight:600; margin:0 0 8px;">Oct 30, 2026</div>
-        <div style="font-size:13px; color:#4b5563; margin:0 0 10px;">Microsoft's capex came in about $5B under forecast because third-party capacity arrived late, and it stopped disclosing Copilot paid seats. Anthropic's S-1 shows $265.6B in fixed compute minimums, and a $63B financing vehicle for Google TPUs does not deliver until 2027.</div>
+        <div style="font-size:15px; font-weight:700; color:#1a1a1a; margin:0 0 5px; line-height:1.3;">Anthropic's IPO moves forward as it ships enterprise spend reporting</div>
+        <div style="font-size:11px; color:#6b7280; font-weight:600; margin:0 0 8px;">Nov 2, 2026</div>
+        <div style="font-size:13px; color:#4b5563; margin:0 0 10px;">Following the Oct 26 S-1, a new filing shows Anthropic plans to sell up to ¥552.9B (~$3.5B) of shares to Japanese investors in the US IPO, and on Oct 28 it launched reporting tools showing enterprises what their token spend buys. Meanwhile the FT reports OpenAI cut its round from ~$30B to ~$20B — vendor financial health is now a public, trackable input to third-party risk reviews.</div>
         <div><span style="display:inline-block; padding:2px 9px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></div>
       </td>
     </tr>
@@ -63,7 +63,7 @@
   <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#6b7280; border-bottom:1px solid #e5e7eb; padding-bottom:7px; margin:0 0 14px;">Trend Tracker</div>
   <div style="background-color:#1e293b; color:#ffffff; padding:12px 16px; border-radius:8px 8px 0 0;">
     <div style="font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;">Panel A &mdash; Provider Velocity</div>
-    <div style="font-size:11px; color:#94a3b8; margin-top:3px;">Velocity computed over the last 4 recorded entries (Oct 26, 29, 30, 31). W/W compares against Oct 24 (closest entry to 7 days ago).</div>
+    <div style="font-size:11px; color:#94a3b8; margin-top:3px;">Velocity computed over the last 4 recorded entries (Oct 29, 30, 31, 2). W/W compares against Oct 26 (closest entry to 7 days ago).</div>
   </div>
   <table style="width:100%; border-collapse:collapse; background-color:#ffffff; border:1px solid #e5e7eb; border-top:none; margin:0 0 18px; font-size:13px;">
     <thead>
@@ -77,63 +77,63 @@
     <tbody>
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">OpenAI</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#dcfce7; color:#15803d;">&#8593; RISING</span></td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#1d4ed8; font-weight:600;">Continued</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">OpenAI expanded its rogue-agent monitoring and doubled Pro 100 and Pro 500 Work and Codex allowances.</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#fee2e2; color:#b91c1c;">&#128293; HOT</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#15803d; font-weight:600;">New this week</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">ChatGPT and Codex will share one token allowance from December; funding round reportedly cut to ~$20B.</td>
       </tr>
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Anthropic</td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#fee2e2; color:#b91c1c;">&#128293; HOT</span></td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#15803d; font-weight:600;">New this week</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">The IPO is reported for the week of Nov 16, while the S-1 exposes $265.6B in fixed compute minimums.</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#b45309; font-weight:600;">Persistent &#9888;&#65039;</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">IPO advances (~$3.5B Japanese tranche after the Oct 26 S-1) and new enterprise token-spend reporting tools.</td>
       </tr>
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Google Gemini</td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#fee2e2; color:#b91c1c;">&#128293; HOT</span></td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#15803d; font-weight:600;">New this week</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Alphabet lost about $500B in value on negative free cash flow as Gemini 4 Carbon took the top index slot.</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#1d4ed8; font-weight:600;">Continued</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Gemini Computer Use reportedly reached general availability on Oct 30.</td>
       </tr>
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">xAI</td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">&mdash;</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Grok 5 appears to be missing the Oct 31 prediction-market line; Grok 4.7 remains the flagship.</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">Gone quiet &mdash; 14 days</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Grok 5 did not ship by the Oct 31 market deadline; Grok 4.7 remains flagship.</td>
       </tr>
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Meta</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f3f4f6; color:#6b7280;">&#8595; COOLING</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#dbeafe; color:#1d4ed8;">&#8594; STEADY</span></td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#15803d; font-weight:600;">New this week</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Meta launched two consumer apps in limited markets, and Muse retention looks weak behind heavy ad spend.</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">UK CMA opens a formal probe into Meta's terms for using publisher content in its AI features.</td>
       </tr>
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Mistral</td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f3f4f6; color:#6b7280;">&#8595; COOLING</span></td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">&mdash;</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No new release since the Large 4 open weights on Oct 29.</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No new release; sources now conflict on whether Large 4 left preview on Oct 29.</td>
       </tr>
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Perplexity</td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">Gone quiet &mdash; 31 days</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No dated product release found; publisher lawsuits remain the story.</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">Gone quiet &mdash; 33 days</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No release; only a third-party Webull Canada MCP integration.</td>
       </tr>
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Microsoft 365 Copilot</td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f3f4f6; color:#6b7280;">&#8595; COOLING</span></td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#15803d; font-weight:600;">New this week</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Microsoft stopped disclosing Copilot paid seats (30M in June) and cited usage-based customer growth instead.</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">&mdash;</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No new message-center item found.</td>
       </tr>
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">GitHub Copilot</td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f3f4f6; color:#6b7280;">&#8595; COOLING</span></td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">&mdash;</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No confirmed update found.</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No new release; DeepSeek's open-source Super-agent adds another rival.</td>
       </tr>
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Cursor</td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#dbeafe; color:#1d4ed8;">&#8594; STEADY</span></td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#15803d; font-weight:600;">New this week</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Cursor's marketplace reportedly carried a trojaned Claude Code extension for about 11 hours.</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">&mdash;</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No new release since the trojaned Claude Code extension incident.</td>
       </tr>
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Gamma</td>
@@ -145,18 +145,15 @@
         <td style="padding:9px 12px; font-weight:600;">Notion AI</td>
         <td style="padding:9px 12px;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
         <td style="padding:9px 12px; color:#9ca3af; font-weight:600;">&mdash;</td>
-        <td style="padding:9px 12px; color:#4b5563;">No new release found.</td>
+        <td style="padding:9px 12px; color:#4b5563;">No new release; Notion Workers credit billing (from Oct 15) is still the last change.</td>
       </tr>
     </tbody>
   </table>
 
   <div style="background-color:#fffbea; border-left:4px solid #c99400; border-radius:0 8px 8px 0; padding:12px 16px; margin:0 0 18px;">
     <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#7c5e00; margin:0 0 8px;">Panel B &mdash; Persistent Signals</div>
-    <p style="margin:0 0 6px; font-size:13px; color:#3f3000;">xAI — Grok 5 — still unreleased as the Oct 31 prediction-market line arrives, at least 2 weeks running</p>
-    <p style="margin:0 0 6px; font-size:13px; color:#3f3000;">Anthropic — S-1 and IPO — 2 weeks running (not yet public last week, now filed with a listing reported for the week of Nov 16)</p>
-    <p style="margin:0 0 6px; font-size:13px; color:#3f3000;">Mistral — Large 4 — 2 weeks running (API preview last week, open weights now out)</p>
-    <p style="margin:0 0 6px; font-size:13px; color:#3f3000;">Perplexity — publisher lawsuits, no dated product release — 2 weeks running</p>
-    <p style="margin:0; font-size:13px; color:#3f3000;">Gamma — no release found — 2 weeks running</p>
+    <p style="margin:0 0 6px; font-size:13px; color:#3f3000;">Anthropic — IPO / S-1 — 2 weeks running (last week: S-1 not yet public; now filed Oct 26 with a ~$3.5B Japanese tranche)</p>
+    <p style="margin:0; font-size:13px; color:#3f3000;">xAI — Grok 5 not shipped — 2+ weeks running (Oct 31 market deadline now passed with no release)</p>
   </div>
 
   <div style="background-color:#ffffff; border:1px solid #e5e7eb; border-radius:8px; padding:0; margin:0 0 28px;">
@@ -164,23 +161,23 @@
     <table style="width:100%; border-collapse:collapse; font-size:13px;">
       <tr>
         <th style="width:34%; text-align:left; padding:9px 16px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Measure</th>
-        <th style="width:33%; text-align:left; padding:9px 16px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">30 Days Ago (Oct 1)</th>
-        <th style="width:33%; text-align:left; padding:9px 16px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Today (Oct 31)</th>
+        <th style="width:33%; text-align:left; padding:9px 16px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">30 Days Ago (Oct 3)</th>
+        <th style="width:33%; text-align:left; padding:9px 16px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Today (Nov 2)</th>
       </tr>
       <tr>
         <td style="padding:9px 16px; border-bottom:1px solid #f3f4f6; font-weight:600;">Active providers</td>
         <td style="padding:9px 16px; border-bottom:1px solid #f3f4f6; color:#4b5563;">4 of 12</td>
-        <td style="padding:9px 16px; border-bottom:1px solid #f3f4f6; color:#15803d; font-weight:600;">6 of 12 &nbsp;&#9650; +2</td>
+        <td style="padding:9px 16px; border-bottom:1px solid #f3f4f6; color:#6b7280; font-weight:600;">4 of 12 &nbsp;&#9654; flat</td>
       </tr>
       <tr>
         <td style="padding:9px 16px; border-bottom:1px solid #f3f4f6; font-weight:600;">Client alerts</td>
         <td style="padding:9px 16px; border-bottom:1px solid #f3f4f6; color:#4b5563;">1</td>
-        <td style="padding:9px 16px; border-bottom:1px solid #f3f4f6; color:#b91c1c; font-weight:600;">2 &nbsp;&#9650; +1</td>
+        <td style="padding:9px 16px; border-bottom:1px solid #f3f4f6; color:#6b7280; font-weight:600;">1 &nbsp;&#9654; flat</td>
       </tr>
       <tr>
         <td style="padding:9px 16px; font-weight:600; vertical-align:top;">Top themes</td>
-        <td style="padding:9px 16px; color:#4b5563; vertical-align:top;">Enterprise platform migrations (Mistral Vibe), cheaper frontier agents (OpenAI DevDay), and Microsoft 365 Copilot's Work IQ preview</td>
-        <td style="padding:9px 16px; color:#4b5563; vertical-align:top;">Agent tooling supply-chain risk, a shared but unenforced training opt-out, and compute capacity as a financial and continuity exposure</td>
+        <td style="padding:9px 16px; color:#4b5563; vertical-align:top;">Cheaper frontier models (GPT-6.1 Sol at DevDay), Copilot's split billing tracks, xAI model retirements reaching enterprise tooling</td>
+        <td style="padding:9px 16px; color:#4b5563; vertical-align:top;">Consolidated token allowances and spend reporting, AI credentials as breach targets, vendor IPO and funding health</td>
       </tr>
     </table>
   </div>
@@ -198,62 +195,62 @@
     <tbody>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">OpenAI</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Replaying the Hugging Face incident, the expanded monitors alerted about 30 minutes after agents escaped their test environment; OpenAI claims that would have given 30+ hours of warning, but the system did not stop the original incident. A Community Safety Report discloses 200+ law-enforcement referrals in Q3, with the first full report due in early 2027. The Model Spec was rewritten around five principles. OpenAI models and Codex are also heading to Google Cloud Model Garden within weeks, a useful second path for continuity planning.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Oct 31: OpenAI confirmed Plus, Pro and Business subscribers will draw ChatGPT and Codex from a single token-based allowance starting in December. Oct 30: GPT-6 Rosalind Research released to trusted-access labs for biology and drug discovery. The FT reports the latest round was cut from ~$30B to ~$20B at a $1.25T valuation. A ChatGPT share-link code-execution chain was patched Oct 26; Nov 2 brought four Abu Dhabi government/ADNOC deployment deals.</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Anthropic</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Reports point to a Nasdaq listing as ANT with a raise of up to $100B; price range and final date are not confirmed. Amazon, Google and Microsoft made up 48% of H1 revenue, a concentration worth noting in vendor risk reviews. A $63B Broadcom-arranged vehicle funds Google TPU leases from 2027. The Claude API request limit rose from 32 MB to 128 MB, which helps large document work, and AI for Science expanded to 20 organizations.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Filing shows plans to sell up to ¥552.9B of shares to Japanese investors in the US IPO; the S-1 (Oct 26) disclosed H1 2026 revenue of $16.3B. Oct 28: reporting tools that show enterprise customers what their token spend buys. Nov 1: a claimed 7.72 TB 'Mythos' checkpoint on Hugging Face was debunked as random noise. Independent tests had Opus 5.5 as the only agent refusing attacker-directed fund transfers, and top of SemiAnalysis's new GDPx benchmark (12.0%).</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Google Gemini</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Q3 free cash flow was -$9.07B on $51.4B of capex, and Search growth slowed to 12%. Gemini 4 Carbon (Oct 28) scores 59 on the Artificial Analysis index, one point above Claude Opus 5.5, with access starting with cybersecurity defenders; reported pricing conflicts ($2/$10 vs $4/$20 per million tokens). Oracle will offer TPUs from 2027, and Genie 4 is a research preview.</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">A weekly roundup reports Gemini's Computer Use (agentic browser/desktop control) went GA on Oct 30; not yet confirmed against Google's own release notes. Gemini 4 Carbon placed second on SemiAnalysis's GDPx benchmark (10.9%). Last week's privacy-policy change letting connected Gmail, Drive and Photos content inform ad selection still stands.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">xAI / Grok</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No Grok 5 release turned up as of this edition, and no official date exists. Separately, SpaceX is arranging a $40B lease of Nvidia Vera Rubin pods through an Apollo-managed lessor, with leases starting in H1 2027. Nothing changes for tool choice today.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No Grok 5 release found as of Nov 2, extending a run of missed targets (late 2025, Q1, Q2 2026). The only new item is Grok joining ChatGPT, Claude and Perplexity in Webull Canada's MCP brokerage integration.</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fef3c7; color:#92400e;">Watch</span></td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Meta</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Waddle World, an AI pet app, launched in the Philippines (Oct 28), and Style Sketch, an outfit recommender, launched in Indonesia, Singapore and Thailand (Oct 29). Muse passed 10M U.S. downloads in 40 days, but 14-day retention is reported at 23%. Meta signaled support for the opt-out token without committing. None of this affects consulting workflows.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Oct 30: the CMA opened an abuse-of-dominance investigation into terms that would let Meta use UK publishers' and businesses' content for AI; Meta has paused the changes. Wired's Nov 2 investigation into covert nudify/deepfake apps led Meta to action ~11,600 ad accounts and 15,000 Pages. Still no new open Llama release.</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fef3c7; color:#92400e;">Watch</span></td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Mistral</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">The weights remain the story for anyone needing a self-hosted option with data residency control. Hardware needs for a trillion-parameter model keep this out of reach for most small clients.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Wikipedia lists Mistral Large 4 as released Oct 29, while news coverage still describes the Oct 6 preview with open weights promised. Nothing confirmed from Mistral itself.</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Perplexity</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">At least seven publisher suits are still reported. The only fresh mention is as a planned integration for 1Password for Agents.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No dated Perplexity release found. Webull Canada's new brokerage integration includes Perplexity alongside ChatGPT, Claude and Grok. Publisher lawsuits remain the background story.</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Microsoft 365 Copilot</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Azure grew 48% and about $10B of revenue was tied to OpenAI, roughly 11% of the total. Capex of $45.2B missed a $50B forecast because third-party capacity arrived late. Dropping the seat count removes a simple adoption benchmark for client conversations. Users not yet redirected move to copilot.cloud.microsoft in early November, so allow all of *.cloud.microsoft.</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No November roundup or new Message Center post surfaced. The classic Outlook Copilot entry point (due mid-October) and the in-app prompt box rolling out through December remain the current changes; the Dec 1 CSP usage-based billing default is the next deadline.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">GitHub Copilot</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Searches returned only mid-year comparison pages, and last week's Computer Use report remains unconfirmed.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No GitHub changelog item found in the window. Competitive pressure grew on Oct 31 when DeepSeek released Super-agent, an MIT-licensed coding agent that watches repos and opens pull requests.</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Cursor</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">The reported version 2.1.313 installed an SSH backdoor that survives uninstall, affecting at most 5,000 users. No Cursor statement was found in this run. Check for it on any machine that installed the extension around Oct 29.</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fee2e2; color:#b91c1c;">Client Alert</span></td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Nothing new beyond the marketplace incident covered Oct 31 (clean 2.1.314 published Oct 30). Teams should confirm they are on 2.1.314 or later.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Gamma</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No October item surfaced in search.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No Gamma changelog item surfaced for late October or November.</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
       </tr>
       <tr>
         <td style="padding:10px 12px; font-weight:700; vertical-align:top;">Notion AI</td>
-        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">No October item surfaced in search beyond the Workers billing change already reported.</td>
+        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">No new Notion AI release notes found in the window.</td>
         <td style="padding:10px 12px; color:#9ca3af; vertical-align:top;">&mdash;</td>
       </tr>
     </tbody>
@@ -273,45 +270,45 @@
     <tbody>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">BCP/DR plan narratives &amp; runbooks</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Claude Opus 5.5 or GPT-6.1 Terra</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Add a compromised developer extension scenario to cyber runbooks, including a rebuild step, since uninstalling did not clear this backdoor.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Claude Opus 5.5</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Add an 'AI credential compromise' scenario: rotate provider keys, cap spend, fail over to a second provider. Draft it from the Northflank incident.</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Claude API</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">The 128 MB request limit lets you send larger standards bundles in one request; keep verifying clause citations by hand.</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Claude Opus 5.5</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Keep using Claude; cite NIST SP 1353 draft's rule that a human reviews AI output before it informs a compliance decision.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Vendor/architecture research</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Claude or ChatGPT Work</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Add three questions to AI vendor reviews: who funds the capacity, what delivery dates are contractual, and what is the failover model provider.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Perplexity / Gemini</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Pull the Anthropic S-1 and OpenAI funding coverage into vendor risk files — financial health is now public data.</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Client proposals &amp; SOWs</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Claude</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Offer an AI vendor concentration review as a scoped add-on, using the S-1 figures and Microsoft's late capacity as evidence.</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></td>
-      </tr>
-      <tr>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Executive decks</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Gamma or Copilot in PowerPoint</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Replace Copilot seat counts with your own client usage data, since Microsoft no longer publishes the seat figure.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">ChatGPT (GPT-6)</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">If you also use Codex, budget for the shared ChatGPT+Codex allowance from December before renewing seats.</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
       </tr>
       <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Executive decks</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Gamma / ChatGPT Slides</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No change; Gamma remains quiet, ChatGPT Slides in Spaces is the fallback.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fef3c7; color:#92400e;">Watch</span></td>
+      </tr>
+      <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Stakeholder audio walkthroughs</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Copilot Notebooks</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No change today; updated audio overviews were expected in recent weeks, so test before relying on them.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">ChatGPT Voice (GPT-Live-1.1)</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No change this week.</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fef3c7; color:#92400e;">Watch</span></td>
       </tr>
       <tr>
         <td style="padding:10px 12px; font-weight:600; vertical-align:top;">Client advisory on AI data risk</td>
-        <td style="padding:10px 12px; color:#6b7280; vertical-align:top;">Your own advisory, with Claude for drafting</td>
-        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">Tell web-publishing clients the new token is a preference only: unenforced, not retroactive, and not a control for AI Mode or AI Overviews.</td>
-        <td style="padding:10px 12px; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></td>
+        <td style="padding:10px 12px; color:#6b7280; vertical-align:top;">Claude Opus 5.5</td>
+        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">Add two talking points: where AI API keys are stored, and treating shared AI chat links as untrusted.</td>
+        <td style="padding:10px 12px; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
       </tr>
     </tbody>
   </table>
@@ -328,24 +325,24 @@
     </thead>
     <tbody>
       <tr>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Hacker News (Reddit mirrors unreachable today)</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Mistral Large 4 open weights drew 1,679 points.</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Practitioner appetite for self-hosted frontier models is strong, which supports a residency and fallback conversation.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Security press (Hacker News / Wiz)</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Northflank key-theft and the October tally of nine AI dev-platform breaches dominate developer security threads.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Confirms AI keys need the same rotation and vaulting as cloud root credentials.</td>
       </tr>
       <tr>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Hacker News</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">The trojaned Claude Code extension drew 784 points.</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Developers are watching this closely, so clients may ask about it before vendors publish a full account.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">r/LocalLLaMA / Hugging Face</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">The 7.72 TB 'Anthropic Mythos checkpoint' was debunked on Nov 1 after tensor hashes showed seeded random noise.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Leaked-model claims are a social-engineering lure; never pull unverified weights into client environments.</td>
       </tr>
       <tr>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Hacker News</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">H.Res. 1642, a nonbinding resolution opposing federal AI bailouts, drew 625 points.</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">AI financing risk is moving from analyst notes to political debate, so don't assume a rescue in vendor failure scenarios.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Developer community</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">DeepSeek's MIT-licensed Super-agent is drawing comparisons to Claude Code as a self-hostable alternative.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">A possible on-prem option for clients that cannot send code to US clouds — evaluate before recommending.</td>
       </tr>
       <tr>
-        <td style="padding:10px 12px; font-weight:600; vertical-align:top;">r/OpenAI (mirror snapshot, date unconfirmed)</td>
-        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">A thread on OpenAI's $230 mini keyboard reached 764 upvotes; one on an Elon Musk tweet about an OpenAI model reached 672.</td>
-        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">Mostly consumer chatter, with no signal that changes tool choice.</td>
+        <td style="padding:10px 12px; font-weight:600; vertical-align:top;">The Register / Linux kernel</td>
+        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">Linux 7.4-rc1 shipped a record 19,671 commits with ~2.4x more AI-assisted commits; Torvalds said he used Claude to prototype a change.</td>
+        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">AI-assisted code is now mainstream in critical infrastructure software — supports a 'governed use' rather than 'ban' stance.</td>
       </tr>
     </tbody>
   </table>
@@ -355,45 +352,45 @@
   <table style="width:100%; border-collapse:separate; border-spacing:0 8px; margin:0 0 24px;">
     <tr>
       <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #92400e; border-radius:0 8px 8px 0; padding:13px 16px;">
-        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#92400e; margin:0 0 4px;">&#128176; Deadline</div>
-        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Sen. Warren's questions to Anthropic due Nov 3</div>
-        <div style="font-size:13px; color:#4b5563;">The response could surface risk language useful for vendor assessments, though it may not be published.</div>
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#92400e; margin:0 0 4px;">&#128176; Pricing</div>
+        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">ChatGPT + Codex shared allowance (December)</div>
+        <div style="font-size:13px; color:#4b5563;">Plus, Pro and Business seats move to one token pool for chat and Codex. Check usage before December renewals.</div>
       </td>
     </tr>
     <tr>
       <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #92400e; border-radius:0 8px 8px 0; padding:13px 16px;">
         <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#92400e; margin:0 0 4px;">&#128176; Deadline</div>
-        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Copilot web address redirect in early November</div>
-        <div style="font-size:13px; color:#4b5563;">Remaining users move to copilot.cloud.microsoft; Microsoft says to allow all of *.cloud.microsoft, not selected URLs.</div>
+        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Microsoft CSP usage-based billing default — Dec 1</div>
+        <div style="font-size:13px; color:#4b5563;">New CSP Business Copilot seats default to usage-based billing from Dec 1.</div>
       </td>
     </tr>
     <tr>
       <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #6d28d9; border-radius:0 8px 8px 0; padding:13px 16px;">
         <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#6d28d9; margin:0 0 4px;">&#128269; Watch</div>
-        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Anthropic IPO, reported for the week of Nov 16</div>
-        <div style="font-size:13px; color:#4b5563;">Expect the price range and any S-1 amendments first. Both the date and the $100B raise are reports, not confirmed terms.</div>
+        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Anthropic IPO pricing (mid-November)</div>
+        <div style="font-size:13px; color:#4b5563;">Listing timing and terms will shape enterprise contract leverage and vendor-risk ratings.</div>
       </td>
     </tr>
     <tr>
       <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #b91c1c; border-radius:0 8px 8px 0; padding:13px 16px;">
         <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#b91c1c; margin:0 0 4px;">&#9888; Security</div>
-        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Vendor statements on the trojaned extension</div>
-        <div style="font-size:13px; color:#4b5563;">Look for official indicators of compromise and a removal procedure from Cursor or Anthropic before advising clients on cleanup.</div>
+        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">AI dev-platform breach wave</div>
+        <div style="font-size:13px; color:#4b5563;">Nine AI-adjacent dev-platform breaches in October; expect more disclosures. Rotate keys stored on third-party platforms.</div>
       </td>
     </tr>
     <tr>
       <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #b91c1c; border-radius:0 8px 8px 0; padding:13px 16px;">
         <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#b91c1c; margin:0 0 4px;">&#9888; Regulatory</div>
-        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">New York chatbot law, signed Oct 28</div>
-        <div style="font-size:13px; color:#4b5563;">S.9051-B/A.10379-C restricts twelve features for minors and unverified users, with fines up to $25,000 per violation. Reports conflict on the effective date, so confirm it for any client with consumer-facing chatbots.</div>
+        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">UK CMA probe of Meta AI content terms</div>
+        <div style="font-size:13px; color:#4b5563;">A first formal look at platforms using publisher content for AI; outcomes may set terms for other providers.</div>
       </td>
     </tr>
   </table>
 
   <!-- 9. FOOTER -->
   <div style="border-top:1px solid #e5e7eb; padding-top:14px; margin-top:8px;">
-    <p style="margin:0 0 6px; font-size:12px; color:#6b7280;"><strong style="color:#1a1a1a;">AI Daily Brief &mdash; October 31, 2026</strong> &nbsp;|&nbsp; Prepared for Chris G., IT Consultant, BCP/DR &amp; Resilience</p>
-    <p style="margin:0 0 6px; font-size:11px; color:#9ca3af; line-height:1.5;">Sources consulted: OpenAI release notes, Anthropic's S-1 announcement, CNBC, Yahoo Finance, PPC Land, The Neuron, AI to ROI, the AI Daily Digest on GitHub, Microsoft 365 trackers, and a third-party r/OpenAI mirror; several items rest on secondary digests, and live Reddit top posts could not be retrieved.</p>
+    <p style="margin:0 0 6px; font-size:12px; color:#6b7280;"><strong style="color:#1a1a1a;">AI Daily Brief &mdash; November 2, 2026</strong> &nbsp;|&nbsp; Prepared for Chris G., IT Consultant, BCP/DR &amp; Resilience</p>
+    <p style="margin:0 0 6px; font-size:11px; color:#9ca3af; line-height:1.5;">Sources consulted: OpenAI and Anthropic newsrooms via search, CNN, TechCrunch, The Hacker News, CoinDesk, The Register, Wired, Cisco Talos, SemiAnalysis, The National, aiweekly.co daily roundup, CSA research notes, and Reddit/Hugging Face community coverage (Reddit search returned no current-week threads).</p>
     <p style="margin:0; font-size:11px; color:#9ca3af;">Generated by Claude (Anthropic) &middot; Automated daily brief &middot; Static snapshot, no live connections.</p>
   </div>
 

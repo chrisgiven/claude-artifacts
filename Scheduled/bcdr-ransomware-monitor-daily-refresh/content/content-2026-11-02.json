@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-02",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {"title": "Hisense listed by WhiteArmor ($5M demand)", "tags": ["High-profile", "Newly claimed", "Data exposure"], "summary": "WhiteArmor posted Hisense to its leak site on Oct 26 claiming 19 GB stolen and a $5M demand with a ~28-day countdown; the claim is unverified.", "source": {"name": "Yehey.com", "url": "https://www.yehey.com/2026/11/yeheycom-whitearmor-ransomware-targets.html"}},
+        {"title": "Santiam Hospital & Clinics claimed by Anubis", "tags": ["Healthcare", "Newly claimed"], "summary": "The Anubis group listed Oregon-based Santiam Hospital & Clinics as a victim on Oct 28.", "source": {"name": "HackerFeeds", "url": "https://hackerfeeds.com/ransomware/reports/2026-10"}},
+        {"title": "Morrison Foerster listed by SilentRansomGroup", "tags": ["High-profile", "Newly claimed", "Data exposure"], "summary": "SilentRansomGroup, a data-extortion crew known for targeting law firms, listed Morrison Foerster on Oct 28; the group's listings have included unverified claims.", "source": {"name": "HackerFeeds", "url": "https://hackerfeeds.com/ransomware/reports/2026-10"}},
+        {"title": "October leak-site claims up ~26% to 1,127", "tags": ["Trend"], "summary": "Leak sites posted 1,127 victims in October vs 896 in September, with N0n, Qilin and The Gentlemen accounting for over 40% of listings.", "source": {"name": "Tech Insider", "url": "https://tech-insider.org/ransomware-attacks-october-2026-1127-claims-n0n-gentlemen-qilin-2026/"}},
+        {"title": "October 2026 attack & breach roundup", "tags": ["Reference"], "summary": "Monthly roundup of the biggest ransomware attacks and breaches disclosed during October 2026.", "source": {"name": "CM-Alliance", "url": "https://www.cm-alliance.com/cybersecurity-blog/biggest-cyber-attacks-data-breaches-ransomware-attacks-october-2026"}}
+      ],
+      "note": "Only two days into November — no November-dated victims indexed yet; items are from the last week of October. Leak-site posts are attacker claims, not confirmed incidents."
+    },
+    "outage": {
+      "items": [
+        {"title": "Archive of Our Own offline after security breach", "tags": ["High-profile", "Critical"], "summary": "AO3 went down Oct 29 in what was first called maintenance; operators later disclosed a security breach and expect at least two weeks offline.", "source": {"name": "Fanlore", "url": "https://fanlore.org/wiki/2026_AO3_Major_Outage"}},
+        {"title": "Cloudflare outage, Twilio degraded (Oct 30)", "tags": ["Cloud", "Third-party"], "summary": "A status-aggregator snapshot late on Oct 30 showed Cloudflare in outage and Twilio degraded while AWS, Google Cloud, Azure and GitHub reported operational.", "source": {"name": "IsInternetUp", "url": "https://www.isinternetup.com/outages"}},
+        {"title": "Revolut transfer and sign-in disruptions", "tags": ["Third-party"], "summary": "Revolut logged several short incidents on Oct 30, including ~15 minutes of downtime and user reports of failed transfers and logins.", "source": {"name": "StatusGator", "url": "https://statusgator.com/services/revolut"}},
+        {"title": "Brief US connectivity drop in Texas and Iowa", "tags": ["Reference"], "summary": "IODA flagged a one-minute critical connectivity drop around 04:11 UTC on Oct 30 in Texas and Iowa, with no sign of a broader outage.", "source": {"name": "Voidly", "url": "https://voidly.ai/incident/US-2026-0130"}}
+      ],
+      "note": "No major AWS, Azure or Google Cloud incident reported in the last week; findings come from third-party status trackers, so confirm against provider status pages."
+    },
+    "cyber": {
+      "items": [
+        {"title": "Cisco ASA/FTD CVE-2026-76418 added to KEV", "tags": ["KEV add", "Critical"], "summary": "CISA added a Cisco ASA/FTD denial-of-service flaw to KEV on Oct 29 after active exploitation was confirmed.", "source": {"name": "Neoteo", "url": "https://www.neoteo.com/en/cisa-adds-cisco-cve-2026-76418-to-the-kev-catalog"}},
+        {"title": "Ivanti Connect Secure zero-day chain in KEV", "tags": ["Zero-day", "KEV add", "Critical"], "summary": "CVE-2026-104935, an auth-bypass and RCE chain that Volexity found exploited against patched VPN appliances, was added to KEV; a related Ivanti fix deadline falls today (Nov 2).", "source": {"name": "Security Affairs", "url": "https://securityaffairs.com/202175/security/u-s-cisa-adds-ivanti-connect-secure-flaws-to-its-known-exploited-vulnerabilities-catalog.html"}},
+        {"title": "Two PHP flaws added to KEV (Oct 26)", "tags": ["KEV add"], "summary": "CISA added two exploited PHP vulnerabilities on Oct 26, part of the fastest pace of KEV additions since 2022.", "source": {"name": "Cybersecurity Market", "url": "https://cybersecuritymarket.com/cyber-threat-pressure-reading-november-1-2026/"}},
+        {"title": "Six KEV additions incl. Plex and Siemens", "tags": ["KEV add"], "summary": "On Oct 20, CISA added six exploited flaws covering Plex Media Server, a SiteGuard command injection and a Siemens issue.", "source": {"name": "CISA", "url": "https://www.cisa.gov/news-events/alerts/2026/10/20/cisa-adds-six-known-exploited-vulnerabilities-catalog"}},
+        {"title": "AO3 user-data exposure not ruled out", "tags": ["Data exposure", "Credential exposure"], "summary": "AO3 operators say no data was deleted in the Oct 29 breach but they cannot yet rule out theft of users' personal data.", "source": {"name": "Fanlore", "url": "https://fanlore.org/wiki/2026_AO3_Major_Outage"}},
+        {"title": "October KEV pace: 36 additions", "tags": ["Trend"], "summary": "One analysis counted 36 KEV additions in October against 43 in September, the highest sustained rate since 2022; its tally may differ from CISA's.", "source": {"name": "Cybersecurity Market", "url": "https://cybersecuritymarket.com/cyber-threat-pressure-reading-november-1-2026/"}}
+      ]
+    },
+    "physical": {
+      "items": [
+        {"title": "M 6.4 southeast of Easter Island", "tags": ["M 6.4"], "summary": "A magnitude 6.4 quake struck a remote area southeast of Easter Island on Oct 29; USGS alert level green with no tsunami.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ttxz"}},
+        {"title": "Typhoon Champi hits Taiwan and southern Japan", "tags": ["Tropical", "Critical"], "summary": "Champi crossed Taiwan and Japan's southern islands Oct 22–24, cutting power to about 288,000 homes and injuring 527.", "source": {"name": "Center for Disaster Philanthropy", "url": "https://disasterphilanthropy.org/blog/what-were-watching-weekly-disaster-update-october-26-2026/"}},
+        {"title": "Cyclone Arnab strikes Andhra Pradesh", "tags": ["Tropical"], "summary": "Cyclone Arnab killed three people and damaged homes and farmland in eastern India, AP reported Oct 27.", "source": {"name": "Center for Disaster Philanthropy", "url": "https://disasterphilanthropy.org/blog/what-were-watching-weekly-disaster-update-october-26-2026/"}},
+        {"title": "Four Corners flash flooding and outages", "tags": ["Flood"], "summary": "Flooding Oct 22–24 forced water rescues and left hundreds without power across the US Southwest, and the NWS warned of further flash flooding.", "source": {"name": "Center for Disaster Philanthropy", "url": "https://disasterphilanthropy.org/blog/what-were-watching-weekly-disaster-update-october-26-2026/"}},
+        {"title": "Nigeria floods: 245 dead, 215,000 displaced", "tags": ["Flood"], "summary": "Seasonal flooding across 28 Nigerian states had killed 245 and displaced nearly 215,000 as of Oct 20, with further risk expected.", "source": {"name": "Center for Disaster Philanthropy", "url": "https://disasterphilanthropy.org/blog/what-were-watching-weekly-disaster-update-october-26-2026/"}}
+      ],
+      "note": "No November events indexed yet; items cover the final week of October."
+    }
+  }
+}

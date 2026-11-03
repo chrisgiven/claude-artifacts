@@ -1,0 +1,96 @@
+{
+  "date": "2026-11-03",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {
+          "title": "Colmobil (Israel) hit by ransomware",
+          "tags": ["High-profile", "Newly claimed"],
+          "summary": "Israel's largest vehicle importer, Colmobil, was reported hit by a ransomware attack in the week ending November 1.",
+          "source": {"name": "This Week in Security", "url": "https://this.weekinsecurity.com/this-week-in-security-november-1-2026-edition/"}
+        },
+        {
+          "title": "GOLD OGRE using AI agents in Aur0ra intrusions",
+          "tags": ["Trend"],
+          "summary": "Check Point reports the GOLD OGRE group making heavy use of AI agents during Aur0ra attacks, with some campaigns moving on to credential theft, lateral movement and ransomware activity.",
+          "source": {"name": "Check Point Research", "url": "https://research.checkpoint.com/2026/2nd-november-threat-intelligence-report/"}
+        },
+        {
+          "title": "New leak-site postings, Oct 31 – Nov 2",
+          "tags": ["Reference", "Newly claimed"],
+          "summary": "Ransomware.live lists fresh victim postings discovered Oct 31 to Nov 2 with estimated attack dates of Oct 26 and Nov 1; these are attacker claims and the victims have not confirmed them.",
+          "source": {"name": "Ransomware.live", "url": "https://www.ransomware.live/"}
+        }
+      ],
+      "note": "Early-month coverage is thin: few named November victims are indexed yet."
+    },
+    "outage": {
+      "items": [
+        {
+          "title": "Veeqo shipping options unavailable for all orders",
+          "tags": ["Cloud"],
+          "summary": "Veeqo's status page logged an incident in which shipping options were unavailable for all orders; it was resolved at 09:44 UTC on November 2.",
+          "source": {"name": "Veeqo Status", "url": "https://status.veeqo.com/history/2026/november"}
+        },
+        {
+          "title": "GWU Foggy Bottom campus power outage hits network services",
+          "tags": ["Education"],
+          "summary": "A power outage across George Washington University's Foggy Bottom campus on November 2 affected GWorld, parking and network-based services while Pepco worked on restoration.",
+          "source": {"name": "GWU Campus Advisories", "url": "https://campusadvisories.gwu.edu/foggy-bottom-power-outage-november-2-2026"}
+        }
+      ],
+      "note": "No major AWS, Azure or Google Cloud outage reported in the past 72 hours; the last significant one was Azure gateway services across 18 regions, Sep 30 – Oct 1."
+    },
+    "cyber": {
+      "items": [
+        {
+          "title": "CISA adds two Ivanti Connect Secure zero-days to KEV",
+          "tags": ["KEV add", "Zero-day", "Critical"],
+          "summary": "CVE-2026-111357 and CVE-2026-118527 were added to KEV, with federal deadlines of Nov 2 and Nov 13; chained with CVE-2026-104935, they give root access and expose AD credentials, LAPS passwords and BitLocker keys.",
+          "source": {"name": "Help Net Security", "url": "https://helpnetsecurity.com/2026/11/02/cisa-to-federal-agencies-remediate-exploited-ivanti-connect-secure-vulnerabilities-cve-2026-111357-cve-2026-118527"}
+        },
+        {
+          "title": "Ivanti patches Connect Secure attack chain (UTA0576)",
+          "tags": ["Zero-day", "Credential exposure"],
+          "summary": "Ivanti released patches for two more zero-days in the chain that Volexity attributes to UTA0576, and Rapid7 advises a compromise hunt after patching.",
+          "source": {"name": "SecurityWeek", "url": "https://www.securityweek.com/ivanti-patches-two-more-zero-days-exploited-in-connect-secure-attack-chain/"}
+        },
+        {
+          "title": "U.S. Homeland Security breach reported",
+          "tags": ["High-profile", "Data exposure"],
+          "summary": "A breach at the U.S. Department of Homeland Security was among the incidents reported in the week ending November 1.",
+          "source": {"name": "This Week in Security", "url": "https://this.weekinsecurity.com/this-week-in-security-november-1-2026-edition/"}
+        },
+        {
+          "title": "Binance theft",
+          "tags": ["High-profile"],
+          "summary": "A theft of funds from the Binance cryptocurrency exchange was reported in the same weekly roundup.",
+          "source": {"name": "This Week in Security", "url": "https://this.weekinsecurity.com/this-week-in-security-november-1-2026-edition/"}
+        }
+      ]
+    },
+    "physical": {
+      "items": [
+        {
+          "title": "M 6.4 southeast of Easter Island",
+          "tags": ["M 6.4"],
+          "summary": "USGS recorded an M 6.4 earthquake southeast of Easter Island on October 29, with a green PAGER alert and no tsunami flag.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ttxz"}
+        },
+        {
+          "title": "Emergency water interruption, Puerto Rico village (Saipan, CNMI)",
+          "tags": ["Municipal"],
+          "summary": "Commonwealth Utilities Corporation issued an emergency water service interruption advisory for the Puerto Rico village on Saipan on November 2.",
+          "source": {"name": "Commonwealth Utilities Corp.", "url": "https://cucgov.org/news-and-events/public-advisories/2026-11-02-public-advisory-re-emergency-water-service-interruption-for-puerto-rico-on-november-2-2026/"}
+        },
+        {
+          "title": "Record-pace Eastern Pacific hurricane season runs to Nov 30",
+          "tags": ["Tropical", "Reference"],
+          "summary": "The 2026 Eastern Pacific season has been on a record pace and officially runs until November 30, so late-season storms affecting Mexico remain possible.",
+          "source": {"name": "Wetterdienst.de", "url": "https://www.wetterdienst.de/Deutschlandwetter/Thema_des_Tages/6711/die-pazifische-hurrikansaison-2026-auf-rekordjagd"}
+        }
+      ],
+      "note": "No major November hurricane, typhoon, wildfire or flood event indexed yet. Late-October context: Hurricane Isaias (FL, Cat 2) and Typhoon Champi (Taiwan)."
+    }
+  }
+}

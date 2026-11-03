@@ -1,0 +1,201 @@
+{
+  "date": "2026-11-02",
+  "client_alerts": [
+    {
+      "headline": "Stolen AI provider keys: Northflank breach is the ninth AI dev-platform breach in October",
+      "body": "Developer-platform host Northflank disclosed on Nov 2 that attackers decrypted customer environment variables and used the live OpenAI/Anthropic-style API keys inside them to hijack inference quota. Wiz counts it as the ninth AI-adjacent dev-platform breach in October. **Ask clients where their AI API keys live**, rotate any key stored on a third-party build or hosting platform, and set provider-side spend caps so a stolen key fails closed."
+    },
+    {
+      "headline": "ChatGPT shared links could run code in a logged-in session (patched Oct 26)",
+      "body": "Researchers chained flaws in ChatGPT's share-link feature so that opening a shared conversation could act in the viewer's logged-in session; OpenAI fixed it Oct 26. Already patched, but it is a reminder that **shared AI chat links are an untrusted input** — worth one line in client acceptable-use guidance."
+    }
+  ],
+  "top_moves": [
+    {
+      "title": "OpenAI merges ChatGPT and Codex into one token allowance from December",
+      "date_label": "Oct 31, 2026",
+      "urgent": true,
+      "body": "From December, Plus, Pro and Business seats draw ChatGPT chat and Codex coding work from a single shared token-based allowance. Heavy Codex use will now eat into chat capacity, so **re-check seat tiers before December renewals**.",
+      "tag": "tactical"
+    },
+    {
+      "title": "AI provider keys are now a breach target in their own right",
+      "date_label": "Nov 2, 2026",
+      "urgent": true,
+      "body": "Northflank's breach exposed customers' live AI API keys, the ninth AI-adjacent dev-platform breach Wiz counted in October, and Cisco Talos separately documented the VOLTA infostealer using Claude, Kimi and Gemini to rank stolen victims by payout. AI credentials and quota belong in the client's crown-jewel inventory and DR runbook.",
+      "tag": "alert"
+    },
+    {
+      "title": "Anthropic's IPO moves forward as it ships enterprise spend reporting",
+      "date_label": "Nov 2, 2026",
+      "urgent": false,
+      "body": "Following the Oct 26 S-1, a new filing shows Anthropic plans to sell up to ¥552.9B (~$3.5B) of shares to Japanese investors in the US IPO, and on Oct 28 it launched reporting tools showing enterprises what their token spend buys. Meanwhile the FT reports OpenAI cut its round from ~$30B to ~$20B — vendor financial health is now a public, trackable input to third-party risk reviews.",
+      "tag": "strategic"
+    }
+  ],
+  "providers": [
+    {
+      "name": "OpenAI",
+      "display": "OpenAI",
+      "headline": "ChatGPT and Codex will share one token allowance from December; funding round reportedly cut to ~$20B.",
+      "detail": "Oct 31: OpenAI confirmed Plus, Pro and Business subscribers will draw ChatGPT and Codex from a single token-based allowance starting in December. Oct 30: GPT-6 Rosalind Research released to trusted-access labs for biology and drug discovery. The FT reports the latest round was cut from ~$30B to ~$20B at a $1.25T valuation. A ChatGPT share-link code-execution chain was patched Oct 26; Nov 2 brought four Abu Dhabi government/ADNOC deployment deals.",
+      "tags": ["tactical", "alert"],
+      "classification": "tactical",
+      "active": true,
+      "hasAlert": true,
+      "alertReason": "Patched shared-link flaw could act in a logged-in ChatGPT session."
+    },
+    {
+      "name": "Anthropic",
+      "display": "Anthropic",
+      "headline": "IPO advances (~$3.5B Japanese tranche after the Oct 26 S-1) and new enterprise token-spend reporting tools.",
+      "detail": "Filing shows plans to sell up to ¥552.9B of shares to Japanese investors in the US IPO; the S-1 (Oct 26) disclosed H1 2026 revenue of $16.3B. Oct 28: reporting tools that show enterprise customers what their token spend buys. Nov 1: a claimed 7.72 TB 'Mythos' checkpoint on Hugging Face was debunked as random noise. Independent tests had Opus 5.5 as the only agent refusing attacker-directed fund transfers, and top of SemiAnalysis's new GDPx benchmark (12.0%).",
+      "tags": ["strategic"],
+      "classification": "strategic",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Google Gemini",
+      "display": "Google Gemini",
+      "headline": "Gemini Computer Use reportedly reached general availability on Oct 30.",
+      "detail": "A weekly roundup reports Gemini's Computer Use (agentic browser/desktop control) went GA on Oct 30; not yet confirmed against Google's own release notes. Gemini 4 Carbon placed second on SemiAnalysis's GDPx benchmark (10.9%). Last week's privacy-policy change letting connected Gmail, Drive and Photos content inform ad selection still stands.",
+      "tags": ["tactical", "watch"],
+      "classification": "tactical",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "xAI",
+      "display": "xAI / Grok",
+      "headline": "Grok 5 did not ship by the Oct 31 market deadline; Grok 4.7 remains flagship.",
+      "detail": "No Grok 5 release found as of Nov 2, extending a run of missed targets (late 2025, Q1, Q2 2026). The only new item is Grok joining ChatGPT, Claude and Perplexity in Webull Canada's MCP brokerage integration.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Meta",
+      "display": "Meta",
+      "headline": "UK CMA opens a formal probe into Meta's terms for using publisher content in its AI features.",
+      "detail": "Oct 30: the CMA opened an abuse-of-dominance investigation into terms that would let Meta use UK publishers' and businesses' content for AI; Meta has paused the changes. Wired's Nov 2 investigation into covert nudify/deepfake apps led Meta to action ~11,600 ad accounts and 15,000 Pages. Still no new open Llama release.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Mistral",
+      "display": "Mistral",
+      "headline": "No new release; sources now conflict on whether Large 4 left preview on Oct 29.",
+      "detail": "Wikipedia lists Mistral Large 4 as released Oct 29, while news coverage still describes the Oct 6 preview with open weights promised. Nothing confirmed from Mistral itself.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Perplexity",
+      "display": "Perplexity",
+      "headline": "No release; only a third-party Webull Canada MCP integration.",
+      "detail": "No dated Perplexity release found. Webull Canada's new brokerage integration includes Perplexity alongside ChatGPT, Claude and Grok. Publisher lawsuits remain the background story.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Microsoft 365 Copilot",
+      "display": "Microsoft 365 Copilot",
+      "headline": "No new message-center item found.",
+      "detail": "No November roundup or new Message Center post surfaced. The classic Outlook Copilot entry point (due mid-October) and the in-app prompt box rolling out through December remain the current changes; the Dec 1 CSP usage-based billing default is the next deadline.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "GitHub Copilot",
+      "display": "GitHub Copilot",
+      "headline": "No new release; DeepSeek's open-source Super-agent adds another rival.",
+      "detail": "No GitHub changelog item found in the window. Competitive pressure grew on Oct 31 when DeepSeek released Super-agent, an MIT-licensed coding agent that watches repos and opens pull requests.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Cursor",
+      "display": "Cursor",
+      "headline": "No new release since the trojaned Claude Code extension incident.",
+      "detail": "Nothing new beyond the marketplace incident covered Oct 31 (clean 2.1.314 published Oct 30). Teams should confirm they are on 2.1.314 or later.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Gamma",
+      "display": "Gamma",
+      "headline": "No release found; the long quiet stretch continues.",
+      "detail": "No Gamma changelog item surfaced for late October or November.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Notion AI",
+      "display": "Notion AI",
+      "headline": "No new release; Notion Workers credit billing (from Oct 15) is still the last change.",
+      "detail": "No new Notion AI release notes found in the window.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    }
+  ],
+  "persistent_signals": [
+    {"provider": "Anthropic", "text": "Anthropic — IPO / S-1 — 2 weeks running (last week: S-1 not yet public; now filed Oct 26 with a ~$3.5B Japanese tranche)"},
+    {"provider": "xAI", "text": "xAI — Grok 5 not shipped — 2+ weeks running (Oct 31 market deadline now passed with no release)"}
+  ],
+  "month_themes": {
+    "then": "Cheaper frontier models (GPT-6.1 Sol at DevDay), Copilot's split billing tracks, xAI model retirements reaching enterprise tooling",
+    "now": "Consolidated token allowances and spend reporting, AI credentials as breach targets, vendor IPO and funding health"
+  },
+  "habits": [
+    {"task": "BCP/DR plan narratives & runbooks", "tool": "Claude Opus 5.5", "shift": "Add an 'AI credential compromise' scenario: rotate provider keys, cap spend, fail over to a second provider. Draft it from the Northflank incident.", "type": "tactical"},
+    {"task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)", "tool": "Claude Opus 5.5", "shift": "Keep using Claude; cite NIST SP 1353 draft's rule that a human reviews AI output before it informs a compliance decision.", "type": "strategic"},
+    {"task": "Vendor/architecture research", "tool": "Perplexity / Gemini", "shift": "Pull the Anthropic S-1 and OpenAI funding coverage into vendor risk files — financial health is now public data.", "type": "strategic"},
+    {"task": "Client proposals & SOWs", "tool": "ChatGPT (GPT-6)", "shift": "If you also use Codex, budget for the shared ChatGPT+Codex allowance from December before renewing seats.", "type": "tactical"},
+    {"task": "Executive decks", "tool": "Gamma / ChatGPT Slides", "shift": "No change; Gamma remains quiet, ChatGPT Slides in Spaces is the fallback.", "type": "watch"},
+    {"task": "Stakeholder audio walkthroughs", "tool": "ChatGPT Voice (GPT-Live-1.1)", "shift": "No change this week.", "type": "watch"},
+    {"task": "Client advisory on AI data risk", "tool": "Claude Opus 5.5", "shift": "Add two talking points: where AI API keys are stored, and treating shared AI chat links as untrusted.", "type": "tactical"}
+  ],
+  "community": [
+    {"source": "Security press (Hacker News / Wiz)", "signal": "Northflank key-theft and the October tally of nine AI dev-platform breaches dominate developer security threads.", "so_what": "Confirms AI keys need the same rotation and vaulting as cloud root credentials."},
+    {"source": "r/LocalLLaMA / Hugging Face", "signal": "The 7.72 TB 'Anthropic Mythos checkpoint' was debunked on Nov 1 after tensor hashes showed seeded random noise.", "so_what": "Leaked-model claims are a social-engineering lure; never pull unverified weights into client environments."},
+    {"source": "Developer community", "signal": "DeepSeek's MIT-licensed Super-agent is drawing comparisons to Claude Code as a self-hostable alternative.", "so_what": "A possible on-prem option for clients that cannot send code to US clouds — evaluate before recommending."},
+    {"source": "The Register / Linux kernel", "signal": "Linux 7.4-rc1 shipped a record 19,671 commits with ~2.4x more AI-assisted commits; Torvalds said he used Claude to prototype a change.", "so_what": "AI-assisted code is now mainstream in critical infrastructure software — supports a 'governed use' rather than 'ban' stance."}
+  ],
+  "watch": [
+    {"kind": "pricing", "title": "ChatGPT + Codex shared allowance (December)", "body": "Plus, Pro and Business seats move to one token pool for chat and Codex. Check usage before December renewals."},
+    {"kind": "deadline", "title": "Microsoft CSP usage-based billing default — Dec 1", "body": "New CSP Business Copilot seats default to usage-based billing from Dec 1."},
+    {"kind": "watch", "title": "Anthropic IPO pricing (mid-November)", "body": "Listing timing and terms will shape enterprise contract leverage and vendor-risk ratings."},
+    {"kind": "security", "title": "AI dev-platform breach wave", "body": "Nine AI-adjacent dev-platform breaches in October; expect more disclosures. Rotate keys stored on third-party platforms."},
+    {"kind": "regulatory", "title": "UK CMA probe of Meta AI content terms", "body": "A first formal look at platforms using publisher content for AI; outcomes may set terms for other providers."}
+  ],
+  "sources": "Sources consulted: OpenAI and Anthropic newsrooms via search, CNN, TechCrunch, The Hacker News, CoinDesk, The Register, Wired, Cisco Talos, SemiAnalysis, The National, aiweekly.co daily roundup, CSA research notes, and Reddit/Hugging Face community coverage (Reddit search returned no current-week threads)."
+}
