@@ -1,96 +1,43 @@
 {
-  "date": "2026-11-03",
+  "date": "2026-11-04",
   "sections": {
     "ransomware": {
       "items": [
-        {
-          "title": "Colmobil (Israel) hit by ransomware",
-          "tags": ["High-profile", "Newly claimed"],
-          "summary": "Israel's largest vehicle importer, Colmobil, was reported hit by a ransomware attack in the week ending November 1.",
-          "source": {"name": "This Week in Security", "url": "https://this.weekinsecurity.com/this-week-in-security-november-1-2026-edition/"}
-        },
-        {
-          "title": "GOLD OGRE using AI agents in Aur0ra intrusions",
-          "tags": ["Trend"],
-          "summary": "Check Point reports the GOLD OGRE group making heavy use of AI agents during Aur0ra attacks, with some campaigns moving on to credential theft, lateral movement and ransomware activity.",
-          "source": {"name": "Check Point Research", "url": "https://research.checkpoint.com/2026/2nd-november-threat-intelligence-report/"}
-        },
-        {
-          "title": "New leak-site postings, Oct 31 – Nov 2",
-          "tags": ["Reference", "Newly claimed"],
-          "summary": "Ransomware.live lists fresh victim postings discovered Oct 31 to Nov 2 with estimated attack dates of Oct 26 and Nov 1; these are attacker claims and the victims have not confirmed them.",
-          "source": {"name": "Ransomware.live", "url": "https://www.ransomware.live/"}
-        }
+        {"title": "Neighborhood House Association (Portland, OR) claimed by The Gentlemen", "tags": ["Newly claimed"], "summary": "The Gentlemen ransomware group has claimed responsibility for a cyberattack on the Portland nonprofit; the claim has not been confirmed by the victim.", "source": {"name": "The Record", "url": "https://therecord.media/"}},
+        {"title": "Synology urges DSM updates after ransomware hits NAS devices", "tags": ["Critical", "Trend"], "summary": "Synology is urging customers to patch DiskStation Manager following ransomware attacks against its network-attached storage devices, a common backup target.", "source": {"name": "The Record", "url": "https://therecord.media/"}},
+        {"title": "U.S. biopharmaceutical company claimed in Nov 2 leak-site post", "tags": ["Newly claimed", "Healthcare"], "summary": "A ransomware group posted a claim on November 2 against an unnamed U.S. biopharmaceutical firm; victim identity and impact are unconfirmed.", "source": {"name": "The Record", "url": "https://therecord.media/"}},
+        {"title": "Fox Hill Bookkeeping & Tax Practice (All Business Technologies) — n0n", "tags": ["Data exposure"], "summary": "SOCRadar lists an n0n-group claim against the bookkeeping and tax practice with an attack date of October 18, 2026.", "source": {"name": "SOCRadar", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/all-business-technologies-fox-hill-bookkeeping-and-tax-practice-n0n-d670ee63"}},
+        {"title": "UK NCSC: AI-enabled ransomware on critical infrastructure 'highly likely'", "tags": ["Trend", "Reference"], "summary": "A November 3 NCSC assessment warns it is highly likely AI malware will be used in a ransomware attack on UK critical national infrastructure.", "source": {"name": "New Civil Engineer", "url": "https://www.newcivilengineer.com/latest/highly-likely-ai-will-be-used-in-ransomware-attack-on-uk-critical-infrastructure-03-11-2026/"}}
       ],
-      "note": "Early-month coverage is thin: few named November victims are indexed yet."
+      "note": "Only four days into November — leak-site trackers and press lag, so named-victim volume is light; one late-October claim included for context."
     },
     "outage": {
       "items": [
-        {
-          "title": "Veeqo shipping options unavailable for all orders",
-          "tags": ["Cloud"],
-          "summary": "Veeqo's status page logged an incident in which shipping options were unavailable for all orders; it was resolved at 09:44 UTC on November 2.",
-          "source": {"name": "Veeqo Status", "url": "https://status.veeqo.com/history/2026/november"}
-        },
-        {
-          "title": "GWU Foggy Bottom campus power outage hits network services",
-          "tags": ["Education"],
-          "summary": "A power outage across George Washington University's Foggy Bottom campus on November 2 affected GWorld, parking and network-based services while Pepco worked on restoration.",
-          "source": {"name": "GWU Campus Advisories", "url": "https://campusadvisories.gwu.edu/foggy-bottom-power-outage-november-2-2026"}
-        }
+        {"title": "SkyBell DNS outage logs users out, drops devices offline", "tags": ["Third-party"], "summary": "SkyBell reported devices going offline and app logouts from November 2, attributed on November 3 to DNS server settings, with no ETA given.", "source": {"name": "SkyBell Support", "url": "https://support.skybell.com/hc/en-us/articles/50108125966989-SkyBell-Outage-November-2026"}},
+        {"title": "Cloudflare: Durable Object errors in Dallas, 5xx spike in Hong Kong", "tags": ["Cloud"], "summary": "Cloudflare logged elevated Durable Object errors in its Dallas region (resolved 16:42 UTC) and elevated 5xx errors in HKG (resolved 06:32 UTC) on November 3.", "source": {"name": "Cloudflare Status", "url": "https://www.cloudflarestatus.com/history"}},
+        {"title": "W. W. Norton digital platform data-display issue", "tags": ["Education", "Third-party"], "summary": "Norton's status page reported student time-spent data being logged but not appearing on the ebook landing page on November 3.", "source": {"name": "DesignTAXI / Status Is Down", "url": "https://community.designtaxi.com/topic/45364-is-w-w-norton-company-down/#comment-47802"}}
       ],
-      "note": "No major AWS, Azure or Google Cloud outage reported in the past 72 hours; the last significant one was Azure gateway services across 18 regions, Sep 30 – Oct 1."
+      "note": "No major AWS, Azure or Google Cloud incident reported so far in November; Google Search dashboard clear as of Nov 3."
     },
     "cyber": {
       "items": [
-        {
-          "title": "CISA adds two Ivanti Connect Secure zero-days to KEV",
-          "tags": ["KEV add", "Zero-day", "Critical"],
-          "summary": "CVE-2026-111357 and CVE-2026-118527 were added to KEV, with federal deadlines of Nov 2 and Nov 13; chained with CVE-2026-104935, they give root access and expose AD credentials, LAPS passwords and BitLocker keys.",
-          "source": {"name": "Help Net Security", "url": "https://helpnetsecurity.com/2026/11/02/cisa-to-federal-agencies-remediate-exploited-ivanti-connect-secure-vulnerabilities-cve-2026-111357-cve-2026-118527"}
-        },
-        {
-          "title": "Ivanti patches Connect Secure attack chain (UTA0576)",
-          "tags": ["Zero-day", "Credential exposure"],
-          "summary": "Ivanti released patches for two more zero-days in the chain that Volexity attributes to UTA0576, and Rapid7 advises a compromise hunt after patching.",
-          "source": {"name": "SecurityWeek", "url": "https://www.securityweek.com/ivanti-patches-two-more-zero-days-exploited-in-connect-secure-attack-chain/"}
-        },
-        {
-          "title": "U.S. Homeland Security breach reported",
-          "tags": ["High-profile", "Data exposure"],
-          "summary": "A breach at the U.S. Department of Homeland Security was among the incidents reported in the week ending November 1.",
-          "source": {"name": "This Week in Security", "url": "https://this.weekinsecurity.com/this-week-in-security-november-1-2026-edition/"}
-        },
-        {
-          "title": "Binance theft",
-          "tags": ["High-profile"],
-          "summary": "A theft of funds from the Binance cryptocurrency exchange was reported in the same weekly roundup.",
-          "source": {"name": "This Week in Security", "url": "https://this.weekinsecurity.com/this-week-in-security-november-1-2026-edition/"}
-        }
+        {"title": "CISA adds WordPress Core race condition CVE-2026-119977 to KEV", "tags": ["KEV add", "Critical"], "summary": "A CVSS 8.1 TOCTOU flaw in WordPress Core exploited during upgrades to achieve code execution; FCEB agencies must patch by November 6.", "source": {"name": "CISA", "url": "https://www.cisa.gov/news-events/alerts/2026/11/03/cisa-adds-one-known-exploited-vulnerability-catalog"}},
+        {"title": "WordPress Core exploitation confirmed in the wild", "tags": ["Zero-day", "High-profile"], "summary": "CISA confirmed attackers are exploiting the WordPress Core flaw during software upgrades, putting a huge install base at risk.", "source": {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/cisa-confirms-hackers-exploiting.html"}},
+        {"title": "Ivanti Connect Secure CVE-2026-111357 added to KEV", "tags": ["KEV add"], "summary": "CISA added an actively exploited Ivanti Connect Secure flaw and CVE-2026-118527 to the catalog on October 30.", "source": {"name": "CISA KEV Catalog", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"}},
+        {"title": "Chainstack discloses infrastructure breach", "tags": ["Third-party", "Data exposure"], "summary": "The blockchain infrastructure provider disclosed on November 3 that an unauthorized party accessed parts of its infrastructure.", "source": {"name": "The Record", "url": "https://therecord.media/"}},
+        {"title": "Hacktivists claim destruction of Rosstat internal systems", "tags": ["High-profile"], "summary": "Belarusian Cyber Partisans and Silent Crow claimed to wipe Russia's statistics agency systems; Rosstat confirmed attacks Oct 29–Nov 1 but denies database compromise.", "source": {"name": "Brandefense", "url": "https://brandefense.io/security-news/rosstat-hack-cyber-partisans-silent-crow-claims"}},
+        {"title": "CISA adds six KEVs including Plex Media Server flaws", "tags": ["KEV add", "Reference"], "summary": "On October 20 CISA added six actively exploited flaws, mostly in Plex Media Server plus EG Secure Solutions and Siemens products.", "source": {"name": "CISA", "url": "https://www.cisa.gov/news-events/alerts/2026/10/20/cisa-adds-six-known-exploited-vulnerabilities-catalog"}}
       ]
     },
     "physical": {
       "items": [
-        {
-          "title": "M 6.4 southeast of Easter Island",
-          "tags": ["M 6.4"],
-          "summary": "USGS recorded an M 6.4 earthquake southeast of Easter Island on October 29, with a green PAGER alert and no tsunami flag.",
-          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ttxz"}
-        },
-        {
-          "title": "Emergency water interruption, Puerto Rico village (Saipan, CNMI)",
-          "tags": ["Municipal"],
-          "summary": "Commonwealth Utilities Corporation issued an emergency water service interruption advisory for the Puerto Rico village on Saipan on November 2.",
-          "source": {"name": "Commonwealth Utilities Corp.", "url": "https://cucgov.org/news-and-events/public-advisories/2026-11-02-public-advisory-re-emergency-water-service-interruption-for-puerto-rico-on-november-2-2026/"}
-        },
-        {
-          "title": "Record-pace Eastern Pacific hurricane season runs to Nov 30",
-          "tags": ["Tropical", "Reference"],
-          "summary": "The 2026 Eastern Pacific season has been on a record pace and officially runs until November 30, so late-season storms affecting Mexico remain possible.",
-          "source": {"name": "Wetterdienst.de", "url": "https://www.wetterdienst.de/Deutschlandwetter/Thema_des_Tages/6711/die-pazifische-hurrikansaison-2026-auf-rekordjagd"}
-        }
+        {"title": "San Juan River flooding forces evacuations in New Mexico and Colorado", "tags": ["Flood"], "summary": "Heavy rain sent the San Juan River surging, with evacuations in San Juan County, NM and mandatory orders in Archuleta County, CO; at least one death reported.", "source": {"name": "PBS NewsHour / AP", "url": "https://pbs.org/newshour/nation/rain-moves-out-as-flood-risks-remain-in-southwest-following-destructive-storms"}},
+        {"title": "Pagosa Springs braces for possible historic river crest", "tags": ["Flood"], "summary": "Residents and businesses were urged to evacuate as the San Juan River was forecast to crest Tuesday–Wednesday; a house was swept into a bridge on November 2.", "source": {"name": "Denver7", "url": "https://www.denver7.com/news/local-news/some-pagosa-springs-residents-businesses-urged-to-evacuate-ahead-of-possible-historic-river-crest"}},
+        {"title": "Arizona flash flooding prompts Sedona and Camp Verde evacuations", "tags": ["Flood"], "summary": "Urgent evacuation orders were issued for zones in Sedona and voluntary evacuation encouraged in Camp Verde amid flash flooding and road closures.", "source": {"name": "ABC15", "url": "https://www.abc15.com/news/region-northern-az/sedona/urgent-evacuation-orders-issued-for-some-zones-in-sedona-due-to-flash-flooding"}},
+        {"title": "Typhoon In-fa brings dangerous surf to the Marianas and Guam", "tags": ["Tropical"], "summary": "An October 29 warning forecast 12–18 ft surf on Tinian and Saipan and 10–14 ft on Guam and Rota through the weekend.", "source": {"name": "EM Network", "url": "https://emnetwork.substack.com/p/typhoon-in-fa-warning-flood-response"}},
+        {"title": "M 6.4 earthquake southeast of Easter Island", "tags": ["M 6.4"], "summary": "USGS recorded a M 6.4 quake on October 29 in the remote southeast Pacific; green alert, no tsunami.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000ttxz"}}
       ],
-      "note": "No major November hurricane, typhoon, wildfire or flood event indexed yet. Late-October context: Hurricane Isaias (FL, Cat 2) and Typhoon Champi (Taiwan)."
+      "note": "No active wildfire evacuations found; U.S. Southwest flooding is the main BC event this week."
     }
   }
 }

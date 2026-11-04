@@ -1,201 +1,77 @@
 {
-  "date": "2026-11-02",
+  "date": "2026-11-03",
   "client_alerts": [
     {
-      "headline": "Stolen AI provider keys: Northflank breach is the ninth AI dev-platform breach in October",
-      "body": "Developer-platform host Northflank disclosed on Nov 2 that attackers decrypted customer environment variables and used the live OpenAI/Anthropic-style API keys inside them to hijack inference quota. Wiz counts it as the ninth AI-adjacent dev-platform breach in October. **Ask clients where their AI API keys live**, rotate any key stored on a third-party build or hosting platform, and set provider-side spend caps so a stolen key fails closed."
-    },
-    {
-      "headline": "ChatGPT shared links could run code in a logged-in session (patched Oct 26)",
-      "body": "Researchers chained flaws in ChatGPT's share-link feature so that opening a shared conversation could act in the viewer's logged-in session; OpenAI fixed it Oct 26. Already patched, but it is a reminder that **shared AI chat links are an untrusted input** — worth one line in client acceptable-use guidance."
+      "headline": "Google: connected Gmail, Drive and Photos content can inform ad selection (still in effect)",
+      "body": "Carried from last week. Clients who connect personal Google accounts to Gemini should assume that content can shape ads. **Keep client material out of consumer Gemini** and check Workspace admin settings for connected-app access."
     }
   ],
   "top_moves": [
     {
-      "title": "OpenAI merges ChatGPT and Codex into one token allowance from December",
-      "date_label": "Oct 31, 2026",
-      "urgent": true,
-      "body": "From December, Plus, Pro and Business seats draw ChatGPT chat and Codex coding work from a single shared token-based allowance. Heavy Codex use will now eat into chat capacity, so **re-check seat tiers before December renewals**.",
-      "tag": "tactical"
-    },
-    {
-      "title": "AI provider keys are now a breach target in their own right",
-      "date_label": "Nov 2, 2026",
-      "urgent": true,
-      "body": "Northflank's breach exposed customers' live AI API keys, the ninth AI-adjacent dev-platform breach Wiz counted in October, and Cisco Talos separately documented the VOLTA infostealer using Claude, Kimi and Gemini to rank stolen victims by payout. AI credentials and quota belong in the client's crown-jewel inventory and DR runbook.",
-      "tag": "alert"
-    },
-    {
-      "title": "Anthropic's IPO moves forward as it ships enterprise spend reporting",
+      "title": "Anthropic's amended S-1 says its models may soon hit its own AI-accelerated research threshold",
       "date_label": "Nov 2, 2026",
       "urgent": false,
-      "body": "Following the Oct 26 S-1, a new filing shows Anthropic plans to sell up to ¥552.9B (~$3.5B) of shares to Japanese investors in the US IPO, and on Oct 28 it launched reporting tools showing enterprises what their token spend buys. Meanwhile the FT reports OpenAI cut its round from ~$30B to ~$20B — vendor financial health is now a public, trackable input to third-party risk reviews.",
+      "body": "The S-1/A filed Nov 2 adds a disclosure that future models may **imminently** cross the Responsible Scaling Policy threshold for AI-accelerated research, ahead of a November Nasdaq listing under ticker ANT. Expect stricter safeguards and possible capability gating on top models. Start capturing those terms in AI-vendor risk registers now.",
       "tag": "strategic"
+    },
+    {
+      "title": "OpenAI signs four Abu Dhabi agreements; ADNOC to deploy OpenAI Frontier",
+      "date_label": "Nov 2, 2026",
+      "urgent": false,
+      "body": "OpenAI signed four agreements at ADIPEC, including an ADNOC deployment of Frontier for energy operations. Aggregators also report that OpenAI cut its funding round to $20B. Both point to sovereign and in-region deployments, which matter for clients with data-residency requirements.",
+      "tag": "watch"
+    },
+    {
+      "title": "Google's October recap names Gemini 4 Argon and Carbon, plus the Genie 4 world model",
+      "date_label": "Nov 2, 2026",
+      "urgent": false,
+      "body": "Google's monthly roundup positions Gemini 4 Argon for complex coding and financial workflows. Carbon is still limited to select experts. Nothing is generally available yet, so **don't change client tooling** until GA and enterprise terms are published.",
+      "tag": "watch"
     }
   ],
   "providers": [
-    {
-      "name": "OpenAI",
-      "display": "OpenAI",
-      "headline": "ChatGPT and Codex will share one token allowance from December; funding round reportedly cut to ~$20B.",
-      "detail": "Oct 31: OpenAI confirmed Plus, Pro and Business subscribers will draw ChatGPT and Codex from a single token-based allowance starting in December. Oct 30: GPT-6 Rosalind Research released to trusted-access labs for biology and drug discovery. The FT reports the latest round was cut from ~$30B to ~$20B at a $1.25T valuation. A ChatGPT share-link code-execution chain was patched Oct 26; Nov 2 brought four Abu Dhabi government/ADNOC deployment deals.",
-      "tags": ["tactical", "alert"],
-      "classification": "tactical",
-      "active": true,
-      "hasAlert": true,
-      "alertReason": "Patched shared-link flaw could act in a logged-in ChatGPT session."
-    },
-    {
-      "name": "Anthropic",
-      "display": "Anthropic",
-      "headline": "IPO advances (~$3.5B Japanese tranche after the Oct 26 S-1) and new enterprise token-spend reporting tools.",
-      "detail": "Filing shows plans to sell up to ¥552.9B of shares to Japanese investors in the US IPO; the S-1 (Oct 26) disclosed H1 2026 revenue of $16.3B. Oct 28: reporting tools that show enterprise customers what their token spend buys. Nov 1: a claimed 7.72 TB 'Mythos' checkpoint on Hugging Face was debunked as random noise. Independent tests had Opus 5.5 as the only agent refusing attacker-directed fund transfers, and top of SemiAnalysis's new GDPx benchmark (12.0%).",
-      "tags": ["strategic"],
-      "classification": "strategic",
-      "active": true,
-      "hasAlert": false,
-      "alertReason": ""
-    },
-    {
-      "name": "Google Gemini",
-      "display": "Google Gemini",
-      "headline": "Gemini Computer Use reportedly reached general availability on Oct 30.",
-      "detail": "A weekly roundup reports Gemini's Computer Use (agentic browser/desktop control) went GA on Oct 30; not yet confirmed against Google's own release notes. Gemini 4 Carbon placed second on SemiAnalysis's GDPx benchmark (10.9%). Last week's privacy-policy change letting connected Gmail, Drive and Photos content inform ad selection still stands.",
-      "tags": ["tactical", "watch"],
-      "classification": "tactical",
-      "active": true,
-      "hasAlert": false,
-      "alertReason": ""
-    },
-    {
-      "name": "xAI",
-      "display": "xAI / Grok",
-      "headline": "Grok 5 did not ship by the Oct 31 market deadline; Grok 4.7 remains flagship.",
-      "detail": "No Grok 5 release found as of Nov 2, extending a run of missed targets (late 2025, Q1, Q2 2026). The only new item is Grok joining ChatGPT, Claude and Perplexity in Webull Canada's MCP brokerage integration.",
-      "tags": ["watch"],
-      "classification": "watch",
-      "active": false,
-      "hasAlert": false,
-      "alertReason": ""
-    },
-    {
-      "name": "Meta",
-      "display": "Meta",
-      "headline": "UK CMA opens a formal probe into Meta's terms for using publisher content in its AI features.",
-      "detail": "Oct 30: the CMA opened an abuse-of-dominance investigation into terms that would let Meta use UK publishers' and businesses' content for AI; Meta has paused the changes. Wired's Nov 2 investigation into covert nudify/deepfake apps led Meta to action ~11,600 ad accounts and 15,000 Pages. Still no new open Llama release.",
-      "tags": ["watch"],
-      "classification": "watch",
-      "active": true,
-      "hasAlert": false,
-      "alertReason": ""
-    },
-    {
-      "name": "Mistral",
-      "display": "Mistral",
-      "headline": "No new release; sources now conflict on whether Large 4 left preview on Oct 29.",
-      "detail": "Wikipedia lists Mistral Large 4 as released Oct 29, while news coverage still describes the Oct 6 preview with open weights promised. Nothing confirmed from Mistral itself.",
-      "tags": [],
-      "classification": null,
-      "active": false,
-      "hasAlert": false,
-      "alertReason": ""
-    },
-    {
-      "name": "Perplexity",
-      "display": "Perplexity",
-      "headline": "No release; only a third-party Webull Canada MCP integration.",
-      "detail": "No dated Perplexity release found. Webull Canada's new brokerage integration includes Perplexity alongside ChatGPT, Claude and Grok. Publisher lawsuits remain the background story.",
-      "tags": [],
-      "classification": null,
-      "active": false,
-      "hasAlert": false,
-      "alertReason": ""
-    },
-    {
-      "name": "Microsoft 365 Copilot",
-      "display": "Microsoft 365 Copilot",
-      "headline": "No new message-center item found.",
-      "detail": "No November roundup or new Message Center post surfaced. The classic Outlook Copilot entry point (due mid-October) and the in-app prompt box rolling out through December remain the current changes; the Dec 1 CSP usage-based billing default is the next deadline.",
-      "tags": [],
-      "classification": null,
-      "active": false,
-      "hasAlert": false,
-      "alertReason": ""
-    },
-    {
-      "name": "GitHub Copilot",
-      "display": "GitHub Copilot",
-      "headline": "No new release; DeepSeek's open-source Super-agent adds another rival.",
-      "detail": "No GitHub changelog item found in the window. Competitive pressure grew on Oct 31 when DeepSeek released Super-agent, an MIT-licensed coding agent that watches repos and opens pull requests.",
-      "tags": [],
-      "classification": null,
-      "active": false,
-      "hasAlert": false,
-      "alertReason": ""
-    },
-    {
-      "name": "Cursor",
-      "display": "Cursor",
-      "headline": "No new release since the trojaned Claude Code extension incident.",
-      "detail": "Nothing new beyond the marketplace incident covered Oct 31 (clean 2.1.314 published Oct 30). Teams should confirm they are on 2.1.314 or later.",
-      "tags": [],
-      "classification": null,
-      "active": false,
-      "hasAlert": false,
-      "alertReason": ""
-    },
-    {
-      "name": "Gamma",
-      "display": "Gamma",
-      "headline": "No release found; the long quiet stretch continues.",
-      "detail": "No Gamma changelog item surfaced for late October or November.",
-      "tags": [],
-      "classification": null,
-      "active": false,
-      "hasAlert": false,
-      "alertReason": ""
-    },
-    {
-      "name": "Notion AI",
-      "display": "Notion AI",
-      "headline": "No new release; Notion Workers credit billing (from Oct 15) is still the last change.",
-      "detail": "No new Notion AI release notes found in the window.",
-      "tags": [],
-      "classification": null,
-      "active": false,
-      "hasAlert": false,
-      "alertReason": ""
-    }
+    {"name": "OpenAI", "display": "OpenAI", "headline": "Four Abu Dhabi agreements signed at ADIPEC; ADNOC to deploy OpenAI Frontier.", "detail": "No new ChatGPT release since the iCloud Mail/Calendar plugins for Pro (Oct 27) and locked chats (Oct 20). The Abu Dhabi deals and a reportedly trimmed $20B round suggest more sovereign and regional deployments. A 'GPT-6.1 Terra' item appeared in a weekly recap, but the date is unclear and it is unconfirmed.", "tags": ["watch"], "classification": "watch", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "Anthropic", "display": "Anthropic", "headline": "S-1/A (Nov 2) says future models may imminently hit its RSP AI-accelerated-research threshold; Nasdaq listing as ANT expected in November.", "detail": "The public S-1 was filed Oct 26 and amended Nov 2. It includes a 93-page risk-factor section and large disclosed losses. Bloomberg, CBS and NPR all expect a November listing. The RSP disclosure suggests heavier safeguards on future frontier models, which is worth noting in vendor-risk terms.", "tags": ["strategic"], "classification": "strategic", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "Google Gemini", "display": "Google Gemini", "headline": "October recap highlights Gemini 4 Argon (coding/finance) and Carbon (experts only), plus Genie 4.", "detail": "Nothing is GA for general enterprise use yet. Last week's privacy-policy change, which lets connected Gmail, Drive and Photos content inform ads, still stands and remains the client-facing risk.", "tags": ["watch"], "classification": "watch", "active": true, "hasAlert": true, "alertReason": "Connected-app content may inform ads (policy from last week, still in effect)."},
+    {"name": "xAI", "display": "xAI / Grok", "headline": "Quiet; Grok 4.7 remains flagship and Grok 5 missed the Oct 31 market deadline.", "detail": "No xAI announcement found. Trackers now point to Grok 4.8 and 4.9 shipping before Grok 5, and prediction markets favour December or later.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Meta", "display": "Meta", "headline": "No new release; Muse Spark remains closed and no open Llama has appeared.", "detail": "No dated Meta model news. Analysts cited in prediction markets now point to Llama 5 slipping to 2027.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Mistral", "display": "Mistral", "headline": "No new release since Large 4 (Oct 29); open weights still promised.", "detail": "Wikipedia lists Large 4 as released Oct 29 after the Oct 6 preview. The open-weight release has not been confirmed.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Perplexity", "display": "Perplexity", "headline": "No dated release; the publisher lawsuits remain the main story.", "detail": "No new Perplexity features found in the window.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Microsoft 365 Copilot", "display": "Microsoft 365 Copilot", "headline": "No new message-center item; the in-app prompt box continues rolling out through December.", "detail": "No November roundup is indexed yet. The Classic Outlook Copilot entry point and summarized search answers were the last broad rollouts.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "GitHub Copilot", "display": "GitHub Copilot", "headline": "No new release; usage-based AI Credits billing and share pressure from Cursor and Claude Code persist.", "detail": "No dated release found. A JetBrains-derived share estimate puts Copilot at 29%, with Cursor and Claude Code at 18% each.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Cursor", "display": "Cursor", "headline": "No new release beyond 3.24's auto-review safety controls.", "detail": "No dated Cursor changelog item in the window.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Gamma", "display": "Gamma", "headline": "No release found; the long quiet stretch continues.", "detail": "The last dated change found is AI image generation (March 2026).", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Notion AI", "display": "Notion AI", "headline": "No new release; Notion Workers credit billing (from Oct 15) is the last change.", "detail": "No dated Notion AI update found.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""}
   ],
   "persistent_signals": [
-    {"provider": "Anthropic", "text": "Anthropic — IPO / S-1 — 2 weeks running (last week: S-1 not yet public; now filed Oct 26 with a ~$3.5B Japanese tranche)"},
-    {"provider": "xAI", "text": "xAI — Grok 5 not shipped — 2+ weeks running (Oct 31 market deadline now passed with no release)"}
+    {"provider": "Anthropic", "text": "Anthropic — IPO / S-1 process — 2 weeks running (S-1 not yet filed last week; S-1 filed Oct 26, S-1/A Nov 2, listing expected in November)"},
+    {"provider": "xAI", "text": "xAI — Grok 5 still not shipped — 2+ weeks running (Grok 4.7 remains flagship; Oct 31 deadline missed)"},
+    {"provider": "Mistral", "text": "Mistral — Large 4 open weights pending — 2+ weeks running (released Oct 29; weights not yet confirmed)"},
+    {"provider": "Meta", "text": "Meta — no open Llama; Muse Spark stays closed — 2+ weeks running"}
   ],
   "month_themes": {
-    "then": "Cheaper frontier models (GPT-6.1 Sol at DevDay), Copilot's split billing tracks, xAI model retirements reaching enterprise tooling",
-    "now": "Consolidated token allowances and spend reporting, AI credentials as breach targets, vendor IPO and funding health"
+    "then": "Agent entry points turned on by default (Microsoft); coding-agent permission fixes (Claude Code); consumer finance features and admin controls (ChatGPT)",
+    "now": "Frontier-lab IPO disclosures and safety thresholds (Anthropic); sovereign/regional deployments (OpenAI–Abu Dhabi); next-gen models still in limited preview (Gemini 4)"
   },
   "habits": [
-    {"task": "BCP/DR plan narratives & runbooks", "tool": "Claude Opus 5.5", "shift": "Add an 'AI credential compromise' scenario: rotate provider keys, cap spend, fail over to a second provider. Draft it from the Northflank incident.", "type": "tactical"},
-    {"task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)", "tool": "Claude Opus 5.5", "shift": "Keep using Claude; cite NIST SP 1353 draft's rule that a human reviews AI output before it informs a compliance decision.", "type": "strategic"},
-    {"task": "Vendor/architecture research", "tool": "Perplexity / Gemini", "shift": "Pull the Anthropic S-1 and OpenAI funding coverage into vendor risk files — financial health is now public data.", "type": "strategic"},
-    {"task": "Client proposals & SOWs", "tool": "ChatGPT (GPT-6)", "shift": "If you also use Codex, budget for the shared ChatGPT+Codex allowance from December before renewing seats.", "type": "tactical"},
-    {"task": "Executive decks", "tool": "Gamma / ChatGPT Slides", "shift": "No change; Gamma remains quiet, ChatGPT Slides in Spaces is the fallback.", "type": "watch"},
-    {"task": "Stakeholder audio walkthroughs", "tool": "ChatGPT Voice (GPT-Live-1.1)", "shift": "No change this week.", "type": "watch"},
-    {"task": "Client advisory on AI data risk", "tool": "Claude Opus 5.5", "shift": "Add two talking points: where AI API keys are stored, and treating shared AI chat links as untrusted.", "type": "tactical"}
+    {"task": "BCP/DR plan narratives & runbooks", "tool": "Claude (Opus/Sonnet 5.5)", "shift": "No change. Long-form runbook drafting stays on Claude. Keep a second-model review pass (ChatGPT GPT-6) for recovery-step ordering.", "type": "tactical"},
+    {"task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)", "tool": "Claude + primary-source check", "shift": "Today's searches found no change to ISO 22301 or NIST. Vendor 'ISO 22301 for AI' pages are marketing, so cite the standard itself and map AI controls to ISO 42001 / NIST AI RMF separately.", "type": "tactical"},
+    {"task": "Vendor/architecture research", "tool": "ChatGPT (GPT-6) or Perplexity", "shift": "Add AI-vendor financial and governance disclosures (Anthropic S-1 risk factors, OpenAI funding) to third-party risk reviews. Concentration risk on a single model vendor is now a documentable item.", "type": "strategic"},
+    {"task": "Client proposals & SOWs", "tool": "Claude", "shift": "No change. Add a clause naming the AI tools used and confirming client data is not used for training.", "type": "tactical"},
+    {"task": "Executive decks", "tool": "ChatGPT Slides / Gamma", "shift": "No change. Gamma is quiet; ChatGPT Slides in Spaces stays the faster option for the first draft.", "type": "tactical"},
+    {"task": "Stakeholder audio walkthroughs", "tool": "ChatGPT Voice (GPT-Live-1.1)", "shift": "No change since the Oct 15 voice update.", "type": "tactical"},
+    {"task": "Client advisory on AI data risk", "tool": "Advisory note", "shift": "Two talking points: Google's connected-app ad policy (keep client data out of consumer Gemini) and sovereign deployments (in-region options like OpenAI–UAE). Ask clients where their AI vendors actually process data.", "type": "strategic"}
   ],
   "community": [
-    {"source": "Security press (Hacker News / Wiz)", "signal": "Northflank key-theft and the October tally of nine AI dev-platform breaches dominate developer security threads.", "so_what": "Confirms AI keys need the same rotation and vaulting as cloud root credentials."},
-    {"source": "r/LocalLLaMA / Hugging Face", "signal": "The 7.72 TB 'Anthropic Mythos checkpoint' was debunked on Nov 1 after tensor hashes showed seeded random noise.", "so_what": "Leaked-model claims are a social-engineering lure; never pull unverified weights into client environments."},
-    {"source": "Developer community", "signal": "DeepSeek's MIT-licensed Super-agent is drawing comparisons to Claude Code as a self-hostable alternative.", "so_what": "A possible on-prem option for clients that cannot send code to US clouds — evaluate before recommending."},
-    {"source": "The Register / Linux kernel", "signal": "Linux 7.4-rc1 shipped a record 19,671 commits with ~2.4x more AI-assisted commits; Torvalds said he used Claude to prototype a change.", "so_what": "AI-assisted code is now mainstream in critical infrastructure software — supports a 'governed use' rather than 'ban' stance."}
+    {"source": "r/LocalLLaMA", "signal": "Heavily debated thread on whether a 2-bit GSQ-RCO quant of DeepSeek-V4.1-Flash really matches the base model.", "so_what": "Aggressive quantisation makes on-prem models viable on cheaper hardware, which helps air-gapped or DR-site AI. Benchmark before trusting the claims."},
+    {"source": "r/LocalLLaMA", "signal": "A community analysis of 49K posts and 800K comments maps hardware, runtime and model preferences.", "so_what": "Useful reference for sizing a local fallback model when cloud AI is unavailable during an incident."}
   ],
   "watch": [
-    {"kind": "pricing", "title": "ChatGPT + Codex shared allowance (December)", "body": "Plus, Pro and Business seats move to one token pool for chat and Codex. Check usage before December renewals."},
-    {"kind": "deadline", "title": "Microsoft CSP usage-based billing default — Dec 1", "body": "New CSP Business Copilot seats default to usage-based billing from Dec 1."},
-    {"kind": "watch", "title": "Anthropic IPO pricing (mid-November)", "body": "Listing timing and terms will shape enterprise contract leverage and vendor-risk ratings."},
-    {"kind": "security", "title": "AI dev-platform breach wave", "body": "Nine AI-adjacent dev-platform breaches in October; expect more disclosures. Rotate keys stored on third-party platforms."},
-    {"kind": "regulatory", "title": "UK CMA probe of Meta AI content terms", "body": "A first formal look at platforms using publisher content for AI; outcomes may set terms for other providers."}
+    {"kind": "watch", "title": "Anthropic Nasdaq listing (ANT)", "body": "Expected in November. Watch for final terms, any change to enterprise commitments, and how the RSP-threshold disclosure affects model availability."},
+    {"kind": "deadline", "title": "Commvault SHIFT 2026, Nashville, Nov 9–12", "body": "The theme is the 'AI Recovery Imperative'. Expect announcements on AI-assisted cyber recovery that are directly relevant to DR client conversations."},
+    {"kind": "regulatory", "title": "Reported White House voluntary AI accord", "body": "An aggregator lists an accord involving OpenAI, Anthropic, Google, Meta and xAI. It is **unconfirmed**; verify against a primary source before citing it to clients."},
+    {"kind": "watch", "title": "Gemini 4 general availability", "body": "Argon and Carbon are still limited. Wait for GA plus Workspace data terms before recommending them."},
+    {"kind": "watch", "title": "Grok 5 / Grok 4.8", "body": "Grok 5 missed its Oct 31 market deadline. Grok 4.8 may ship first, with markets favouring December."}
   ],
-  "sources": "Sources consulted: OpenAI and Anthropic newsrooms via search, CNN, TechCrunch, The Hacker News, CoinDesk, The Register, Wired, Cisco Talos, SemiAnalysis, The National, aiweekly.co daily roundup, CSA research notes, and Reddit/Hugging Face community coverage (Reddit search returned no current-week threads)."
+  "sources": "Sources consulted: Bloomberg, CBS News, NPR and NBC on the Anthropic S-1/A; AI Weekly daily roundups; Google's October 2026 AI recap; OpenAI ChatGPT release notes; Wikipedia (Mistral, Llama); Manifold and BenchLM trackers; gummysearch r/LocalLLaMA; Commvault SHIFT announcements; and vendor ISO 22301/NIST AI compliance pages."
 }
