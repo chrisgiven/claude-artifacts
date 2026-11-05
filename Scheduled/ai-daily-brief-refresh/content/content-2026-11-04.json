@@ -1,0 +1,273 @@
+{
+  "date": "2026-11-04",
+  "client_alerts": [
+    {
+      "headline": "Windows malware is sending stolen victim data to Claude to rank targets",
+      "body": "Researchers found Windows malware that sends stolen data to Claude to decide which victims to go after first, and **switches to another model if one refuses**. For clients, egress to LLM API endpoints from endpoints that should never call them is now an exfiltration indicator. Add it to DLP/egress monitoring and to ransomware tabletop injects."
+    }
+  ],
+  "top_moves": [
+    {
+      "title": "Mistral Large 4 ships as open weights: 1T parameters, runs on-prem",
+      "date_label": "Nov 3, 2026",
+      "urgent": false,
+      "body": "The open-weight release Mistral promised for late October landed on Hugging Face: 1T total / 52B active parameters, natively multimodal, trained in Mistral's European data centres and pitched for self-hosted coding and cyber defence. It is the first credible frontier-class option for regulated clients who cannot send data to a US cloud API.",
+      "tag": "strategic"
+    },
+    {
+      "title": "Malware now uses commercial LLMs to triage stolen data",
+      "date_label": "Nov 3, 2026",
+      "urgent": true,
+      "body": "Researchers found Windows malware that ships victim data to Claude to rank targets and swaps models when one refuses. Provider refusals are no longer a dependable control, so egress to LLM APIs belongs in detection.",
+      "tag": "alert"
+    },
+    {
+      "title": "Goldman Sachs pulls Claude Code back to engineers only",
+      "date_label": "Nov 3, 2026",
+      "urgent": false,
+      "body": "After months of traders and bankers using agentic coding tools, Goldman restricted Claude Code and similar tools to engineering staff. Expect regulated clients to follow with role-based AI tool access, which is a governance and BIA-scoping conversation to have now.",
+      "tag": "tactical"
+    }
+  ],
+  "providers": [
+    {
+      "name": "OpenAI",
+      "display": "OpenAI",
+      "headline": "Launched Grid Protectors, a data-centre power-curtailment program for grid emergencies, plus the LifeVal everyday-tasks benchmark.",
+      "detail": "Grid Protectors would let OpenAI cut data-centre demand during grid emergencies; a planned Georgia site could free up to 1,000 MW, though it is still in development. LifeVal tests everyday tasks like budgeting and paperwork, built from time-use studies and a 3,995-person survey. OpenAI and Anthropic also set up a joint election-monitoring team for the Nov 3 midterms. Grid curtailment matters for capacity assumptions in AI-dependent DR plans.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Anthropic",
+      "display": "Anthropic",
+      "headline": "Amended S-1 shows $17B Q3 revenue and $895.4B in purchase commitments; Claude is being abused by malware, and a third Claude Code leader has left since Oct 24.",
+      "detail": "CNBC reports the revised S-1 discloses $17B in Q3 revenue and $895.4B in purchase commitments, which analysts are scrutinising. Malware was found using Claude to rank stolen victim data. Goldman Sachs restricted Claude Code to engineers. Cat Wu is the third Claude Code departure since Oct 24. Anthropic also opened a paid AI-safety research residency (applications close Nov 22) and confirmed new Claude Code restrictions on copying existing games.",
+      "tags": ["strategic", "alert"],
+      "classification": "strategic",
+      "active": true,
+      "hasAlert": true,
+      "alertReason": "Claude API abused by malware to triage stolen data"
+    },
+    {
+      "name": "Google Gemini",
+      "display": "Google Gemini",
+      "headline": "Google will turn AI features off by default in its school products from 2027 and is widening voluntary buyouts internationally.",
+      "detail": "Starting in 2027, AI features in Google's education products will default to off, and schools that block AI entirely on their devices also lose search. Buyouts first offered in June now extend to Canada, France, Germany, Japan and Switzerland to offset AI spending. WIRED reported stranded Mount Shasta hikers who relied partly on Gemini for route advice.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "xAI",
+      "display": "xAI / Grok",
+      "headline": "Grok 5 missed the Oct 31 market date and has no new release date; Grok 4.7 remains the flagship.",
+      "detail": "As of Nov 2 there is still no model card, spec sheet or benchmark for Grok 5. Musk's September roadmap puts Grok 4.8 and 4.9 ahead of it. Prediction markets put a release by Dec 31 near a coin flip.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Meta",
+      "display": "Meta",
+      "headline": "Quiet. No Llama release; Meta reported enforcement against ad accounts tied to a deepfake app network.",
+      "detail": "WIRED uncovered 400+ deceptive AI apps and sites hiding abusive deepfake tools; Apple pulled 19 apps and Meta acted against the linked ad accounts. No model news.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Mistral",
+      "display": "Mistral",
+      "headline": "Mistral Large 4 is now open weights on Hugging Face: 1T total / 52B active parameters, deployable on-prem.",
+      "detail": "Mistral calls it the top open model for agentic coding on Artificial Analysis' Coding Agent Index; Terminal-Bench 4.0 rose from 28% to 41%. It has low, medium and high reasoning modes, and Mistral pitches self-hosted threat detection and response. Trained on 3,800 Grace Blackwell GPUs in European data centres. Check the licence terms on the model card before advising clients.",
+      "tags": ["strategic"],
+      "classification": "strategic",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Perplexity",
+      "display": "Perplexity",
+      "headline": "Quiet. No new feature or policy change found.",
+      "detail": "No Perplexity announcements found for late October or early November.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Microsoft 365 Copilot",
+      "display": "Microsoft 365 Copilot",
+      "headline": "No new ship; the in-app Copilot button rollout in Word, Excel and PowerPoint continues to end of December, with no admin control.",
+      "detail": "The Copilot button rollout across Windows, macOS and web began in September and should finish by end of December 2026. Microsoft offers no separate admin toggle, so client user-awareness material should account for it.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "GitHub Copilot",
+      "display": "GitHub Copilot",
+      "headline": "No new ship found.",
+      "detail": "No GitHub Copilot changelog items found for this window.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Cursor",
+      "display": "Cursor",
+      "headline": "No new ship found; third-party memory tools (beacon.sh) now target Cursor and Claude Code.",
+      "detail": "beacon.sh released an open-source memory layer that lets coding agents such as Cursor, Claude Code and Codex reuse what they learned in earlier sessions. Nothing new from Cursor itself.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Gamma",
+      "display": "Gamma",
+      "headline": "Still quiet.",
+      "detail": "No dated Gamma product updates found.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Notion AI",
+      "display": "Notion AI",
+      "headline": "No new ship found.",
+      "detail": "No Notion AI release notes found for this window.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    }
+  ],
+  "persistent_signals": [
+    {
+      "provider": "xAI",
+      "text": "xAI — Grok 5 delay — 2+ weeks running (now past the Oct 31 market date, with no new date)"
+    },
+    {
+      "provider": "Mistral",
+      "text": "Mistral — Large 4 open weights — 2 weeks running (resolved: shipped Nov 3)"
+    },
+    {
+      "provider": "Anthropic",
+      "text": "Anthropic — IPO / S-1 disclosures — 2 weeks running (public S-1 last week, amended S-1 with Q3 financials this week)"
+    }
+  ],
+  "month_themes": {
+    "then": "Gemini 4 Argon staged rollout with tighter consumer tiers; a gray market for resold Claude accounts; Microsoft's Oct 25 deadline for agent/MCP uploads going default-on",
+    "now": "Open-weight frontier models for on-prem and sovereign use (Mistral Large 4); attackers using commercial LLMs in malware; enterprises scoping who may use agentic coding tools (Goldman) as Anthropic's IPO draws scrutiny"
+  },
+  "habits": [
+    {
+      "task": "BCP/DR plan narratives & runbooks",
+      "tool": "Claude (Opus 5.5)",
+      "shift": "No change. Keep drafting long-form runbooks in Claude. Add an AI-provider outage and curtailment scenario, citing OpenAI's Grid Protectors power-curtailment program.",
+      "type": "tactical"
+    },
+    {
+      "task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)",
+      "tool": "Claude, with ChatGPT as cross-check",
+      "shift": "No change. Continue Claude-first summaries with a second-model check on clause numbers.",
+      "type": "tactical"
+    },
+    {
+      "task": "Vendor/architecture research",
+      "tool": "Gemini Deep Research + Claude",
+      "shift": "Add Mistral Large 4 to sovereign and on-prem option sets for regulated clients, and verify its licence before recommending it.",
+      "type": "strategic"
+    },
+    {
+      "task": "Client proposals & SOWs",
+      "tool": "Claude",
+      "shift": "Add an optional 'AI tool access governance' line item. Goldman's role-based restriction is a ready reference point.",
+      "type": "tactical"
+    },
+    {
+      "task": "Executive decks",
+      "tool": "Gamma / Copilot in PowerPoint",
+      "shift": "No change. Gamma is quiet, and the Copilot button in PowerPoint keeps rolling out through December.",
+      "type": "watch"
+    },
+    {
+      "task": "Stakeholder audio walkthroughs",
+      "tool": "ChatGPT voice (GPT-Live-1.1) / NotebookLM",
+      "shift": "No change this week.",
+      "type": "watch"
+    },
+    {
+      "task": "Client advisory on AI data risk",
+      "tool": "Claude + current threat reporting",
+      "shift": "Add a note that LLM API egress is now an exfiltration and malware indicator. Recommend adding LLM endpoints to DLP and egress allowlists.",
+      "type": "strategic"
+    }
+  ],
+  "community": [
+    {
+      "source": "Developer reports (via The Neuron)",
+      "signal": "Some developers say Opus 5.5 refuses legitimate reverse-engineering work after Anthropic's new Claude Code restrictions on copying existing games. Anthropic has not confirmed any wider change.",
+      "so_what": "Plan a fallback model for any forensic or reverse-engineering steps in incident-response runbooks."
+    },
+    {
+      "source": "Tech community (TechCrunch, Nov 2)",
+      "signal": "Y Combinator's Garry Tan says he spends roughly $100K–$200K a year on AI tokens, which is fuelling debate over what heavy users really spend.",
+      "so_what": "Token cost is now a budgeting line. Include AI consumption in client TCO and continuity-of-service cost models."
+    },
+    {
+      "source": "r/LocalLLaMA (not verified)",
+      "signal": "Mistral Large 4 open weights (1T/52B active) is the obvious local-model story of the week. Live Reddit rankings could not be retrieved, because the mirrors lag months behind.",
+      "so_what": "Watch for practical hosting reports (hardware, quantisation) before quoting on-prem sizing to clients."
+    }
+  ],
+  "watch": [
+    {
+      "kind": "watch",
+      "title": "Commvault SHIFT 2026, Nashville, Nov 9–12",
+      "body": "Built around an 'AI Recovery Imperative' track. Expect announcements on recovering AI workloads and cyber-resilience tooling that bear directly on DR practice."
+    },
+    {
+      "kind": "deadline",
+      "title": "Anthropic AI-safety research residency closes Nov 22",
+      "body": "Applications for the paid residency close Nov 22, 2026. It also signals more RSP-related announcements to come."
+    },
+    {
+      "kind": "regulatory",
+      "title": "Anthropic RSP update and IPO pricing",
+      "body": "The amended S-1 says Anthropic may soon reach its accelerated-research threshold and is weighing Responsible Scaling Policy changes. Watch for policy text that changes enterprise usage terms."
+    },
+    {
+      "kind": "security",
+      "title": "LLM-assisted malware",
+      "body": "Expect follow-on research and provider takedown statements on malware that uses Claude or other models to triage stolen data. Update threat-model slides when IOCs are published."
+    },
+    {
+      "kind": "deadline",
+      "title": "M365 Copilot button rollout completes end of December",
+      "body": "The in-app Copilot button in Word, Excel and PowerPoint has no admin control. Clients with AI-use policies should brief users before the rollout finishes."
+    }
+  ],
+  "sources": "Sources consulted: The Neuron daily digest (Nov 3), CNBC on Anthropic's amended S-1 (Nov 2), ITBrief and Technology.org on Mistral Large 4, geotoolbox.ai on Grok 5 status, LLM Stats news feed, Arrow on Commvault SHIFT, Microsoft 365 message-center mirrors, and provider release notes; live Reddit rankings were unavailable."
+}

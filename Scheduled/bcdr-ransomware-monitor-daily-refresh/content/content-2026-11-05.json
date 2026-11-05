@@ -1,0 +1,114 @@
+{
+  "date": "2026-11-05",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {
+          "title": "Synology NAS devices hit by ransomware via patched DSM flaw",
+          "tags": ["Critical", "Trend"],
+          "summary": "Synology is urging customers to update DiskStation Manager after ransomware attacks on its NAS devices, linking to a November 2024 security advisory rather than naming the exploited flaw.",
+          "source": {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/synology-nas-devices-targeted-in.html"}
+        },
+        {
+          "title": "UK school estate encrypted by 3AM ransomware affiliate",
+          "tags": ["Education", "Newly claimed"],
+          "summary": "Bitdefender reports a 3AM affiliate encrypted about 37 of nearly 50 machines across a UK school estate from an unmanaged host, and suspects AI-generated commands drove part of the intrusion.",
+          "source": {"name": "BleepingComputer", "url": "https://bleepingcomputer.com/news/security/uk-school-estate-hit-by-3am-ransomware-in-suspected-ai-assisted-attack"}
+        },
+        {
+          "title": "NCSC: AI-built ransomware on UK critical infrastructure 'highly likely'",
+          "tags": ["Trend", "Reference"],
+          "summary": "The NCSC's annual State of the Cyber Nation report (3 Nov) warns AI-built malware is highly likely to be used in a ransomware attack on UK critical national infrastructure, possibly within two years.",
+          "source": {"name": "New Civil Engineer", "url": "https://www.newcivilengineer.com/latest/highly-likely-ai-will-be-used-in-ransomware-attack-on-uk-critical-infrastructure-03-11-2026/"}
+        }
+      ],
+      "note": "Few named November victims disclosed yet; leak-site claims usually lag disclosure by weeks. See ransomware.live for raw claims."
+    },
+    "outage": {
+      "items": [
+        {
+          "title": "Monday.com intermittent system availability",
+          "tags": ["Cloud"],
+          "summary": "A third-party tracker showed Monday.com degraded on 4 Nov with an open incident titled 'Intermittent System Availability'.",
+          "source": {"name": "PulsAPI", "url": "https://www.pulsapi.com/services/monday-com"}
+        },
+        {
+          "title": "Ivanti Cloud ITSM connectivity problems",
+          "tags": ["Cloud", "Third-party"],
+          "summary": "Ivanti's status page confirmed connectivity issues affecting its cloud ITSM environment on 4 Nov, per a community outage thread.",
+          "source": {"name": "Status Is Down (DesignTAXI)", "url": "https://community.designtaxi.com/topic/45499-is-ivanti-cloud-down/#comment-47938"}
+        },
+        {
+          "title": "OpenAI Codex disruption resolved",
+          "tags": ["Cloud"],
+          "summary": "StatusGator logged 58 user reports for OpenAI Codex in the 24 hours to 4 Nov; the service was back to operational by 05:21 UTC.",
+          "source": {"name": "StatusGator", "url": "https://statusgator.com/services/openai/codex"}
+        }
+      ],
+      "note": "No AWS, Azure or Google Cloud hyperscaler outage reported so far in November; most recent was the GCP europe-west2-b power event on 20 Oct. Items above are from aggregator trackers, not vendor post-mortems."
+    },
+    "cyber": {
+      "items": [
+        {
+          "title": "CISA adds WordPress Core race condition CVE-2026-119977 to KEV",
+          "tags": ["KEV add", "Critical"],
+          "summary": "CISA added a WordPress Core time-of-check/time-of-use race condition to the KEV catalog on 3 Nov with a federal remediation due date of 6 Nov.",
+          "source": {"name": "CISA", "url": "https://www.cisa.gov/news-events/alerts/2026/11/03/cisa-adds-one-known-exploited-vulnerability-catalog"}
+        },
+        {
+          "title": "CISA alert on PHP unauthenticated RCE flaws CVE-2026-109618/109619",
+          "tags": ["Critical", "Reference"],
+          "summary": "CISA warns two PHP vulnerabilities allow unauthenticated remote code execution on PHP systems serving web requests.",
+          "source": {"name": "CISA", "url": "https://www.cisa.gov/"}
+        },
+        {
+          "title": "Chainstack discloses infrastructure breach",
+          "tags": ["Third-party", "Data exposure"],
+          "summary": "Blockchain infrastructure provider Chainstack disclosed that an unauthorized party gained access to parts of its infrastructure.",
+          "source": {"name": "Cybersecurity News (Substack)", "url": "https://theparkernathan.substack.com/p/cybersecurity-news-november-3-2026"}
+        },
+        {
+          "title": "cPGuard update channel hijacked to backdoor Linux servers",
+          "tags": ["Third-party", "High-profile"],
+          "summary": "Attackers hijacked the cPGuard security product's update channel to push backdoors to Linux hosting servers, a software supply-chain compromise.",
+          "source": {"name": "Cybersecurity News (Substack)", "url": "https://theparkernathan.substack.com/p/cybersecurity-news-november-3-2026"}
+        }
+      ]
+    },
+    "physical": {
+      "items": [
+        {
+          "title": "Southwest / Four Corners flash flooding forces evacuations",
+          "tags": ["Flood"],
+          "summary": "Heavy rain sent floodwater across the Southwest, with mandatory evacuations in Pagosa Springs, CO, along New Mexico's San Juan River, and in parts of Sedona, AZ; at least one death.",
+          "source": {"name": "PBS NewsHour", "url": "https://pbs.org/newshour/nation/rain-moves-out-as-flood-risks-remain-in-southwest-following-destructive-storms"}
+        },
+        {
+          "title": "Cross-country storm pushes rivers to historic highs across 35 states",
+          "tags": ["Flood", "High-profile"],
+          "summary": "A large storm system is bringing heavy rain, severe thunderstorms and high-elevation snow to parts of 35 states through next week, with river evacuations and water rescues.",
+          "source": {"name": "FOX Weather", "url": "https://www.foxweather.com/weather-news/cross-country-storm-snow-rain-flood-severe-weather-storms-us-west-to-east"}
+        },
+        {
+          "title": "Florida flooding: state of emergency in seven counties",
+          "tags": ["Flood", "Municipal"],
+          "summary": "Governor DeSantis declared a state of emergency in seven counties after large-scale water rescues; Brevard Public Schools closed 2–3 Nov.",
+          "source": {"name": "Center for Disaster Philanthropy", "url": "https://disasterphilanthropy.org/blog/what-were-watching-weekly-disaster-update-november-4/"}
+        },
+        {
+          "title": "Severe flooding across Greece, Rhodes worst hit",
+          "tags": ["Flood"],
+          "summary": "Extensive flooding and damage were reported across Greece, with the island of Rhodes bearing the brunt.",
+          "source": {"name": "Center for Disaster Philanthropy", "url": "https://disasterphilanthropy.org/blog/what-were-watching-weekly-disaster-update-november-4/"}
+        },
+        {
+          "title": "Super Typhoon In-fa active in the western Pacific",
+          "tags": ["Tropical"],
+          "summary": "NASA reports Super Typhoon In-fa developed an unusually large eye in a busy Pacific season, while Typhoon Champi's remnants became an extratropical storm aimed at Alaska.",
+          "source": {"name": "NASA Earth Observatory", "url": "https://science.nasa.gov/earth/earth-observatory/the-pacifics-busy-storm-season/"}
+        }
+      ],
+      "note": "USGS significant-earthquake feed returned no events this week."
+    }
+  }
+}
