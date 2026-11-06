@@ -1,142 +1,5 @@
 [
   {
-    "date": "2026-08-08",
-    "providers": {
-      "OpenAI": {
-        "headline": "Atlas browser SHUT DOWN TOMORROW (Aug 9, T-1 day) — migrate all browser-agent workflows to ChatGPT desktop/Chrome extension TODAY. GPT-5.6 Luna new free default with unlimited text + Think toggle; Sol reliability update (68% fewer factual errors vs GPT-5.5 Instant on financial/medical/legal prompts, tighter formatting). Sign in with ChatGPT beta live (Airtable/GitLab/HubSpot/Notion/Supabase/Vercel). DALL-E GPT retiring Aug 30.",
-        "tags": [
-          "alert",
-          "tactical"
-        ],
-        "hasAlert": true,
-        "alertReason": "Atlas browser shuts down TOMORROW (Aug 9) — all browser-agent workflows cease; no grace period. Migrate to ChatGPT desktop/Chrome extension TODAY.",
-        "active": true
-      },
-      "Anthropic": {
-        "headline": "Claude Code self-hosted environments in public beta (Team + Enterprise) — run sessions on own infrastructure with internal network access, custom tooling, compliance controls. Mid-conversation tool changes beta (Fable 5/Mythos 5/Opus 4.8/5). Fallbacks default mode GA. Advisor tool max_tokens parameter added. Inference Hooks DLP live (Enterprise). Opus 4.1 retired Aug 5. Sonnet 5 promo ($2/$10/MTok) through Aug 31.",
-        "tags": [
-          "strategic",
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Google Gemini": {
-        "headline": "No new model today. Gemini 3.6 Flash (Jul 21) current stable. 3.5 Flash-Lite most cost-efficient for high-volume automation. Image generation models shutting down Aug 17 (T-9 days) — migrate now. 3.5 Pro still partner-only. Gemini Omni (multimodal) no GA date. Gemini 4 no timeline.",
-        "tags": [
-          "watch"
-        ],
-        "hasAlert": false,
-        "active": false
-      },
-      "xAI": {
-        "headline": "Grok 4.6 (1.5T param, improved SFT+RL post-training) confirmed live Aug 7 — now default in Cursor IDE. Competes with Moonshot Kimi K3 (~2.8T) and Claude Opus 4.8. Grok 4.7 (2.1T) targeting late August. Grok Voice Think Fast 2.0 GA. Grok for Google Workspace + Outlook live.",
-        "tags": [
-          "strategic",
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "Grok 4.6 now live Cursor default — all Cursor IDE sessions route to xAI training pipeline (SpaceX/Anysphere acquisition). Enterprise governance review required before next renewal.",
-        "active": true
-      },
-      "Meta": {
-        "headline": "Muse Code beta (Aug 5) — terminal coding agent for large repos; powered by Muse Spark 1.2. Handles planning, coding, validation, PR creation. Meta's answer to Claude Code and Codex. Open-source Llama strategy terminated. Avocado (closed-source successor) no timeline.",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Mistral": {
-        "headline": "Shieldstral released (Aug 5) — open-weight multimodal safety model; policy-as-natural-language at runtime; outperforms models 7x its size on moderation benchmarks; returns compliance score per prompt. Enterprise Connectors enhancements: scoped API keys, multi-account, debugger, Vibe Code + Workflows support. Leanstral 1.5 updated. Les Ulis 10MW inference facility opening Q3.",
-        "tags": [
-          "strategic",
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Perplexity": {
-        "headline": "No major new release today. MCP Server one-click install for Cursor/VS Code/Claude Desktop/Claude Code. Claude Opus 4.7 + GPT-5.5 + Grok 4.20 Reasoning in Agent API. Sonar lineup stable. Kimi K2.5 (Moonshot AI, Chinese-origin) Week 28+ on US inference — unresolved. Kimi K2.7 Code in Agent API — unresolved.",
-        "tags": [
-          "tactical",
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "Kimi K2.5 (Moonshot AI, Chinese-origin) Week 28+ on US inference — restrict ALL Kimi models in enterprise admin for regulated clients.",
-        "active": true
-      },
-      "Microsoft 365 Copilot": {
-        "headline": "Promotional flex credit cushion ending August 2026 — Business/Enterprise users ($30/$70/month promo) may see billing shock in September as credits revert to base level. August update: Word AI track-changes rewrites, Cowork event scheduling, richer visual answers. Copilot Notebooks rolling out mid-Aug (OneNote sync). Security Copilot GA. SharePoint Copilot ON by default. Claude DPA outstanding 20+ weeks.",
-        "tags": [
-          "alert",
-          "strategic"
-        ],
-        "hasAlert": true,
-        "alertReason": "GitHub Copilot promotional flex credits ending this month — budget exposure for Business/Enterprise clients in September. Claude DPA with Microsoft outstanding 20+ weeks.",
-        "active": true
-      },
-      "GitHub Copilot": {
-        "headline": "CLI v1.0.78: live timing displays for tool runs, first-party pool auto-update. Promotional flex credits ending August 2026 — same usage may exceed base credits in September (billing shock risk). Claude Opus 5 on Pro+/Max/Business/Enterprise. /security-review command in public preview. kimi-k2.7-code (Moonshot AI, Chinese-origin) Week 13+ in Enterprise — disable in allow-list.",
-        "tags": [
-          "tactical",
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "Promotional flex credits ending August 2026 — billing shock risk in September. kimi-k2.7-code (Moonshot AI, Chinese-origin) Week 13+ unresolved in Enterprise roster.",
-        "active": true
-      },
-      "Cursor": {
-        "headline": "Grok 4.6 confirmed as new default (live Aug 7). SpaceX/Anysphere acquisition data governance risk fully active — all IDE sessions flow to xAI training pipeline. Router (~60% cost reduction) prevents audit of model selection. Enterprise review required before next renewal; freeze for regulated workloads. Grok 4.7 (2.1T) will become next default in late August.",
-        "tags": [
-          "alert",
-          "tactical"
-        ],
-        "hasAlert": true,
-        "alertReason": "Grok 4.6 now live Cursor default — IDE data flows to xAI training (SpaceX acquisition). Router opacity prevents governance audit. Freeze for regulated workloads; enterprise review before next renewal.",
-        "active": true
-      },
-      "Gamma": {
-        "headline": "No update — 60+ days quiet since June 12 batch. Stable for existing presentation workflows. Watch for Q3 announcement.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Notion AI": {
-        "headline": "Workers billing transitions to Credits MONDAY August 11 (T-3 DAYS) — audit all automation budgets NOW before Monday. AI usage allowance tracks 6-hour rolling window + monthly billing cycle (visible under Settings → Notion AI → Usage). Custom Agent triggers after AI Meeting Note completion. External Agents GA with audit log. AI Meeting Notes: speaker labels + Excel/PowerPoint read-write.",
-        "tags": [
-          "alert",
-          "tactical"
-        ],
-        "hasAlert": true,
-        "alertReason": "Notion Workers billing transitions to Credits Monday August 11 (T-3 DAYS) — notify all clients using Notion Workers automation; audit credit balances and projected costs before Monday.",
-        "active": true
-      }
-    },
-    "topMoves": [
-      "OpenAI Atlas browser shuts down TOMORROW (Aug 9, T-1 day) — migrate all browser-agent workflows TODAY; no grace period",
-      "Grok 4.6 (1.5T param) confirmed live Aug 7 — now default in Cursor IDE; SpaceX/xAI training data risk is active NOW",
-      "Mistral Shieldstral: open-weight safety model with policy-as-natural-language; outperforms models 7x its size — first credible open-weight enterprise DLP option"
-    ],
-    "clientAlerts": [
-      "OpenAI Atlas browser shutdown TOMORROW (Aug 9, T-1 day) — migrate browser-agent workflows TODAY; no grace period",
-      "Grok 4.6 now live Cursor default — IDE data flows to xAI training (SpaceX acquisition) — enterprise governance review required",
-      "Notion Workers billing → Credits Monday August 11 (T-3 days) — audit automation budgets NOW",
-      "GitHub Copilot promotional flex credits ending August 2026 — September billing shock risk for Business/Enterprise",
-      "GitHub Copilot kimi-k2.7-code (Chinese-origin) Week 13+ in Enterprise — disable for regulated clients",
-      "Perplexity Kimi K2.5 (Chinese-origin) Week 28+ on US inference — restrict in enterprise admin"
-    ],
-    "watchItems": [
-      "OpenAI Atlas browser shutdown — August 9, 2026 (TOMORROW)",
-      "Notion Workers → Credits billing — Monday August 11, 2026 (T-3 days)",
-      "Google Gemini image generation model shutdown — August 17, 2026",
-      "Claude Sonnet 5 promo pricing ends — August 31, 2026",
-      "OpenAI DALL-E GPT retirement — August 30, 2026",
-      "xAI Grok 4.7 (2.1T) — late August 2026",
-      "GitHub Copilot flex credit cliff — end of August 2026"
-    ]
-  },
-  {
     "date": "2026-08-09",
     "providers": {
       "OpenAI": {
@@ -6657,6 +6520,126 @@
       "Xen XSA-523 patch rollout",
       "Concord v. Anthropic status report — Nov 11",
       "AI-training opt-out token at the IETF"
+    ]
+  },
+  {
+    "date": "2026-11-06",
+    "providers": {
+      "OpenAI": {
+        "headline": "GPT-6 Cyber goes to vetted red teams, and OpenAI claims 948 Linux privilege-escalation bugs found in one run.",
+        "tags": [
+          "strategic",
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "Lockdown Mode bypass (fixed Sept 18) allowed zero-click chat exfiltration in the desktop app.",
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "METR finds Anthropic's capability progress running at about twice last year's pace; Personal Finance beta launches through Plaid.",
+        "tags": [
+          "strategic",
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Google Gemini": {
+        "headline": "Gemini Omni 1.2 Flash extends clips to 15 seconds and cuts 720p video pricing 30%.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "xAI": {
+        "headline": "Still no Grok 5. Grok is named in a context-injection flaw report, but the details are unverified.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "Meta": {
+        "headline": "Muse adds real-time expressive avatars in the US, and a proof of concept shows dictation traffic can be redirected.",
+        "tags": [
+          "tactical",
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Mistral": {
+        "headline": "Mistral Studio adds Managed Agents and enterprise Apps in public preview, with private-cloud and on-prem due late November.",
+        "tags": [
+          "strategic"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Perplexity": {
+        "headline": "Teammates launches always-on work agents for Max subscribers, while BragJack shows Comet's agent can be hijacked.",
+        "tags": [
+          "tactical",
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "BragJack browser-agent hijack affects Perplexity Comet.",
+        "active": true
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "No Copilot ship. Microsoft declined an option to more than double its Nscale Texas AI capacity contract.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "GitHub Copilot": {
+        "headline": "Copilot CLI is named in a 'Cryptographic Context Injection' flaw that lets a web page read local files.",
+        "tags": [
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "Copilot CLI context-injection flaw allows local file reads; patch status unconfirmed.",
+        "active": true
+      },
+      "Cursor": {
+        "headline": "The Cursor cloud agent now builds and deploys live web apps, with security checks and user approval.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Gamma": {
+        "headline": "Quiet. No update found.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "Quiet. No new ship found.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      }
+    },
+    "topMoves": [
+      "OpenAI gates GPT-6 Cyber to vetted red teams after its model finds 948 Linux privilege-escalation bugs",
+      "Agent security week: ChatGPT Lockdown Mode bypass disclosed, BragJack hijacks Comet, Copilot CLI reads local files",
+      "Always-on work agents arrive: Perplexity Teammates and Mistral Studio Managed Agents, with Mistral on-prem due late November"
+    ],
+    "clientAlerts": [
+      "Browser-based AI agents can be hijacked: BragJack hits Perplexity Comet, and the ChatGPT Lockdown Mode bypass is now public",
+      "GitHub Copilot CLI and Grok exposed to local file reads through hidden web-page instructions"
+    ],
+    "watchItems": [
+      "BragJack and Copilot CLI context-injection patches",
+      "Mistral private-cloud and on-prem Managed Agents (late November)",
+      "Commvault SHIFT 2026, Nashville, Nov 9–12",
+      "DOJ 'Super Intelligence' Task Force",
+      "Anthropic IPO pricing and roadshow"
     ]
   }
 ]
