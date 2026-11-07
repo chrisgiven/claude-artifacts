@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-07",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {"title": "Dompé Farmaceutici S.p.A. (Italy) listed by N0n", "tags": ["Newly claimed", "Healthcare", "Data exposure"], "summary": "The Italian pharmaceutical maker appeared on the N0n ransomware leak site on 6 November 2026; the company has not confirmed the claim.", "source": {"name": "HookPhish", "url": "https://www.hookphish.com/blog/ransomware-group-n0n-hits-dompe-farmaceutici-s-p-a/"}},
+        {"title": "Resource Consultants claimed by N0n", "tags": ["Newly claimed"], "summary": "Ransomware.live recorded a N0n leak-site claim against Resource Consultants on 6 November 2026, part of a heavy N0n posting run that also lists Max Fashion and Hallmark Cards.", "source": {"name": "Ransomware.live", "url": "https://www.ransomware.live/id/UmVzb3VyY2UgQ29uc3VsdGFudHNATjBu"}},
+        {"title": "Indonesian beauty and commerce firm listed by N0n", "tags": ["Newly claimed"], "summary": "An unnamed Indonesian beauty and e-commerce company (tracked as Company #135) was posted to the N0n leak site on 5 November 2026.", "source": {"name": "HookPhish", "url": "https://www.hookphish.com/blog/ransomware-group-n0n-hits-company-135/"}},
+        {"title": "US organisation listed by N0n", "tags": ["Newly claimed"], "summary": "An unnamed US organisation (tracked as Company #114) was posted to the N0n leak site on 2 November 2026.", "source": {"name": "HookPhish", "url": "https://www.hookphish.com/blog/ransomware-group-n0n-hits-company-114/"}},
+        {"title": "Swiss healthcare facility hit; data exposed", "tags": ["Healthcare", "Data exposure"], "summary": "A ransomware attack on a healthcare facility in Switzerland on 6 November exposed sensitive data, though patient care continued.", "source": {"name": "KonBriefing", "url": "https://konbriefing.com/en-topics/cyber-attacks.html"}},
+        {"title": "N0n is the most active group this month", "tags": ["Trend"], "summary": "N0n accounts for most of the newly posted victims in early November across trackers, after a steady run of claims since mid-October.", "source": {"name": "Ransomware.live", "url": "https://www.ransomware.live/id/UmVzb3VyY2UgQ29uc3VsdGFudHNATjBu"}}
+      ],
+      "note": "Most items are leak-site claims the victims have not confirmed. Named-victim coverage for November is still thin in mainstream press."
+    },
+    "outage": {
+      "items": [
+        {"title": "Microsoft 365: Exchange Online encrypted-mail reply issue", "tags": ["Cloud"], "summary": "Microsoft's last recorded M365 incident (29 Oct) stopped external users' replies to encrypted Exchange Online messages from being delivered; only minor user reports followed on 4 Nov.", "source": {"name": "IsDown", "url": "https://isdown.app/status/microsoft365"}},
+        {"title": "Google Cloud europe-west2-b power event (London)", "tags": ["Cloud", "Reference"], "summary": "A power event in the London zone on 20 October degraded dozens of GCP services, including Cloud SQL, BigQuery, GCE and GKE, for about 5.5 hours. It is the most recent major hyperscaler incident.", "source": {"name": "UptimeRobot", "url": "https://uptimerobot.com/is-it-down/google-cloud/2026-10-20/"}},
+        {"title": "Azure: two incidents hit 18 regions in 40 hours", "tags": ["Cloud", "Reference"], "summary": "Gateway and networking failures from 29 Sep to 1 Oct affected 18 Azure regions and remain the reference case for multi-region Azure dependency risk.", "source": {"name": "Shattered", "url": "https://shattered.io/azure-outage-2-incidents-18-regions-2026/"}},
+        {"title": "2026 cloud outage tracker", "tags": ["Trend", "Reference"], "summary": "A running tracker of 2026's major AWS, Azure, Google Cloud and Cloudflare incidents, with UK impact notes, useful for annual BC reviews.", "source": {"name": "ServNet UK", "url": "https://www.servnetuk.com/research/major-cloud-outages-tracker-2026"}}
+      ],
+      "note": "No major AWS, Azure, GCP or Cloudflare outage has been reported so far in November; the items above are the latest incidents plus reference material."
+    },
+    "cyber": {
+      "items": [
+        {"title": "CISA adds WordPress Core race condition CVE-2026-119977 to KEV", "tags": ["KEV add", "Critical"], "summary": "CISA confirmed active exploitation of an 18-year-old WordPress Core TOCTOU flaw (CVSS 8.1) that allows code execution during upgrades; the federal remediation deadline was 6 November.", "source": {"name": "CISA", "url": "https://www.cisa.gov/news-events/alerts/2026/11/03/cisa-adds-one-known-exploited-vulnerability-catalog"}},
+        {"title": "WordPress flaw exploited during software upgrades", "tags": ["Zero-day", "High-profile"], "summary": "Attackers are using the upgrade-window race condition against unpatched sites, so patching WordPress Core to the fixed release is urgent for any internet-facing estate.", "source": {"name": "The Hacker News", "url": "https://thehackernews.com/2026/11/cisa-confirms-hackers-exploiting.html"}},
+        {"title": "DigiCert breach exposes business customer data", "tags": ["Data exposure", "Third-party"], "summary": "Attackers created an account on an internal DigiCert system and accessed customer names, emails, phone numbers and business addresses.", "source": {"name": "SecurityWeek", "url": "https://www.securityweek.com/digicert-data-breach-impacts-business-customer-information/"}},
+        {"title": "Gnosis Pay legacy card system breached", "tags": ["Data exposure"], "summary": "Gnosis Pay disclosed on 6 November that unauthorised access to its legacy debit-card system, detected 3 November, exposed customer information; it says funds were not affected.", "source": {"name": "The Block", "url": "https://www.theblock.co/news/defi/2026-11-06-gnosis-pay-data-breach-legacy-debit-card-system-435934"}},
+        {"title": "Myriad Genetics discloses cybersecurity incident to the SEC", "tags": ["Healthcare", "Data exposure"], "summary": "Myriad Genetics reported a cybersecurity incident in an SEC filing on 5 November; it has not disclosed how many records were affected.", "source": {"name": "Board Cybersecurity", "url": "https://www.board-cybersecurity.com/incidents/tracker/myriad-genetics-cybersecurity-incident-5daa9353"}},
+        {"title": "Sussex County (NJ) Prosecutor's Office breach notice", "tags": ["Municipal", "Data exposure"], "summary": "A 6 November notice says an intruder was on the office network between 15 and 22 July 2026 and may have obtained SSNs and driver's licence numbers.", "source": {"name": "WRNJ Radio", "url": "https://wrnjradio.com/sussex-county-prosecutors-office-reports-data-breach-involving-social-security-numbers-personal-information/"}}
+      ]
+    },
+    "physical": {
+      "items": [
+        {"title": "Historic Southwest US flooding forces mandatory evacuations", "tags": ["Flood", "Critical"], "summary": "Heavy rain on 1 November caused flooding, road closures and mandatory evacuations across Arizona, Colorado and New Mexico; Sedona needed helicopter rooftop rescues.", "source": {"name": "U.S. News", "url": "https://www.usnews.com/news/us/articles/2026-11-01/flash-floods-trigger-evacuations-in-arizona-and-colorado-amid-heavy-rains-in-southwest"}},
+        {"title": "Pagosa Springs, CO: San Juan River crests at 16 ft", "tags": ["Flood", "Municipal"], "summary": "Archuleta County ordered evacuations along the San Juan, Rio Blanco, Navajo and Piedra rivers; the river peaked at 16.03 ft, just below the 1911 record.", "source": {"name": "Colorado Public Radio", "url": "https://www.cpr.org/2026/11/01/southwest-colorado-pagosa-springs-flooding-san-luis-valley-november-2026/"}},
+        {"title": "Cyclone Murasu makes landfall in Andhra Pradesh", "tags": ["Tropical"], "summary": "The cyclone came ashore near Ongole on 3 November with 100–110 km/h winds before weakening to a depression on 4 November. Only a secondary source covers this so far.", "source": {"name": "Vajiram & Ravi", "url": "https://vajiramandravi.com/current-affairs/cyclone-murasu-2026/"}},
+        {"title": "Weekly disaster update: Typhoon Champi (Japan) and others", "tags": ["Tropical", "Reference"], "summary": "CDP's 2 November roundup tracks Typhoon Champi's impacts in Japan along with the Southwest US floods and other active events.", "source": {"name": "Center for Disaster Philanthropy", "url": "https://disasterphilanthropy.org/blog/what-were-watching-weekly-disaster-update-november-2-2026/"}}
+      ],
+      "note": "The USGS significant-week feed listed no significant earthquakes this week."
+    }
+  }
+}

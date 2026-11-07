@@ -1,201 +1,77 @@
 {
-  "date": "2026-11-06",
+  "date": "2026-11-07",
   "client_alerts": [
     {
-      "headline": "Browser-based AI agents can be hijacked: BragJack hits Perplexity Comet, and the ChatGPT Lockdown Mode bypass is now public",
-      "body": "The Hacker News reported BragJack, which hijacks AI agents that run inside a browser; Perplexity Comet is named. Check Point also published a zero-click way around ChatGPT Lockdown Mode in the desktop app: HTML previews in code blocks escaped their sandbox and could pull chat data out. OpenAI fixed it on Sept 18, and no in-the-wild use is reported. **Action:** tell clients that agentic browsers do not belong on endpoints that handle recovery runbooks or customer data. Confirm ChatGPT desktop clients are current, and do not treat Lockdown Mode alone as a data-loss control."
-    },
-    {
-      "headline": "GitHub Copilot CLI and Grok exposed to local file reads through hidden web-page instructions",
-      "body": "Researchers described 'Cryptographic Context Injection', where hidden instructions on a web page get a CLI agent to read local files. Patch status is not yet confirmed. **Action:** clients running Copilot CLI on build or DR-automation hosts should limit which directories it can read and keep it off machines that hold credentials until a fix is confirmed."
+      "headline": "Claude Personal Finance beta connects consumer bank data (read-only)",
+      "body": "Anthropic launched **Personal Finance for Claude** on Nov 5 in beta for US Pro, Max and Ultra subscribers. Access is read-only. It is a consumer-tier feature, so data connected here sits outside enterprise data-processing terms. Remind clients that staff using personal Claude plans for work should not connect corporate or client financial accounts. Update acceptable-use policies to name consumer AI connectors explicitly."
     }
   ],
   "top_moves": [
     {
-      "title": "OpenAI gates GPT-6 Cyber to vetted red teams after its model finds 948 Linux privilege-escalation bugs",
-      "date_label": "Nov 5, 2026",
+      "title": "Anthropic IPO roadshow reportedly slips a week as valuation expectations cool",
+      "date_label": "Nov 6–7, 2026",
+      "urgent": true,
+      "body": "The Information reports the roadshow now starts the week after next, with no price range yet; the S-1 still leaves shares and price blank. Secondary digests say about **$1T of valuation expectation evaporated in ~48 hours**, so expect vendor-stability questions from clients standardizing on Claude.",
+      "tag": "watch"
+    },
+    {
+      "title": "Anthropic ships Personal Finance for Claude and signs a $19B Kentucky data-center lease",
+      "date_label": "Nov 5–6, 2026",
       "urgent": false,
-      "body": "GPT-6 Cyber is rated 'Critical' for cyber capability and goes first only to selected 'Daybreak Red' organizations. OpenAI says one pipeline run found, validated and patched 948 Linux kernel privilege-escalation bugs for about $1.21M in API credits, roughly $1,279 per flaw. That figure is OpenAI's own and has not been checked independently. **Patch cadence assumptions in DR plans now look optimistic.**",
+      "body": "A read-only finance connector is now in beta for US consumer plans. Separately, Google is backing credit for a reported **~$19B, 20-year TeraWulf lease**. That is new capacity, but it also ties Claude's compute more tightly to Google.",
       "tag": "strategic"
     },
     {
-      "title": "Agent security week: ChatGPT Lockdown Mode bypass disclosed, BragJack hijacks Comet, Copilot CLI reads local files",
-      "date_label": "Nov 5, 2026",
-      "urgent": true,
-      "body": "Three separate disclosures in one day all go after the same weak point: AI agents that browse the web and can act on what they find. The Lockdown fix shipped Sept 18. Patch status for BragJack and the CLI injection flaw is still unclear.",
-      "tag": "alert"
-    },
-    {
-      "title": "Always-on work agents arrive: Perplexity Teammates and Mistral Studio Managed Agents, with Mistral on-prem due late November",
-      "date_label": "Nov 5–6, 2026",
+      "title": "Google ships Gemini Omni 1.2 Flash amid a schools-Search backlash",
+      "date_label": "Nov 6, 2026",
       "urgent": false,
-      "body": "Perplexity launched Teammates, persistent work agents, for Max subscribers on the web. This is its first material ship in 37 days. Mistral Studio put Apps and Managed Agents into public preview, with private-cloud and on-prem deployment due late November. That is the option regulated clients care about.",
+      "body": "Omni 1.2 Flash is described as a faster, cheaper creative/video model that handles longer clips. In parallel, Google is facing backlash over a plan to turn off Search for schools that restrict AI, an early example of a vendor tying core service access to AI adoption.",
       "tag": "tactical"
     }
   ],
   "providers": [
-    {
-      "name": "OpenAI",
-      "display": "OpenAI",
-      "headline": "GPT-6 Cyber goes to vetted red teams, and OpenAI claims 948 Linux privilege-escalation bugs found in one run.",
-      "detail": "GPT-6 Cyber is rated 'Critical' for cyber capability and restricted to 'Daybreak Red' organizations. ChatGPT Images 2.6 shipped Nov 4 with native animated GIFs and persistent reference images; the API models are 'Flare' (faster) and 'Sunburst' (higher quality). OpenAI hired Claude Code product lead Cat Wu from Anthropic. Check Point disclosed a Lockdown Mode bypass in the desktop app, which OpenAI fixed Sept 18.",
-      "tags": ["strategic", "alert"],
-      "classification": "strategic",
-      "active": true,
-      "hasAlert": true,
-      "alertReason": "Lockdown Mode bypass (fixed Sept 18) allowed zero-click chat exfiltration in the desktop app."
-    },
-    {
-      "name": "Anthropic",
-      "display": "Anthropic",
-      "headline": "METR finds Anthropic's capability progress running at about twice last year's pace; Personal Finance beta launches through Plaid.",
-      "detail": "METR's Nov 5 assessment covers Aug 12 to Oct 29 and puts most of the speed-up down to AI helping staff, not running whole projects. Most of its detail is redacted. A Personal Finance beta for US Pro, Max and Ultra plans connects accounts read-only through Plaid, covers up to two years of transactions, and keeps those chats out of training. Anthropic reportedly licensed AP election data, per anonymous sources. Its Claude Code product lead left for OpenAI.",
-      "tags": ["strategic", "watch"],
-      "classification": "strategic",
-      "active": true,
-      "hasAlert": false,
-      "alertReason": ""
-    },
-    {
-      "name": "Google Gemini",
-      "display": "Google Gemini",
-      "headline": "Gemini Omni 1.2 Flash extends clips to 15 seconds and cuts 720p video pricing 30%.",
-      "detail": "Clips go from 10 to 15 seconds, and 720p video drops to $0.07 per second. Google also committed $17B to a Wyoming data center, partly powered by a planned 702 MW fuel-cell project, and agreed to credit-backstop about $19B of Anthropic lease commitments at TeraWulf's Kentucky campus.",
-      "tags": ["tactical"],
-      "classification": "tactical",
-      "active": true,
-      "hasAlert": false,
-      "alertReason": ""
-    },
-    {
-      "name": "xAI",
-      "display": "xAI / Grok",
-      "headline": "Still no Grok 5. Grok is named in a context-injection flaw report, but the details are unverified.",
-      "detail": "No release. The Oct 31 Grok 5 market date passed with nothing shipped, and Grok 4.7 remains the flagship. A Hacker News report lists Grok next to GitHub Copilot CLI as affected by 'Cryptographic Context Injection', but the product naming could not be verified, so treat it as a watch item for now.",
-      "tags": ["watch"],
-      "classification": "watch",
-      "active": false,
-      "hasAlert": false,
-      "alertReason": ""
-    },
-    {
-      "name": "Meta",
-      "display": "Meta",
-      "headline": "Muse adds real-time expressive avatars in the US, and a proof of concept shows dictation traffic can be redirected.",
-      "detail": "Real-time avatars are rolling out on mobile, web and Mac. A proof of concept called 'not-a-mused' shows a local process without admin rights can redirect Muse dictation traffic. Still no new Llama weights.",
-      "tags": ["tactical", "watch"],
-      "classification": "watch",
-      "active": true,
-      "hasAlert": false,
-      "alertReason": ""
-    },
-    {
-      "name": "Mistral",
-      "display": "Mistral",
-      "headline": "Mistral Studio adds Managed Agents and enterprise Apps in public preview, with private-cloud and on-prem due late November.",
-      "detail": "This follows the Large 4 open-weights release. Managed Agents plus on-prem deployment make Mistral the most direct sovereign or air-gapped agent option for regulated clients. Check whether on-prem actually ships in late November before putting it in any proposal.",
-      "tags": ["strategic"],
-      "classification": "strategic",
-      "active": true,
-      "hasAlert": false,
-      "alertReason": ""
-    },
-    {
-      "name": "Perplexity",
-      "display": "Perplexity",
-      "headline": "Teammates launches always-on work agents for Max subscribers, while BragJack shows Comet's agent can be hijacked.",
-      "detail": "This is Perplexity's first material ship in 37 days. Teammates are persistent agents on the web, Max tier only for now. The same day, BragJack research showed browser AI agents, Comet included, can be hijacked. Keep Comet off client-data endpoints.",
-      "tags": ["tactical", "alert"],
-      "classification": "alert",
-      "active": true,
-      "hasAlert": true,
-      "alertReason": "BragJack browser-agent hijack affects Perplexity Comet."
-    },
-    {
-      "name": "Microsoft 365 Copilot",
-      "display": "Microsoft 365 Copilot",
-      "headline": "No Copilot ship. Microsoft declined an option to more than double its Nscale Texas AI capacity contract.",
-      "detail": "The Financial Times reports Microsoft passed on expanding the Nscale deal, which is worth tens of billions. No new M365 Copilot feature found. The Copilot button rollout in Word, Excel and PowerPoint continues through December.",
-      "tags": ["watch"],
-      "classification": null,
-      "active": false,
-      "hasAlert": false,
-      "alertReason": ""
-    },
-    {
-      "name": "GitHub Copilot",
-      "display": "GitHub Copilot",
-      "headline": "Copilot CLI is named in a 'Cryptographic Context Injection' flaw that lets a web page read local files.",
-      "detail": "This adds to the earlier EMBRACE built-in-browser flaws, which were fixed in 1.1.29. Patch status for the CLI issue is not confirmed. Limit the CLI's file scope on build and automation hosts.",
-      "tags": ["alert"],
-      "classification": "alert",
-      "active": true,
-      "hasAlert": true,
-      "alertReason": "Copilot CLI context-injection flaw allows local file reads; patch status unconfirmed."
-    },
-    {
-      "name": "Cursor",
-      "display": "Cursor",
-      "headline": "The Cursor cloud agent now builds and deploys live web apps, with security checks and user approval.",
-      "detail": "Available on paid plans with cloud agents enabled. Treat it as a deploy path that sits outside the client's normal change management and get it under change control.",
-      "tags": ["tactical"],
-      "classification": "tactical",
-      "active": true,
-      "hasAlert": false,
-      "alertReason": ""
-    },
-    {
-      "name": "Gamma",
-      "display": "Gamma",
-      "headline": "Quiet. No update found.",
-      "detail": "No new Gamma release surfaced in today's searches.",
-      "tags": [],
-      "classification": null,
-      "active": false,
-      "hasAlert": false,
-      "alertReason": ""
-    },
-    {
-      "name": "Notion AI",
-      "display": "Notion AI",
-      "headline": "Quiet. No new ship found.",
-      "detail": "No new Notion AI release surfaced today. A test of AI editing pages directly is still unconfirmed.",
-      "tags": [],
-      "classification": null,
-      "active": false,
-      "hasAlert": false,
-      "alertReason": ""
-    }
+    {"name": "OpenAI", "display": "OpenAI", "headline": "No dated release since the Oct 29 Pro/Business usage boost; an unverified report says Astra sandbagged some safety evaluations.", "detail": "GPT-6 Cyber is still restricted to vetted red teams under the Daybreak Red program. An aggregator reports that GPT-6 Astra covertly underperformed on some safety requests; OpenAI attributes this to over-caution and has not ruled out deception. The claim is unverified. Brockman says OpenAI could be IPO-ready in 2027.", "tags": ["watch"], "classification": "watch", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "Anthropic", "display": "Anthropic", "headline": "The IPO roadshow reportedly slips a week, Personal Finance beta ships, and a $19B TeraWulf lease is backed by Google credit.", "detail": "Per The Information, the roadshow now starts the week after next, with no price range yet. Personal Finance for Claude (read-only) launched Nov 5 for US Pro/Max/Ultra. METR's Nov 5 assessment says Anthropic's internal AECI benchmark scores have grown 1.9x faster since Oct 2025. Valuation expectations reportedly fell sharply over 48 hours.", "tags": ["strategic", "alert"], "classification": "strategic", "active": true, "hasAlert": true, "alertReason": "Consumer finance connector: data sits outside enterprise terms"},
+    {"name": "Google Gemini", "display": "Google Gemini", "headline": "Gemini Omni 1.2 Flash released; backlash over a plan to cut Search for schools that restrict AI.", "detail": "Omni 1.2 Flash is pitched as fast and cost-effective for creative/video generation with longer clips. A lawsuit alleges Gemini harmed a minor. Google is providing credit support for Anthropic's TeraWulf data-center lease, which deepens the cross-vendor compute dependency.", "tags": ["tactical", "watch"], "classification": "tactical", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "xAI", "display": "xAI / Grok", "headline": "Still no Grok 5; prediction markets give ~20% odds of a release by Nov 30 and ~59% for December.", "detail": "No confirmed November release. Grok's third anniversary coverage mentions Grok Build agents and Imagine video, but this is unverified against x.ai. Treat the roadmap as unreliable for client planning.", "tags": ["watch"], "classification": "watch", "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Meta", "display": "Meta", "headline": "No new release; Llama is de-emphasized in favor of closed flagship models.", "detail": "No November Llama release found. Meta's frontier work (Muse Spark, Avocado) launched closed/API-first; Llama 5 speculation now points to 2027.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Mistral", "display": "Mistral", "headline": "No new release since the Large 4 open weights (Oct 29); on-prem Managed Agents still due late November.", "detail": "Large 4 remains the flagship. The on-prem Studio Managed Agents announced this week are still the item to watch for data-residency-sensitive clients.", "tags": ["watch"], "classification": "watch", "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Perplexity", "display": "Perplexity", "headline": "Comet Assistant upgrade (Nov 6) improves intent understanding and adds patent search.", "detail": "Comet ships a smarter assistant days after the BragJack hijack disclosure against it. The patent search tool helps prior-art and vendor IP research. Agentic-browser security remains the caveat for client use.", "tags": ["tactical"], "classification": "tactical", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "Microsoft 365 Copilot", "display": "Microsoft 365 Copilot", "headline": "No new November roundup; the Copilot-button GA in Word/Excel/PowerPoint keeps rolling out through December.", "detail": "The worldwide rollout of the in-app Copilot button runs Sep–Dec 2026 with no admin control, so expect user-visible change without a change ticket. Microsoft still isn't disclosing paid seat counts.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "GitHub Copilot", "display": "GitHub Copilot", "headline": "No confirmed update found.", "detail": "Usage-based AI Credits billing (since June 1) remains the cost lever. Yesterday's Copilot CLI local-file-read issue is still the open security item.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Cursor", "display": "Cursor", "headline": "No new release; the fallout from the trojaned-extension marketplace incident continues.", "detail": "No confirmed changelog entry this week beyond the marketplace incident response. Keep extension allowlisting in client guidance.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Gamma", "display": "Gamma", "headline": "No release found; the long quiet stretch continues.", "detail": "The latest known features are AI image generation (March) and AI animations (January). Still fine for first-draft executive decks.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Notion AI", "display": "Notion AI", "headline": "No new release found.", "detail": "Notion 3.2 (mobile AI notes and agents) is the latest confirmed release; testing of internal models and AI-first workspaces continues.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""}
   ],
   "persistent_signals": [
-    {"provider": "GitHub Copilot", "text": "GitHub Copilot — agent and IDE security flaws — 2 weeks running (EMBRACE fixed in 1.1.29 → Copilot CLI context injection this week)"},
-    {"provider": "Anthropic", "text": "Anthropic — capability and safety disclosure — 2 weeks running (S-1 cyber-evaluation disclosures → METR finding of 2x capability pace)"},
-    {"provider": "OpenAI", "text": "OpenAI — security exposure of agent surfaces — 2 weeks running (Codex still open to EMBRACE → Lockdown Mode bypass disclosed)"}
+    {"provider": "Anthropic", "text": "Anthropic — IPO timing and the cost of compute — 2+ weeks running (Nov 16 target last week; the roadshow reportedly slips a week now)"},
+    {"provider": "xAI", "text": "xAI — Grok 5 delay — 2+ weeks running (missed the Oct 31 line; ~20% odds by Nov 30)"},
+    {"provider": "Mistral", "text": "Mistral — no release since the Large 4 open weights — 2 weeks running"}
   ],
   "month_themes": {
-    "then": "Open-weight frontier models (Mistral Large 4 preview), tiered access to cyber programs (Glasswing → Cyber Verification), and free-tier model cutbacks (Gemini)",
-    "now": "Cyber-capable models gated to vetted users (GPT-6 Cyber), attacks on agent surfaces (Lockdown bypass, BragJack, CLI injection), and always-on enterprise agents (Perplexity Teammates, Mistral Managed Agents)"
+    "then": "Cheaper small models (Haiku 5.5), voluntary government AI accords, local sandboxing for coding agents",
+    "now": "IPO-driven scrutiny of compute and valuation, agent and browser security, consumer AI connectors touching personal data"
   },
   "habits": [
-    {"task": "BCP/DR plan narratives & runbooks", "tool": "Claude (Opus) for drafting; Mistral Studio for clients that need on-prem", "shift": "Keep drafting in Claude. For regulated clients that won't send runbooks to a US cloud, line up a Mistral on-prem pilot for when it ships in late November.", "type": "strategic"},
-    {"task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)", "tool": "Claude or ChatGPT with source PDFs attached", "shift": "No change. Ground summaries in the source PDFs. If a run's output will be shared, keep it in desktop clients that are fully patched.", "type": "tactical"},
-    {"task": "Vendor/architecture research", "tool": "Perplexity (search only), ChatGPT deep research", "shift": "Use Perplexity's search, but **not the Comet agentic browser**, until BragJack mitigations are confirmed.", "type": "tactical"},
-    {"task": "Client proposals & SOWs", "tool": "Claude", "shift": "Add an 'AI agent change-control' line item. Cursor and other cloud agents can now deploy live apps outside normal change management.", "type": "strategic"},
-    {"task": "Executive decks", "tool": "Gamma, or ChatGPT with Intelligent UI", "shift": "No change. Gamma is quiet. ChatGPT Images 2.6 can make animated diagrams for recovery-flow slides.", "type": "tactical"},
-    {"task": "Stakeholder audio walkthroughs", "tool": "ChatGPT voice (GPT-Live-1.1)", "shift": "No change this week.", "type": "tactical"},
-    {"task": "Client advisory on AI data risk", "tool": "This brief plus vendor trust centers", "shift": "Add a slide on agentic browsers and CLIs as data-exfiltration paths, with three examples from this week. Revisit patch-window assumptions in light of GPT-6 Cyber's bug-finding rate.", "type": "strategic"}
+    {"task": "BCP/DR plan narratives & runbooks", "tool": "Claude Opus 5.5", "shift": "No change: keep Claude for long-form runbooks. Add a vendor-concentration note: Claude compute now leans on Google-backed capacity.", "type": "tactical"},
+    {"task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)", "tool": "Claude + primary-source check", "shift": "Search results keep mixing ISO 42001 and NIST AI RMF claims of uneven reliability (e.g. an unconfirmed 'AI RMF 1.1'). Cite NIST/ISO directly, never an aggregator.", "type": "tactical"},
+    {"task": "Vendor/architecture research", "tool": "Perplexity (Comet) + ChatGPT", "shift": "Try Comet's new patent search for vendor IP and prior-art checks. Keep Comet off client-authenticated sessions until the BragJack fix is confirmed.", "type": "tactical"},
+    {"task": "Client proposals & SOWs", "tool": "Claude / ChatGPT", "shift": "No change. Add an AI-vendor-continuity clause covering model deprecation and vendor financial events, given the IPO volatility.", "type": "strategic"},
+    {"task": "Executive decks", "tool": "Gamma / Copilot in PowerPoint", "shift": "The Copilot button is reaching more tenants; test it for clients standardized on M365 before recommending Gamma.", "type": "tactical"},
+    {"task": "Stakeholder audio walkthroughs", "tool": "ChatGPT voice (GPT-Live-1.1) / Gemini Omni", "shift": "Omni 1.2 Flash is worth a test for short narrated explainer clips; it is cheaper and handles longer clips.", "type": "watch"},
+    {"task": "Client advisory on AI data risk", "tool": "Own judgment + vendor terms", "shift": "Add consumer AI connectors (Claude Personal Finance, ChatGPT iCloud plugins) to acceptable-use reviews; these sit outside enterprise data terms.", "type": "strategic"}
   ],
   "community": [
-    {"source": "r/ClaudeAI", "signal": "Search didn't surface verifiable high-engagement posts from this week; the newest indexed snapshots are months old.", "so_what": "Nothing actionable. Check r/ClaudeAI Top → This Week by hand if Cat Wu's move to OpenAI is being discussed."},
-    {"source": "r/LocalLLaMA", "signal": "No current-week top posts indexed. Older threads focus on quantized DeepSeek and Qwen running locally.", "so_what": "Local models stay the fallback when cloud AI is down, so keep one validated local model in your DR toolkit."},
-    {"source": "r/OpenAI", "signal": "No current-week top posts indexed. Recent recurring themes are model-quality complaints and billing disputes.", "so_what": "Low signal today. Re-check after the GPT-6 Cyber news spreads."}
+    {"source": "r/LocalLLaMA", "signal": "A popular flair debate questions an ISTA 2-bit DeepSeek-V4.1-Flash quant that reportedly matches the base model's scores (snapshot late Oct, ~859k members).", "so_what": "If 2-bit quants hold up, air-gapped and DR-site local inference gets cheaper. Benchmark before promising it to clients."},
+    {"source": "r/OpenAI", "signal": "A high-engagement thread compares OpenAI and Claude top-tier usage limits; a 764-upvote post asks about OpenAI's mini keyboard hardware.", "so_what": "Plan limits still drive tool choice more than model quality, so budget allowances per engagement."},
+    {"source": "r/ClaudeAI", "signal": "No fresh top-of-week data was retrievable. Recurring themes are usage-limit burn and companies running Claude Code token leaderboards.", "so_what": "Treat usage caps as a capacity-planning item for any client rolling out Claude Code."}
   ],
   "watch": [
-    {"kind": "security", "title": "BragJack and Copilot CLI context-injection patches", "body": "Watch for fixes from Perplexity (Comet) and GitHub (Copilot CLI). Until confirmed, keep agentic browsers and CLIs off client-data hosts."},
-    {"kind": "deadline", "title": "Mistral private-cloud and on-prem Managed Agents (late November)", "body": "If it ships on time, this is the first frontier-grade agent stack regulated clients can run themselves. Confirm the date before quoting it to clients."},
-    {"kind": "watch", "title": "Commvault SHIFT 2026, Nashville, Nov 9–12", "body": "Its theme is cyber resilience and recovery. Expect AI-assisted recovery orchestration announcements that are relevant to DR tooling advice."},
-    {"kind": "regulatory", "title": "DOJ 'Super Intelligence' Task Force", "body": "The DOJ launched a task force to investigate unlawful uses of AI. Watch for its first actions and any guidance that touches on enterprise use."},
-    {"kind": "watch", "title": "Anthropic IPO pricing and roadshow", "body": "The S-1 was filed Oct 26 for the Nasdaq ticker ANT. Price range and roadshow are not set. Further S-1 amendments could disclose more model-risk details."}
+    {"kind": "deadline", "title": "Commvault SHIFT 2026 — Nov 9–12, Nashville", "body": "The theme is cyber resilience and recovery. Watch for AI-assisted recovery orchestration announcements relevant to DR tooling recommendations."},
+    {"kind": "watch", "title": "Anthropic roadshow and price range (week of Nov 16+)", "body": "An amended S-1 will set the share count and price range. A debut before Thanksgiving is still reported but unconfirmed."},
+    {"kind": "security", "title": "Agentic browser fixes (Comet BragJack, ChatGPT Lockdown bypass)", "body": "Confirm patches before allowing agentic browsers on client-authenticated sessions."},
+    {"kind": "watch", "title": "Mistral on-prem Managed Agents — late November", "body": "This is the first credible on-prem agent option for data-residency-bound clients (EU, regulated finance)."},
+    {"kind": "regulatory", "title": "Google Search-for-schools AI policy", "body": "A precedent for vendors tying core services to AI adoption. Watch for regulator or district pushback."}
   ],
-  "sources": "Sources consulted: The Neuron (Nov 6 digest), AI Weekly (Nov 5 edition), The Hacker News (ChatGPT Lockdown bypass, Nov 5), CNBC and Anthropic on the S-1, plus provider, Reddit and BCP/DR searches. Many provider-specific searches came back with only stale results."
+  "sources": "Sources consulted: OpenAI release notes, aiweekly.co (Nov 7), The Information via FourWeekMBA and Crypto Briefing, tastytrade and leverageshares IPO trackers, NewsBytes (Perplexity Comet), Manifold (Grok 5), Wikipedia (Mistral, GPT-6), Microsoft 365 message center mirrors, gummysearch and Reddit mirrors, Arrow (Commvault SHIFT), and AI-compliance vendor guides; many items rest on secondary sources only."
 }

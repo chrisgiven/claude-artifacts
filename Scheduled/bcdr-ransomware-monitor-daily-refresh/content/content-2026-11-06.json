@@ -1,0 +1,126 @@
+{
+  "date": "2026-11-06",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {
+          "title": "USClaims (US financial services) claimed by Direwolf",
+          "tags": ["Newly claimed", "Data exposure"],
+          "summary": "On November 3 the Direwolf group listed USClaims on its leak site and threatened to publish stolen data unless the company makes contact; the claim is unverified.",
+          "source": {"name": "DeXpose", "url": "https://www.dexpose.io/direwolf-ransomware-attack-on-usclaims/"}
+        },
+        {
+          "title": "Dark Project gang reaches 38 victims across 8 countries",
+          "tags": ["Trend", "Healthcare"],
+          "summary": "Dark Project has posted 38 victims, mostly in healthcare and manufacturing, including four new listings so far in November after five each in September and October.",
+          "source": {"name": "GBHackers", "url": "https://gbhackers.com/dark-project-ransomware"}
+        },
+        {
+          "title": "BlackFog: State of Ransomware, October 2026",
+          "tags": ["Reference", "Trend"],
+          "summary": "BlackFog's monthly tally of publicly disclosed attacks for October, the latest full-month baseline for comparing November activity.",
+          "source": {"name": "BlackFog", "url": "https://www.blackfog.com/the-state-of-ransomware-october-2026/"}
+        }
+      ],
+      "note": "Few named November victims are indexed yet, and leak-site claims are unverified. Check ransomware.live for the live feed."
+    },
+    "outage": {
+      "items": [
+        {
+          "title": "DreamHost multi-day hosting outage tied to breach",
+          "tags": ["Cloud", "Third-party"],
+          "summary": "DreamHost's multi-day service outage last week was part of an intrusion into its File Manager system that it disclosed on November 5.",
+          "source": {"name": "TechRadar", "url": "https://techradar.com/pro/security/dreamhost-admits-major-cyberattack-saw-hackers-steal-customer-data-and-access-inboxes"}
+        },
+        {
+          "title": "Rogers internet down in BC Cariboo after fibre cut",
+          "tags": ["Reference"],
+          "summary": "On November 5 a fibre cable cut knocked out Rogers internet in 100 Mile House, Williams Lake and Quesnel; service was back by 3:40 p.m.",
+          "source": {"name": "Williams Lake Tribune", "url": "https://wltribune.com/2026/11/05/internet-down-for-rogers-users-in-100-mile-house-williams-lake-quesnel"}
+        },
+        {
+          "title": "DoorDash app, checkout and earnings failures (user reports)",
+          "tags": ["Third-party"],
+          "summary": "Downdetector showed about 1,100 US reports on November 6 covering app, checkout and missing-earnings problems; DoorDash had not confirmed an outage.",
+          "source": {"name": "Sunday Guardian", "url": "https://sundayguardianlive.com/world/doordash-outage-today-is-doordash-down-today-in-the-us-thousands-of-users-report-app-earnings-payment-failures-checkout-ordering-problems-doordash-downdetector-status-317995/"}
+        },
+        {
+          "title": "GitHub 502s and Actions errors reported (unconfirmed)",
+          "tags": ["Cloud"],
+          "summary": "About 570 users reported 502 errors and failed PRs and Actions on November 5, but GitHub's status page showed core services as operational.",
+          "source": {"name": "Sunday Guardian", "url": "https://sundayguardianlive.com/world/github-outage-today-is-github-down-today-in-the-us-users-report-502-server-errors-app-login-problems-technical-issues-failed-repositories-pull-requests-pr-failures-github-downdetector-status-317901/"}
+        },
+        {
+          "title": "Google Antigravity degraded performance",
+          "tags": ["Cloud"],
+          "summary": "StatusGator logged a possible outage on November 6, with 274 user reports of slow or failed agent runs in 24 hours.",
+          "source": {"name": "StatusGator", "url": "https://statusgator.com/services/google-antigravity"}
+        }
+      ],
+      "note": "No major AWS, Azure or Google Cloud outage so far in November. The latest big one was the Google Cloud europe-west2-b power event on Oct 20 (about 5.5 hours)."
+    },
+    "cyber": {
+      "items": [
+        {
+          "title": "DreamHost breach exposed FTP/SFTP credentials and webmail",
+          "tags": ["Critical", "Credential exposure", "Third-party"],
+          "summary": "DreamHost disclosed that attackers who got in through its File Manager in August obtained customer FTP/SFTP logins and some webmail access; it has forced password resets.",
+          "source": {"name": "Dataconomy", "url": "https://dataconomy.com/2026/11/06/dreamhost-says-hackers-stole-customer-emails-and-credentials/"}
+        },
+        {
+          "title": "Zyxel GS1900 switch hacks used a zero-day (CVE-2026-107441)",
+          "tags": ["Zero-day", "High-profile"],
+          "summary": "Binarly found that a recently patched flaw was exploited as a zero-day before the patch, compromising almost 1,000 Zyxel switches.",
+          "source": {"name": "SecurityWeek", "url": "https://securityweek.com/zyxel-switch-hacks-blamed-on-patched-flaw-actually-exploited-a-zero-day"}
+        },
+        {
+          "title": "WordPress Core CVE-2026-119977 added to CISA KEV",
+          "tags": ["KEV add", "Critical"],
+          "summary": "CISA added a WordPress Core flaw in the upgrade staging paths to KEV; it allows unauthenticated code execution during an upgrade.",
+          "source": {"name": "Cyware Daily Threat Intelligence", "url": "https://cyware.com/resources/threat-briefings/daily-threat-briefing/cyware-daily-threat-intelligence-november-04-2026"}
+        },
+        {
+          "title": "Node-RED CVE-2026-58115 exploited in the wild",
+          "tags": ["Critical"],
+          "summary": "Attackers are using a critical Node-RED flaw to get unauthenticated code execution on exposed servers.",
+          "source": {"name": "Cyware Daily Threat Intelligence", "url": "https://cyware.com/resources/threat-briefings/daily-threat-briefing/cyware-daily-threat-intelligence-november-04-2026"}
+        },
+        {
+          "title": "Chainstack production breach exposed customer data",
+          "tags": ["Data exposure", "Third-party"],
+          "summary": "Blockchain infrastructure provider Chainstack reported a breach of its production systems that exposed customer data and password hashes.",
+          "source": {"name": "Cyware Daily Threat Intelligence", "url": "https://cyware.com/resources/threat-briefings/daily-threat-briefing/cyware-daily-threat-intelligence-november-04-2026"}
+        },
+        {
+          "title": "WorkOS internal sales app accessed, CRM data exposed",
+          "tags": ["Data exposure", "Third-party"],
+          "summary": "WorkOS said an attacker got into an internal sales application and exposed CRM data; reports linking it to a specific group are unverified.",
+          "source": {"name": "Cyware Daily Threat Intelligence", "url": "https://cyware.com/resources/threat-briefings/daily-threat-briefing/cyware-daily-threat-intelligence-november-04-2026"}
+        }
+      ]
+    },
+    "physical": {
+      "items": [
+        {
+          "title": "Historic flooding across Arizona, Colorado and New Mexico",
+          "tags": ["Flood", "Critical"],
+          "summary": "Heavy rain on November 1 caused historic flooding, mandatory evacuations and road closures across the Southwest, including helicopter rooftop rescues in Sedona, AZ.",
+          "source": {"name": "Colorado Public Radio", "url": "https://www.cpr.org/2026/11/01/southwest-colorado-pagosa-springs-flooding-san-luis-valley-november-2026/"}
+        },
+        {
+          "title": "SW Colorado assessing damage after two floods; utilities and gas lines hit",
+          "tags": ["Flood"],
+          "summary": "The San Juan River at Pagosa Springs crested near 17 feet in the second flood; there were utility outages and natural-gas pipeline ruptures, and about 50 people were evacuated.",
+          "source": {"name": "The Colorado Sun", "url": "https://coloradosun.com/2026/11/03/flooding-southwestern-colorado-recovery"}
+        },
+        {
+          "title": "Weekly disaster update: storm system moving east",
+          "tags": ["Reference"],
+          "summary": "The Center for Disaster Philanthropy's November 2 roundup tracks the Southwest floods and the storm system expected to bring rain to the central and eastern US this week.",
+          "source": {"name": "Center for Disaster Philanthropy", "url": "https://disasterphilanthropy.org/blog/what-were-watching-weekly-disaster-update-november-2-2026/"}
+        }
+      ],
+      "note": "USGS lists no significant earthquakes this week. No November tropical-cyclone or wildfire events found."
+    }
+  }
+}
