@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-08",
+  "client_alerts": [
+    {
+      "headline": "AI-generated exploits are compressing patch windows",
+      "body": "OpenAI reported on Nov 4 that an automated pipeline produced **948 Linux kernel privilege-escalation exploits**, each paired with a candidate patch. Aggregators also report a limited GPT-6 Cyber launch for selected customers only. If the reports hold, the time from disclosure to a working exploit is shrinking. Clients should re-check vulnerability-management SLAs and the patching assumptions in their DR runbooks. The details come from secondary sources, so verify them before quoting figures to a client."
+    }
+  ],
+  "top_moves": [
+    {
+      "title": "Anthropic's IPO roadshow is expected to start this week, with the price range still blank",
+      "date_label": "Nov 9–16, 2026",
+      "urgent": true,
+      "body": "Reports point to the roadshow starting the week of Nov 9, with pricing and listing the week of Nov 16. The Nov 2 S-1/A still leaves the price range blank. Investor expectations have slipped to roughly **$1.0–1.3T**, after a $1.5T figure was floated earlier.",
+      "tag": "watch"
+    },
+    {
+      "title": "OpenAI, Google, Microsoft and Anthropic back a shared robots.txt opt-out from AI training",
+      "date_label": "Nov 7, 2026",
+      "urgent": false,
+      "body": "The four labs have agreed to honor a common robots.txt signal that blocks site content from AI training. This gives clients one control to set on their public websites instead of a separate rule per crawler.",
+      "tag": "tactical"
+    },
+    {
+      "title": "OpenAI moves deeper into offensive security with GPT-6 Cyber and automated kernel exploits",
+      "date_label": "Nov 4–7, 2026",
+      "urgent": false,
+      "body": "A pipeline reported on Nov 4 produced 948 kernel exploits, with a cost reported at about $1.2M in API credits. GPT-6 Cyber is reported to be available only to selected red-team customers. Meanwhile, a gpt-6.2-astra model ID is showing up in Codex usage ahead of any announcement.",
+      "tag": "strategic"
+    }
+  ],
+  "providers": [
+    {"name": "OpenAI", "display": "OpenAI", "headline": "GPT-6 Cyber reportedly launched to selected customers only, and a gpt-6.2-astra model ID is appearing in Codex.", "detail": "Images 2.6 shipped on Nov 4. Reports say OpenAI's automated pipeline produced 948 kernel exploits, each with a candidate patch. GPT-6 Cyber is reported to be limited to red-team customers. gpt-6.2-astra appears in Codex usage but is not yet in the official docs.", "tags": ["strategic", "watch"], "classification": "strategic", "active": true, "hasAlert": true, "alertReason": "Automated exploit generation shortens patch windows"},
+    {"name": "Anthropic", "display": "Anthropic", "headline": "The IPO roadshow is expected to start the week of Nov 9, with valuation expectations down to about $1.0–1.3T.", "detail": "The amended S-1/A filed Nov 2 still has no price range. The listing is targeted for the week of Nov 16, ahead of Thanksgiving. Anthropic has also signed onto the shared robots.txt AI-training opt-out. Leak reports of a new model are unconfirmed.", "tags": ["watch"], "classification": "watch", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "Google Gemini", "display": "Google Gemini", "headline": "No new model in the last 48 hours; Google backs the robots.txt opt-out and disclosed a $548M Qualcomm stake.", "detail": "Google signed onto the shared AI-training opt-out signal. It also disclosed a stake in Qualcomm tied to AI data-center chips. There were no Gemini app or API releases since Omni 1.2 Flash.", "tags": ["watch"], "classification": "watch", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "xAI", "display": "xAI / Grok", "headline": "Still no Grok 5; Grok 4.x remains the flagship.", "detail": "No confirmed release was found. Prediction markets keep pushing back the Grok 5 date.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Meta", "display": "Meta", "headline": "No new release found.", "detail": "Avocado and Mango remain closed-first. No Llama release was dated this week.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Mistral", "display": "Mistral", "headline": "No new release since Large 4 on Oct 29.", "detail": "Nothing new was found in the last 48 hours.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Perplexity", "display": "Perplexity", "headline": "The Oct roundup covers Computer agent automations and a federal certification; nothing new was confirmed for November.", "detail": "A Nov 4 third-party roundup lists local Computer operations on Mac, Automations, enterprise admin tools and new developer APIs. A smarter Comet Assistant and patent search are mentioned without a confirmed date.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Microsoft 365 Copilot", "display": "Microsoft 365 Copilot", "headline": "Microsoft declined to renew an Oracle AI capacity contract as it reviews more than $80B in outside-cloud commitments.", "detail": "This is an infrastructure move, not a feature release. The Copilot-button GA in Word, Excel and PowerPoint continues to roll out through the end of December. Microsoft also backs the robots.txt opt-out.", "tags": ["watch"], "classification": "watch", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "GitHub Copilot", "display": "GitHub Copilot", "headline": "No confirmed update found.", "detail": "Usage-based billing, in effect since June, remains the main story.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Cursor", "display": "Cursor", "headline": "No new update after last week's trojaned-extension incident.", "detail": "No follow-up post-mortem was found in the last 48 hours.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Gamma", "display": "Gamma", "headline": "No release found.", "detail": "The long quiet stretch continues.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Notion AI", "display": "Notion AI", "headline": "No new release found.", "detail": "Nothing new since mid-October.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""}
+  ],
+  "persistent_signals": [
+    {"provider": "Anthropic", "text": "Anthropic — IPO timing and valuation — 2+ weeks running (Nov 16 listing week, S-1 compute minimums, now a roadshow with valuation pushback)"},
+    {"provider": "OpenAI", "text": "OpenAI — agent security and cyber capability — 2 weeks running (rogue-agent monitoring last week, GPT-6 Cyber and the kernel exploit pipeline this week)"},
+    {"provider": "xAI", "text": "xAI — Grok 5 still missing — 3+ weeks running (no flagship release since Grok 4.x)"}
+  ],
+  "month_themes": {
+    "then": "Free-tier cuts (Gemini drops free accounts to Flash-Lite), the GPT-6 rollout to every tier, and NIST comment deadlines",
+    "now": "Anthropic IPO mechanics, AI-driven offensive security, and an industry-wide training opt-out"
+  },
+  "habits": [
+    {"task": "BCP/DR plan narratives & runbooks", "tool": "Claude (Opus 5.5)", "shift": "No change. Add a **patch-window assumption** line to cyber-recovery runbooks, given the reports of automated exploit generation.", "type": "tactical"},
+    {"task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)", "tool": "Claude + Perplexity for citations", "shift": "No change. Treat third-party claims about NIST AI drafts as unverified until checked on nist.gov.", "type": "tactical"},
+    {"task": "Vendor/architecture research", "tool": "Perplexity / ChatGPT deep research", "shift": "Track hyperscaler capacity moves, like Microsoft dropping Oracle capacity, as vendor-concentration inputs for client BIAs.", "type": "strategic"},
+    {"task": "Client proposals & SOWs", "tool": "Claude", "shift": "No change this week.", "type": "tactical"},
+    {"task": "Executive decks", "tool": "ChatGPT slides / Gamma", "shift": "ChatGPT's slide creation (Oct 16) is a viable first draft. Gamma is quiet, but still fine for visual polish.", "type": "watch"},
+    {"task": "Stakeholder audio walkthroughs", "tool": "ChatGPT (GPT-Live-1.1)", "shift": "No change.", "type": "watch"},
+    {"task": "Client advisory on AI data risk", "tool": "Claude", "shift": "Add the new **shared robots.txt AI-training opt-out** to client web-governance checklists. One signal now covers OpenAI, Google, Microsoft and Anthropic.", "type": "tactical"}
+  ],
+  "community": [
+    {"source": "r/LocalLLaMA", "signal": "Heavy discussion of 2-bit quantized DeepSeek variants that match base-model scores, alongside complaints about GPU price spikes.", "so_what": "Local models stay viable for clients with sensitive data, but hardware cost is rising."},
+    {"source": "r/OpenAI", "signal": "Top threads cover an OpenAI-branded mini keyboard (~764 upvotes) and debate over the retirement of custom GPTs.", "so_what": "Mostly noise. The custom-GPT retirement matters if clients built workflows on custom GPTs."},
+    {"source": "r/ClaudeAI", "signal": "No dated high-engagement posts were retrievable this week. The mirror sites are stale.", "so_what": "No usable community signal today."}
+  ],
+  "watch": [
+    {"kind": "deadline", "title": "Anthropic IPO roadshow → pricing (weeks of Nov 9 and Nov 16)", "body": "Watch EDGAR for the price-range amendment. Expect a burst of disclosures about compute commitments and risk factors that will be useful for vendor-risk reviews."},
+    {"kind": "watch", "title": "Commvault SHIFT 2026, Nashville, Nov 9–12", "body": "Cyber-resilience and recovery themes. Expect AI-assisted recovery announcements that are directly relevant to DR tooling advice."},
+    {"kind": "security", "title": "GPT-6 Cyber and automated exploit pipelines", "body": "Watch for wider availability and any CVE surge tied to AI-found bugs. That would affect patch SLAs."},
+    {"kind": "watch", "title": "GPT-6.2 Astra official launch", "body": "The model ID is already visible in Codex usage. A formal release could change the default model choice for research and coding."},
+    {"kind": "regulatory", "title": "Adoption of the shared robots.txt AI-training opt-out", "body": "Watch for the published spec and the date it takes effect, then update client web-governance guidance."}
+  ],
+  "sources": "Sources consulted: OpenAI release notes, CNBC/The Information via aggregators (Anthropic IPO), TechRadar (robots.txt opt-out), aiweekly.co, TestingCatalog, Wikipedia (Mistral), third-party Perplexity/M365 roundups, Reddit mirrors, and DRJ/Commvault event coverage."
+}

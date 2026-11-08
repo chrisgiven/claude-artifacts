@@ -1,0 +1,114 @@
+{
+  "date": "2026-11-08",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {
+          "title": "TheGentlemen claims MegChem (South Africa)",
+          "tags": ["Newly claimed"],
+          "summary": "On 2 November 2026 TheGentlemen ransomware group listed MegChem, a South African engineering consultancy, on its leak site; the victim has not publicly confirmed.",
+          "source": {"name": "Malware News", "url": "https://malware.news/t/thegentlemen-ransomware-attack-on-megchem-engineering/127090"}
+        },
+        {
+          "title": "Queens Public Library — ransomware outage across 66 branches",
+          "tags": ["Municipal", "High-profile"],
+          "summary": "Ransomware knocked out computers, Wi-Fi, self-checkout and the website at all 66 Queens Public Library branches; the library confirmed ransomware but no group has claimed it (publication date not independently verified).",
+          "source": {"name": "The Cyber Express", "url": "https://thecyberexpress.com/queens-public-library-ransomware-attack/"}
+        },
+        {
+          "title": "n0n group claims Finzly Corp (late-October carryover)",
+          "tags": ["Newly claimed", "Third-party"],
+          "summary": "Payments-platform vendor Finzly was listed by the n0n group with a 19 October 2026 date, which raises third-party exposure for the banks that use it.",
+          "source": {"name": "SOCRadar", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/finzly-corp-n0n-749ded49"}
+        },
+        {
+          "title": "Vicksburg, MS — city systems still recovering (October carryover)",
+          "tags": ["Municipal"],
+          "summary": "A 1 October 2026 ransomware attack forced the city of Vicksburg, Mississippi, to take several computer systems offline and disrupted municipal operations.",
+          "source": {"name": "BlackFog — State of Ransomware Oct 2026", "url": "https://www.blackfog.com/the-state-of-ransomware-october-2026/"}
+        }
+      ],
+      "note": "Few confirmed November victims were indexed yet; two October carryovers are included for context. BlackFog's November roundup is expected in early December."
+    },
+    "outage": {
+      "items": [
+        {
+          "title": "GitHub — Actions and pull-request failures",
+          "tags": ["Cloud"],
+          "summary": "On 5 November more than 570 Downdetector reports cited 502 errors and failed pull requests and Actions runs; trackers logged it as a minor incident, resolved the same night.",
+          "source": {"name": "Sunday Guardian Live", "url": "https://sundayguardianlive.com/world/github-outage-today-is-github-down-today-in-the-us-users-report-502-server-errors-app-login-problems-technical-issues-failed-repositories-pull-requests-pr-failures-github-downdetector-status-317901/"}
+        },
+        {
+          "title": "Instagram — login and feed issues",
+          "tags": ["Cloud"],
+          "summary": "About 200 users reported login, feed and messaging problems on 7 November; it was limited in scope, with no platform-wide outage confirmed.",
+          "source": {"name": "Sportskeeda Tech", "url": "https://tech.sportskeeda.com/mobiles/news-is-instagram-right-now-november-7-2026-outage-status-explored"}
+        },
+        {
+          "title": "Brightspeed ISP outage — NC, OH, PA",
+          "tags": ["Trend"],
+          "summary": "Outage maps logged a regional Brightspeed internet outage on 3 November with about 919 user reports across North Carolina, Ohio and Pennsylvania.",
+          "source": {"name": "GeoBlackout", "url": "https://geoblackout.com/us/report/internet"}
+        }
+      ],
+      "note": "No major AWS, Azure or GCP outage found for November so far. The most recent hyperscaler event was Azure's two outages, 29 Sep–1 Oct, across 18 regions."
+    },
+    "cyber": {
+      "items": [
+        {
+          "title": "CISA KEV: WordPress core TOCTOU race condition (CVE-2026-119977)",
+          "tags": ["KEV add", "Critical"],
+          "summary": "CISA added the actively exploited WordPress core race-condition flaw (CVSS 8.1) to the KEV catalog on 3 November 2026.",
+          "source": {"name": "CISA", "url": "https://www.cisa.gov/news-events/alerts/2026/11/03/cisa-adds-one-known-exploited-vulnerability-catalog"}
+        },
+        {
+          "title": "CISA KEV: CVE-2026-19868 added 6 Nov, federal due date 20 Nov",
+          "tags": ["KEV add"],
+          "summary": "The KEV catalog lists CVE-2026-19868 as added 6 November with a 20 November remediation deadline for federal agencies; check the catalog for the affected product.",
+          "source": {"name": "CISA KEV Catalog", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"}
+        },
+        {
+          "title": "Four new KEV entries in the past 7 days",
+          "tags": ["Trend", "Reference"],
+          "summary": "Senserva's tracker counts 4 CVEs added to CISA KEV in the week to 6 November 2026, a steady exploited-vulnerability cadence for patch prioritisation.",
+          "source": {"name": "Senserva", "url": "https://senserva.com/exploited-this-week.html"}
+        },
+        {
+          "title": "WordPress core flaw draws active exploitation warning",
+          "tags": ["Zero-day", "High-profile"],
+          "summary": "Hackread reports attackers are exploiting the WordPress core TOCTOU bug, found by a Picus Security researcher, putting a very large install base at risk until it is patched.",
+          "source": {"name": "Hackread", "url": "https://hackread.com/cisa-hackers-exploiting-wordpress-core-vulnerability"}
+        },
+        {
+          "title": "OpenAM session-token theft and SAML bypass (CVE-2026-123551)",
+          "tags": ["Credential exposure"],
+          "summary": "Researchers disclosed OpenAM flaws that allow session-token theft and SAML authentication bypass; they were not in KEV as of 8 November.",
+          "source": {"name": "Ostorlab", "url": "https://blog.ostorlab.co/openam-session-token-theft-saml-bypass-cve-2026-123551.html"}
+        }
+      ]
+    },
+    "physical": {
+      "items": [
+        {
+          "title": "Catastrophic flooding — North Georgia and southern Tennessee",
+          "tags": ["Flood", "Critical"],
+          "summary": "Flash flood emergencies brought water rescues and evacuations; the river crested above its 1990 record at McCaysville and Copperhill.",
+          "source": {"name": "WRAL", "url": "https://wral.com/weather/catastrophic-flooding-georgia-tennessee-water-rescues-evacuations-november-2026"}
+        },
+        {
+          "title": "B.C. atmospheric-river storm — Vancouver Island emergency",
+          "tags": ["Flood"],
+          "summary": "Zeballos declared a local state of emergency and evacuated 22 properties over landslide risk on 6 November; more than 400 mm of rain is possible and thousands of BC Hydro customers lost power.",
+          "source": {"name": "CP24", "url": "https://cp24.com/news/canada/2026/11/06/evacuations-and-state-of-local-emergency-over-drenching-bc-rain"}
+        },
+        {
+          "title": "Los Angeles County — strong winds and elevated fire risk",
+          "tags": ["Wildfire"],
+          "summary": "On 6 November LA County officials urged residents to prepare for strong winds and elevated fire-weather risk and to check evacuation zones.",
+          "source": {"name": "LA County Emergency", "url": "https://lacounty.gov/emergency/"}
+        }
+      ],
+      "note": "USGS significant-earthquake feed: no significant quakes this week."
+    }
+  }
+}
