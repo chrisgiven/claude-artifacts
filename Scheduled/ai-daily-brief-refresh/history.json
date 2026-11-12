@@ -1,146 +1,5 @@
 [
   {
-    "date": "2026-08-11",
-    "providers": {
-      "OpenAI": {
-        "headline": "GPT-5.6 Luna/Sol stable; Sign in with ChatGPT live (Airtable/GitLab/HubSpot/Notion/Supabase/Vercel); restaurant reservation search (OpenTable/Resy/Yelp). o3 retiring Aug 26 (API Dec 11); DALL-E GPT retiring Aug 30. Atlas shutdown complete Aug 9.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Anthropic": {
-        "headline": "Claude Code self-hosted environments public beta (Team+Enterprise). Inference Hooks DLP live (Enterprise). Prompt Tools API retiring Aug 17 (T-6 days). Claude Code 50% boost ends Aug 19. Sonnet 5 promo ($2/$10) ends Aug 31 — $3/$15 (+50%) from Sept 1. Claude for Government beta.",
-        "tags": [
-          "strategic",
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "Prompt Tools API retiring Aug 17 (T-6 days) — migrate all integrations this week. Sonnet 5 +50% price increase Sept 1 — audit pipeline costs now.",
-        "active": true
-      },
-      "Google Gemini": {
-        "headline": "No new model. Gemini 3.6 Flash stable. Image generation models shutting down Aug 17 (T-6 days) — hard deadline. gemini-robotics-er-1.6-preview retiring Aug 31. Classroom expansion; streaming TTS for gemini-3.1-flash-tts-preview.",
-        "tags": [
-          "alert",
-          "watch"
-        ],
-        "hasAlert": true,
-        "alertReason": "Gemini image generation models shut down Aug 17 (T-6 days) — hard deadline; migrate all image gen workflows this week.",
-        "active": true
-      },
-      "xAI": {
-        "headline": "Grok 4.6 (1.5T, SpaceX corpus) remains live Cursor default since Aug 7. Grok 4.7 (2.1T) targeting late August — will become next Cursor default. Grok Voice Think Fast 2.0 GA ($0.08/min STT). Cursor Router governance gap ongoing.",
-        "tags": [
-          "strategic",
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "Grok 4.6 live Cursor default — all Cursor IDE sessions route to xAI training pipeline (SpaceX/Anysphere acquisition). Router opacity prevents governance audit. Freeze for regulated workloads.",
-        "active": true
-      },
-      "Meta": {
-        "headline": "Muse Glimmer released Aug 10 — 30B open-weight model distilled from Muse Spark 1.2; Apache 2.0 license; runs on single 24-32GB GPU (<1% accuracy hit via quantization); optimized for local agentic workflows. Meta's first open-weight model since abandoning Llama in Q1 2026. Free on HuggingFace.",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Mistral": {
-        "headline": "Shieldstral (Aug 5) stable — open-weight multimodal safety model, policy-as-natural-language, returns compliance score per prompt. Medium 3.5 + Leanstral 1.5 current. Open-weight frontier MoE broader release still Q3. Les Ulis 10MW facility opening Q3.",
-        "tags": [
-          "strategic",
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Perplexity": {
-        "headline": "Personal Computer for Mac: prebuilt Personal CFO, improved control and personal context. MCP Server one-click install. Comet Plus ($5/mo) premium publisher access. Kimi K2.5 (Moonshot AI, Chinese-origin) Week 29+ on US inference + Kimi K2.7 Code in Agent API — both unresolved.",
-        "tags": [
-          "tactical",
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "Kimi K2.5 (Moonshot AI, Chinese-origin) Week 29+ on US inference + Kimi K2.7 Code in Agent API — both unresolved. Restrict ALL Kimi models in enterprise admin for regulated clients.",
-        "active": true
-      },
-      "Microsoft 365 Copilot": {
-        "headline": "Copilot Notebooks mid-Aug rollout (OneNote sync). Copilot Fusion (consumer+enterprise merge) in progress. Flex credits expire Aug 31 — billing shock risk September. SharePoint Copilot ON by default. Claude DPA outstanding 21+ weeks.",
-        "tags": [
-          "strategic",
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "GitHub Copilot flex credits expire Aug 31 — September billing shock risk for Business/Enterprise. SharePoint Copilot ON by default — verify DLP policies. Claude DPA with Microsoft 21+ weeks outstanding.",
-        "active": true
-      },
-      "GitHub Copilot": {
-        "headline": "Sessions sidebar with multi-session management, /side parallel exploration. Auto shows model/credit details per request. Kimi K3 (Moonshot AI, Chinese-origin, ~2.8T) GA resumed — Frontier Security confirmed sandbox escape. kimi-k2.7-code STILL active Week 14+. Sept 1 deprecations: Gemini 2.5 Pro + Gemini 3 Flash. Flex credits expire Aug 31.",
-        "tags": [
-          "tactical",
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "Kimi K3 (Chinese-origin, ~2.8T, Frontier Security sandbox escape confirmed) GA + kimi-k2.7-code Week 14+ STILL active — disable BOTH in Enterprise model allow-list for regulated clients immediately.",
-        "active": true
-      },
-      "Cursor": {
-        "headline": "Grok 4.6 (xAI, 1.5T, SpaceX pipeline) live default since Aug 7. Router: enterprise IT cannot audit model selection per request. Teams usage splits into first-party + third-party pools. iOS beta live. Grok 4.7 (2.1T) will be next default (late August).",
-        "tags": [
-          "alert",
-          "tactical"
-        ],
-        "hasAlert": true,
-        "alertReason": "Grok 4.6 live default — Cursor IDE data flows to xAI training pipeline (SpaceX/Anysphere acquisition). Router opacity: cannot audit model selection. Freeze for regulated workloads; enterprise review required before next renewal.",
-        "active": true
-      },
-      "Gamma": {
-        "headline": "No new release — 70+ days quiet since June 12 batch. Stable for existing presentation workflows. No Q3 announcement yet.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Notion AI": {
-        "headline": "Workers billing transitions to Credits TODAY (August 11) — verify all client automation credit balances immediately. AI usage allowance dashboard live (Settings > Notion AI > Usage). Custom Agent triggers after AI Meeting Notes. External Agents GA with audit log.",
-        "tags": [
-          "alert",
-          "tactical"
-        ],
-        "hasAlert": true,
-        "alertReason": "Notion Workers billing transitions to Credits TODAY (August 11) — billing model is live NOW; verify all client automation credit balances and projected monthly costs immediately.",
-        "active": true
-      }
-    },
-    "topMoves": [
-      "Meta Muse Glimmer (Aug 10) — 30B open-weight Apache 2.0 model distilled from Muse Spark 1.2; runs on 24-32GB consumer GPU; optimized for local agentic workflows; Meta's first open-weight model since abandoning Llama line",
-      "Notion Workers billing → Credits IS TODAY (Aug 11) — billing model switched this morning; verify all client automation credit balances now",
-      "Dual Aug 17 shutdown (T-6 days): Anthropic Prompt Tools API + Google Gemini image generation models both shut down — migrate affected integrations this week"
-    ],
-    "clientAlerts": [
-      "Notion Workers billing → Credits TODAY (Aug 11) — billing live NOW; verify credit balances for all clients using Notion Workers",
-      "Anthropic Prompt Tools API retiring Aug 17 (T-6 days) — migrate all integrations this week",
-      "Google Gemini image generation models shutting down Aug 17 (T-6 days) — hard deadline",
-      "GitHub Copilot Kimi K3 (Moonshot AI, Chinese-origin, ~2.8T, Frontier Security sandbox escape) GA + kimi-k2.7-code Week 14+ STILL active — disable BOTH in Enterprise allow-list for regulated clients",
-      "Perplexity Kimi K2.5/K2.7-code (Chinese-origin) Week 29+ on US inference — restrict in enterprise admin",
-      "Cursor Grok 4.6 default (xAI training pipeline) — freeze for regulated workloads",
-      "Claude Sonnet 5 promo ends Aug 31 — +50% ($3/$15/MTok) from Sept 1; audit pipeline costs",
-      "GitHub Copilot flex credits expire Aug 31 — billing shock risk in September",
-      "EU AI Act GPAI enforcement active since Aug 2 — compliance dialogues active; fines up to EUR 35M or 7% global revenue"
-    ],
-    "watchItems": [
-      "Anthropic Prompt Tools API + Gemini image gen shutdown — August 17 (T-6 days)",
-      "Claude Code 50% usage boost ends — August 19 (T-8 days)",
-      "o3 retirement from ChatGPT UI — August 26",
-      "DALL-E GPT retirement + Claude Sonnet 5 promo ends + GitHub Copilot flex credits expire — August 31",
-      "GitHub Copilot model deprecations (Gemini 2.5 Pro, Gemini 3 Flash) — September 1, 2026",
-      "xAI Grok 4.7 (2.1T) — late August 2026",
-      "Anthropic IPO — H2 2026"
-    ]
-  },
-  {
     "date": "2026-08-30",
     "providers": {
       "OpenAI": {
@@ -6566,6 +6425,114 @@
       "GPT-6 Cyber and automated exploit pipelines",
       "GPT-6.2 Astra official launch",
       "Adoption of the shared robots.txt AI-training opt-out"
+    ]
+  },
+  {
+    "date": "2026-11-11",
+    "providers": {
+      "OpenAI": {
+        "headline": "Launched ChatGPT Business Profiles (beta) and is pulling its models from Cursor tomorrow.",
+        "tags": [
+          "tactical",
+          "strategic"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "IPO price range set at $70–78 (up to ~$1.4T valuation), with trading expected around Nov 19.",
+        "tags": [
+          "strategic"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Google Gemini": {
+        "headline": "Opened a US preview of Gemini for Healthcare and made Cloud Pathways generally available on GKE.",
+        "tags": [
+          "strategic"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "xAI": {
+        "headline": "Quiet. Grok 5 still has no date; xAI's parent SpaceX is why Cursor is losing OpenAI's models.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Meta": {
+        "headline": "Quiet. No Llama or Muse release; Meta did not sign the Paris Call.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Mistral": {
+        "headline": "Signed the Paris Call; no new model since Large 4 went open-weight.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "Perplexity": {
+        "headline": "Quiet today. Teammates, always-on agents for Max subscribers, is still in web research preview.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "IBM and Microsoft launched Imagine Enterprise, an agent platform; Autopilot rolls out to Frontier this month, ahead of Ignite on Nov 17–20.",
+        "tags": [
+          "tactical",
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "GitHub Copilot": {
+        "headline": "No new ship found.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Cursor": {
+        "headline": "Loses built-in OpenAI models on Nov 12; bring-your-own OpenAI keys still work.",
+        "tags": [
+          "tactical",
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "Model supply cutoff on Nov 12; a bring-your-own key changes the data-processing contract path.",
+        "active": true
+      },
+      "Gamma": {
+        "headline": "Still quiet.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "No new ship found.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      }
+    },
+    "topMoves": [
+      "Anthropic sets its IPO price range: $70–78 a share, up to ~$1.4T valuation",
+      "OpenAI cuts Cursor off from its models tomorrow",
+      "OpenAI, Anthropic, Microsoft and Mistral sign Macron's Paris Call on AI safety; Google and Meta don't"
+    ],
+    "clientAlerts": [
+      "OpenAI models leave Cursor tomorrow (Nov 12)"
+    ],
+    "watchItems": [
+      "Nov 12: OpenAI models leave Cursor",
+      "Nov 17–20: Microsoft Ignite",
+      "~Nov 19: Anthropic (ANT) starts trading",
+      "Nov 30: M365 App Builder access ends",
+      "Lazarus: backdooring AI agents without retraining"
     ]
   }
 ]

@@ -1,114 +1,45 @@
 {
-  "date": "2026-11-08",
+  "date": "2026-11-11",
   "sections": {
     "ransomware": {
       "items": [
-        {
-          "title": "TheGentlemen claims MegChem (South Africa)",
-          "tags": ["Newly claimed"],
-          "summary": "On 2 November 2026 TheGentlemen ransomware group listed MegChem, a South African engineering consultancy, on its leak site; the victim has not publicly confirmed.",
-          "source": {"name": "Malware News", "url": "https://malware.news/t/thegentlemen-ransomware-attack-on-megchem-engineering/127090"}
-        },
-        {
-          "title": "Queens Public Library — ransomware outage across 66 branches",
-          "tags": ["Municipal", "High-profile"],
-          "summary": "Ransomware knocked out computers, Wi-Fi, self-checkout and the website at all 66 Queens Public Library branches; the library confirmed ransomware but no group has claimed it (publication date not independently verified).",
-          "source": {"name": "The Cyber Express", "url": "https://thecyberexpress.com/queens-public-library-ransomware-attack/"}
-        },
-        {
-          "title": "n0n group claims Finzly Corp (late-October carryover)",
-          "tags": ["Newly claimed", "Third-party"],
-          "summary": "Payments-platform vendor Finzly was listed by the n0n group with a 19 October 2026 date, which raises third-party exposure for the banks that use it.",
-          "source": {"name": "SOCRadar", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/finzly-corp-n0n-749ded49"}
-        },
-        {
-          "title": "Vicksburg, MS — city systems still recovering (October carryover)",
-          "tags": ["Municipal"],
-          "summary": "A 1 October 2026 ransomware attack forced the city of Vicksburg, Mississippi, to take several computer systems offline and disrupted municipal operations.",
-          "source": {"name": "BlackFog — State of Ransomware Oct 2026", "url": "https://www.blackfog.com/the-state-of-ransomware-october-2026/"}
-        }
+        {"title": "Vanderbilt University — BYOD ransomware attack", "tags": ["Critical", "Education", "Newly claimed", "Data exposure"], "summary": "Vanderbilt is responding to a Nov 9 cyberattack that hit devices, systems and cloud services; the BYOD gang claims it encrypted databases and stole student, employee and research data, and most internal systems remain restricted.", "source": {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/vanderbilt-university-hit-in-byod-ransomware-attack-data-theft-claimed/"}},
+        {"title": "LiveRamp — claimed by N0n", "tags": ["Newly claimed", "High-profile", "Third-party"], "summary": "The N0n ransomware group listed data-connectivity firm LiveRamp on its leak site; the claim is not confirmed by the company.", "source": {"name": "DeXpose", "url": "https://www.dexpose.io/n0n-ransomware-group-strikes-liveramp/"}},
+        {"title": "159 Solutions, Inc. — claimed by N0n", "tags": ["Newly claimed"], "summary": "N0n added 159 Solutions to its leak site this month as part of a run of US victim postings; unverified by the victim.", "source": {"name": "DeXpose", "url": "https://www.dexpose.io/n0n-ransomware-attack-targets-159-solutions-inc/"}},
+        {"title": "Frolina Home (Thailand) — claimed by Climax Inc", "tags": ["Newly claimed"], "summary": "The Climax Inc group claims an attack on Thai manufacturer Frolina Home; no victim confirmation.", "source": {"name": "Malware News", "url": "https://malware.news/t/climax-inc-targets-frolina-home-in-ransomware-attack/127165"}},
+        {"title": "Unnamed US organization (Company #188) — N0n claim, Nov 9", "tags": ["Newly claimed"], "summary": "SOCRadar tracks a Nov 9 N0n claim against an unnamed US organization, consistent with the group's high posting tempo this month.", "source": {"name": "SOCRadar", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/company-188-n0n-5ebf0c48"}},
+        {"title": "Ransomware activity up 23% in Q3 2026", "tags": ["Trend", "Reference"], "summary": "NCC Group reports a 23% quarter-over-quarter rise in ransomware attacks in Q3 2026, setting the backdrop for Q4 activity.", "source": {"name": "Redmond Magazine", "url": "https://redmondmag.com/articles/2026/10/21/ransomware-attacks-rise-23-percent.aspx"}}
       ],
-      "note": "Few confirmed November victims were indexed yet; two October carryovers are included for context. BlackFog's November roundup is expected in early December."
+      "note": "Named, victim-confirmed November cases are scarce; most items are leak-site claims. Treat as unverified until the victim discloses."
     },
     "outage": {
       "items": [
-        {
-          "title": "GitHub — Actions and pull-request failures",
-          "tags": ["Cloud"],
-          "summary": "On 5 November more than 570 Downdetector reports cited 502 errors and failed pull requests and Actions runs; trackers logged it as a minor incident, resolved the same night.",
-          "source": {"name": "Sunday Guardian Live", "url": "https://sundayguardianlive.com/world/github-outage-today-is-github-down-today-in-the-us-users-report-502-server-errors-app-login-problems-technical-issues-failed-repositories-pull-requests-pr-failures-github-downdetector-status-317901/"}
-        },
-        {
-          "title": "Instagram — login and feed issues",
-          "tags": ["Cloud"],
-          "summary": "About 200 users reported login, feed and messaging problems on 7 November; it was limited in scope, with no platform-wide outage confirmed.",
-          "source": {"name": "Sportskeeda Tech", "url": "https://tech.sportskeeda.com/mobiles/news-is-instagram-right-now-november-7-2026-outage-status-explored"}
-        },
-        {
-          "title": "Brightspeed ISP outage — NC, OH, PA",
-          "tags": ["Trend"],
-          "summary": "Outage maps logged a regional Brightspeed internet outage on 3 November with about 919 user reports across North Carolina, Ohio and Pennsylvania.",
-          "source": {"name": "GeoBlackout", "url": "https://geoblackout.com/us/report/internet"}
-        }
+        {"title": "Cloudflare network slowdown — Eastern North America", "tags": ["Cloud"], "summary": "A Cloudflare slowdown across Eastern North America ran roughly 11:34am–3:12pm ET on Nov 9; some Workers changes and a FedRAMP purge item may still be delayed.", "source": {"name": "Chasms Daily Outage Brief", "url": "https://www.chasms.com/blog/daily-outage-brief-2026-11-09-evening/"}},
+        {"title": "Exchange Online EX1545193 — sends to Outlook.com bounce", "tags": ["Cloud"], "summary": "An open Microsoft incident may cause messages sent to Outlook.com, Hotmail.com and Live.com addresses to bounce.", "source": {"name": "Chasms Daily Outage Brief", "url": "https://www.chasms.com/blog/daily-outage-brief-2026-11-09-evening/"}},
+        {"title": "Windows 365 Cloud PC drops and Teams TM1545775", "tags": ["Cloud"], "summary": "Windows 365 Cloud PCs were still dropping sessions and some Teams users saw blank contacts as of the Nov 9 evening brief.", "source": {"name": "Chasms Daily Outage Brief", "url": "https://www.chasms.com/blog/daily-outage-brief-2026-11-09-evening/"}},
+        {"title": "Google Cloud europe-west2-b (London) power event — Oct 20", "tags": ["Cloud", "Reference"], "summary": "A third-party London facility lost utility power and a controller fault kept generators from taking over; reported by commentary sources, not yet verified against Google's status history.", "source": {"name": "theCUBE Research", "url": "https://thecuberesearch.com/?p=325134"}}
       ],
-      "note": "No major AWS, Azure or GCP outage found for November so far. The most recent hyperscaler event was Azure's two outages, 29 Sep–1 Oct, across 18 regions."
+      "note": "No major hyperscaler-wide outage found for November so far; AWS reported all clear on Nov 9."
     },
     "cyber": {
       "items": [
-        {
-          "title": "CISA KEV: WordPress core TOCTOU race condition (CVE-2026-119977)",
-          "tags": ["KEV add", "Critical"],
-          "summary": "CISA added the actively exploited WordPress core race-condition flaw (CVSS 8.1) to the KEV catalog on 3 November 2026.",
-          "source": {"name": "CISA", "url": "https://www.cisa.gov/news-events/alerts/2026/11/03/cisa-adds-one-known-exploited-vulnerability-catalog"}
-        },
-        {
-          "title": "CISA KEV: CVE-2026-19868 added 6 Nov, federal due date 20 Nov",
-          "tags": ["KEV add"],
-          "summary": "The KEV catalog lists CVE-2026-19868 as added 6 November with a 20 November remediation deadline for federal agencies; check the catalog for the affected product.",
-          "source": {"name": "CISA KEV Catalog", "url": "https://www.cisa.gov/known-exploited-vulnerabilities-catalog"}
-        },
-        {
-          "title": "Four new KEV entries in the past 7 days",
-          "tags": ["Trend", "Reference"],
-          "summary": "Senserva's tracker counts 4 CVEs added to CISA KEV in the week to 6 November 2026, a steady exploited-vulnerability cadence for patch prioritisation.",
-          "source": {"name": "Senserva", "url": "https://senserva.com/exploited-this-week.html"}
-        },
-        {
-          "title": "WordPress core flaw draws active exploitation warning",
-          "tags": ["Zero-day", "High-profile"],
-          "summary": "Hackread reports attackers are exploiting the WordPress core TOCTOU bug, found by a Picus Security researcher, putting a very large install base at risk until it is patched.",
-          "source": {"name": "Hackread", "url": "https://hackread.com/cisa-hackers-exploiting-wordpress-core-vulnerability"}
-        },
-        {
-          "title": "OpenAM session-token theft and SAML bypass (CVE-2026-123551)",
-          "tags": ["Credential exposure"],
-          "summary": "Researchers disclosed OpenAM flaws that allow session-token theft and SAML authentication bypass; they were not in KEV as of 8 November.",
-          "source": {"name": "Ostorlab", "url": "https://blog.ostorlab.co/openam-session-token-theft-saml-bypass-cve-2026-123551.html"}
-        }
+        {"title": "Ivanti Connect Secure CVE-2026-111357 / CVE-2026-118527 — KEV deadline Nov 13", "tags": ["KEV add", "Zero-day", "Critical"], "summary": "CISA ordered federal agencies to remediate two exploited Ivanti Connect Secure flaws and perform forensic triage for compromise; the second deadline is Nov 13.", "source": {"name": "Help Net Security", "url": "https://www.helpnetsecurity.com/?p=390015"}},
+        {"title": "Node2Shell critical flaw under active exploitation", "tags": ["KEV add", "Critical"], "summary": "CISA warns attackers are now exploiting the critical Node2Shell (Brotli) vulnerability and has added it to the KEV catalog.", "source": {"name": "BleepingComputer", "url": "https://bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw"}},
+        {"title": "Six Microsoft zero-days added to KEV", "tags": ["KEV add", "Zero-day"], "summary": "A Nov 6 report says CISA added six actively exploited Microsoft zero-days to KEV; not yet cross-checked against CISA's catalog.", "source": {"name": "Cybersecurity News", "url": "https://cybersecuritynews.com/?p=142340"}},
+        {"title": "Apple CVE-2024-27834 added to KEV — due Nov 18", "tags": ["KEV add"], "summary": "CISA added Apple WebKit CVE-2024-27834 to KEV on Nov 4 with a Nov 18 federal remediation deadline.", "source": {"name": "TechJack Solutions", "url": "https://techjacksolutions.com/security/briefing/weekly-security-intelligence-briefing-week-of-2026-11-09/"}},
+        {"title": "SonicWall SonicOS SSLVPN CVE-2026-19868 — deadline Nov 20", "tags": ["KEV add"], "summary": "Exploited SonicOS SSLVPN flaw carries a Nov 20 federal deadline; edge VPNs remain the leading initial-access vector.", "source": {"name": "TechJack Solutions", "url": "https://techjacksolutions.com/security/briefing/weekly-security-intelligence-briefing-week-of-2026-11-09/"}},
+        {"title": "Cisco zero-days drive CISA Emergency Directive", "tags": ["Emergency Directive", "Zero-day"], "summary": "CISA and Five Eyes partners issued emergency guidance on exploited Cisco zero-days; date not confirmed for November, included for active-directive tracking.", "source": {"name": "CyberScoop", "url": "https://cyberscoop.com/cisco-zero-days-cisa-emergency-directive-five-eyes/"}}
       ]
     },
     "physical": {
       "items": [
-        {
-          "title": "Catastrophic flooding — North Georgia and southern Tennessee",
-          "tags": ["Flood", "Critical"],
-          "summary": "Flash flood emergencies brought water rescues and evacuations; the river crested above its 1990 record at McCaysville and Copperhill.",
-          "source": {"name": "WRAL", "url": "https://wral.com/weather/catastrophic-flooding-georgia-tennessee-water-rescues-evacuations-november-2026"}
-        },
-        {
-          "title": "B.C. atmospheric-river storm — Vancouver Island emergency",
-          "tags": ["Flood"],
-          "summary": "Zeballos declared a local state of emergency and evacuated 22 properties over landslide risk on 6 November; more than 400 mm of rain is possible and thousands of BC Hydro customers lost power.",
-          "source": {"name": "CP24", "url": "https://cp24.com/news/canada/2026/11/06/evacuations-and-state-of-local-emergency-over-drenching-bc-rain"}
-        },
-        {
-          "title": "Los Angeles County — strong winds and elevated fire risk",
-          "tags": ["Wildfire"],
-          "summary": "On 6 November LA County officials urged residents to prepare for strong winds and elevated fire-weather risk and to check evacuation zones.",
-          "source": {"name": "LA County Emergency", "url": "https://lacounty.gov/emergency/"}
-        }
+        {"title": "M 6.4 — 30 km WSW of Lata, Solomon Islands (Nov 09)", "tags": ["M 6.4"], "summary": "USGS green alert, no tsunami; limited infrastructure impact expected.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tx16"}},
+        {"title": "Cyclone Murasu makes landfall in Andhra Pradesh", "tags": ["Tropical"], "summary": "Murasu hit the Andhra Pradesh coast on Nov 3, the second cyclone there in under a week.", "source": {"name": "Verisk Alert", "url": "https://alert.risksolutions.verisk.com/"}},
+        {"title": "Santa Catarina, Brazil — 671 storm incidents", "tags": ["Flood"], "summary": "Storms caused 671 incidents across 76 municipalities in Santa Catarina on Nov 4–5.", "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}},
+        {"title": "Ecuador flooding — 12 deaths, 56,000+ affected", "tags": ["Flood"], "summary": "Heavy rain and flooding killed 12 people and affected more than 56,000 in Ecuador.", "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}},
+        {"title": "Northern Mexico heavy rain", "tags": ["Flood"], "summary": "Weekend rain across four northern states left two dead, 450 homes affected and 45 people rescued (reported Nov 2).", "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-3-november-2026"}}
       ],
-      "note": "USGS significant-earthquake feed: no significant quakes this week."
+      "note": "No significant November wildfire activity found."
     }
   }
 }

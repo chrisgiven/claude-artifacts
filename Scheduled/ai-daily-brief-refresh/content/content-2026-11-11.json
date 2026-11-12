@@ -1,0 +1,270 @@
+{
+  "date": "2026-11-11",
+  "client_alerts": [
+    {
+      "headline": "OpenAI models leave Cursor tomorrow (Nov 12)",
+      "body": "OpenAI is ending built-in GPT access in Cursor on **November 12** because SpaceX now owns Cursor, and future OpenAI models (including Astra) will not be added. Any client team that uses GPT inside Cursor either switches model or adds its own OpenAI API key. A bring-your-own key moves the code-data relationship onto the client's own OpenAI contract, so confirm the retention and training settings on that key before anyone pastes it in. Anthropic, Google and Grok models in Cursor are not affected."
+    }
+  ],
+  "top_moves": [
+    {
+      "title": "Anthropic sets its IPO price range: $70–78 a share, up to ~$1.4T valuation",
+      "date_label": "Nov 10, 2026",
+      "urgent": true,
+      "body": "The roadshow launched with 825M Class A shares on Nasdaq under **ANT**, about $64B raised at the top of the range, and the book reportedly already covered. CNBC's sources say trading starts **Nov 19**; seven strategic partners, including Google and Nvidia, are buying $26B of non-voting stock at the IPO price.",
+      "tag": "strategic"
+    },
+    {
+      "title": "OpenAI cuts Cursor off from its models tomorrow",
+      "date_label": "Nov 12, 2026",
+      "urgent": true,
+      "body": "Built-in GPT access in Cursor ends on Nov 12 because of the SpaceX acquisition, and OpenAI won't add future models while SpaceX owns Cursor. Users can still bring their own OpenAI API key; Cursor says GPT is about 5% of its traffic.",
+      "tag": "tactical"
+    },
+    {
+      "title": "OpenAI, Anthropic, Microsoft and Mistral sign Macron's Paris Call on AI safety; Google and Meta don't",
+      "date_label": "Nov 10, 2026",
+      "urgent": false,
+      "body": "Ten AI companies signed a voluntary declaration on the safety of advanced models. The French safety group CeSIA says it lacks teeth, but the list of who signed is useful evidence in client vendor-risk questionnaires.",
+      "tag": "watch"
+    }
+  ],
+  "providers": [
+    {
+      "name": "OpenAI",
+      "display": "OpenAI",
+      "headline": "Launched ChatGPT Business Profiles (beta) and is pulling its models from Cursor tomorrow.",
+      "detail": "Business Profiles lets eligible US e-commerce and online-service companies claim a verified page in ChatGPT and run Business Agents that answer customers' product questions. The WSJ reports leaked documents showing a $10.9B Q3 operating loss on roughly $10B of revenue. OpenAI's built-in models leave Cursor on Nov 12. It also signed the Paris Call on AI safety.",
+      "tags": ["tactical", "strategic"],
+      "classification": "tactical",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Anthropic",
+      "display": "Anthropic",
+      "headline": "IPO price range set at $70–78 (up to ~$1.4T valuation), with trading expected around Nov 19.",
+      "detail": "825M shares on Nasdaq as ANT; about $61B raised at the midpoint. Strategic partners, including Google and Nvidia, take $26B of non-voting stock. Anthropic says it will keep supplying Claude to Cursor after OpenAI leaves, and it signed the Paris Call. Aggregators report that Claude Fable 5.2 is now available on AWS, Google Cloud and Azure; not confirmed in Anthropic's own release notes.",
+      "tags": ["strategic"],
+      "classification": "strategic",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Google Gemini",
+      "display": "Google Gemini",
+      "headline": "Opened a US preview of Gemini for Healthcare and made Cloud Pathways generally available on GKE.",
+      "detail": "The Gemini for Healthcare preview has seven launch partners, including Northwell Health and Stanford Medicine. Cloud Pathways (part of AI Hypercomputer) is now GA on Google Kubernetes Engine, alongside new TPU configurations with no published specs. Google did not sign the Paris Call.",
+      "tags": ["strategic"],
+      "classification": "strategic",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "xAI",
+      "display": "xAI / Grok",
+      "headline": "Quiet. Grok 5 still has no date; xAI's parent SpaceX is why Cursor is losing OpenAI's models.",
+      "detail": "No new Grok release found. Grok 4.7 remains the flagship, and grok-imagine-image-quality was retired on Nov 2. Cursor keeps Grok models after OpenAI leaves.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Meta",
+      "display": "Meta",
+      "headline": "Quiet. No Llama or Muse release; Meta did not sign the Paris Call.",
+      "detail": "No new model found. Meta's open-weight work now ships under the Muse name (Muse Glimmer, August), and the promised Muse Spark 1.2 weights are still unconfirmed.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Mistral",
+      "display": "Mistral",
+      "headline": "Signed the Paris Call; no new model since Large 4 went open-weight.",
+      "detail": "Mistral is among the ten signatories of Macron's AI safety declaration. Large 4 (1T total / 52B active parameters, open weights) is still the newest release and the strongest on-prem option for clients with data-residency needs.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Perplexity",
+      "display": "Perplexity",
+      "headline": "Quiet today. Teammates, always-on agents for Max subscribers, is still in web research preview.",
+      "detail": "No new ship since Teammates (Nov 4–5). The agents take on persistent responsibilities such as monitoring and coordinating tasks; it is Max-only and in preview.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Microsoft 365 Copilot",
+      "display": "Microsoft 365 Copilot",
+      "headline": "IBM and Microsoft launched Imagine Enterprise, an agent platform; Autopilot rolls out to Frontier this month, ahead of Ignite on Nov 17–20.",
+      "detail": "Imagine Enterprise combines 6,000 pre-built IBM Consulting agents with Foundry, Copilot Studio, Fabric, Entra, Purview and Defender. Autopilot (an always-on cloud agent), Skills, and a merged Chat/Cowork history roll out in November; App Builder access ends Nov 30. Microsoft Research also published Lazarus, a way to backdoor AI agents without retraining.",
+      "tags": ["tactical", "watch"],
+      "classification": "tactical",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "GitHub Copilot",
+      "display": "GitHub Copilot",
+      "headline": "No new ship found.",
+      "detail": "Nothing new since October, when it added Claude Haiku 5.5, local sandboxing and Ollama support. All plans have been on usage-based billing since June.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Cursor",
+      "display": "Cursor",
+      "headline": "Loses built-in OpenAI models on Nov 12; bring-your-own OpenAI keys still work.",
+      "detail": "OpenAI cites past contract breaches by X and xAI as its reason for leaving now that SpaceX owns Cursor. Claude, Gemini and Grok models stay. Teams standardised on GPT in Cursor need to switch models or add their own key today.",
+      "tags": ["tactical", "alert"],
+      "classification": "alert",
+      "active": true,
+      "hasAlert": true,
+      "alertReason": "Model supply cutoff on Nov 12; a bring-your-own key changes the data-processing contract path."
+    },
+    {
+      "name": "Gamma",
+      "display": "Gamma",
+      "headline": "Still quiet.",
+      "detail": "Nothing new since Gamma 5 (Oct 6) and the follow-up workflow release (Oct 26).",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Notion AI",
+      "display": "Notion AI",
+      "headline": "No new ship found.",
+      "detail": "Notion 3.8 (Oct 13, 'Context for your agents') is still the latest release; details of the new credit system are unconfirmed.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    }
+  ],
+  "persistent_signals": [
+    {
+      "provider": "Anthropic",
+      "text": "Anthropic — IPO — 5 weeks running (investor day in mid-October, S-1 amendments in early November, $70–78 price range set Nov 10, trading expected Nov 19)"
+    }
+  ],
+  "month_themes": {
+    "then": "Model self-corruption in training (OpenAI grader incident); Microsoft's 'Super Intelligence' branding and model controls; Anthropic investor day before any public S-1.",
+    "now": "Anthropic's IPO pricing at about $1.4T; vendor supply cutoffs driven by ownership (OpenAI leaving Cursor); voluntary safety pledges that split the field (Paris Call)."
+  },
+  "habits": [
+    {
+      "task": "BCP/DR plan narratives & runbooks",
+      "tool": "Claude (Sonnet 5.5 / Fable)",
+      "shift": "No change. If you draft runbooks in Cursor with GPT, switch that project to Claude today, before the Nov 12 cutoff, so a half-finished file isn't stranded mid-edit.",
+      "type": "tactical"
+    },
+    {
+      "task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)",
+      "tool": "Claude with source PDFs attached",
+      "shift": "Keep quoting clause numbers from the source text. Vendor 'ISO 22301 for AI' crosswalks are mostly AI-generated mappings, so don't cite them as authoritative.",
+      "type": "tactical"
+    },
+    {
+      "task": "Vendor/architecture research",
+      "tool": "Perplexity / Gemini",
+      "shift": "Add 'model supply continuity' as a vendor-risk line item. The Cursor cutoff shows a third-party AI dependency can disappear on a few weeks' notice because the vendor changed owners.",
+      "type": "strategic"
+    },
+    {
+      "task": "Client proposals & SOWs",
+      "tool": "Claude",
+      "shift": "Add an AI-tool substitution clause naming a fallback model or provider, so a tool cutoff isn't a scope change.",
+      "type": "strategic"
+    },
+    {
+      "task": "Executive decks",
+      "tool": "Gamma / ChatGPT Slides",
+      "shift": "No change. Gamma 5 is still the fastest first draft; wait for Ignite (Nov 17–20) before committing clients to Copilot-native deck workflows.",
+      "type": "watch"
+    },
+    {
+      "task": "Stakeholder audio walkthroughs",
+      "tool": "NotebookLM / ChatGPT voice",
+      "shift": "No change today.",
+      "type": "watch"
+    },
+    {
+      "task": "Client advisory on AI data risk",
+      "tool": "Claude + vendor trust pages",
+      "shift": "Use the Paris Call signatory list (Google and Meta absent) and Microsoft's Lazarus agent-backdoor research as current talking points for AI agent governance and third-party risk.",
+      "type": "strategic"
+    }
+  ],
+  "community": [
+    {
+      "source": "r/LocalLLaMA",
+      "signal": "A thread about Altman's comments on local inference scored about 6.5K upvotes with 2.8K comments and spilled into r/ChatGPT, where some users posted that they were cancelling (Oct 29).",
+      "so_what": "Some users are worried about losing access to models they can run themselves. That supports keeping a local or open-weight fallback in client AI continuity plans."
+    },
+    {
+      "source": "r/LocalLLaMA",
+      "signal": "A post saying Qwen models will stay open source scored about 4.5K (Nov 2), and leaked qwen4-max / qwen4-coder-plus model names circulated (about 740).",
+      "so_what": "Open-weight supply from China looks steady, but clients with sovereignty rules will still prefer Mistral Large 4."
+    },
+    {
+      "source": "r/LocalLLaMA",
+      "signal": "A post claiming Amazon is cancelling GPU orders scored about 780 (Nov 2), unverified.",
+      "so_what": "If it's true, it adds to capacity uncertainty for clients planning on-prem inference; treat it as rumour."
+    },
+    {
+      "source": "r/LocalLLaMA",
+      "signal": "A head-to-head of local quantised models against Claude on 9 real bugs scored about 330 (Nov 2).",
+      "so_what": "Local models are usable for routine fixes but still trail Claude on harder bugs, so keep them as a fallback, not a primary tool."
+    }
+  ],
+  "watch": [
+    {
+      "kind": "deadline",
+      "title": "Nov 12: OpenAI models leave Cursor",
+      "body": "Built-in GPT access ends; bring-your-own OpenAI keys still work. Check any client dev teams that standardised on GPT in Cursor."
+    },
+    {
+      "kind": "watch",
+      "title": "Nov 17–20: Microsoft Ignite",
+      "body": "Expect more Copilot news: Autopilot general availability, Cowork routing and agent governance in Purview/Entra. Copilot admin controls are the thing to watch."
+    },
+    {
+      "kind": "pricing",
+      "title": "~Nov 19: Anthropic (ANT) starts trading",
+      "body": "The final price may move outside the $70–78 range. Watch for any change to enterprise terms or commitments after the listing."
+    },
+    {
+      "kind": "deadline",
+      "title": "Nov 30: M365 App Builder access ends",
+      "body": "Clients with App Builder prototypes should move them to Copilot's Code app or Power Apps before the end of the month."
+    },
+    {
+      "kind": "security",
+      "title": "Lazarus: backdooring AI agents without retraining",
+      "body": "Microsoft Research showed that agents can be backdoored by reprogramming a few dormant neurons using only inference-level compute. Relevant to model-provenance controls in AI third-party risk reviews."
+    }
+  ],
+  "sources": "Sources consulted: CNBC, Fortune, TechCrunch and CNN on Anthropic's IPO range; Engadget, ChannelInsider and OpenAI's post on the Cursor decision; TechCrunch on ChatGPT Business Profiles; The Next Web on the Paris Call; daily AI digests (AI Weekly, The Neuron, Rio Rundown) for Google, Microsoft and IBM items; Microsoft Copilot roundups; Perplexity, xAI, Meta, Mistral, Gamma and Notion coverage; an AI Signal digest of r/LocalLLaMA; BCP/DR trade press (ITWeb, TechTarget, ITPro)."
+}

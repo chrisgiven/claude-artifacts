@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-11",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {"title": "Vanderbilt University — BYOD ransomware attack", "tags": ["Critical", "Education", "Newly claimed", "Data exposure"], "summary": "Vanderbilt is responding to a Nov 9 cyberattack that hit devices, systems and cloud services; the BYOD gang claims it encrypted databases and stole student, employee and research data, and most internal systems remain restricted.", "source": {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/vanderbilt-university-hit-in-byod-ransomware-attack-data-theft-claimed/"}},
+        {"title": "LiveRamp — claimed by N0n", "tags": ["Newly claimed", "High-profile", "Third-party"], "summary": "The N0n ransomware group listed data-connectivity firm LiveRamp on its leak site; the claim is not confirmed by the company.", "source": {"name": "DeXpose", "url": "https://www.dexpose.io/n0n-ransomware-group-strikes-liveramp/"}},
+        {"title": "159 Solutions, Inc. — claimed by N0n", "tags": ["Newly claimed"], "summary": "N0n added 159 Solutions to its leak site this month as part of a run of US victim postings; unverified by the victim.", "source": {"name": "DeXpose", "url": "https://www.dexpose.io/n0n-ransomware-attack-targets-159-solutions-inc/"}},
+        {"title": "Frolina Home (Thailand) — claimed by Climax Inc", "tags": ["Newly claimed"], "summary": "The Climax Inc group claims an attack on Thai manufacturer Frolina Home; no victim confirmation.", "source": {"name": "Malware News", "url": "https://malware.news/t/climax-inc-targets-frolina-home-in-ransomware-attack/127165"}},
+        {"title": "Unnamed US organization (Company #188) — N0n claim, Nov 9", "tags": ["Newly claimed"], "summary": "SOCRadar tracks a Nov 9 N0n claim against an unnamed US organization, consistent with the group's high posting tempo this month.", "source": {"name": "SOCRadar", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/company-188-n0n-5ebf0c48"}},
+        {"title": "Ransomware activity up 23% in Q3 2026", "tags": ["Trend", "Reference"], "summary": "NCC Group reports a 23% quarter-over-quarter rise in ransomware attacks in Q3 2026, setting the backdrop for Q4 activity.", "source": {"name": "Redmond Magazine", "url": "https://redmondmag.com/articles/2026/10/21/ransomware-attacks-rise-23-percent.aspx"}}
+      ],
+      "note": "Named, victim-confirmed November cases are scarce; most items are leak-site claims. Treat as unverified until the victim discloses."
+    },
+    "outage": {
+      "items": [
+        {"title": "Cloudflare network slowdown — Eastern North America", "tags": ["Cloud"], "summary": "A Cloudflare slowdown across Eastern North America ran roughly 11:34am–3:12pm ET on Nov 9; some Workers changes and a FedRAMP purge item may still be delayed.", "source": {"name": "Chasms Daily Outage Brief", "url": "https://www.chasms.com/blog/daily-outage-brief-2026-11-09-evening/"}},
+        {"title": "Exchange Online EX1545193 — sends to Outlook.com bounce", "tags": ["Cloud"], "summary": "An open Microsoft incident may cause messages sent to Outlook.com, Hotmail.com and Live.com addresses to bounce.", "source": {"name": "Chasms Daily Outage Brief", "url": "https://www.chasms.com/blog/daily-outage-brief-2026-11-09-evening/"}},
+        {"title": "Windows 365 Cloud PC drops and Teams TM1545775", "tags": ["Cloud"], "summary": "Windows 365 Cloud PCs were still dropping sessions and some Teams users saw blank contacts as of the Nov 9 evening brief.", "source": {"name": "Chasms Daily Outage Brief", "url": "https://www.chasms.com/blog/daily-outage-brief-2026-11-09-evening/"}},
+        {"title": "Google Cloud europe-west2-b (London) power event — Oct 20", "tags": ["Cloud", "Reference"], "summary": "A third-party London facility lost utility power and a controller fault kept generators from taking over; reported by commentary sources, not yet verified against Google's status history.", "source": {"name": "theCUBE Research", "url": "https://thecuberesearch.com/?p=325134"}}
+      ],
+      "note": "No major hyperscaler-wide outage found for November so far; AWS reported all clear on Nov 9."
+    },
+    "cyber": {
+      "items": [
+        {"title": "Ivanti Connect Secure CVE-2026-111357 / CVE-2026-118527 — KEV deadline Nov 13", "tags": ["KEV add", "Zero-day", "Critical"], "summary": "CISA ordered federal agencies to remediate two exploited Ivanti Connect Secure flaws and perform forensic triage for compromise; the second deadline is Nov 13.", "source": {"name": "Help Net Security", "url": "https://www.helpnetsecurity.com/?p=390015"}},
+        {"title": "Node2Shell critical flaw under active exploitation", "tags": ["KEV add", "Critical"], "summary": "CISA warns attackers are now exploiting the critical Node2Shell (Brotli) vulnerability and has added it to the KEV catalog.", "source": {"name": "BleepingComputer", "url": "https://bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw"}},
+        {"title": "Six Microsoft zero-days added to KEV", "tags": ["KEV add", "Zero-day"], "summary": "A Nov 6 report says CISA added six actively exploited Microsoft zero-days to KEV; not yet cross-checked against CISA's catalog.", "source": {"name": "Cybersecurity News", "url": "https://cybersecuritynews.com/?p=142340"}},
+        {"title": "Apple CVE-2024-27834 added to KEV — due Nov 18", "tags": ["KEV add"], "summary": "CISA added Apple WebKit CVE-2024-27834 to KEV on Nov 4 with a Nov 18 federal remediation deadline.", "source": {"name": "TechJack Solutions", "url": "https://techjacksolutions.com/security/briefing/weekly-security-intelligence-briefing-week-of-2026-11-09/"}},
+        {"title": "SonicWall SonicOS SSLVPN CVE-2026-19868 — deadline Nov 20", "tags": ["KEV add"], "summary": "Exploited SonicOS SSLVPN flaw carries a Nov 20 federal deadline; edge VPNs remain the leading initial-access vector.", "source": {"name": "TechJack Solutions", "url": "https://techjacksolutions.com/security/briefing/weekly-security-intelligence-briefing-week-of-2026-11-09/"}},
+        {"title": "Cisco zero-days drive CISA Emergency Directive", "tags": ["Emergency Directive", "Zero-day"], "summary": "CISA and Five Eyes partners issued emergency guidance on exploited Cisco zero-days; date not confirmed for November, included for active-directive tracking.", "source": {"name": "CyberScoop", "url": "https://cyberscoop.com/cisco-zero-days-cisa-emergency-directive-five-eyes/"}}
+      ]
+    },
+    "physical": {
+      "items": [
+        {"title": "M 6.4 — 30 km WSW of Lata, Solomon Islands (Nov 09)", "tags": ["M 6.4"], "summary": "USGS green alert, no tsunami; limited infrastructure impact expected.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tx16"}},
+        {"title": "Cyclone Murasu makes landfall in Andhra Pradesh", "tags": ["Tropical"], "summary": "Murasu hit the Andhra Pradesh coast on Nov 3, the second cyclone there in under a week.", "source": {"name": "Verisk Alert", "url": "https://alert.risksolutions.verisk.com/"}},
+        {"title": "Santa Catarina, Brazil — 671 storm incidents", "tags": ["Flood"], "summary": "Storms caused 671 incidents across 76 municipalities in Santa Catarina on Nov 4–5.", "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}},
+        {"title": "Ecuador flooding — 12 deaths, 56,000+ affected", "tags": ["Flood"], "summary": "Heavy rain and flooding killed 12 people and affected more than 56,000 in Ecuador.", "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}},
+        {"title": "Northern Mexico heavy rain", "tags": ["Flood"], "summary": "Weekend rain across four northern states left two dead, 450 homes affected and 45 people rescued (reported Nov 2).", "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-3-november-2026"}}
+      ],
+      "note": "No significant November wildfire activity found."
+    }
+  }
+}
