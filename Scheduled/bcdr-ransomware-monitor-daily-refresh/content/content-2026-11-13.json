@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-13",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {"title": "Vanderbilt University hit by cyberattack, BYOD group reportedly claims it", "tags": ["Newly claimed", "Education"], "summary": "Vanderbilt confirmed outages across devices, systems and cloud services on Nov 9; the BYOD group appears to have claimed it, and Vanderbilt Health says hospital and clinical operations were not affected.", "source": {"name": "Nashville Banner", "url": "https://nashvillebanner.com/2026/11/09/vanderbilt-university-cyberattack-byod"}},
+        {"title": "UNM Health incident: BYOD claims ~36,000 systems", "tags": ["Healthcare", "Newly claimed"], "summary": "UNM Health calls the incident, which began Oct 26, a cybersecurity event and has not confirmed ransomware; BYOD's claim of about 36,000 compromised machines is unverified.", "source": {"name": "Tech Insider", "url": "https://tech-insider.org/unm-health-ransomware-attack-byod-36000-systems-claim-2026/"}},
+        {"title": "University Hospitals (Cleveland) systems still offline after Oct 22 incident", "tags": ["Healthcare"], "summary": "Systems were still offline in a Nov 2 update while hospitals stayed open; ransomware has not been publicly disclosed and no group has claimed it.", "source": {"name": "HIPAA Journal", "url": "https://www.hipaajournal.com/university-hospitals-eyemed-facial-surgery-group-data-breaches/"}},
+        {"title": "Medi Porta (Chur, Switzerland) ransomware attack", "tags": ["Healthcare", "Data exposure"], "summary": "Listed as a Nov 6 ransomware attack that exposed sensitive data on local storage systems; medical care continued.", "source": {"name": "KonBriefing", "url": "https://konbriefing.com/en-topics/cyber-attacks.html"}},
+        {"title": "Ridgecrest Regional Hospital disruption", "tags": ["Healthcare"], "summary": "Phone and computer systems at the California hospital were disrupted by a suspected attack; scope remains unclear.", "source": {"name": "KonBriefing", "url": "https://konbriefing.com/en-topics/cyber-attacks.html"}},
+        {"title": "Q3 2026 ransomware claims up ~23% quarter on quarter", "tags": ["Trend"], "summary": "Q3 2026 recorded 2,865 ransomware victim claims, up from 2,325 the previous quarter.", "source": {"name": "Redmond Magazine", "url": "https://redmondmag.com/articles/2026/10/21/ransomware-attacks-rise-23-percent.aspx"}}
+      ],
+      "note": "Few November victims are confirmed yet; leak-site claims typically lag attacks by weeks. Several healthcare items are unconfirmed as ransomware."
+    },
+    "outage": {
+      "items": [
+        {"title": "Major Microsoft 365 outage: Exchange Online, Teams, Intune, Copilot, Defender", "tags": ["Critical", "Cloud", "High-profile"], "summary": "Starting ~18:00 UTC Nov 12, servers failing automated health checks took down Outlook/Exchange Online, Teams, Intune and admin tools; partial recovery was unstable into Nov 13 with no full ETA (incidents EX1550543 / MO1550821).", "source": {"name": "The Register", "url": "https://www.theregister.com/saas/2026/11/12/microsoft-struggling-to-fix-massive-cloud-outage-thats-taken-down-email-and-intune/5309531"}},
+        {"title": "AWS/Cloudflare Downdetector spikes were downstream of Microsoft", "tags": ["Cloud", "Reference"], "summary": "About 1,350 AWS reports on Downdetector during the M365 event; the AWS Health Dashboard showed only a local Tokyo issue and Cloudflare Radar was clean.", "source": {"name": "PCWorld", "url": "https://www.pcworld.com/article/3284155/outlooks-outage-may-be-cascading-across-the-internet-users-report.html"}},
+        {"title": "Google Cloud europe-west2-b (London) power and generator failure", "tags": ["Cloud", "Third-party"], "summary": "On Oct 20, a third-party facility hosting the zone lost utility power and a controller fault stopped the backup generators from taking over.", "source": {"name": "Analytics India Magazine", "url": "https://analyticsindiamag.com/global-tech/when-google-cloud-paused-the-internet/"}}
+      ],
+      "note": "The M365 incident is the dominant event of the past 24 hours; the Google Cloud London item is October background."
+    },
+    "cyber": {
+      "items": [
+        {"title": "CISA adds four exploited flaws to KEV: GPUStack, FreeSWITCH, OpenSSH, IBM Aspera Faspex", "tags": ["KEV add", "Critical"], "summary": "Added Nov 9 after confirmed active exploitation, with a Nov 12 federal remediation deadline; attackers and the number of victims are not identified.", "source": {"name": "eSecurity Planet", "url": "https://www.esecurityplanet.com/vulnerabilities/news-cisa-kev-gpustack-freeswitch-openssh-ibm-november-2026/"}},
+        {"title": "CISA warns of active exploitation of critical Node2Shell flaw", "tags": ["KEV add", "Critical"], "summary": "CISA says hackers are now exploiting the critical Node2Shell vulnerability.", "source": {"name": "BleepingComputer", "url": "https://bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw"}},
+        {"title": "Ivanti Connect Secure KEV entries hit Nov 13 deadline", "tags": ["KEV add"], "summary": "Ivanti Connect Secure flaws on the KEV catalog carry a Nov 13 federal patch deadline.", "source": {"name": "Tech Insider", "url": "https://tech-insider.org/ivanti-connect-secure-cve-2026-111357-118527-kev-deadline-nov-13-2026/"}},
+        {"title": "Metabase, Windows and Cisco Secure Firewall flaws added to KEV", "tags": ["KEV add", "Zero-day", "Data exposure"], "summary": "The Metabase zero-day let unauthenticated attackers gain admin access and exfiltrate data.", "source": {"name": "SC World", "url": "https://www.scworld.com/brief/cisa-adds-metabase-windows-and-cisco-secure-firewall-flaws-to-exploited-vulnerabilities-list"}},
+        {"title": "Zyxel GS1900 switch zero-day used to take over 996 devices", "tags": ["Zero-day"], "summary": "A Nov 4 briefing says attackers used a new zero-day to take over 996 Zyxel GS1900 switches.", "source": {"name": "Cybersecurity News", "url": "https://cybersecuritynews.com/?p=142340"}},
+        {"title": "Marathon Health notifying ~5.7M people of breach", "tags": ["Healthcare", "Credential exposure", "Data exposure"], "summary": "An attacker impersonated an IT worker and stole employee credentials; it is not described as ransomware.", "source": {"name": "HIPAA Journal", "url": "https://www.hipaajournal.com/hospital-caribbean-medical-center-data-breach/"}},
+        {"title": "Cisco zero-days prompt CISA emergency directive with Five Eyes partners", "tags": ["Emergency Directive", "Zero-day"], "summary": "CISA issued an emergency directive over exploited Cisco zero-days, coordinated with Five Eyes agencies.", "source": {"name": "CyberScoop", "url": "https://cyberscoop.com/cisco-zero-days-cisa-emergency-directive-five-eyes/"}}
+      ]
+    },
+    "physical": {
+      "items": [
+        {"title": "M 6.4 earthquake, 30 km WSW of Lata, Solomon Islands", "tags": ["M 6.4"], "summary": "USGS green alert on Nov 9 with no tsunami flagged.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tx16"}},
+        {"title": "Cyclone Murasu makes landfall in Andhra Pradesh, India", "tags": ["Tropical"], "summary": "Murasu made landfall Nov 3, the second cyclone to hit the coast in under a week.", "source": {"name": "Inside Climate News", "url": "https://insideclimatenews.org/?p=103373"}},
+        {"title": "Severe storms in Santa Catarina, Brazil", "tags": ["Flood"], "summary": "671 storm-related incidents across 76 municipalities were logged on Nov 4–5.", "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}},
+        {"title": "Ecuador flooding leaves 12 dead", "tags": ["Flood"], "summary": "Media reports put deaths from heavy rain and flooding across Ecuador at 12 as of Nov 5.", "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}},
+        {"title": "Northern Mexico rains: 2 dead, 450 homes affected", "tags": ["Flood"], "summary": "Weekend rain across four northern states left 2 dead and 45 people rescued, per a Nov 2 report.", "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-3-november-2026"}}
+      ],
+      "note": "No significant November 2026 wildfire reports were found."
+    }
+  }
+}
