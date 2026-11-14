@@ -1,0 +1,83 @@
+{
+  "date": "2026-11-14",
+  "client_alerts": [
+    {
+      "headline": "Claude Code \"Don't ask again\" approvals are leaking credentials into public repos",
+      "body": "Apiiro research (published Nov 5–6) found that approving a command with \"Yes, and don't ask again\" writes it, **credentials included**, into .claude/settings.local.json. Thousands of secrets reportedly reached public GitHub (reports range from 1,122 files to 2,539 secrets). Any client using Claude Code should check whether that file is tracked (`git ls-files`, `git log`), add it to .gitignore, and **rotate** any exposed keys. Deleting the file does not revoke anything."
+    },
+    {
+      "headline": "Microsoft 365 Copilot connector write actions are now GA",
+      "body": "Copilot Chat and Cowork can now create, update or delete records in connected apps, depending on the connector. Clients should review connector permissions and Entra ID policies before users start pointing agents at systems of record, and log these actions as changes in their change-management records."
+    }
+  ],
+  "top_moves": [
+    {
+      "title": "A Claude Code convenience button put thousands of secrets on public GitHub",
+      "date_label": "Nov 5–9, 2026 (ongoing)",
+      "urgent": true,
+      "body": "Apiiro found that \"don't ask again\" approvals store full commands, keys included, in a project settings file that often gets committed. Anthropic's Claude Code lead acknowledged the issue but said the existing fixes may not fully solve it, so **rotation is the only real fix**.",
+      "tag": "alert"
+    },
+    {
+      "title": "OpenAI will retire Advanced and Standard Voice on Dec 11 and launches verified Business Agents",
+      "date_label": "Nov 10–11, 2026",
+      "urgent": false,
+      "body": "ChatGPT users will be moved to Live Voice on Dec 11. Separately, a Business Agents beta lets users chat with verified brand agents inside ChatGPT. Q3 revenue was about $10B, but operating losses widened.",
+      "tag": "tactical"
+    },
+    {
+      "title": "Microsoft makes Copilot connector write actions GA and brings Office into the Copilot app, ahead of Ignite",
+      "date_label": "Mid-Nov 2026",
+      "urgent": false,
+      "body": "Office in Copilot reaches GA in the Copilot app this month, and Copilot can now write to connected apps. Ignite (Nov 17–20) is expected to bring the Frontier/Autopilot timing that Microsoft has so far left open.",
+      "tag": "strategic"
+    }
+  ],
+  "providers": [
+    {"name": "OpenAI", "display": "OpenAI", "headline": "Advanced and Standard Voice retire Dec 11 in favour of Live Voice; a verified Business Agents beta launches.", "detail": "The Business Agents beta (Nov 10) lets users talk to verified brand agents in ChatGPT. Images 2.6 rolled out to Pro on Nov 4. Q3 revenue was about $10B with widening operating losses. The Nov 12 Cursor model cutoff has passed, still with no confirmation from either side.", "tags": ["tactical"], "classification": "tactical", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "Anthropic", "display": "Anthropic", "headline": "The IPO is in pricing week: a $70–78 range for ticker ANT, with trading expected around Nov 19, while the Claude Code secrets-leak story keeps building.", "detail": "The amended S-1 (Nov 10) covers 825M shares plus a $26B private placement from Nvidia, Google, Microsoft and others. Claude Meetings, Sheets and Whiteboards were reported on Nov 11 as office tools that share one AI context. The Apiiro \"don't ask again\" credential-leak finding is drawing CSO and InfoWorld coverage.", "tags": ["alert", "strategic"], "classification": "alert", "active": true, "hasAlert": true, "alertReason": "Claude Code settings.local.json stores approved commands, credentials included, in plain text, and the file often gets committed to public repos."},
+    {"name": "Google Gemini", "display": "Google Gemini", "headline": "Gemini 4 Hydrogen is still rolling out; Google also used AI to generate more than 6M lines of proof checking message encryption.", "detail": "No new model release since Hydrogen. The formal-verification work on encryption is a research signal, not a product. One newsletter reports that Gemini 3.5 Pro-class coding upgrades were delayed so coding could be improved.", "tags": ["watch"], "classification": "watch", "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "xAI", "display": "xAI / Grok", "headline": "Still no Grok 5; Grok 4.7 (Sept) remains the latest model, and the Cursor relationship now runs through the SpaceXAI acquisition.", "detail": "No November model release was found. The only dated change is an API retirement on Nov 2 (grok-imagine-image-quality). Prediction markets had favoured a December Grok 5.", "tags": ["watch"], "classification": "watch", "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Meta", "display": "Meta", "headline": "No new release; the Muse family (Spark, Glimmer) has replaced Llama.", "detail": "The promised open weights for Muse Spark 1.2 are still not confirmed. Muse Glimmer (30B, open weights, Aug) remains the most useful option for local, on-prem experiments.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Mistral", "display": "Mistral", "headline": "No new release since the Large 4 open weights; on-prem Managed Agents are still due in late November.", "detail": "Mistral remains the sovereign/on-prem option for EU-resident clients. Watch for the Managed Agents launch before month-end.", "tags": ["watch"], "classification": "watch", "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Perplexity", "display": "Perplexity", "headline": "Teammates (Nov 5), always-on work agents for Max subscribers, is now in research preview.", "detail": "Teammates take ownership of ongoing work, drawing on existing projects, skills and memories. It is Max only ($200/mo), web only for now. The Comet Assistant and patent search updates followed on Nov 6.", "tags": ["tactical"], "classification": "tactical", "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Microsoft 365 Copilot", "display": "Microsoft 365 Copilot", "headline": "Connector write actions reach GA and Office in Copilot rolls out mid-November, ahead of Ignite on Nov 17–20.", "detail": "Copilot Chat and Cowork can now create, update or delete data through supported connectors. Combined Chat and Cowork history is rolling out. Frontier/Autopilot timing is still TBD per the Message Center update of Nov 9.", "tags": ["alert", "strategic"], "classification": "alert", "active": true, "hasAlert": true, "alertReason": "Connector write actions let Copilot change data in connected systems of record."},
+    {"name": "GitHub Copilot", "display": "GitHub Copilot", "headline": "No confirmed November update.", "detail": "The October additions (Claude Haiku 5.5, local sandboxing, Ollama support) are the latest found. GitHub Universe-style announcements may land at Ignite next week.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Cursor", "display": "Cursor", "headline": "The OpenAI model cutoff date (Nov 12) has passed, but there is still no confirmation; Anthropic says Claude supply continues.", "detail": "This follows the SpaceXAI acquisition. Teams standardised on GPT models in Cursor should check model availability today and fall back to Claude or Grok.", "tags": ["watch"], "classification": "watch", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "Gamma", "display": "Gamma", "headline": "No November release; Gamma 5 (Oct 6) with an agent deck builder is the current version.", "detail": "Gamma 5 accepts documents, PDFs and existing decks as starting points and pulls in context from Notion and Slack. More design and video generation is on the roadmap.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Notion AI", "display": "Notion AI", "headline": "No new release; Notion 3.8 (\"Context for your agents\", Oct 13) and the new credit system are current.", "detail": "Nothing dated November was found.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""}
+  ],
+  "persistent_signals": [
+    {"provider": "Anthropic", "text": "Anthropic — IPO — 2+ weeks running (the roadshow slipped last week; this week the price range is set and pricing is expected around Nov 18)"},
+    {"provider": "xAI", "text": "xAI — no Grok 5 — 2+ weeks running (still no release; December remains the likely window)"},
+    {"provider": "Mistral", "text": "Mistral — on-prem Managed Agents due late November — 2 weeks running (not yet shipped)"},
+    {"provider": "Microsoft 365 Copilot", "text": "Microsoft 365 Copilot — staged GA rollouts in Office — 2 weeks running (the Copilot button last week; Office in Copilot and connector writes this week)"}
+  ],
+  "month_themes": {
+    "then": "AI safety and self-replication warnings; insider-security incidents at labs; IPO financial disclosures",
+    "now": "Security hygiene of AI coding tools (secrets leakage); agents gaining write access to business systems; capital markets (the Anthropic IPO) setting the vendor-stability narrative"
+  },
+  "habits": [
+    {"task": "BCP/DR plan narratives & runbooks", "tool": "Claude (Opus 5.5)", "shift": "No change in tool. If you draft runbooks with Claude Code, audit .claude/settings.local.json and gitignore it before committing.", "type": "tactical"},
+    {"task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)", "tool": "Claude + NotebookLM", "shift": "Keep using source-grounded tools. Add the NIST AI RMF continuous-monitoring note (CSA, June) as a reference when clients ask how AI fits ISO 22301 evidence.", "type": "tactical"},
+    {"task": "Vendor/architecture research", "tool": "Perplexity Pro / Claude", "shift": "Perplexity Teammates is Max only ($200/mo). It is not worth upgrading for one-off research, so stay on Pro.", "type": "watch"},
+    {"task": "Client proposals & SOWs", "tool": "Claude / M365 Copilot (Word)", "shift": "For WWT and client tenants, Office in Copilot GA makes Word Copilot drafting the path of least resistance. Keep sensitive client terms out of unmanaged tools.", "type": "tactical"},
+    {"task": "Executive decks", "tool": "Gamma 5 / Copilot PowerPoint", "shift": "No change. Gamma 5's agent deck builder remains fastest for first drafts. Hold off on any re-evaluation until after Ignite.", "type": "watch"},
+    {"task": "Stakeholder audio walkthroughs", "tool": "NotebookLM / ChatGPT Live Voice", "shift": "ChatGPT's Advanced and Standard Voice retire Dec 11. If any walkthrough workflow depends on them, test Live Voice now.", "type": "tactical"},
+    {"task": "Client advisory on AI data risk", "tool": "Claude + vendor trust centers", "shift": "Add two items to the advisory checklist: AI coding-tool secrets leakage (rotate, don't just delete) and Copilot connector write permissions as a change-control item.", "type": "strategic"}
+  ],
+  "community": [
+    {"source": "r/LocalLLaMA", "signal": "A thread on Altman's comments about local inference (score ~6.5K) became the week's main local-vs-cloud argument; a separate post compared local quants with Claude on 9 real bugs.", "so_what": "Clients asking about on-prem AI for resilience now have a credible community benchmark trail; local models are close enough for some bug-fix work, but not all of it."},
+    {"source": "r/LocalLLaMA", "signal": "Qwen's pledge to stay open source (score ~4.5K) and leaked qwen4-max/coder/omni names in the Qwen Code repo.", "so_what": "Open-weight options keep improving, which is useful for clients that need a no-vendor-dependency DR fallback model."},
+    {"source": "r/LocalLLaMA", "signal": "A post (score ~780) says Amazon is allegedly cancelling GPU hardware orders.", "so_what": "This is an unverified supply-chain signal. It matters for clients planning on-prem GPU capacity in their DR sites."},
+    {"source": "OpenAI Community forum (proxy for r/OpenAI)", "signal": "Account-ban complaints, an overly strict safety guard, and conversation-retrieval errors (Nov 7–8).", "so_what": "Single-vendor dependence on ChatGPT for client deliverables remains a continuity risk; keep exports and a second tool ready."}
+  ],
+  "watch": [
+    {"kind": "deadline", "title": "Anthropic IPO prices around Nov 18; trading expected Nov 19 (ANT)", "body": "The range is $70–78. The final price and first-day trading will shape the vendor-stability narrative for enterprise Claude buyers."},
+    {"kind": "watch", "title": "Microsoft Ignite, Nov 17–20", "body": "Expect Frontier/Autopilot rollout timing, new Copilot admin controls and probably GitHub Copilot news. Re-check the executive-deck and proposal tooling rows afterwards."},
+    {"kind": "security", "title": "Claude Code secrets-leak remediation", "body": "Watch for an Anthropic patch that stops writing credentials into settings.local.json. Until then, treat \"don't ask again\" as unsafe in any repo that could become public."},
+    {"kind": "deadline", "title": "ChatGPT Advanced/Standard Voice retirement, Dec 11", "body": "Users move to Live Voice. Test any voice-based walkthroughs or accessibility workflows before then."},
+    {"kind": "regulatory", "title": "New York AI safety law registration is open", "body": "Companies with more than $500M in revenue must publish safety frameworks and report critical incidents within 72 hours. This is relevant to incident-response plans for large clients that deploy frontier models."}
+  ],
+  "sources": "Sources consulted: OpenAI release notes and help center, Renaissance Capital and The Next Web (Anthropic S-1), CSO Online, InfoWorld and DevOps.com (Apiiro research), Microsoft Message Center and aguidetocloud November roundup, Perplexity coverage (IT Brief, Digital Trends), xAI docs, AI Signal r/LocalLLaMA digest, The Neuron daily digest (Nov 11), and Cloud Security Alliance."
+}

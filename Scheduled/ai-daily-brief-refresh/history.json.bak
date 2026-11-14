@@ -1,126 +1,5 @@
 [
   {
-    "date": "2026-08-30",
-    "providers": {
-      "OpenAI": {
-        "headline": "DALL·E GPT retires today (Aug 30); Atlas ended Aug 9; GPT-5.4 mini rolling out to Free/Go; GPT-5.6 Sol API pricing cut >20% for three months.",
-        "tags": [
-          "alert",
-          "tactical"
-        ],
-        "hasAlert": true,
-        "active": true,
-        "alertReason": "DALL·E GPT retirement effective today breaks any dependent client workflow"
-      },
-      "Anthropic": {
-        "headline": "Claude in Chrome GA on all paid plans with safety classifier; Claude for Teachers launched free; Python SDK v1.0 (httpx2, Python 3.10+); Admin API user-management GA.",
-        "tags": [
-          "strategic",
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Google Gemini": {
-        "headline": "Gemini 3.6 Flash and 3.5 Flash-Lite GA; Omni 1.1 Flash GA adds video extension, interpolation and 360p-4K control; Classroom/student expansion.",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "xAI": {
-        "headline": "Grok 4.6 (Aug 12, 500k context, 1.5T V9 base) distributed into Microsoft Foundry and Google Enterprise Agent Platform; Grok Bot beta; grok-voice-think-fast-2.0.",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Meta": {
-        "headline": "Muse Spark 1.2 (Aug 5, closed weights, 1M context) with weights slated to open under modified Llama Community License; Muse Glimmer (Aug 10, 30B Apache 2.0, 128K, local agentic).",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Mistral": {
-        "headline": "Agentic Search retrieval layer for complex documents; OCR 4.1 (170 languages, 72% win rate); Leanstral 1.5 Lean 4 update; Mistral Common audio/template improvements.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Perplexity": {
-        "headline": "Portable Computer runs fully on-device on NVIDIA; Kimi K3 (2.8T MoE, 1M context) US-hosted only; email-to-Computer via computer@perplexity.com; licensed finance data added.",
-        "tags": [
-          "strategic",
-          "alert"
-        ],
-        "hasAlert": true,
-        "active": true,
-        "alertReason": "Kimi K3 US-only hosting and on-device option are both data-residency decisions clients must make explicitly"
-      },
-      "Microsoft 365 Copilot": {
-        "headline": "GPT-5 rolling into Copilot Chat plus phased Anthropic model support; Python execution in Excel; Word TOC/header/footnote management; Cowork integration; parallel connector crawls.",
-        "tags": [
-          "strategic",
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "GitHub Copilot": {
-        "headline": "CLI v1.0.78 (Aug 3) adds live timing displays; Grok 4.6 added to the model picker.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Cursor": {
-        "headline": "No headline release today. Grok 4.6 default since Aug 7; enterprise router pinning still unavailable to IT.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Gamma": {
-        "headline": "No headline release today — 79 days quiet since June 12. Notion page-to-Gamma transform still available.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Notion AI": {
-        "headline": "Usage allowance metering live since Aug 3 (rolling 6-hour + monthly windows); custom agent sharing from Share menu; multi-source SQL on Business plans; new Developer section.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      }
-    },
-    "topMoves": [
-      "DALL·E GPT retires TODAY (Aug 30) — OpenAI removes the official DALL·E GPT from ChatGPT; any client workflow or runbook referencing it breaks as of today",
-      "EU AI Act GPAI enforcement is live (since Aug 2, 2026) — Commission enforcement powers active; pre-Aug-2-2025 models have until Aug 2, 2027; ISO/IEC 42001 is the practical compliance framework",
-      "On-device AI reaches production — Perplexity Portable Computer runs fully local on NVIDIA, and Meta Muse Glimmer (30B, Apache 2.0) runs on a consumer GPU, making air-gapped AI a real DR option"
-    ],
-    "clientAlerts": [
-      "DALL·E GPT retirement effective today (Aug 30) — remediate dependent client workflows immediately",
-      "EU AI Act GPAI enforcement active since Aug 2, 2026; legacy models must comply by Aug 2, 2027 — add to every client compliance register",
-      "Agentic AI DR readiness gap: 94% of leaders believe DR covers agentic AI, but 33% report only partial control over agentic AI use",
-      "Model kill-switch precedent: Anthropic disabled its two top models worldwide on ~90 minutes notice (June 12, 2026) — multi-provider fallback required in AI-integrated BCP plans"
-    ],
-    "watchItems": [
-      "EU AI Act legacy GPAI compliance deadline Aug 2, 2027",
-      "GPT-5.6 Sol price cut is a 3-month promo — model reversion into client cost forecasts",
-      "Notion AI first full metering billing cycle lands on September invoices",
-      "Meta Muse Spark 1.2 open-weights release committed but undated",
-      "Anthropic model support inside M365 Copilot — tenant governance decision most clients lack policy for"
-    ]
-  },
-  {
     "date": "2026-08-31",
     "providers": {
       "OpenAI": {
@@ -6533,6 +6412,116 @@
       "~Nov 19: Anthropic (ANT) starts trading",
       "Nov 30: M365 App Builder access ends",
       "Lazarus: backdooring AI agents without retraining"
+    ]
+  },
+  {
+    "date": "2026-11-13",
+    "providers": {
+      "OpenAI": {
+        "headline": "Verified Business Agents beta lets users chat with brands inside ChatGPT, and the Cursor cutoff date has passed without confirmation.",
+        "tags": [
+          "tactical",
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "IPO about 6x oversubscribed ahead of Nov 18 pricing; Sonnet 4.5 and Opus 4.8 fast mode retire Nov 30.",
+        "tags": [
+          "strategic",
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Google Gemini": {
+        "headline": "Gemini 4 Hydrogen launches across the API, the Gemini app, Workspace and Search as the fast tier below Argon and Carbon.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "xAI": {
+        "headline": "Quiet. Still no Grok 5, and the latest model is still Grok 4.7 from September.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Meta": {
+        "headline": "Quiet. The promised open weights for Muse Spark 1.2 still haven't been confirmed.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "Mistral": {
+        "headline": "Quiet. The late-November private-cloud and on-prem release of Studio Managed Agents is still pending.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "Perplexity": {
+        "headline": "No new ship since Teammates (Nov 5) and the Comet and patent-search update (Nov 6).",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "Office in Copilot and the Cowork OneNote plugin roll out worldwide through mid-November, ahead of Ignite on Nov 17–20.",
+        "tags": [
+          "tactical",
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "The OneNote plugin can read and edit notebooks, so check what tenants allow.",
+        "active": true
+      },
+      "GitHub Copilot": {
+        "headline": "Quiet. Last week's Copilot CLI context-injection flaw report has no follow-up yet.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Cursor": {
+        "headline": "OpenAI's Nov 12 cutoff date has passed, with no confirmation either way. Anthropic says it will keep supplying Claude.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Gamma": {
+        "headline": "Quiet. Gamma 5 (Oct 6, follow-up Oct 26) is still the latest.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "Quiet. Notion 3.8, \"Context for your agents\" (Oct 13), is still the latest.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      }
+    },
+    "topMoves": [
+      "Google ships Gemini 4 Hydrogen, a fast agent model, everywhere at once",
+      "Anthropic's IPO is about 6x oversubscribed; Jensen Huang's exit puts Nvidia's $10B pledge in question",
+      "OpenAI's Cursor cutoff date has passed, but neither side has confirmed the models went dark"
+    ],
+    "clientAlerts": [
+      "Office in Copilot and Cowork's OneNote plugin roll out worldwide this month"
+    ],
+    "watchItems": [
+      "Anthropic IPO prices Nov 18, trades Nov 19 (Nasdaq: ANT)",
+      "Microsoft Ignite, Nov 17–20",
+      "Nov 30: Sonnet 4.5 API retirement and Opus 4.8 fast-mode removal",
+      "Mistral Studio private-cloud and on-prem release, late November",
+      "Copilot CLI and Comet context-injection follow-ups"
     ]
   }
 ]
