@@ -1,0 +1,126 @@
+{
+  "date": "2026-11-14",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {
+          "title": "Nota Groep listed by Inc Ransom",
+          "tags": ["Newly claimed"],
+          "summary": "A leak-site tracker added the Dutch transportation-sector firm Nota Groep as a victim on Nov 10, 2026. The listing attributes it to Inc Ransom and the company has not confirmed the attack.",
+          "source": {"name": "SOCRadar Ransomware Intelligence", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/nota-groep-inc-ransom-a69d6b76"}
+        },
+        {
+          "title": "n0n group posts anonymized U.S. victims",
+          "tags": ["Newly claimed"],
+          "summary": "The n0n group listed at least two U.S. organizations on Nov 9, 2026 under placeholder names (Company #188 and #196), which suggests it is still negotiating before naming them.",
+          "source": {"name": "SOCRadar Ransomware Intelligence", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/company-188-n0n-5ebf0c48"}
+        },
+        {
+          "title": "Q3 2026 victim claims up 23% quarter on quarter",
+          "tags": ["Trend", "Reference"],
+          "summary": "Leak sites recorded 2,865 ransomware victim claims in Q3 2026, up from 2,325 in Q2. Bitdefender counted 790 claimed victims in September alone.",
+          "source": {"name": "Redmond Magazine", "url": "https://redmondmag.com/articles/2026/10/21/ransomware-attacks-rise-23-percent.aspx"}
+        }
+      ],
+      "note": "Searches found few well-sourced named victims for November 2026. The listings come from leak-site trackers and the victims have not confirmed them."
+    },
+    "outage": {
+      "items": [
+        {
+          "title": "Cloudflare Workers & Pages build errors",
+          "tags": ["Cloud", "Third-party"],
+          "summary": "On Nov 3, 2026, an outage aggregator logged a Cloudflare incident in which Workers and Pages builds failed. It was the most recent hyperscaler-adjacent incident the searches found this month.",
+          "source": {"name": "IsDown", "url": "https://isdown.app/s/ermunro?date=2026-11-05"}
+        },
+        {
+          "title": "Google Cloud europe-west2-b (London) power failure",
+          "tags": ["Cloud", "Reference"],
+          "summary": "Reported Oct 20, 2026: a third-party facility hosting the London zone lost utility power, and a controller fault stopped the backup generators from taking over. The secondary source has not been checked against Google's status history.",
+          "source": {"name": "Tech Insider", "url": "https://tech-insider.org/cloud-outages-australia-week-2026/"}
+        },
+        {
+          "title": "H1 2026 reliability report: 30,246 cloud/SaaS outages",
+          "tags": ["Trend", "Reference"],
+          "summary": "IncidentHub counted 30,246 outages across the providers it tracks in the first half of 2026. It names concentrated dependency on a few providers as the main resilience risk, a concern sharpened by the EU naming AWS and Azure critical ICT third-party providers under DORA.",
+          "source": {"name": "IncidentHub", "url": "https://blog.incidenthub.cloud/h1-2026-cloud-saas-reliability-report"}
+        }
+      ],
+      "note": "No major AWS, Azure or Google Cloud outage was reported in the past two weeks. These items are older or lower-impact context."
+    },
+    "cyber": {
+      "items": [
+        {
+          "title": "CISA adds six exploited flaws to KEV (Nov 10)",
+          "tags": ["KEV add", "Critical"],
+          "summary": "CISA added six actively exploited vulnerabilities covering Microsoft Outlook, Google Chrome, Barracuda appliances, Cisco BroadWorks and Openwave Webtop.",
+          "source": {"name": "SecurityOnline", "url": "https://securityonline.info/cisa-kev-six-vulnerabilities-november-2026/"}
+        },
+        {
+          "title": "CISA KEV: GPUStack, FreeSWITCH, OpenSSH, IBM Aspera Faspex",
+          "tags": ["KEV add"],
+          "summary": "Four vulnerabilities were added on Nov 9 after active exploitation was confirmed. Federal agencies had until Nov 12 to remediate and complete forensic triage.",
+          "source": {"name": "eSecurity Planet", "url": "https://www.esecurityplanet.com/vulnerabilities/news-cisa-kev-gpustack-freeswitch-openssh-ibm-november-2026/"}
+        },
+        {
+          "title": "CISA warns Node2Shell flaw now exploited",
+          "tags": ["Critical", "KEV add"],
+          "summary": "CISA warned that attackers are exploiting the critical Node2Shell vulnerability and urged organizations to patch now.",
+          "source": {"name": "BleepingComputer", "url": "https://bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw"}
+        },
+        {
+          "title": "Ivanti Connect Secure zero-days hit KEV deadline",
+          "tags": ["Zero-day", "KEV add"],
+          "summary": "CVE-2026-111357 and CVE-2026-118527 were added to Ivanti's advisory on Oct 29. The federal KEV remediation deadline was Nov 13, so unpatched VPN appliances are now overdue.",
+          "source": {"name": "Tech Insider", "url": "https://tech-insider.org/ivanti-connect-secure-cve-2026-111357-118527-kev-deadline-nov-13-2026/"}
+        },
+        {
+          "title": "Apple CVE-2024-27834 added to KEV as APT29 targets old iPhones",
+          "tags": ["KEV add", "High-profile"],
+          "summary": "A nation-state campaign attributed to APT29 is exploiting an older Apple WebKit flaw on unpatched iPhones. The federal due date is Nov 18.",
+          "source": {"name": "Tech Insider", "url": "https://tech-insider.org/?p=50354"}
+        },
+        {
+          "title": "Zyxel GS1900 zero-day used to hijack 996 switches",
+          "tags": ["Zero-day"],
+          "summary": "Attackers used CVE-2026-107441 to take over nearly a thousand Zyxel GS1900 switches. Fixed firmware was released Oct 22.",
+          "source": {"name": "Tech Insider", "url": "https://tech-insider.org/cisa-kev-gpustack-freeswitch-openssh-aspera-faspex-nov-12-deadline-2026/"}
+        }
+      ]
+    },
+    "physical": {
+      "items": [
+        {
+          "title": "M 6.4 — 30 km WSW of Lata, Solomon Islands",
+          "tags": ["M 6.4"],
+          "summary": "A magnitude 6.4 earthquake struck the Santa Cruz Islands on Nov 09. USGS gave it a green alert and issued no tsunami warning.",
+          "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tx16"}
+        },
+        {
+          "title": "Cyclone Murasu makes landfall in Andhra Pradesh",
+          "tags": ["Tropical"],
+          "summary": "Cyclone Murasu came ashore on India's Andhra Pradesh coast on Nov 3, the second cyclone to make landfall there in under a week.",
+          "source": {"name": "Verisk Alert", "url": "https://alert.risksolutions.verisk.com/"}
+        },
+        {
+          "title": "Brazil declares emergencies in 44 municipalities",
+          "tags": ["Flood"],
+          "summary": "Brazil's National Civil Defense recognized emergencies across 13 states on Nov 3. Santa Catarina logged 671 storm incidents in 76 municipalities on Nov 4–5.",
+          "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}
+        },
+        {
+          "title": "Ecuador flooding: 12 dead, 56,000 affected",
+          "tags": ["Flood"],
+          "summary": "Heavy rain and flooding in Ecuador have killed 12 people and affected 56,323, according to PAHO's early-November hazard monitoring.",
+          "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-3-november-2026"}
+        },
+        {
+          "title": "Northern Mexico storms",
+          "tags": ["Flood"],
+          "summary": "Weekend rainfall across four northern Mexican states killed two people, damaged 450 homes and required 45 rescues.",
+          "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}
+        }
+      ],
+      "note": "Searches found no significant November 2026 wildfire reports."
+    }
+  }
+}

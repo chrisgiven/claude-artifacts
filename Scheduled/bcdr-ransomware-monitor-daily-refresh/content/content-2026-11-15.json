@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-15",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {"title": "Nota Groep listed by Inc Ransom", "tags": ["Newly claimed"], "summary": "Transportation-sector firm Nota Groep appeared on the Inc Ransom leak site, discovered November 10, 2026; operational impact unconfirmed.", "source": {"name": "SOCRadar Ransomware Intelligence", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/nota-groep-inc-ransom-a69d6b76"}},
+        {"title": "n0n group claims US victim (Company #188)", "tags": ["Newly claimed"], "summary": "The n0n ransomware group claimed an unnamed United States organization with an attack date of November 9, 2026.", "source": {"name": "SOCRadar Ransomware Intelligence", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/company-188-n0n-5ebf0c48"}},
+        {"title": "Zirnet LLC listed by Inc Ransom", "tags": ["Newly claimed"], "summary": "Technology-sector company Zirnet LLC was posted as an Inc Ransom victim; listing date and impact not yet independently confirmed.", "source": {"name": "SOCRadar Ransomware Intelligence", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/zirnet-llc-inc-ransom-51cd6b63"}},
+        {"title": "Q3 2026 ransomware claims up 23%", "tags": ["Trend"], "summary": "Leak-site victim claims reached 2,865 in Q3 2026, a 23% rise, setting the backdrop for Q4 activity.", "source": {"name": "Redmond Magazine", "url": "https://redmondmag.com/articles/2026/10/21/ransomware-attacks-rise-23-percent.aspx"}}
+      ],
+      "note": "Named-victim news coverage for November is thin; current items come from leak-site trackers and are unverified claims."
+    },
+    "outage": {
+      "items": [
+        {"title": "Google Cloud europe-west2-b power loss (London)", "tags": ["Cloud", "Reference"], "summary": "A third-party facility hosting the europe-west2-b zone lost utility power on October 20 and a controller fault stopped backup generators from starting.", "source": {"name": "IncidentHub / The Register", "url": "https://www.theregister.com/tag/outage"}},
+        {"title": "H1 2026 cloud & SaaS reliability report", "tags": ["Trend", "Reference"], "summary": "IncidentHub tracked 30,246 outages across providers in the first half of 2026, including a Feb 2–3 Azure VM/AKS outage.", "source": {"name": "IncidentHub", "url": "https://blog.incidenthub.cloud/h1-2026-cloud-saas-reliability-report"}}
+      ],
+      "note": "No major AWS/Azure/GCP outage reported in the first half of November 2026; items shown are recent reference events."
+    },
+    "cyber": {
+      "items": [
+        {"title": "CISA adds six exploited flaws to KEV (Nov 10)", "tags": ["KEV add", "Critical"], "summary": "New KEV entries cover Microsoft Outlook, Google Chrome, Barracuda appliances, Cisco BroadWorks and Openwave Webtop.", "source": {"name": "SecurityOnline", "url": "https://securityonline.info/cisa-kev-six-vulnerabilities-november-2026/"}},
+        {"title": "CISA KEV: GPUStack, FreeSWITCH, OpenSSH, Aspera Faspex", "tags": ["KEV add"], "summary": "Four actively exploited flaws were added on November 9 with an unusually short November 12 federal remediation deadline.", "source": {"name": "eSecurity Planet", "url": "https://www.esecurityplanet.com/vulnerabilities/news-cisa-kev-gpustack-freeswitch-openssh-ibm-november-2026/"}},
+        {"title": "Node2Shell flaw exploited in the wild", "tags": ["Critical", "KEV add"], "summary": "CISA warned that attackers are now exploiting the critical Node2Shell vulnerability and urged immediate patching.", "source": {"name": "BleepingComputer", "url": "https://bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw"}},
+        {"title": "Ivanti Connect Secure CVE-2026-111357 / 118527", "tags": ["Zero-day", "KEV add"], "summary": "Ivanti expanded its advisory with two exploited Connect Secure flaws; CISA set a November 13 deadline for federal agencies.", "source": {"name": "Tech Insider", "url": "https://tech-insider.org/ivanti-connect-secure-cve-2026-111357-118527-kev-deadline-nov-13-2026/"}},
+        {"title": "Zyxel GS1900 zero-day hijacks 996 switches", "tags": ["Zero-day"], "summary": "CVE-2026-107441 was used to take over 996 Zyxel GS1900 switches; a patch shipped October 22 and the advisory followed November 3.", "source": {"name": "Decryption Digest", "url": "https://www.decryptiondigest.com/blog?category=ZERO-DAY"}},
+        {"title": "Apple CVE-2024-27834 added to KEV, tied to APT29", "tags": ["KEV add"], "summary": "CISA listed an older Apple WebKit flaw on November 4 (due November 18), with one briefing linking it to APT29 targeting legacy iPhones.", "source": {"name": "Ctrl Alt Nod", "url": "https://ctrlaltnod.com/news/cisa-adds-two-actively-exploited-zero-days-to-kev-catalog"}}
+      ]
+    },
+    "physical": {
+      "items": [
+        {"title": "M 6.4 – 30 km WSW of Lata, Solomon Islands", "tags": ["M 6.4"], "summary": "USGS recorded a magnitude 6.4 earthquake on November 9 with a green PAGER alert and no tsunami warning.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tx16"}},
+        {"title": "Cyclone Murasu landfall, Andhra Pradesh", "tags": ["Tropical"], "summary": "Cyclone Murasu made landfall on India's Andhra Pradesh coast on November 3, the second cyclone there in under a week.", "source": {"name": "PAHO Natural Hazards Monitoring", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}},
+        {"title": "Brazil & Ecuador flooding", "tags": ["Flood"], "summary": "Brazil recognized emergencies in 44 municipalities across 13 states, with 671 storm incidents in Santa Catarina; flooding in Ecuador killed 12.", "source": {"name": "PAHO Natural Hazards Monitoring", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}},
+        {"title": "Wind-driven wildfires in Spokane, Washington", "tags": ["Wildfire"], "summary": "Three wildfires driven by powerful winds damaged or destroyed nearly 1,000 buildings in Spokane neighborhoods.", "source": {"name": "Center for Disaster Philanthropy", "url": "https://disasterphilanthropy.org/blog/what-were-watching-weekly-disaster-update-november-11/"}},
+        {"title": "Northern Mexico heavy rain", "tags": ["Flood"], "summary": "Weekend rainfall across four northern Mexican states left two dead, 450 homes affected and 45 people rescued.", "source": {"name": "PAHO Natural Hazards Monitoring", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-3-november-2026"}}
+      ],
+      "note": "El Niño-driven Pacific cyclone season continues; Atlantic remains historically quiet."
+    }
+  }
+}
