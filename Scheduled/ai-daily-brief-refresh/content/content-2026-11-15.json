@@ -1,0 +1,265 @@
+{
+  "date": "2026-11-15",
+  "client_alerts": [
+    {
+      "headline": "Cursor's OpenAI models are running on a temporary extension with no end date",
+      "body": "OpenAI has extended Cursor's model access past the Nov 12 shutoff but has not set a new date. Any client team whose Cursor workflows depend on OpenAI models (about 5% of Cursor traffic) should **record this as a single-vendor dependency** and test the Anthropic or Google model fallback inside Cursor now."
+    }
+  ],
+  "top_moves": [
+    {
+      "title": "Anthropic's IPO book is reportedly about 6x oversubscribed, and pricing is expected Nov 18",
+      "date_label": "Nov 10–18, 2026",
+      "urgent": true,
+      "body": "The roadshow opened Nov 10 at $70–78 per share for a Nasdaq listing under **ANT**, with trading reported for Nov 19. Valuation estimates of $1.4–1.5T come from secondary outlets and conflict with each other. Expect enterprise contract and pricing posture to stay stable through the listing.",
+      "tag": "strategic"
+    },
+    {
+      "title": "OpenAI extends Cursor's model access beyond the Nov 12 cutoff, with no new date",
+      "date_label": "Nov 12–14, 2026",
+      "urgent": true,
+      "body": "OpenAI's own post now says access is temporarily extended, and no new OpenAI models will reach Cursor during the wind-down. This is a live example of an AI vendor cutting off a downstream tool for contractual reasons, and it belongs in third-party risk registers.",
+      "tag": "alert"
+    },
+    {
+      "title": "OpenAI reportedly launches ChatGPT Wallet so its shopping agent can pay for purchases",
+      "date_label": "Nov 13, 2026",
+      "urgent": false,
+      "body": "This comes from a single secondary roundup and is not yet confirmed by OpenAI. If confirmed, it means agents can complete payments, and enterprise policies on agent-initiated spending will need to cover it.",
+      "tag": "watch"
+    }
+  ],
+  "providers": [
+    {
+      "name": "OpenAI",
+      "display": "OpenAI",
+      "headline": "Cursor's model access was extended past Nov 12 with no new date, and a ChatGPT Wallet agent-payments feature is reported but unconfirmed.",
+      "detail": "OpenAI's Cursor post now says access is temporarily extended beyond Nov 12, and that no new models (including the upcoming Astra) will go to Cursor. A Nov 14 roundup reports ChatGPT Wallet launched Nov 13 for agentic purchases, and that the robotics team was dissolved. Neither item has an OpenAI primary source yet. Images 2.6 (Nov 4) and verified Business Agents (Nov 10) are still rolling out.",
+      "tags": ["watch", "alert"],
+      "classification": "alert",
+      "active": true,
+      "hasAlert": true,
+      "alertReason": "Vendor-dependency risk for client teams using OpenAI models inside Cursor."
+    },
+    {
+      "name": "Anthropic",
+      "display": "Anthropic",
+      "headline": "The IPO roadshow book is reportedly about 6x oversubscribed at $70–78, with pricing expected Nov 18.",
+      "detail": "Anthropic launched the roadshow Nov 10 for a Nasdaq Global Select listing under ANT, alongside a reported $26B private placement. On the product side, Fable 5.2 shipped Nov 9 and an org-level IP allowlist entered beta in the Console on Nov 5. Sonnet 4.5 API retirement and Opus 4.8 fast-mode removal both land Nov 30.",
+      "tags": ["strategic"],
+      "classification": "strategic",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Google Gemini",
+      "display": "Google Gemini",
+      "headline": "Nothing new since Gemini 4 Hydrogen (Nov 12–13); a Gemini 4 Krypton Arena sighting is an unconfirmed rumor.",
+      "detail": "Gemini 4 Hydrogen, a coding and agent model, is in the Gemini app, Search, the Gemini API and AI Studio, and DeepMind also lists Gemini 4 Carbon. The Krypton claim from Nov 14 is disputed even by the account that started it. Hold off on any change until Google announces it.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "xAI",
+      "display": "xAI / Grok",
+      "headline": "Still no Grok 5; Grok 4.7 and Grok Voice 3.0 remain current.",
+      "detail": "There has been no release since Grok Voice 3.0 (Oct 14). The grok-imagine-image-quality model retired Nov 2. SpaceXAI's ownership of Cursor is the more relevant thread this week, because it is behind OpenAI's model cutoff.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Meta",
+      "display": "Meta",
+      "headline": "No new release; Muse has replaced Llama, and the promised Muse Spark 1.2 weights are still unconfirmed.",
+      "detail": "Meta's line is now Muse Spark (closed) plus Muse Glimmer (30B open-weight, August). There is no Llama release, and no confirmation yet that the Muse Spark 1.2 weights have shipped.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Mistral",
+      "display": "Mistral",
+      "headline": "No new release since the Large 4 announcement on Oct 29, which some outlets dispute.",
+      "detail": "Reporting is split on whether the Large 4 weights are fully public. Medium 3.5, Small 4 and Devstral 2 remain the practical choices for EU-residency or self-hosting.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Perplexity",
+      "display": "Perplexity",
+      "headline": "No new update in the last 48 hours; Teammates (Nov 5) is still a Max-only research preview.",
+      "detail": "Teammates gives agents persistent responsibilities and is web-only on the $200/month Max plan for now. The Comet Assistant improvements and patent search arrived Nov 6. Nothing newer was found.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Microsoft 365 Copilot",
+      "display": "Microsoft 365 Copilot",
+      "headline": "Quiet ahead of Ignite (Nov 17–20), where Chat/Cowork/Code routing and Autopilot timing are expected.",
+      "detail": "Microsoft has pre-announced that Copilot will route requests across Chat, Cowork and Code. @Copilot in Teams enters private preview by month-end. Autopilot (formerly Scout) is due for Frontier in November, but admin controls and timing are still pending. Code, Autopilot and SharePoint advanced work use usage-based billing, so set spending policies before rollout.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "GitHub Copilot",
+      "display": "GitHub Copilot",
+      "headline": "No confirmed November update.",
+      "detail": "The last confirmed item is Claude Haiku 5.5 arriving in Copilot (Oct 5) alongside local sandboxing and Ollama support. Usage-based billing has applied to all plans since June.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Cursor",
+      "display": "Cursor",
+      "headline": "OpenAI model access survives past Nov 12 on a temporary extension, but no new OpenAI models are coming.",
+      "detail": "OpenAI serves about 5% of Cursor traffic, and Anthropic, Google and SpaceXAI models remain available. The extension has no stated end date, so treat OpenAI-in-Cursor as at-risk capacity. Last week's trojaned-extension incident is still a reason to keep extension allowlists tight.",
+      "tags": ["alert"],
+      "classification": "alert",
+      "active": true,
+      "hasAlert": true,
+      "alertReason": "Upstream model supply for Cursor is on an open-ended temporary extension."
+    },
+    {
+      "name": "Gamma",
+      "display": "Gamma",
+      "headline": "No November release; Gamma 5's agent editing mode (October) is still the latest.",
+      "detail": "Gamma 5 added agent-driven deck building, more templates, and context sources including Slack, Notion and Granola, with workflow improvements on Oct 26. Nothing new was found this month.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Notion AI",
+      "display": "Notion AI",
+      "headline": "No November release; Notion 3.8 (agent context) and the October AI credit system are still current.",
+      "detail": "Notion 3.8 (Oct 13) added context for agents, and an Oct 19 release introduced credit-based AI usage. Check AI spend under the credit model before rolling it out more widely.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    }
+  ],
+  "persistent_signals": [
+    {
+      "provider": "Anthropic",
+      "text": "Anthropic — IPO — 2+ weeks running (roadshow expected Nov 9 last week; it launched Nov 10, the book is reportedly 6x covered, and pricing is expected Nov 18)"
+    }
+  ],
+  "month_themes": {
+    "then": "Frontier-model safety warnings (self-replication on IoT); insider security incidents at OpenAI; Anthropic IPO preparation",
+    "now": "Anthropic IPO pricing week; AI vendor-dependency fragility (OpenAI cutting off Cursor); agents moving into payments and purchasing"
+  },
+  "habits": [
+    {
+      "task": "BCP/DR plan narratives & runbooks",
+      "tool": "Claude (Opus/Sonnet 5.5)",
+      "shift": "No change. If you call the API, migrate any Sonnet 4.5 or Opus 4.8 fast-mode use before Nov 30.",
+      "type": "tactical"
+    },
+    {
+      "task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)",
+      "tool": "Claude, with Perplexity for citations",
+      "shift": "Keep checking clause references against the source. Vendor ISO 22301 AI scoring tools are marketing claims, not audits.",
+      "type": "tactical"
+    },
+    {
+      "task": "Vendor / architecture research",
+      "tool": "Perplexity + Claude",
+      "shift": "Add an **AI model supply** line to vendor reviews: which LLM provider sits upstream, and what happens if that provider cuts access (the Cursor case).",
+      "type": "strategic"
+    },
+    {
+      "task": "Client proposals & SOWs",
+      "tool": "Claude",
+      "shift": "Offer a short AI third-party dependency assessment as a SOW add-on, using the OpenAI–Cursor cutoff as the worked example.",
+      "type": "strategic"
+    },
+    {
+      "task": "Executive decks",
+      "tool": "Gamma 5 / Copilot in PowerPoint",
+      "shift": "Hold off on new Copilot deck workflows until the Ignite announcements (Nov 17–20) land.",
+      "type": "watch"
+    },
+    {
+      "task": "Stakeholder audio walkthroughs",
+      "tool": "NotebookLM / ChatGPT Voice",
+      "shift": "ChatGPT Advanced and Standard Voice retire Dec 11, so don't build new walkthrough workflows on them.",
+      "type": "watch"
+    },
+    {
+      "task": "Client advisory on AI data risk",
+      "tool": "Claude",
+      "shift": "Draft an agent-payments guardrail paragraph (approval thresholds, card scoping, logging) ready for when ChatGPT Wallet is confirmed.",
+      "type": "watch"
+    }
+  ],
+  "community": [
+    {
+      "source": "r/LocalLLaMA",
+      "signal": "A thread on a Sam Altman quote calling local inference a poor use of scarce compute drew ~6.5K upvotes and ~2.8K comments, and spread into r/ChatGPT (early-Nov digest).",
+      "so_what": "Local and self-hosted models are becoming a sovereignty and continuity argument, not just a cost one. It is useful framing when clients ask about offline AI fallback."
+    },
+    {
+      "source": "r/LocalLLaMA",
+      "signal": "An official statement that Qwen models will stay open source scored ~4.5K.",
+      "so_what": "Open-weight options remain viable for air-gapped DR tooling, but check the origin-country procurement policy before recommending one."
+    },
+    {
+      "source": "r/LocalLLaMA",
+      "signal": "A report that Amazon may be cancelling GPU orders and closing some compute-buying accounts scored ~780 (unverified).",
+      "so_what": "Cloud GPU capacity assumptions in AI-dependent recovery plans may not hold, so don't assume burst capacity exists in a regional outage."
+    }
+  ],
+  "watch": [
+    {
+      "kind": "deadline",
+      "title": "Anthropic IPO pricing — Nov 18 (trading reportedly Nov 19)",
+      "body": "Expect no immediate product changes. Watch for any post-listing shifts in enterprise terms or data-use policy wording."
+    },
+    {
+      "kind": "watch",
+      "title": "Microsoft Ignite — Nov 17–20",
+      "body": "Expect Copilot routing across Chat, Cowork and Code, Autopilot rollout timing, and admin controls. Usage-based billing means admins need spending policies on day one."
+    },
+    {
+      "kind": "deadline",
+      "title": "Claude API: Sonnet 4.5 retires and Opus 4.8 fast mode is removed — Nov 30",
+      "body": "Move any scripts or integrations to Sonnet 5.5 or Opus 5.5 before month-end."
+    },
+    {
+      "kind": "deadline",
+      "title": "ChatGPT Advanced and Standard Voice retire — Dec 11",
+      "body": "Any recorded walkthrough or voice-briefing workflow built on them needs a replacement."
+    },
+    {
+      "kind": "security",
+      "title": "OpenAI → Cursor access: open-ended temporary extension",
+      "body": "OpenAI says it will post updates. A new shutoff date could arrive with little notice."
+    }
+  ],
+  "sources": "Sources consulted: Anthropic news and API release notes, OpenAI's Cursor decision post and ChatGPT release notes, SiliconANGLE, DevOps.com, Google DeepMind news, Microsoft Copilot blog and Message Center coverage, Perplexity coverage (IT Brief, Digital Trends), Notion releases, the AI Signal Reddit digest, and BCP trade press (TechTarget, ITPro)."
+}

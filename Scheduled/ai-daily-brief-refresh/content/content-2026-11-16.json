@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-16",
+  "client_alerts": [
+    {
+      "headline": "Claude Code 'Don't Ask Again' reportedly leaked 2,539 secrets to GitHub",
+      "body": "A November report says Claude Code's 'Don't Ask Again' permission setting led to **2,539 secrets** being committed to public GitHub repos, and Anthropic's Claude Code lead acknowledged the issue. Any client team using Claude Code with standing approvals should scan its repos for exposed keys, rotate anything found, and turn on pre-commit secret scanning. This is a single-source report; treat it as likely, not confirmed."
+    }
+  ],
+  "top_moves": [
+    {
+      "title": "Microsoft Ignite opens tomorrow, with Copilot billing and agent governance expected to lead",
+      "date_label": "Nov 17–20, 2026",
+      "urgent": true,
+      "body": "Nadella's keynote is expected to centre on Copilot, **usage-based billing** and Agent 365 governance, including a plugin registry for controlling extensibility. Default usage-based billing for new CSP purchases has reportedly moved to **Jan–Mar 2027** after partner pushback.",
+      "tag": "watch"
+    },
+    {
+      "title": "Claude Code secrets-exposure report puts a security question on Anthropic's IPO week",
+      "date_label": "Nov 2026",
+      "urgent": false,
+      "body": "A report says the 'Don't Ask Again' setting led to 2,539 secrets landing on public GitHub, and Anthropic's Claude Code lead acknowledged it. Pricing is still set for **Nov 18** at $70–78, with trading on Nov 19 as ANT.",
+      "tag": "alert"
+    },
+    {
+      "title": "OpenAI buys Orchestra Bio and breaks up its robotics team",
+      "date_label": "Nov 15–16, 2026",
+      "urgent": false,
+      "body": "Orchestra Bio's drug-research team joins OpenAI's life-sciences unit alongside Rosalind. Digitimes reports that the robotics team was dispersed because general-purpose models now match or beat specialised robot-control models.",
+      "tag": "strategic"
+    }
+  ],
+  "providers": [
+    {"name": "OpenAI", "display": "OpenAI", "headline": "OpenAI bought Orchestra Bio on Nov 15 and reportedly broke up its robotics team on Nov 16.", "detail": "The Orchestra Bio team joins the Rosalind life-sciences unit. Digitimes says robotics staff were reassigned because general models now handle robot control well. Business Hub and verified Business Agents have been in beta since Nov 10, and Images 2.6 has been rolling out to Pro since Nov 4.", "tags": ["strategic"], "classification": "strategic", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "Anthropic", "display": "Anthropic", "headline": "IPO pricing is set for Nov 18 at $70–78, while a Claude Code secrets-leak report draws attention.", "detail": "The IPO offers 825M Class A shares on Nasdaq as ANT, valuing the company at up to about $1.4T, plus a $26B cornerstone placement that includes Nvidia and Google. A report says Claude Code's 'Don't Ask Again' setting exposed 2,539 secrets on GitHub. Claude Meetings, Sheets and Whiteboards were reported just before the roadshow.", "tags": ["alert", "watch"], "classification": "alert", "active": true, "hasAlert": true, "alertReason": "Claude Code secrets-exposure report"},
+    {"name": "Google Gemini", "display": "Google Gemini", "headline": "No new Gemini release was found in the last 48 hours.", "detail": "Searches turned up only older Gemini 3 and I/O 2026 coverage, and there is still no confirmed ship date for Gemini 3.5 Pro.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "xAI", "display": "xAI / Grok", "headline": "Still no Grok 5; Grok 4.7 (Sept) and Voice 3.0 (Oct 14) are the latest releases.", "detail": "No November release was found. grok-imagine-image-quality retired on Nov 2.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Meta", "display": "Meta", "headline": "No new release was found, and the Muse Spark 1.2 weights are still unshipped.", "detail": "Meta's current lines are Muse Spark (closed) and Muse Glimmer (30B, open-weight, from August). The Llama brand appears dormant.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Mistral", "display": "Mistral", "headline": "No new release since Large 4 on Oct 29.", "detail": "No November item was found. Large 4 (1T parameters, open-weight) remains the latest flagship.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Perplexity", "display": "Perplexity", "headline": "No new release in the last 48 hours; Teammates agents (Nov 5, $200/mo Max only) is still the latest.", "detail": "Teammates is an always-on agent research preview for Max subscribers on web, with iOS and desktop apps promised. A Comet Assistant upgrade and patent search followed on Nov 6.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Microsoft 365 Copilot", "display": "Microsoft 365 Copilot", "headline": "Ignite opens Nov 17, and Office-in-Copilot reaches general availability this month.", "detail": "Word, Excel and PowerPoint inside the Copilot app reach worldwide general availability by mid-November. Autopilot is rolling out to Frontier, with admin controls still TBD. Fair-use limits now apply to Copilot Chat for unlicensed users, and default usage-based billing for CSP has slipped to Q1 2027.", "tags": ["tactical", "watch"], "classification": "watch", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "GitHub Copilot", "display": "GitHub Copilot", "headline": "No confirmed update was found.", "detail": "The latest known items are Claude Haiku 5.5, local sandboxing and Ollama support in VS Code Copilot 1.141 (October). Ignite-adjacent announcements are possible this week.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Cursor", "display": "Cursor", "headline": "No new update after the Nov 12 OpenAI cutoff was extended.", "detail": "OpenAI model access continues past Nov 12 with no new end date, and Anthropic has confirmed it will keep supplying Claude.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Gamma", "display": "Gamma", "headline": "No release in the last 48 hours; Gamma 5 (early Oct) is still current.", "detail": "Gamma 5 brought agent-built decks and context from more than 20 tools, including Slack and Notion. Workflow tweaks followed on Oct 26.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Notion AI", "display": "Notion AI", "headline": "No new release was found.", "detail": "The last changelog items are from August: Meeting Notes as a Custom Agent trigger, and the grouped model picker.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""}
+  ],
+  "persistent_signals": [
+    {"provider": "Anthropic", "text": "Anthropic — IPO roadshow and pricing — 2+ weeks running (roadshow Nov 9, pricing Nov 18, trading Nov 19)"}
+  ],
+  "month_themes": {
+    "then": "Microsoft's agent-upload defaults; undocumented OpenAI model IDs; Anthropic's pre-IPO stock pledges",
+    "now": "Microsoft's Ignite billing and governance reset; agent-tool security (Claude Code secrets); OpenAI consolidating into vertical units (bio)"
+  },
+  "habits": [
+    {"task": "BCP/DR plan narratives & runbooks", "tool": "Claude (Opus 5.5)", "shift": "Keep Claude for long-form runbooks. If you use Claude Code to maintain runbook repos, turn off standing 'Don't Ask Again' approvals and add a secret scanner before you commit.", "type": "tactical"},
+    {"task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)", "tool": "Claude + Perplexity (citations)", "shift": "No change. Pair ISO 22301 with ISO/IEC 42001 when clients ask about AI resilience, because vendors increasingly market the two as a pair.", "type": "strategic"},
+    {"task": "Vendor/architecture research", "tool": "Perplexity Pro / ChatGPT deep research", "shift": "Hold off on Microsoft-stack architecture recommendations until the Ignite announcements land this week.", "type": "watch"},
+    {"task": "Client proposals & SOWs", "tool": "Claude / M365 Copilot Word", "shift": "Office-in-Copilot reaches general availability this month. Clients that are all-in on Microsoft can draft SOWs inside the Copilot app, but check their Copilot Chat fair-use limits first.", "type": "tactical"},
+    {"task": "Executive decks", "tool": "Gamma 5", "shift": "No change. Gamma 5's agent build is still the fastest route from a first draft to a finished deck.", "type": "tactical"},
+    {"task": "Stakeholder audio walkthroughs", "tool": "NotebookLM / ChatGPT voice", "shift": "No change this week.", "type": "tactical"},
+    {"task": "Client advisory on AI data risk", "tool": "Brief + Claude", "shift": "Add a coding-agent secrets-exposure check (permission settings, pre-commit scanning, key rotation) to AI risk assessments, and note New York's AI safety law registration deadline in January.", "type": "strategic"}
+  ],
+  "community": [
+    {"source": "r/ClaudeAI", "signal": "Usage-limit complaints remain the recurring top theme, including a recent post about running out of a week's usage in 3 hours.", "so_what": "Budget headroom on Max plans for heavy client drafting weeks, or split the work between the API and the app."},
+    {"source": "r/LocalLLaMA", "signal": "The ongoing consensus is that dense models beat MoE for local use and that 16GB of VRAM is the practical ceiling for most users.", "so_what": "For clients asking about on-prem or air-gapped AI for DR sites, size the hardware for 16–30B dense models."},
+    {"source": "r/OpenAI", "signal": "No high-engagement November threads surfaced in search; live rankings were not reachable.", "so_what": "Low signal today. Check r/OpenAI/top manually if a client asks about ChatGPT Business Agents."}
+  ],
+  "watch": [
+    {"kind": "watch", "title": "Microsoft Ignite keynote — Nov 17", "body": "Watch for Copilot usage-based billing details, Agent 365 governance, the plugin registry and Autopilot admin controls. These directly affect Microsoft-shop client advisories."},
+    {"kind": "deadline", "title": "Anthropic IPO pricing Nov 18, trading Nov 19", "body": "Range $70–78 under ticker ANT. Watch for any changes to the enterprise terms or data-use policy disclosed in the final prospectus."},
+    {"kind": "security", "title": "Claude Code secrets-exposure follow-up", "body": "Watch for an official Anthropic advisory or a default change to 'Don't Ask Again'. Until then, recommend clients run repo secret scans."},
+    {"kind": "regulatory", "title": "New York AI safety law — registration by January", "body": "Companies with more than $500M in annual revenue must publish safety frameworks, report critical incidents within 72 hours and file transparency reports. The 72-hour incident clock is relevant to clients' incident-response plans."},
+    {"kind": "pricing", "title": "Copilot Chat fair-use limits for unlicensed users", "body": "These started in early November. Expect questions from clients that relied on free Copilot Chat for drafting."}
+  ],
+  "sources": "Sources consulted: CNBC, Quartz and Yahoo Finance on the Anthropic IPO; Digitimes and NewsBytes on OpenAI; OpenAI release notes; Microsoft Tech Community, Partner Center and Ignite previews; Perplexity coverage (IT Brief, Digital Trends); xAI release notes; Gamma and Notion changelogs; opentools.ai on Claude Code; Reddit digests (The Daily Claude, AI Signal)."
+}
