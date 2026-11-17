@@ -1,0 +1,114 @@
+{
+  "date": "2026-11-16",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {
+          "title": "Nota Groep listed as ransomware victim",
+          "tags": ["Newly claimed", "Third-party"],
+          "summary": "A ransomware tracker lists Dutch transportation-sector company Nota Groep as a victim, with the attack discovered on 10 November 2026.",
+          "source": {"name": "SOCRadar Ransomware Intelligence", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/nota-groep-inc-ransom-a69d6b76"}
+        },
+        {
+          "title": "n0n group posts batch of unnamed victims",
+          "tags": ["Newly claimed", "Trend"],
+          "summary": "The n0n operation posted several leak-site entries dated 9 November 2026 that identify victims only by number, so the organisations are not yet publicly named.",
+          "source": {"name": "SOCRadar Ransomware Intelligence", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/company-188-n0n-5ebf0c48"}
+        },
+        {
+          "title": "UNM Health attack claimed by new 'Byod' gang",
+          "tags": ["Healthcare", "Critical", "High-profile"],
+          "summary": "The University of New Mexico Health Sciences Center cyberattack diverted ambulances, halted surgeries and cancelled classes; the new Byod ransomware operation claimed it, and UNM says it has made no concessions while FBI forensics continue.",
+          "source": {"name": "PCrisk", "url": "https://www.pcrisk.com/internet-threat-news/36085-unm-health-ransomware-attack-diverts-ambulances-and-halts-surgeries"}
+        },
+        {
+          "title": "Q3 2026 ransomware claims up 23%",
+          "tags": ["Trend", "Reference"],
+          "summary": "A Q3 2026 threat-intelligence review counted 2,865 ransomware victim claims, a 23% rise, which sets the baseline going into Q4.",
+          "source": {"name": "Redmond Magazine", "url": "https://redmondmag.com/articles/2026/10/21/ransomware-attacks-rise-23-percent.aspx"}
+        }
+      ],
+      "note": "Few named November victims surfaced in search today. UNM Health is an October incident, kept here because recovery is still in progress."
+    },
+    "outage": {
+      "items": [
+        {
+          "title": "Microsoft 365: Outlook on the web mailbox errors (EMEA)",
+          "tags": ["Cloud"],
+          "summary": "On 9 November 2026, some EMEA users could not reach their mailboxes through Outlook on the web for about four hours before Microsoft resolved the incident.",
+          "source": {"name": "IsDown", "url": "https://isdown.app/status/microsoft365/incidents/683602-some-users-may-experience-errors-or-failures-when-accessing-their-mailbox-via-outlook-on-the-web"}
+        },
+        {
+          "title": "Google Cloud europe-west2-b power loss (London)",
+          "tags": ["Cloud", "Third-party", "Reference"],
+          "summary": "On 20 October 2026 a third-party facility hosting the europe-west2-b zone lost utility power, and a controller fault kept the backup generators from taking the load.",
+          "source": {"name": "theCUBE Research", "url": "https://thecuberesearch.com/?p=325134"}
+        }
+      ],
+      "note": "No major AWS, Azure, GCP or Cloudflare outage was found for November 2026 so far. The London zone item is October reference material."
+    },
+    "cyber": {
+      "items": [
+        {
+          "title": "CISA adds GPUStack, FreeSWITCH, OpenSSH, Aspera Faspex to KEV",
+          "tags": ["KEV add", "Critical"],
+          "summary": "On 9 November 2026 CISA added four actively exploited flaws to the KEV catalog and gave federal agencies until 12 November to remediate and complete forensic triage.",
+          "source": {"name": "eSecurity Planet", "url": "https://www.esecurityplanet.com/vulnerabilities/news-cisa-kev-gpustack-freeswitch-openssh-ibm-november-2026/"}
+        },
+        {
+          "title": "Ivanti Connect Secure flaws hit KEV, 13 Nov deadline",
+          "tags": ["KEV add", "Zero-day"],
+          "summary": "Two exploited Ivanti Connect Secure vulnerabilities (CVE-2026-111357 and CVE-2026-118527) were added to KEV with a 13 November 2026 federal patch deadline.",
+          "source": {"name": "Tech Insider", "url": "https://tech-insider.org/ivanti-connect-secure-cve-2026-111357-118527-kev-deadline-nov-13-2026/"}
+        },
+        {
+          "title": "SonicWall SSLVPN authentication bypass added to KEV",
+          "tags": ["KEV add", "Credential exposure"],
+          "summary": "On 6 November 2026 CISA added an exploited SonicWall SSLVPN authentication-bypass flaw to KEV, which matters because VPN edge devices remain a top initial-access route.",
+          "source": {"name": "Cyber Security News", "url": "https://cybersecuritynews.com/?p=142340"}
+        },
+        {
+          "title": "Metabase zero-day enables admin takeover and data theft",
+          "tags": ["Zero-day", "Data exposure", "KEV add"],
+          "summary": "CVE-2026-72898 lets unauthenticated attackers gain Metabase administrator access and exfiltrate data; CISA listed it in KEV alongside Windows and Cisco Secure Firewall flaws.",
+          "source": {"name": "SC Media", "url": "https://www.scworld.com/brief/cisa-adds-metabase-windows-and-cisco-secure-firewall-flaws-to-exploited-vulnerabilities-list"}
+        },
+        {
+          "title": "CISA warns Node2Shell flaw now exploited",
+          "tags": ["Critical", "KEV add"],
+          "summary": "CISA confirmed active exploitation of the critical Node2Shell (Brotli) remote-code-execution flaw and urged immediate patching of exposed Node.js services.",
+          "source": {"name": "BleepingComputer", "url": "https://bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw"}
+        }
+      ]
+    },
+    "physical": {
+      "items": [
+        {
+          "title": "Cyclone Murasu makes landfall in Andhra Pradesh",
+          "tags": ["Tropical"],
+          "summary": "Cyclone Murasu came ashore on the Andhra Pradesh coast on 3 November 2026, the second cyclone to make landfall there in under a week.",
+          "source": {"name": "Verisk Alert", "url": "https://alert.risksolutions.verisk.com/"}
+        },
+        {
+          "title": "Spokane wildfires damage or destroy ~1,000 buildings",
+          "tags": ["Wildfire", "Critical"],
+          "summary": "Three fast-moving wildfires burned through Spokane, Washington neighbourhoods in early November and damaged or destroyed nearly 1,000 buildings.",
+          "source": {"name": "Insurance Journal", "url": "https://www.insurancejournal.com/catastrophe"}
+        },
+        {
+          "title": "Brazil: emergencies declared in 44 municipalities",
+          "tags": ["Flood"],
+          "summary": "Brazil's civil defence recognised states of emergency in 44 municipalities across 13 states on 3 November, and Santa Catarina logged 671 storm incidents on 4–5 November.",
+          "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}
+        },
+        {
+          "title": "Ecuador flooding kills 12, affects 56,000+",
+          "tags": ["Flood"],
+          "summary": "Heavy rain and flooding in Ecuador killed 12 people and affected 56,323, according to media reports cited by PAHO in early November.",
+          "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}
+        }
+      ],
+      "note": "The USGS significant-earthquake feed lists no significant quakes this week. The Atlantic hurricane season has been unusually quiet."
+    }
+  }
+}
