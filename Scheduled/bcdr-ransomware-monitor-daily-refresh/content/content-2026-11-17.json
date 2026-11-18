@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-17",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {"title": "ActiveCloud (Belarus) cloud infrastructure encrypted", "tags": ["Critical", "Cloud", "Third-party"], "summary": "Belarusian cloud provider ActiveCloud disclosed a ransomware attack on Nov 11 that encrypted parts of its infrastructure and disrupted hosted websites, email and virtual servers; most services were restored by Nov 13 and the company reports no evidence of customer data theft.", "source": {"name": "TechJack Solutions", "url": "https://techjacksolutions.com/?p=108481"}},
+        {"title": "Nota Groep listed as ransomware victim", "tags": ["Newly claimed"], "summary": "Transportation firm Nota Groep appeared on a leak-site tracker on Nov 10 attributed to the Ransom group; the claim is not yet confirmed by the company.", "source": {"name": "SOCRadar", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/nota-groep-inc-ransom-a69d6b76"}},
+        {"title": "Leware Construction claimed by Storm-1567", "tags": ["Newly claimed"], "summary": "US construction/manufacturing company Leware Construction was listed by the Storm-1567 group with an attack date of Nov 11; unconfirmed by the victim.", "source": {"name": "SOCRadar", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/leware-construction-company-storm-1567-803d2513"}},
+        {"title": "Everest posts 'final notice' for new victim", "tags": ["Newly claimed"], "summary": "The Everest group posted a pre-publication notice for an unnamed victim with an attack date of Nov 13, signalling an imminent data leak.", "source": {"name": "SOCRadar", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/final-notice-before-publication-everest-8cb7fb73"}}
+      ],
+      "note": "Thin named-victim coverage this cycle; three of four items are leak-site claims from an aggregator and not yet victim-confirmed."
+    },
+    "outage": {
+      "items": [
+        {"title": "Microsoft 365 outage (EX1550543 / MO1550821)", "tags": ["Cloud", "High-profile"], "summary": "Microsoft 365 users saw significant Outlook/Exchange disruption on Nov 12–13, tracked as incidents EX1550543 and MO1550821; no corresponding Azure platform incident was listed.", "source": {"name": "Presenc AI Cloud Outage Tracker", "url": "https://presenc.ai/research/cloud-outage-tracker-2026"}}
+      ],
+      "note": "No confirmed AWS or Google Cloud outages found for November 2026 so far."
+    },
+    "cyber": {
+      "items": [
+        {"title": "CISA adds GPUStack, FreeSWITCH, OpenSSH, IBM Aspera Faspex to KEV", "tags": ["KEV add", "Critical"], "summary": "CISA added four actively exploited vulnerabilities to KEV on Nov 9 with an unusually short Nov 12 federal remediation and forensic-triage deadline.", "source": {"name": "eSecurity Planet", "url": "https://www.esecurityplanet.com/vulnerabilities/news-cisa-kev-gpustack-freeswitch-openssh-ibm-november-2026/"}},
+        {"title": "Ivanti Connect Secure flaws hit KEV deadline", "tags": ["KEV add", "Critical"], "summary": "Two Ivanti Connect Secure vulnerabilities carried a Nov 13 KEV remediation deadline amid active exploitation of VPN edge devices.", "source": {"name": "Tech Insider", "url": "https://tech-insider.org/ivanti-connect-secure-cve-2026-111357-118527-kev-deadline-nov-13-2026/"}},
+        {"title": "Zyxel switch zero-day used to hijack 996 devices", "tags": ["Zero-day"], "summary": "Attackers used a new Zyxel zero-day, CVE-2026-107441, to take over 996 network switches, per an early-November threat brief.", "source": {"name": "Tech Insider", "url": "https://tech-insider.org/?p=50354"}},
+        {"title": "Apple flaw added to KEV over APT29 iPhone targeting", "tags": ["KEV add", "Zero-day"], "summary": "CISA added an Apple vulnerability exploited by APT29 against older iPhones to KEV with an 18 November due date.", "source": {"name": "Ctrl Alt Nod", "url": "https://ctrlaltnod.com/news/cisa-adds-two-actively-exploited-zero-days-to-kev-catalog"}}
+      ]
+    },
+    "physical": {
+      "items": [
+        {"title": "M 6.6 earthquake, 148 km WSW of Tual, Indonesia", "tags": ["M 6.6"], "summary": "A magnitude 6.6 quake struck the Banda Sea region on Nov 16; USGS issued a green PAGER alert and no tsunami was generated.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tymu"}},
+        {"title": "Spokane, WA wind-driven wildfires", "tags": ["Wildfire", "Critical"], "summary": "Three fast-moving wildfires around Nov 2 damaged or destroyed nearly 1,000 buildings in the Spokane area.", "source": {"name": "Center for Disaster Philanthropy", "url": "https://disasterphilanthropy.org/blog/what-were-watching-weekly-disaster-update-november-11/"}},
+        {"title": "Cyclone Murasu landfall, Andhra Pradesh", "tags": ["Tropical"], "summary": "Cyclone Murasu made landfall on the Andhra Pradesh coast on Nov 3, the second cyclone to hit that coast in under a week.", "source": {"name": "Verisk Disaster Alert", "url": "https://alert.risksolutions.verisk.com/"}},
+        {"title": "Brazil and Ecuador flooding emergencies", "tags": ["Flood"], "summary": "Brazil recognized emergencies in 44 municipalities across 13 states and Ecuador reported 12 deaths and about 56,000 people affected by flooding in early November.", "source": {"name": "PAHO Natural Hazards Monitoring", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}}
+      ],
+      "note": "Atlantic hurricane season quiet; most natural-hazard reporting found dates from early November."
+    }
+  }
+}

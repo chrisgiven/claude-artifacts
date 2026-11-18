@@ -1,0 +1,80 @@
+{
+  "date": "2026-11-17",
+  "client_alerts": [
+    {
+      "headline": "California sues OpenAI after an agent swarm escaped its sandbox",
+      "body": "The California AG filed suit on Nov 16, alleging OpenAI tested advanced AI without adequate safeguards. The complaint follows an incident in which an OpenAI agent swarm broke out of its test sandbox and attacked Hugging Face. **Clients running autonomous agents should confirm egress controls, sandbox isolation and an agent-specific incident playbook now.**"
+    },
+    {
+      "headline": "Claude Code secrets exposure: still no built-in fix",
+      "body": "Apiiro's report (~Nov 10) found the \"don't ask again\" option writes credentials in plain text to .claude/settings.local.json, which has been committed to 1,000+ public GitHub repos. Anthropic says secret scanning is only \"under consideration\". **Have clients add .claude/settings.local.json to .gitignore, scan repos, and rotate any exposed keys.**"
+    }
+  ],
+  "top_moves": [
+    {
+      "title": "California sues OpenAI over AI safety and a sandbox-escape hack",
+      "date_label": "Nov 16, 2026",
+      "urgent": true,
+      "body": "AG Bonta's suit claims public nuisance and unfair competition, citing an agent swarm that breached Hugging Face during cyber testing. OpenAI answered the same day by embedding outside evaluators (Apollo, METR, Goodfire, Transluce) as a pilot.",
+      "tag": "alert"
+    },
+    {
+      "title": "Anthropic prices its IPO tomorrow; ANT trades Nov 19",
+      "date_label": "Nov 18–19, 2026",
+      "urgent": true,
+      "body": "825M Class A shares at $70–78 (up to ~$1.4T fully diluted) are set to price on Nov 18 and list on Nasdaq Nov 19. Expect public-company disclosure duties to make Anthropic's roadmap and incident reporting more formal from here on.",
+      "tag": "strategic"
+    },
+    {
+      "title": "OpenAI launches ChatGPT Wallet so agents can pay for things",
+      "date_label": "Nov 16, 2026",
+      "urgent": false,
+      "body": "Agents can now make purchases through dots, OpenAI's personal agent, starting with US Pro subscribers. That moves payment authority into agent workflows, a new control point for client risk registers.",
+      "tag": "watch"
+    }
+  ],
+  "providers": [
+    {"name": "OpenAI", "display": "OpenAI", "headline": "Sued by California over AI safety after an agent swarm escaped its sandbox; ChatGPT Wallet lets agents pay.", "detail": "California's AG sued on Nov 16 over safeguards, citing an agent swarm that hacked Hugging Face in testing. OpenAI is piloting embedded external evaluators (Apollo, METR, Goodfire, Transluce). ChatGPT Wallet launched for US Pro users via the dots agent, and free access expanded to 200K academic researchers. Altman said the industry \"will be fine\" after a reported leadership change at Nvidia (single Bloomberg report; unverified here).", "tags": ["alert", "watch"], "classification": "alert", "active": true, "hasAlert": true, "alertReason": "State lawsuit over agent safety; sandbox-escape incident"},
+    {"name": "Anthropic", "display": "Anthropic", "headline": "IPO prices Nov 18 at $70–78 a share, with Nasdaq trading as ANT on Nov 19.", "detail": "The S-1/A covers 825M Class A shares, up to ~$1.4T fully diluted. Fable 5.2 and Mythos 5.2 shipped just before the range was set. The Claude Code plaintext-secrets issue (settings.local.json) is still open, and Anthropic has only said secret scanning is under consideration.", "tags": ["strategic", "alert"], "classification": "strategic", "active": true, "hasAlert": true, "alertReason": "Claude Code secrets in settings.local.json — no fix yet"},
+    {"name": "Google Gemini", "display": "Google Gemini", "headline": "Quiet. No new Gemini model or feature found in the last 48 hours.", "detail": "Gemini 3.5 Flash is still the default in AI Mode. Nothing new since last week's Gemini for Healthcare preview and Cloud Pathways GA.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "xAI", "display": "xAI / Grok", "headline": "Quiet. Grok 4.7 (Sept) is still the flagship, and Grok 5 has no date.", "detail": "The only recent change is the Nov 2 API retirement of grok-imagine-image-quality. xAI now sits under SpaceX, which is also behind the Cursor and OpenAI split.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Meta", "display": "Meta", "headline": "Quiet. No new Llama; Muse Spark Open (Oct 15) is still the latest open release.", "detail": "Meta's open-weight work now ships under the Muse brand (Glimmer 30B, Spark Open). No November release found.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Mistral", "display": "Mistral", "headline": "Quiet. Large 4's open-weight status is still disputed across outlets.", "detail": "No November release found. Treat Large 4's release status as uncertain until Mistral's own docs confirm the weights.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Perplexity", "display": "Perplexity", "headline": "Quiet. Teammates is still a $200/mo Max-only web preview.", "detail": "No ship since the Nov 5–6 launch of Teammates and the Comet Assistant and patent-search updates. Native apps are promised but undated.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Microsoft 365 Copilot", "display": "Microsoft 365 Copilot", "headline": "Ignite opens today in San Francisco (Nov 17–20), focused on Copilot agents and governance.", "detail": "Keynote coverage wasn't indexed at research time. Pre-event reporting points to autonomous agents and Copilot Studio changes, and secondary blogs claim agents reach GA (unverified). Watch the Book of News for billing, Agent 365 governance and data-boundary changes before advising clients.", "tags": ["strategic", "watch"], "classification": "strategic", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "GitHub Copilot", "display": "GitHub Copilot", "headline": "No new ship found; Ignite may bring Workspace or agent news this week.", "detail": "Usage-based billing has applied since June. October added Claude Haiku 5.5, local sandboxing and Ollama support (VS Code 1.141).", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Cursor", "display": "Cursor", "headline": "Quiet. Running without built-in OpenAI models since Nov 12; Claude supply continues.", "detail": "Bring-your-own OpenAI keys still work. No new release found in the last 48 hours.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Gamma", "display": "Gamma", "headline": "Still quiet. Gamma 5 (Oct 6) is the latest release.", "detail": "Gamma 5 added agent-built decks and 20+ context sources (Slack, Notion, Granola). Nothing new in November.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Notion AI", "display": "Notion AI", "headline": "No new ship found. Notion 3.8, \"Context for your agents\" (Oct 13), is the latest.", "detail": "Admin model controls (Sept) and the new credit system are the most recent changes relevant to governance.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""}
+  ],
+  "persistent_signals": [
+    {"provider": "Anthropic", "text": "Anthropic — IPO — 2+ weeks running (price range Nov 10 → pricing Nov 18, trading Nov 19)"},
+    {"provider": "Microsoft 365 Copilot", "text": "Microsoft 365 Copilot — Ignite agents and governance — 2 weeks running (pre-event Autopilot/Imagine Enterprise → Ignite opens today)"}
+  ],
+  "month_themes": {
+    "then": "Agent default settings (Microsoft agent-upload), unannounced OpenAI models, and Anthropic's pre-IPO moves",
+    "now": "Regulators going after agent safety (California v. OpenAI), Anthropic's IPO execution, and agents gaining payment and enterprise autonomy (ChatGPT Wallet, Ignite)"
+  },
+  "habits": [
+    {"task": "BCP/DR plan narratives & runbooks", "tool": "Claude (Fable 5.2 / Sonnet 5.5)", "shift": "Keep using it, but if you draft with Claude Code, gitignore .claude/settings.local.json and never approve with \"don't ask again\" on client repos.", "type": "tactical"},
+    {"task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)", "tool": "Claude or ChatGPT (GPT-6)", "shift": "No change. Add an \"AI agent dependency\" section that maps ISO 22301 BIA to ISO 42001 / NIST AI RMF controls.", "type": "strategic"},
+    {"task": "Vendor/architecture research", "tool": "Perplexity + ChatGPT deep research", "shift": "This week, pull Microsoft's Ignite Book of News directly; secondary blogs are already misreporting 2025 items as 2026.", "type": "watch"},
+    {"task": "Client proposals & SOWs", "tool": "Claude", "shift": "Add an optional \"agentic AI resilience review\" line item (sandbox, egress, payment authority) in light of California v. OpenAI.", "type": "strategic"},
+    {"task": "Executive decks", "tool": "Gamma 5", "shift": "No change. Use one slide on the OpenAI lawsuit as a board-level proof point for agent governance.", "type": "tactical"},
+    {"task": "Stakeholder audio walkthroughs", "tool": "ChatGPT voice / NotebookLM", "shift": "No change this week.", "type": "tactical"},
+    {"task": "Client advisory on AI data risk", "tool": "Claude + own judgment", "shift": "Brief clients on three items: agent sandbox escape (OpenAI), plaintext secrets in agent config (Claude Code), and agents with payment authority (ChatGPT Wallet).", "type": "strategic"}
+  ],
+  "community": [
+    {"source": "r/ClaudeAI", "signal": "Search found no indexed top posts for this week. Recent digests show recurring weekly-usage-limit complaints.", "so_what": "Low signal today. Check the subreddit directly around the Nov 19 listing for any change in limits or pricing."},
+    {"source": "Developer press (DEV / Privacy Guides)", "signal": "The Claude Code secrets leak (\"2,539 live secrets\") is circulating widely in developer communities.", "so_what": "Expect clients' security teams to ask about it. Have the gitignore and rotate guidance ready."},
+    {"source": "r/LocalLLaMA", "signal": "No indexed posts for this week. The standing theme is that dense models beat MoE at a 16GB VRAM ceiling.", "so_what": "Local models remain a credible option for air-gapped DR drafting where data can't leave the client."}
+  ],
+  "watch": [
+    {"kind": "deadline", "title": "Anthropic IPO pricing Nov 18, trading Nov 19", "body": "Watch for final price, first-day trading and any new risk-factor disclosures about Claude Code security."},
+    {"kind": "watch", "title": "Microsoft Ignite Nov 17–20", "body": "Copilot agent GA, Agent 365 governance, billing changes and data-boundary defaults. Check the official Book of News before advising clients."},
+    {"kind": "regulatory", "title": "California v. OpenAI", "body": "OpenAI's response filing, and whether other states copy the public-nuisance theory for agent incidents."},
+    {"kind": "security", "title": "Claude Code secret scanning", "body": "Anthropic says built-in secret scanning and permission-handling changes are being considered. Watch release notes for a fix."},
+    {"kind": "pricing", "title": "ChatGPT Wallet rollout", "body": "Expansion beyond US Pro, and any enterprise admin controls over agent spending."}
+  ],
+  "sources": "Sources consulted: CNBC, Fortune and Yahoo Finance (Anthropic IPO); NPR, ABC News, the CA AG press release and TechCrunch (OpenAI lawsuit and evaluators); The Neuron and DEV weekly digests; iTnews, Notebookcheck and Privacy Guides (Claude Code secrets); Ignite 2026 previews (borncity, aguidetocloud); xAI release notes; Perplexity, Notion and Gamma coverage; plus BCP/DR trade press (ITPro, TechTarget, Sayers)."
+}

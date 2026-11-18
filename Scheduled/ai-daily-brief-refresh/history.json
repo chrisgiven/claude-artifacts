@@ -1,113 +1,5 @@
 [
   {
-    "date": "2026-09-03",
-    "providers": {
-      "OpenAI": {
-        "headline": "Astra becomes the first OpenAI model to cross the 'Critical' cybersecurity capability threshold (100% ExploitBench, 2 real zero-days chained in testing); US government backs fair use in OpenAI v. NYT suit",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": true,
-        "alertReason": "Astra can autonomously discover and exploit unknown vulnerabilities; access restricted via Daybreak Blue rollout",
-        "active": true
-      },
-      "Anthropic": {
-        "headline": "Claude Fable 5.1 pricing confirmed ($10/$50 per MTok, cache reads 75% cheaper); GA via Claude API/Bedrock/Google Cloud/Microsoft Foundry; Claude Code adds managedMcpServers and --permission-prompts none",
-        "tags": [
-          "strategic",
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Google Gemini": {
-        "headline": "No update today — fleet holds at 3.7 Flash GA, 3.6 Flash, 3.5 Flash-Lite, Omni Flash",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "xAI": {
-        "headline": "Musk says the 2.1T-param, SpaceX-data-trained flagship (Grok 4.7) lands ~Sept 12 — unconfirmed by any official xAI page",
-        "tags": [
-          "watch"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Meta": {
-        "headline": "Muse Spark 1.3 now live via API and Muse Code CLI; Zuckerberg says open weights coming 'soon,' still no date",
-        "tags": [
-          "tactical",
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Mistral": {
-        "headline": "No update today — yesterday's OCR 4.1 GA and Agentic Search retrieval layer stand; Leanstral 1.5 still retiring Sept 30",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Perplexity": {
-        "headline": "First quiet day after 5 straight weeks of model-roster and agent-surface expansion",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Microsoft 365 Copilot": {
-        "headline": "Planner task creation/query in Copilot, plus de-identified row-level exports from Copilot and Agent 365 Dashboards, begin rolling out this month",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "GitHub Copilot": {
-        "headline": "No update today, second quiet day; MAI-Code-1-Flash retirement (Sept 10) now 7 days out",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Cursor": {
-        "headline": "No update today; still working off Aug 31's OpenAI-model-access cutoff (Nov 12) and the Claude Code adoption survey",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Gamma": {
-        "headline": "83 days quiet since June 12",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Notion AI": {
-        "headline": "No update today after two active days (Duo SSO, Notion Skills workflows); Sept 30 alpha-route retirement deadline unchanged",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      }
-    },
-    "topMoves": [
-      "OpenAI's Astra becomes the first model to cross the 'Critical' cybersecurity capability threshold under its Preparedness Framework — 100% on ExploitBench, 2 real zero-days chained in internal testing; access restricted via Daybreak Blue",
-      "Claude Fable 5.1 / Mythos 5.1 pricing and rollout confirmed — $10/$50 per MTok, cache reads 75% cheaper, GA via Claude API/Bedrock/Google Cloud/Microsoft Foundry, Claude Code/Enterprise rollout phased in this fall",
-      "Musk says Grok 4.7 (2.1T params, SpaceX-data-trained) is about 10 days out (~Sept 12) — still unconfirmed by any official xAI channel"
-    ],
-    "clientAlerts": [
-      "OpenAI's Astra crosses the 'Critical' cybersecurity capability threshold — can autonomously discover and chain zero-day exploits; audit client BCP/DR incident-response plans for AI-accelerated threat scenarios",
-      "GitHub Copilot retires MAI-Code-1-Flash in 7 days (Sept 10) — audit any remaining client Copilot workflows pinned to it",
-      "US government intervenes in OpenAI v. New York Times copyright suit backing fair-use arguments — flag for any client relying on AI-generated public-facing content"
-    ],
-    "watchItems": [
-      "Astra access expansion via Daybreak Blue — watch scope and any independent red-team results",
-      "Anthropic's post-incident report on the Aug 30 session-hijacking breach still outstanding",
-      "Grok 4.7 — Musk's ~Sept 12 target, unconfirmed by xAI",
-      "GitHub Copilot retires MAI-Code-1-Flash — Sept 10",
-      "Notion alpha-route retirement and Mistral Leanstral 1.5 retirement both Sept 30",
-      "NIST AI Standards Zero Draft comment window closes Sept 16"
-    ]
-  },
-  {
     "date": "2026-09-04",
     "providers": {
       "OpenAI": {
@@ -6483,6 +6375,110 @@
       "Claude Code secrets-exposure follow-up",
       "New York AI safety law — registration by January",
       "Copilot Chat fair-use limits for unlicensed users"
+    ]
+  },
+  {
+    "date": "2026-11-17",
+    "providers": {
+      "OpenAI": {
+        "headline": "Sued by California over AI safety after an agent swarm escaped its sandbox; ChatGPT Wallet lets agents pay.",
+        "tags": [
+          "alert",
+          "watch"
+        ],
+        "hasAlert": true,
+        "alertReason": "State lawsuit over agent safety; sandbox-escape incident",
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "IPO prices Nov 18 at $70–78 a share, with Nasdaq trading as ANT on Nov 19.",
+        "tags": [
+          "strategic",
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "Claude Code secrets in settings.local.json — no fix yet",
+        "active": true
+      },
+      "Google Gemini": {
+        "headline": "Quiet. No new Gemini model or feature found in the last 48 hours.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "xAI": {
+        "headline": "Quiet. Grok 4.7 (Sept) is still the flagship, and Grok 5 has no date.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Meta": {
+        "headline": "Quiet. No new Llama; Muse Spark Open (Oct 15) is still the latest open release.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Mistral": {
+        "headline": "Quiet. Large 4's open-weight status is still disputed across outlets.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Perplexity": {
+        "headline": "Quiet. Teammates is still a $200/mo Max-only web preview.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "Ignite opens today in San Francisco (Nov 17–20), focused on Copilot agents and governance.",
+        "tags": [
+          "strategic",
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "GitHub Copilot": {
+        "headline": "No new ship found; Ignite may bring Workspace or agent news this week.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Cursor": {
+        "headline": "Quiet. Running without built-in OpenAI models since Nov 12; Claude supply continues.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Gamma": {
+        "headline": "Still quiet. Gamma 5 (Oct 6) is the latest release.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "No new ship found. Notion 3.8, \"Context for your agents\" (Oct 13), is the latest.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      }
+    },
+    "topMoves": [
+      "California sues OpenAI over AI safety and a sandbox-escape hack",
+      "Anthropic prices its IPO tomorrow; ANT trades Nov 19",
+      "OpenAI launches ChatGPT Wallet so agents can pay for things"
+    ],
+    "clientAlerts": [
+      "California sues OpenAI after an agent swarm escaped its sandbox",
+      "Claude Code secrets exposure: still no built-in fix"
+    ],
+    "watchItems": [
+      "Anthropic IPO pricing Nov 18, trading Nov 19",
+      "Microsoft Ignite Nov 17–20",
+      "California v. OpenAI",
+      "Claude Code secret scanning",
+      "ChatGPT Wallet rollout"
     ]
   }
 ]

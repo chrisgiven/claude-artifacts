@@ -1,120 +1,5 @@
 [
   {
-    "date": "2026-09-02",
-    "providers": {
-      "OpenAI": {
-        "headline": "New \"Site tools\" (WebMCP) let ChatGPT Work/Codex agents discover and use tooling on live websites, including signed-in sessions; Healthcare Public Data GA for Clinicians; temporary chat gained more personalization controls.",
-        "tags": [
-          "strategic",
-          "tactical"
-        ],
-        "hasAlert": true,
-        "alertReason": "Agents can now act on authenticated/signed-in website sessions — client AI-usage policies assuming public-only access need review",
-        "active": true
-      },
-      "Anthropic": {
-        "headline": "Claude Fable 5.1 and Claude Mythos 5.1 launched — first major model release since Opus 5/Sonnet 5; Claude Code fixed macOS 12 launch failures and a permission-approval regression; Enterprise skill/plugin security scanning added.",
-        "tags": [
-          "strategic",
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Google Gemini": {
-        "headline": "No headline release today. Fleet unchanged: 3.6 Flash, 3.5 Flash-Lite, Omni 1.1 Flash, 3.5 Transcribe.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "xAI": {
-        "headline": "Grok Build shipped smarter session-resume browsing and configurable default permission mode; Grok 4.7 rumored but still unconfirmed.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Meta": {
-        "headline": "No release since Muse Glimmer (Aug 10) — 23 days quiet.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Mistral": {
-        "headline": "OCR 4.1 reached GA; new Agentic Search retrieval layer for complex documents; Mistral Common fixed multi-image ordering. Leanstral 1.5 still retiring Sept 30.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Perplexity": {
-        "headline": "Computer in Email launched (start/continue Computer sessions from an email thread); 20+ new licensed finance data sources added, further widening the Chinese-origin/uncertain-provenance model surface.",
-        "tags": [
-          "strategic",
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "Continued growth of Chinese-origin/uncertain-provenance models and new agent surfaces (email-triggered sessions) — regulated-client exclusion list needs another review",
-        "active": true
-      },
-      "Microsoft 365 Copilot": {
-        "headline": "Unified Copilot/M365 Copilot app began mobile rollout today (Windows/macOS mid-September); PowerPoint gained files/communications-grounded Agent Mode; Outlook Copilot Chat can reason across full inbox/calendar.",
-        "tags": [
-          "strategic",
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "GitHub Copilot": {
-        "headline": "No new headline today — yesterday's six-model retirement stands; MAI-Code-1-Flash follows Sept 10.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Cursor": {
-        "headline": "No new headline today. UC San Diego/Cornell survey finds Claude Code has overtaken Cursor and Copilot in professional usage/satisfaction.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Gamma": {
-        "headline": "No release since June 12 — 82 days quiet.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Notion AI": {
-        "headline": "Duo SSO login added; Developers shipped private draft creation and reusable Notion Skills workflows. Sept 30 alpha-route retirement deadline still stands.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      }
-    },
-    "topMoves": [
-      "Anthropic launches Claude Fable 5.1 and Claude Mythos 5.1 — first major model release since Opus 5/Sonnet 5",
-      "OpenAI's WebMCP-based Site tools give ChatGPT agents access to signed-in websites",
-      "Microsoft's unified Copilot app begins rolling out (mobile today, Windows/macOS mid-September)"
-    ],
-    "clientAlerts": [
-      "OpenAI Site tools/WebMCP give ChatGPT Work and Codex agents access to authenticated website sessions — review client AI-usage policy before agents act on signed-in state.",
-      "GitHub Copilot retires MAI-Code-1-Flash in 8 days (Sept 10) — last of the six-model wave that began Sept 1; audit remaining client workflows now.",
-      "Perplexity's Chinese-origin/uncertain-provenance model roster keeps growing (Computer in Email, 20+ new finance data sources) — fifth straight week; re-check the regulated-client exclusion list."
-    ],
-    "watchItems": [
-      "Fable 5.1 / Mythos 5.1 pricing and Claude Code/API rollout details not yet posted",
-      "Anthropic's post-incident report on the Aug 30 session-hijacking breach still outstanding",
-      "NIST AI Standards Zero Draft comment window closes Sept 16",
-      "GitHub Copilot retires MAI-Code-1-Flash Sept 10",
-      "Notion alpha-route retirement and Mistral Leanstral 1.5 retirement both Sept 30",
-      "Microsoft's unified Copilot app Windows/macOS rollout mid-September"
-    ]
-  },
-  {
     "date": "2026-09-03",
     "providers": {
       "OpenAI": {
@@ -6497,6 +6382,107 @@
       "Claude API: Sonnet 4.5 retires and Opus 4.8 fast mode is removed — Nov 30",
       "ChatGPT Advanced and Standard Voice retire — Dec 11",
       "OpenAI → Cursor access: open-ended temporary extension"
+    ]
+  },
+  {
+    "date": "2026-11-16",
+    "providers": {
+      "OpenAI": {
+        "headline": "OpenAI bought Orchestra Bio on Nov 15 and reportedly broke up its robotics team on Nov 16.",
+        "tags": [
+          "strategic"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "IPO pricing is set for Nov 18 at $70–78, while a Claude Code secrets-leak report draws attention.",
+        "tags": [
+          "alert",
+          "watch"
+        ],
+        "hasAlert": true,
+        "alertReason": "Claude Code secrets-exposure report",
+        "active": true
+      },
+      "Google Gemini": {
+        "headline": "No new Gemini release was found in the last 48 hours.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "xAI": {
+        "headline": "Still no Grok 5; Grok 4.7 (Sept) and Voice 3.0 (Oct 14) are the latest releases.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Meta": {
+        "headline": "No new release was found, and the Muse Spark 1.2 weights are still unshipped.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Mistral": {
+        "headline": "No new release since Large 4 on Oct 29.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Perplexity": {
+        "headline": "No new release in the last 48 hours; Teammates agents (Nov 5, $200/mo Max only) is still the latest.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "Ignite opens Nov 17, and Office-in-Copilot reaches general availability this month.",
+        "tags": [
+          "tactical",
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "GitHub Copilot": {
+        "headline": "No confirmed update was found.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Cursor": {
+        "headline": "No new update after the Nov 12 OpenAI cutoff was extended.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Gamma": {
+        "headline": "No release in the last 48 hours; Gamma 5 (early Oct) is still current.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "No new release was found.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      }
+    },
+    "topMoves": [
+      "Microsoft Ignite opens tomorrow, with Copilot billing and agent governance expected to lead",
+      "Claude Code secrets-exposure report puts a security question on Anthropic's IPO week",
+      "OpenAI buys Orchestra Bio and breaks up its robotics team"
+    ],
+    "clientAlerts": [
+      "Claude Code 'Don't Ask Again' reportedly leaked 2,539 secrets to GitHub"
+    ],
+    "watchItems": [
+      "Microsoft Ignite keynote — Nov 17",
+      "Anthropic IPO pricing Nov 18, trading Nov 19",
+      "Claude Code secrets-exposure follow-up",
+      "New York AI safety law — registration by January",
+      "Copilot Chat fair-use limits for unlicensed users"
     ]
   }
 ]
