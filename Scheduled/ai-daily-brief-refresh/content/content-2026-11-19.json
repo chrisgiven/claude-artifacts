@@ -1,0 +1,79 @@
+{
+  "date": "2026-11-19",
+  "client_alerts": [
+    {
+      "headline": "Banks shift AI-agent liability onto customers (Citi, PNC, Citizens)",
+      "body": "Digests report that on Nov 18 **Citi, PNC and Citizens** updated account terms so customers are responsible for anything a third-party AI agent does in their accounts. For any client letting agents (Copilot Autopilot, ChatGPT agents, Perplexity Teammates) touch banking or treasury portals, this moves the loss onto them. Verify the exact wording with each bank and add it to the AI-use policy and BIA for finance processes. PNC is an active engagement, so raise it there first."
+    },
+    {
+      "headline": "Google revised Gemini privacy controls",
+      "body": "One Nov 18 digest reports that Google changed Gemini's privacy and data-retention controls. Details aren't confirmed from a primary source yet. Before recommending Gemini for client documents, re-check the Workspace and consumer data-use settings."
+    }
+  ],
+  "top_moves": [
+    {
+      "title": "Anthropic begins trading on Nasdaq today",
+      "date_label": "Nov 19, 2026",
+      "urgent": true,
+      "body": "Pricing ran last night and **ANT** opens for its first trading day today on Nasdaq Global Select. Insiders may be able to sell up to ~316M Class A shares on day one. No first-day price was available at press time.",
+      "tag": "strategic"
+    },
+    {
+      "title": "Ignite Day 2–3: Agent 365 and Entra Agent Identity reach GA",
+      "date_label": "Nov 18, 2026",
+      "urgent": false,
+      "body": "Microsoft is giving agents their own Entra identities and a governance plane in **Agent 365**. Autopilot is already running under those identities across Teams and email. This is the control layer clients will need for agent inventories, access reviews and kill-switches in their DR plans.",
+      "tag": "tactical"
+    },
+    {
+      "title": "Google GTIG: autonomous AI attacks have hit a new stage",
+      "date_label": "Nov 18, 2026",
+      "urgent": false,
+      "body": "Google's Threat Intelligence Group warned that malicious use of autonomous AI agents has moved to a new phase. Feed this into ransomware and cyber-recovery scenario planning. Assume faster dwell-to-impact times.",
+      "tag": "alert"
+    }
+  ],
+  "providers": [
+    {"name": "OpenAI", "display": "OpenAI", "headline": "Digests report GPT-6.2 Astra and Sol launched, plus research showing coding agents finish 46% of 2–4 hour tasks unaided.", "detail": "Aggregators on Nov 18 report two new models, **GPT-6.2 Astra and Sol**. No primary OpenAI announcement was found, so treat the model names and pricing as unconfirmed. OpenAI's own research says coding agents now finish 46% of its 2–4 hour research tasks without human help, up from 23% in March. ChatGPT Images 2.6 (Nov 4) is the last confirmed release-notes entry.", "tags": ["watch"], "classification": "watch", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "Anthropic", "display": "Anthropic", "headline": "First day of trading on Nasdaq (ANT) after last night's pricing.", "detail": "The IPO priced on Nov 18, and **ANT** opens today on the Nasdaq Global Select Market. Employees holding about 15% of equity can sell some shares on day one. For clients, nothing changes in product or data terms. Expect quarterly disclosure cadence and more scrutiny of enterprise SLAs from here.", "tags": ["strategic"], "classification": "strategic", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "Google Gemini", "display": "Google Gemini", "headline": "GTIG warns of autonomous AI attacks; Gemini privacy controls reportedly revised.", "detail": "Google's Threat Intelligence Group says malicious use of autonomous AI has reached a new stage. A digest also reports revised Gemini privacy controls, but details are unconfirmed. No new Gemini model was found this week.", "tags": ["alert"], "classification": "alert", "active": true, "hasAlert": true, "alertReason": "Gemini privacy controls reportedly changed. Re-check data-use settings before recommending it for client documents."},
+    {"name": "xAI", "display": "xAI / Grok", "headline": "Quiet. Grok 4.7 (Sept 21) is still the latest model; Grok 5 has no date.", "detail": "No November model launch was found. The only November change in xAI's release notes is the retirement of grok-imagine-image-quality on Nov 2.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Meta", "display": "Meta", "headline": "Quiet. Muse Ember (Nov 9) is the latest; no Llama release.", "detail": "Meta's lineup is now the Muse family. Muse Ember, its lightest model, shipped Nov 9. The Muse Spark 1.2 weights are promised but not yet confirmed shipped.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Mistral", "display": "Mistral", "headline": "Quiet. Large 4 open weights (Oct 29) is still the latest; Large 5 is reportedly in pretraining.", "detail": "No November release was found. Mistral remains the sovereign/EU-hosted option for clients with data-residency constraints.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Perplexity", "display": "Perplexity", "headline": "Quiet. Teammates (Max, web only) is still the latest ship, from Nov 6.", "detail": "Teammates are workspace agents with project memory, at $200/month on Max. Mobile and desktop apps are promised. The Nov 6 drop also included local Computer on Mac and patent search.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Microsoft 365 Copilot", "display": "Microsoft 365 Copilot", "headline": "Ignite: Agent 365 and Entra Agent Identity GA; Copilot Home GA; Autopilot rolling out to Frontier.", "detail": "**Agent 365** gives IT one place to govern agents, and **Entra Agent Identity** is now GA, so each agent gets its own identity. Copilot Home (Chat + Cowork merged) is GA. Autopilot is an always-on agent that watches Teams and email, rolling out to Frontier customers. Ignite runs through Nov 20.", "tags": ["tactical"], "classification": "tactical", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "GitHub Copilot", "display": "GitHub Copilot", "headline": "Microsoft's in-house Code 2 and Code 2 Flash models are GA in GitHub Copilot.", "detail": "Announced at Ignite: two Microsoft-built coding models are now selectable in GitHub Copilot. Cyber 2 Flash, a security model, goes to a limited customer group first.", "tags": ["tactical"], "classification": "tactical", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "Cursor", "display": "Cursor", "headline": "No new ship found; built-in OpenAI models have been gone since Nov 12.", "detail": "Bring-your-own OpenAI keys still work. Grok 4.7 Fast remains a Cursor and Grok Build exclusive.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Gamma", "display": "Gamma", "headline": "Still quiet. Gamma 5 (Oct 6) is the current release.", "detail": "Gamma 5 added agent-built decks with context from Slack, Notion, Granola and 20+ other tools. Nothing new in November.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Notion AI", "display": "Notion AI", "headline": "No new ship found.", "detail": "The last release-notes entry is Oct 19.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""}
+  ],
+  "persistent_signals": [
+    {"provider": "Anthropic", "text": "Anthropic — IPO — 2 weeks running (price range set last week; first trading day today)"},
+    {"provider": "Microsoft 365 Copilot", "text": "Microsoft 365 Copilot — Autopilot and agent platform at Ignite — 2 weeks running (Frontier rollout, now Agent 365 and Entra Agent Identity GA)"}
+  ],
+  "month_themes": {
+    "then": "Agent permissions and conditional access; stolen provider API keys; real-time co-editing in ChatGPT",
+    "now": "Agent identity and governance go GA; AI-agent liability moving to customers; autonomous AI as an attack vector"
+  },
+  "habits": [
+    {"task": "BCP/DR plan narratives & runbooks", "tool": "Claude (Opus 5.5)", "shift": "No change. Add an **agent kill-switch / identity-revocation step** (Entra Agent Identity) to every runbook that touches M365.", "type": "tactical"},
+    {"task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)", "tool": "Claude + NotebookLM", "shift": "Map agent identities to SOC 2 access-review controls. Agent 365 now gives you an inventory to cite as evidence.", "type": "tactical"},
+    {"task": "Vendor/architecture research", "tool": "Perplexity / Claude research", "shift": "Don't cite GPT-6.2 Astra or Sol in client material until OpenAI confirms them. Today's coverage is aggregator-only.", "type": "watch"},
+    {"task": "Client proposals & SOWs", "tool": "Claude", "shift": "Add an optional **AI-agent liability review** workstream. Bank terms changed Nov 18 (Citi, PNC, Citizens).", "type": "strategic"},
+    {"task": "Executive decks", "tool": "Gamma 5 / Copilot in PowerPoint", "shift": "No change. Use Copilot Home inside M365 tenants where client data must stay in-tenant.", "type": "tactical"},
+    {"task": "Stakeholder audio walkthroughs", "tool": "NotebookLM / ChatGPT voice", "shift": "No change.", "type": "tactical"},
+    {"task": "Client advisory on AI data risk", "tool": "Claude", "shift": "Brief clients on two changes: agents now carry their own identities, and banks now hold customers liable for agent actions. Re-check Gemini privacy settings once Google's change is confirmed.", "type": "strategic"}
+  ],
+  "community": [
+    {"source": "r/LocalLLaMA", "signal": "A recurring theme in community digests is that local LLMs are ready for real work.", "so_what": "Open-weight models (Muse Glimmer 30B, Mistral Large 4) are a viable offline or air-gapped fallback when cloud AI is unavailable during an incident."},
+    {"source": "Reddit (general)", "signal": "Search surfaced no dated, high-engagement r/ClaudeAI or r/OpenAI threads for Nov 18–19, so none are reported today.", "so_what": "Today's community signal is thin. Check again tomorrow, when ANT trading and GPT-6.2 reactions should show up."}
+  ],
+  "watch": [
+    {"kind": "watch", "title": "ANT first-day trading and lock-up details", "body": "Watch the open and close today, and the insider-sale volume. These shape how much leverage enterprise buyers have on Anthropic pricing."},
+    {"kind": "deadline", "title": "Ignite wraps Nov 20", "body": "Look for final Book of News items, especially Agent 365 licensing and Autopilot GA dates."},
+    {"kind": "regulatory", "title": "Bank AI-agent terms", "body": "Expect other banks to follow Citi, PNC and Citizens. Track the changes for finance-process BIAs."},
+    {"kind": "security", "title": "GTIG autonomous-attack report", "body": "Pull the full GTIG write-up for indicators to fold into ransomware tabletop scenarios."},
+    {"kind": "watch", "title": "OpenAI GPT-6.2 confirmation", "body": "Confirm whether Astra and Sol are real, and their data-use terms, before advising clients."}
+  ],
+  "sources": "Sources consulted: OpenAI help-center release notes, Anthropic newsroom and IPO coverage (Leverage Shares, Trefis, Khaleej Times), Microsoft Ignite coverage (Constellation Research, RCP Mag, Cloud Wars, explainx.ai), The Neuron and aiweekly Nov 18 digests, xAI release notes, Meta/Mistral/Perplexity/Gamma/Notion trackers, and Reddit mirrors."
+}

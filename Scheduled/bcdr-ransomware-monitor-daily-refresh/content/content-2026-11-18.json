@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-18",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {"title": "ActiveCloud (Belarus) cloud provider hit by ransomware", "tags": ["Cloud", "Third-party", "High-profile"], "summary": "Belarusian cloud host ActiveCloud disclosed a Nov 11 ransomware attack that encrypted parts of its infrastructure, disrupting hosted sites, SmartMail email and virtual servers (including Domino's Belarus); most services were restored by Nov 13 with no evidence of customer data theft.", "source": {"name": "TechJack Solutions", "url": "https://techjacksolutions.com/?p=108481"}},
+        {"title": "Nota Groep listed on ransomware leak site", "tags": ["Newly claimed"], "summary": "Transportation-sector firm Nota Groep appeared on a ransomware group's leak site on Nov 10; the claim is not yet confirmed by the victim.", "source": {"name": "SOCRadar Ransomware Intelligence", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/nota-groep-inc-ransom-a69d6b76"}},
+        {"title": "Ransomware claims up 23% in Q3 2026", "tags": ["Trend", "Reference"], "summary": "NCC Group recorded 2,865 ransomware victim claims in Q3 2026, a 23% rise, with industrial organizations the most-targeted sector.", "source": {"name": "Redmond Magazine", "url": "https://redmondmag.com/articles/2026/10/21/ransomware-attacks-rise-23-percent.aspx"}}
+      ],
+      "note": "Thin named-victim coverage this cycle; additional Nov 9–13 leak-site posts (n0n, Storm-1567, Everest) did not name victims."
+    },
+    "outage": {
+      "items": [
+        {"title": "Microsoft 365 outage (Nov 12–13)", "tags": ["Cloud", "High-profile"], "summary": "A significant Microsoft 365 disruption, logged as incidents EX1550543 and MO1550821 rather than an Azure platform incident, affected Outlook and related services across several regions.", "source": {"name": "Macwelt", "url": "https://www.macwelt.de/article/3284440/internet-probleme-outlook-microsoft.html"}},
+        {"title": "M365 outage knock-on impact to business, government and AI connectors", "tags": ["Third-party", "Cloud"], "summary": "Last week's Microsoft disruption hit businesses, government agencies and healthcare organisations, and OpenAI and Anthropic reported Microsoft connector issues.", "source": {"name": "Khaleej Times", "url": "https://www.khaleejtimes.com/explainer-can-businesses-rely-on-cloud-services-after-microsofts-global-outage"}}
+      ],
+      "note": "No confirmed AWS or Google Cloud platform outage found for November 2026."
+    },
+    "cyber": {
+      "items": [
+        {"title": "CISA warns Node2Shell (Brotli) flaw under active exploitation", "tags": ["KEV add", "Critical"], "summary": "CISA confirmed attackers are exploiting the critical Node2Shell vulnerability and added it to the KEV catalog.", "source": {"name": "BleepingComputer", "url": "https://bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw"}},
+        {"title": "Four KEV adds: GPUStack, FreeSWITCH, OpenSSH, IBM Aspera Faspex", "tags": ["KEV add"], "summary": "CISA added four exploited flaws on Nov 9 with a Nov 12 federal remediation deadline.", "source": {"name": "eSecurityPlanet", "url": "https://www.esecurityplanet.com/vulnerabilities/news-cisa-kev-gpustack-freeswitch-openssh-ibm-november-2026/"}},
+        {"title": "Six KEV adds incl. Outlook, Chrome, Barracuda, Cisco BroadWorks", "tags": ["KEV add", "Zero-day"], "summary": "CISA added six exploited vulnerabilities on Nov 10 affecting Microsoft Outlook, Google Chrome, Barracuda appliances, Cisco BroadWorks and Openwave Webtop.", "source": {"name": "SecurityOnline", "url": "https://securityonline.info/cisa-kev-six-vulnerabilities-november-2026/"}},
+        {"title": "Ivanti Connect Secure flaws — KEV deadline Nov 13", "tags": ["KEV add", "Critical"], "summary": "Exploited Ivanti Connect Secure vulnerabilities were added to KEV with a Nov 13 remediation deadline for federal agencies.", "source": {"name": "Tech Insider", "url": "https://tech-insider.org/ivanti-connect-secure-cve-2026-111357-118527-kev-deadline-nov-13-2026/"}},
+        {"title": "Metabase zero-day enables unauthenticated admin takeover", "tags": ["Zero-day", "Data exposure", "KEV add"], "summary": "CVE-2026-72898 in Metabase lets unauthenticated attackers gain administrator access and exfiltrate sensitive data; CISA added it alongside Windows and Cisco Secure Firewall flaws.", "source": {"name": "SC World", "url": "https://www.scworld.com/brief/cisa-adds-metabase-windows-and-cisco-secure-firewall-flaws-to-exploited-vulnerabilities-list"}},
+        {"title": "Zyxel GS1900 zero-day used to hijack ~1,000 switches", "tags": ["Zero-day"], "summary": "Attackers exploited CVE-2026-107441 in Zyxel GS1900 switches to take over roughly 1,000 devices.", "source": {"name": "Carthage Electronics", "url": "https://carthageelectronics.com/?p=3738"}}
+      ]
+    },
+    "physical": {
+      "items": [
+        {"title": "M 6.6 — 148 km WSW of Tual, Indonesia (Nov 16)", "tags": ["M 6.6"], "summary": "Strong offshore earthquake in the Banda Sea region; USGS green alert, no tsunami.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tymu"}},
+        {"title": "M 5.3 — 16 km ESE of Comandău, Romania (Nov 18)", "tags": ["M 5.3"], "summary": "Moderate earthquake in the Vrancea seismic zone, felt regionally; no USGS PAGER alert.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tyw8"}},
+        {"title": "Cyclone Murasu landfall in Andhra Pradesh, India", "tags": ["Tropical"], "summary": "Cyclone Murasu made landfall on the Andhra Pradesh coast on Nov 3, the second cyclone there in under a week.", "source": {"name": "Verisk Extreme Event Solutions", "url": "https://alert.risksolutions.verisk.com/"}},
+        {"title": "Storms in Santa Catarina, Brazil", "tags": ["Flood"], "summary": "Santa Catarina reported 671 storm-related incidents across 76 municipalities on Nov 4–5.", "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}},
+        {"title": "Deadly flooding across Ecuador", "tags": ["Flood"], "summary": "Heavy rain and flooding across Ecuador had caused 12 deaths as of Nov 5.", "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}}
+      ],
+      "note": "Most recent non-seismic items date from early November; no current November 2026 wildfire reports found."
+    }
+  }
+}

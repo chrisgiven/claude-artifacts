@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-19",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {"title": "ActiveCloud (Belarus) — cloud infrastructure encrypted", "tags": ["Critical", "Cloud", "Third-party"], "summary": "Belarusian cloud provider ActiveCloud disclosed on Nov 11 that ransomware encrypted parts of its cloud infrastructure; most services were restored by Nov 13 and it reports no evidence of customer data theft.", "source": {"name": "Cyble", "url": "https://cyble.com/?p=107497"}},
+        {"title": "Leware Construction — claimed by Storm-1567", "tags": ["Newly claimed"], "summary": "US construction firm listed on a leak site with an attack date of Nov 11, 2026; claim not independently confirmed.", "source": {"name": "SOCRadar", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/leware-construction-company-storm-1567-803d2513"}},
+        {"title": "Advantage Archives Inc. — claimed by Ransom group", "tags": ["Newly claimed", "Data exposure"], "summary": "Records-management company posted as a victim on a ransomware leak site this month; claim only, no victim statement found.", "source": {"name": "SOCRadar", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/advantage-archives-inc-ransom-a749af0e"}},
+        {"title": "Everest posts 'final notice before publication' victim", "tags": ["Newly claimed"], "summary": "Everest listed an unnamed victim with an attack date of Nov 13, 2026, threatening data publication.", "source": {"name": "SOCRadar", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/final-notice-before-publication-everest-8cb7fb73"}},
+        {"title": "Ransomware volumes up 23% — industry trend", "tags": ["Trend", "Reference"], "summary": "Industry data shows ransomware attack counts rising roughly 23% year over year heading into Q4 2026.", "source": {"name": "Redmond Magazine", "url": "https://redmondmag.com/articles/2026/10/21/ransomware-attacks-rise-23-percent.aspx"}}
+      ],
+      "note": "Thin named-victim coverage this cycle; most entries are leak-site claims (SOCRadar tracker), not confirmed incidents."
+    },
+    "outage": {
+      "items": [
+        {"title": "Microsoft 365 multi-region disruption (Nov 12–13)", "tags": ["Cloud", "High-profile"], "summary": "Microsoft 365 services were disrupted for businesses, government and healthcare across several regions; AI vendors reported Microsoft connector failures. Not reflected on Azure status history.", "source": {"name": "Khaleej Times", "url": "https://www.khaleejtimes.com/explainer-can-businesses-rely-on-cloud-services-after-microsofts-global-outage"}},
+        {"title": "Outlook, Google and other services degraded (Nov 13)", "tags": ["Cloud"], "summary": "Macwelt reported significant problems reaching Outlook/Microsoft 365, Google and other online services on Nov 13.", "source": {"name": "Macwelt", "url": "https://www.macwelt.de/article/3284440/internet-probleme-outlook-microsoft.html"}},
+        {"title": "Google Cloud europe-west2-b power loss (Oct 20) — post-incident", "tags": ["Cloud", "Third-party", "Reference"], "summary": "A third-party London facility hosting a Google Cloud zone lost utility power and a controller fault blocked generator failover — a textbook BCDR single-point-of-failure case.", "source": {"name": "Cloud Outage Tracker 2026", "url": "https://presenc.ai/research/cloud-outage-tracker-2026"}},
+        {"title": "AWS publishes no 2026 post-event summaries", "tags": ["Trend", "Reference"], "summary": "Tracker notes AWS has not published a PES for any 2026 incident, leaving customers reliant on press reports for RCA.", "source": {"name": "Cloud Outage Tracker 2026", "url": "https://presenc.ai/research/cloud-outage-tracker-2026"}}
+      ],
+      "note": "No major AWS/Azure/GCP platform-wide outage found in the past 7 days; M365 incident is the headline."
+    },
+    "cyber": {
+      "items": [
+        {"title": "CISA adds GPUStack, FreeSWITCH, OpenSSH, IBM Aspera Faspex to KEV", "tags": ["KEV add", "Critical"], "summary": "Four actively exploited flaws added Nov 9 with an unusually short Nov 12 federal remediation and forensic-triage deadline.", "source": {"name": "eSecurity Planet", "url": "https://www.esecurityplanet.com/vulnerabilities/news-cisa-kev-gpustack-freeswitch-openssh-ibm-november-2026/"}},
+        {"title": "Node2Shell critical flaw now exploited", "tags": ["KEV add", "Critical"], "summary": "CISA warned that attackers are actively exploiting the critical Node2Shell vulnerability and ordered agencies to patch.", "source": {"name": "BleepingComputer", "url": "https://bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw"}},
+        {"title": "Ivanti Connect Secure flaws — KEV deadline Nov 13", "tags": ["KEV add", "Zero-day"], "summary": "Two Ivanti Connect Secure CVEs added to KEV with a Nov 13 deadline; VPN edge devices remain a prime initial-access target.", "source": {"name": "Tech Insider", "url": "https://tech-insider.org/ivanti-connect-secure-cve-2026-111357-118527-kev-deadline-nov-13-2026/"}},
+        {"title": "Metabase zero-day enables admin takeover and data exfiltration", "tags": ["Zero-day", "Data exposure", "KEV add"], "summary": "CISA listed a Metabase flaw (CVE-2026-72898) letting unauthenticated attackers gain admin and exfiltrate data, alongside Windows and Cisco Secure Firewall entries.", "source": {"name": "SC World", "url": "https://www.scworld.com/brief/cisa-adds-metabase-windows-and-cisco-secure-firewall-flaws-to-exploited-vulnerabilities-list"}},
+        {"title": "Cisco zero-days prompt CISA Emergency Directive, Five Eyes alert", "tags": ["Emergency Directive", "Zero-day", "High-profile"], "summary": "CISA issued an emergency directive with Five Eyes partners over exploited Cisco zero-days.", "source": {"name": "CyberScoop", "url": "https://cyberscoop.com/cisco-zero-days-cisa-emergency-directive-five-eyes/"}},
+        {"title": "APT29 targets older iPhones — Apple flaw added to KEV", "tags": ["KEV add"], "summary": "Apple CVE-2024-27834 added to KEV as APT29 exploits unpatched older iPhones; federal due date Nov 18.", "source": {"name": "Carthage Electronics brief", "url": "https://carthageelectronics.com/?p=3738"}},
+        {"title": "Zyxel switch zero-day used to hijack 996 devices", "tags": ["Zero-day"], "summary": "Attackers used CVE-2026-107441 to take over nearly 1,000 Zyxel switches.", "source": {"name": "Carthage Electronics brief", "url": "https://carthageelectronics.com/?p=3738"}}
+      ]
+    },
+    "physical": {
+      "items": [
+        {"title": "M 6.6 — 148 km WSW of Tual, Indonesia (Nov 16)", "tags": ["M 6.6"], "summary": "Strong offshore Banda Sea quake; USGS green alert, no tsunami.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tymu"}},
+        {"title": "M 5.3 — Vrancea, Romania (Nov 18)", "tags": ["M 5.3"], "summary": "Intermediate-depth quake 16 km ESE of Comandău felt across Romania; no tsunami.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tyw8"}},
+        {"title": "Cyclone Murasu lands on Andhra Pradesh coast", "tags": ["Tropical"], "summary": "Second cyclone in under a week to make landfall on India's Andhra Pradesh coast (Nov 3).", "source": {"name": "Verisk Alert", "url": "https://alert.risksolutions.verisk.com/"}},
+        {"title": "Ecuador nationwide flooding — 12 dead, 56,000+ affected", "tags": ["Flood"], "summary": "Heavy rains and flooding across Ecuador killed 12 and affected over 56,000 people as of Nov 5.", "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}},
+        {"title": "Santa Catarina, Brazil storms — 671 incidents in 76 municipalities", "tags": ["Flood"], "summary": "Severe storms Nov 4–5 generated 671 incidents across 76 municipalities in southern Brazil.", "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}}
+      ],
+      "note": "Quiet week for new physical events; no significant November wildfire reporting found."
+    }
+  }
+}
