@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-20",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {"title": "ActiveCloud (Belarus) cloud provider hit by ransomware", "tags": ["Critical", "Cloud", "Third-party"], "summary": "Outage began Nov 10 and was confirmed as ransomware on Nov 11, encrypting part of its cloud and disrupting business websites, email and virtual servers in Belarus and Russia; many services restored by Nov 12, no evidence of customer data theft.", "source": {"name": "The Record", "url": "https://therecord.media/belarus-cloud-provider-activecloud-ransomware-attack"}},
+        {"title": "Leware Construction Company claimed by Storm-1567", "tags": ["Newly claimed"], "summary": "Leak-site listing with an attack date of Nov 11; the victim name comes from the listing only and is not yet confirmed by the company.", "source": {"name": "SOCRadar", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/leware-construction-company-storm-1567-803d2513"}},
+        {"title": "Everest posts 'final notice before publication' victim", "tags": ["Newly claimed"], "summary": "Everest leak-site entry dated Nov 13 with the victim only partly identified; treat as an unverified claim.", "source": {"name": "SOCRadar", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/final-notice-before-publication-everest-8cb7fb73"}},
+        {"title": "n0n group lists unnamed US company", "tags": ["Newly claimed"], "summary": "New n0n group listing with an attack date of Nov 9 against an unnamed US victim; signals another small group active this month.", "source": {"name": "SOCRadar", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/company-188-n0n-5ebf0c48"}},
+        {"title": "Q3 2026 ransomware claims up 23%", "tags": ["Trend", "Reference"], "summary": "Leak-site tracking counted 2,865 ransomware victim claims in Q3 2026, a 23% rise.", "source": {"name": "Redmond Magazine", "url": "https://redmondmag.com/articles/2026/10/21/ransomware-attacks-rise-23-percent.aspx"}}
+      ],
+      "note": "Thin named-victim reporting this cycle; three of five items are unverified leak-site claims."
+    },
+    "outage": {
+      "items": [
+        {"title": "Microsoft 365 disruption Nov 12-13", "tags": ["Cloud", "High-profile"], "summary": "A multi-hour Microsoft 365 incident logged under M365 incident IDs rather than Azure platform status, part of a cluster of major outages in mid-November.", "source": {"name": "TechRepublic", "url": "https://www.techrepublic.com/article/news-november-2026-tech-outages-timeline/"}},
+        {"title": "Google Cloud europe-west2 (London) power loss", "tags": ["Cloud", "Critical"], "summary": "Tracker reports an ~8-hour London-region outage attributed to a utility cable fault during single-feed maintenance when generators failed to start; dating is inconsistent across sources.", "source": {"name": "Presenc.ai Cloud Outage Tracker", "url": "https://presenc.ai/research/cloud-outage-tracker-2026"}},
+        {"title": "AWS among mid-November outage cluster", "tags": ["Cloud"], "summary": "AWS is listed among the major Nov 12-17 outages, with few technical details and no published post-event summary.", "source": {"name": "MediaPost", "url": "https://www.mediapost.com/publications/article/410307/microsoft-aws-outages-reveal-cloud-failure-impact.html"}}
+      ],
+      "note": "Reporting is mostly secondary trackers; check provider status histories for authoritative detail."
+    },
+    "cyber": {
+      "items": [
+        {"title": "CISA adds GPUStack, FreeSWITCH, OpenSSH, IBM Aspera Faspex to KEV", "tags": ["KEV add", "Critical"], "summary": "Four actively exploited flaws added Nov 9 with an unusually short Nov 12 federal remediation and forensic-triage deadline.", "source": {"name": "eSecurity Planet", "url": "https://www.esecurityplanet.com/vulnerabilities/news-cisa-kev-gpustack-freeswitch-openssh-ibm-november-2026/"}},
+        {"title": "Ivanti Connect Secure flaws on KEV, Nov 13 deadline", "tags": ["KEV add", "Zero-day"], "summary": "Two Ivanti Connect Secure vulnerabilities under active exploitation were added to KEV with a Nov 13 remediation deadline.", "source": {"name": "Tech Insider", "url": "https://tech-insider.org/ivanti-connect-secure-cve-2026-111357-118527-kev-deadline-nov-13-2026/"}},
+        {"title": "CISA warns of active exploitation of critical Node2Shell flaw", "tags": ["KEV add", "Critical"], "summary": "CISA confirmed attackers are now exploiting the critical Node2Shell (Brotli) remote-code-execution flaw.", "source": {"name": "BleepingComputer", "url": "https://bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw"}},
+        {"title": "Zyxel GS1900 zero-day used to take over 996 switches", "tags": ["Zero-day"], "summary": "Attackers used CVE-2026-107441 to hijack close to a thousand Zyxel GS1900 switches, per a Nov 4 brief.", "source": {"name": "Tech Insider", "url": "https://tech-insider.org/?p=50354"}},
+        {"title": "Metabase, Windows and Cisco Secure Firewall flaws added to KEV", "tags": ["KEV add", "Data exposure"], "summary": "KEV additions include a Metabase zero-day enabling unauthenticated admin access and data exfiltration.", "source": {"name": "SC World", "url": "https://www.scworld.com/brief/cisa-adds-metabase-windows-and-cisco-secure-firewall-flaws-to-exploited-vulnerabilities-list"}}
+      ]
+    },
+    "physical": {
+      "items": [
+        {"title": "M6.6 earthquake, 149 km WSW of Tual, Indonesia (Nov 16)", "tags": ["M 6.6"], "summary": "Strong offshore quake in the Banda Sea region; USGS green alert, no tsunami.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tymu"}},
+        {"title": "M5.3 earthquake, Romania (Nov 18)", "tags": ["M 5.3"], "summary": "Vrancea-zone quake 17 km ESE of Comandău, Romania.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us7000tyw8"}},
+        {"title": "M5.0 earthquake near Pinnacles, CA (Nov 20)", "tags": ["M 5.0"], "summary": "Central California quake 10 km NW of Pinnacles; USGS green alert, feed tsunami flag set.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/nc75468702"}},
+        {"title": "Cyclone Murasu landfall, Andhra Pradesh, India", "tags": ["Tropical"], "summary": "Made landfall Nov 3, the second cyclone to hit the Andhra Pradesh coast in under a week.", "source": {"name": "Verisk Alert", "url": "https://alert.risksolutions.verisk.com/"}},
+        {"title": "Brazil and Ecuador storm and flood emergencies", "tags": ["Flood"], "summary": "Brazil recognized emergencies in 44 municipalities across 13 states; Ecuador flooding killed 12 and affected ~56,000 people.", "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}}
+      ],
+      "note": "No confirmed Atlantic hurricane or major US wildfire activity found for November."
+    }
+  }
+}

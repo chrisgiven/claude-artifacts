@@ -1,0 +1,201 @@
+{
+  "date": "2026-11-20",
+  "client_alerts": [
+    {
+      "headline": "Claude fast-mode and Sonnet 4.5 retirements land Nov 30",
+      "body": "Sonnet 4.5 and Opus 4.8 fast mode are removed on **Nov 30, 2026**, 10 days from now. Any client automation, runbook generator or integration pinned to those model IDs will start failing. Inventory pinned model strings now and move them to current models (Opus 5.5 fast mode no longer needs a beta header)."
+    },
+    {
+      "headline": "Autonomous agents now act without prompts: update AI-use disclosures",
+      "body": "Microsoft's **Autopilot** (Frontier program, rolling out from Nov 17) runs routine work without a user instruction, and Claude can now join **Google Meet calls as a visible participant** that takes notes. Clients need meeting-consent language and an agent inventory before these get switched on by default in their tenants."
+    }
+  ],
+  "top_moves": [
+    {
+      "title": "OpenAI reportedly ships GPT-6.2 Astra and Sol for professional work",
+      "date_label": "Nov 18, 2026",
+      "urgent": false,
+      "body": "A Nov 18 industry roundup reports GPT-6.2 Astra and Sol, aimed at professional work with lower compute cost on complex tasks, alongside a Sales plugin and 30+ partner integrations for ChatGPT. Model names conflict across secondary sources, so confirm on OpenAI's release notes before changing any client recommendation.",
+      "tag": "strategic"
+    },
+    {
+      "title": "Ignite wrap: Copilot repositioned as the 'OS for work'",
+      "date_label": "Nov 17–20, 2026",
+      "urgent": false,
+      "body": "Office in Copilot is GA for existing M365 Copilot tenants; **Autopilot** (autonomous agent) and **Copilot Workspaces** are Frontier-only; Copilot Code GA is expected in December. Microsoft also launched an AI Transparency Initiative with 40+ partners.",
+      "tag": "tactical"
+    },
+    {
+      "title": "Anthropic prices IPO at $83, above range, ~$1.5T valuation",
+      "date_label": "Nov 19, 2026",
+      "urgent": false,
+      "body": "Anthropic sold about 980M Class A shares at $83 (range was $70–$78) and listed on Nasdaq as ANT. Google, Nvidia and five other strategic partners committed $26B in non-voting stock; Anthropic is a Nasdaq 'controlled company'. First-day trading results were not yet in the sources checked.",
+      "tag": "watch"
+    }
+  ],
+  "providers": [
+    {
+      "name": "OpenAI",
+      "display": "OpenAI",
+      "headline": "GPT-6.2 Astra and Sol reportedly released Nov 18, with a Sales plugin and 30+ partner integrations.",
+      "detail": "The Neuron's Nov 18 roundup reports GPT-6.2 Astra and Sol targeting professional work at lower compute cost, a dedicated Sales plugin, and an updated legal-research configuration on Astra. Earlier this month: Images 2.6 (Nov 4) and Verified Business Agents beta (Nov 10). Naming is inconsistent across secondary sources; verify on OpenAI's release notes.",
+      "tags": ["strategic"],
+      "classification": "strategic",
+      "active": true,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Anthropic",
+      "display": "Anthropic",
+      "headline": "IPO priced at $83/share (above range), valuing Anthropic near $1.5T; ANT listed on Nasdaq Nov 19.",
+      "detail": "About 980M shares sold, with a 147M-share overallotment option and $26B of strategic non-voting purchases. On the product side, Claude Desktop added a Stable/Latest release-channel setting (Nov 17), and Claude can join Google Meet as a note-taking participant (Nov 12). Sonnet 4.5 and Opus 4.8 fast mode retire Nov 30.",
+      "tags": ["watch", "alert"],
+      "classification": "watch",
+      "active": true,
+      "hasAlert": true,
+      "alertReason": "Model and fast-mode retirements on Nov 30"
+    },
+    {
+      "name": "Google Gemini",
+      "display": "Google Gemini",
+      "headline": "Quiet today. Gemini 4 Argon, Carbon and Hydrogen remain the current lineup.",
+      "detail": "No new Gemini release found for Nov 19–20. Gemini 4 Argon (flagship, 1M output tokens) has been out since early October, and Hydrogen launched last week as the fast tier across API, app, Workspace and Search.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "xAI",
+      "display": "xAI / Grok",
+      "headline": "Quiet. Grok 5 is still unreleased; Grok 4.7 (Sept 21) remains the latest model.",
+      "detail": "xAI retired grok-imagine-image-quality and grok-imagine-image-pro on Nov 2. Grok 5 is confirmed but has no release date. Grok 4.7 Fast is still available only inside Cursor and Grok Build.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Meta",
+      "display": "Meta",
+      "headline": "Quiet. No November Muse release, and open weights are still unconfirmed.",
+      "detail": "Muse Spark stays proprietary and hosted. Muse Video is slated for late 2026 with a preview live. No Llama-branded release found.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Mistral",
+      "display": "Mistral",
+      "headline": "Quiet. The private-cloud and on-prem release of Studio Managed Agents is still pending.",
+      "detail": "Mistral Large 4 open weights (late October) remain the latest model news, though coverage of the release status conflicts. The only November item found is a Mistral Common hotfix (v1.13.1, Nov 2).",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Perplexity",
+      "display": "Perplexity",
+      "headline": "Quiet. Teammates (Nov 5, Max tier at $200/mo) is still the latest ship.",
+      "detail": "No new release since the Nov 5–6 Teammates, Comet Assistant and patent-search updates. Native desktop and mobile apps for Teammates are promised but undated.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Microsoft 365 Copilot",
+      "display": "Microsoft 365 Copilot",
+      "headline": "Ignite closes with Office in Copilot GA, Autopilot and Copilot Workspaces in Frontier, and Copilot Code due in December.",
+      "detail": "Home and Office in Copilot are GA at no extra cost for existing M365 Copilot tenants. Autopilot runs routine work with no instruction and Workspaces replaces Copilot Notebooks, both Frontier-only. Salesforce in Copilot (38 prebuilt sales skills) is in preview, and an AI Transparency Initiative launched with 40+ partners.",
+      "tags": ["tactical", "strategic"],
+      "classification": "tactical",
+      "active": true,
+      "hasAlert": true,
+      "alertReason": "Autopilot acts without user prompts; review tenant agent governance"
+    },
+    {
+      "name": "GitHub Copilot",
+      "display": "GitHub Copilot",
+      "headline": "Quiet. Copilot Code (via Microsoft) is the next GA milestone, expected in December.",
+      "detail": "No new GitHub Copilot changelog item found for this week. Computer use in Copilot CLI (Oct 1) and Claude Haiku 5.5 support (Oct 5) remain the latest. The Copilot CLI context-injection flaw report still has no follow-up.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Cursor",
+      "display": "Cursor",
+      "headline": "Quiet. The status of OpenAI models in Cursor after the Nov 12 cutoff is still unconfirmed.",
+      "detail": "The only source is still a single newsletter report that OpenAI would stop supplying Cursor after SpaceX AI's acquisition. Anthropic says it will keep supplying Claude. Check the model picker before recommending Cursor plus GPT workflows.",
+      "tags": ["watch"],
+      "classification": "watch",
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Gamma",
+      "display": "Gamma",
+      "headline": "Quiet. Gamma 5 (Oct 6, follow-up Oct 26) is still the latest.",
+      "detail": "No November update found. The roadmap lists video generation and auto-updating sales decks from connected apps.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    },
+    {
+      "name": "Notion AI",
+      "display": "Notion AI",
+      "headline": "Quiet. Notion 3.8 (Oct 13) and the Oct 19 credit-system change are still the latest.",
+      "detail": "No November release found. Admin controls over which AI models agents can use (Sept 9) remain relevant for client data-governance conversations.",
+      "tags": [],
+      "classification": null,
+      "active": false,
+      "hasAlert": false,
+      "alertReason": ""
+    }
+  ],
+  "persistent_signals": [
+    {"provider": "Anthropic", "text": "Anthropic — IPO — 2+ weeks running (oversubscribed last week → priced at $83 and listed this week)"},
+    {"provider": "Microsoft 365 Copilot", "text": "Microsoft 365 Copilot — Office in Copilot / Ignite agent rollout — 2+ weeks running (worldwide rollout last week → GA plus Autopilot this week)"},
+    {"provider": "Cursor", "text": "Cursor — OpenAI model cutoff unconfirmed — 2+ weeks running (Nov 12 date passed with no confirmation either way)"}
+  ],
+  "month_themes": {
+    "then": "Agentic tools used for real breaches; Anthropic's leaked S-1 financials; coding agents undermining their own monitoring",
+    "now": "Agents acting without prompts (Autopilot, Meet participants); frontier labs going public (ANT at ~$1.5T); model churn with hard retirement dates"
+  },
+  "habits": [
+    {"task": "BCP/DR plan narratives & runbooks", "tool": "Claude (Opus 5.5)", "shift": "Keep using Claude, but move any pinned Sonnet 4.5 or Opus 4.8 fast-mode scripts before Nov 30.", "type": "tactical"},
+    {"task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)", "tool": "Claude + NotebookLM/Gemini for source grounding", "shift": "No change. Pair ISO 22301 summaries with ISO 42001 for clients adopting AI agents, since the clauses map closely.", "type": "strategic"},
+    {"task": "Vendor/architecture research", "tool": "Perplexity / ChatGPT search", "shift": "No change. Verify new OpenAI model names against primary release notes; secondary coverage is inconsistent this week.", "type": "watch"},
+    {"task": "Client proposals & SOWs", "tool": "Claude or M365 Copilot (Word in Copilot)", "shift": "For Microsoft-shop clients, try Office in Copilot (now GA) so drafts stay inside their tenant boundary.", "type": "tactical"},
+    {"task": "Executive decks", "tool": "Gamma 5 / PowerPoint in Copilot", "shift": "No change. Gamma 5 for speed, PowerPoint in Copilot when the client mandates M365 data residency.", "type": "tactical"},
+    {"task": "Stakeholder audio walkthroughs", "tool": "NotebookLM Audio Overviews", "shift": "No change.", "type": "tactical"},
+    {"task": "Client advisory on AI data risk", "tool": "Your own framework + Claude for drafting", "shift": "Add an 'autonomous agents' section: Autopilot and meeting-joining bots need consent, logging and agent-identity controls (Entra Agent Identity is now GA).", "type": "strategic"}
+  ],
+  "community": [
+    {"source": "r/ClaudeAI", "signal": "Recurring threads on weekly usage limits and the merge of Cowork and chat; no fresh high-engagement post surfaced for this week.", "so_what": "Budget headroom for long runbook-generation sessions; don't assume unlimited Claude capacity on Pro plans."},
+    {"source": "r/LocalLLaMA", "signal": "Ongoing theme that dense models beat MoE and 16GB VRAM is the practical ceiling for local work.", "so_what": "For clients needing air-gapped DR documentation, scope local models to 16GB-class hardware."},
+    {"source": "r/OpenAI", "signal": "No verifiable top thread this week was found; earlier digests focus on Codex compute and agent safety.", "so_what": "Low signal. Don't change recommendations based on community chatter this week."}
+  ],
+  "watch": [
+    {"kind": "deadline", "title": "Nov 30: Sonnet 4.5 and Opus 4.8 fast mode retire", "body": "Pinned integrations break on the cutoff. Migrate and test before Thanksgiving week."},
+    {"kind": "watch", "title": "Copilot Code GA (December)", "body": "Microsoft says general availability comes within weeks. Watch for licensing terms versus GitHub Copilot."},
+    {"kind": "watch", "title": "ANT first weeks of trading", "body": "Public-company disclosure obligations may surface new detail on compute commitments and cloud-partner dependence, which is useful for vendor-concentration risk advice."},
+    {"kind": "security", "title": "Autonomous agent governance", "body": "With Autopilot in Frontier and GTIG reporting autonomous AI attacks, expect new guidance on agent identity and audit logging. Track Microsoft's AI Transparency Initiative outputs."},
+    {"kind": "watch", "title": "Grok 5 and Mistral on-prem Managed Agents", "body": "Both are still pending with no dates. Mistral's on-prem release matters most for clients with data-residency mandates."}
+  ],
+  "sources": "Sources consulted: OpenAI and Anthropic release notes, Anthropic's IPO pricing announcement, Nasdaq trader notice, Fortune, The Neuron, Constellation Research, next.ink, xAI release notes, Releasebot, Google blog/DeepMind pages, BCI and CSA guidance, and Reddit digest newsletters (Nov 20, 2026)."
+}
