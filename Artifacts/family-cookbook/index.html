@@ -860,6 +860,31 @@ const recipes = [
     ],
     notes:"Mom's tip: Cut butter into small pieces before softening for easier mixing. Watch the rolls carefully in the last few minutes — the edges brown fast. Frost while hot so the frosting melts into the rolls. This is considered a family treasure!"
   },
+  {
+    id:16, title:"Classic Pancakes", emoji:"🥞", category:"Breakfast",
+    img:"none",
+    desc:"Fluffy weekend pancakes from pantry staples. Ready in about 20 minutes.",
+    servings:8, servingLabel:"pancakes",
+    ingredients:[
+      {name:"All-purpose flour",amt:"1¼ cups"},
+      {name:"Sugar",amt:"1 Tbsp"},
+      {name:"Baking powder",amt:"2½ tsp"},
+      {name:"Baking soda",amt:"¼ tsp"},
+      {name:"Kosher salt",amt:"¼ tsp"},
+      {name:"Milk",amt:"1 cup"},
+      {name:"Large egg",amt:"1"},
+      {name:"Canola oil (or melted, cooled unsalted butter)",amt:"1 Tbsp"}
+    ],
+    steps:[
+      {title:"Mix dry",desc:"In a large bowl, whisk flour, sugar, baking powder, baking soda, and salt."},
+      {title:"Mix wet",desc:"In a separate bowl, whisk milk, egg, and oil until smooth."},
+      {title:"Combine & rest",desc:"Pour wet into dry and stir just until no dry streaks remain. Lumps are fine; overmixing makes them tough. Rest 5 minutes."},
+      {title:"Heat griddle",desc:"Heat a griddle or nonstick skillet over medium heat and lightly grease. It's ready when a drop of water sizzles."},
+      {title:"Cook",desc:"Pour about ¼ cup batter per pancake. Cook until bubbles form and the edges look set, about 2–3 minutes."},
+      {title:"Flip & finish",desc:"Flip and cook 1–2 minutes more until golden and cooked through."}
+    ],
+    notes:"Swap buttermilk for milk for a fluffier, tangier pancake, since the baking soda reacts with its acid. Keep finished batches warm on a rack in a 200°F oven."
+  },
 ];
 
 const categories = ["All", ...new Set(recipes.map(r => r.category))];
