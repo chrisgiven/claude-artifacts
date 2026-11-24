@@ -1,115 +1,5 @@
 [
   {
-    "date": "2026-09-09",
-    "providers": {
-      "OpenAI": {
-        "headline": "ChatGPT (GPT-6 Astra) adds document/spreadsheet/presentation creation and Zendesk/OneNote plugins in beta; pronunciation tap-to-hear help, sticker packs, Live voice Lock Screen/Dynamic Island, and wider browser-extension support also shipped; GPT-5.4 mini rolling out to Free/Go users.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Anthropic": {
-        "headline": "Sonnet 5's $2/$10 introductory pricing made permanent (the scheduled Sept 1 increase to $3/$15 did not happen); Claude Developer Platform adds budget controls, geo-pinned inference, and GitHub-loaded skills for Managed Agents; Claude Security continues on Mythos 5.1.",
-        "tags": [
-          "strategic",
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Google Gemini": {
-        "headline": "Gemini 3.8 Flash and Gemini 3.8 Flash Cyber released — first new model family drop in weeks, with Flash Cyber built for agentic vulnerability discovery and automated patching, rolling out across dev/enterprise/consumer surfaces.",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "xAI": {
-        "headline": "Grok Bot launched beyond beta as a full enterprise product with access/network/audit controls; Grok 4.7 (2.1T, SpaceX engineering data) now 3 days from the ~Sept 12 target, still zero official xAI confirmation.",
-        "tags": [
-          "tactical",
-          "watch"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Meta": {
-        "headline": "No new headline today. Hatch agent's \"coming weeks\" launch and added safeguards remain the storyline following yesterday's unauthorized-action incident; Muse Spark 1.3 (Sept 2) remains the latest ship.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Mistral": {
-        "headline": "No new headline, quiet since Sept 1 (8 days). OCR 4.1 GA and Agentic Search retrieval layer stand; Leanstral 1.5 still retires Sept 30.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Perplexity": {
-        "headline": "Perplexity's Computer agent now runs on Brain, a continuously learning context graph that updates itself overnight and feeds into every subsequent task — no retention window, scope boundary, or opt-out published yet.",
-        "tags": [
-          "strategic",
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "Brain builds a persistent, self-updating profile of user activity on Perplexity-connected machines with no disclosed retention policy or opt-out — open item for client AI acceptable-use policies.",
-        "active": true
-      },
-      "Microsoft 365 Copilot": {
-        "headline": "Copilot app consolidation continues (navigation/sign-in changes); Cowork cost controls and a rebuilt Notebooks UI roll out alongside new Word/Excel/PowerPoint features.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "GitHub Copilot": {
-        "headline": "GitHub Copilot harness reaches GA in JetBrains IDEs; Agent Merge enters public preview for auto-resolving PR reviews; CLI at v1.0.83; Oct 2 deprecation wave firmed up (Gemini 3.5/3.6 Flash→3.8 Flash, Kimi K2.7 Code→K3, Claude Opus 4.7→Opus 5).",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Cursor": {
-        "headline": "No new headline today. Claude Fable 5.1's benchmark lead and self-hosted machines remain the latest ships.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Gamma": {
-        "headline": "No headline release today — 89 days quiet since June 12.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Notion AI": {
-        "headline": "No new headline today. Yesterday's private-draft capture feature and Developer section remain current; Sept 22 Notion Mail wind-down still stands.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      }
-    },
-    "topMoves": [
-      "Google ships Gemini 3.8 Flash and a dedicated Gemini 3.8 Flash Cyber variant for agentic vulnerability discovery and automated patching — first new Google model family in weeks",
-      "Perplexity's Computer agent ships Brain, a self-updating agent memory with no published retention policy — building a persistent profile of user activity across sessions",
-      "Anthropic makes Sonnet 5's $2/$10 introductory pricing permanent and adds Developer Platform budget controls, geo-pinned inference, and GitHub-loaded skills for Managed Agents"
-    ],
-    "clientAlerts": [
-      "Perplexity's new Brain feature builds a persistent, self-updating context graph from Computer agent sessions with no published retention policy or opt-out — open item for client AI acceptable-use policies until Perplexity discloses retention/scope details."
-    ],
-    "watchItems": [
-      "NIST SP 1353 input window closes Sept 16 (7 days); full comment period through Oct 15",
-      "Grok 4.7 target ~Sept 12 (3 days out), still unconfirmed by xAI; Grok Bot's free-trial window closes ~Sept 17",
-      "Meta's Hatch agent public launch and what containment controls actually ship",
-      "GitHub Copilot's Oct 2 deprecation wave (6 models) and Notion Mail wind-down (Sept 22)",
-      "Perplexity Brain's data-retention boundaries — no policy or opt-out disclosed yet"
-    ]
-  },
-  {
     "date": "2026-09-10",
     "providers": {
       "OpenAI": {
@@ -6458,6 +6348,111 @@
       "Mistral on-prem Managed Agents (late November)",
       "Copilot Autopilot reaching Frontier tenants",
       "Anthropic's first public-company disclosures"
+    ]
+  },
+  {
+    "date": "2026-11-23",
+    "providers": {
+      "OpenAI": {
+        "headline": "GPT-6.2 Astra and Sol reportedly shipped Nov 18, aimed at professional work at lower compute cost.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "Post-IPO trading cools, with deprecations landing in 7 days.",
+        "tags": [
+          "watch",
+          "tactical"
+        ],
+        "hasAlert": true,
+        "alertReason": "Claude Meetings joins client calls; check consent and disclosure",
+        "active": true
+      },
+      "Google Gemini": {
+        "headline": "No new Gemini release in the last 48 hours.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "xAI": {
+        "headline": "Still no Grok 5; Grok 4.7 and Voice 3.0 remain the latest releases.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Meta": {
+        "headline": "Muse Ember (Nov 9) is the latest release; the Muse Spark 1.2 weights are still unshipped.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Mistral": {
+        "headline": "No new release since Large 4 and the Studio agent workflows.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Perplexity": {
+        "headline": "Teammates agents (Nov 5, Max only) are still the latest release; the Amazon cease-and-desist is unresolved.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "Post-Ignite November rollouts land, including GA of connector write actions.",
+        "tags": [
+          "alert",
+          "strategic"
+        ],
+        "hasAlert": true,
+        "alertReason": "Agents can create, update or delete data in connected apps",
+        "active": true
+      },
+      "GitHub Copilot": {
+        "headline": "No confirmed update in the last 48 hours.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Cursor": {
+        "headline": "No new update; Claude supply continues after the OpenAI model cutoff.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Gamma": {
+        "headline": "No release in the last 48 hours; Gamma 5 is still current.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "No new release; the Oct 19 agents, BYOK and credit-system update is the latest.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      }
+    },
+    "topMoves": [
+      "Outage week turns into a BCP refresh mandate",
+      "Copilot agents get write access to line-of-business data",
+      "Anthropic stock cools after record IPO"
+    ],
+    "clientAlerts": [
+      "Microsoft 365 Copilot agents can now write to connected systems",
+      "Claude Meetings joins client calls as a visible participant"
+    ],
+    "watchItems": [
+      "Nov 30: Claude Sonnet 4.5 retires, Opus 4.8 fast mode removed",
+      "Copilot Autopilot and agent write actions",
+      "Post-outage board questions",
+      "Perplexity vs Amazon over agentic purchasing",
+      "Qwen 4 open-weight release"
     ]
   }
 ]

@@ -1,0 +1,45 @@
+{
+  "date": "2026-11-24",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {"title": "West Virginia Legislature takes network offline", "tags": ["Municipal", "Critical"], "summary": "Legislature IT detected unusual activity on Nov 19 and pulled systems and remote access offline in a suspected ransomware attack; officials have not confirmed ransomware.", "source": {"name": "QUE.com", "url": "https://que.com/west-virginias-legislature-pulls-its-network-offline-in-a-suspected-ransomware-attack-as-charleston-county-confirms-data-was-taken-a-new-hampshire-hospital-extends-cancellations-to-nov-30-and-inc/"}},
+        {"title": "Charleston County, SC confirms data theft", "tags": ["Municipal", "Data exposure"], "summary": "County systems remained operational, but officials confirmed data was taken in the attack.", "source": {"name": "QUE.com", "url": "https://que.com/west-virginias-legislature-pulls-its-network-offline-in-a-suspected-ransomware-attack-as-charleston-county-confirms-data-was-taken-a-new-hampshire-hospital-extends-cancellations-to-nov-30-and-inc/"}},
+        {"title": "New Hampshire hospital extends cancellations to Nov 30", "tags": ["Healthcare", "Critical"], "summary": "A New Hampshire hospital hit by a cyberattack has extended appointment and procedure cancellations through Nov 30.", "source": {"name": "QUE.com", "url": "https://que.com/west-virginias-legislature-pulls-its-network-offline-in-a-suspected-ransomware-attack-as-charleston-county-confirms-data-was-taken-a-new-hampshire-hospital-extends-cancellations-to-nov-30-and-inc/"}},
+        {"title": "Inception claims 58GB from Lucid Motors", "tags": ["Newly claimed", "High-profile", "Data exposure"], "summary": "The Inception group lists EV maker Lucid Motors on its leak site, claiming 58GB of stolen data; the claim is unverified.", "source": {"name": "QUE.com", "url": "https://que.com/west-virginias-legislature-pulls-its-network-offline-in-a-suspected-ransomware-attack-as-charleston-county-confirms-data-was-taken-a-new-hampshire-hospital-extends-cancellations-to-nov-30-and-inc/"}},
+        {"title": "INC Ransom claims Advantage Archives", "tags": ["Newly claimed", "Third-party"], "summary": "INC Ransom listed US records-management firm Advantage Archives with an attack date of Nov 13; status is claimed, not confirmed.", "source": {"name": "SOCRadar", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/advantage-archives-inc-ransom-a749af0e"}},
+        {"title": "City of Columbia, SC still restoring services", "tags": ["Municipal", "Reference"], "summary": "Columbia confirmed ransomware on Oct 24 and is running alternate procedures while affected city systems remain offline.", "source": {"name": "WACH", "url": "https://wach.com/news/local/2026-10-24-city-of-columbia-confirms-ransomware-attack-disrupting-online-services-sled-investigation-cybersecurity-fbi"}}
+      ],
+      "note": "Few victims confirmed by name this cycle; Lucid and Advantage Archives are leak-site claims only."
+    },
+    "outage": {
+      "items": [
+        {"title": "Microsoft 365 and Workday disruptions (Nov 12–17)", "tags": ["Cloud", "Trend"], "summary": "Outage timelines list Microsoft 365 and Workday among major SaaS failures in the Nov 12–17 window.", "source": {"name": "TechRepublic", "url": "https://www.techrepublic.com/article/news-november-2026-tech-outages-timeline/"}},
+        {"title": "FAA air traffic network, United, JPMorgan Chase, Apple outages", "tags": ["High-profile", "Trend"], "summary": "The same mid-November cluster included failures at the FAA's air traffic network, United Airlines, JPMorgan Chase and Apple services.", "source": {"name": "Outage Atlas", "url": "https://guptadeepak.com/outage-atlas/"}}
+      ],
+      "note": "No confirmed AWS, Azure or Google Cloud infrastructure outage found in the past two weeks."
+    },
+    "cyber": {
+      "items": [
+        {"title": "European Commission hit by AI-generated cyber campaign", "tags": ["Critical", "High-profile"], "summary": "The Commission says attackers used a publicly available AI tool; the Sysper HR platform and other pay and leave systems were offline for more than 10 days.", "source": {"name": "MLQ.ai", "url": "https://mlq.ai/news/european-commission-says-hackers-targeted-some-of-its-systems-as-pay-and-leave-tools-stay-offline-for-about-10-days/"}},
+        {"title": "CISA KEV: Apache Axis, REDCap, Synology DSM, LiteLLM", "tags": ["KEV add", "Critical"], "summary": "CISA added four exploited flaws on Nov 18, including an unauthenticated RCE in Apache Axis (CVSS 9.8); the LiteLLM deadline is Dec 2.", "source": {"name": "Let's Data Science", "url": "https://letsdatascience.com/news/cisa-adds-four-exploited-flaws-including-litellm-to-kev-cata-4eb52bab"}},
+        {"title": "CISA KEV: GPUStack, FreeSWITCH, OpenSSH, Aspera Faspex", "tags": ["KEV add", "Zero-day"], "summary": "Four exploited flaws added Nov 9 with a short Nov 12 deadline; the OpenSSH entry is an authentication bypass fixed in Portable OpenSSH 10.6p2.", "source": {"name": "eSecurity Planet", "url": "https://www.esecurityplanet.com/vulnerabilities/news-cisa-kev-gpustack-freeswitch-openssh-ibm-november-2026/"}},
+        {"title": "Node2Shell flaw under active exploitation", "tags": ["KEV add", "Critical"], "summary": "CISA warns attackers are now exploiting the critical Node2Shell vulnerability.", "source": {"name": "BleepingComputer", "url": "https://bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw"}}
+      ]
+    },
+    "physical": {
+      "items": [
+        {"title": "M 6.8 — 105 km NE of Lospalos, Timor Leste (Nov 21)", "tags": ["M 6.8"], "summary": "USGS green alert; no tsunami flag.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucij"}},
+        {"title": "M 6.7 — 7 km ENE of Carhuamayo, Peru (Nov 21)", "tags": ["M 6.7"], "summary": "USGS green alert; tsunami flag set.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucfm"}},
+        {"title": "M 6.5 — Vanuatu region (Nov 23)", "tags": ["M 6.5"], "summary": "USGS green alert; tsunami flag set.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucvm"}},
+        {"title": "M 6.4 — Mauritius–Reunion region (Nov 24)", "tags": ["M 6.4"], "summary": "USGS green alert; no tsunami flag.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud6h"}},
+        {"title": "M 5.9 — 238 km SW of Yanglong, China (Nov 21)", "tags": ["M 5.9"], "summary": "USGS yellow alert, so some losses are possible.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucly"}},
+        {"title": "Florida emergency after Brevard County flooding", "tags": ["Flood"], "summary": "Up to 612 mm (24 in) of rain fell near Malabar on Nov 1–2, prompting a state emergency declaration.", "source": {"name": "Watchers", "url": "https://watchers.news/author/rishav-kothari/page/2/?mab_v3=255659"}},
+        {"title": "Cyclone Murasu landfall in Andhra Pradesh", "tags": ["Tropical"], "summary": "Murasu made landfall on Nov 3, the second cyclone to hit the Andhra Pradesh coast in under a week.", "source": {"name": "Watchers", "url": "https://watchers.news/author/rishav-kothari/page/3/?mab_v3=255659"}},
+        {"title": "Brazil storm emergencies across 13 states", "tags": ["Flood"], "summary": "Civil Defense recognised emergencies in 44 municipalities; Santa Catarina logged 671 storm incidents on Nov 4–5.", "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}},
+        {"title": "Ecuador flooding: 12 dead, 56,000 affected", "tags": ["Flood"], "summary": "Heavy rain and flooding across Ecuador killed 12 and affected about 56,300 people.", "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}}
+      ],
+      "note": "Non-seismic events are from early November; no current-month wildfire event found."
+    }
+  }
+}

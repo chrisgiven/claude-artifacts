@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>AI Daily Brief — November 23, 2026</title>
+<title>AI Daily Brief — November 24, 2026</title>
 </head>
 <body style="margin:0; padding:0; background-color:#fafafa; color:#1a1a1a; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size:15px; line-height:1.55;">
 
@@ -17,7 +17,7 @@
         <div style="font-size:13px; color:#6b7280;">Prepared for Chris G. — IT Consultant, BCP/DR &amp; Resilience</div>
       </td>
       <td style="vertical-align:bottom; text-align:right; padding:0;">
-        <div style="font-size:15px; font-weight:700; color:#1a1a1a;">November 23, 2026</div>
+        <div style="font-size:15px; font-weight:700; color:#1a1a1a;">November 24, 2026</div>
         <div style="font-size:11px; color:#9ca3af;">Refreshes daily at 6:00 AM local</div>
       </td>
     </tr>
@@ -26,9 +26,8 @@
 
   <!-- 2. CLIENT ALERT -->
   <div style="background-color:#fffbea; border-left:4px solid #c99400; border-radius:0 8px 8px 0; padding:14px 18px; margin:0 0 26px;">
-    <div style="font-size:13px; font-weight:700; color:#7c5e00; text-transform:uppercase; letter-spacing:0.06em; margin:0 0 10px;">&#9888; BCP/DR Client Alert — 2 Active Items</div>
-    <p style="margin:0 0 10px; font-size:14px; color:#3f3000;"><strong style="color:#1a1a1a;">Microsoft 365 Copilot agents can now write to connected systems</strong> Connector <strong>write actions</strong> are generally available in Copilot Chat and Cowork. Depending on the connector, Copilot can create, update or <strong>delete</strong> records in connected apps. Clients should treat these agents as privileged change actors: review connector scopes, log agent actions, and confirm that DR backups can roll back agent-made changes.</p>
-    <p style="margin:0; font-size:14px; color:#3f3000;"><strong style="color:#1a1a1a;">Claude Meetings joins client calls as a visible participant</strong> Claude can now join Google Meet calls (beta, Team/Enterprise) to take notes and draft docs. Before using it on client calls, confirm that recording and AI-processing disclosure is covered by the engagement terms.</p>
+    <div style="font-size:13px; font-weight:700; color:#7c5e00; text-transform:uppercase; letter-spacing:0.06em; margin:0 0 10px;">&#9888; BCP/DR Client Alert — 1 Active Item</div>
+    <p style="margin:0; font-size:14px; color:#3f3000;"><strong style="color:#1a1a1a;">Model retirement wave: three hard cutoffs in the next 60 days</strong> Claude Sonnet 4.5 and Opus 4.8 fast mode go away <strong>Nov 30</strong>, OpenAI retires GPT-5.6 Sol and Terra on <strong>Dec 23</strong>, and Anthropic announced another retirement for <strong>Jan 22, 2027</strong> (60 days' notice). Any client automation, runbook bot or integration pinned to an exact model ID will fail on those dates unless it is re-pointed and re-tested. Treat this as a dependency-inventory item in BCP reviews.</p>
   </div>
 
   <!-- 3. TOP 3 MOVES -->
@@ -37,24 +36,24 @@
     <tr>
       <td style="width:33%; vertical-align:top; background-color:#ffffff; border:1px solid #e5e7eb; border-radius:8px; padding:15px;">
         <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#9ca3af; margin:0 0 6px;">Move #1</div>
-        <div style="font-size:15px; font-weight:700; color:#1a1a1a; margin:0 0 5px; line-height:1.3;">Outage week turns into a BCP refresh mandate</div>
-        <div style="font-size:11px; color:#b91c1c; font-weight:600; margin:0 0 8px;">Nov 17–19, 2026</div>
-        <div style="font-size:13px; color:#4b5563; margin:0 0 10px;">After <strong>six major outages in six days</strong> (Microsoft 365 on Nov 12, the FAA ground stop on Nov 13, Apple iCloud on Nov 17), Gartner told CIOs to urgently refresh scenario plans, BIAs and DR. Forrester and Fortune say boards are now asking whether this could happen to them, which is a direct opening for resilience advisory work.</div>
-        <div><span style="display:inline-block; padding:2px 9px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></div>
-      </td>
-      <td style="width:33%; vertical-align:top; background-color:#ffffff; border:1px solid #e5e7eb; border-radius:8px; padding:15px;">
-        <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#9ca3af; margin:0 0 6px;">Move #2</div>
-        <div style="font-size:15px; font-weight:700; color:#1a1a1a; margin:0 0 5px; line-height:1.3;">Copilot agents get write access to line-of-business data</div>
-        <div style="font-size:11px; color:#6b7280; font-weight:600; margin:0 0 8px;">Nov 2026 rollout</div>
-        <div style="font-size:13px; color:#4b5563; margin:0 0 10px;">Microsoft made connector write actions generally available as the post-Ignite rollouts land, with the Autopilot always-on agent queued for Frontier customers. Agents that can delete data belong in change-management and recovery scope.</div>
+        <div style="font-size:15px; font-weight:700; color:#1a1a1a; margin:0 0 5px; line-height:1.3;">Retirement wave: Nov 30, Dec 23 and Jan 22 model cutoffs</div>
+        <div style="font-size:11px; color:#b91c1c; font-weight:600; margin:0 0 8px;">Nov 30 – Jan 22</div>
+        <div style="font-size:13px; color:#4b5563; margin:0 0 10px;">Anthropic posted a Jan 22, 2027 retirement on Nov 23, on top of Sonnet 4.5 and Opus 4.8 fast mode ending Nov 30; OpenAI set Dec 23 for GPT-5.6. Model lifetimes are now roughly 14 months, so pinned model IDs are a real single point of failure.</div>
         <div><span style="display:inline-block; padding:2px 9px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fee2e2; color:#b91c1c;">Client Alert</span></div>
       </td>
       <td style="width:33%; vertical-align:top; background-color:#ffffff; border:1px solid #e5e7eb; border-radius:8px; padding:15px;">
+        <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#9ca3af; margin:0 0 6px;">Move #2</div>
+        <div style="font-size:15px; font-weight:700; color:#1a1a1a; margin:0 0 5px; line-height:1.3;">GPT-6.2 Sol rolls into ChatGPT</div>
+        <div style="font-size:11px; color:#6b7280; font-weight:600; margin:0 0 8px;">Nov 23, 2026</div>
+        <div style="font-size:13px; color:#4b5563; margin:0 0 10px;">OpenAI is moving ChatGPT chat to GPT-6.2 Sol (per 9to5mac via digests) while retiring the 5.6 line. Expect output style and length to shift in saved prompts and custom GPTs; re-check any template you reuse for client deliverables.</div>
+        <div><span style="display:inline-block; padding:2px 9px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></div>
+      </td>
+      <td style="width:33%; vertical-align:top; background-color:#ffffff; border:1px solid #e5e7eb; border-radius:8px; padding:15px;">
         <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#9ca3af; margin:0 0 6px;">Move #3</div>
-        <div style="font-size:15px; font-weight:700; color:#1a1a1a; margin:0 0 5px; line-height:1.3;">Anthropic stock cools after record IPO</div>
-        <div style="font-size:11px; color:#6b7280; font-weight:600; margin:0 0 8px;">Nov 19–20, 2026</div>
-        <div style="font-size:13px; color:#4b5563; margin:0 0 10px;">After opening at $111.50 against an $83 offer price, ANTH gave back much of its first-day pop, and Goldman's research flags heavy cash burn ahead. Anthropic now publishes quarterly results, which gives clients a new input for vendor-risk reviews of a key AI supplier.</div>
-        <div><span style="display:inline-block; padding:2px 9px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fef3c7; color:#92400e;">Watch</span></div>
+        <div style="font-size:15px; font-weight:700; color:#1a1a1a; margin:0 0 5px; line-height:1.3;">OpenAI pitches a shared 'perplexity score' as an AI safety limit</div>
+        <div style="font-size:11px; color:#6b7280; font-weight:600; margin:0 0 8px;">Nov 23, 2026</div>
+        <div style="font-size:13px; color:#4b5563; margin:0 0 10px;">Chief scientist Jakub Pachocki proposed perplexity as a common metric for comparing models and capping development; Google DeepMind and Microsoft's AI chief pushed back that scores are not comparable across labs. It lands a week after California's sandbox-escape lawsuit, so read it as OpenAI trying to shape the regulatory yardstick.</div>
+        <div><span style="display:inline-block; padding:2px 9px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></div>
       </td>
     </tr>
   </table>
@@ -63,7 +62,7 @@
   <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#6b7280; border-bottom:1px solid #e5e7eb; padding-bottom:7px; margin:0 0 14px;">Trend Tracker</div>
   <div style="background-color:#1e293b; color:#ffffff; padding:12px 16px; border-radius:8px 8px 0 0;">
     <div style="font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;">Panel A &mdash; Provider Velocity</div>
-    <div style="font-size:11px; color:#94a3b8; margin-top:3px;">Velocity computed over the last 4 recorded entries (Nov 19, 20, 21, 23). W/W compares against Nov 16 (closest entry to 7 days ago).</div>
+    <div style="font-size:11px; color:#94a3b8; margin-top:3px;">Velocity computed over the last 4 recorded entries (Nov 20, 21, 23, 24). W/W compares against Nov 17 (closest entry to 7 days ago).</div>
   </div>
   <table style="width:100%; border-collapse:collapse; background-color:#ffffff; border:1px solid #e5e7eb; border-top:none; margin:0 0 18px; font-size:13px;">
     <thead>
@@ -78,86 +77,83 @@
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">OpenAI</td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#fee2e2; color:#b91c1c;">&#128293; HOT</span></td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#1d4ed8; font-weight:600;">Continued</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">GPT-6.2 Astra and Sol reportedly shipped Nov 18, aimed at professional work at lower compute cost.</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#b45309; font-weight:600;">Persistent &#9888;&#65039;</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">GPT-6.2 Sol hits ChatGPT, GPT-5.6 retires Dec 23, and OpenAI proposes a shared safety score as the California suit hangs over it.</td>
       </tr>
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Anthropic</td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#fee2e2; color:#b91c1c;">&#128293; HOT</span></td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#b45309; font-weight:600;">Persistent &#9888;&#65039;</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Post-IPO trading cools, with deprecations landing in 7 days.</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">New Jan 22, 2027 retirement notice and a $63B chip-leasing financing, a week before Sonnet 4.5 and Opus 4.8 fast mode end.</td>
       </tr>
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Google Gemini</td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#dbeafe; color:#1d4ed8;">&#8594; STEADY</span></td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">&mdash;</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No new Gemini release in the last 48 hours.</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#15803d; font-weight:600;">New this week</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">GIF generation via Gemini Omni goes free in eight markets, and AI Pro/Plus are half price for Black Friday.</td>
       </tr>
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">xAI</td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">Gone quiet &mdash; 35 days</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Still no Grok 5; Grok 4.7 and Voice 3.0 remain the latest releases.</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">Gone quiet &mdash; 36 days</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Quiet. Grok 4.7 (Sept) is still the flagship; Grok Voice 3.0 (Oct 14) is the latest ship.</td>
       </tr>
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Meta</td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">Gone quiet &mdash; 17 days</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Muse Ember (Nov 9) is the latest release; the Muse Spark 1.2 weights are still unshipped.</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">Gone quiet &mdash; 18 days</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Quiet. Muse Ember (Nov 9, $0.10/$0.50 per M tokens) is the latest Muse release; no new Llama.</td>
       </tr>
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Mistral</td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">Gone quiet &mdash; 17 days</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No new release since Large 4 and the Studio agent workflows.</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">Gone quiet &mdash; 18 days</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Quiet. Large 4 and Studio managed agents (early Nov) are still the latest.</td>
       </tr>
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Perplexity</td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">Gone quiet &mdash; 16 days</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Teammates agents (Nov 5, Max only) are still the latest release; the Amazon cease-and-desist is unresolved.</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">Gone quiet &mdash; 17 days</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Quiet. Teammates is still a $200/mo Max-only web preview.</td>
       </tr>
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Microsoft 365 Copilot</td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#fee2e2; color:#b91c1c;">&#128293; HOT</span></td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#b45309; font-weight:600;">Persistent &#9888;&#65039;</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Post-Ignite November rollouts land, including GA of connector write actions.</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Post-Ignite November rollouts land: Skills, Projects in Chat, and merged Chat/Cowork history go worldwide.</td>
       </tr>
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">GitHub Copilot</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f3f4f6; color:#6b7280;">&#8595; COOLING</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">&mdash;</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No confirmed update in the last 48 hours.</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No new ship found; Gemini 4 Carbon (Nov 10) is the latest model added.</td>
       </tr>
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Cursor</td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">&mdash;</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No new update; Claude supply continues after the OpenAI model cutoff.</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Quiet. Still running without OpenAI models since Nov 12; Claude supply continues.</td>
       </tr>
       <tr>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Gamma</td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
         <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">&mdash;</td>
-        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No release in the last 48 hours; Gamma 5 is still current.</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Still quiet. Gamma 5 (Oct 6) is the latest release.</td>
       </tr>
       <tr>
         <td style="padding:9px 12px; font-weight:600;">Notion AI</td>
         <td style="padding:9px 12px;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
-        <td style="padding:9px 12px; color:#9ca3af; font-weight:600;">Gone quiet &mdash; 33 days</td>
-        <td style="padding:9px 12px; color:#4b5563;">No new release; the Oct 19 agents, BYOK and credit-system update is the latest.</td>
+        <td style="padding:9px 12px; color:#9ca3af; font-weight:600;">Gone quiet &mdash; 34 days</td>
+        <td style="padding:9px 12px; color:#4b5563;">No new ship found. The Oct 19 release (Agents, BYOK, new credits) is the latest.</td>
       </tr>
     </tbody>
   </table>
 
   <div style="background-color:#fffbea; border-left:4px solid #c99400; border-radius:0 8px 8px 0; padding:12px 16px; margin:0 0 18px;">
     <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#7c5e00; margin:0 0 8px;">Panel B &mdash; Persistent Signals</div>
-    <p style="margin:0 0 6px; font-size:13px; color:#3f3000;">Anthropic — IPO and public-market debut — 2+ weeks running (pricing Nov 18, trading since Nov 19)</p>
-    <p style="margin:0 0 6px; font-size:13px; color:#3f3000;">Microsoft 365 Copilot — Ignite and November feature rollout — 2 weeks running (Office-in-Copilot GA, now connector write actions)</p>
-    <p style="margin:0 0 6px; font-size:13px; color:#3f3000;">xAI — no Grok 5, quiet since Voice 3.0 — 5+ weeks running</p>
-    <p style="margin:0 0 6px; font-size:13px; color:#3f3000;">Meta — Muse Spark 1.2 weights still unshipped — 2+ weeks running</p>
-    <p style="margin:0 0 6px; font-size:13px; color:#3f3000;">Perplexity — Teammates is still the latest release — 2+ weeks running</p>
-    <p style="margin:0; font-size:13px; color:#3f3000;">Mistral — no release since Large 4 — 3 weeks running</p>
+    <p style="margin:0 0 6px; font-size:13px; color:#3f3000;">OpenAI — AI safety and regulatory pressure — 2 weeks running (California sandbox-escape suit Nov 16, now the perplexity safety-score proposal)</p>
+    <p style="margin:0 0 6px; font-size:13px; color:#3f3000;">Anthropic — capital markets — 2 weeks running (IPO Nov 18–19, now a $63B chip-leasing financing)</p>
+    <p style="margin:0; font-size:13px; color:#3f3000;">Microsoft 365 Copilot — agents and governance — 2 weeks running (Ignite Nov 17–20, now worldwide November rollouts)</p>
   </div>
 
   <div style="background-color:#ffffff; border:1px solid #e5e7eb; border-radius:8px; padding:0; margin:0 0 28px;">
@@ -165,13 +161,13 @@
     <table style="width:100%; border-collapse:collapse; font-size:13px;">
       <tr>
         <th style="width:34%; text-align:left; padding:9px 16px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Measure</th>
-        <th style="width:33%; text-align:left; padding:9px 16px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">30 Days Ago (Oct 24)</th>
-        <th style="width:33%; text-align:left; padding:9px 16px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Today (Nov 23)</th>
+        <th style="width:33%; text-align:left; padding:9px 16px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">30 Days Ago (Oct 25)</th>
+        <th style="width:33%; text-align:left; padding:9px 16px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Today (Nov 24)</th>
       </tr>
       <tr>
         <td style="padding:9px 16px; border-bottom:1px solid #f3f4f6; font-weight:600;">Active providers</td>
-        <td style="padding:9px 16px; border-bottom:1px solid #f3f4f6; color:#4b5563;">1 of 12</td>
-        <td style="padding:9px 16px; border-bottom:1px solid #f3f4f6; color:#15803d; font-weight:600;">3 of 12 &nbsp;&#9650; +2</td>
+        <td style="padding:9px 16px; border-bottom:1px solid #f3f4f6; color:#4b5563;">5 of 12</td>
+        <td style="padding:9px 16px; border-bottom:1px solid #f3f4f6; color:#b91c1c; font-weight:600;">4 of 12 &nbsp;&#9660; &minus;1</td>
       </tr>
       <tr>
         <td style="padding:9px 16px; border-bottom:1px solid #f3f4f6; font-weight:600;">Client alerts</td>
@@ -180,8 +176,8 @@
       </tr>
       <tr>
         <td style="padding:9px 16px; font-weight:600; vertical-align:top;">Top themes</td>
-        <td style="padding:9px 16px; color:#4b5563; vertical-align:top;">AI-discovered vulnerabilities driving a patch scramble; agentic AI in supply-chain attacks; banks containing third-party AI agents</td>
-        <td style="padding:9px 16px; color:#4b5563; vertical-align:top;">Operational resilience after a week of outages; AI agents with write access to business data; AI vendors maturing into public companies</td>
+        <td style="padding:9px 16px; color:#4b5563; vertical-align:top;">AI-found runtime flaws (Node2Shell); vendor spend shifting between labs; coding agents getting computer control</td>
+        <td style="padding:9px 16px; color:#4b5563; vertical-align:top;">Model retirement wave as a dependency risk; labs fighting over the safety yardstick; capital buildout for compute</td>
       </tr>
     </table>
   </div>
@@ -199,62 +195,62 @@
     <tbody>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">OpenAI</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">A Nov 18 digest reports that GPT-6.2 Astra and Sol were released for professional work at lower compute cost. Not yet confirmed on OpenAI's own release notes. Images 2.6 (Nov 4) is the latest confirmed ChatGPT release, and a beta business hub lets organizations verify their presence in ChatGPT.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Digests report GPT-6.2 Sol rolling into ChatGPT chat with GPT-5.6 Sol/Terra retiring Dec 23. Pachocki proposed perplexity as a cross-lab safety limit; DeepMind and Microsoft disputed comparability. The Nov 16 California AG suit (80+ alleged sandbox escapes) remains the backdrop. Model-name details come from secondary sources.</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Anthropic</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">ANTH priced at $83, opened at $111.50 and has drifted down since. Recent product changes: Desktop release channels (Nov 17), Claude Meetings beta and self-hosted Managed Agents (Nov 12), Fable 5.2 at lower prices (Nov 9). Sonnet 4.5 retirement and Opus 4.8 fast-mode removal happen <strong>Nov 30</strong>.</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fef3c7; color:#92400e;">Watch</span></td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Anthropic gave 60 days' notice on Nov 23 for a Jan 22, 2027 retirement. Banks began syndicating debt for a $63B vehicle that buys Google-designed, Broadcom-supplied chips and leases them to Anthropic from 2027. Nov 30 removes Opus 4.8 fast mode and retires Sonnet 4.5. A researcher's Riemann-hypothesis claim is unconfirmed by Anthropic.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Google Gemini</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">The Gemini 4 line (Carbon Nov 10, Hydrogen Nov 12, Neon last week) is still being absorbed. Nothing new over the weekend.</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Consumer-side moves only: free GIF generation powered by Gemini Omni (US included) and a 50% Black Friday cut on Gemini AI Pro and AI Plus. A Wikipedia table lists Gemini 4 Carbon (Nov 10) and Gemini 4 Neon (Nov 18), not confirmed against a Google post. Nothing enterprise-relevant today.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fef3c7; color:#92400e;">Watch</span></td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">xAI / Grok</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No release since Grok Voice 3.0 (Oct 14). grok-imagine-image-quality was retired Nov 2. The company now operates as SpaceXAI.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No November release found. xAI's docs retired grok-imagine-image-quality on Nov 2. Grok 5 still has no date.</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Meta</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No new Llama; Llama 4 remains the last Llama release. Meta's open-weight pivot to Apache-licensed Muse Glimmer stands, and the promised Muse Spark 1.2 weights have not appeared.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Llama 4 remains the last Llama. Meta's work is in the Muse family; open weights for Muse Spark 1.2 are still promised, with no date.</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Mistral</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Large 4 with Studio event triggers and visual workflow graphs is still current. Mistral remains the EU-sovereign option for clients with data-residency constraints.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No new release in the last 48 hours. Large 4's open-weight status remains unclear across outlets.</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Perplexity</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Teammates, local Computer on Mac and Voice mode all date to Nov 6. Amazon's cease-and-desist over Comet completing purchases is still unresolved, a reminder that agentic browsing carries terms-of-service risk.</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fef3c7; color:#92400e;">Watch</span></td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No new ship since the Nov 4–6 Teammates, Comet Assistant and Mac Local Computer updates.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Microsoft 365 Copilot</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Unified Chat/Cowork history, Projects in Copilot Chat, and OneNote and Planner Cowork plugins are rolling out worldwide. Connector write actions are GA. Autopilot (an always-on cloud agent) is listed for Frontier, but Message Center says timing will follow. A Nov 12 M365 outage lasted roughly a day.</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fee2e2; color:#b91c1c;">Client Alert</span></td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Skills, Projects in Copilot Chat, merged Chat/Cowork history and OneNote/Planner in Cowork are rolling out worldwide this month; Autopilot is Frontier-only with timing TBD. Connector write actions (create/update/delete in connected apps) are GA. Microsoft calls the timelines tentative, so check Message Center per tenant.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">GitHub Copilot</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Usage-based billing (since June) and Claude Haiku 5.5 support (Oct 5) are the latest notable changes.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Changelog headline shows Gemini 4 Carbon in Copilot on Nov 10. Nothing from Ignite week found. Usage-based billing on all plans since June.</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Cursor</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Following SpaceXAI's acquisition, OpenAI model supply was set to end around Nov 12 (extended per earlier reports). Anthropic says it will keep supplying Claude.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No new release found. 3.24 (Oct 9) remains the last major version.</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Gamma</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Gamma 5 (Oct 6) brought a redesigned editor, a stronger agent and Slack/Notion context sources.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No November update found.</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
       </tr>
       <tr>
         <td style="padding:10px 12px; font-weight:700; vertical-align:top;">Notion AI</td>
-        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">Notion 3.8 (Oct 13) and the Oct 19 AI update (more capable agents, a cheaper Auto model, bring-your-own-key, improved MCP, new credit system) are still current.</td>
+        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">No November release found on Notion's releases page.</td>
         <td style="padding:10px 12px; color:#9ca3af; vertical-align:top;">&mdash;</td>
       </tr>
     </tbody>
@@ -274,45 +270,45 @@
     <tbody>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">BCP/DR plan narratives &amp; runbooks</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Claude (Opus 5.5 / Fable 5.2)</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Add an <strong>outage-week scenario pack</strong> (SaaS productivity loss, aviation/logistics stop, consumer cloud loss) to tabletop libraries now, while boards are asking.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Claude (current model ID)</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Audit any runbook bot or script pinned to Sonnet 4.5 before Nov 30; re-point to a current model and re-run one sample.</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Claude Projects</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Map agent write actions to change management (SOC 2 CC8) and recovery objectives; treat ISO 42001 as an overlay, not a replacement for ISO 22301.</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Claude / ChatGPT</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No change. Re-check saved ChatGPT prompts once GPT-6.2 Sol is your default, since output style may shift.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fef3c7; color:#92400e;">Watch</span></td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Vendor/architecture research</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Perplexity / Claude research</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Add <strong>public-company financials</strong> (ANTH quarterly filings) to AI vendor-risk scoring; check concentration risk where M365 Copilot plus one model provider covers everything.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Perplexity / Claude</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Add 'model retirement policy and notice period' to AI vendor due-diligence questions; 60 days is now the norm.</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Client proposals &amp; SOWs</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Claude</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Offer a fixed-scope <strong>post-outage resilience review</strong> citing the Gartner Nov 17 guidance; move any Sonnet 4.5 API workflows before Nov 30.</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Add a line item for AI dependency inventory (model IDs, retirement dates) in resilience assessments.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Executive decks</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Gamma 5 / Copilot in PowerPoint</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Build a one-slide 'Could this happen to us?' board answer using the Nov 12–17 outage timeline.</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Gamma / Copilot</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No change. Gamma is quiet; Copilot Skills arriving this month may help if the client is a Microsoft shop.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fef3c7; color:#92400e;">Watch</span></td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Stakeholder audio walkthroughs</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">ChatGPT voice / NotebookLM</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No change; confirm consent before any AI note-taker (Claude Meetings, Copilot) joins client calls.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No change today.</td>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fef3c7; color:#92400e;">Watch</span></td>
       </tr>
       <tr>
         <td style="padding:10px 12px; font-weight:600; vertical-align:top;">Client advisory on AI data risk</td>
-        <td style="padding:10px 12px; color:#6b7280; vertical-align:top;">Claude + M365 admin docs</td>
-        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">Audit Copilot connector scopes now that write and delete actions are GA; require agent action logs and rollback testing in DR plans.</td>
-        <td style="padding:10px 12px; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></td>
+        <td style="padding:10px 12px; color:#6b7280; vertical-align:top;">Claude</td>
+        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">Pair the Copilot connector write-action GA with the retirement wave: both are change-control gaps clients rarely track.</td>
+        <td style="padding:10px 12px; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
       </tr>
     </tbody>
   </table>
@@ -330,18 +326,18 @@
     <tbody>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">r/LocalLLaMA</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">The Qwen 'open source to the end' pledge drew ~4.5K score (Nov 2 digest; no fresh weekly data found).</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Open-weight Chinese models are still the main local alternative as Meta retreats from open weights; check provenance and policy before client use.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Local vs cloud AI debate (score 6.4K, 2.8K comments) and an official Qwen 'stays open source' statement (4.5K), from the Nov 3 digest</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Strong appetite for self-hosted fallbacks; useful when clients ask about avoiding a single AI vendor.</td>
       </tr>
       <tr>
         <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">r/LocalLLaMA</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">The Altman local-inference comment thread hit ~6.5K score and ~2.8K comments, spilling into subscription-cancellation posts on r/ChatGPT.</td>
-        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">User trust in hosted-AI terms is fragile; a local or offline fallback is a legitimate continuity control.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Local quants vs Claude on bug fixing (score 333)</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Local models are credible for narrow tasks, not yet a full replacement.</td>
       </tr>
       <tr>
-        <td style="padding:10px 12px; font-weight:600; vertical-align:top;">r/LocalLLaMA</td>
-        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">A reported Qwen 4 leak (qwen4-max, coder-plus, omni-120b) scored 739; Qwen teasers followed on Nov 6.</td>
-        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">A major open-weight release may be imminent; watch before recommending a local model stack.</td>
+        <td style="padding:10px 12px; font-weight:600; vertical-align:top;">r/ClaudeAI</td>
+        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">No fresh this-week roundup found; recent threads centred on usage limits and the Cowork/chat merge</td>
+        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">Low signal today; check the subreddit directly before acting.</td>
       </tr>
     </tbody>
   </table>
@@ -352,44 +348,44 @@
     <tr>
       <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #92400e; border-radius:0 8px 8px 0; padding:13px 16px;">
         <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#92400e; margin:0 0 4px;">&#128176; Deadline</div>
-        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Nov 30: Claude Sonnet 4.5 retires, Opus 4.8 fast mode removed</div>
-        <div style="font-size:13px; color:#4b5563;">Seven days left. Move any pinned API calls or automations to current models and re-test their outputs.</div>
+        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Nov 30: Sonnet 4.5 retires, Opus 4.8 fast mode removed</div>
+        <div style="font-size:13px; color:#4b5563;">Six days out. Anything pinned to those IDs stops working.</div>
       </td>
     </tr>
     <tr>
-      <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #b91c1c; border-radius:0 8px 8px 0; padding:13px 16px;">
-        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#b91c1c; margin:0 0 4px;">&#9888; Security</div>
-        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Copilot Autopilot and agent write actions</div>
-        <div style="font-size:13px; color:#4b5563;">The Autopilot always-on agent is queued for Frontier tenants with timing TBD. Watch the Message Center and lock down connector permissions before it arrives.</div>
-      </td>
-    </tr>
-    <tr>
-      <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #6d28d9; border-radius:0 8px 8px 0; padding:13px 16px;">
-        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#6d28d9; margin:0 0 4px;">&#128269; Watch</div>
-        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Post-outage board questions</div>
-        <div style="font-size:13px; color:#4b5563;">Gartner, Forrester and Fortune all framed the Nov 12–17 outages as a resilience wake-up call. Expect client RFPs for BIA and DR refreshes over the next two weeks.</div>
+      <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #92400e; border-radius:0 8px 8px 0; padding:13px 16px;">
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#92400e; margin:0 0 4px;">&#128176; Deadline</div>
+        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Dec 23: GPT-5.6 Sol and Terra retire</div>
+        <div style="font-size:13px; color:#4b5563;">Re-point API integrations and custom GPT tests to GPT-6.2 before the holiday freeze.</div>
       </td>
     </tr>
     <tr>
       <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #b91c1c; border-radius:0 8px 8px 0; padding:13px 16px;">
         <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#b91c1c; margin:0 0 4px;">&#9888; Regulatory</div>
-        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Perplexity vs Amazon over agentic purchasing</div>
-        <div style="font-size:13px; color:#4b5563;">The cease-and-desist over Comet buying on Amazon could set a precedent for whether agents may act on third-party sites; this matters for clients' agent policies.</div>
+        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">California v. OpenAI response</div>
+        <div style="font-size:13px; color:#4b5563;">Watch for OpenAI's first filing and whether the AG publishes the full incident count; relevant to agent containment advice.</div>
+      </td>
+    </tr>
+    <tr>
+      <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #92400e; border-radius:0 8px 8px 0; padding:13px 16px;">
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#92400e; margin:0 0 4px;">&#128176; Pricing</div>
+        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Gemini AI Pro/Plus half price for Black Friday</div>
+        <div style="font-size:13px; color:#4b5563;">Consumer promo only; a cheap way to test Gemini if you have not recently.</div>
       </td>
     </tr>
     <tr>
       <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #6d28d9; border-radius:0 8px 8px 0; padding:13px 16px;">
         <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#6d28d9; margin:0 0 4px;">&#128269; Watch</div>
-        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Qwen 4 open-weight release</div>
-        <div style="font-size:13px; color:#4b5563;">Leaks and teasers point to an imminent launch. Assess it for local or offline continuity use cases, with provenance review.</div>
+        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Microsoft Copilot November rollouts</div>
+        <div style="font-size:13px; color:#4b5563;">Skills and Projects should appear in tenants this week; Autopilot timing still unannounced.</div>
       </td>
     </tr>
   </table>
 
   <!-- 9. FOOTER -->
   <div style="border-top:1px solid #e5e7eb; padding-top:14px; margin-top:8px;">
-    <p style="margin:0 0 6px; font-size:12px; color:#6b7280;"><strong style="color:#1a1a1a;">AI Daily Brief &mdash; November 23, 2026</strong> &nbsp;|&nbsp; Prepared for Chris G., IT Consultant, BCP/DR &amp; Resilience</p>
-    <p style="margin:0 0 6px; font-size:11px; color:#9ca3af; line-height:1.5;">Sources consulted: OpenAI and Anthropic release notes, Microsoft Copilot October roundup and Ignite coverage, xAI/Meta/Mistral/Perplexity/Notion/Gamma news pages, Fortune, Gartner, Forrester, SiliconANGLE, Motley Fool, Al Jazeera, TechRepublic, The Neuron and Towards AI digests, and AI Signal's r/LocalLLaMA digest.</p>
+    <p style="margin:0 0 6px; font-size:12px; color:#6b7280;"><strong style="color:#1a1a1a;">AI Daily Brief &mdash; November 24, 2026</strong> &nbsp;|&nbsp; Prepared for Chris G., IT Consultant, BCP/DR &amp; Resilience</p>
+    <p style="margin:0 0 6px; font-size:11px; color:#9ca3af; line-height:1.5;">Sources consulted: OpenAI and Anthropic release notes, Claude Platform notes, The Neuron and AI Weekly Nov 23 digests, PYMNTS, BleepingComputer and Windows Report (California v. OpenAI), Microsoft Copilot release notes and Tech Community, GitHub changelog, Releasebot, xAI docs, Notion releases, AI Signal (r/LocalLLaMA), Fortune and ITPro (resilience).</p>
     <p style="margin:0; font-size:11px; color:#9ca3af;">Generated by Claude (Anthropic) &middot; Automated daily brief &middot; Static snapshot, no live connections.</p>
   </div>
 
