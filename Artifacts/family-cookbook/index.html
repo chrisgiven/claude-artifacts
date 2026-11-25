@@ -886,6 +886,35 @@ const recipes = [
     ],
     notes:"Swap buttermilk for milk for a fluffier, tangier pancake, since the baking soda reacts with its acid. Keep finished batches warm on a rack in a 200°F oven."
   },
+  {
+    id:17, title:"Crab Boil-Injected Deep Fried Turkey", emoji:"🦃", category:"Dinner",
+    img:"none",
+    desc:"A butter, broth and liquid crab boil injection gives the meat a spicy Louisiana flavor and keeps it juicy.",
+    servings:12, servingLabel:"servings",
+    ingredients:[
+      {name:"Whole turkey, 12–14 lbs (fully thawed, giblets and neck removed)",amt:"1"},
+      {name:"Peanut oil (enough to submerge the turkey)",amt:"3–5 gallons"},
+      {name:"Salted butter, melted",amt:"½ cup"},
+      {name:"Chicken broth",amt:"½ cup"},
+      {name:"Liquid crab boil (such as Zatarain's)",amt:"¼ cup"},
+      {name:"Lemon juice",amt:"⅓ cup"},
+      {name:"Cajun or Creole seasoning (plus extra for the outside)",amt:"2 tbsp"},
+      {name:"Garlic powder",amt:"1 tbsp"},
+      {name:"Onion powder",amt:"1 tbsp"},
+      {name:"Hot sauce",amt:"1 tbsp"}
+    ],
+    steps:[
+      {title:"Measure the oil",desc:"Before seasoning, set the turkey in the empty fryer pot and add water until it's covered by about an inch. Remove the turkey and mark the water line; that's your oil fill level. Dump the water and dry the pot and turkey completely."},
+      {title:"Make the injection",desc:"Whisk the melted butter, broth, crab boil, lemon juice, Cajun seasoning, garlic powder, onion powder, and hot sauce until smooth. Keep it warm so the butter stays liquid."},
+      {title:"Inject",desc:"Inject deep into the breasts, thighs, legs, and wings, a little at a time in many spots. Rub the outside with more Cajun seasoning."},
+      {title:"Rest",desc:"Refrigerate at least 4 hours or overnight. Pull it out 30–60 minutes before frying, and pat the skin very dry. Any water causes dangerous splattering."},
+      {title:"Heat the oil",desc:"Outdoors only, on flat ground well away from the house, deck, and garage. Heat the oil to 350°F. Keep a fire extinguisher rated for grease fires nearby."},
+      {title:"Lower the turkey",desc:"Turn the burner off. Wearing heavy gloves, lower the turkey on the rack or hook very slowly. Relight the burner and hold the oil at 325–350°F."},
+      {title:"Fry",desc:"Fry about 3–4 minutes per pound (roughly 40–50 minutes for 12–14 lbs). It's done when the breast reads 165°F and the thigh 175°F."},
+      {title:"Rest & carve",desc:"Turn the burner off, lift the turkey out slowly, and let it drain. Rest 20–30 minutes before carving."}
+    ],
+    notes:"Safety first: never fry a turkey that is frozen, partly thawed, or wet; never fry indoors or under a roof; and never leave the fryer unattended. If the oil catches fire, shut off the gas and use the extinguisher, never water."
+  },
 ];
 
 const categories = ["All", ...new Set(recipes.map(r => r.category))];
