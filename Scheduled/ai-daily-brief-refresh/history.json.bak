@@ -1,108 +1,5 @@
 [
   {
-    "date": "2026-09-10",
-    "providers": {
-      "OpenAI": {
-        "headline": "New dictation speech-to-text model rolling out across all ChatGPT plans; Site owners can now share live Sites with named external viewers without publishing publicly",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Anthropic": {
-        "headline": "Claude Code ships feedback drafting, API-spend cost optimization, richer tip overrides, and expanded policy/skill diagnostics",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Google Gemini": {
-        "headline": "New third-party app connections (OpenTable, Canva, Instacart) and multi-file code upload land in Gemini Advanced",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "xAI": {
-        "headline": "Grok 4.7 countdown reaches T-2 days from the Sept 12 target, still unconfirmed by xAI; grok-imagine-image-quality set to retire Nov 2",
-        "tags": [
-          "tactical",
-          "watch"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Meta": {
-        "headline": "No new headline today. Hatch agent's \"coming weeks\" launch and added safeguards remain the storyline",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Mistral": {
-        "headline": "No new headline, quiet since Sept 1 (9 days). OCR 4.1 GA and Agentic Search stand; Leanstral 1.5 retires Sept 30",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Perplexity": {
-        "headline": "No new headline today. Brain's retention policy from yesterday remains undisclosed, still no opt-out published",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Microsoft 365 Copilot": {
-        "headline": "\"Edit with Copilot\" brings Python execution for advanced analysis and automation directly into Excel",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "GitHub Copilot": {
-        "headline": "Content exclusions now enforced end-to-end in the Copilot app and CLI across agentic workflows",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Cursor": {
-        "headline": "No new headline today. Claude Fable 5.1's benchmark lead and self-hosted machines remain the latest ships",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Gamma": {
-        "headline": "No headline release today — 90 days quiet since June 12",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Notion AI": {
-        "headline": "No new headline today. Private draft capture and the Sept 22 Notion Mail wind-down remain current",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      }
-    },
-    "topMoves": [
-      "Claude Code adds feedback drafting, API spend cost-optimization, and skill diagnostics",
-      "GitHub Copilot enforces content exclusions across agentic workflows",
-      "Grok 4.7 countdown hits T-2 days, still unconfirmed by xAI"
-    ],
-    "clientAlerts": [],
-    "watchItems": [
-      "NIST SP 1353 input window closes Sept 16 (6 days)",
-      "Grok 4.7 target ~Sept 12 (2 days out) and Grok Bot free-trial window closing ~Sept 17",
-      "Meta's Hatch agent public launch",
-      "GitHub Copilot's Oct 2 deprecation wave, Notion Mail wind-down (Sept 22), Leanstral retirement (Sept 30)",
-      "Perplexity Brain's data-retention boundaries, now 2 days unresolved"
-    ]
-  },
-  {
     "date": "2026-09-11",
     "providers": {
       "OpenAI": {
@@ -6453,6 +6350,110 @@
       "Post-outage board questions",
       "Perplexity vs Amazon over agentic purchasing",
       "Qwen 4 open-weight release"
+    ]
+  },
+  {
+    "date": "2026-11-24",
+    "providers": {
+      "OpenAI": {
+        "headline": "GPT-6.2 Sol hits ChatGPT, GPT-5.6 retires Dec 23, and OpenAI proposes a shared safety score as the California suit hangs over it.",
+        "tags": [
+          "tactical",
+          "watch"
+        ],
+        "hasAlert": true,
+        "alertReason": "GPT-5.6 retirement Dec 23 breaks pinned integrations",
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "New Jan 22, 2027 retirement notice and a $63B chip-leasing financing, a week before Sonnet 4.5 and Opus 4.8 fast mode end.",
+        "tags": [
+          "tactical",
+          "strategic"
+        ],
+        "hasAlert": true,
+        "alertReason": "Nov 30 and Jan 22 model retirements",
+        "active": true
+      },
+      "Google Gemini": {
+        "headline": "GIF generation via Gemini Omni goes free in eight markets, and AI Pro/Plus are half price for Black Friday.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "xAI": {
+        "headline": "Quiet. Grok 4.7 (Sept) is still the flagship; Grok Voice 3.0 (Oct 14) is the latest ship.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Meta": {
+        "headline": "Quiet. Muse Ember (Nov 9, $0.10/$0.50 per M tokens) is the latest Muse release; no new Llama.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Mistral": {
+        "headline": "Quiet. Large 4 and Studio managed agents (early Nov) are still the latest.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Perplexity": {
+        "headline": "Quiet. Teammates is still a $200/mo Max-only web preview.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "Post-Ignite November rollouts land: Skills, Projects in Chat, and merged Chat/Cowork history go worldwide.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "GitHub Copilot": {
+        "headline": "No new ship found; Gemini 4 Carbon (Nov 10) is the latest model added.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Cursor": {
+        "headline": "Quiet. Still running without OpenAI models since Nov 12; Claude supply continues.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Gamma": {
+        "headline": "Still quiet. Gamma 5 (Oct 6) is the latest release.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "No new ship found. The Oct 19 release (Agents, BYOK, new credits) is the latest.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      }
+    },
+    "topMoves": [
+      "Retirement wave: Nov 30, Dec 23 and Jan 22 model cutoffs",
+      "GPT-6.2 Sol rolls into ChatGPT",
+      "OpenAI pitches a shared 'perplexity score' as an AI safety limit"
+    ],
+    "clientAlerts": [
+      "Model retirement wave: three hard cutoffs in the next 60 days"
+    ],
+    "watchItems": [
+      "Nov 30: Sonnet 4.5 retires, Opus 4.8 fast mode removed",
+      "Dec 23: GPT-5.6 Sol and Terra retire",
+      "California v. OpenAI response",
+      "Gemini AI Pro/Plus half price for Black Friday",
+      "Microsoft Copilot November rollouts"
     ]
   }
 ]

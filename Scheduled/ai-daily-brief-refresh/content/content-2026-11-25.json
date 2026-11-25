@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-25",
+  "client_alerts": [
+    {
+      "headline": "Google is starting to link Wallet to AI Mode in Search, with Drive and the Gemini app to follow",
+      "body": "The link is **opt-in**, but it puts payment and, soon, Drive content inside a consumer AI surface. Clients on Google Workspace should check whether users can turn on these links with work accounts. They should also update their AI acceptable-use policy before the Drive integration arrives in the next few weeks."
+    }
+  ],
+  "top_moves": [
+    {
+      "title": "Staff at OpenAI and Anthropic reportedly doubt unreleased models can ship safely",
+      "date_label": "Nov 24, 2026",
+      "urgent": false,
+      "body": "Axios cites more than two dozen employees across both labs warning that their most capable unreleased models may be too risky to release. OpenAI says it will keep publishing system cards and incident reports. Expect clients' boards to ask about frontier-model risk in vendor and third-party risk reviews.",
+      "tag": "strategic"
+    },
+    {
+      "title": "Anthropic launches Claude Ship and Enterprise Frontier Safeguards",
+      "date_label": "Nov 24, 2026",
+      "urgent": false,
+      "body": "Claude Ship is a set of agents for code review, fixes and approvals after code is written. Enterprise Frontier Safeguards detects coordinated AI misuse and is offered on the Claude Platform, Amazon Bedrock and Google Cloud. Both are new governance controls to cite in client AI-risk advisories.",
+      "tag": "tactical"
+    },
+    {
+      "title": "OpenAI and Cisco open-source Shirudo, a Linux shield for the window before a patch exists",
+      "date_label": "Nov 24, 2026",
+      "urgent": false,
+      "body": "One digest reports Shirudo protects Linux systems during the gap before a vendor patch ships. If it holds up, it's a compensating control worth noting in ransomware and DR runbooks. Confirm the details against the primary announcement first.",
+      "tag": "watch"
+    }
+  ],
+  "providers": [
+    {"name": "OpenAI", "display": "OpenAI", "headline": "Staff safety warnings over unreleased models, plus a reported Shirudo open-source release with Cisco.", "detail": "Axios reports OpenAI and Anthropic staff doubt that their next frontier models can ship safely, and OpenAI points to system cards and incident reports in response. A digest says OpenAI and Cisco open-sourced Shirudo, a pre-patch protection tool for Linux. GPT-6.2 Sol (covered yesterday) is still rolling into ChatGPT. Reports of $10B in quarterly revenue are not tied to a clear date.", "tags": ["strategic", "watch"], "classification": "strategic", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "Anthropic", "display": "Anthropic", "headline": "Claude Ship (post-code review agents) and Enterprise Frontier Safeguards launch; IPO trading status still unconfirmed.", "detail": "Claude Ship covers review, fixes and approvals after code is written. Enterprise Frontier Safeguards detects coordinated misuse across the Claude Platform, Bedrock and Google Cloud. Opus 4.8 fast mode is removed Nov 30. I could not confirm ANT's trading status from today's search.", "tags": ["tactical", "strategic"], "classification": "tactical", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "Google Gemini", "display": "Google Gemini", "headline": "Google Wallet now links to AI Mode (opt-in), with Drive and the Gemini app coming in the next few weeks.", "detail": "Google began rolling out an opt-in link between Google Wallet and AI Mode in Search, with Drive and Gemini app links to follow. AlloyDB Omni now integrates with locally hosted LLMs. Gemini 3.5 Pro still has no confirmed release.", "tags": ["alert", "tactical"], "classification": "alert", "active": true, "hasAlert": true, "alertReason": "Drive content is moving into AI Mode. Review Workspace admin controls."},
+    {"name": "xAI", "display": "xAI / Grok", "headline": "Quiet. Grok 4.7 is still current; Grok Voice 3.0 (Oct 14) is the latest launch.", "detail": "No November release found beyond the Nov 2 retirement of grok-imagine-image-quality. Grok 5 still has no date.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Meta", "display": "Meta", "headline": "Quiet. Muse Ember (Nov 9) is the latest; Muse Spark 1.2 weights are still unreleased.", "detail": "No new Llama. Meta's releases now come under the Muse brand. Muse Ember is the small model built for tool calls and extraction, at $0.10/$0.50 per million tokens.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Mistral", "display": "Mistral", "headline": "Quiet. Large 4 and the new Studio agent features (early November) are the latest.", "detail": "No new model found this week. Medium 3.5 runs self-hosted on four GPUs, which is still the sovereignty option to mention to clients.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Perplexity", "display": "Perplexity", "headline": "Quiet. Teammates (Max tier, web-only) and the Comet patent search (Nov 6) are the latest.", "detail": "No new ship found. Native apps for Teammates have been promised but have no date.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Microsoft 365 Copilot", "display": "Microsoft 365 Copilot", "headline": "Post-Ignite rollout continues; treat Autopilot as announced, not shipped.", "detail": "The combined Chat and Cowork history and Projects in Copilot Chat are rolling out worldwide in November. Connector write actions are GA. Autopilot's Message Center post still says timing and admin controls will come later.", "tags": ["watch"], "classification": "watch", "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "GitHub Copilot", "display": "GitHub Copilot", "headline": "No new ship found; Claude Ship now competes directly with Copilot's review agents.", "detail": "The latest weekly release I found added Claude Haiku 5.5 (Oct 5). Billing has been usage-based since June.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Cursor", "display": "Cursor", "headline": "Quiet. Running without OpenAI models since Nov 12; Claude models continue.", "detail": "Under SpaceXAI ownership. Version 3.24 (Oct 9) is the latest release found.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Gamma", "display": "Gamma", "headline": "Quiet. Gamma 5 (Oct 6) is still the latest.", "detail": "No November update found. The late-October context sources (Slack, Notion, Granola) are the last improvements.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Notion AI", "display": "Notion AI", "headline": "Quiet. The Oct 19 Agents, Auto model and BYOK release is still the latest.", "detail": "No November ship found. Under BYOK, clients can route Notion AI through their own model contracts.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""}
+  ],
+  "persistent_signals": [
+    {"provider": "OpenAI", "text": "OpenAI — agent and model safety scrutiny — 2 weeks running (last week: California's suit citing about 80 agent incidents; this week: staff warnings about unreleased models)"}
+  ],
+  "month_themes": {
+    "then": "Data used for ads (Google), state removal orders and funding (DeepSeek), copyright litigation (Anthropic and Suno)",
+    "now": "Frontier-model safety doubts from inside the labs, post-code governance agents (Claude Ship), personal data moving into AI search (Google Wallet and Drive)"
+  },
+  "habits": [
+    {"task": "BCP/DR plan narratives & runbooks", "tool": "Claude (Sonnet 5.5 / Fable 5.2)", "shift": "Move off Sonnet 4.5 and Opus 4.8 fast mode before **Nov 30**. Re-run saved prompts on Sonnet 5.5 now.", "type": "tactical"},
+    {"task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)", "tool": "Claude Projects + NotebookLM", "shift": "No change. Keep source documents pinned and quote the clause numbers.", "type": "tactical"},
+    {"task": "Vendor/architecture research", "tool": "Perplexity / ChatGPT deep research", "shift": "Add a 'frontier-model safety posture' question to AI vendor due-diligence checklists after the Axios report.", "type": "strategic"},
+    {"task": "Client proposals & SOWs", "tool": "Claude", "shift": "Offer AI-governance scoping (agent approvals, misuse detection) as an add-on. Claude Ship and Frontier Safeguards are useful reference points.", "type": "strategic"},
+    {"task": "Executive decks", "tool": "Gamma 5", "shift": "No change.", "type": "tactical"},
+    {"task": "Stakeholder audio walkthroughs", "tool": "NotebookLM / ChatGPT voice", "shift": "No change.", "type": "tactical"},
+    {"task": "Client advisory on AI data risk", "tool": "Manual + Claude", "shift": "Brief Google Workspace clients on the Wallet and Drive links to AI Mode before the Drive integration arrives.", "type": "watch"}
+  ],
+  "community": [
+    {"source": "r/ClaudeAI", "signal": "No visible high-engagement posts surfaced for this week. Searches returned only older digests (usage-limit complaints and the Cowork/chat merge).", "so_what": "No new community signal. Check the subreddit's Top / This Week view by hand if needed."},
+    {"source": "r/LocalLLaMA", "signal": "No current-week top posts found. Recent digests focus on small local models running well on consumer hardware.", "so_what": "Local and self-hosted options stay relevant for clients with strict data-residency rules."},
+    {"source": "r/OpenAI", "signal": "No current-week listing found. The OpenAI Community forum's top threads (Nov 8) were about account bans and conversation-retrieval errors.", "so_what": "Account-ban risk is a continuity issue: keep exports of critical ChatGPT project content."}
+  ],
+  "watch": [
+    {"kind": "deadline", "title": "Nov 30: Opus 4.8 fast mode removed (Sonnet 4.5 retirement reported)", "body": "Anthropic confirms the fast-mode removal. The Sonnet 4.5 retirement comes from a third-party report. Migrate any pinned workflows this week."},
+    {"kind": "security", "title": "Shirudo pre-patch Linux protection", "body": "Check the OpenAI/Cisco release in primary sources before recommending it as a compensating control."},
+    {"kind": "regulatory", "title": "Frontier-model safety disclosures", "body": "Follow-up reporting, or regulator interest, may follow the Axios story about staff warnings. Watch for system-card or incident-report changes."},
+    {"kind": "watch", "title": "Anthropic IPO trading status", "body": "Today's search did not confirm pricing or trading. Confirm against a live market source before citing it to clients."},
+    {"kind": "watch", "title": "Google Drive in AI Mode", "body": "The Drive and Gemini app links are expected in the coming weeks. Watch for Workspace admin controls."}
+  ],
+  "sources": "Sources consulted: OpenAI and Claude release notes, Google and xAI blogs, Releasebot feeds, Axios via 9to5Google/Digitimes, The Neuron and Rio Rundown daily digests, Microsoft Copilot roundups, Renaissance Capital and ABC News IPO coverage, and Fortune/ITPro resilience coverage."
+}
