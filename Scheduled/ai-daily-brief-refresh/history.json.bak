@@ -1,122 +1,5 @@
 [
   {
-    "date": "2026-09-11",
-    "providers": {
-      "OpenAI": {
-        "headline": "GPT-6 Astra reaches full GA across all ChatGPT paid tiers, API, Azure, and AWS Bedrock",
-        "tags": [
-          "tactical",
-          "alert"
-        ],
-        "hasAlert": true,
-        "alertReason": "Crossed OpenAI's 'Critical' capability threshold under the Preparedness Framework",
-        "active": true
-      },
-      "Anthropic": {
-        "headline": "Claude Fable 5.1 and Mythos 5.1 reach GA; Sonnet 5 pricing holds at $2/$10 per MTok",
-        "tags": [
-          "tactical",
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Google Gemini": {
-        "headline": "Gemini 3.8 Flash and 3.8 Flash Cyber launch, ending a 3-day quiet streak",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "xAI": {
-        "headline": "Grok 4.7 still targeting Sept 12; Grok Bot launches for enterprise",
-        "tags": [
-          "watch",
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Meta": {
-        "headline": "Muse Spark 1.3 ships (Sept 2) — closed-weights, 1M-token context",
-        "tags": [
-          "watch"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Mistral": {
-        "headline": "No new headline today, third straight quiet day",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Perplexity": {
-        "headline": "Perplexity Computer adds licensed finance data sources and new default models",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Microsoft 365 Copilot": {
-        "headline": "Reusable skills now follow users across SharePoint and OneDrive",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "GitHub Copilot": {
-        "headline": "Content exclusions now enforced across agentic workflows; Agent Merge enters public preview",
-        "tags": [
-          "tactical",
-          "watch"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Cursor": {
-        "headline": "No new headline today, fifth quiet day",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Gamma": {
-        "headline": "No headline release today — 85 days quiet since June 12",
-        "tags": [
-          "watch"
-        ],
-        "hasAlert": false,
-        "active": false
-      },
-      "Notion AI": {
-        "headline": "Workspace owners can now control which AI models power Notion Agent and Custom Agents",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      }
-    },
-    "topMoves": [
-      "Gemini 3.8 Flash and Flash Cyber break Google's 3-day quiet streak",
-      "GPT-6 Astra reaches full GA — and reportedly crosses OpenAI's 'Critical' capability threshold",
-      "Anthropic locks in Sonnet 5 pricing, ships Fable 5.1 / Mythos 5.1 to GA"
-    ],
-    "clientAlerts": [
-      "GPT-6 Astra reportedly crossed OpenAI's 'Critical' capability threshold"
-    ],
-    "watchItems": [
-      "Grok 4.7 launch — Sept 12, 2026",
-      "GitHub Copilot model deprecations — Oct 2, 2026",
-      "Mistral Leanstral 1.5 retirement — Sept 30, 2026",
-      "NIST AI documentation & CSF comment windows — Sept 16 and Oct 15, 2026",
-      "Notion AI model governance rollout"
-    ]
-  },
-  {
     "date": "2026-09-12",
     "providers": {
       "OpenAI": {
@@ -6454,6 +6337,110 @@
       "California v. OpenAI response",
       "Gemini AI Pro/Plus half price for Black Friday",
       "Microsoft Copilot November rollouts"
+    ]
+  },
+  {
+    "date": "2026-11-25",
+    "providers": {
+      "OpenAI": {
+        "headline": "Staff safety warnings over unreleased models, plus a reported Shirudo open-source release with Cisco.",
+        "tags": [
+          "strategic",
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "Claude Ship (post-code review agents) and Enterprise Frontier Safeguards launch; IPO trading status still unconfirmed.",
+        "tags": [
+          "tactical",
+          "strategic"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Google Gemini": {
+        "headline": "Google Wallet now links to AI Mode (opt-in), with Drive and the Gemini app coming in the next few weeks.",
+        "tags": [
+          "alert",
+          "tactical"
+        ],
+        "hasAlert": true,
+        "alertReason": "Drive content is moving into AI Mode. Review Workspace admin controls.",
+        "active": true
+      },
+      "xAI": {
+        "headline": "Quiet. Grok 4.7 is still current; Grok Voice 3.0 (Oct 14) is the latest launch.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Meta": {
+        "headline": "Quiet. Muse Ember (Nov 9) is the latest; Muse Spark 1.2 weights are still unreleased.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Mistral": {
+        "headline": "Quiet. Large 4 and the new Studio agent features (early November) are the latest.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Perplexity": {
+        "headline": "Quiet. Teammates (Max tier, web-only) and the Comet patent search (Nov 6) are the latest.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "Post-Ignite rollout continues; treat Autopilot as announced, not shipped.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "GitHub Copilot": {
+        "headline": "No new ship found; Claude Ship now competes directly with Copilot's review agents.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Cursor": {
+        "headline": "Quiet. Running without OpenAI models since Nov 12; Claude models continue.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Gamma": {
+        "headline": "Quiet. Gamma 5 (Oct 6) is still the latest.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "Quiet. The Oct 19 Agents, Auto model and BYOK release is still the latest.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      }
+    },
+    "topMoves": [
+      "Staff at OpenAI and Anthropic reportedly doubt unreleased models can ship safely",
+      "Anthropic launches Claude Ship and Enterprise Frontier Safeguards",
+      "OpenAI and Cisco open-source Shirudo, a Linux shield for the window before a patch exists"
+    ],
+    "clientAlerts": [
+      "Google is starting to link Wallet to AI Mode in Search, with Drive and the Gemini app to follow"
+    ],
+    "watchItems": [
+      "Nov 30: Opus 4.8 fast mode removed (Sonnet 4.5 retirement reported)",
+      "Shirudo pre-patch Linux protection",
+      "Frontier-model safety disclosures",
+      "Anthropic IPO trading status",
+      "Google Drive in AI Mode"
     ]
   }
 ]

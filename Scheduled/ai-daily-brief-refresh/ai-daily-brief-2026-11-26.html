@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI Daily Brief — November 26, 2026</title>
+</head>
+<body style="margin:0; padding:0; background-color:#fafafa; color:#1a1a1a; font-family:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size:15px; line-height:1.55;">
+
+<div style="max-width:900px; margin:0 auto; padding:0 16px 40px;">
+
+  <!-- 1. HEADER -->
+  <table style="width:100%; border-collapse:collapse; margin:20px 0 4px;">
+    <tr>
+      <td style="vertical-align:bottom; padding:0;">
+        <h1 style="margin:0 0 4px; font-size:26px; font-weight:700; color:#1a1a1a; letter-spacing:-0.01em;">AI Daily Brief</h1>
+        <div style="font-size:13px; color:#6b7280;">Prepared for Chris G. — IT Consultant, BCP/DR &amp; Resilience</div>
+      </td>
+      <td style="vertical-align:bottom; text-align:right; padding:0;">
+        <div style="font-size:15px; font-weight:700; color:#1a1a1a;">November 26, 2026</div>
+        <div style="font-size:11px; color:#9ca3af;">Refreshes daily at 6:00 AM local</div>
+      </td>
+    </tr>
+  </table>
+  <div style="height:3px; background-color:#1e293b; margin:0 0 22px;"></div>
+
+  <!-- 2. CLIENT ALERT -->
+  <div style="background-color:#fffbea; border-left:4px solid #c99400; border-radius:0 8px 8px 0; padding:14px 18px; margin:0 0 26px;">
+    <div style="font-size:13px; font-weight:700; color:#7c5e00; text-transform:uppercase; letter-spacing:0.06em; margin:0 0 10px;">&#9888; BCP/DR Client Alert — 1 Active Item</div>
+    <p style="margin:0; font-size:14px; color:#3f3000;"><strong style="color:#1a1a1a;">Google Workspace MCP servers and CLI are now GA</strong> As of Nov 24, any MCP-capable agent (Claude, Copilot, custom builds) can be connected to a tenant's Gmail, Drive, Calendar and Docs through Google's own supported servers. <strong>Ask clients whether Workspace admins have restricted which MCP clients and OAuth scopes are allowed</strong> before staff connect agents to mailboxes and shared drives that hold BCP/DR plans, contact trees or incident records.</p>
+  </div>
+
+  <!-- 3. TOP 3 MOVES -->
+  <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#6b7280; border-bottom:1px solid #e5e7eb; padding-bottom:7px; margin:0 0 14px;">Top 3 Moves of the Day</div>
+  <table style="width:100%; border-collapse:separate; border-spacing:10px 0; margin:0 0 28px;">
+    <tr>
+      <td style="width:33%; vertical-align:top; background-color:#ffffff; border:1px solid #e5e7eb; border-radius:8px; padding:15px;">
+        <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#9ca3af; margin:0 0 6px;">Move #1</div>
+        <div style="font-size:15px; font-weight:700; color:#1a1a1a; margin:0 0 5px; line-height:1.3;">Google makes Workspace MCP servers and Workspace CLI generally available</div>
+        <div style="font-size:11px; color:#6b7280; font-weight:600; margin:0 0 8px;">Nov 24, 2026</div>
+        <div style="font-size:13px; color:#4b5563; margin:0 0 10px;">Gmail, Drive, Calendar and Docs are now officially exposed to MCP agents and scripts. Any agent can now reach a Workspace tenant through a supported route, so agent access is a governance question for every Workspace client.</div>
+        <div><span style="display:inline-block; padding:2px 9px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></div>
+      </td>
+      <td style="width:33%; vertical-align:top; background-color:#ffffff; border:1px solid #e5e7eb; border-radius:8px; padding:15px;">
+        <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#9ca3af; margin:0 0 6px;">Move #2</div>
+        <div style="font-size:15px; font-weight:700; color:#1a1a1a; margin:0 0 5px; line-height:1.3;">Anthropic ships MCP Tasks and Elicitation GA, discloses its Siren sandbox-escape honeypot</div>
+        <div style="font-size:11px; color:#6b7280; font-weight:600; margin:0 0 8px;">Nov 24, 2026</div>
+        <div style="font-size:13px; color:#4b5563; margin:0 0 10px;">Long-running MCP tasks and mid-task questions to the user are now GA in Claude, so agents can pause and ask before acting. Anthropic also described Siren, a pre-release test that drops Claude agents into 26 deliberately flawed sandboxes to see whether they try to escape.</div>
+        <div><span style="display:inline-block; padding:2px 9px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></div>
+      </td>
+      <td style="width:33%; vertical-align:top; background-color:#ffffff; border:1px solid #e5e7eb; border-radius:8px; padding:15px;">
+        <div style="font-size:10px; font-weight:700; text-transform:uppercase; letter-spacing:0.08em; color:#9ca3af; margin:0 0 6px;">Move #3</div>
+        <div style="font-size:15px; font-weight:700; color:#1a1a1a; margin:0 0 5px; line-height:1.3;">Nov 30 cut-off: Opus 4.8 fast mode removed; Sonnet 4.5 reportedly retires</div>
+        <div style="font-size:11px; color:#b91c1c; font-weight:600; margin:0 0 8px;">Nov 30, 2026</div>
+        <div style="font-size:13px; color:#4b5563; margin:0 0 10px;">Anthropic's API notes confirm that Opus 4.8 fast mode goes away on Nov 30. A third-party roundup says Sonnet 4.5 retires the same day. <strong>Any client script or integration pinned to either model has four days left.</strong></div>
+        <div><span style="display:inline-block; padding:2px 9px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fee2e2; color:#b91c1c;">Client Alert</span></div>
+      </td>
+    </tr>
+  </table>
+
+  <!-- 4. TREND TRACKER -->
+  <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#6b7280; border-bottom:1px solid #e5e7eb; padding-bottom:7px; margin:0 0 14px;">Trend Tracker</div>
+  <div style="background-color:#1e293b; color:#ffffff; padding:12px 16px; border-radius:8px 8px 0 0;">
+    <div style="font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;">Panel A &mdash; Provider Velocity</div>
+    <div style="font-size:11px; color:#94a3b8; margin-top:3px;">Velocity computed over the last 4 recorded entries (Nov 23, 24, 25, 26). W/W compares against Nov 19 (closest entry to 7 days ago).</div>
+  </div>
+  <table style="width:100%; border-collapse:collapse; background-color:#ffffff; border:1px solid #e5e7eb; border-top:none; margin:0 0 18px; font-size:13px;">
+    <thead>
+      <tr>
+        <th style="text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Provider</th>
+        <th style="text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">30-Day Velocity</th>
+        <th style="text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">W/W Change</th>
+        <th style="text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Key Signal Today</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">OpenAI</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#fee2e2; color:#b91c1c;">&#128293; HOT</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#b45309; font-weight:600;">Persistent &#9888;&#65039;</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Reports of a 20% GPT-6.2 Astra price cut, with power users complaining about Ultrafast tier pricing.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Anthropic</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#fee2e2; color:#b91c1c;">&#128293; HOT</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#1d4ed8; font-weight:600;">Continued</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">MCP Tasks and Elicitation GA in Claude (Nov 24); Siren sandbox-escape testing disclosed; Nov 30 model cut-offs approaching.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Google Gemini</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#dcfce7; color:#15803d;">&#8593; RISING</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#1d4ed8; font-weight:600;">Continued</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Workspace MCP servers and Workspace CLI GA (Nov 24); Gemini 4 Neon reported as the newest Gemini 4 model.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">xAI</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">Gone quiet &mdash; 38 days</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Quiet. Grok 4.7 (Sept) and Grok Voice 3.0 (Oct 14) are still the latest ships.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Meta</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">Gone quiet &mdash; 20 days</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Quiet. Muse Ember (Nov 9) is the latest; no Llama release.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Mistral</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">Gone quiet &mdash; 20 days</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Quiet. Large 4 and the new Studio managed-agent features are still the latest.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Perplexity</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">Gone quiet &mdash; 19 days</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Quiet. Teammates (Max, $200/mo) from Nov 6 is still the latest ship.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Microsoft 365 Copilot</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#dbeafe; color:#1d4ed8;">&#8594; STEADY</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#b91c1c; font-weight:600;">Went quiet</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Post-Ignite rollouts continue: combined Chat/Cowork history and Projects in Chat reach worldwide; Autopilot timing still TBD.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">GitHub Copilot</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#b91c1c; font-weight:600;">Went quiet</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No new ship found. Microsoft Code 2 and Code 2 Flash (GA last week) are the latest models.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Cursor</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">&mdash;</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">No new ship found; OpenAI built-in models gone since Nov 12, Claude still supplied.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; font-weight:600;">Gamma</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; font-weight:600;">&mdash;</td>
+        <td style="padding:9px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563;">Still quiet. Gamma 5 (Oct 6) is the current release.</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 12px; font-weight:600;">Notion AI</td>
+        <td style="padding:9px 12px;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:700; background-color:#f9fafb; color:#9ca3af; border:1px solid #e5e7eb;">&#11036; QUIET</span></td>
+        <td style="padding:9px 12px; color:#9ca3af; font-weight:600;">Gone quiet &mdash; 36 days</td>
+        <td style="padding:9px 12px; color:#4b5563;">No new ship found; Oct 19 agents/BYOK/credit-system release is the latest.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div style="background-color:#fffbea; border-left:4px solid #c99400; border-radius:0 8px 8px 0; padding:12px 16px; margin:0 0 18px;">
+    <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#7c5e00; margin:0 0 8px;">Panel B &mdash; Persistent Signals</div>
+    <p style="margin:0 0 6px; font-size:13px; color:#3f3000;">OpenAI — GPT-6.2 Astra/Sol — 2 weeks running (launch Nov 17, now pricing changes and Ultrafast-tier pushback)</p>
+    <p style="margin:0; font-size:13px; color:#3f3000;">Microsoft 365 Copilot — Ignite agent rollout (Agent 365, Autopilot) — 2 weeks running (features landing worldwide, Autopilot dates still unconfirmed)</p>
+  </div>
+
+  <div style="background-color:#ffffff; border:1px solid #e5e7eb; border-radius:8px; padding:0; margin:0 0 28px;">
+    <div style="background-color:#1e293b; color:#ffffff; padding:11px 16px; border-radius:7px 7px 0 0; font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;">Panel C &mdash; Month Snapshot</div>
+    <table style="width:100%; border-collapse:collapse; font-size:13px;">
+      <tr>
+        <th style="width:34%; text-align:left; padding:9px 16px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Measure</th>
+        <th style="width:33%; text-align:left; padding:9px 16px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">30 Days Ago (Oct 26)</th>
+        <th style="width:33%; text-align:left; padding:9px 16px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Today (Nov 26)</th>
+      </tr>
+      <tr>
+        <td style="padding:9px 16px; border-bottom:1px solid #f3f4f6; font-weight:600;">Active providers</td>
+        <td style="padding:9px 16px; border-bottom:1px solid #f3f4f6; color:#4b5563;">2 of 12</td>
+        <td style="padding:9px 16px; border-bottom:1px solid #f3f4f6; color:#15803d; font-weight:600;">3 of 12 &nbsp;&#9650; +1</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 16px; border-bottom:1px solid #f3f4f6; font-weight:600;">Client alerts</td>
+        <td style="padding:9px 16px; border-bottom:1px solid #f3f4f6; color:#4b5563;">3</td>
+        <td style="padding:9px 16px; border-bottom:1px solid #f3f4f6; color:#15803d; font-weight:600;">2 &nbsp;&#9660; &minus;1</td>
+      </tr>
+      <tr>
+        <td style="padding:9px 16px; font-weight:600; vertical-align:top;">Top themes</td>
+        <td style="padding:9px 16px; color:#4b5563; vertical-align:top;">Ad targeting from connected personal data (Google), state action against Chinese AI (DeepSeek), copyright litigation (Anthropic/Suno)</td>
+        <td style="padding:9px 16px; color:#4b5563; vertical-align:top;">Agents gaining official access to enterprise data (Workspace MCP), agent safety testing and safeguards (Siren, Frontier Safeguards), model retirement deadlines</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- 5. PROVIDER BY PROVIDER -->
+  <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#6b7280; border-bottom:1px solid #e5e7eb; padding-bottom:7px; margin:0 0 14px;">Provider-by-Provider Updates</div>
+  <table style="width:100%; border-collapse:collapse; background-color:#ffffff; border:1px solid #e5e7eb; margin:0 0 28px; font-size:13px;">
+    <thead>
+      <tr>
+        <th style="width:16%; text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Provider</th>
+        <th style="width:62%; text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">What Changed</th>
+        <th style="width:22%; text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Classification</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">OpenAI</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">GPT-6.2 Astra ($8/$40) and Sol ($2/$10) launched Nov 17. A secondary source reports a 20% Astra price cut since then, which OpenAI has not confirmed. Images 2.6 (Nov 4) is still the latest image model. No new ChatGPT feature ship was found for the past 48 hours.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fef3c7; color:#92400e;">Watch</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Anthropic</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Claude agents can now run long MCP tasks and stop to ask the user for input. Siren is a pre-release honeypot with 26 flawed sandboxes that checks whether models try to escape. Opus 4.8 fast mode is removed Nov 30, and Sonnet 4.5 is reported to retire the same day. Claude Meetings (beta, Team/Enterprise) and Fable 5.2 (Nov 9) are still the most recent app and model ships.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Google Gemini</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Workspace data is now officially reachable by MCP agents. Aggregators list Gemini 4 Neon as the fourth Gemini 4 model, after Argon (Oct) and Carbon (API, Nov 10), but Google's own pages don't confirm it. Gemini 3.5 Pro is still unaccounted for.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">xAI / Grok</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No November model release found. grok-imagine-image-quality was retired Nov 2. SpaceXAI ownership of Cursor still shapes its model supply.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Meta</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Llama 4 is still the last Llama. Meta's work is now in the Muse family: Spark (proprietary), Glimmer (open, Apache 2.0) and Ember (small, $0.10/$0.50).</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Mistral</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No new ship found in the past 48 hours. OCR 4 and Medium 3.5 are listed on Mistral's news page, but their dates are unclear.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Perplexity</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Comet Assistant upgrade, a fully local Computer on Mac, and an agentic shopping assistant shipped after Amazon's cease-and-desist. Nothing new this week.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Microsoft 365 Copilot</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">The October roadmap items are landing worldwide this month: combined Chat and Cowork history, and Projects in Copilot Chat. Connector write actions are GA. The Autopilot Message Center post still has no firm rollout date or admin controls. No new announcement in the past 48 hours.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fef3c7; color:#92400e;">Watch</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">GitHub Copilot</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Usage-based billing on all plans is unchanged. Claude Ship's PR review agents now compete directly with Copilot code review.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Cursor</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Cursor 3.24 (Oct 9, enterprise security) is the latest version found. Since the SpaceXAI acquisition, its model mix depends on Anthropic and xAI.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:700; vertical-align:top;">Gamma</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No November update found. Slack, Notion and Granola are still supported context sources.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#9ca3af; vertical-align:top;">&mdash;</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; font-weight:700; vertical-align:top;">Notion AI</td>
+        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">More capable Notion Agents, a cheaper Auto model, bring-your-own-key and an improved Notion MCP. The new AI credit system is still the main billing change to watch.</td>
+        <td style="padding:10px 12px; color:#9ca3af; vertical-align:top;">&mdash;</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 6. SHIFT YOUR HABITS -->
+  <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#6b7280; border-bottom:1px solid #e5e7eb; padding-bottom:7px; margin:0 0 14px;">Shift Your Habits &mdash; BCP/DR Consulting Workflow</div>
+  <table style="width:100%; border-collapse:collapse; background-color:#ffffff; border:1px solid #e5e7eb; margin:0 0 28px; font-size:13px;">
+    <thead>
+      <tr>
+        <th style="width:22%; text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Task</th>
+        <th style="width:18%; text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Current Tool</th>
+        <th style="width:45%; text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Recommended Shift</th>
+        <th style="width:15%; text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Type</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">BCP/DR plan narratives &amp; runbooks</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Claude (Opus 5.5 / Sonnet 5.5)</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Use MCP Elicitation so a runbook-drafting agent stops and asks for RTO/RPO values instead of guessing. Move any saved prompts off Sonnet 4.5 before Nov 30.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Claude Projects + source PDFs</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No change. Keep summaries grounded in the uploaded standard text. Vendor claims such as "NIST AI RMF 1.1" are still unverified, so cite nist.gov directly.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fef3c7; color:#92400e;">Watch</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Vendor/architecture research</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Perplexity / Claude web search</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Gemini 4 model naming is inconsistent across aggregators. Confirm model status against vendor release notes before putting it in client material.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#dbeafe; color:#1e40af;">Tactical</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Client proposals &amp; SOWs</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Claude</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Add a line item for AI-agent access governance (MCP and OAuth scopes) to Workspace and M365 resilience engagements. It's now a sellable scope item.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Executive decks</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Gamma 5 / ChatGPT slides</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">No change this week.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fef3c7; color:#92400e;">Watch</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">Stakeholder audio walkthroughs</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#6b7280; vertical-align:top;">Claude Meetings (beta) / NotebookLM</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Claude Meetings joins Google Meet calls as a visible participant. Get client consent before using it on tabletop exercises.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#fef3c7; color:#92400e;">Watch</span></td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; font-weight:600; vertical-align:top;">Client advisory on AI data risk</td>
+        <td style="padding:10px 12px; color:#6b7280; vertical-align:top;">Claude + vendor trust pages</td>
+        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">Lead with Workspace MCP GA: an inventory of which agents hold which Workspace scopes now belongs in DR dependency mapping, since a revoked token can break an agent-driven recovery step.</td>
+        <td style="padding:10px 12px; vertical-align:top;"><span style="display:inline-block; padding:2px 8px; border-radius:999px; font-size:11px; font-weight:600; background-color:#ede9fe; color:#6d28d9;">Strategic</span></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 7. COMMUNITY SIGNAL -->
+  <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#6b7280; border-bottom:1px solid #e5e7eb; padding-bottom:7px; margin:0 0 14px;">Community Signal</div>
+  <table style="width:100%; border-collapse:collapse; background-color:#ffffff; border:1px solid #e5e7eb; margin:0 0 28px; font-size:13px;">
+    <thead>
+      <tr>
+        <th style="width:18%; text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Source</th>
+        <th style="width:41%; text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">Signal</th>
+        <th style="width:41%; text-align:left; padding:9px 12px; background-color:#f9fafb; border-bottom:1px solid #e5e7eb; font-size:11px; text-transform:uppercase; letter-spacing:0.05em; color:#6b7280;">So What</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">r/LocalLLaMA</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Altman's quote calling local inference a poor use of scarce compute drew the month's biggest thread (~6.5K score, 2.8K comments). Qwen's "open source to the end" pledge scored 4.5K.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Clients with data-residency needs have a credible open-weight path (Qwen, Muse Glimmer). Keep a local-model option in AI continuity plans.</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; font-weight:600; vertical-align:top;">r/LocalLLaMA</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">Qwen 3.8 27B praise thread (892 comments) and Qwen 4 teasers.</td>
+        <td style="padding:10px 12px; border-bottom:1px solid #f3f4f6; color:#4b5563; vertical-align:top;">A capable mid-size model that runs on modest hardware can serve as a fallback when a cloud LLM has an outage.</td>
+      </tr>
+      <tr>
+        <td style="padding:10px 12px; font-weight:600; vertical-align:top;">r/ClaudeAI</td>
+        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">Ongoing discussion of the Chat and Cowork merger and of desktop agents taking unintended actions (per Daily Claude digests; no fresh top-post data this week).</td>
+        <td style="padding:10px 12px; color:#4b5563; vertical-align:top;">Agent action logs and approval settings belong in any client's AI acceptable-use policy.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- 8. WATCH LIST -->
+  <div style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:#6b7280; border-bottom:1px solid #e5e7eb; padding-bottom:7px; margin:0 0 24px;">Watch List &mdash; Next 7&ndash;14 Days</div>
+  <table style="width:100%; border-collapse:separate; border-spacing:0 8px; margin:0 0 24px;">
+    <tr>
+      <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #92400e; border-radius:0 8px 8px 0; padding:13px 16px;">
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#92400e; margin:0 0 4px;">&#128176; Deadline</div>
+        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Nov 30 — Opus 4.8 fast mode removed; Sonnet 4.5 retirement reported</div>
+        <div style="font-size:13px; color:#4b5563;">Check client and personal scripts for pinned model IDs this week. The holiday weekend leaves little time to fix them.</div>
+      </td>
+    </tr>
+    <tr>
+      <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #b91c1c; border-radius:0 8px 8px 0; padding:13px 16px;">
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#b91c1c; margin:0 0 4px;">&#9888; Security</div>
+        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Workspace MCP GA — tenant scope reviews</div>
+        <div style="font-size:13px; color:#4b5563;">Expect Google admin guidance and third-party MCP connectors to multiply quickly. Watch for an admin allowlist control.</div>
+      </td>
+    </tr>
+    <tr>
+      <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #6d28d9; border-radius:0 8px 8px 0; padding:13px 16px;">
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#6d28d9; margin:0 0 4px;">&#128269; Watch</div>
+        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Gemini 4 Neon / 3.5 Pro clarity</div>
+        <div style="font-size:13px; color:#4b5563;">Google's naming conflicts across sources. Watch for an official DeepMind post or API release note.</div>
+      </td>
+    </tr>
+    <tr>
+      <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #92400e; border-radius:0 8px 8px 0; padding:13px 16px;">
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#92400e; margin:0 0 4px;">&#128176; Pricing</div>
+        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">GPT-6.2 Astra price change</div>
+        <div style="font-size:13px; color:#4b5563;">Confirm the reported 20% cut on OpenAI's pricing page before re-costing client workloads.</div>
+      </td>
+    </tr>
+    <tr>
+      <td style="background-color:#ffffff; border:1px solid #e5e7eb; border-left:4px solid #b91c1c; border-radius:0 8px 8px 0; padding:13px 16px;">
+        <div style="font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:0.06em; color:#b91c1c; margin:0 0 4px;">&#9888; Regulatory</div>
+        <div style="font-size:14px; font-weight:700; color:#1a1a1a; margin:0 0 4px;">Post-outage resilience scrutiny</div>
+        <div style="font-size:13px; color:#4b5563;">Fortune's Nov 18 "week of outages" coverage keeps CIO resilience in focus heading into December board cycles. It's a good hook for AI-dependency DR reviews.</div>
+      </td>
+    </tr>
+  </table>
+
+  <!-- 9. FOOTER -->
+  <div style="border-top:1px solid #e5e7eb; padding-top:14px; margin-top:8px;">
+    <p style="margin:0 0 6px; font-size:12px; color:#6b7280;"><strong style="color:#1a1a1a;">AI Daily Brief &mdash; November 26, 2026</strong> &nbsp;|&nbsp; Prepared for Chris G., IT Consultant, BCP/DR &amp; Resilience</p>
+    <p style="margin:0 0 6px; font-size:11px; color:#9ca3af; line-height:1.5;">Sources consulted: Anthropic help-center and API release notes, Rio Rundown (Nov 24), aiweekly.co, llm-stats.com, Google Cloud blog, OpenAI release notes, xAI release notes, Microsoft Copilot roundups, Releasebot, AI Signal r/LocalLLaMA digest, The Daily Claude, Fortune, ITPro and Gartner. Thanksgiving-week coverage was thin and several aggregator claims are unverified.</p>
+    <p style="margin:0; font-size:11px; color:#9ca3af;">Generated by Claude (Anthropic) &middot; Automated daily brief &middot; Static snapshot, no live connections.</p>
+  </div>
+
+</div>
+
+</body>
+</html>

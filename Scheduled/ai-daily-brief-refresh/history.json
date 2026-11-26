@@ -1,110 +1,5 @@
 [
   {
-    "date": "2026-09-12",
-    "providers": {
-      "OpenAI": {
-        "headline": "GPT-6 Astra rolling out broadly; ChatGPT Images 2.5 and Voice/Codex upgrades ship.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Anthropic": {
-        "headline": "Claude Code gets plugin evals + output-style switching; Enterprise Smart Reports beta; Admin API user-management out of beta.",
-        "tags": [
-          "tactical",
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Google Gemini": {
-        "headline": "Gemini Advanced adds multi-file code upload for debugging/review workflows.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "xAI": {
-        "headline": "Grok 4.7 (2.1T, SpaceX-trained) launches today, Sept 12.",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Meta": {
-        "headline": "No new headline today.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Mistral": {
-        "headline": "No new headline, fourth straight quiet day.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Perplexity": {
-        "headline": "No new headline today.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Microsoft 365 Copilot": {
-        "headline": "Copilot Cost Management gets new governance controls; reusable skills follow users across SharePoint/OneDrive.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "GitHub Copilot": {
-        "headline": "Oct 2 model deprecation wave announced: Gemini 3.5/3.6 Flash → 3.8, Kimi K2.7 Code → K3, Claude Opus 4.7 → Opus 5.",
-        "tags": [
-          "watch"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Cursor": {
-        "headline": "No new headline today.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Gamma": {
-        "headline": "No release since June 12 — now 87 days quiet.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Notion AI": {
-        "headline": "Workspace owners can now restrict which AI models Notion Agent and Custom Agents use (Sept 9).",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      }
-    },
-    "topMoves": [
-      "Grok 4.7 launches today — 2.1T params, trained on SpaceX engineering data",
-      "Anthropic ships broad Claude Code update: plugin evals, output-style switching, Enterprise Smart Reports",
-      "OpenAI ships ChatGPT Images 2.5 and Voice/Codex upgrades"
-    ],
-    "clientAlerts": [],
-    "watchItems": [
-      "GitHub Copilot model deprecation wave — Oct 2, 2026",
-      "Mistral Leanstral 1.5 retires Sept 30, 2026",
-      "NIST SP 1353 comment period closes Oct 15, 2026",
-      "Notion standalone Mail inbox winds down Sept 22, 2026",
-      "Grok 4.7 post-launch stability and enterprise rollout"
-    ]
-  },
-  {
     "date": "2026-09-13",
     "providers": {
       "OpenAI": {
@@ -6441,6 +6336,109 @@
       "Frontier-model safety disclosures",
       "Anthropic IPO trading status",
       "Google Drive in AI Mode"
+    ]
+  },
+  {
+    "date": "2026-11-26",
+    "providers": {
+      "OpenAI": {
+        "headline": "Reports of a 20% GPT-6.2 Astra price cut, with power users complaining about Ultrafast tier pricing.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "MCP Tasks and Elicitation GA in Claude (Nov 24); Siren sandbox-escape testing disclosed; Nov 30 model cut-offs approaching.",
+        "tags": [
+          "tactical",
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "Nov 30 model and fast-mode retirement",
+        "active": true
+      },
+      "Google Gemini": {
+        "headline": "Workspace MCP servers and Workspace CLI GA (Nov 24); Gemini 4 Neon reported as the newest Gemini 4 model.",
+        "tags": [
+          "strategic"
+        ],
+        "hasAlert": true,
+        "alertReason": "Workspace MCP GA widens agent access to client mail and Drive",
+        "active": true
+      },
+      "xAI": {
+        "headline": "Quiet. Grok 4.7 (Sept) and Grok Voice 3.0 (Oct 14) are still the latest ships.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Meta": {
+        "headline": "Quiet. Muse Ember (Nov 9) is the latest; no Llama release.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Mistral": {
+        "headline": "Quiet. Large 4 and the new Studio managed-agent features are still the latest.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Perplexity": {
+        "headline": "Quiet. Teammates (Max, $200/mo) from Nov 6 is still the latest ship.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "Post-Ignite rollouts continue: combined Chat/Cowork history and Projects in Chat reach worldwide; Autopilot timing still TBD.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "GitHub Copilot": {
+        "headline": "No new ship found. Microsoft Code 2 and Code 2 Flash (GA last week) are the latest models.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Cursor": {
+        "headline": "No new ship found; OpenAI built-in models gone since Nov 12, Claude still supplied.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Gamma": {
+        "headline": "Still quiet. Gamma 5 (Oct 6) is the current release.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "No new ship found; Oct 19 agents/BYOK/credit-system release is the latest.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      }
+    },
+    "topMoves": [
+      "Google makes Workspace MCP servers and Workspace CLI generally available",
+      "Anthropic ships MCP Tasks and Elicitation GA, discloses its Siren sandbox-escape honeypot",
+      "Nov 30 cut-off: Opus 4.8 fast mode removed; Sonnet 4.5 reportedly retires"
+    ],
+    "clientAlerts": [
+      "Google Workspace MCP servers and CLI are now GA"
+    ],
+    "watchItems": [
+      "Nov 30 — Opus 4.8 fast mode removed; Sonnet 4.5 retirement reported",
+      "Workspace MCP GA — tenant scope reviews",
+      "Gemini 4 Neon / 3.5 Pro clarity",
+      "GPT-6.2 Astra price change",
+      "Post-outage resilience scrutiny"
     ]
   }
 ]
