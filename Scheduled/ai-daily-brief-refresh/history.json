@@ -1,111 +1,5 @@
 [
   {
-    "date": "2026-09-13",
-    "providers": {
-      "OpenAI": {
-        "headline": "No new dated announcement today; GPT-6 Astra and the GPT-Live-1 voice API continue rolling out.",
-        "tags": [
-          "watch"
-        ],
-        "hasAlert": false,
-        "active": false
-      },
-      "Anthropic": {
-        "headline": "No new dated announcement today; Claude Fable 5.1's cache-pricing cut and Enterprise Smart Reports keep rolling out.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": false
-      },
-      "Google Gemini": {
-        "headline": "No new dated announcement today; Gemini 3.7 Flash and the Live agent features continue their rollout.",
-        "tags": [
-          "watch"
-        ],
-        "hasAlert": false,
-        "active": false
-      },
-      "xAI": {
-        "headline": "Grok 4.7 launch slips past its Sept 12 target date.",
-        "tags": [
-          "watch"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Meta": {
-        "headline": "No new headline today.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Mistral": {
-        "headline": "No new headline; Leanstral 1.5 retires Sept 30.",
-        "tags": [
-          "watch"
-        ],
-        "hasAlert": false,
-        "active": false
-      },
-      "Perplexity": {
-        "headline": "No material dated update today.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Microsoft 365 Copilot": {
-        "headline": "No new dated announcement today; GPT-6 Astra continues rolling into Copilot Cowork/Studio.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": false
-      },
-      "GitHub Copilot": {
-        "headline": "Sets Oct 2 model deprecation wave across Copilot experiences.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Cursor": {
-        "headline": "No new headline today.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Gamma": {
-        "headline": "No release since June 12 — extended quiet stretch continues.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Notion AI": {
-        "headline": "Ships per-workspace AI model governance controls.",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      }
-    },
-    "topMoves": [
-      "Grok 4.7 slips past its Sept 12 target",
-      "GitHub Copilot sets Oct 2 model deprecation wave",
-      "Notion adds per-workspace AI model governance"
-    ],
-    "clientAlerts": [],
-    "watchItems": [
-      "Grok 4.7 revised launch date",
-      "GitHub Copilot Oct 2 model deprecation",
-      "Mistral Leanstral 1.5 retirement — Sept 30",
-      "NIST SP 1353 comment period closes Sept 16",
-      "Notion Mail standalone app winding down — Sept 22"
-    ]
-  },
-  {
     "date": "2026-09-14",
     "providers": {
       "OpenAI": {
@@ -6439,6 +6333,108 @@
       "Gemini 4 Neon / 3.5 Pro clarity",
       "GPT-6.2 Astra price change",
       "Post-outage resilience scrutiny"
+    ]
+  },
+  {
+    "date": "2026-11-27",
+    "providers": {
+      "OpenAI": {
+        "headline": "Private Inference alpha, a merged Chat/Work usage meter, and a Nov 29 Daybreak Blue training change.",
+        "tags": [
+          "strategic",
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "Daybreak Blue personal-session training from Nov 29",
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "ANT reportedly closes below its IPO price; the Claude API was rewritten in Rust (~70% less CPU in one region).",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Google Gemini": {
+        "headline": "Workspace AI agents must connect via MCP servers or the Workspace CLI from Feb 1, 2027.",
+        "tags": [
+          "tactical",
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "xAI": {
+        "headline": "Quiet. Grok 4.7 is still the latest model; Grok 5 is unreleased.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Meta": {
+        "headline": "Quiet. The Nov 6 Muse Wonder-trained update (Active Memory, Active Focus) is still the latest.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Mistral": {
+        "headline": "Quiet. Mistral Large 4 and Studio managed agents (early Nov) are still the latest.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Perplexity": {
+        "headline": "Quiet. Teammates (Nov 5, Max tier at $200/mo) is still the latest ship.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "Quiet after Ignite. Copilot Code GA is still expected in December.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "GitHub Copilot": {
+        "headline": "Quiet. Copilot Code (via Microsoft) is still the next GA milestone, in December.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Cursor": {
+        "headline": "Quiet. The status of OpenAI models in Cursor after the Nov 12 cutoff is still unconfirmed.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Gamma": {
+        "headline": "Quiet. Gamma 5 (Oct 6, follow-up Oct 26) is still the latest.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "Quiet. Notion 3.8 (Oct 13) and the Oct 19 credit-system change are still the latest.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      }
+    },
+    "topMoves": [
+      "OpenAI tests 'Private Inference' confidential computing for business customers",
+      "Daybreak Blue training change takes effect Saturday",
+      "ChatGPT merges Chat and Work into one usage meter"
+    ],
+    "clientAlerts": [
+      "OpenAI to train on personal-account Daybreak Blue sessions from Nov 29",
+      "OpenRouter withdraws zero-data-retention eligibility from 125 endpoints"
+    ],
+    "watchItems": [
+      "Nov 29: OpenAI Daybreak Blue personal-session training begins",
+      "Nov 30: Opus 4.8 fast mode removed; Sonnet 4.5 reportedly retires",
+      "OpenAI Private Inference — wider availability?",
+      "Google Workspace: MCP/CLI-only agent access from Feb 1, 2027",
+      "December: Copilot Code GA (Microsoft / GitHub)"
     ]
   }
 ]

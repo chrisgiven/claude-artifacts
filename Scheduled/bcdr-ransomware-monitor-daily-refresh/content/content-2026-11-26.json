@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-26",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {"title": "Leware Construction Company claimed by Storm-1567", "tags": ["Newly claimed"], "summary": "Tracker listing shows a US construction firm claimed by Storm-1567 with an attack date of Nov 11, 2026; no public confirmation from the victim yet.", "source": {"name": "SOCRadar Ransomware Intelligence", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/leware-construction-company-storm-1567-803d2513"}},
+        {"title": "Nota Groep listed on Inc Ransom leak site", "tags": ["Newly claimed"], "summary": "Transportation-sector company Nota Groep was listed as an Inc Ransom victim, discovered Nov 10, 2026.", "source": {"name": "SOCRadar Ransomware Intelligence", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/nota-groep-inc-ransom-a69d6b76"}},
+        {"title": "Advantage Archives listed by Inc Ransom", "tags": ["Newly claimed", "Data exposure"], "summary": "Records-management firm Advantage Archives appeared on Inc Ransom's leak site in November 2026, a third-party data-exposure risk for its clients.", "source": {"name": "SOCRadar Ransomware Intelligence", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/advantage-archives-inc-ransom-a749af0e"}},
+        {"title": "Everest posts 'final notice before publication' claim", "tags": ["Newly claimed"], "summary": "Everest posted an unnamed victim with a final-notice countdown on Nov 13, 2026, signalling imminent data publication.", "source": {"name": "SOCRadar Ransomware Intelligence", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/final-notice-before-publication-everest-8cb7fb73"}},
+        {"title": "n0n group posts multiple unnamed US victims", "tags": ["Newly claimed", "Trend"], "summary": "The n0n group listed several unnamed victims, including a US company, around Nov 9, 2026.", "source": {"name": "SOCRadar Ransomware Intelligence", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/company-196-n0n-fb8a69d3"}},
+        {"title": "BlackFog: State of Ransomware 2026", "tags": ["Trend", "Reference"], "summary": "BlackFog's running 2026 report, updated Nov 5, tracks publicly disclosed and unreported attacks by sector and group.", "source": {"name": "BlackFog", "url": "https://blackfog.com/the-state-of-ransomware-2026"}}
+      ],
+      "note": "Named victims in today's search came only from leak-site trackers (Nov 9–13); verify before acting on any single listing."
+    },
+    "outage": {
+      "items": [
+        {"title": "Nov 12–17 outage cluster: Microsoft 365, AWS, Workday, FAA", "tags": ["Cloud", "High-profile"], "summary": "TechRepublic's November timeline records a week of disruptions across Microsoft 365, AWS, Workday and the FAA air traffic network, plus JPMorgan Chase, United Airlines and Apple.", "source": {"name": "TechRepublic", "url": "https://www.techrepublic.com/article/news-november-2026-tech-outages-timeline/"}},
+        {"title": "FAA air traffic network overload", "tags": ["Critical"], "summary": "The FAA's air traffic network suffered a major outage in mid-November; the preliminary cause given is a network overload.", "source": {"name": "Outage Atlas", "url": "https://guptadeepak.com/outage-atlas/"}},
+        {"title": "Google Cloud europe-west2-b utility power loss (London)", "tags": ["Cloud", "Third-party"], "summary": "A third-party facility hosting the europe-west2-b zone lost utility power on Oct 20, 2026, affecting workloads in that zone.", "source": {"name": "Outage Atlas", "url": "https://guptadeepak.com/outage-atlas/"}}
+      ],
+      "note": "No confirmed new hyperscaler outage in the last 24h; latest items are from Nov 12–17."
+    },
+    "cyber": {
+      "items": [
+        {"title": "CISA: Node2Shell flaw now actively exploited", "tags": ["Critical", "KEV add"], "summary": "CISA warns that attackers are exploiting the critical Node2Shell (Brotli) remote code execution flaw and has added it to the KEV catalog.", "source": {"name": "BleepingComputer", "url": "https://www.bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw/amp/"}},
+        {"title": "Six KEV adds incl. Chrome zero-day and Barracuda ESG RCE", "tags": ["KEV add", "Zero-day"], "summary": "On Nov 10 CISA added six exploited flaws spanning Outlook, Chrome, Barracuda, Cisco BroadWorks and Openwave Webtop, with an unusually short three-day deadline for the Barracuda bugs.", "source": {"name": "SecurityOnline", "url": "https://securityonline.info/cisa-kev-six-vulnerabilities-november-2026/"}},
+        {"title": "Four KEV adds: GPUStack, FreeSWITCH, OpenSSH, Aspera Faspex", "tags": ["KEV add", "Credential exposure"], "summary": "CISA's Nov 9 additions set a Nov 12 deadline; GPUStack admins are told to check for malicious backends and rotate credentials.", "source": {"name": "eSecurity Planet", "url": "https://www.esecurityplanet.com/vulnerabilities/news-cisa-kev-gpustack-freeswitch-openssh-ibm-november-2026/"}},
+        {"title": "Ivanti Connect Secure zero-day chain extended", "tags": ["Zero-day", "KEV add"], "summary": "Further CVEs were added to the Ivanti Connect Secure chain that began in October, with a Nov 13 KEV deadline and a call for forensic triage.", "source": {"name": "Tech Insider", "url": "https://tech-insider.org/ivanti-connect-secure-cve-2026-111357-118527-kev-deadline-nov-13-2026/"}}
+      ]
+    },
+    "physical": {
+      "items": [
+        {"title": "M 6.8 — 105 km NE of Lospalos, Timor Leste", "tags": ["M 6.8"], "summary": "Nov 21 quake, no tsunami, USGS PAGER green.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucij"}},
+        {"title": "M 6.7 — 7 km ENE of Carhuamayo, Peru", "tags": ["M 6.7"], "summary": "Nov 21 quake in central Peru, tsunami flag set, PAGER green.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucfm"}},
+        {"title": "M 6.5 — Vanuatu region", "tags": ["M 6.5"], "summary": "Nov 23 quake, tsunami flag set, PAGER green.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucvm"}},
+        {"title": "M 6.4 — Mauritius–Réunion region", "tags": ["M 6.4"], "summary": "Nov 24 quake, no tsunami, PAGER green.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud6h"}},
+        {"title": "M 5.9 — 238 km SW of Yanglong, China", "tags": ["M 5.9"], "summary": "Nov 21 quake in western China, PAGER yellow, which means some impact is likely.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucly"}},
+        {"title": "Cyclone Murasu landfall, Andhra Pradesh", "tags": ["Tropical"], "summary": "Cyclone Murasu came ashore on the Andhra Pradesh coast on Nov 3, the second cyclone landfall there in under a week.", "source": {"name": "Verisk Alert", "url": "https://alert.risksolutions.verisk.com/"}},
+        {"title": "Ecuador floods: 12 dead, 56,000+ affected", "tags": ["Flood"], "summary": "PAHO reports heavy rain and flooding across Ecuador killed 12 people and affected 56,323.", "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}},
+        {"title": "Santa Catarina, Brazil: 671 storm incidents", "tags": ["Flood"], "summary": "Santa Catarina reported 671 storm-related incidents across 76 municipalities on Nov 4–5.", "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}},
+        {"title": "Weekly disaster roundup (Nov 17)", "tags": ["Reference"], "summary": "CDP's weekly update tracks active US and global disasters and recovery funding needs.", "source": {"name": "Center for Disaster Philanthropy", "url": "https://disasterphilanthropy.org/?p=30713"}}
+      ],
+      "note": "Earthquakes are from the USGS feed for this week; the weather items are from early to mid November, and no wildfire events turned up this month."
+    }
+  }
+}
