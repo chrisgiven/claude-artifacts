@@ -1,0 +1,48 @@
+{
+  "date": "2026-11-27",
+  "sections": {
+    "ransomware": {
+      "items": [
+        {"title": "ActiveCloud (Belarus) cloud provider hit by ransomware", "tags": ["Critical", "Cloud", "Third-party"], "summary": "ActiveCloud disclosed on Nov 11 that attackers encrypted parts of its cloud infrastructure, disrupting hosted websites, corporate email and virtual servers (reportedly including Domino's Pizza Belarus); most services were restored by Nov 13 with no evidence of customer data theft.", "source": {"name": "TechJack Solutions", "url": "https://techjacksolutions.com/?p=108481"}},
+        {"title": "Advantage Archives Inc. listed by INC Ransom", "tags": ["Newly claimed"], "summary": "US professional services firm Advantage Archives appeared on the INC Ransom leak site with an attack date of Nov 13, 2026.", "source": {"name": "SOCRadar Ransomware Intelligence", "url": "https://socradar.io/free-tools/ransomware-intelligence/victims/advantage-archives-inc-ransom-a749af0e"}},
+        {"title": "Ransomware attacks up 23 percent", "tags": ["Trend", "Reference"], "summary": "Industry reporting shows ransomware attack volume rising 23 percent, setting the backdrop for Q4 2026 activity.", "source": {"name": "Redmond Magazine", "url": "https://redmondmag.com/articles/2026/10/21/ransomware-attacks-rise-23-percent.aspx"}},
+        {"title": "State of Ransomware 2026 tracker", "tags": ["Reference"], "summary": "BlackFog's running 2026 tracker of publicly disclosed ransomware attacks, last updated Nov 5, 2026.", "source": {"name": "BlackFog", "url": "https://blackfog.com/the-state-of-ransomware-2026"}}
+      ],
+      "note": "Named-victim reporting for late November was thin today; SOCRadar also lists unnamed victims claimed by n0n (Nov 9) and Everest (Nov 13)."
+    },
+    "outage": {
+      "items": [
+        {"title": "Microsoft 365 outage", "tags": ["Cloud", "High-profile"], "summary": "Microsoft 365 suffered a major outage during the Nov 12-17 cluster of tech disruptions.", "source": {"name": "TechRepublic", "url": "https://www.techrepublic.com/article/news-november-2026-tech-outages-timeline/"}},
+        {"title": "Workday outage", "tags": ["Cloud", "Third-party"], "summary": "Workday's SaaS platform had a major outage in the same Nov 12-17 window.", "source": {"name": "TechRepublic", "url": "https://www.techrepublic.com/article/news-november-2026-tech-outages-timeline/"}},
+        {"title": "FAA air traffic network ground stop", "tags": ["Critical", "High-profile"], "summary": "An FAA air traffic network failure triggered a ground stop during the Nov 12-17 period; United Airlines also logged a major outage that week.", "source": {"name": "Outage Atlas", "url": "https://guptadeepak.com/outage-atlas/"}},
+        {"title": "Apple iCloud disruption", "tags": ["Cloud"], "summary": "Apple iCloud services were disrupted by an internal update during the Nov 12-17 window.", "source": {"name": "Outage Atlas", "url": "https://guptadeepak.com/outage-atlas/"}},
+        {"title": "JPMorgan Chase outage", "tags": ["High-profile"], "summary": "JPMorgan Chase customer services had a major outage in the same mid-November cluster.", "source": {"name": "TechRepublic", "url": "https://www.techrepublic.com/article/news-november-2026-tech-outages-timeline/"}}
+      ],
+      "note": "No confirmed AWS, Azure or Google Cloud infrastructure outage found for November 2026; items are from aggregator timelines, not official post-incident reports."
+    },
+    "cyber": {
+      "items": [
+        {"title": "CISA adds six KEVs incl. Chrome zero-day and Barracuda ESG RCE", "tags": ["KEV add", "Zero-day", "Critical"], "summary": "On Nov 10 CISA added six actively exploited flaws spanning Microsoft Outlook, Google Chrome, Barracuda appliances, Cisco BroadWorks and Openwave Webtop.", "source": {"name": "SecurityOnline", "url": "https://securityonline.info/cisa-kev-six-vulnerabilities-november-2026/"}},
+        {"title": "CISA adds four KEVs with 3-day deadline (GPUStack, FreeSWITCH, OpenSSH, Aspera Faspex)", "tags": ["KEV add", "Critical"], "summary": "Added Nov 9 with a Nov 12 remediation and forensic-triage deadline; GPUStack exploitation involved malicious backend creation.", "source": {"name": "eSecurity Planet", "url": "https://www.esecurityplanet.com/vulnerabilities/news-cisa-kev-gpustack-freeswitch-openssh-ibm-november-2026/"}},
+        {"title": "Ivanti Connect Secure flaws added to KEV", "tags": ["KEV add"], "summary": "Ivanti Connect Secure vulnerabilities were added to the KEV catalog with a Nov 13, 2026 federal deadline.", "source": {"name": "Tech Insider", "url": "https://tech-insider.org/ivanti-connect-secure-cve-2026-111357-118527-kev-deadline-nov-13-2026/"}},
+        {"title": "Critical Node2Shell flaw under active exploitation", "tags": ["KEV add", "Critical"], "summary": "CISA warned that hackers are now exploiting the critical Node2Shell vulnerability.", "source": {"name": "BleepingComputer", "url": "https://bleepingcomputer.com/news/security/cisa-warns-of-hackers-now-exploiting-critical-node2shell-flaw"}},
+        {"title": "Puppet Enterprise deserialization RCE listed", "tags": ["KEV add"], "summary": "CISA listed a Perforce Puppet Enterprise deserialization flaw (CVSS 9.4) that can allow remote code execution.", "source": {"name": "The Hacker News", "url": "https://thehackernews.com/search/label/CISA?m=0"}},
+        {"title": "N-able MailAssure flaw exploited; MONAI Label zero-day", "tags": ["Zero-day", "Third-party"], "summary": "Reporting on Nov 24 says attackers are exploiting an N-able MailAssure flaw, while AI agents were used to exploit a MONAI Label zero-day.", "source": {"name": "The Hacker News", "url": "https://thehackernews.com/search/label/CISA?m=0"}}
+      ]
+    },
+    "physical": {
+      "items": [
+        {"title": "Catastrophic flooding in Brevard County, Florida", "tags": ["Flood", "Critical"], "summary": "Up to 612 mm (24.1 in) of rain fell near Malabar Nov 1-2, prompting a Florida emergency declaration.", "source": {"name": "Watchers", "url": "https://watchers.news/author/rishav-kothari/page/2/?mab_v3=255659"}},
+        {"title": "Two typhoons strike the Philippines in one week", "tags": ["Tropical"], "summary": "Two major typhoons hit the Philippines in early November, flooding homes in Cebu and forcing mass evacuations.", "source": {"name": "AccuWeather", "url": "https://www.accuweather.com/en/weather-news/more-than-1-4-million-evacuated-as-second-typhoon-in-a-week-slams-into-the-philippines/1833815"}},
+        {"title": "Cyclone Murasu landfall in Andhra Pradesh", "tags": ["Tropical"], "summary": "Cyclone Murasu made landfall on the Andhra Pradesh coast of India on Nov 3.", "source": {"name": "Watchers", "url": "https://watchers.news/author/rishav-kothari/page/3/?mab_v3=255659"}},
+        {"title": "Ecuador and southern Brazil flooding", "tags": ["Flood"], "summary": "Ecuador floods killed 12 and affected ~56,000 people; Santa Catarina, Brazil logged 671 storm incidents across 76 municipalities Nov 4-5.", "source": {"name": "PAHO", "url": "https://www.paho.org/en/natural-hazards-monitoring/natural-hazards-monitoring-5-november-2026"}},
+        {"title": "M 6.8 - 105 km NE of Lospalos, Timor Leste", "tags": ["M 6.8"], "summary": "Nov 21; no tsunami, USGS PAGER alert green.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucij"}},
+        {"title": "M 6.7 - 7 km ENE of Carhuamayo, Peru", "tags": ["M 6.7"], "summary": "Nov 21; tsunami flag set, PAGER alert green.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucfm"}},
+        {"title": "M 6.5 - Vanuatu region", "tags": ["M 6.5"], "summary": "Nov 23; tsunami flag set, PAGER alert green.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucvm"}},
+        {"title": "M 6.4 - Mauritius-Reunion region", "tags": ["M 6.4"], "summary": "Nov 24; no tsunami, PAGER alert green.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ud6h"}},
+        {"title": "M 5.9 - 238 km SW of Yanglong, China", "tags": ["M 5.9"], "summary": "Nov 21; no tsunami, PAGER alert yellow.", "source": {"name": "USGS", "url": "https://earthquake.usgs.gov/earthquakes/eventpage/us6000ucly"}}
+      ],
+      "note": "No major wildfire events found for November 2026."
+    }
+  }
+}

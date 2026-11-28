@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-28",
+  "client_alerts": [
+    {
+      "headline": "OpenAI Daybreak Blue: personal-account sessions become training data starting Nov 29",
+      "body": "Forum posts quote an OpenAI email saying that from **November 29** onward, OpenAI may use content from Daybreak Blue sessions on personal paid accounts to improve its models. Nobody has found an opt-out, and it is unclear whether content submitted before the cutoff is covered. The change was first reported earlier this week; the date in the email is Sunday, not Saturday as previously reported. Any client staff running security or DR work through a personal Daybreak Blue account should move to a business workspace or stop by tomorrow. The reports are secondhand, so check them against the email itself."
+    }
+  ],
+  "top_moves": [
+    {
+      "title": "Nov 30 deadline cluster: Sonnet 4.5 retires, Opus 4.8 fast mode ends, Gemini 4 Argon API price doubles",
+      "date_label": "Nov 30, 2026",
+      "urgent": true,
+      "body": "Three changes land on Monday. Anthropic retires **Claude Sonnet 4.5** and removes fast mode for **Opus 4.8**. The introductory **Gemini 4 Argon** API price ($2 / $10 per million tokens) ends and is reported to rise to **$4 / $20**. Any client automation or runbook tooling pinned to these model IDs needs a model swap or a budget check before Monday.",
+      "tag": "alert"
+    },
+    {
+      "title": "GPT-6.2 Astra users hit usage limits about 40% sooner after OpenAI fixes a pricing error",
+      "date_label": "Nov 27, 2026",
+      "urgent": false,
+      "body": "A weekly roundup reports that OpenAI patched an Astra metering error, which in effect cuts the usable quota on the merged Chat and Work meter. Heavy drafting sessions will run out sooner than they did last week.",
+      "tag": "tactical"
+    },
+    {
+      "title": "Unconfirmed rumors that a lab has cracked polynomial-time factoring put RSA on the watch list",
+      "date_label": "Nov 24–27, 2026",
+      "urgent": false,
+      "body": "On Nov 24, Scott Aaronson wrote that he had heard 'many rumors' of OpenAI or Anthropic factoring in polynomial time. No lab has confirmed it. Separately, Google's Cogentic multi-agent proof system released six theoretical papers. Treat both as watch items. Clients can use the noise to justify starting a post-quantum and crypto-agility inventory.",
+      "tag": "watch"
+    }
+  ],
+  "providers": [
+    {"name": "OpenAI", "display": "OpenAI", "headline": "Astra limits now run out about 40% faster after a metering fix; Daybreak Blue training use starts Nov 29.", "detail": "Reports say a patched pricing error means GPT-6.2 Astra users hit their limits about 40% sooner. The Daybreak Blue change (personal-account sessions may be used for training) takes effect Nov 29, with no opt-out found. Private Inference testing for business customers continues from earlier this week.", "tags": ["tactical", "alert"], "classification": "alert", "active": true, "hasAlert": true, "alertReason": "Daybreak Blue personal sessions become training data on Nov 29"},
+    {"name": "Anthropic", "display": "Anthropic", "headline": "Claude Ship code-review agents are in beta (Nov 23); Sonnet 4.5 retires and Opus 4.8 fast mode ends Nov 30.", "detail": "Claude Ship is a suite of agents that review and approve code, for GitHub-hosted Team and Enterprise customers. Monday's deprecations, Sonnet 4.5 and Opus 4.8 fast mode, are the near-term action item. Fable 5.2 ($8 / $40), Claude Meetings beta and Desktop release channels are earlier November items still settling in.", "tags": ["tactical"], "classification": "tactical", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "Google Gemini", "display": "Google Gemini", "headline": "The introductory Gemini 4 Argon API price is reported to double on Nov 30; Wallet now connects to Personal Intelligence in AI Mode.", "detail": "The introductory API price for Argon ($2 / $10) is reported to end Nov 30. Reports also say Carbon is now available to all users and Hydrogen replaces Flash, though sources conflict. The Google Wallet link to Personal Intelligence in AI Mode is opt-in.", "tags": ["tactical", "watch"], "classification": "tactical", "active": true, "hasAlert": false, "alertReason": ""},
+    {"name": "xAI", "display": "xAI / Grok", "headline": "Still no Grok 5; Grok 4.7 and Voice 3.0 remain current.", "detail": "Nothing new this week. The last change was the Nov 2 retirement of grok-imagine-image-quality.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Meta", "display": "Meta", "headline": "No new release; Muse Ember (Nov 9) and Muse Glimmer (Apache 2.0) are current, and the Muse Spark 1.2 weights are still promised.", "detail": "Llama 4 is still the last Llama-branded model. Zuckerberg's promise to release the Muse Spark 1.2 weights has no date.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Mistral", "display": "Mistral", "headline": "No new release; on-prem Managed Agents were due in late November and still haven't been confirmed.", "detail": "An aggregator lists Mistral Large 4 from Nov 2, but there is no primary announcement. Watch for on-prem agents before month-end.", "tags": ["watch"], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Perplexity", "display": "Perplexity", "headline": "No new release; Teammates (Max only) is current and the Amazon cease-and-desist over Comet is unresolved.", "detail": "Nothing new since the Nov 6 release covering Teammates, local Computer on Mac and Voice mode.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Microsoft 365 Copilot", "display": "Microsoft 365 Copilot", "headline": "No new post-Ignite changes; Skills and the worldwide rollout of shared Chat and Cowork history continue through November.", "detail": "Connector write actions are GA in Copilot Chat and Cowork. Autopilot timing for Frontier tenants depends on Message Center.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "GitHub Copilot", "display": "GitHub Copilot", "headline": "No confirmed late-November update; Anthropic's Claude Ship now competes directly for code review.", "detail": "Usage-based billing (since June) and Agent Plugins 1.0 are current.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Cursor", "display": "Cursor", "headline": "The reported Nov 12 cutoff of OpenAI models is still unconfirmed; Claude supply continues.", "detail": "Cursor 3.24 (Oct 9) is the latest confirmed version.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Gamma", "display": "Gamma", "headline": "No November release; Gamma 5 (Oct 6) is current.", "detail": "Context sources such as Slack and Notion arrived in the Gamma 5 cycle.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""},
+    {"name": "Notion AI", "display": "Notion AI", "headline": "No new release; the Oct 19 update (Agents, BYOK, credit system) is current.", "detail": "Nothing new this week.", "tags": [], "classification": null, "active": false, "hasAlert": false, "alertReason": ""}
+  ],
+  "persistent_signals": [
+    {"provider": "OpenAI", "text": "OpenAI — GPT-6.2 Astra rollout and quota changes — 2 weeks running (launch on Nov 17, now limits run out about 40% sooner)"},
+    {"provider": "Google Gemini", "text": "Google Gemini — Gemini 4 lineup and pricing — 2 weeks running (Neon on Nov 18, Argon's introductory price ends Nov 30)"},
+    {"provider": "xAI", "text": "xAI — no Grok 5 — several weeks running (Grok 4.7 is still current)"},
+    {"provider": "Perplexity", "text": "Perplexity — Amazon cease-and-desist over Comet — 3+ weeks running, unresolved"}
+  ],
+  "month_themes": {
+    "then": "Public-sector price cuts (Anthropic GSA at 40% off), a cross-tenant data-exposure incident (Cloudflare Workers AI), and API price compression (GPT-6.1 Terra halved)",
+    "now": "Model retirements and price increases at month-end, training-data scope creep (Daybreak Blue), and quotas tightening on flagship models (Astra)"
+  },
+  "habits": [
+    {"task": "BCP/DR plan narratives & runbooks", "tool": "Claude Fable 5.2 / Opus", "shift": "Swap any **Sonnet 4.5** or **Opus 4.8 fast** pins in scripts and Projects before Monday. Fable 5.2 is cheaper and the natural replacement.", "type": "tactical"},
+    {"task": "Standards summaries (ISO 22301, NIST SP 800-34, SOC 2)", "tool": "Claude / Gemini 4", "shift": "Keep using Claude for long-document synthesis. If you batch-process standards through the Gemini 4 Argon API, run the jobs before the Nov 30 price rise or switch to Hydrogen.", "type": "tactical"},
+    {"task": "Vendor/architecture research", "tool": "Perplexity / Gemini", "shift": "No change. Perplexity Pro and Gemini Deep Research are still the fastest options for sourced vendor comparisons. Teammates is not worth the $200 Max plan for this work.", "type": "watch"},
+    {"task": "Client proposals & SOWs", "tool": "ChatGPT (business workspace) / Claude", "shift": "Astra quota now runs out about 40% faster. Move long SOW drafting to Claude or Terra and keep Astra for final polish.", "type": "tactical"},
+    {"task": "Executive decks", "tool": "Gamma 5 / ChatGPT slides", "shift": "No change. Gamma 5 with Notion and Slack context sources is still the fastest route from notes to a deck.", "type": "watch"},
+    {"task": "Stakeholder audio walkthroughs", "tool": "Claude Meetings / NotebookLM", "shift": "Claude Meetings (Team and Enterprise beta) can take notes in Google Meet walkthroughs. Check client consent norms before inviting a visible AI participant.", "type": "strategic"},
+    {"task": "Client advisory on AI data risk", "tool": "Brief + vendor policy pages", "shift": "Add the **Daybreak Blue** training change and **model-retirement dependency** to the AI third-party risk checklist. Retirements on hard dates are a continuity risk for any AI-dependent workflow.", "type": "strategic"}
+  ],
+  "community": [
+    {"source": "Industry blogs / r/OpenAI crossover", "signal": "Rumors that OpenAI or Anthropic cracked polynomial-time factoring are spreading after Scott Aaronson's Nov 24 post; no lab has confirmed.", "so_what": "Expect client questions about RSA. Treat it as a reason to start a crypto-agility inventory, not as an emergency."},
+    {"source": "OpenAI developer forum", "signal": "A Daybreak Blue thread asks whether content submitted before Nov 29 is covered by the training change; there is no official answer yet.", "so_what": "Advise clients to assume past personal-account sessions could be affected."},
+    {"source": "AI newsletters (holiday week)", "signal": "Reddit engagement was thin over the US Thanksgiving week, and no high-engagement r/ClaudeAI or r/LocalLLaMA posts could be verified for this period.", "so_what": "Community signal is light this edition; nothing contradicts the provider news."}
+  ],
+  "watch": [
+    {"kind": "deadline", "title": "Nov 30: Sonnet 4.5 retires, Opus 4.8 fast mode ends", "body": "Audit API keys, Claude Projects and any client automations for pinned model IDs."},
+    {"kind": "pricing", "title": "Nov 30: Gemini 4 Argon introductory API pricing ends", "body": "The price is reported to rise from $2 / $10 to $4 / $20 per million tokens. Hydrogen is the budget alternative."},
+    {"kind": "security", "title": "RSA factoring rumors", "body": "Unconfirmed. Watch for a statement from a lab or a paper. It is a prompt for post-quantum and crypto-agility planning either way."},
+    {"kind": "regulatory", "title": "Daybreak Blue training use starts Nov 29", "body": "No opt-out found yet. Watch for an official OpenAI FAQ and whether Daybreak Red is included."},
+    {"kind": "watch", "title": "Mistral on-prem Managed Agents", "body": "Promised for late November. If it ships, it is a strong sovereign and air-gapped option for regulated DR clients."}
+  ],
+  "sources": "Sources consulted: OpenAI and Anthropic release notes, the OpenAI developer forum (Daybreak Blue), Google blog and 9to5Google/Android Planet (Gemini 4), xAI docs, Meta and Mistral coverage, Perplexity and Microsoft 365 Copilot trackers, the GitHub changelog, Newegg Insider's Nov 27 AI roundup, Cybernews (RSA rumors), Fortune (Nov 18 outages), and BCI/CSA compliance pieces."
+}

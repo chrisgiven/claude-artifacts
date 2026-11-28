@@ -1,116 +1,5 @@
 [
   {
-    "date": "2026-09-14",
-    "providers": {
-      "OpenAI": {
-        "headline": "GPT-6 Astra reached full GA across ChatGPT and the API, with a new full-duplex voice API (GPT-Live-1) and Images 2.5.",
-        "tags": [
-          "tactical",
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Anthropic": {
-        "headline": "Sonnet 5's scheduled price increase was cancelled and Claude Code shipped a bug-fix release.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Google Gemini": {
-        "headline": "Gemini Live is pushing past chat into task automation with Personal Intelligence, Daily Brief, and Spark.",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "xAI": {
-        "headline": "Grok 4.7 slipped past its Sept 12 target again, even as Grok expands into Microsoft Copilot and gets native iPad/Android apps.",
-        "tags": [
-          "watch",
-          "strategic"
-        ],
-        "hasAlert": true,
-        "alertReason": "Grok now available inside Microsoft Copilot tenants",
-        "active": true
-      },
-      "Meta": {
-        "headline": "No new headline since Muse Spark 1.3 (Sept 2); the open-weights release remains undated.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Mistral": {
-        "headline": "Quiet since Sept 1 — OCR 4.1 GA and Agentic Search remain the latest ships.",
-        "tags": [
-          "watch"
-        ],
-        "hasAlert": false,
-        "active": false
-      },
-      "Perplexity": {
-        "headline": "No new headline today — Computer in Email, the Teams app, and expanded model access continue rolling out from August.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Microsoft 365 Copilot": {
-        "headline": "Copilot Cowork got a substantial rebuild: renamed Automations, a GPT/Claude model picker in the prompt box, and a reasoning-effort slider.",
-        "tags": [
-          "tactical"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "GitHub Copilot": {
-        "headline": "MAI-Code-1-Flash was deprecated across all Copilot surfaces (Sept 10); CLI v1.0.83 adds Windows taskbar status and custom agents.",
-        "tags": [
-          "watch"
-        ],
-        "hasAlert": false,
-        "active": true
-      },
-      "Cursor": {
-        "headline": "No new ship today — Claude Fable 5.1 (added Sept 2) and self-hosted machines remain the latest features.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Gamma": {
-        "headline": "No headline release today — 87 days quiet since June 12.",
-        "tags": [],
-        "hasAlert": false,
-        "active": false
-      },
-      "Notion AI": {
-        "headline": "Workspace owners can now restrict which AI models Notion Agent and Custom Agents are allowed to use.",
-        "tags": [
-          "strategic"
-        ],
-        "hasAlert": false,
-        "active": true
-      }
-    },
-    "topMoves": [
-      "Grok expands into Microsoft Copilot while Grok 4.7 itself keeps slipping",
-      "Claude Sonnet 5's scheduled price hike didn't happen",
-      "CBTS acquires Recovery Point Systems"
-    ],
-    "clientAlerts": [
-      "Grok models now inside Microsoft Copilot"
-    ],
-    "watchItems": [
-      "NIST SP 1353 public comment period",
-      "Grok 4.7 launch keeps slipping",
-      "Mistral retires Leanstral 1.5",
-      "Meta's Muse Spark open-weights release",
-      "AI agent sprawl outpacing DR planning"
-    ]
-  },
-  {
     "date": "2026-09-15",
     "providers": {
       "OpenAI": {
@@ -6435,6 +6324,109 @@
       "OpenAI Private Inference — wider availability?",
       "Google Workspace: MCP/CLI-only agent access from Feb 1, 2027",
       "December: Copilot Code GA (Microsoft / GitHub)"
+    ]
+  },
+  {
+    "date": "2026-11-28",
+    "providers": {
+      "OpenAI": {
+        "headline": "Astra limits now run out about 40% faster after a metering fix; Daybreak Blue training use starts Nov 29.",
+        "tags": [
+          "tactical",
+          "alert"
+        ],
+        "hasAlert": true,
+        "alertReason": "Daybreak Blue personal sessions become training data on Nov 29",
+        "active": true
+      },
+      "Anthropic": {
+        "headline": "Claude Ship code-review agents are in beta (Nov 23); Sonnet 4.5 retires and Opus 4.8 fast mode ends Nov 30.",
+        "tags": [
+          "tactical"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "Google Gemini": {
+        "headline": "The introductory Gemini 4 Argon API price is reported to double on Nov 30; Wallet now connects to Personal Intelligence in AI Mode.",
+        "tags": [
+          "tactical",
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": true
+      },
+      "xAI": {
+        "headline": "Still no Grok 5; Grok 4.7 and Voice 3.0 remain current.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Meta": {
+        "headline": "No new release; Muse Ember (Nov 9) and Muse Glimmer (Apache 2.0) are current, and the Muse Spark 1.2 weights are still promised.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Mistral": {
+        "headline": "No new release; on-prem Managed Agents were due in late November and still haven't been confirmed.",
+        "tags": [
+          "watch"
+        ],
+        "hasAlert": false,
+        "active": false
+      },
+      "Perplexity": {
+        "headline": "No new release; Teammates (Max only) is current and the Amazon cease-and-desist over Comet is unresolved.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Microsoft 365 Copilot": {
+        "headline": "No new post-Ignite changes; Skills and the worldwide rollout of shared Chat and Cowork history continue through November.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "GitHub Copilot": {
+        "headline": "No confirmed late-November update; Anthropic's Claude Ship now competes directly for code review.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Cursor": {
+        "headline": "The reported Nov 12 cutoff of OpenAI models is still unconfirmed; Claude supply continues.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Gamma": {
+        "headline": "No November release; Gamma 5 (Oct 6) is current.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      },
+      "Notion AI": {
+        "headline": "No new release; the Oct 19 update (Agents, BYOK, credit system) is current.",
+        "tags": [],
+        "hasAlert": false,
+        "active": false
+      }
+    },
+    "topMoves": [
+      "Nov 30 deadline cluster: Sonnet 4.5 retires, Opus 4.8 fast mode ends, Gemini 4 Argon API price doubles",
+      "GPT-6.2 Astra users hit usage limits about 40% sooner after OpenAI fixes a pricing error",
+      "Unconfirmed rumors that a lab has cracked polynomial-time factoring put RSA on the watch list"
+    ],
+    "clientAlerts": [
+      "OpenAI Daybreak Blue: personal-account sessions become training data starting Nov 29"
+    ],
+    "watchItems": [
+      "Nov 30: Sonnet 4.5 retires, Opus 4.8 fast mode ends",
+      "Nov 30: Gemini 4 Argon introductory API pricing ends",
+      "RSA factoring rumors",
+      "Daybreak Blue training use starts Nov 29",
+      "Mistral on-prem Managed Agents"
     ]
   }
 ]
